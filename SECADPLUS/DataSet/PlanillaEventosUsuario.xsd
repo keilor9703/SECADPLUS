@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PlanillaEventosUsuario" targetNamespace="http://tempuri.org/PlanillaEventosUsuario.xsd" xmlns:mstns="http://tempuri.org/PlanillaEventosUsuario.xsd" xmlns="http://tempuri.org/PlanillaEventosUsuario.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PlanillaEventosUsuario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PlanillaEventosUsuario" msprop:Generator_UserDSName="PlanillaEventosUsuario">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PlanillaEventosUsuario" msprop:Generator_TableClassName="PlanillaEventosUsuarioDataTable" msprop:Generator_TableVarName="tablePlanillaEventosUsuario" msprop:Generator_RowChangedName="PlanillaEventosUsuarioRowChanged" msprop:Generator_TablePropName="_PlanillaEventosUsuario" msprop:Generator_RowDeletingName="PlanillaEventosUsuarioRowDeleting" msprop:Generator_RowChangingName="PlanillaEventosUsuarioRowChanging" msprop:Generator_RowEvHandlerName="PlanillaEventosUsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="PlanillaEventosUsuarioRowDeleted" msprop:Generator_RowClassName="PlanillaEventosUsuarioRow" msprop:Generator_UserTableName="PlanillaEventosUsuario" msprop:Generator_RowEvArgName="PlanillaEventosUsuarioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CADUSUA_EVEN_GENERA" msprop:Generator_ColumnVarNameInTable="columnCADUSUA_EVEN_GENERA" msprop:Generator_ColumnPropNameInRow="CADUSUA_EVEN_GENERA" msprop:Generator_ColumnPropNameInTable="CADUSUA_EVEN_GENERAColumn" msprop:Generator_UserColumnName="CADUSUA_EVEN_GENERA" type="xs:string" minOccurs="0" />
+              <xs:element name="CP_DIA_EVENTO" msprop:Generator_ColumnVarNameInTable="columnCP_DIA_EVENTO" msprop:Generator_ColumnPropNameInRow="CP_DIA_EVENTO" msprop:Generator_ColumnPropNameInTable="CP_DIA_EVENTOColumn" msprop:Generator_UserColumnName="CP_DIA_EVENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="CP_HORA_EVENTO" msprop:Generator_ColumnVarNameInTable="columnCP_HORA_EVENTO" msprop:Generator_ColumnPropNameInRow="CP_HORA_EVENTO" msprop:Generator_ColumnPropNameInTable="CP_HORA_EVENTOColumn" msprop:Generator_UserColumnName="CP_HORA_EVENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="SITIO_GRABA" msprop:Generator_ColumnVarNameInTable="columnSITIO_GRABA" msprop:Generator_ColumnPropNameInRow="SITIO_GRABA" msprop:Generator_ColumnPropNameInTable="SITIO_GRABAColumn" msprop:Generator_UserColumnName="SITIO_GRABA" type="xs:string" minOccurs="0" />
+              <xs:element name="NUME_EVENTO" msprop:Generator_ColumnVarNameInTable="columnNUME_EVENTO" msprop:Generator_ColumnPropNameInRow="NUME_EVENTO" msprop:Generator_ColumnPropNameInTable="NUME_EVENTOColumn" msprop:Generator_UserColumnName="NUME_EVENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre_Usuario" msprop:Generator_ColumnVarNameInTable="columnNombre_Usuario" msprop:Generator_ColumnPropNameInRow="Nombre_Usuario" msprop:Generator_ColumnPropNameInTable="Nombre_UsuarioColumn" msprop:Generator_UserColumnName="Nombre_Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Fuerza_Usuario" msprop:Generator_ColumnVarNameInTable="columnFuerza_Usuario" msprop:Generator_ColumnPropNameInRow="Fuerza_Usuario" msprop:Generator_ColumnPropNameInTable="Fuerza_UsuarioColumn" msprop:Generator_UserColumnName="Fuerza_Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Responsable" msprop:Generator_ColumnVarNameInTable="columnResponsable" msprop:Generator_ColumnPropNameInRow="Responsable" msprop:Generator_ColumnPropNameInTable="ResponsableColumn" msprop:Generator_UserColumnName="Responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="Cargo_Responsable" msprop:Generator_ColumnVarNameInTable="columnCargo_Responsable" msprop:Generator_ColumnPropNameInRow="Cargo_Responsable" msprop:Generator_ColumnPropNameInTable="Cargo_ResponsableColumn" msprop:Generator_UserColumnName="Cargo_Responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="Elaboro" msprop:Generator_ColumnVarNameInTable="columnElaboro" msprop:Generator_ColumnPropNameInRow="Elaboro" msprop:Generator_ColumnPropNameInTable="ElaboroColumn" msprop:Generator_UserColumnName="Elaboro" type="xs:string" minOccurs="0" />
+              <xs:element name="Cargo_Elaboro" msprop:Generator_ColumnVarNameInTable="columnCargo_Elaboro" msprop:Generator_ColumnPropNameInRow="Cargo_Elaboro" msprop:Generator_ColumnPropNameInTable="Cargo_ElaboroColumn" msprop:Generator_UserColumnName="Cargo_Elaboro" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHADB" msprop:Generator_ColumnVarNameInTable="columnFECHADB" msprop:Generator_ColumnPropNameInRow="FECHADB" msprop:Generator_ColumnPropNameInTable="FECHADBColumn" msprop:Generator_UserColumnName="FECHADB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

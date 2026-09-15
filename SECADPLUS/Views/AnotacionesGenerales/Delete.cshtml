@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADANOTAGRAL
+
+@{
+    ViewBag.Title = "Eliminar Caso";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.CONSECUTIVO)
+    <br />
+    Anotación : @Html.DisplayFor(model => model.ANOTACION)
+
+    @using (Html.BeginForm("Delete", "AnotacionesGenerales", new { sitioGraba = Model.SITIO_GRABA, consecutivoAnotacion = Model.CONSECUTIVO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

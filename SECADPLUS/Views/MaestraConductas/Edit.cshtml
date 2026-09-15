@@ -1,0 +1,180 @@
+﻿@model SECADEntities.SECAD.CADCONDUCTA
+
+@{
+    ViewBag.Title = "Editar Título de Conductas";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Editar Título de Conductas:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Edit", "MaestraConductas", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("antiguoCodigo")
+                            @Html.Hidden("idTipo")
+                            @Html.Hidden("nomTipo")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Tipo de Conduta:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.Editor("TIPO_NOMBRE", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Código:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.EditorFor(model => model.CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba código" } })
+                                                    @Html.ValidationMessageFor(model => model.CODIGO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-10">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Descripción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba descripción" } })
+                                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Abreviatura:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.ABREVIATURA, new { htmlAttributes = new { @class = "form-control", @maxlength = "20", @placeholder = "Escriba abreviatura" } })
+                                                @Html.ValidationMessageFor(model => model.ABREVIATURA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-1">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Tipo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("TIPO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.TIPO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-1">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Nivel:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("NIVEL", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.NIVEL, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Cond Código:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.COND_CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba cond código" } })
+                                                @Html.ValidationMessageFor(model => model.COND_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Vigente:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @*@Html.CheckBox("VIGENTE", Model.VIGENTE == "S" ? true : false, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @Html.CheckBox("VIGENTE", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_size = "mini", data_on_text = "SI", data_off_text = "NO" })
+                                                @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Lico Vigencia:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.LICO_VIGENCIA, new { htmlAttributes = new { @class = "form-control", @type = "number", @placeholder = "Escriba lico vigencia" } })
+                                                @Html.ValidationMessageFor(model => model.LICO_VIGENCIA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Lico Código:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.LICO_CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba lico código" } })
+                                                @Html.ValidationMessageFor(model => model.LICO_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", new { idTipo = @ViewBag.idTipo, nomTipo = @ViewBag.nomTipo })'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Edit">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/CheckSwitchJs");
+

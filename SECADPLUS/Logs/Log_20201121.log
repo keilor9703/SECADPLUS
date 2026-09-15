@@ -1,0 +1,240 @@
+20201121 11:40:21 [M_ERROR] - Error Ejecutando pk_cadxcrime.p_datosxcrime:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrime(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 59
+20201121 11:48:23 [M_ERROR] - Error Ejecutando pk_cadxcrime.p_datosxcrime:
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrime(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 59
+20201121 11:52:16 [M_ERROR] - Error Ejecutando pk_cadxcrime.p_datosxcrime:
+	#2	#3El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+	#2	#3System.ArgumentOutOfRangeException: El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+   en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrime(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 61
+20201121 11:55:44 [M_ERROR] - Error Ejecutando pk_cadxcrime.p_datosxcrime:
+	#2	#3El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+	#2	#3System.ArgumentOutOfRangeException: El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+   en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrime(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 61
+20201121 12:01:28 [M_ERROR] - Error Ejecutando pk_cadxcrime.p_datosxcrime:
+	#2	#3El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+	#2	#3System.ArgumentOutOfRangeException: El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+   en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrime(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 61
+20201121 14:05:30 [M_ERROR] - Error Ejecutando pk_cadxcrime.p_datosxcrime:
+	#2	#3El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+	#2	#3System.ArgumentOutOfRangeException: El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+   en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrime(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 61
+20201121 15:03:53 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:10:38 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:17:53 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:32:25 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:35:50 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:39:04 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:39:45 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETDATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETDATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:40:32 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETDATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETDATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int32 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 41
+20201121 15:50:12 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETDATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETDATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 40
+20201121 15:56:12 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETACTAEQUIPO'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETACTAEQUIPO'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.Prueba(Int32 v_lineaid) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 163
+20201121 16:01:02 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIME_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20201121 16:07:18 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIMECODIGOS_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIMECODIGOS_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCodigos(Int32 V_SitioGrabacion, Int32 V_IdregAnalisis) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 104
+20201121 16:07:38 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIMECODIGOS_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'P_DATOSXCRIMECODIGOS_CR'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCodigos(Int32 V_SitioGrabacion, Int32 V_IdregAnalisis) en C:\SECADPLUS MEGA\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 104

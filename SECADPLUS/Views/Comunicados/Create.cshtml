@@ -1,0 +1,228 @@
+﻿@model SECADEntities.SecadEntities.CADPOLIGRAMA
+
+@{
+    ViewBag.Title = "Crear Comunicados";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Comunicados:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "Comunicados", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @*@Html.Hidden("SITIO_GRABA")*@
+                            @Html.Hidden("CADFUERZ_ID")
+                            @*@Html.Hidden("USUARIO")*@
+                            <div class="row">
+                                <div class="col-md-12 col-lg-1">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CONSECUTIVO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.CONSECUTIVO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Usuario:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("USUARIO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.USUARIO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Sitio Graba:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("SITIO_GRABA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.SITIO_GRABA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Número:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.NUMERO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba número" } })
+                                                @Html.ValidationMessageFor(model => model.NUMERO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Fecha:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                                    @Html.EditorFor(model => model.FECHA, new { htmlAttributes = new { @class = "form-control FechaHora" } })
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.FECHA, "", new { @class = "text-danger text-size-mini" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-1">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Año:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.AÑO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.AÑO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Origen:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.ORIGEN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba origen" } })
+                                                @Html.ValidationMessageFor(model => model.ORIGEN, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Destino:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DESTINO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba destino" } })
+                                                @Html.ValidationMessageFor(model => model.DESTINO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Texto:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.TextAreaFor(model => model.TEXTO, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba texto", @rows = "5" })
+                                                @Html.ValidationMessageFor(model => model.TEXTO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Firma:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.FIRMA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba firma" } })
+                                                @Html.ValidationMessageFor(model => model.FIRMA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Cargo Firma:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CARGO_FIRMA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba cargo firma" } })
+                                                @Html.ValidationMessageFor(model => model.CARGO_FIRMA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Transmite:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.TRANSMITE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba transmite" } })
+                                                @Html.ValidationMessageFor(model => model.TRANSMITE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Recibe:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.RECIBE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba recibe" } })
+                                                @Html.ValidationMessageFor(model => model.RECIBE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@section PostScripts{
+    <script>
+        $(".FechaHora").datetimepicker({
+            format: 'DD/MM/YYYY HH:mm:ss',
+            showClear: true
+        });
+
+        $("#FECHA").on("dp.change", function (e) {
+            var anio = $('#FECHA').data("DateTimePicker").date();
+            $("#A_O").val(anio.format("YYYY"));
+        });
+    </script>
+}

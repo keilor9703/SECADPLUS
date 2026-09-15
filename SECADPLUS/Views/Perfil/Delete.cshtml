@@ -1,0 +1,11 @@
+﻿@model SECADEntities.SecadEntities.CADNETPERFIL
+
+<h3>¿Esta seguro de eliminar este registro?</h3>
+<div>
+    <h4>@Model.PERFIL_NOMBRE</h4>      
+
+    @using (Html.BeginForm("Delete", "Perfil", new { id = Model.PERFIL_ID , strNombre = Model.PERFIL_NOMBRE}, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>

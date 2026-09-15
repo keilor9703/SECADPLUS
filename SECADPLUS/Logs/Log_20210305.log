@@ -1,0 +1,44 @@
+20210305 19:29:56 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.19.183.4:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2018
+	#2	#3ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente ---> OracleInternal.Network.NetworkException (0x000030E4): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+   en OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   en OracleInternal.Network.OracleCommunication.Connect(String tnsDescriptor, Boolean doNAHandshake, String IName, ConnectionOption CO)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\SECADPLUSMEGA-METUN-29-01-2021-DES\SecadDatos\Context\ConDBOracle.cs:línea 126
+20210305 19:29:56 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.19.183.4:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2018
+	#2	#3ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente ---> OracleInternal.Network.NetworkException (0x000030E4): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+   en OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   en OracleInternal.Network.OracleCommunication.Connect(String tnsDescriptor, Boolean doNAHandshake, String IName, ConnectionOption CO)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\SECADPLUSMEGA-METUN-29-01-2021-DES\SecadDatos\Context\ConDBOracle.cs:línea 126
+20210305 19:32:23 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.19.183.4:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2018
+	#2	#3ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente ---> OracleInternal.Network.NetworkException (0x000030E4): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+   en OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   en OracleInternal.Network.OracleCommunication.Connect(String tnsDescriptor, Boolean doNAHandshake, String IName, ConnectionOption CO)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\SECADPLUSMEGA-METUN-29-01-2021-DES\SecadDatos\Context\ConDBOracle.cs:línea 126
+20210305 19:32:23 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.19.183.4:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2018
+	#2	#3ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente ---> OracleInternal.Network.NetworkException (0x000030E4): ORA-12516: TNS:el listener no ha encontrado ningún manejador disponible con una pila de protocolos coincidente
+   en OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   en OracleInternal.Network.OracleCommunication.Connect(String tnsDescriptor, Boolean doNAHandshake, String IName, ConnectionOption CO)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\SECADPLUSMEGA-METUN-29-01-2021-DES\SecadDatos\Context\ConDBOracle.cs:línea 126

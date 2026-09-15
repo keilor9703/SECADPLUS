@@ -1,0 +1,72 @@
+﻿@model SECADEntities.SitiosDeImportancia.V_FORM_SITIOS_GRABACION
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>V_FORM_SITIOS_GRABACION</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADUNDE_FUERZA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADUNDE_FUERZA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_INSTALACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_INSTALACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONS_REGIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONS_REGIONAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBSERVACIONES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACIONES)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

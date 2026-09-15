@@ -1,0 +1,41 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADMENSAJES_TEXTO_USUARIOS>*@
+@model IEnumerable<SECADPLUS.Models.Extendidas.ExtMensajesTextoUsuarios>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        @*<td>
+        <ul class="icons-list">
+            <li class="dropdown">
+                <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                            dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                    <i class="icon-menu9"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-left">
+                    <li>
+                        <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para ver enviar mensajes a"
+                                onclick="VerEnviarA(@item.CADMENS_SITIOGRABA, @item.CONSECUTIVO)">
+                            <i class="icon-eye"></i> Ver conductas
+                        </button>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </td>*@
+        <td>@Html.DisplayFor(modelItem => item.ENTIDAD)</td>
+        <td>@Html.DisplayFor(modelItem => item.CANAL)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADUSUA_DESTINO)</td>
+        @if (item.ESTADO == "S")
+        {
+            <td>Sin Notificar</td>
+        }
+        else
+        {
+            <td>Notificado</td>
+        }
+        <td>@Html.DisplayFor(modelItem => item.FECHA_NOTIFICACION)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_GRABACION)</td>
+    </tr>
+}

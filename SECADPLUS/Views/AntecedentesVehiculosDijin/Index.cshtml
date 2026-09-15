@@ -1,0 +1,440 @@
+﻿
+@{
+    ViewBag.Title = "Consultar";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12 form-compact">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Consulta de Antecedentes de Vehículos.</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                @Html.Hidden("DES_PATRULLA_SELECT")
+                @Html.Hidden("DES_POLICIA_SELECT")
+                @Html.Hidden("CADUNID_FUERZA")
+                @Html.Hidden("CADUNID_CODIGO")
+                @Html.Hidden("CODIGO_patrulla")
+                @Html.Hidden("DESC_POLICIA")
+
+                <div class="panel-body ">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="col-xs-6">
+
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" class="styled" onchange="CargarPatrullas()" checked="checked" id="cnPropio" name="gr_caqnal">
+                                        Canal Propio
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" class="styled" onchange="CargarPatrullas()" id="cnTodos" name="gr_caqnal">
+                                        Todos los Canales
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 secadTeal">
+                                <br />
+                                <input type="text" class="form-control readonly" id="DSP_CANAL" placeholder="" readonly="readonly" />
+                            </div>
+                            <div class="col-xs-12 secadTeal">
+                                <br />
+                                <input type="text" class="form-control readonly" id="DSP_UNIDADL" placeholder="" readonly="readonly" />
+                                <br />
+                            </div>
+
+                            <div class="col-xs-12">
+
+                                <!-- Panel Entidades -->
+                                <div class="col-md-12">
+                                    <legend class="text-semibold">
+                                        Patrullas en Servicio
+                                        <a class="control-arrow" data-toggle="collapse" data-target="#panelPatrullas">
+                                            <i class="icon-circle-down2"></i>
+                                        </a>
+                                    </legend>
+                                    <div class="collapse in" id="panelPatrullas">
+                                        <!-- /inicio de tabla -->
+                                        <table id="_tblPatrullas" class="table table-hover table-xxs datatable-basic">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Descripción</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <!-- /inicio de tabla -->
+                                    </div>
+                                </div>
+                                <!-- Panel Entidades -->
+                            </div>
+
+                            <div class="col-xs-12">
+
+                                <!-- Panel Entidades -->
+                                <div class="col-md-12">
+                                    <legend class="text-semibold">
+                                        Policias Asignados
+                                        <a class="control-arrow" data-toggle="collapse" data-target="#panelPolicias">
+                                            <i class="icon-circle-down2"></i>
+                                        </a>
+                                    </legend>
+                                    <div class="collapse in" id="panelPolicias">
+                                        <!-- /inicio de tabla -->
+                                        <table id="_tblPolicias" class="table table-hover table-xxs datatable-basic">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Cedula</th>
+                                                    <th>Nombres</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <!-- /inicio de tabla -->
+                                    </div>
+                                </div>
+                                <!-- Panel Entidades -->
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="col-xs-12 secadTeal">
+                                <div class="col-xs-3">
+                                    <br />
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" class="styled" checked="checked" id="ckPlaca" value="1" name="stacked-radio-left">
+                                            Placa
+                                        </label>
+                                    </div>
+
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" class="styled" id="ckMotor" value="2" name="stacked-radio-left">
+                                            Motor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <br />
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" class="styled" id="ckSerie" value="3" name="stacked-radio-left">
+                                            Serie
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" class="styled" id="ckChasis" value="4" name="stacked-radio-left">
+                                            Chasis
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <br />
+                                    <input type="text" class="form-control" id="txtConsultaPatrulla" maxlength="20" placeholder="Ingrese Patrulla" />
+                                    <div class="input-group input-group-xs">
+                                        <label>Dato a Buscar</label>
+                                        <input type="text" class="form-control" id="txtDatoFiltro" name="txtDatoFiltro" maxlength="20" placeholder="Ingrese Dato" />
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="col-xs-2">
+                                    <br />
+                                    <button type="button" id="consultar" class="btn btn-success btn-xs" data-popup="tooltip"
+                                            title="" onclick="CargarPatrullasConsulta()" data-placement="bottom" data-original-title="Clic para buscar">
+                                        <b><i class="icon-search4 position-left"></i></b>Ubicar Patrulla
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+
+                                <div class="form-group row">
+                                    <div id="contenedorTem" class="col-md-12">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-xs-6">
+                                <!-- Panel Entidades -->
+                                <div class="col-md-12">
+                                    <legend class="text-semibold">
+                                        Consulta Base de Datos Dijin
+                                        <a class="control-arrow" data-toggle="collapse" data-target="#panelTablaDijin">
+                                            <i class="icon-circle-down2"></i>
+                                        </a>
+                                    </legend>
+                                    <div class="collapse in" id="panelTablaDijin">
+                                        <!-- /inicio de tabla -->
+                                        <table id="_tblVehiculosDijin" class="table table-hover table-xxs datatable-basic">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Placa</th>
+                                                    <th>Estado</th>
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <!-- /inicio de tabla -->
+                                    </div>
+                                </div>
+                                <!-- Panel Entidades -->
+                            </div>
+                            <div class="col-xs-6">
+                                <br />
+                                <div class="col-xs-12">
+
+                                    <div class="form-group row">
+                                        <div id="contenedorTem" class="col-md-12">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label">Motor :</label>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control readonly" id="txtMotor" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label"> Serie :</label>
+                                        <div class="row">
+                                            <div class="col-md-8">
+
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control readonly" id="txtSerie" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Chasis :</label>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <input type="text" id="txtChasis" class="form-control readonly" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Modelo :</label>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <input type="text" id="txtModelo" class="form-control readonly" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Marca :</label>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <input type="text" id="txtMarca" class="form-control readonly" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Linea :</label>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <input type="text" id="txtLinea" class="form-control readonly" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Color :</label>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <input type="text" id="txtColor" class="form-control readonly" readonly="readonly" />
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Tipo :</label>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <input type="text" id="txtTipo" class="form-control readonly" readonly="readonly" />
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Autoridad :</label>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" id="txtAutoridad" ></textarea>
+                                                    @*<input type="text" id="txtAutoridad" class="form-control readonly" readonly="readonly" />*@
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-1">
+                            <div class="input-group input-group-xs">
+                                <span class="input-group-btn input-group-xs">
+                                    <button type="button" id="consultarVehiculos" class="btn btn-success btn-xs" data-popup="tooltip"
+                                            title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="ConsultarVehiculosAntecedentes()">
+                                        <b><i class="icon-search4 position-left"></i></b>Ejecutar Consulta
+                                    </button>
+                                </span>
+
+                            </div>
+                            <br />
+                        </div>
+                        <div class="col-md-2 col-xs-4">
+                            <div class="input-group input-group-xs">
+                                <div class="input-group input-group-xs">
+                                    <span class="input-group-btn input-group-xs">
+                                        <button id="btnLimpiar" onclick="LimpiadoTotal()" type="button" class="btn btn-primary btn-sm"><b><i class="icon-eraser position-left"></i></b>Limpiar</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalVehiculoVerifica" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger roles">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h5 class="modal-title" id="tituloUnidad">Verificar</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="mensajeVerifica">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalVehiculoDijin" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-teal roles">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h5 class="modal-title" id="tituloUnidad"></h5>
+            </div>
+            <div class="modal-body ">
+                <div id="mensajeVehiculoDijin">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-success btn-xs" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalBienes" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-teal roles">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h5 class="modal-title" id="tituloUnidad">Verificar</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="mensajeVerificaBienes">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-success btn-xs" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/CheckBoxJs");
+
+    <script>
+        $(".chosen-select").chosen();
+        var urlPatrullas = '@Url.Action("ObtenerPatrullas", "AntecedentesPersonasDijin")';
+        var urlPerDisponible = '@Url.Action("ObtenerPerDisponibles", "AntecedentesPersonasDijin")';
+        var urlOrdenes = '@Url.Action("ObtenerOrdenCaptura", "AntecedentesPersonasDijin")';
+        var urlVehiculos = '@Url.Action("ObtenerVehiculos", "AntecedentesVehiculosDijin")';
+        var urlVehiculosDijin = '@Url.Action("DijinAntecedentesVehiculos", "AntecedentesVehiculosDijin")';
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+    @Scripts.Render("~/bundle/PersonaDijinJs");
+    @Scripts.Render("~/bundle/VehiculoDijinJs");
+
+}

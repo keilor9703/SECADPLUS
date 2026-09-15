@@ -1,0 +1,696 @@
+﻿@model SECADEntities.SecadEntities.CLENCUESTA_CALIDAD_LLAMADA
+@{
+    ViewBag.Title = "Calidad del servicio - Encuestar";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/CheckBoxJs");
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+
+    @Html.Hidden("NumeroLLamadaEncuestaPed")
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-body">
+                    <div id="exTab2">
+                        <ul class="nav nav-tabs nav-tabs-highlight">
+                            <li class="active"><a href="#1" data-toggle="tab">Evento</a></li>
+                            <li><a href="#2" data-toggle="tab">Calidad</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="1">
+                                <div class="col-xs-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-lg-6 text-left">
+                                            <div class="form-compact">
+                                                <label class="col-md-12">Evento generado</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-lg-6 text-center">
+                                            <div class="form-compact">
+                                                <button type="button" class="btn bg-teal btn-xs" data-toggle="dropdown"
+                                                        data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para ver todos los eventos"
+                                                        onclick="CargaEventos()">
+                                                    Evento anterior
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-12 space">
+                                            <div class="form-compact">
+                                                <span class="col-xs-12 col-md-12 label bg-teal-300" id="textTurno">TURNO NO DISPONIBLE</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-12 text-left">
+
+                                            <div class="col-xs-12 col-lg-12">
+                                                <div class="row">
+                                                    <table class="table table-hover table-xxs datatable-basic" id="tablaEventos">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Acciones</th>
+                                                                <th>No. Evento</th>
+                                                                <th>Estado</th>
+                                                                <th>Fecha</th>
+                                                                <th>Usuario</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-lg-12 text-center space_up">
+                                            <div class="form-compact">
+                                                <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" title="" data-placement="bottom"
+                                                        onclick="AbrirDatosLlamadasEncuesta()" data-original-title="Clic para Ver datos de la llamada">
+                                                    Ver Datos de la Llamada
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-md-12">Datos iniciales de la llamada</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Fecha y hora:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textHoraCaso">Fecha y hora</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Llamada:</label>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textLlamada">Llamada</span>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textUsuario">Usuario</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Abonado:</label>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textAbonado">Abonado</span>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textDispositivo">Dispositivo</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Nombre:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textPropNombre">Nombre</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Dirección:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textPropDireccion">Dirección</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Ciudad:</label>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textCiudadTelefono">Ciudad</span>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textBarrioTelefono">Barrio</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Llamante:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textLlamante">Llamante</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Dirección:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textDireccionLlamante">Dirección</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Tipo de info:</label>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textTipoInfo">Tipo</span>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textCodigoCooperante">Codigo Cooperante</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-4">Asociar a llamada:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textAsociarLlamada">Asociar a llamada</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12 space">
+                                                    <label class="col-xs-12 col-md-3">Descripción hechos</label>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <div class="row">
+                                                            <textarea rows="6" cols="5" class="form-control"
+                                                                      placeholder="Escriba descripción de los hechos" id="textComentarios"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-3">Caso:</label>
+                                                    <span class="col-xs-7 col-md-2 label label-default" id="textCaso1">Código</span>
+                                                    <span class="col-xs-7 col-md-7 label label-default" id="textDescCaso1">Nombre Caso</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-3">Caso:</label>
+                                                    <span class="col-xs-7 col-md-2 label label-default" id="textCaso2">Código</span>
+                                                    <span class="col-xs-7 col-md-7 label label-default" id="textDescCaso2">Nombre Caso</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-3">Dirección:</label>
+                                                    <span class="col-xs-7 col-md-9 label label-default" id="textDireccion">Dirección</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-compact">
+                                                    <label class="col-xs-5 col-md-3">Barrio:</label>
+                                                    <span class="col-xs-7 col-md-5 label label-default" id="textBarrio">Barrio</span>
+                                                    <span class="col-xs-7 col-md-4 label label-default" id="textCiudad">Ciudad</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-md-12 form-compact space">
+                                                        <label class="col-xs-12 col-md-3">Descripción hechos</label>
+                                                        <div class="col-xs-12 col-md-9">
+                                                            <div class="row">
+                                                                <textarea rows="15" cols="5" class="form-control"
+                                                                          placeholder="Escriba descripción de los hechos" id="textComentarios"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 form-compact">
+                                                        <label class="col-xs-5 col-md-3">Caso:</label>
+                                                        <span class="col-xs-7 col-md-2 label label-default" id="textCaso1">Código</span>
+                                                        <span class="col-xs-7 col-md-7 label label-default" id="textDescCaso1">Nombre Caso</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 form-compact">
+                                                        <label class="col-xs-5 col-md-3">Caso:</label>
+                                                        <span class="col-xs-7 col-md-2 label label-default" id="textCaso2">Código</span>
+                                                        <span class="col-xs-7 col-md-7 label label-default" id="textDescCaso2">Nombre Caso</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12 form-compact">
+                                                        <label class="col-xs-5 col-md-3">Dirección:</label>
+                                                        <span class="col-xs-7 col-md-9 label label-default" id="textDireccion">Dirección</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 form-compact">
+                                                        <label class="col-xs-5 col-md-3">Barrio:</label>
+                                                        <span class="col-xs-7 col-md-5 label label-default" id="textBarrio">Barrio</span>
+                                                        <span class="col-xs-7 col-md-4 label label-default" id="textCiudad">Ciudad</span>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-lg-12">
+                                    <div class="row">
+                                        <table class="table table-hover table-xxs datatable-basic" id="tablaEventoMedios">
+                                            <thead>
+                                                <tr>
+                                                    <th>Und. asignadas</th>
+                                                    <th>Medios enviados</th>
+                                                    <th>Tipo resp.</th>
+                                                    <th>H/Asig</th>
+                                                    <th>H/Llega</th>
+                                                    <th>H/Term</th>
+                                                    <th>Novedad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="2">
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <legend class="text-semibold">
+                                            <i class="icon-task position-left"></i>
+                                            Seguimiento y calidad de las llamadas
+                                            <a class="control-arrow" data-toggle="collapse" data-target="#demo1">
+                                                <i class="icon-circle-down2"></i>
+                                            </a>
+                                        </legend>
+                                        <div class="collapse in" id="demo1">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-lg-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Sitio:</label>
+                                                                    <span class="col-xs-7 col-md-8 label label-default" id="textEncSitio">Sitio</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">No llamada:</label>
+                                                                    <span class="col-xs-7 col-md-8 label label-default" id="textEncNoLlamada">No llamada</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Teléfono:</label>
+                                                                    <span class="col-xs-7 col-md-8 label label-default" id="textEncTelefono">Teléfono</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
+                                                            <div class="form-compact">
+                                                                <button type="button" class="btn bg-teal btn-xs" onclick="LlenarCamposPedidoEncuesta(globalLista)"
+                                                                        data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Cargar Datos LLamada">
+                                                                    Cargar la llamada
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Fecha caso:</label>
+                                                                    <span class="col-xs-7 col-md-8 label label-default" id="textEncFechaCaso">Fecha caso</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Ciudad:</label>
+                                                                    <span class="col-xs-7 col-md-2 label label-default" id="textEncCodCiudad">Codigo</span>
+                                                                    <span class="col-xs-7 col-md-6 label label-default" id="textEncCiudad">Ciudad</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Caso:</label>
+                                                                    <span class="col-xs-7 col-md-2 label label-default" id="textEncCodCaso">Codigo</span>
+                                                                    <span class="col-xs-7 col-md-6 label label-default" id="textEncCaso">Caso</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Dirección:</label>
+                                                                    <span class="col-xs-7 col-md-8 label label-default" id="textEncDireccion">Dirección</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-lg-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12 form-compact">
+                                                                    <label class="col-xs-5 col-md-4">Llamante:</label>
+                                                                    <span class="col-xs-7 col-md-8 label label-default" id="textEncLlamante">Llamante</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 space">
+                                                            <label class="col-xs-12 col-md-1">Resumen caso</label>
+                                                            <div class="col-xs-12 col-md-11">
+                                                                <div class="row">
+                                                                    <textarea rows="6" cols="5" class="form-control" placeholder="Escriba descripción de los hechos" id="textEncResumen" readonly="readonly" ></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!-- Formulario -->
+                                @using (Html.BeginForm("Create", "Encuestar", FormMethod.Post, new { @class = "form_secad", @id = "CentroEncuesta" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.Hidden("CADSITIO_GRABACION")
+                                    @Html.Hidden("CADNUME_PEDIDO")
+                                    @Html.Hidden("NUME_TELEFONO")
+                                    @Html.Hidden("LUGE_CASO")
+                                    @Html.Hidden("FECHA_CASO")
+                                    @Html.Hidden("CODIGO_CASO")
+                                    @Html.Hidden("RESUMEN_CASO")
+                                    @Html.Hidden("LLAMANTE")
+                                    @Html.Hidden("USUARIO")
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <legend class="text-semibold">
+                                                <i class="icon-clipboard3 position-left"></i>
+                                                Encuesta
+                                                <a class="control-arrow" data-toggle="collapse" data-target="#demo2">
+                                                    <i class="icon-circle-down2"></i>
+                                                </a>
+                                            </legend>
+                                            <div class="collapse in" id="demo2">
+                                                <div class="row space_down">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Acepta encuesta:</label>
+                                                                    <div class="col-lg-9">
+                                                                        @Html.RadioButtonFor(model => model.ACEPTA_ENCUESTA, "SI", htmlAttributes: new { @id = "ACEPTA_ENCUESTA_SI", @class = "styled", @checked = "checked" }) Si
+                                                                        @Html.RadioButtonFor(model => model.ACEPTA_ENCUESTA, "NO", htmlAttributes: new { @id = "ACEPTA_ENCUESTA_NO", @class = "styled" }) No
+                                                                        @Html.ValidationMessageFor(model => model.ACEPTA_ENCUESTA, "", new { @class = "text-danger" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Novedad encuesta:</label>
+                                                                    <div class="col-lg-9">
+                                                                        @Html.DropDownList("NOVEDAD_ENCUESTA", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })
+                                                                        @Html.ValidationMessageFor(model => model.NOVEDAD_ENCUESTA, "", new { @class = "text-danger" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row space_down">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Nombre encuestado:</label>
+                                                                    <div class="col-lg-9">
+                                                                        @Html.EditorFor(model => model.NOMBRE_ENCUESTADO, new { htmlAttributes = new { @class = "form-control", placeholder = "Escriba nombre encuestado" } })
+                                                                        @Html.ValidationMessageFor(model => model.NOMBRE_ENCUESTADO, "", new { @class = "text-danger" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Novedad atención:</label>
+                                                                    <div class="col-lg-9">
+                                                                        @Html.DropDownList("NOVEDAD_ATENCION", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })
+                                                                        @Html.ValidationMessageFor(model => model.NOVEDAD_ATENCION, "", new { @class = "text-danger" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-compact space_down">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-md-1">
+                                                                <p>Calificación</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <p>N/H</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <p>Malo</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <p>Regular</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <p>Bueno</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <p>Excelente</p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p>Observación</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row space_down">
+                                                            <div class="form-compact">
+                                                                <label class="col-md-1">Oportunidad:</label>
+                                                                <div class="col-md-11">
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_OPORTUNIDAD, 0, htmlAttributes: new { @id = "CALIF_OPORTUNIDAD_0", @class = "styled", @checked = "checked" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_OPORTUNIDAD, 1, htmlAttributes: new { @id = "CALIF_OPORTUNIDAD_1", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_OPORTUNIDAD, 2, htmlAttributes: new { @id = "CALIF_OPORTUNIDAD_2", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_OPORTUNIDAD, 3, htmlAttributes: new { @id = "CALIF_OPORTUNIDAD_3", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_OPORTUNIDAD, 4, htmlAttributes: new { @id = "CALIF_OPORTUNIDAD_4", @class = "styled" })
+                                                                    </label>
+                                                                    <div class="col-md-6">
+                                                                        @Html.TextAreaFor(model => model.OBSERV_OPORTUNIDAD, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba comentario" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row space_down">
+                                                            <div class="form-compact">
+                                                                <label class="col-md-1">Amabilidad:</label>
+                                                                <div class="col-md-11">
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_AMABILIDAD, 0, htmlAttributes: new { @id = "CALIF_AMABILIDAD_0", @class = "styled", @checked = "checked" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_AMABILIDAD, 1, htmlAttributes: new { @id = "CALIF_AMABILIDAD_1", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_AMABILIDAD, 2, htmlAttributes: new { @id = "CALIF_AMABILIDAD_2", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_AMABILIDAD, 3, htmlAttributes: new { @id = "CALIF_AMABILIDAD_3", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_AMABILIDAD, 4, htmlAttributes: new { @id = "CALIF_AMABILIDAD_4", @class = "styled" })
+                                                                    </label>
+                                                                    <div class="col-md-6">
+                                                                        @Html.TextAreaFor(model => model.OBSERV_AMABILIDAD, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba comentario" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row space_down">
+                                                            <div class="form-compact">
+                                                                <label class="col-md-1">Atención:</label>
+                                                                <div class="col-md-11">
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_EFECTIVIDAD, 0, htmlAttributes: new { @id = "CALIF_EFECTIVIDAD_0", @class = "styled", @checked = "checked" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_EFECTIVIDAD, 1, htmlAttributes: new { @id = "CALIF_EFECTIVIDAD_1", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_EFECTIVIDAD, 2, htmlAttributes: new { @id = "CALIF_EFECTIVIDAD_2", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_EFECTIVIDAD, 3, htmlAttributes: new { @id = "CALIF_EFECTIVIDAD_3", @class = "styled" })
+                                                                    </label>
+
+                                                                    <label class="col-md-1 radio-inline">
+                                                                        @Html.RadioButtonFor(model => model.CALIF_EFECTIVIDAD, 4, htmlAttributes: new { @id = "CALIF_EFECTIVIDAD_4", @class = "styled" })
+                                                                    </label>
+                                                                    <div class="col-md-6">
+                                                                        @Html.TextAreaFor(model => model.OBSERV_EFECTIVIDAD, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba comentario" })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row space_down">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Observación:</label>
+                                                                    <div class="col-lg-9">
+                                                                        @Html.EditorFor(model => model.OBSERVACION, new { htmlAttributes = new { @class = "form-control", placeholder = "Escriba observación" } })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Email persona:</label>
+                                                                    <div class="col-lg-9">
+                                                                        @Html.EditorFor(model => model.EMAIL_PERSONA, new { htmlAttributes = new { @class = "form-control", placeholder = "Escriba email" } })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Estado encuesta:</label>
+                                                                    <div class="col-lg-6">
+                                                                        <label class="radio-inline">
+                                                                            @Html.RadioButtonFor(model => model.ESTADO_ENCUESTA, "A", htmlAttributes: new { @id = "ESTADO_ENCUESTA_A", @class = "styled", @checked = "checked" }) Abierta
+                                                                        </label>
+                                                                        <label class="radio-inline">
+                                                                            @Html.RadioButtonFor(model => model.ESTADO_ENCUESTA, "C", htmlAttributes: new { @id = "ESTADO_ENCUESTA_C", @class = "styled" }) Cerrada
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                        <div class="form-compact">
+                                                                            <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para guardar" onclick="guardarEncuesta()">
+                                                                                Guardar
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-4">Usuario creación:</label>
+                                                                    <div class="col-lg-8 space_down">
+                                                                        @Html.Editor("USUARIO_CREACION", new { htmlAttributes = new { @class = "form-control", placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-4">Usuario modificación:</label>
+                                                                    <div class="col-lg-8">
+                                                                        @Html.Editor("USUARIO_MODIFICACION", new { htmlAttributes = new { @class = "form-control", placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Fecha :</label>
+                                                                    <div class="col-lg-9 space_down">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                                            @Html.Editor("FECHA_CREACION", new { htmlAttributes = new { @class = "form-control", placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Fecha :</label>
+                                                                    <div class="col-lg-9">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                                            @Html.Editor("FECHA_MODIFICACION", new { htmlAttributes = new { @class = "form-control", placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                }
+                                <!-- /formulario -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /basic tabs -->
+</div>
+<!-- /área de contenido -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/EncuestarJs")
+
+    <script>
+        var globalSitio = @ViewBag.globalSitio;
+
+        var urlTablaEventos = '@Url.Action("VerEventos", "Encuestar")';
+        var urlTurno = '@Url.Action("ConsultarTurno", "Encuestar")';
+        var urlPedidoEvento = '@Url.Action("VerPedidoEvento", "Encuestar")';
+        var urlEncuesta = '@Url.Action("VerEncuesta", "Encuestar")';
+        var urlTablaEventoMedios = '@Url.Action("VerEventoMedios", "Encuestar")';
+
+        var rutaCreacion = '@Url.Action("CreacionEncuesta", "Encuestar")';
+
+        var urlDatosLlamadaEncuesta = '@Url.Action("Consulta", "Recepcion")';
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        //AplicarPluginTabla("tablaEventos");
+        AplicarPluginTabla("tablaEventoMedios");
+    </script>
+}

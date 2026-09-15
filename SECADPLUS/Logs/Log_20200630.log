@@ -1,0 +1,28 @@
+20200630 19:24:45 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETCONSCUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETCONSCUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok - Copy\SECADPLUS\Models\DbPatrulla.cs:línea 35
+20200630 19:25:13 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETCONSCUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: wrong number or types of arguments in call to 'F_GETCONSCUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok - Copy\SECADPLUS\Models\DbPatrulla.cs:línea 35

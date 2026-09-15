@@ -1,0 +1,148 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADLUGARES_GEOGRAFICOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADLUGARES_GEOGRAFICOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_DANE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_DANE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_REGISTRADURIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_REGISTRADURIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DPTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DPTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIGENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIGENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_SIEDCO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_SIEDCO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_SIATH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_SIATH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIVEL_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIVEL_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADLUGARES_GEOGRAFICOS2.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADLUGARES_GEOGRAFICOS2.DESCRIPCION)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Index","LugaresGeograficos")'">
+        <i class="glyphicon glyphicon-backward"></i>Regresar
+    </button>
+</div>
+

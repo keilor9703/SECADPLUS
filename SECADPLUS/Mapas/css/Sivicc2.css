@@ -1,0 +1,607 @@
+﻿html, body, #container { 
+    height: 100%; 
+}
+body > #container { 
+    height: auto; 
+    min-height: 100%; 
+    display: flex;
+    flex-direction: column
+}
+#someid {
+    flex-grow: 1;
+}
+body {
+}
+.etiqueta-dato{
+    width: 100%;
+}
+.banner-header{
+    background-image: url("../img/BannerSIVICC2.jpg");
+    margin-left: 0;
+}
+.texto-menu {
+    color: #fff;
+    font-weight: bold;
+}
+.header-datosempleado{
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 100px;
+    font-size: 16px;
+    color: #333
+}
+.header-datosempleado-alterno {
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 2px;
+    margin-right: 100px;
+    font-size: 14px;
+    color: #333
+}
+.boton-menu {
+    float: right;
+}
+.item-menu-alterno {
+    margon: 0;
+}
+.item-menu-alterno li {
+    list-style-type: none;
+    border-bottom: 1px solid #e7eaec;
+    padding: 10px 10px;
+    background-color: #2f4050;
+    color: #fff;
+}
+    .item-menu-alterno > a {
+        color: #fff;
+    }
+    .item-menu-alterno a:hover {
+        color: #000;
+    }
+    .item-menu-alterno a:visited {
+        color: #fff;
+    }
+.item-menu-alterno li:hover {
+    color: #000;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.narvbar_sivicc {
+    min-height: 86px !important;
+    background-image: url(../img/BannerSIVICC2_alterno.jpg) !important;
+    background-repeat: no-repeat;
+}
+.page-heading-sivicc {
+    padding: 2px !important;
+}
+.menu-lateral {
+    margin-top: 256px;
+}
+.icono-menu{
+    font-size: 30px;
+}
+
+.icono-tabla-paginada{
+    font-size: 24px;
+}
+.icono-obligatorio{
+    font-size: 9px;
+}
+
+.iconovalidacion{
+    width: 12px;
+}
+.input-validation-error {
+    border: 1px solid #f00 !important;
+    background-color: #fee;
+}
+
+.field-validation-valid:before {
+    content: "\F00C"; 
+    font-family: FontAwesome;
+    color: #00ff90;
+}
+.field-validation-error:before {
+    content: "\F12A"; 
+    font-family: FontAwesome;
+    color: #ff0000
+}
+.modal-open .modal {
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+.modal {
+    z-index: 2050 !important;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: scroll;
+    -webkit-overflow-scrolling: auto;
+    outline: 0;
+}
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.modal-backdrop {
+    z-index: 2040 !important;
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+.modal-visible{
+    display: block; 
+    padding-right: 17px;
+}
+.modal-oculto{
+    display: none; 
+}
+iframe {
+  border: 0;
+  margin: 4px;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  overflow: scroll;
+}
+
+.modal-grande {
+    width: 80%;
+    height: 80%;
+}
+.modal-normal {
+    width: 60%;
+    height: 60%;
+}
+.modal-pequeno {
+    width: 40%;
+    height: 40%;
+}
+
+.navbar-default{
+    background-color: #227847
+}
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.nav-tabs > li > a {
+    color: #336699;
+}
+a.unidad-encontrada{
+    color:orange;
+}
+.footer {
+ clear: both;
+ position: relative;
+ z-index: 10;
+ height: 3em;
+ margin-top: -3em;
+}
+.footer-texto{
+    margin-left:70px;
+}
+#page-wrapper { padding-bottom: 3em; }
+
+.divScrollH
+{
+    overflow-x: scroll;
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+
+.contenedor_principal {
+    /*min-height: 650px;*/
+    margin-left: 70px;
+    margin-right: 10px;
+}
+
+.contenedor_principal_alterno {
+    /*min-height: 650px;*/
+    margin-left: 0;
+    margin-right: 0;
+}
+.menu-nivel-0 {
+    margin-top: 0;
+}
+.menu-nivel-1{
+    margin-top: -59px;
+}
+.menu-nivel-2 {
+    margin-top: -118px;
+}
+.menu-nivel-3 {
+    margin-top: -177px;
+}
+.menu-nivel-4 {
+    margin-top: -236px;
+}
+.menu-nivel-5 {
+    margin-top: -295px;
+}
+.menu-nivel-6 {
+    margin-top: -354px;
+}
+.menu-nivel-7 {
+    margin-top: -413px;
+}
+.menu-nivel-8 {
+    margin-top: -472px;
+}
+.menu-nivel-9 {
+    margin-top: -531px;
+}
+.menu-nivel-10 {
+    margin-top: -590px;
+}
+.titulo-menu {
+    color: #FFFFFF;
+    font-size: 16px;
+    background-color: #676a6c;
+    margin: -10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.calendario {
+    width: 100%;
+}
+.calendario th {
+    font-size: 10px !important;
+    text-align: center;
+    background: #F5F5F6;
+    color: #000;
+    border: 1px solid #fff;
+}
+.calendario td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 1px;
+    margin-left: 1px;
+}
+.media-hora {
+    border-bottom: 1px dashed #ddd !important;
+}
+.hora {
+    border-bottom: 1px solid #bbb !important;
+}
+.columna_hora {
+    width: 4%;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: right;
+    background: #f9f9f9;
+    color: #555;
+}
+.columna_dia {
+    width: 13%;
+    font-size: 8px;
+    font-weight: bold;
+    border-left: 0;
+    margin-left: 2px;
+}
+.error_vacio {
+    background: #f00;
+    width: 10px;
+    border: 0 !important;
+}
+.error_doble {
+    background: #ff5e01;
+    width: 10px;
+    float: left;
+}
+
+.turno_sin_turno {
+    border-left: 4px solid #f8f8f8;
+}
+.turno_1 {
+    border-left: 4px solid #e1c798;
+}
+.turno_2 {
+    border-left: 4px solid #b6ef83;
+}
+.turno_3 {
+    border-left: 4px solid #a3a4f1;
+}
+.turno_4 {
+    border-left: 4px solid #e1c798;
+}
+.turno_5 {
+    border-left: 4px solid #f8ac59;
+}
+.turno_6 {
+    border-left: 4px solid #1ab394;
+}
+.turno_7 {
+    border-left: 4px solid #ed5565;
+}
+.turno_8 {
+    border-left: 4px solid #337ab7;
+}
+
+
+.tamir_turno_1{
+    color: #336699;
+}
+.tamir_turno_2 {
+    color: #ed5565;
+}
+.tamir_turno_3 {
+    color: #1ab394;
+}
+.tamir_turno_4 {
+    color: #a3a4f1;
+}
+.tamir_turno_5 {
+    color: #f8ac59;
+}
+.tamir_turno_6 {
+    color: #b6ef83;
+}
+.tamir_turno_7 {
+    color: #e1c798;
+}
+.tamir_turno_8 {
+    color: #f8f8f8;
+}
+.tamir_seccion_1 {
+    border-left: 4px solid #e1c798;
+}
+
+.tamir_seccion_2 {
+    border-left: 4px solid #b6ef83;
+}
+
+.tamir_seccion_3 {
+    border-left: 4px solid #30b1fd;
+}
+
+.tamir_seccion_4 {
+    border-left: 4px solid #e1c798;
+}
+
+.tamir_seccion_5 {
+    border-left: 4px solid #f8ac59;
+}
+
+.tamir_seccion_6 {
+    border-left: 4px solid #1ab394;
+}
+
+.tamir_seccion_7 {
+    border-left: 4px solid #ed5565;
+}
+
+.tamir_seccion_8 {
+    border-left: 4px solid #337ab7;
+}
+
+.tamir_cuadro_actividad {
+    position: absolute;
+    z-index: 1000;
+    width: 11%;
+    height: 120px;
+    background: #d3e6f9;
+    margin-top: -12px;
+    margin-left: 1%;
+}
+
+
+.calendario_lista_errores li{
+    border: 1px solid #eee;
+    text-align: center;
+    background: #aaa;
+    color: #fff;
+    border-radius: 15px;
+    margin: 2px;
+}
+
+.calendario_validacion_exitosa li{
+    border: 1px solid #eee;
+    text-align: center;
+    background: #03a901;
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px;
+
+}
+.caja_seccion_encabezado {
+    position: relative;
+    top: 3px;
+    border-radius: 5px 5px 0 0;
+    font-size: 10px;
+    padding-left: 8px;
+}
+.caja_seccion {
+    font-size: 10px;
+    padding-left: 8px;
+}
+.caja_seccion_pie {
+    position: relative;
+    bottom: 3px;
+    border-radius: 0 0 5px 5px;
+}
+.caja_seccion_color_0 {
+    background: #d0e5fb;
+}
+.caja_seccion_color_1 {
+    background: #feeed0;
+}
+.caja_seccion_color_2 {
+    background: #cffce8;
+}
+.caja_seccion_color_3 {
+    background: #ffe3d3;
+}
+.caja_seccion_color_4 {
+    background: #fff9d7;
+}
+
+.calendario-actividad {
+    margin-top: -5px;
+    margin-left: 1%;
+    padding: 2px;
+    width: 11%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #336699;
+    border-radius: 5px;
+    background: #fff;
+    color: #336699;
+    font-weight: normal;
+    position: absolute;
+}
+.calendario-actividad:hover {
+    overflow: visible;
+    text-overflow: inherit;
+    z-index: 10000;
+}
+.calendario-actividad .badge{
+    font-size:10px !important; 
+}
+.calendario-detalleactividad {
+    margin-left: 0px;
+    background-color: #cdd3d8;
+    border-radius: 4px;
+    color: #000;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+.icono-mediano{
+    font-size: 1.5em;
+}
+
+.md-tr-cuadrante{
+    background: #eeeeee !important;
+}
+.div-agregar-empleado{
+    float: right;
+    margin-bottom: 6px;
+}
+
+.tabla_popover{
+    vertical-align: top;
+    min-width: 200px;
+    border: 1px solid #f0f0f0;
+}
+.tabla_popover td{
+    vertical-align: top;
+    border: 1px solid #f0f0f0;
+    padding: 5px;
+    font-size: 11px;
+}
+.tabla_popover th {
+    vertical-align: top;
+    border: 1px solid #f0f0f0;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    background: #f0f0f0;
+}
+.popover{
+    min-width: 400px !important;
+}
+.inmodal .modal-header {
+    padding: 10px 15px !important;
+    text-align: center;
+}
+.btn-info {
+    background: #227847;
+    border-color: #3fce7c;
+}
+    .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info:active:focus, .btn-info:active:hover, .btn-info.active:hover {
+        background: #3fce7c;
+    }
+.btn-danger {
+    background: #d03848;
+    border-color: #fb3f53;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .btn-danger:active:focus, .btn-danger:active:hover, .btn-danger.active:hover {
+    background: #fb3f53;
+}
+
+.tabs-menu li a {
+    background: #097C43;
+    color: #ffffff;
+}
+.tabs-menu li i {
+    background: #097C43;
+    color: #ffffff;
+}
+.tabs-menu li:hover a:hover {
+    background: #097C43;
+    color: #ffffff;
+}
+
+.tabs-menu li a .active {
+    background: #ffffff;
+    color: #097C43;
+}
+.tabs-menu li.active i{
+    background: #ffffff;
+    color: #097C43;
+}
+
+.tabs-menu li.active a:hover{
+    background: #ffffff;
+    color: #097C43;
+}
+.btn-opcion{
+    min-width:450px;
+}
+.label-info, .badge-info {
+    background-color: #097C43;
+}
+.icono-delito-calendario{
+    color: #f00;
+    font-size: 8px;
+}
+.recuadro-direccion{
+    border: solid 2px #f00;
+}
+.popover {
+    min-width: 400px;
+}
+.popover table{
+    font-size: 11px;
+}
+
+.menu_titulo_reporte {
+    background: #698e70;
+    margin-top: 8px;
+}
+.descripcion-lista{
+    font-size: 9px;
+    font-weight: normal;
+    color: dimgray;
+}

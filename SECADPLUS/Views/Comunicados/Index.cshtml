@@ -1,0 +1,74 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADREFERENCIASSECAD>*@
+
+@{
+    ViewBag.Title = "Información de Comunicados";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Información de Comunicados:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo comunicado"
+                                        onclick="window.location.href ='@Url.Action("Create")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo comunicado
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Consecutivo</th>
+                            <th>Usuario</th>
+                            <th>Sitio Grabación</th>
+                            <th>Número</th>
+                            <th>Fecha</th>
+                            <th>Año</th>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Texto</th>
+                            <th>Firma</th>
+                            <th>Cargo Firma</th>
+                            <th>Transmite</th>
+                            <th>Recibe</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+@section PostScripts{
+    <script>
+        var globalSitio = @ViewBag.globalSitio;
+        var globalFuerza = @ViewBag.globalFuerza;
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        var urlTabla = '@Url.Action("VerComunicados", "Comunicados")';
+    </script>
+
+    @Scripts.Render("~/bundle/ComunicadosJs")
+
+}

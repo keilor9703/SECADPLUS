@@ -1,0 +1,243 @@
+﻿@model SECADEntities.SecadEntities.CADREVISTA
+
+@{
+    ViewBag.Title = "Crear Revista";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Revista:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "Revistas", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("USUA_USUARIO")
+                            @Html.Hidden("CADFUERZ_ID")
+                            @Html.Hidden("CADSITI_SITIOGRABA")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-1">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CONSECUTIVO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.CONSECUTIVO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Sitio Graba:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("SITIO_GRABA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.SITIO_GRABA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Fecha:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.FECHA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click fecha actual" } })
+                                                @Html.ValidationMessageFor(model => model.FECHA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Sitio:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.Hidden("CADSITI_CODIGO")
+                                                    @Html.Editor("DSP_CADSITI_CODIGO", new { htmlAttributes = new { @class = "form-control", @placeholder = "Seleccione sitio", @readonly = "readonly" } })
+                                                    <span class="input-group-btn">
+                                                        <button type="button" onclick="cargarSitios()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.CADSITI_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Patrulla:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.Hidden("CADPATR_FUERZA")
+                                                    @Html.Hidden("CADPATR_UNDE")
+                                                    @Html.Hidden("CADPATR_CODIGO")
+                                                    @Html.Editor("DSP_CADPATR_CODIGO", new { htmlAttributes = new { @class = "form-control", @placeholder = "Seleccione patrulla", @readonly = "readonly" } })
+                                                    <span class="input-group-btn">
+                                                        <button type="button" onclick="cargarPatrullas()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.CADPATR_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Observaciones:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               @* @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba observaciones", @rows = "5" })*@
+
+
+                                                <textarea id="OBSERVACIONES" name="OBSERVACIONES" class="form-control" style="height:120px;resize:none;" maxlength="500" > </textarea>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Listar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+<!-- Modal Sitios -->
+<div id="ModalSitios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Sitios de Revista</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaSitios" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Sitios -->
+<!-- Modal Patrullas -->
+<div id="ModalPatrullas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Patrullas</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaPatrullas" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Patrullas -->
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/RevistasJs")
+
+    <script>
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+
+
+        var globalSitio = @ViewBag.globalSitio;
+        var globalFuerza = @ViewBag.globalFuerza;
+        var globalCanal = @ViewBag.globalCanal;
+        var globalUsuario = '@ViewBag.globalUsuario';
+
+        var globalTurnoS = @ViewBag.globalTurnoS;
+        var globalTurnoA = @ViewBag.globalTurnoA;
+
+        var urlFecha = '@Url.Action("AsignarHoraServidor", "Revistas")';
+        var urlTablaSitios = '@Url.Action("VerSitios", "Revistas")';
+        var urlTablaPatrullas = '@Url.Action("VerPatrullas", "Revistas")';
+    </script>
+}

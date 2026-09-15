@@ -1,0 +1,111 @@
+﻿@model IEnumerable<SECADEntities.SecadLugaresGeograficos.V_SITIOS_IMPORTANTES>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Sitios para: @ViewBag.sitio.DESCRIPCION</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list decad">
+                        <li>
+                            <button id="btndepartamentos" onclick="CargaSitiosImportantes(@ViewBag.sitio.CONSECUTIVO);" class="btn btn-success btn-mixed " data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                Recargar<b><i class="icon-reload-alt position-left"></i></b>
+
+                            </button>
+                        </li>
+                        <li><a data-action="collapse" id="btnCollapseSitios"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <table class="table table-hover table-xxs datatable-basic" id="tblSitiosImportantes">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Consecutivo</th>
+                        <th>Clase de Sitio</th>
+                        <th>Descripción</th>
+                        <th>Ciudad/Mpio</th>
+                        <th>Barrio</th>
+                        <th>Dirección</th>
+                        <th>Teléfonos</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>
+                                <ul class="icons-list">
+                                    <li class="dropdown">
+                                        <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat dropdown-toggle"
+                                                data-toggle="dropdown" aria-expanded="true">
+                                            <i class="icon-menu9"></i>
+                                        </button>
+                                        <ul class="dropdown-menu secad dropdown-menu-left">
+
+                                            <li>
+                                                <button class="btn btn-default" type="button" onclick="location.href='@Url.Action("EditarSitio", "SitiosImportancia",new { id = @item.CONSECUTIVO ,idSitioGrabacion=@item.SITIO_GRABA, intPadre = @item.PADRE_CODIGO })'">
+                                                    <i class="glyphicon glyphicon-edit"></i> Editar Sitio
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-default" type="button" onclick="EliminarElemento('@Url.Action("EliminarSitio", "SitiosImportancia",new { id = @item.CONSECUTIVO ,idSitioGrabacion=@item.SITIO_GRABA })')">
+                                                    <i class="icon-trash"></i> Borrar Sitio
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CONSECUTIVO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CLASESITIODESCRIPCION)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DESCRIPCION)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NOMBRECIUDAD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NOMBREBARRIO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DIRECCION)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TELEFONO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LATITUD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LONGITUD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.COMENTARIO)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    <script src="~/Scripts/custom/Tools.js"></script>
+    <script>
+        urlAction1 = "@(Url.Action("FindByFather", "LugaresGeograficos"))";
+        urlAction2 = "@(Url.Action("FindComunas", "LugaresGeograficos"))";
+        urlAction3 = "@(Url.Action("FindBarrios", "LugaresGeograficos"))";
+    </script>
+}

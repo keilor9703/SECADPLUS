@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Lista de Roles</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("Create", "Rol")'"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo Rol">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo Rol
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>                
+                <table class="table table-hover table-xxs datatable-basic" id="tablaRoles">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Nombre</th>
+                            
+                        </tr>
+                    
+                    </thead>
+                    <tbody>
+                        @foreach (var role in Model)
+                        {
+                            
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list decad_menu">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-xs border-success text-success-600 btn-flat dropdown-toggle"
+                                                    data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu secad two_btn dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-default " type="button"
+                                                            data-toggle="modal" data-target="#modal_form_horizontal" data-popup="tooltip" onclick="location.href='@Url.Action( "Edit", new { roleName = @role.Name })'"
+                                                            data-placement="bottom" data-original-title="Clic para editar">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default " type="button" data-popup="tooltip" onclick="EliminarRegistroGeneral('@Url.Action( "Eliminar", new { roleName = @role.Name })')"
+                                                            data-placement="bottom" data-original-title="Clic para eliminar">
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </td>
+                                <td>@role.Name </td>                                
+                            </tr>
+                        }
+                    </tbody>
+                    </table>
+
+</div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/ModalsAlertJs");
+
+    <script>
+        AplicarPluginTabla("tablaRoles");
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+}

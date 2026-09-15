@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SECADEntities.SecadEntities.CADNETPERMISO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PERMISO_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERMISO_DESCRIPCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERMISO_ESTADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERMISO_FECHA_CREACION)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERMISO_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERMISO_DESCRIPCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERMISO_ESTADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERMISO_FECHA_CREACION)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PERMISO_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PERMISO_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PERMISO_ID })
+        </td>
+    </tr>
+}
+
+</table>

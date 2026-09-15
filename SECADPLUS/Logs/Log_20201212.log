@@ -1,0 +1,112 @@
+20201212 10:22:09 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetModalidad:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETMODALIDAD' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETMODALIDAD' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetModalidad() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 589
+20201212 10:22:09 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetModalidad:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETMODALIDAD' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETMODALIDAD' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetModalidad() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 589
+20201212 10:22:09 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetConductas:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETCONDUCTAS' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETCONDUCTAS' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetConductas() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 637
+20201212 10:22:09 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetConductas:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETCONDUCTAS' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETCONDUCTAS' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetConductas() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 637
+20201212 10:22:09 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoArma:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOARMA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOARMA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoArma() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 685
+20201212 10:22:09 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoArma:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOARMA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOARMA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoArma() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 685
+20201212 10:22:10 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoMoviliza:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOMOVILIZA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOMOVILIZA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoMoviliza() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 733
+20201212 10:22:10 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoMoviliza:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOMOVILIZA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_CADINTEGMINUTASECADSIVICC.F_GETTIPOMOVILIZA' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoMoviliza() en C:\SECADPLUS MEGA\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 733

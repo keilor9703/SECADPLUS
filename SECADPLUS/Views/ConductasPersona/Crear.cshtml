@@ -1,0 +1,287 @@
+﻿@model SECADEntities.SecadEntities.CADCONDTURNOPER
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="resultadoAjax"></div>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Personas</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list ">
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>
+            @using (Html.BeginForm("Crear", "ConductasPersona", FormMethod.Post, new { @class = "form-compact" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.SITIO_GRABA, new { @class = "form-control", Value = @ViewBag.SitioId } )
+                @Html.HiddenFor(model => model.CONSECUTIVO,  new { @class = "form-control" , Value = 0 } )
+                @Html.HiddenFor(model => model.CADCONDTURNSITGR, new { @class = "form-control", Value=ViewBag.SitioId } )
+                @Html.HiddenFor(model => model.CADCONDTURNTURNO,  new { @class = "form-control", Value = ViewBag.Turno } )
+                @Html.HiddenFor(model => model.CADCONDTURNCOND, new { @class = "form-control", Value = ViewBag.Conducta } )
+                @Html.HiddenFor(model => model.MAQUINA_TRANSACCION,  new { @class = "form-control" } )
+                @Html.HiddenFor(model => model.FECHA_TRANSACCION, new { @class = "form-control" } )
+                @Html.HiddenFor(model => model.USUA_TRANSACCION,  new { @class = "form-control" } )
+                <input type="hidden" value="@ViewBag.Entidad" name="hdEntidad" id="hdEntidad"/>
+                <div class="panel-body">
+                    @Html.AntiForgeryToken()
+                    <fieldset class="content-group">
+                       <div class="row">
+                           <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                               @Html.LabelFor(model => model.IDENTIFICACION, htmlAttributes: new { @class = "control-label col-md-12" })
+                               <div class="col-md-12">
+                                   @Html.EditorFor(model => model.IDENTIFICACION, new { htmlAttributes = new { @class = "form-control" } })
+                                   @Html.ValidationMessageFor(model => model.IDENTIFICACION, "", new { @class = "text-danger" })
+                               </div>
+                           </div>
+                           <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                               @Html.LabelFor(model => model.TIPO_ID, htmlAttributes: new { @class = "control-label col-md-12" })
+                               <div class="col-md-12">
+                                   @Html.DropDownList("TIPO_ID", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select" })
+                                   @Html.ValidationMessageFor(model => model.TIPO_ID, "", new { @class = "text-danger" })
+                               </div>
+                           </div>
+                           <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                               @Html.LabelFor(model => model.APELLIDOS, htmlAttributes: new { @class = "control-label col-md-12" })
+                               <div class="col-md-12">
+                                   @Html.EditorFor(model => model.APELLIDOS, new { htmlAttributes = new { @class = "form-control" } })
+                                   @Html.ValidationMessageFor(model => model.APELLIDOS, "", new { @class = "text-danger" })
+                               </div>
+                           </div>
+                           <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                               @Html.LabelFor(model => model.NOMBRES, htmlAttributes: new { @class = "control-label col-md-12" })
+                               <div class="col-md-12">
+                                   @Html.EditorFor(model => model.NOMBRES, new { htmlAttributes = new { @class = "form-control" } })
+                                   @Html.ValidationMessageFor(model => model.NOMBRES, "", new { @class = "text-danger" })
+                               </div>
+                           </div>
+                           <div class="col-xs-2 col-md-2 text-left form-group ">
+                               @Html.LabelFor(model => model.GENERO, htmlAttributes: new { @class = "control-label col-md-12" })
+                               <div class="col-md-12">
+                                   @Html.DropDownList("GENERO", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select" })
+                                   @Html.ValidationMessageFor(model => model.GENERO, "", new { @class = "text-danger" })
+                               </div>
+                           </div>
+                       </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 text-left  ">
+                                @Html.LabelFor(model => model.INFRACCION, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="row col-md-12">
+                                    <div class="col-md-3">@Html.EditorFor(model => model.INFRACCION, new { htmlAttributes = new { @class = "form-control ", @readonly = true, id = "txtInfraccion" } })</div>
+                                    <div class="col-md-9"><input type="text" readonly id="txtInfDesc" class="form-control" /></div>
+                                    @Html.ValidationMessageFor(model => model.INFRACCION, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.LabelFor(model => model.CONDCODIGO, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="row col-md-12">
+                                    <div class="col-md-3">@Html.EditorFor(model => model.CONDCODIGO, new { htmlAttributes = new { @class = "form-control", @readonly = true, id = "txtConductas" } })</div>
+                                    <div class="col-md-9"><input type="text" readonly id="txtCondDesc" class="form-control" /></div>
+                                    @Html.ValidationMessageFor(model => model.CONDCODIGO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group ">
+                                @Html.LabelFor(model => model.CADEVENNUMEEVENTO, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.HiddenFor(model => model.CADEVENSITIOGRABA, new { htmlAttributes = new { @class = "form-control", id = "hdSitio" } })
+                                    @Html.EditorFor(model => model.CADEVENNUMEEVENTO, new { htmlAttributes = new { @class = "form-control", @readonly = true, id = "txtEvento" } })
+                                    @Html.ValidationMessageFor(model => model.CADEVENNUMEEVENTO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.FECHA_CONDUCTA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        @Html.EditorFor(model => model.FECHA_CONDUCTA, new { htmlAttributes = new { @class = "form-control FechaHora", id = "fecha_conducta" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.FECHA_CONDUCTA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2 col-md-2 text-left form-group ">
+                                @Html.LabelFor(model => model.MODOCONDUCTA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("MODOCONDUCTA", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select" })
+                                    @Html.ValidationMessageFor(model => model.MODOCONDUCTA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group ">
+                                @Html.LabelFor(model => model.PARTCONDUCTA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("PARTCONDUCTA", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select" })
+                                    @Html.ValidationMessageFor(model => model.PARTCONDUCTA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.RELACONDUCTA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("RELACONDUCTA", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select" })
+                                    @Html.ValidationMessageFor(model => model.RELACONDUCTA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>                            
+                            <div class="col-xs-2 col-md-2 text-left form-group ">
+                                @Html.LabelFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.OBSERVACIONES, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6text-left">
+                            <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                    data-original-title="Clic para finalizar" onclick="location.href='@Url.Action("Inicio", "ConductasPersona", new {intSitio=ViewBag.SitioId, lgTurno=ViewBag.Turno, lgConducta=ViewBag.Conducta,intEntidad = ViewBag.Entidad })'">
+                                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Terminar
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /formulario -->
+    </div>
+</div>
+<!-- ModalInfracciones modal Infracciones-->
+<div id="ModalInfracciones" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Infracciones</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <table id="tblInfracciones" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Código</th>
+                                    <th>Descripción</th>                                    
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalInfracciones modal -->
+<!-- ModalConductas modal Conductas-->
+<div id="ModalConductas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Conductas</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <table id="tblConductas" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Código</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalConductas modal -->
+<!-- ModalEventos modal Eventos-->
+<div id="ModalEvento" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Evento</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <table id="tblEvento" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Número Evento</th>
+                                    <th>Número Caso</th>
+                                    <th>Hora Caso</th>
+                                    <th>Dire Caso</th>
+                                    <th>Ciudad</th>
+                                    <th>Código Pedido</th>
+                                    <th>Sitio Evento</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalEventos modal -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/ServiciosPrestadosJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    <script>
+        var urlConsultarInfracciones = "@Url.Action("ObtenerInfracciones", "ConductasPersona")";
+        var urlConsultarConductas = "@Url.Action("ObtenerConductas", "ConductasPersona")";
+        var urlConsultarEvento = "@Url.Action("ObtenerEvento", "ConductasPersona")";
+        var glFechaTurno = "@ViewBag.FechaTurno";
+        var glEvento = 0, glEventoSitio = 0, glEventoMedio = 0, glEventFecha = "";
+        AplicarDateTimePlugin();
+    </script>
+}

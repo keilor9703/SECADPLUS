@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SecadEntities.CADEVENTOMEDIOS_RUTAS
+
+@{
+    ViewBag.Title = "Eliminar Ruta Adicional";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CONSECUTIVO_RUTA)
+    <br />
+    Origen: @Html.DisplayFor(model => model.ORIGEN)
+
+    @using (Html.BeginForm("Delete", "EventoMediosRuta", new { id = Model.CONSECUTIVO_RUTA, idFuerza = @ViewBag.idFuerza, idSitio = @ViewBag.idSitio, numeLlamada = @ViewBag.numeLlamada, idConsecutivo = @ViewBag.idConsecutivo, numeEvento = @ViewBag.numeEvento }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

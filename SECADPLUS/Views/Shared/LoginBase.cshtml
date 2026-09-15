@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+
+{
+    Response.Redirect(Url.Action("Index", "Home"));
+}
+else
+{
+    <!DOCTYPE html>
+    <html lang="es-co">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex,nofollow">
+        <title>SECAD PLUS</title>
+        <link rel="icon" href="@Url.Content("~/Images/LogoSECAD.png")" type="image/x-icon">
+
+        <!-- Global stylesheets -->
+        @Styles.Render("~/bundle/LoginCss")
+        <!-- /global stylesheets -->
+        <!-- Core JS files -->
+
+    </head>
+
+    <body class="login-container">
+        <!-- Imagen de fondo -->
+        <img class="login-cover" src="@Url.Content("~/Images/ui/FondoLogin.png")" />
+
+
+        <!-- Contenedor Página -->
+        <div class="page-container">
+
+            <!-- Contenido Página -->
+            <div class="page-content">
+                <!-- /Contenido principal -->
+                <div class="content-wrapper">
+                    <!-- Área de contenido -->
+                    <div class="content pb-20">
+                        @RenderBody()
+                    </div>
+                    <!-- /área de contenido-->
+                </div>
+                <!-- /contenido principal -->
+            </div>
+            <!-- /contenido Página -->
+        </div>
+        <!-- /contenedor Página -->
+        @Scripts.Render("~/bundle/LoginJs")
+        <!-- /theme JS files -->
+        @RenderSection("scripts", required: false)
+    </body>
+
+</html>
+}

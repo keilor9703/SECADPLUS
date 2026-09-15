@@ -1,0 +1,125 @@
+﻿@model SECADEntities.SECAD.CADPATRULLA
+@section scripts{
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DatePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="resultadoAjax"></div>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Creación Indicativo</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list ">
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>
+    @using (Html.BeginForm("Create", "Patrullas", FormMethod.Post, new { @class = "form-compact" })){
+            <div class="panel-body">
+                    <fieldset class="content-group">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.CADUNID_FUERZA, new { @class = "form-control", Value = ViewBag.UNIDAD_FUERZA })
+                        @Html.HiddenFor(model => model.CADUNID_CODIGO, new { @class = "form-control", Value = ViewBag.UNIDAD_CODIGO })
+                        @Html.HiddenFor(model => model.USUA_TRANSACCION, new { @class = "form-control", Value = ViewBag.USUARIO_NOMBRE })
+                        @Html.HiddenFor(model => model.SITIO_GRABA, new { @class = "form-control", Value = ViewBag.USUARIO_SITIO } )
+                        @Html.HiddenFor(model => model.VIGENTE, new { @class = "form-control", id="hdVigente" } )
+                        <div class="row">
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                @Html.LabelFor(model => model.CODIGO,"Código", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.TextBoxFor(model => model.CODIGO,  new { @class = "form-control", @readonly = true })
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.DESC_PATRULLA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.DESC_PATRULLA, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DESC_PATRULLA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group ">
+                                @Html.LabelFor(model => model.ID_RADIO, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.ID_RADIO, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ID_RADIO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.CLASE_TURNO, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("CLASE_TURNO", null, string.Empty, new { @class = "chosen-select" })
+                                    @Html.ValidationMessageFor(model => model.CLASE_TURNO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                           <div class="row">
+                               <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                   <div class="form-group col-lg-12">
+                                       @Html.LabelFor(model => model.FECHA_DESDE, htmlAttributes: new { @class = "control-label" })
+                                       <div class="input-group">
+                                           <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                           @Html.EditorFor(model => model.FECHA_DESDE, new { htmlAttributes = new { @class = "form-control fecha", id = "fecha_desde" } })
+                                           @Html.ValidationMessageFor(model => model.FECHA_DESDE, "", new { @class = "text-danger" })
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                   <div class="form-group col-lg-12">
+                                       @Html.LabelFor(model => model.FECHA_HASTA, htmlAttributes: new { @class = "control-label" })
+                                       <div class="input-group">
+                                           <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                           @Html.EditorFor(model => model.FECHA_HASTA, new { htmlAttributes = new { @class = "form-control ", id = "fecha_hasta" } })
+                                           @Html.ValidationMessageFor(model => model.FECHA_HASTA, "", new { @class = "text-danger" })
+                                       </div>
+                                       </div>
+                                   </div>
+                               <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                   @Html.LabelFor(model => model.VIGENTE, htmlAttributes: new { @class = "control-label col-md-2" })
+                                   <div class="col-md-12">
+                                       <input type="checkbox" id="cbxVigente" name="cbxVigente" checked="checked" class="switch checkbox checkbox-switch" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                                       @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                                   </div>
+                               </div>
+                           </div>
+                        <div class="row">
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                @Html.LabelFor(model => model.OBSERVACION, htmlAttributes: new { @class = "control-label col-md-6" })
+                                <div class="col-md-12">
+                                    @Html.TextAreaFor(model => model.OBSERVACION, new { @class = "form-control" } )
+                                    @Html.ValidationMessageFor(model => model.OBSERVACION, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                </fieldset>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6text-left">
+                        @Html.ActionLink("Regresar", "Index", new { intUnidadFuerza = ViewBag.UNIDAD_FUERZA, intUnidadCodigo = ViewBag.UNIDAD_CODIGO }, new { @class = "btn bg-teal", data_popup = "tooltip", title = "", data_placement = "bottom", data_original_title = "Clic para finalizar" })
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                        <button class="btn bg-teal" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+                }
+        </div>
+        <!-- /formulario -->
+    </div>
+</div>
+@section PostScripts{
+@Scripts.Render("~/bundle/MediosControllerJs")
+<script>
+    IniciarElementos();
+    </script>
+}

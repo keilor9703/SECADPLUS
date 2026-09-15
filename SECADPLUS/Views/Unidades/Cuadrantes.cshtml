@@ -1,0 +1,67 @@
+﻿@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Cuadrantes</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h5 class="panel-title">Unidad: @ViewBag.Unidad</h5>
+                <h5 class="panel-title">Código Unidad: @ViewBag.UnidadCodigo</h5>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tblCuadrantes">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Sitio</th>
+                            <th>Consecutivo</th>
+                            <th>Unidad Fuerza</th>
+                            <th>Código Unidad</th>
+                            <th>Nro Cuadrante</th>
+                            <th>Capa Cuadrante</th>
+                            <th>Ámbito</th>
+                            <th>Vigente</th>
+                            <th>Fecha Desde</th>
+                            <th>Fecha Hasta</th>
+                            <th>Descripción</th>
+                            <th>Usuario Transacción</th>
+                            <th>Nivel Peligrosidad</th>
+                            <th>Centroide X</th>
+                            <th>Centroide Y</th>
+                            <th>CAD1CUADSITGR_DIJIN</th>
+                            <th>CAD1CUADCONS_DIJIN</th>
+                            <th>CAD1CUADSITGR_DIPOL</th>
+                            <th>CAD1CUADCONS_DIPOL</th>
+                            <th>Sigla Dpto</th>
+                            <th>Motivo Cierre</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+            <!-- /panel con Tablas -->
+        </div>
+    </div>
+</div>
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/CuadrantesJs")
+    <script>
+        var UrlConsultarCuadrantes = "@Url.Action("ConsultarCuadrantes", "Unidades", new { strCodigo = ViewBag.UnidadCodigo})";
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+
+}

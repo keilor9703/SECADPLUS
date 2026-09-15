@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PONAL.SECAD.Huawei.Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CADCONEXION">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="CONSECUTIVO" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CONSECUTIVO" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="CADUSUA_USUARIO" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="SESION_ID" Type="number" Precision="12" Scale="0" />
+          <Property Name="MAQUINA" Type="varchar2" MaxLength="80" />
+          <Property Name="VIGENTE" Type="varchar2" MaxLength="1" />
+          <Property Name="FECHA_HASTA" Type="date" />
+        </EntityType>
+        <EntityType Name="CADEQUIPOS">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="IDENTIFICACION" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="IDENTIFICACION" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="ACD" Type="varchar2" MaxLength="80" />
+          <Property Name="TNSNAMES60" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="TNSNAMES9I" Type="varchar2" MaxLength="80" />
+          <Property Name="UBICACION" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="SERIE" Type="varchar2" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'USR_CAD.CADHUAWEI_DCONEXION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="CADHUAWEI_DCONEXION">
+          <Key>
+            <PropertyRef Name="ID_REG" />
+            <PropertyRef Name="TIPO" />
+          </Key>
+          <Property Name="ID_REG" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="EXT_ACD" Type="varchar2" MaxLength="4" />
+          <Property Name="USUARIO" Type="varchar2" MaxLength="4" />
+          <Property Name="PASSWORD_" Type="varchar2" MaxLength="20" />
+          <Property Name="IPSERVER" Type="varchar2" MaxLength="200" />
+          <Property Name="AGENTE" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <Association Name="CADCONEXI_EQUIPO_FK">
+          <End Role="CADEQUIPOS" Type="Self.CADEQUIPOS" Multiplicity="0..1" />
+          <End Role="CADCONEXION" Type="Self.CADCONEXION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADEQUIPOS">
+              <PropertyRef Name="SITIO_GRABA" />
+              <PropertyRef Name="IDENTIFICACION" />
+            </Principal>
+            <Dependent Role="CADCONEXION">
+              <PropertyRef Name="SITIO_GRABA" />
+              <PropertyRef Name="MAQUINA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PONALSECADHuaweiModelStoreContainer">
+          <EntitySet Name="CADCONEXION" EntityType="Self.CADCONEXION" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADEQUIPOS" EntityType="Self.CADEQUIPOS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADHUAWEI_DCONEXION" EntityType="Self.CADHUAWEI_DCONEXION" store:Type="Tables" store:Schema="USR_CAD">
+            <DefiningQuery>SELECT 
+"CADHUAWEI_DCONEXION"."ID_REG" AS "ID_REG", 
+"CADHUAWEI_DCONEXION"."TIPO" AS "TIPO", 
+"CADHUAWEI_DCONEXION"."EXT_ACD" AS "EXT_ACD", 
+"CADHUAWEI_DCONEXION"."USUARIO" AS "USUARIO", 
+"CADHUAWEI_DCONEXION"."PASSWORD_" AS "PASSWORD_", 
+"CADHUAWEI_DCONEXION"."IPSERVER" AS "IPSERVER", 
+"CADHUAWEI_DCONEXION"."AGENTE" AS "AGENTE"
+FROM "USR_CAD"."CADHUAWEI_DCONEXION" "CADHUAWEI_DCONEXION"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="CADCONEXI_EQUIPO_FK" Association="Self.CADCONEXI_EQUIPO_FK">
+            <End Role="CADEQUIPOS" EntitySet="CADEQUIPOS" />
+            <End Role="CADCONEXION" EntitySet="CADCONEXION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PONAL.SECAD.Huawei.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CADCONEXION">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="CONSECUTIVO" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="Int32" Nullable="false" />
+          <Property Name="CONSECUTIVO" Type="Int64" Nullable="false" />
+          <Property Name="CADUSUA_USUARIO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="SESION_ID" Type="Int64" />
+          <Property Name="MAQUINA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_HASTA" Type="DateTime" />
+          <NavigationProperty Name="CADEQUIPOS" Relationship="Self.CADCONEXI_EQUIPO_FK" FromRole="CADCONEXION" ToRole="CADEQUIPOS" />
+        </EntityType>
+        <EntityType Name="CADEQUIPOS">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="IDENTIFICACION" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="Int32" Nullable="false" />
+          <Property Name="IDENTIFICACION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACD" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="TNSNAMES60" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TNSNAMES9I" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="UBICACION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SERIE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CADCONEXION" Relationship="Self.CADCONEXI_EQUIPO_FK" FromRole="CADEQUIPOS" ToRole="CADCONEXION" />
+        </EntityType>
+        <Association Name="CADCONEXI_EQUIPO_FK">
+          <End Role="CADEQUIPOS" Type="Self.CADEQUIPOS" Multiplicity="0..1" />
+          <End Role="CADCONEXION" Type="Self.CADCONEXION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADEQUIPOS">
+              <PropertyRef Name="SITIO_GRABA" />
+              <PropertyRef Name="IDENTIFICACION" />
+            </Principal>
+            <Dependent Role="CADCONEXION">
+              <PropertyRef Name="SITIO_GRABA" />
+              <PropertyRef Name="MAQUINA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SECADHuaweiModel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CADCONEXION" EntityType="Self.CADCONEXION" />
+          <EntitySet Name="CADEQUIPOS" EntityType="Self.CADEQUIPOS" />
+          <AssociationSet Name="CADCONEXI_EQUIPO_FK" Association="Self.CADCONEXI_EQUIPO_FK">
+            <End Role="CADEQUIPOS" EntitySet="CADEQUIPOS" />
+            <End Role="CADCONEXION" EntitySet="CADCONEXION" />
+          </AssociationSet>
+          <EntitySet Name="CADHUAWEI_DCONEXION" EntityType="PONAL.SECAD.Huawei.Model.CADHUAWEI_DCONEXION" />
+        </EntityContainer>
+        <EntityType Name="CADHUAWEI_DCONEXION">
+          <Key>
+            <PropertyRef Name="ID_REG" />
+            <PropertyRef Name="TIPO" />
+          </Key>
+          <Property Name="ID_REG" Type="Int32" Nullable="false" />
+          <Property Name="TIPO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EXT_ACD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IPSERVER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AGENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PONALSECADHuaweiModelStoreContainer" CdmEntityContainer="SECADHuaweiModel">
+          <EntitySetMapping Name="CADCONEXION">
+            <EntityTypeMapping TypeName="PONAL.SECAD.Huawei.Model.CADCONEXION">
+              <MappingFragment StoreEntitySet="CADCONEXION">
+                <ScalarProperty Name="SITIO_GRABA" ColumnName="SITIO_GRABA" />
+                <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+                <ScalarProperty Name="CADUSUA_USUARIO" ColumnName="CADUSUA_USUARIO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="SESION_ID" ColumnName="SESION_ID" />
+                <ScalarProperty Name="MAQUINA" ColumnName="MAQUINA" />
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="FECHA_HASTA" ColumnName="FECHA_HASTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADEQUIPOS">
+            <EntityTypeMapping TypeName="PONAL.SECAD.Huawei.Model.CADEQUIPOS">
+              <MappingFragment StoreEntitySet="CADEQUIPOS">
+                <ScalarProperty Name="SITIO_GRABA" ColumnName="SITIO_GRABA" />
+                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ACD" ColumnName="ACD" />
+                <ScalarProperty Name="TNSNAMES60" ColumnName="TNSNAMES60" />
+                <ScalarProperty Name="TNSNAMES9I" ColumnName="TNSNAMES9I" />
+                <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+                <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADHUAWEI_DCONEXION">
+            <EntityTypeMapping TypeName="PONAL.SECAD.Huawei.Model.CADHUAWEI_DCONEXION">
+              <MappingFragment StoreEntitySet="CADHUAWEI_DCONEXION">
+                <ScalarProperty Name="AGENTE" ColumnName="AGENTE" />
+                <ScalarProperty Name="IPSERVER" ColumnName="IPSERVER" />
+                <ScalarProperty Name="PASSWORD_" ColumnName="PASSWORD_" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="EXT_ACD" ColumnName="EXT_ACD" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ID_REG" ColumnName="ID_REG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,56 @@
+20241108 11:21:30 [M_ERROR] - Error Ejecutando F_GetUnidades:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADES' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADES' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en E:\SECAD_SEPT\SECAD V6\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20241108 11:21:32 [M_ERROR] - Error Ejecutando F_GetMinutaNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADESNEW' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADESNEW' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades2(Int32 V_CadturnSitiograba, Int32 V_CadturnTurno) en E:\SECAD_SEPT\SECAD V6\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 210
+20241108 11:26:47 [M_ERROR] - Error Ejecutando F_GetUnidades:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADES' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADES' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en E:\SECAD_SEPT\SECAD V6\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20241108 11:26:47 [M_ERROR] - Error Ejecutando F_GetMinutaNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADESNEW' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00201: identifier 'PK_SECAD_MINUTAS.F_GETUNIDADESNEW' must be declared
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades2(Int32 V_CadturnSitiograba, Int32 V_CadturnTurno) en E:\SECAD_SEPT\SECAD V6\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 210

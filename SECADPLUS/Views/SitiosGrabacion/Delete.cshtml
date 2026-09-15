@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADSITIOS_GRABACION
+
+@{
+    ViewBag.Title = "Eliminar Sitio de Grabación";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.CONSECUTIVO)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("Delete", "SitiosGrabacion", new { id = Model.CONSECUTIVO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

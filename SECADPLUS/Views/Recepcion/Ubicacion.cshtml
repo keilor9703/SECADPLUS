@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Ubicación Criminalidad";
+    Layout = "~/Views/Shared/_Mapa.cshtml";
+}
+
+@*<script src="~/Areas/VisorGeografico/Scripts/VisorMapa.js"></script>*@
+<script src="~/Scripts/JsMapa.js"></script>
+
+<style>
+    .spinner.hidden {
+        display: none;
+    }
+</style>
+
+<body class="claro">
+    <input type="hidden" name="_idCriminalidad" id="_idCriminalidad" value="@ViewBag.CRIMINALIDAD_ID" />
+    <input type="hidden" name="_idFuente" id="_idFuente" value="@ViewBag.FUENTE" />
+    <div id="search"></div>
+    <div id="LocateButton"></div>
+    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="width:100%;height:100%;margin:0;">
+        <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+            <!-- Coordinates on map-->
+            <span id="spnCoordinates"></span>
+            <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+                <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Cambiar mapa base', open:false" style="padding-bottom: 1px;">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+                        <div id="basemapGallery"></div>
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Capas', open:false" style="padding-bottom: 1px;">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+                        <div id="layerList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

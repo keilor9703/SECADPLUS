@@ -1,0 +1,13 @@
+﻿@model  SECADEntities.SecadLugaresGeograficos.CADPOLICIA
+
+@{
+    ViewBag.Title = "Borra Persona";
+}
+
+
+    <h4>¿Está seguro que desea borrar este elemento?</h4>
+    @Html.DisplayFor(model => model.NOMB_EMPLEADO)
+    @using (Html.BeginForm("Delete", "Personas", new { id = Model.CEDU_EMPLEADO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+    }

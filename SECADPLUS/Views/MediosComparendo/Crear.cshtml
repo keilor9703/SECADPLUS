@@ -1,0 +1,188 @@
+﻿@model SECADEntities.SecadEntities.CADCONDTURNOCOMPMEDISP
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="resultadoAjax"></div>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+           
+            @using (Html.BeginForm("Crear", "MediosComparendo", FormMethod.Post, new { @class = "form-compact" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="panel-body">
+                    @Html.AntiForgeryToken()
+                    <fieldset class="content-group">
+                        @Html.HiddenFor(model => model.CADCOMPSITGR, new { @class = "form-control", Value = ViewBag.SitioId })
+                        @Html.HiddenFor(model => model.CADCOMPCONSEC, new { @class = "form-control", Value = ViewBag.PersonaConsecutivo })
+                        @Html.HiddenFor(model => model.CADMEDISPSITGR, new { @class = "form-control", Value = ViewBag.SitioId })
+                        @Html.HiddenFor(model => model.USUA_GRABA, new { @class = "form-control", Value = ViewBag.Usuario })
+                        @Html.HiddenFor(model => model.FECHA_GRABACION, new { @class = "form-control", Value = ViewBag.FechaRegistro })
+                        @Html.HiddenFor(model => model.MAQUINA_GRABA, new { @class = "form-control", Value = ViewBag.Maquina })
+                        @Html.HiddenFor(model => model.TIPO_ACCION, new { @class = "form-control" })
+                        <input type="hidden" value="@ViewBag.EntidadId" name="hdEntidad" id="hdEntidad" />
+                        <input type="hidden" value="@ViewBag.EventoMedio" name="hdEventoMedio" id="hdEventoMedio" />
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.CADMEDISPCONSEC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.CADMEDISPCONSEC, new { htmlAttributes = new { @class = "form-control", id = "txtConsec", @readonly = true } })
+                                    @Html.ValidationMessageFor(model => model.CADMEDISPCONSEC, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12 text-left form-group ">
+                                
+                                <div class="col-md-12">
+                                    <label class="form-label">Patrulla</label>
+                                    <input type="text" id="txtPatrulla" class="form-control" readonly />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12 text-left form-group ">
+                                
+                                <div class="col-md-12">
+                                    <label class="form-label">Descripción</label>
+                                    <input type="text" id="txtDescripcion" class="form-control" readonly />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.CEDU_EMPLEADO, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.CEDU_EMPLEADO, new { htmlAttributes = new { @class = "form-control", id = "txtCedula", @readonly = true } })
+
+                                </div>
+                                @Html.ValidationMessageFor(model => model.CEDU_EMPLEADO, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-xs-12 col-md-12 text-left form-group ">
+                                
+                                <div class="col-md-12">
+                                    <label class="form-label">Empleado</label>
+                                    <input type="text" id="txtEmpleado" class="form-control" readonly />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.FECHA_CONDUCTA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        @Html.EditorFor(model => model.FECHA_CONDUCTA, new { htmlAttributes = new { @class = "form-control ", id = "FechaConducta" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.FECHA_CONDUCTA, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </fieldset>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /formulario -->
+    </div>
+</div>
+<!-- ModalMedios modal Medios-->
+<div id="ModalMedios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Medios</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <table id="tblMedios" class="table table-hover table-xxs datatable-basic modal_table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Consecutivo</th>
+                                    <th>Sitio</th>
+                                    <th>Patrulla</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalMedios modal -->
+<!-- ModalPersonas modal Personas-->
+<div id="ModalPersonas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Personas</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalPersonas"></div>
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <table id="tblEmpleados" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Código</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalPersonas modal -->
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/ServiciosPrestadosJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    <script>
+        var urlConsultarMedios = "@Url.Action("ObtenerMediosPersona", "MediosPersona")";
+        var urlConsultarEmpleados = "@Url.Action("ObtenerEmpleados", "MediosPersona")";
+        var urlConsultarEvento = "@Url.Action("ObtenerEvento", "ConductasPersona")";
+        var glFechaTurno = "@ViewBag.FechaTurno";
+        var glTurno = @ViewBag.Turno, glSitio = @ViewBag.SitioId, glEventoMedio = @ViewBag.EventoMedio;
+        var glEvento = 0, glEventoSitio = @ViewBag.EventoMedio,  glEventFecha = "";
+        var glFechaConducta = "@ViewBag.FechaConducta";
+        AplicarFechaHoraPlugin("#FechaConducta");
+        //AplicarDateTimePlugin();
+    </script>
+}

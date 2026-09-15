@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f110a6a286c34d5783850a9a78fb3b78" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONSIGNA" Width="1.5" PointX="3" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADTURNO" Width="1.5" PointX="0.75" PointY="45.375" IsExpanded="true" />
+        <AssociationConnector Association="DesRepMinModel.CADCONSIG_TURNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DesRepMinModel.CADCONSIG_TURNOACC_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADARMDISPONIBLE" Width="1.5" PointX="8.5" PointY="69.625" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOMEDIO" Width="1.5" PointX="8.5" PointY="51.625" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADMEDIOSDISPONIBLE" Width="2.5" PointX="5.25" PointY="58.375" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPERDISPONIBLE" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADRADIODISPONIBLE" Width="1.5" PointX="8.5" PointY="72.625" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADVEHIDISPONIBLE" Width="1.5" PointX="8.5" PointY="75.5" />
+        <AssociationConnector Association="DesRepMinModel.CADARMDIS_MEDIOS_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENMEDI_MEDISP_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADRADIOD_MEDISP_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADVEHIDIS_CADMEDISP_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADUNITURNO" Width="1.5" PointX="3" PointY="59.75" />
+        <AssociationConnector Association="DesRepMinModel.CADMEDISP_UNITURNOS_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADUNTU_TURNO_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADLOCALIZACIONMEDIO" Width="3.75" PointX="8.5" PointY="78.5" />
+        <AssociationConnector Association="DesRepMinModel.CADLOCAMEDIOS_MEDISP_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADDIRECTORIO" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CLNOVEDADES_ENCUESTA" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CLENCUESTA_CALIDAD_LLAMADA" Width="4.75" PointX="11.125" PointY="17.5" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCARGO" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEDIDOS_INFORMACION" Width="3" PointX="11.125" PointY="14" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCLASIFICACION_CIERRE" Width="1.5" PointX="0.75" PointY="41.875" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADANOTACIONE" Width="1.5" PointX="7.125" PointY="42.5" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADREMOTO" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOMEDIOS_RUTAS" Width="1.5" PointX="10.75" PointY="53.125" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENMEDIRU_CADEVENMED_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOS_FOTOS" Width="1.5" PointX="7.125" PointY="24.25" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADREVISTA" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADNOVEDADESPATRULLA" Width="1.5" PointX="8.5" PointY="84" />
+        <AssociationConnector Association="DesRepMinModel.CADNOVPATR_MEDISP_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNO" Width="1.5" PointX="3" PointY="35.125" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNOPER" Width="1.5" PointX="8.25" PointY="33.625" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNOPERSMEDISP" Width="4.625" PointX="11.5" PointY="48.875" />
+        <AssociationConnector Association="DesRepMinModel.CADCDTPERS_CADCONDTURN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTUR_TURNO_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTBMD_CADCTP_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTPMD_CADMEDISP_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPOLIGRAMA" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOACTIVO" Width="1.5" PointX="7.125" PointY="64.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNOCOMP" Width="2.5" PointX="8.25" PointY="28.375" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNOCOMPMEDISP" Width="4.125" PointX="11.5" PointY="44.25" />
+        <AssociationConnector Association="DesRepMinModel.CADCDTCOMP_CADCONDTURN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTCMD_CADCTP_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTCMD_CADMEDISP_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNOBIENE" Width="1.5" PointX="5.25" PointY="33.125" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADCONDTURNOBIENMEDISP" Width="1.5" PointX="8.5" PointY="46.625" />
+        <AssociationConnector Association="DesRepMinModel.CADCDTBIENES_CADCONDTURN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTBMD_CADCTB_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCONDTBMD_CADMEDISP_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPUNTOS_CARDINALES" Width="1.5" PointX="6.625" PointY="18" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEDIDO" Width="1.5" PointX="8.875" PointY="14.125" />
+        <AssociationConnector Association="DesRepMinModel.CADPEDI_PUCA_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADPEDINF_PEDIDOS_FK" />
+        <AssociationConnector Association="DesRepMinModel.CLENCCALLLAM_PED_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTO" Width="3.375" PointX="3" PointY="44.25" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEDIDOS_CANALES" Width="3.375" PointX="11.125" PointY="38.75" />
+        <AssociationConnector Association="DesRepMinModel.CADANOTA_EVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENTO_CLCI_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCDTBIENES_EVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCOTUCOMP_EVENT_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADCOTUPERS_EVENT_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENMEDI_CADEVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENACTIVO_EVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENTO_PEDCA_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENTO_TURNO_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENTO_TURNOACC_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENTOSFOTOS_EVENTOS_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADPEDCAN_EVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADPEDCAN_CADPEDIDOS_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADVISORPARAMETRO" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEATREEV_DATASOCMUJ_RAE" Width="1.5" PointX="19.375" PointY="42.625" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEATREEV_DATASOCMUJ_RM" Width="1.5" PointX="19.375" PointY="46.25" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEATREEV_DATASOCMUJ_ROI" Width="1.5" PointX="19.375" PointY="50" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPERSATEND_REMEVENMUJ" Width="1.5" PointX="17.125" PointY="41.625" />
+        <AssociationConnector Association="DesRepMinModel.CADPEATREEVMU_EVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADPEATREEVDAASMURAE_PEARRE_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADPEATREEVDAASMURM_PEARRE_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADPEATREEVDAASMUROI_PEARRE_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADTIPOSERVICIO" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADTIPOSREMISIONE" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPERSONAS_ATENDIDAS" Width="1.5" PointX="14.875" PointY="53.125" />
+        <AssociationConnector Association="DesRepMinModel.CADPEATREEVMU_PERSATEN_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADPEDIDOS_DOCUMENTOS" Width="1.5" PointX="11.125" PointY="9.25" />
+        <AssociationConnector Association="DesRepMinModel.CADPEDOC_CADPEDIDOS_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CAD_ARCHIVOSPLANOS_SP" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADANOTACIONESRECURSO" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOMEDIOS_HORASADIC" Width="1.5" PointX="10.75" PointY="57.5" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENMEHORADIC_CADEVENMED_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTO_FICHASSOCIAL" Width="1.5" PointX="7.125" PointY="91.625" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOFICSOC_PERSONAS" Width="1.5" PointX="9.375" PointY="88.25" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOFICSOC_TR" Width="1.5" PointX="9.375" PointY="97" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOFICSOC_TS" Width="1.5" PointX="9.375" PointY="93.875" />
+        <AssociationConnector Association="DesRepMinModel.CADEVFICHSOC_EVEN_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVFICHSOCPERS_EVENFICSOC_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVFICHSOCTR_EVENFICSOC_FK" />
+        <AssociationConnector Association="DesRepMinModel.CADEVFICHSOCTS_EVENFICSOC_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADEVENTOS_CNP_COMP" Width="3.375" PointX="5.25" PointY="97" />
+        <AssociationConnector Association="DesRepMinModel.CADEVENCNPCOMP_EVEN_FK" />
+        <EntityTypeShape EntityType="DesRepMinModel.CADMODALIDADE" Width="1.5" PointX="7.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

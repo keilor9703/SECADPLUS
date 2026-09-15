@@ -1,0 +1,170 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/CheckSwitchJs")  
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Parámetros de consulta</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                @using (Html.BeginForm("GeneraReporteSeguimientoCasos", "Reportes", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_sitio">Sitio Grabación </label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("SITIO_GRABA", null, htmlAttributes: new { @class = "chosen-select", @id = "sitioGraba", @name = "sitioGraba" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_Ip">Nro Llamada </label>
+                                    <div class="input-group col-md-12">
+                                        <input type="text" value="@ViewBag.nroLlamada"  id="nroLlamada" name="nroLlamada" list="list" class="form-control" />
+                                        <datalist id="list">
+                                          
+                                                <option selected="selected"  value="0">0 - TODOS LOS PEDIDOS</option>
+                                         
+                                        </datalist>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="input-group col-md-12">
+                                    <label for="fecha_desde">Fechas Inicio</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        <input type="text" value="@ViewBag.txtFechaInicial" class="form-control daterange-basic FechaHora"  id="txtFechaInicial" name="txtFechaInicial">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">                         
+
+                                <div class="input-group col-md-12">
+                                    <label for="fecha_desde">Fechas Final</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        <input type="text" class="form-control daterange-basic FechaHora" id="txtFechaFinal" name="txtFechaFinal">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12 obligatorio">
+                                    <label for="txt_tipoBusqueda">Tipo Busqueda </label>
+                                    <div class="input-group col-md-12">
+                                        <select id="tipoBusqueda" name="tipoBusqueda" class="chosen-select">
+                                            <option value="C1" selected="selected"> C1 - POR CODIGO PRIMARIO REPORTADO</option>
+                                            <option value="C2"> C2 - POR CODIGO SECUNDARIO REPORTADO</option>
+                                            <option value="CR"> CR - POR CODIGO REAL ASIGNADO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_codigoCaso">Código Caso</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("CODIGO_CASO", null, " 0 - TODOS LOS CASOS", htmlAttributes: new { @class = "chosen-select", @id = "codigoCaso" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_calidad">Calidad</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("CALIDAD", null, " - TODAS LAS CALIDADES", htmlAttributes: new { @class = "chosen-select", @id = "calidad" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_tipoPedido">Tipo pedido</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("TIPO_PEDIDO", null, " - TODAS LAS CALIDADES", htmlAttributes: new { @class = "chosen-select", @id = "tipoPedido" })                                      
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_firma">Firma </label>
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("FIRMA", null, htmlAttributes: new { @class = "chosen-select", @id = "firma", @name = "firma" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_cargoFirma"> Cargo Firma</label>
+                                    <div class="input-group col-md-12">
+                                        <input type="text" id="txt_cargoFirma" name="txt_cargoFirma" value="JEFE CAD" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_elaboro">Elaboro</label>
+                                    <div class="input-group col-md-12">
+                                        <input type="text" id="txt_elaboro" name="txt_elaboro" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                      
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip" id="btnGenerar" type="submit"
+                                        title="" data-placement="bottom" data-original-title="Clic para generar el reporte">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Generar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+@Scripts.Render("~/bundle/ReporteSeguimientoCasosJs")
+@section PostScripts{
+    <script>
+        $(".chosen-select").chosen();
+        InicializarElementos("CREAR");
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+}
+<!-- /área de contenido -->

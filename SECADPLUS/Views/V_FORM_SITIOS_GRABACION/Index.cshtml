@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SECADEntities.Sitios.V_FORM_SITIOS_GRABACION>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CADUNDE_FUERZA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_INSTALACION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONS_REGIONAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPCION2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OBSERVACIONES)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPARTAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CADUNDE_FUERZA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_INSTALACION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONS_REGIONAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPCION2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OBSERVACIONES)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

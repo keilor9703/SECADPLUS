@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelCasos.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CADCANALES_BARRIOS">
+          <Key>
+            <PropertyRef Name="BARR_CODIGO" />
+            <PropertyRef Name="BARR_LUGE_CODIGO" />
+            <PropertyRef Name="CADCANA_FUERZA" />
+            <PropertyRef Name="CADCANA_CODIGO" />
+          </Key>
+          <Property Name="BARR_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="BARR_LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="CADCANA_FUERZA" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CADCANA_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CADCASOS_CANAL">
+          <Key>
+            <PropertyRef Name="CADCASO_CODIGO" />
+            <PropertyRef Name="CADCANA_FUERZ_ID" />
+            <PropertyRef Name="CADCANA_CODIGO" />
+          </Key>
+          <Property Name="CADCASO_CODIGO" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="CADCANA_FUERZ_ID" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CADCANA_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelCasosStoreContainer">
+          <EntitySet Name="CADCANALES_BARRIOS" EntityType="Self.CADCANALES_BARRIOS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADCASOS_CANAL" EntityType="Self.CADCASOS_CANAL" Schema="USR_CAD" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelCasos" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CADCASOS_CANAL">
+          <Key>
+            <PropertyRef Name="CADCASO_CODIGO" />
+            <PropertyRef Name="CADCANA_FUERZ_ID" />
+            <PropertyRef Name="CADCANA_CODIGO" />
+          </Key>
+          <Property Name="CADCASO_CODIGO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CADCANA_FUERZ_ID" Type="Int32" Nullable="false" />
+          <Property Name="CADCANA_CODIGO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EntitiesCasos" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CADCASOS_CANAL" EntityType="Self.CADCASOS_CANAL" />
+          <EntitySet Name="CADCANALES_BARRIOS" EntityType="ModelCasos.CADCANALES_BARRIOS" />
+        </EntityContainer>
+        <EntityType Name="CADCANALES_BARRIOS">
+          <Key>
+            <PropertyRef Name="BARR_CODIGO" />
+            <PropertyRef Name="BARR_LUGE_CODIGO" />
+            <PropertyRef Name="CADCANA_FUERZA" />
+            <PropertyRef Name="CADCANA_CODIGO" />
+          </Key>
+          <Property Name="BARR_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="BARR_LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="CADCANA_FUERZA" Type="Int32" Nullable="false" />
+          <Property Name="CADCANA_CODIGO" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelCasosStoreContainer" CdmEntityContainer="EntitiesCasos">
+          <EntitySetMapping Name="CADCASOS_CANAL">
+            <EntityTypeMapping TypeName="ModelCasos.CADCASOS_CANAL">
+              <MappingFragment StoreEntitySet="CADCASOS_CANAL">
+                <ScalarProperty Name="CADCASO_CODIGO" ColumnName="CADCASO_CODIGO" />
+                <ScalarProperty Name="CADCANA_FUERZ_ID" ColumnName="CADCANA_FUERZ_ID" />
+                <ScalarProperty Name="CADCANA_CODIGO" ColumnName="CADCANA_CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADCANALES_BARRIOS">
+            <EntityTypeMapping TypeName="ModelCasos.CADCANALES_BARRIOS">
+              <MappingFragment StoreEntitySet="CADCANALES_BARRIOS">
+                <ScalarProperty Name="CADCANA_CODIGO" ColumnName="CADCANA_CODIGO" />
+                <ScalarProperty Name="CADCANA_FUERZA" ColumnName="CADCANA_FUERZA" />
+                <ScalarProperty Name="BARR_LUGE_CODIGO" ColumnName="BARR_LUGE_CODIGO" />
+                <ScalarProperty Name="BARR_CODIGO" ColumnName="BARR_CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

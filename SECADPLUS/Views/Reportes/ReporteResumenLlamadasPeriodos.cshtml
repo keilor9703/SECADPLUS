@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Reporte Planilla Llamadas por Turno";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Parámetros</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                @using (Html.BeginForm("GeneraReporteResumenLlamadasPeriodos", "Reportes", FormMethod.Post, new { @class = "form-compact", target = "_blank" }))
+                {
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="form-group col-lg-12 ">
+                                    <label for="Sitio">Sitio Grabación</label>
+                                    <div class="input-group">
+                                        @Html.DropDownList("Sitio", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="form-group col-lg-12 obligatorio">
+                                    <label for="FechaInicial"> Fecha Inicial</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                        @Html.Editor("FechaInicio", new { htmlAttributes = new { @class = "form-control FechaHora", @placeholder = "Escoja Fecha" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="FechaFinal"> Fecha Final</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                        @Html.Editor("FechaFinal", new { htmlAttributes = new { @class = "form-control FechaHora", @placeholder = "Escoja Fecha" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="Calidad"> Calidad</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("Calidad", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="ImprimirRegistros"> Imprimir Registros</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("Imprimir", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="Responsable"> Responsable</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("Responsable", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="Responsable"> Cargo Responsable</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.Editor("CargoResponsable", new { htmlAttributes = new { @class = "form-control", @placeholder = "Indique el Cargo" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="Elaboro"> Elaboró</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("Elaboro", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="CargoElaboro"> Cargo Elaboró</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.Editor("CargoElaboro", new { htmlAttributes = new { @class = "form-control", @placeholder = "Indique el Cargo" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip" id="btnGenerar" type="submit"
+                                        title="" data-placement="bottom" data-original-title="Clic para generar el reporte">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Generar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@section PostScripts{
+    <script>
+        $(".chosen-select").chosen();
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        $(function () {
+            AplicarFechaHoraCustom(".FechaHora", new Date());
+        });
+
+        
+    </script>
+}

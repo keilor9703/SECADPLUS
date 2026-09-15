@@ -1,0 +1,713 @@
+20200705 10:37:59 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 10:38:38 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 10:42:13 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 10:52:51 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:04:51 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:18:43 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:18:50 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:19:23 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:19:24 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:19:25 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:21:40 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:31:11 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:35:48 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:46:37 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 11:48:45 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 12:14:51 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 12:17:51 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 12:23:52 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 12:25:02 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 12:33:37 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 12:35:25 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 14:51:43 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:00:37 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:06:47 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:23:03 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:52:44 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:57:39 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:58:05 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:59:04 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 15:59:50 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:03:11 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:03:36 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:04:00 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:22:33 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:23:04 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:23:43 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:24:37 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:25:02 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:25:36 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:26:18 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:27:14 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:29:17 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:31:13 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:31:52 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:33:07 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:34:15 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 16:35:31 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 17:06:04 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 17:08:16 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 17:13:37 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200705 17:25:17 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175

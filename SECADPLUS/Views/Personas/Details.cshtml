@@ -1,0 +1,146 @@
+﻿@model  SECADEntities.SecadLugaresGeograficos.CADPOLICIA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADPOLICIAS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMB_EMPLEADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMB_EMPLEADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUME_PLACA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUME_PLACA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRE_RESIDENCIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRE_RESIDENCIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELE_RESIDENCIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELE_RESIDENCIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECH_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECH_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_SEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GRUP_SANGUINEO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GRUP_SANGUINEO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTA_CIVIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTA_CIVIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODI_ESPECIALIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODI_ESPECIALIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTA_LABORAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTA_LABORAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUME_SECCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUME_SECCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADUNID_FUERZA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADUNID_FUERZA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADUNID_CODIGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADUNID_CODIGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADFUERZAS.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADFUERZAS.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADGRADOS.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADGRADOS.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADPOLICIAS_FOTOS.CEDU_EMPLEADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADPOLICIAS_FOTOS.CEDU_EMPLEADO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CEDU_EMPLEADO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

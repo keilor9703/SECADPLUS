@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SECADEntities.SECAD.V_FORM_SITIOS_GRABACION>
+
+@{
+    ViewBag.Title = "Sitio de Grabación";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Seleccion el sitio de grabación para las entidades SECAD 123</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">                            
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tblSitiosGrabacion">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Consecutivo</th>
+                            <th>Descripción</th>
+                            <th>Departamento</th>
+                            <th>Ciudad/Municipio</th>
+                            <th>Fuerza</th>
+                            <th>Código Unidad</th>
+                            <th>Unidad</th>
+                            <th>Fecha de instalación</th>
+                            @*<th>Código regional</th>
+                    <th>Regional</th>*@
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+            <!-- /panel con Tablas -->
+        </div>
+    </div>
+</div>
+@section PostScripts{    
+    @Scripts.Render("~/bundle/SitiosGrabacionJs")
+    <script>
+        AplicarPluginTabla("tablaSitios");
+
+        var UrlConsultarSitiosGrabacion = "@Url.Action("ConsultarSitiosGrabacion", "SitiosGrabacion")";
+        ConsultarSitios("TURNOS","@ViewBag.Consulta",@ViewBag.SitioID);
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+
+}

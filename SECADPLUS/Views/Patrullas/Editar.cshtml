@@ -1,0 +1,268 @@
+﻿@model SecadModelos.Areas.Patrullas.MdCadPatrulla
+
+@section scripts{
+
+    <script> var urlUpdatePatrulla = "@Url.Action("Udp_Patrullas", "Patrullas", new { Area = "" })"; </script>
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DatePickerJs")
+
+
+    
+
+}
+
+<!-- Área de contenido -->
+
+    <div class="content">
+        @Html.Partial("_Mensajes")
+        <div id="resultadoAjax"></div>
+        <div class="row">
+            <!-- Formulario -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Creación Indicativo</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <fieldset class="content">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Codigo)
+                        @Html.HiddenFor(model => model.CadUniFuerza)
+                        @Html.HiddenFor(model => model.CadUniCodigo)
+                        @Html.HiddenFor(model => model.Cuadrante)
+                        @Html.HiddenFor(model => model.UsuaTransaccion, new { @class = "form-control", Value = ViewBag.USUARIO_NOMBRE })
+                        @Html.HiddenFor(model => model.SitioGrabacion, new { @class = "form-control", Value = ViewBag.USUARIO_SITIO })
+                        @Html.HiddenFor(model => model.Vigente, new { @class = "form-control", id = "hdVigente" })
+                        <input type="hidden" id="hdClaseTurno" value="@Model.ClaseTurno" />
+                        @ViewBag.ClaseTurno
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Código:</label>
+                                    @Html.TextBoxFor(model => model.Codigo, new { @class = "form-control", @readonly = true })
+                                    @*<input tabindex="1" name="Codigo" type="text" id="Codigo" autocomplete="off" class="form-control" />*@
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Descripción:</label>
+                                    @Html.EditorFor(model => model.DescPatrulla, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                                    @*<input tabindex="2" name="DescPatrulla" type="text" id="DesPatrulla" autocomplete="off" class="form-control" value="@Model.DescPatrulla" />*@
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Id Radio:</label>
+                                    @Html.EditorFor(model => model.IdRadio, new { htmlAttributes = new { @class = "form-control" } })
+                                    @*<input tabindex="3" name="IdRadio" type="text" id="IdRadio" autocomplete="off" class="form-control" />*@
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Clase Turno:</label>
+                                    @Html.DropDownList("IdClaseTurno", null, String.Format("Seleccione un Turno"), htmlAttributes: new { @class = "form-control select2", Model.IdClaseTurno })
+                                    @*@Html.DropDownList("ClaseTurno", null, String.Format("Seleccione un Turno"), htmlAttributes: new { @class = "chosen-select", style = "width: 100%;", @Required = true, @id = "ClaseTurno", @placeholder = "Seleccione una opción" })*@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Cuadrante:</label>
+                                    @Html.DropDownList("CuadranteId", null, String.Format("Seleccione un cuadrante"), htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", id="CuadranteId", @Required = true, @placeholder = "Seleccione una opción" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Fecha Desde:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        @Html.EditorFor(model => model.FechaDesde, new { htmlAttributes = new { @class = "form-control fecha" } })
+                                    </div>
+                                </div>
+                            </div>                           
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Labels">Fecha Hasta:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        @Html.EditorFor(model => model.FechaHasta, new { htmlAttributes = new { @class = "form-control fecha" } })
+                                        @*<input tabindex="5" type="text" id="FechaHasta" name="FechaHasta" class="form-control FechaHora" style="border-radius: 0px 5px 5px 0px !important;" value="@ViewBag.FechaAd" />*@
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="Labels">Vigente:</label>
+                                    <div class="input-group">
+                                        <input type="checkbox" id="cbxVigente" name="cbxVigente" checked="checked" class="switch checkbox checkbox-switch" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="Labels">Observación:</label>
+                                        <div class="input-group">
+                                            @Html.TextAreaFor(model => model.Observacion, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6text-left">
+                            @Html.ActionLink("Regresar", "Index", new { intUnidadFuerza = ViewBag.UNIDAD_FUERZA, intUnidadCodigo = ViewBag.UNIDAD_CODIGO }, new { @class = "btn bg-teal", data_popup = "tooltip", title = "", data_placement = "bottom", data_original_title = "Clic para finalizar" })
+
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-right">                           
+                            <button tabindex="200" type="button" id="btnGrabaSec" class="btn bg-teal">
+                            <span class="glyphicon glyphicon-save position-left"></span> Guardar ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /formulario -->
+        </div>
+
+        <div class="modal fade" id="ModalCambio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="text-center" id="TituloMensaje"></h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center" id="ContenidoCambio"></div>
+                    </div>
+                    <div class="box-footer text-right">
+                        <button tabindex="200" type="button" id="btnCerrar" class="btn bg-teal"><span class="glyphicon glyphicon-save position-left"></span> Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @section PostScripts{
+            @Scripts.Render("~/bundle/MediosControllerJs")
+
+            
+        <script>
+        var fecha_desde = "@Model.FechaDesde";
+            var fecha_hasta = "@Model.FechaHasta";
+                AplicarControlFecha("#FechaDesde", fecha_desde);
+            AplicarControlFecha("#FechaHasta", fecha_hasta);
+            //IniciarEdicion();          
+
+            //Evento al presionar un checkbox on switch
+            $('input[name="cbxVigente"]').on('switchChange.bootstrapSwitch', function (event, state) {
+                if (state) {
+                    $("#hdVigente").val("S");
+                } else {
+                    $("#hdVigente").val("N");
+                }
+            });
+
+
+            //Boton Guardar
+            $("#btnUpdate").click(function () {
+                UpdatePatrulla();
+            });
+
+
+                $("#btnGrabaSec").click(function () {
+                    Udp_Patrulla();
+                });
+
+
+
+            //Update Patrullas
+            function Udp_Patrulla() {
+
+                var isChecked = $('#cbxVigente').prop("checked");
+                var Vigente = null;
+                if (isChecked) {
+                    Vigente = "S"
+                }
+                else {
+                    Vigente = "N"
+                }
+                var MdCadPatrulla = new FormData();
+                MdCadPatrulla.append('CadUniFuerza', $("#CadUniFuerza").val());
+                MdCadPatrulla.append('CadUniCodigo', $("#CadUniCodigo").val());
+                MdCadPatrulla.append('Codigo', $("#Codigo").val());
+                MdCadPatrulla.append('DescPatrulla', $("#DescPatrulla").val());
+                MdCadPatrulla.append('ClaseTurno', $("#IdClaseTurno").val());
+                MdCadPatrulla.append('Vigente', Vigente);
+                MdCadPatrulla.append('FechaDesde', $("#FechaDesde").val());
+                MdCadPatrulla.append('FechaHasta', $("#FechaHasta").val());
+                MdCadPatrulla.append('Observacion', $("#Observacion").val());
+                MdCadPatrulla.append('UsuaTransaccion', $("#UsuaTransaccion").val());
+                MdCadPatrulla.append('SitioGrabacion', $("#SitioGrabacion").val());
+                MdCadPatrulla.append('IdRadio', $("#IdRadio").val());
+                MdCadPatrulla.append('CuadranteId', $("#CuadranteId").val());
+                MdCadPatrulla.append('Cuadrante', $("#Cuadrante").val());
+                $.ajax({
+                    type: 'POST',
+                    url: urlUpdatePatrulla,
+                    dataType: 'json',
+                    data: MdCadPatrulla,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    enctype: 'multipart/form-data',
+                    success: function (response) {
+                        if (response.success == true) {
+                            ModalExitoso("Señor(a) Funcionario(a:)", response.message);
+                        } else {
+                            ModalError("Señor(a) Funcionario(a:)", response.message);
+                        }
+                    },
+                    error: function (ex) {
+                        ModalError("Señor(a) Funcionario(a:)", "No es posible grabar el registro, revise");
+                    }
+                });
+            }
+
+            $("#btnCerrar").click(function () {
+                RetornarForms();
+            });
+
+            function RetornarForms() {
+                var url = "@Url.Action("Index", "Patrullas", new { Area = "" })";
+                var action = url + "?intUnidadFuerza=" + $("#CadUniFuerza").val() + "&intUnidadCodigo=" + $("#CadUniCodigo").val();
+                document.location = action;
+            }
+
+            function ModalExitoso(titulo, texto) {
+                $("#TituloMensaje").html("<h3><img src='../../images/policia.png' />&nbsp" + titulo + "</h3>");
+                $("#ContenidoCambio").html("<div class='alert alert-success' role='alert' style='text-align: justify; font-size:15px;'><span class='glyphicon glyphicon-info-sign'></span>&nbsp" + texto + "</div>");
+                $('#ModalCambio').modal("show");
+            }
+            function ModalError(titulo, texto) {
+                $("#TituloMensaje").html("<h3><img src='../../images/error.png' />&nbsp" + titulo + "</h3>");
+                $("#ContenidoCambio").html("<div class='alert alert-danger' role='alert' style='text-align: justify; font-size:15px;'><span class='glyphicon glyphicon-info-sign'></span>&nbsp" + texto + "</div>");
+                $('#ModalCambio').modal("show");
+            }
+            </script>
+        }

@@ -1,0 +1,98 @@
+﻿@model SECADEntities.SECAD.CADCANALE
+@{
+    ViewBag.Title = "Crea Canales";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CalendarioJs")
+}
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">Modificar Canal</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        @using (Html.BeginForm("EditC", "GestionarLlamadasPEntidad", FormMethod.Post, new { @class = "form-compact" }))
+            {
+            <div class="panel-body">
+                <!-- Formulario -->
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.Hidden("CODIGO")
+                @Html.Hidden("CLASE_TURNO")
+                @Html.Hidden("ABREVIATURA")
+
+                @Html.Hidden("TIPO_CANAL")
+
+                @Html.Hidden("OBSERVACION")
+                @Html.Hidden("TIPO_ATENCION")
+                @Html.Hidden("CADFUERZ_ID")
+                @Html.Hidden("DESDE")
+                @Html.Hidden("HASTA")
+                @Html.Hidden("VIGENTE")
+
+
+
+                <fieldset class="content-group">
+                    <div class="row">
+                       
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 obligatorio">
+                            <div class="form-group ">
+                                @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label " })
+                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba la descripción", required = true, maxlength = "60" } })
+                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>                       
+
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 obligatorio">
+                            @Html.LabelFor(model => model.DISPONIBLE, "Disponible", htmlAttributes: new { @class = "control-label " })
+                            <div class="form-group">
+                                @Html.CheckBox("DISPONIBLE", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_size = "mini", data_off_color = "danger", data_on_text = "SÍ", data_off_text = "NO" })
+                                @Html.ValidationMessageFor(model => model.DISPONIBLE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>                  
+
+                </fieldset>
+                <!-- /formulario -->
+            </div>
+            <div class="panel-footer">
+                <!-- Botones de regresar y guardar -->
+                <div class="row">
+                    <div class="col-xs-6 col-md-6text-left">
+                        <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                data-original-title="Clic para regresar a la tabla" onclick="location.href=('@Url.Action("Index", "GestionarLlamadasPEntidad")')">
+                            <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                        </button>
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                        <button type="submit" value="Edit" class="btn bg-teal" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para modificar">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                        </button>
+                    </div>
+                </div>
+                <!-- /botones de regresar y guardar -->
+            </div>
+        }
+    </div>
+    <!-- /panel  -->
+</div>
+@section PostScripts{
+    <script>
+        //$("#CODIGO").keypress(function (evt) {
+        //    evt.preventDefault();
+        //});
+    </script>
+    <script>$(".chosen-select").chosen();</script>
+    @Scripts.Render("~/bundle/CheckSwitchJs");
+}

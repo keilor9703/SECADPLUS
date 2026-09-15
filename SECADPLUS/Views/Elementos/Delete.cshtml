@@ -1,0 +1,17 @@
+﻿@model SECADEntities.SecadEntities.CADNETELEMENTO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+    <h4>@Html.DisplayFor(model => model.ELEMENTO_NOMBRE)</h4>
+        
+
+    @using (Html.BeginForm("Delete", "Elementos", new { id= Model.CADELEMENTO_ID, strNombre = Model.ELEMENTO_NOMBRE },FormMethod.Post, new { @class = "form_secad" , @id="form_eliminar"}))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>

@@ -1,0 +1,453 @@
+﻿@{
+    ViewBag.Title = "Administrar Directorio";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Consulta Administrar Directorio :</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs nav-tabs-highlight">
+                                <li class="active" id="CargarInfo"><a href="#nivel1" data-toggle="tab">Cargar Información </a></li>
+                                <li><a href="#nivel2" data-toggle="tab" id="InfoDirectorio"> Información Directorio </a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active col-lg-12 col-md-12 row" id="nivel1">
+                                    <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                    <!-- Panel con Tablas -->
+                                    <div class="col-md-6 ">
+                                        <div class="panel panel-flat" id="panelContenedor1">
+                                            <div class="panel-heading">
+                                                <h5 class="panel-title">Cargue Archivos Planos Directorio <span id="spannivel"></span></h5>
+                                                <div class="heading-elements">
+                                                    <ul class="icons-list decad">
+                                                        <li id="contenedorCargarNivel1" ata-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                        </li>
+                                                        <li id="contenedorNivel1">
+                                                        </li>
+                                                        <li><a data-action="collapse"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--Contenido-->
+                                            @using (Html.BeginForm("procesarArchivoPlano", "AdministrarDirectorio", FormMethod.Post, new { @class = "form-compact", enctype = "multipart/form-data", id = "frm_directorio" }))
+                                            {
+                                                <div class="panel-body">
+                                                    @Html.AntiForgeryToken()
+
+                                                    <fieldset class="content-group ">
+                                                        <div class="row">
+                                                            <div class="form-group col-md-6 col-lg-3">
+                                                                <div style="text-align:left;">
+                                                                    <br />
+                                                                    <img src="@Url.Content("~/Images/LogoSECAD.png")" style="width:60px;height:60px;" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group col-md-3 col-lg-5">
+                                                                <div style="text-align:center;">
+                                                                    <h3 class="panel-title">
+                                                                        <br />
+                                                                        @ViewBag.UnidadDSP
+                                                                    </h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-lg-12">
+                                                                <div class="form-group h6">
+                                                                    <div class="col-md-10 col-lg-12">
+                                                                        <br />
+                                                                        <br />
+                                                                        @Html.Label("Estructura Archivo", htmlAttributes: new { @class = "control-label" })
+                                                                        <br />
+                                                                        <br />
+                                                                        <div id="txtEstructuraArchivo" class="h6">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <br />
+                                                            <br />
+                                                            <table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-group col-md-3 col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <h6 class="control-label col-md-12 obligatorio">
+                                                                                    @Html.Label("Archivo", htmlAttributes: new { @class = "control-label" })
+                                                                                </h6>
+                                                                                <div class="col-lg-12 space_up">
+                                                                                    <input type="file" class="file-styled-secad btn-success btn-xs" id="uploader" name="uploader" accept="txt" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group col-md-3 col-lg-12">
+                                                                            <div class="form-group">
+                                                                                <div>
+                                                                                    <h6 class="control-label col-md-12 obligatorio">
+                                                                                        @Html.Label("Ciudad o municipio", htmlAttributes: new { @class = "control-label" })
+                                                                                    </h6>
+                                                                                    <div class="col-md-12">
+                                                                                        <input id="codigoLugar" name="codigoLugar" type="text" class="form-control" readonly="readonly" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <div class="form-group col-md-3 col-lg-3">
+                                                                                <div class="form-group">
+                                                                                    <br />
+                                                                                    <br />
+                                                                                    <br />
+                                                                                    <br />
+                                                                                    <div class="col-md-4">
+                                                                                        <button type="button" onclick="CargaCiudades();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                                            <b><i class="icon-select2 position-left"></i></b>Buscar
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="4">
+                                                                        <br />
+                                                                        <br />
+                                                                        <div class="panel-footer"></div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="4">
+                                                                        <br />
+                                                                        <br />
+                                                                        <div>
+                                                                            <div class="row">
+                                                                                <div style="text-align:center;">
+                                                                                    <button class="btn bg-teal btn-xs file-download" type="button" data-popup="tooltip" title=""
+                                                                                            data-placement="bottom" data-original-title="Clic Para Cargar Información" download>
+                                                                                        <i id="btnCargarInfo" class="icon-folder-upload icon_size-md"></i>
+                                                                                    </button>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                            data-placement="bottom" data-original-title="Clic Para Proceso Automático Por Ciudad"
+                                                                                            onclick="ProcesoAutomatico()">
+                                                                                        <i id="btnActualizarBarrios" class="icon-database-refresh icon_size-md"></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            }
+                                            <!--Contenido-->
+                                        </div>
+                                    </div>
+                                    <!-- /panel con Tablas -->
+                                </div>
+                                <div class="tab-pane  col-lg-12 col-md-12" id="nivel2">
+                                    <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                    <!-- Panel con Tablas -->
+                                    <div class="col-md-12 ">
+                                        <div class="panel panel-flat" id="panelContenedor2">
+                                            <div class="panel-heading">
+                                                <h5 class="panel-title">Verificación Información Directorio <span id="spannivel2"></span></h5>
+                                                <div class="heading-elements">
+                                                    <ul class="icons-list decad">
+                                                        <li id="contenedorCargarNivel2" ata-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                        </li>
+                                                        <li id="contenedorNivel2">
+                                                        </li>
+                                                        <li><a data-action="collapse"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--Contenido-->
+                                            <div class="panel-body">
+                                                @Html.AntiForgeryToken()
+                                                <fieldset class="content-group ">
+                                                    <div class="row">
+                                                        @Html.Hidden("CODIGOCANAL")
+                                                        @Html.Hidden("CODIGOFUERZA")
+                                                        @Html.Hidden("BARR_LUGE_CODIGO")
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group obligatorio">
+                                                                @Html.Label("Telefono", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                                <div class="col-md-12">
+                                                                    <input id="telefono" type="text" class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group obligatorio">
+                                                                @Html.Label("Propietario", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                                <div class="col-md-12">
+                                                                    <input id="propietario" type="text" class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group">
+                                                                @Html.Label("Nit/Cedula", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                                <div class="col-md-12">
+                                                                    <input id="nit" type="text" class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group obligatorio">
+                                                                @Html.Label("Dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+                                                                <div class="col-md-12">
+                                                                    <input id="direccion" type="text" class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 col-lg-6">
+                                                            <div class="form-group obligatorio">
+                                                                @Html.Label("Barrio Segun EmpTelefonos", htmlAttributes: new { @class = "control-label col-md-6 col-lg-9" })
+                                                                <div class="col-md-12">
+                                                                    <input id="barrio" type="text" class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group">
+                                                                @Html.Label("Codigo Municipio", htmlAttributes: new { @class = "control-label col-md-6 col-lg-9" })
+                                                                <div class="col-md-12">
+                                                                    <input id="codigoMunicipio" type="text" class="form-control" readonly="readonly" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group">
+                                                                @Html.Label("Municipio", htmlAttributes: new { @class = "control-label col-md-2", @readonly = "readonly" })
+                                                                <div class="col-md-12">
+                                                                    <input id="municipio" type="text" class="form-control readonly" disabled="disabled" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-2 col-lg-2">
+                                                            <div class="form-group">
+                                                                @Html.Label(" ", htmlAttributes: new { @class = "control-label col-md-6 col-lg-9" })
+                                                                <br />
+                                                                <div class="col-md-6 col-lg-9">
+                                                                    <button type="button" onclick="CargaCiudadesDirectorio();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                        <b><i class="icon-select2 position-left"></i></b>Buscar Municipio
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @*<div class="form-group col-xs-6 col-md-6 text-right">
+                                                                <button id="btnCambioCiudad" type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para cambio ciudad ">
+                                                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b> Cambiar ciudad
+                                                                </button>
+                                                            </div>*@
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group">
+                                                                @Html.Label("Codigo Barrio Atención", htmlAttributes: new { @class = "control-label col-md-6 col-lg-9" })
+                                                                <div class="col-md-12">
+                                                                    <input id="codigoBarrAntencion" type="text" class="form-control" readonly="readonly" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group">
+                                                                @Html.Label("Barrio Atención", htmlAttributes: new { @class = "control-label col-md-6 col-lg-9" })
+                                                                <div class="col-md-12">
+                                                                    <input id="barrAtencion" type="text" class="form-control" readonly="readonly" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-3 col-lg-3">
+                                                            <div class="form-group">
+                                                                @Html.Label("", htmlAttributes: new { @class = "control-label col-md-6 col-lg-9", @readonly = "readonly" })
+                                                                <br />
+                                                                <div class="col-md-12">
+                                                                    <button type="button" onclick="MostaraBarrio();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                        <b><i class="icon-select2 position-left"></i></b>Buscar Barrio
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <div style="text-align:center;">
+                                                    <button id="btnGuardar" type="button" onclick="datosNuevos()" class="btn btn-success btn-xs" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para Guardar">
+                                                        <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Guardar
+                                                    </button>
+                                                    <button id="btnAsignarBarrios" type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                                            title="" data-placement="bottom" onclick="CambiarBarriosManual()" data-original-title="Clic para asignar barrios por selección ">
+                                                        <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b> Asignar barrios por selección
+                                                    </button>
+
+                                                    <button class="btn bg-success btn-xs" type="button" data-popup="tooltip" title=""
+                                                            data-placement="bottom" data-original-title="Clic para consultar general"
+                                                            onclick="CargarDirrectorio()">
+                                                        <i class="icon-paragraph-justify2  position-right"></i>
+                                                    </button>
+                                                    <button class="btn bg-success btn-xs" type="button" data-popup="tooltip" title=""
+                                                            data-placement="bottom" data-original-title="Clic para consultar barrios nulos"
+                                                            onclick="CargarDirrectorioBarrios()">
+                                                        <i class="icon-indent-increase  position-right"></i>
+                                                    </button>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                </div>
+                                            </div>
+                                            <!--Contenido-->
+                                            <!-- Inicio de tabla -->
+                                            <table class="table table-hover table-xxs datatable-basic" id="tablaAdministrarDirectorio">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Numero Telefono</th>
+                                                        <th>Propietario</th>
+                                                        <th>Nit/Cedula</th>
+                                                        <th>Dirección  </th>
+                                                        <th>Barrio Segun Emp. Telefonos</th>
+                                                        <th>Codigo Municipio</th>
+                                                        <th>Municipio</th>
+                                                        <th>Codigo Barrio Atención</th>
+                                                        <th>Barrio Atención</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <!-- /inicio de tabla -->
+                                        </div>
+                                    </div>
+                                    <!-- /panel con Tablas -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+<!-- Modal Barrios -->
+<div id="ModalBarrios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Barrios</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table class="table table-hover table-xxs datatable-basic" id="_tblBarrios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Codigo</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Barrios -->
+<script type="text/javascript">
+    var urlActionCargaCiudades = "@(Url.Action("CargaCiudades", "AdministrarDirectorio"))";
+    var urlActionProcesoAutomatico = "@(Url.Action("ProcesarAutomaticoCiudades", "AdministrarDirectorio"))";
+    var urlTabla = "@(Url.Action("ObtenerDirectorio", "AdministrarDirectorio"))";
+    var urlsCargaBarriosDir = "@(Url.Action("CargarTodosLosBarrios", "AdministrarDirectorio"))";
+    var urlsDatosUsuarioDir = "@(Url.Action("GuardarUsuarioDirectorio", "AdministrarDirectorio"))";
+    var urlCambioBarrioManual = "@(Url.Action("AsignarBarrioManual", "AdministrarDirectorio"))";
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+    var longMaxArchivo = "@ViewBag.longMaxArchivo";
+</script>
+@section PostScripts{
+    @Scripts.Render("~/bundle/AdministrarDirectorioJs")
+}

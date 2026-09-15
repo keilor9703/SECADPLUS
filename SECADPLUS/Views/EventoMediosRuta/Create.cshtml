@@ -1,0 +1,157 @@
+﻿@model SECADEntities.SecadEntities.CADEVENTOMEDIOS_RUTAS
+
+@{
+    ViewBag.Title = "Crear Nueva Ruta Adicional";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Nueva Ruta Adicional:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "EventoMediosRuta", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("idFuerza")
+                            @Html.Hidden("idSitio")
+                            @Html.Hidden("numeLlamada")
+                            @Html.Hidden("idConsecutivo")
+                            @Html.Hidden("numeEvento")
+
+                            @Html.Hidden("CADMEDISP_SITIOGRABA")
+                            @Html.Hidden("CADMEDISP_CONSECUTIVO")
+                            @Html.Hidden("CADEVEN_SITIOGRABA")
+                            @Html.Hidden("CADEVEN_NUME_EVENTO")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Nro.:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CONSECUTIVO_RUTA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Origen:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.ORIGEN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba origen" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Destino:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DESTINO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba destino" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label class="control-label">Hora Inicia:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.HORA_INICIA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.HORA_INICIA, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label class="control-label">Hora Llega:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.HORA_LLEGA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.HORA_LLEGA, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-12 col-lg-5">
+                                    <div class="form-group">
+                                        <label class="control-label">Novedad:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("NOVEDAD", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-7">
+                                    <div class="form-group">
+                                        <label class="control-label">Observaciones:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @style = "height:120px;resize:none;" ,@class = "form-control", @placeholder = "Escriba observaciones", @rows = "5" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para listar"
+                                        onclick="window.location.href ='@Url.Action("Index", new { idFuerza = @ViewBag.idFuerza, idSitio = @ViewBag.idSitio, numeLlamada = @ViewBag.numeLlamada, idConsecutivo = @ViewBag.idConsecutivo, numeEvento  = @ViewBag.numeEvento })'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Listar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/EventoMediosRutaJs")
+    <script>
+        $(".chosen-select").chosen();
+
+        var urlHora = '@Url.Action("AsignarHoraServidor", "EventoMediosRuta")';
+    </script>
+}

@@ -1,0 +1,270 @@
+﻿@model SECADEntities.SECAD.CADSITIOS_GRABACION
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Nuevo Sitio de Grabación:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "SitiosGrabacion", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="row">
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CONSECUTIVO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba consecutivo" } })
+                                                @Html.ValidationMessageFor(model => model.CONSECUTIVO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Descripción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba descripción" } })
+                                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Departamento:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("DEPARTAMENTO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessage("DEPARTAMENTO", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Ciudad/Municipio:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.Hidden("LUGE_CIUDAD")
+                                                    @Html.TextBox("CIUDAD", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione ciudad/municipio", @readonly = true })
+                                                    @*@Html.DropDownList("LUGE_CIUDAD", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })*@
+                                                    <span class="input-group-btn">
+                                                        <button type="button" onclick="cargarCiudades()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.LUGE_CIUDAD, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Fuerza:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("CADUNDE_FUERZA", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessageFor(model => model.CADUNDE_FUERZA, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Unidad:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.Hidden("CADUNDE_CODIGO")
+                                                    @Html.TextBox("UNIDAD", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione unidad", @readonly = true })
+                                                    @*@Html.DropDownList("CADUNDE_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })*@
+                                                    <span class="input-group-btn">
+                                                        <button type="button" onclick="cargarUnidades()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.CADUNDE_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha de instalación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.EditorFor(model => model.FECHA_INSTALACION, new { htmlAttributes = new { @class = "form-control fecha", @placeholder = "Escoja una fecha" } }) @*form-control pickadate-accessibility*@
+                                                    @Html.ValidationMessageFor(model => model.FECHA_INSTALACION, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Regional:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("CONS_REGIONAL", null, htmlAttributes: new { @class = "chosen-select" }) @*select-search select2-hidden-accessible*@
+                                                    @Html.ValidationMessageFor(model => model.CONS_REGIONAL, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label>Observaciones:</label>
+                                        <div class="row ">
+                                            <div class="col-md-12 col-lg-12">
+                                                @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba observaciones", @rows = "5" })
+                                                @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                            <div class="panel-footer">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6 text-left">
+                                        <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                                data-original-title="Clic para regresar a la tabla"
+                                                onclick="window.location.href ='@Url.Action("Index")'">
+                                            <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 text-right">
+                                        <button class="btn bg-teal" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                                value="Create">
+                                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Unidades -->
+<div id="ModalUnidades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Unidades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaUnidades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Unidades -->
+
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                            <th>Dpto</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+
+@section PostScripts{
+ 
+@Scripts.Render("~/bundle/Select2Js")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/DatePickerJs")
+@Scripts.Render("~/bundle/SitiosGrabacionCrearJs")
+<script>
+
+    AplicarControlFecha("#FECHA_INSTALACION", null);
+
+    var urlCiudad = '@Url.Action("GetCiudadesByDepartamento", "SitiosGrabacion")';
+    var urlTablaCiudad = '@Url.Action("GetCiudades", "SitiosGrabacion")';
+    var urlUnidad = '@Url.Action("GetUnidadesByFuerza", "SitiosGrabacion")';
+    var urlTablaUnidades = '@Url.Action("GetUnidades", "SitiosGrabacion")';
+    var urlRegional = '@Url.Action("GetRegionalByUnidad", "SitiosGrabacion")';
+</script>
+}

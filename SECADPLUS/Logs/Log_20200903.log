@@ -1,0 +1,20 @@
+20200903 09:43:05 [M_ERROR] - Error Ejecutando F_GetMinutaNew:
+	#2	#3ORA-01427: la subconsulta de una sola fila devuelve más de una fila
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01427: la subconsulta de una sola fila devuelve más de una fila
+   en OracleInternal.ServiceObjects.OracleDataReaderImpl.FetchMoreRows(Int32 noOfRowsToFetch, Boolean fillReader, Boolean returnPSTypes)
+   en Oracle.ManagedDataAccess.Client.OracleDataReader.Read()
+   en System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   en System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   en System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   en System.Data.DataTable.Load(IDataReader reader, LoadOption loadOption, FillErrorEventHandler errorHandler)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetMinutaNew(Int32 V_UnidadID, String vFechaInicial, String vfechaFinal) en C:\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 100
+20200903 09:51:06 [M_ERROR] - Error Ejecutando F_GetMinutaNew:
+	#2	#3ORA-01427: la subconsulta de una sola fila devuelve más de una fila
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01427: la subconsulta de una sola fila devuelve más de una fila
+   en OracleInternal.ServiceObjects.OracleDataReaderImpl.FetchMoreRows(Int32 noOfRowsToFetch, Boolean fillReader, Boolean returnPSTypes)
+   en Oracle.ManagedDataAccess.Client.OracleDataReader.Read()
+   en System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   en System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   en System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   en System.Data.DataTable.Load(IDataReader reader, LoadOption loadOption, FillErrorEventHandler errorHandler)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetMinutaNew(Int32 V_UnidadID, String vFechaInicial, String vfechaFinal) en C:\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 100

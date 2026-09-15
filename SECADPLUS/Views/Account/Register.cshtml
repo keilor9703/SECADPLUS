@@ -1,0 +1,53 @@
+﻿@model SECADPLUS.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+@if (ViewData["EX_MENSAJE"] != null)
+{
+    <h2>@ViewData["EX_MENSAJE"] .</h2>
+}
+
+<h2>@ViewData["MENSAJE"] .</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Estado, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+
+            @Html.CheckBoxFor(model => model.Estado, htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_on_text = "ACTIVO", data_off_text = "INACTIVO", @checked = "checked" })
+        </div>
+    </div>
+    
+    
+    <button class="btn btn-default">Crear</button>
+}
+
+@section Scripts {
+    
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+
+}

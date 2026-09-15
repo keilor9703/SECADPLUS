@@ -1,0 +1,146 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADBIENE>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADBIENE>, List<CADBIENES_IMPLICADOS>>
+
+@{
+    ViewBag.Title = "Vehículos Implicados";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <!-- Datos Vehículos -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Datos de Bienes:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button class="btn btn-success btn-xs" type="button" data-popup="tooltip" title=""
+                                        onclick="window.close();" data-placement="bottom" data-original-title="Retornar">
+                                    <i id="info" class="icon-reply-all icon_size-xs"></i>
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaDatos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                           
+                            <th>Clase de Bien</th>
+                            <th>Consecutivo</th>
+                            <th>Marca</th>
+                            <th>Línea</th>
+                            <th>Color</th>
+                            <th>Placa</th>
+                            <th>Chasis</th>
+                            <th>Motor</th>
+                            <th>Serie</th>
+                            <th>Observaciones</th>
+                            <th>Usuario Transacción</th>
+                            <th>Fecha Transacción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Item1)
+                        {
+                            <tr>
+                                <td></td>
+                       
+                                <td>@Html.DisplayFor(modelItem => item.CADCLASES_BIEN.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CONSECUTIVO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CADLINEAS_MARCA.CADMARCA.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CADLINEAS_MARCA.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CADCOLORE.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.PLACA)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CHASIS)</td>
+                                <td>@Html.DisplayFor(modelItem => item.MOTOR)</td>
+                                <td>@Html.DisplayFor(modelItem => item.SERIE)</td>
+                                <td>@Html.DisplayFor(modelItem => item.OBSERVACIONES)</td>
+                                <td>@Html.DisplayFor(modelItem => item.USUA_TRANSACCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.FECHA_TRANSACCION)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Datos Vehículos -->
+        <!-- Casos Relacionados -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Novedades</h5>
+                 
+                    <div class="heading-elements">
+                       
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaCasos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            @*<th>Acciones</th>*@
+                            <th>Caso Código</th>
+                            <th>Consecutivo</th>
+                            <th>Fecha Novedad</th>
+                            <th>Dirección</th>
+                            <th>Municipio</th>
+                            <th>Barrio</th>
+                            <th>Vigente</th>
+                            <th>Fecha Termino</th>
+                            <th>Observaciones</th>
+                            <th>Patrulla</th>
+                            <th>Usuario</th>
+                            <th>Fecha</th>
+                            <th>Maquina</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_casos", Model.Item2);
+                        }
+                    </tbody>
+
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Casos Relacionados -->
+
+    </div>
+</div>
+<!-- Área de contenido -->
+
+<script type="text/javascript">
+    var _idSitio = '@ViewBag.CADBIEN_SITIOGRABA';
+    var _idBien = '@ViewBag.CADBIEN_CONSECUTIVO';
+
+    AplicarPluginTabla("tablaDatos");
+    AplicarPluginTabla("tablaCasos");
+
+    var urlCasos = '@Url.Action("GetCasos", "VehiculosImplicados")';
+    var urlLineas = '@Url.Action("GetLineasByMarca", "VehiculosImplicadosDatos")';
+    var urlBarrios = '@Url.Action("GetBarriosByMunicipio", "VehiculosImplicadosCasos")';
+
+    var urlCrearCasos = '@Url.Action("Create", "VehiculosImplicadosCasos")';
+
+
+
+</script>
+@section PostScripts{
+    @Scripts.Render("~/bundle/VehiculosImplicadosJs")
+}

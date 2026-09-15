@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Rutas Adicionales";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat" style="height:100%">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Medio de Atención:</h5>
+                    <div class="computo_input">
+                        @Html.Editor("DSP_MEDIOATENCION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    @Html.Hidden("CADMEDISP_CONSECUTIVO")
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio"
+                                        onclick="window.location.href ='@Url.Action("Create", new { idFuerza = @ViewBag.idFuerza, idSitio = @ViewBag.idSitio, numeLlamada = @ViewBag.numeLlamada, idConsecutivo = @ViewBag.idConsecutivo, numeEvento = @ViewBag.numeEvento })'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nueva rura adicional
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tabla" style="height:80px">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Nro.</th>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Hora Inicia</th>
+                            <th>Hora Llega</th>
+                            <th>Novedad</th>
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+    @*<div class="row">
+            <div class="col-xs-6 col-md-6 text-left">
+                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                        data-original-title="Clic para regresar a la tabla">
+                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                </button>
+            </div>
+        </div>*@
+</div>
+<!-- /área de contenido -->
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/EventoMediosRutaJs")
+
+    <script>
+        var idFuerza = @ViewBag.idFuerza;
+        var idSitio = @ViewBag.idSitio;
+        var numeLlamada = @ViewBag.numeLlamada;
+        var idConsecutivo = @ViewBag.idConsecutivo;
+        var numeEvento = @ViewBag.numeEvento;
+
+        var urlTabla = '@Url.Action("VerEventoMedios_Rutas", "EventoMediosRuta")';
+
+        cargarTabla();
+
+        function close_window() {
+            if (confirm("Close Window?")) {
+                close();
+            }
+        }
+    </script>
+}

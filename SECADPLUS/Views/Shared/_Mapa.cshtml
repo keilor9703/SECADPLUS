@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+        <link rel="icon" href="@Url.Content("~/img/favicon.ico")" type="image/x-icon">
+        <title>Visor Geográfico DISEC</title>
+        <link rel="stylesheet" href="https://js.arcgis.com/3.23/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="https://js.arcgis.com/3.23/esri/css/esri.css">
+        <!--<link rel="stylesheet" href="https://js.arcgis.com/3.23/esri/themes/calcite/dijit/calcite.css">
+          <link rel="stylesheet" href="https://js.arcgis.com/3.23/esri/themes/calcite/esri/esri.css">-->
+        <link href="~/Content/Mapas/visor.css" rel="stylesheet" />
+        <script src="https://js.arcgis.com/3.23/"></script>
+        <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+        <script src="~/Scripts/JsMapa.js"></script>
+
+
+    </head>
+
+    <body class="claro">
+        @RenderBody()
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>

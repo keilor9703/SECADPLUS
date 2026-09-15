@@ -1,0 +1,205 @@
+﻿@model IEnumerable<SECADEntities.SECAD.V_FORM_SITIOS_GRABACION>
+
+@{
+    ViewBag.Title = "Consulta Sitios";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row form-compact">
+        <div class="tabbable">
+            <ul class="nav nav-tabs nav-tabs-highlight">
+                <li class="active" id="sitios"><a href="#sitiosGrabacion" data-toggle="tab">Sitios de Grabación</a></li>
+                <li><a href="#sitiosParqueaderos" data-toggle="tab" id="parqueaderos">Parqueaderos</a></li>
+                <li><a href="#sitiosImportantes" data-toggle="tab" id="importantes">Sitios Importantes</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="sitiosGrabacion">
+                    <!--------------------------------------CONTENIDO TAB SITIOS GRABACION------------------------------------->
+                    <div class="col-md-12">
+                        <!-- Panel con Tablas -->
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Seleccione el sitio de grabación a consultar</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li>
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="tablaSitios">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Consecutivo</th>
+                                        <th>Descripción</th>
+                                        <th>Departamento</th>
+                                        <th>Ciudad/Municipio</th>
+                                        <th>Fuerza</th>
+                                        <th>Código Unidad</th>
+                                        <th>Unidad</th>
+                                        <th>Fecha de instalación</th>
+                                        <th>Código regional</th>
+                                        <th>Regional</th>
+                                        <th>Observaciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <ul class="icons-list">
+                                                    <li class="dropdown">
+                                                        <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                            <i class="icon-menu9"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-left">
+                                                            <li>
+                                                                <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para parqueaderos"
+                                                                        onclick="CargaParqueaderos(@item.CONSECUTIVO,'@item.DESCRIPCION')">
+                                                                    <i class="icon-eye"></i> Ver Parqueaderos
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para sitios importantes"
+                                                                        onclick="CargaSitiosImportantes(@item.CONSECUTIVO, '@item.DESCRIPCION')">
+                                                                    <i class="icon-eye"></i> Ver Sitios Importantes
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td>@Html.DisplayFor(modelItem => item.CONSECUTIVO)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.DEPARTAMENTO)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.LUGE_CIUDAD)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.CADUNDE_FUERZA)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.CADUNDE_CODIGO)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.DESCRIPCION1)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.FECHA_INSTALACION)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.CONS_REGIONAL)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.DESCRIPCION2)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.OBSERVACIONES)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                        <!-- /panel con Tablas -->
+                    </div>
+                    <!--------------------------------------CONTENIDO TAB SITIOS GRABACION------------------------------------->
+                </div>
+                <div class="tab-pane" id="sitiosParqueaderos">
+                    <!--------------------------------------CONTENIDO TAB PARQUEADEROS------------------------------------->
+                    <div class="col-md-12">
+                        <!-- Panel con Tablas -->
+                        <div class="panel panel-flat" id="panelParqueaderos">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Parqueaderos registrados en:</h5>
+                                <div class="computo_input">
+                                    @Html.Editor("sitioGrabacion1", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                </div>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li>
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="tablaParqueaderos">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Nit/Código</th>
+                                        <th>Descripción</th>    
+                                        <th>Ciudad/Municipio</th>
+                                        <th>Barrio</th>
+                                        <th>Dirección</th>
+                                        <th>Teléfono</th>
+                                        <th>Horario</th>
+                                        <th>Usua Transacción</th>
+                                        <th>Fecha Transacción</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                        <!-- /panel con Tablas -->
+                    </div>
+                    <!--------------------------------------CONTENIDO TAB PARQUEADEROS------------------------------------->
+                </div>
+                <div class="tab-pane" id="sitiosImportantes">
+                    <!--------------------------------------CONTENIDO TAB SITIOS IMPORTANTES------------------------------------->
+                    <div class="col-md-12">
+                        <!-- Panel con Tablas -->
+                        <div class="panel panel-flat" id="panelImportantes">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Sitios importantes asignados a:</h5>
+                                <div class="computo_input">
+                                    @Html.Editor("sitioGrabacion2", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                </div>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li>
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="tablaImportantes">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Consecutivo</th>
+                                        <th>Clase de Sitio</th>
+                                        <th>Descripción</th>
+                                        <th>Ciudad/Municipio</th>
+                                        <th>Barrio</th>
+                                        <th>Dirección</th>
+                                        <th>Latitud</th>
+                                        <th>Longitud</th>
+                                        <th>Teléfono</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                        <!-- /panel con Tablas -->
+                    </div>
+                    <!--------------------------------------CONTENIDO TAB SITIOS IMPORTANTES------------------------------------->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+@Scripts.Render("~/bundle/ConsultaSitiosJs");
+
+    <script>
+        AplicarPluginTabla("tablaSitios");
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        var urlTablaParqueaderos = '@Url.Action("VerParqueaderos", "ConsultaSitios")';
+        var urlTablaImportantes = '@Url.Action("VerSitiosImportantes", "ConsultaSitios")';
+    </script>
+}

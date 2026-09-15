@@ -1,0 +1,99 @@
+﻿@model SECADEntities.SecadEntities.CADNETPERFIL_ELE_PERMISO
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+<!-- Content area -->
+<div class="content">
+    <!-- Formulario 1 -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">Creación de Registro</h5>
+            <div class="heading-elements">
+                <ul class="icons-list ">
+
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+@using (Html.BeginForm("Create", "PerfilPermiso", FormMethod.Post, new { @class = "form-compact" }))
+{
+        <div class="panel-body">
+            
+                @Html.AntiForgeryToken()
+                <fieldset class="content-group">
+                    <div class="row">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group col-md-3 col-lg-3 obligatorio">
+                            
+                            <div class="col-md-12 form-group">
+                                @Html.LabelFor(model => model.PEP_PERFIL_ID, "Perfil", htmlAttributes: new { @class = "control-label " })
+                                @Html.DropDownList("PEP_PERFIL_ID", null, string.Empty, htmlAttributes: new { @class = "form-control chosen" })
+                                @Html.ValidationMessageFor(model => model.PEP_PERFIL_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-lg-3 obligatorio">
+                            @Html.LabelFor(model => model.PEP_PERMISO_ID, "Permiso", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-12 form-group">
+                                @Html.DropDownList("PEP_PERMISO_ID", null, string.Empty, htmlAttributes: new { @class = "form-control chosen" })
+                            @Html.ValidationMessageFor(model => model.PEP_PERMISO_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-lg-3 obligatorio">
+                            <div class="col-md-12 form-group">
+                                @Html.LabelFor(model => model.PEP_PERFIL_ID, "Elemento", htmlAttributes: new { @class = "control-label " })
+                                <select class="form-control chosen" id="PEP_ELEMENTO_ID" name="PEP_ELEMENTO_ID">
+                                    <option value="0">Selecciones</option>
+                                </select>
+                               @* @Html.DropDownList("PEP_ELEMENTO_ID", null, string.Empty, htmlAttributes: new { @class = "form-control chosen" })*@
+                                @Html.ValidationMessageFor(model => model.PEP_ELEMENTO_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-lg-3 obligatorio">
+                            <div class="form-group">
+                                <label class="control-label col-md-6">Estado</label>
+                                
+                                <div class="col-md-12">
+
+                                    @Html.CheckBoxFor(model => model.PEP_ESTADO, htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_size = "mini", data_on_color = "success", data_off_color = "danger", data_on_text = "ACTIVO", data_off_text = "INACTIVO", @checked = "checked" })
+                                    @Html.ValidationMessageFor(model => model.PEP_ESTADO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+            
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-6 col-md-6text-left">
+                    <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                            data-original-title="Clic para regresar a la tabla" onclick="location.href='@Url.Action("Index")'">
+                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                    </button>
+                </div>
+                <div class="col-xs-6 col-md-6 text-right">
+                    <button class="btn bg-teal" data-popup="tooltip"
+                            title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                        <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+}
+    </div>
+    <!-- /formulario 1 -->
+</div>
+<!-- /content area -->
+@section PostScripts{
+    
+    @Scripts.Render("~/bundle/CheckSwitchJs");
+    @Scripts.Render("~/bundle/PerfilPermisoJs");
+    <script>
+        var urlObtenerElementos = "@Url.Action("ObtenerElementos", "PerfilPermiso")";
+            $(function () {
+                $(".chosen").chosen({ allow_single_deselect: true });
+            });
+    </script>
+}

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADCANALE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Canales de Despacho Disponibles por: @ViewBag.nombreEntidad</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button id="btnNuevo" onclick="location.href='@Url.Action("Create", "Canales", new { fuerzaId = @ViewBag.idEntidad })'" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para nuevo canal">
+                                    Nuevo<b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>
+
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="_tblCanales">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Clase de Turno</th>
+                            <th>Formulario</th>
+                            <th>Tipo Canal</th>
+                            <th>Vigente</th>
+                            <th>Desde</th>
+                            <th>Hasta</th>
+                            <th>Disponible</th>
+                            <th>Observacion</th>
+                            <th>Tipo de Casos</th>
+                        </tr>
+                    </thead> 
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6text-left">
+            <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                    data-original-title="Clic para regresar Entidades" onclick="location.href=('@Url.Action("Index", "Entidades", new {idSitioGrabacion = ViewBag.idSitio })')">
+                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar a Entidades
+            </button>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/CanalesControllerJs")
+    <script>                 ///////AplicarPluginTabla("_tblCanales");
+
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        var urlConsultarCanales = "@Url.Action("ConsultarCanales", "Canales")";
+        var fuerzaId = @ViewBag.idEntidad;
+
+    </script>
+}

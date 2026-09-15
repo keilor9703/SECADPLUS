@@ -1,0 +1,24 @@
+20241027 16:05:47 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20241027 16:06:52 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20241027 16:07:50 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126

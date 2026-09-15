@@ -1,0 +1,1508 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Notificacion flotante</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/core.css" rel="stylesheet" type="text/css">
+	<link href="css/components.css" rel="stylesheet" type="text/css">
+	<link href="css/colors.css" rel="stylesheet" type="text/css">
+	<link href="css/personalizado.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/plugins/loaders/blockui.min.js"></script>
+	<script type="text/javascript" src="js/core/app.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+		<!-- Formularios JS -->
+		<script type="text/javascript" src="js/pages/form_select2.js"></script>
+		<script type="text/javascript" src="js/plugins/forms/selects/select2.min.js"></script>
+		<script type="text/javascript" src="js/plugins/forms/styling/uniform.min.js"></script>
+		<script type="text/javascript" src="js/pages/form_layouts.js"></script>
+		<script type="text/javascript" src="js/core/libraries/jquery_ui/interactions.min.js"></script>
+
+		<!-- Tootips JS -->
+		<script type="text/javascript" src="js/pages/components_popups.js"></script>
+
+		<!-- Modals JS -->
+		<script type="text/javascript" src="js/plugins/notifications/bootbox.min.js"></script>
+		<script type="text/javascript" src="js/plugins/notifications/sweet_alert.min.js"></script>
+		<script type="text/javascript" src="js/pages/components_modals.js"></script>
+
+		<!-- Bootstrap select JS -->
+		<script type="text/javascript" src="js/plugins/forms/selects/bootstrap_select.min.js"></script>
+		<script type="text/javascript" src="js/pages/form_bootstrap_select.js"></script>
+
+		<!-- Calendario JS -->
+		<script type="text/javascript" src="js/plugins/notifications/jgrowl.min.js"></script>
+		<script type="text/javascript" src="js/plugins/ui/moment/moment.min.js"></script>
+		<script type="text/javascript" src="js/plugins/pickers/daterangepicker.js"></script>
+		<script type="text/javascript" src="js/plugins/pickers/anytime.min.js"></script>
+		<script type="text/javascript" src="js/plugins/pickers/pickadate/picker.js"></script>
+		<script type="text/javascript" src="js/plugins/pickers/pickadate/picker.date.js"></script>
+		<script type="text/javascript" src="js/plugins/pickers/pickadate/picker.time.js"></script>
+		<script type="text/javascript" src="js/plugins/pickers/pickadate/legacy.js"></script>
+		<script type="text/javascript" src="js/pages/picker_date.js"></script>
+
+		<!-- Datatables JS -->
+		<script type="text/javascript" src="js/plugins/tables/datatables/datatables.min.js"></script>
+		<script type="text/javascript" src="js/plugins/tables/datatables/extensions/responsive.min.js"></script>
+		<script type="text/javascript" src="js/plugins/forms/selects/select2.min.js"></script>
+	    <!-- /theme JS files -->
+        
+        <script>
+          $( function() {
+            $( ".drag_notification" ).draggable();
+          } );
+            
+        $(document).ready(function(c) {
+            $('.alert-close').on('click', function(c){
+                $(this).parent().parent().fadeOut('slow', function(c){
+                });
+            });	
+        });        
+        </script>
+    
+</head>
+
+<body>
+
+	<!-- Header navbar -->
+	<div class="navbar navbar-inverse color_secad">
+		<div class="navbar-header">
+			<!-- Logo policia -->
+			<a class="navbar-brand" href="#"><img src="images/logoSECAD.png" alt=""></a>
+            <p class="titulo">
+                <br>
+                Policia Nacional
+                <br>
+                <br>
+                <strong>Modulo SECAD</strong>
+            </p>
+
+			<!-- Icono del menu -->
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-chevron-down"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para minimizar o maximizar menú">
+					<a class="sidebar-control sidebar-main-toggle hidden-xs">
+						<i class="icon-arrow-left22"></i>
+						<i class="icon-paragraph-justify3"></i>
+					</a>
+				</li>
+			</ul>
+
+			<!-- Título central -->
+			<!--<div class="brand-secad color_two">
+				<img src="images/secad_w.png" alt="logo"/>
+			</div>-->
+			<!-- /Título central -->
+
+			<!-- Sección derecha header -->
+			<div class="navbar-right">
+				<ul class="nav navbar-nav">
+					<!-- Botón  de notificaciones -->
+					<!--<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bubbles4"></i>
+							<span class="visible-xs-inline-block position-right">Messages</span>
+							<span class="badge bg-warning-400">2</span>
+						</a>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						 <!--Desplegable notificaciones--> 
+						<!--<div class="dropdown-menu dropdown-content width-350">
+							<div class="dropdown-content-heading">
+								Mensajes
+								<ul class="icons-list">
+									<li><a href="#"><i class="icon-compose"></i></a></li>
+								</ul>
+							</div>-->
+
+							<ul class="media-list dropdown-content-body">
+								<li class="media">
+									<div class="media-left">
+										<i class="glyphicon glyphicon-user"></i>
+									</div>
+
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">James Alexander</span>
+											<span class="media-annotation pull-right">04:58</span>
+										</a>
+
+										<span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<i class="glyphicon glyphicon-user"></i>
+									</div>
+
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">Margo Baker</span>
+											<span class="media-annotation pull-right">12:16</span>
+										</a>
+
+										<span class="text-muted">That was something he was unable to do because...</span>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<i class="glyphicon glyphicon-user"></i>
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">Jeremy Victorino</span>
+											<span class="media-annotation pull-right">22:48</span>
+										</a>
+
+										<span class="text-muted">But that would be extremely strained and suspicious...</span>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<i class="glyphicon glyphicon-user"></i>
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">Beatrix Diaz</span>
+											<span class="media-annotation pull-right">Tue</span>
+										</a>
+
+										<span class="text-muted">What a strenuous career it is that I've chosen...</span>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<i class="glyphicon glyphicon-user"></i>
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">Richard Vango</span>
+											<span class="media-annotation pull-right">Mon</span>
+										</a>
+
+										<span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+									</div>
+								</li>
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="#" data-popup="tooltip" title="Todos los mensajes"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+						 /botón de notificaciones 
+					</li>
+					 /desplegable notificaciones 
+
+					 Botón perfil 
+					<li class="dropdown dropdown-user color_two">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<img src="images/" alt="">
+							<span>Victoria</span>
+							<i class="caret"></i>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#"><i class="icon-user-plus"></i> Mi perfil</a></li>
+							<li><a href="#"><i class="icon-switch2"></i> Cerrar sesión</a></li>
+						</ul>
+					</li>
+					<!-- /botón perfil -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /header navbar -->
+
+
+	<!-- Contenedor de página -->
+	<div class="page-container">
+
+		<!-- Contenido de página -->
+		<div class="page-content">
+
+			<!-- Barra izquierda -->
+			<div class="sidebar sidebar-main color_secad">
+
+				<div class="sidebar-content">
+					<!-- Navegación Principal -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Principal -->
+								<li class="navigation-header"><span>Menú principal</span> <i class="icon-menu" title="Menú principal"></i></li>
+								<li><a href="#"><i class="icon-home4"></i> <span>Proceso</span></a></li>
+								<li>
+									<a href="#"><i class="glyphicon glyphicon-edit"></i> <span>Editar</span></a>
+									<ul>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-copy"></i> <span>Consultar</span></a>
+									<ul>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+										<li><a href="#"> item</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-list-unordered"></i> <span>Bloque</span></a>
+									<ul>
+										<li><a href="#">item</a></li>
+										<li><a href="#">item</a></li>
+										<li><a href="#">item</a></li>
+										<li><a href="#">item</a></li>
+										<li><a href="#">item</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-stack"></i> <span>Registrar</span></a>
+									<ul>
+										<li><a href="#">item</a></li>
+										<li>
+											<a href="#">item</a>
+											<ul>
+												<li><a href="#">item</a></li>
+												<li><a href="#">item</a></li>
+											</ul>
+										</li>
+										<li><a href="#">item</a></li>
+										<li>
+											<a href="#">item</a>
+											<ul>
+												<li><a href="#">item</a></li>
+												<li><a href="#">item</a></li>
+												<li><a href="#">item</a></li>
+											</ul>
+										</li>
+										<li><a href="#">item</a></li>
+										<li><a href="#">item</a></li>
+										<li><a href="#">item</a></li>
+										<li class="navigation-divider"></li>
+
+									</ul>
+								</li>
+								<li><a href="#"><i class="icon-list-unordered"></i> <span>Campo</span></a></li>
+								<li><a href="#"><i class="icon-list-unordered"></i> <span>Ventana</span></a></li>
+								<li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> <span>Ayuda</span></a></li>
+								<!-- /principal -->
+							</ul>
+						</div>
+					</div>
+					<!-- /navegación Principal -->
+				</div>
+			</div>
+			<!-- /barra izquierda -->
+
+
+			<!-- Contenido principal -->
+			<div class="content-wrapper color_secad">
+
+				<!-- Contenedor Breadcrumb -->
+				<div class="page-header page-header-default">
+
+					<!-- Enlaces Breadcrumb -->
+					<div class="breadcrumb-line">
+						<ul class="breadcrumb">
+							<!-- item de Breadcrumb -->
+							<li><a href="index.html"><i class="icon-home2 position-left"></i>Inicio</a></li>
+							<li><a href="form_layout_horizontal.html">General</a></li>
+							<li class="active">Horizontal</li>
+						</ul>
+
+						<!-- Hora del servidor -->
+						<ul class="breadcrumb-elements servertime">
+							<li>
+								<span> <i class="glyphicon glyphicon-time"></i> Oct 7, 10:30 am</span>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<!-- /contenedor Breadcrumb -->
+
+					<!-- Área de contenido -->
+					<div class="content">
+
+                        <div id="notification_secad" class="drag_notification ui-widget-content">
+                            <section class="head_notify">
+                                <h6>
+                                    <i class="icon-checkmark4 position-left"></i>
+								    Mensaje:
+                                </h6>
+                                <a class="alert-close"><i class="icon-close2"></i></a>				
+				            </section>				
+								<div class="content_notify">
+                                    <div class="notify_message">
+                                        
+								        <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Llamada asignada:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">313313313</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Fecha:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">21/12/2016 18:52</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Caso:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">525</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Ciudad:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">Soacha</span>
+                                        </div>                                                                                                                    
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Dirección:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">Cra 8 sur #71c bis - 77</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr>
+                                    
+                                    <div class="notify_message">
+								        <div class="row form-compact">
+									        <label class="col-xs-5 col-md-5">Llamada asignada:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">313313313</span>
+                                        </div>
+                                    
+                                        <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Fecha:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">21/12/2016 18:52</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Caso:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">525</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Ciudad:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">Soacha</span>
+                                        </div>                                                                                                                    
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Dirección:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">Cra 8 sur #71c bis - 77</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr>
+                                    
+                                    <div class="notify_message">
+								        <div class="row form-compact">
+									        <label class="col-xs-5 col-md-5">Llamada asignada:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">313313313</span>
+                                        </div>
+                                    
+                                        <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Fecha:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">21/12/2016 18:52</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Caso:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">525</span>
+                                        </div>
+
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Ciudad:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">Soacha</span>
+                                        </div>                                                                                                                    
+                                            <div class="row form-compact">
+                                            <label class="col-xs-5 col-md-5">Dirección:</label>
+                                            <span class="col-xs-7 col-md-7 label label-default">Cra 8 sur #71c bis - 77</span>
+                                        </div>
+                                    </div>
+								</div>
+							                           
+                            
+                        </div>
+                        
+                                                                                      
+                                                                
+				        <div class="row">
+                            <div class="col-md-12">
+				                <form class="form-horizontal" action="#">
+								    <div class="panel panel-flat">
+									<div class="panel-heading">
+										<h5 class="panel-title">Relación de personas atendidas</h5>
+										<div class="heading-elements">
+											<ul class="icons-list decad">
+												<li>
+													<button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
+													data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+													data-original-title="Clic para eliminar">
+													<b><i class="icon-folder-remove"></i></b>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="btn bg-teal btn-xs" data-toggle="modal"
+													data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+													data-original-title="Clic para traer datos del evento">
+													<b><i class="icon-folder-download position-left"></i></b>Traer datos del evento
+													</button>
+												</li>
+												<li><a data-action="collapse"></a></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="panel-body">
+									    <div class="col-md-12">
+										    <fieldset>
+                                                <legend class="text-semibold">
+                                                    <i class="icon-man-woman position-left"></i>
+                                                    Personas relacionadas
+                                                    <a class="control-arrow" data-toggle="collapse" data-target="#demo1">
+                                                        <i class="icon-circle-down2"></i>
+                                                    </a>
+                                                </legend>
+
+                                                <div class="collapse in" id="demo1">
+                                                    <table class="table table-hover table-bordered table-xxs table-condensed datatable-basic">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Acciones</th>
+                                                                <th>Consecutivo</th>
+                                                                <th>Tipo identificación</th>
+                                                                <th>Identificación</th>
+                                                                <th>Nombres</th>
+                                                                <th>Apellidos</th>
+                                                                <th>Fecha Nacimiento</th>
+                                                                <th>Sexo</th>
+                                                                <th>Raza</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <ul class="icons-list decad_menu">
+                                                                        <li class="dropdown">
+                                                                            <button type="button" class="btn btn-xs border-teal text-teal btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                                                    <i class="icon-menu9"></i>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                                                <li>
+                                                                                    <button class="btn btn-default" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio">
+                                                                                    <i class="icon-eye position-left"></i> Ver</button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button class="btn btn-default" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio">
+                                                                                    <i class="glyphicon glyphicon-edit position-left"></i> Editar</button>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td>0005</td>
+                                                                <td>Cédula ciudadanía</td>
+                                                                <td>58.258.140</td>
+                                                                <td>Nohora Beatriz</td>
+                                                                <td>Cadavíd Gonzales</td>
+                                                                <td>12-05-1959</td>
+                                                                <td>Indígena</td>
+                                                                <td>Femenino</td>
+                                                                <td><i class="icon-checkmark"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <ul class="icons-list decad_menu">
+                                                                        <li class="dropdown">
+                                                                            <button type="button" class="btn btn-xs border-teal text-teal btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                                                    <i class="icon-menu9"></i>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                                                <li>
+                                                                                    <button class="btn btn-default" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio">
+                                                                                    <i class="icon-eye position-left"></i> Ver</button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button class="btn btn-default" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio">
+                                                                                    <i class="glyphicon glyphicon-edit position-left"></i> Editar</button>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td>0006</td>
+                                                                <td>Tarjeta de identidad</td>
+                                                                <td>1.201.580.658</td>
+                                                                <td>Belarmino</td>
+                                                                <td>Ocoró</td>
+                                                                <td>11-11-1988</td>
+                                                                <td>Afrodescendiente</td>
+                                                                <td>Masculino</td>
+                                                                <td><i class="icon-checkmark"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <ul class="icons-list decad_menu">
+                                                                        <li class="dropdown">
+                                                                            <button type="button" class="btn btn-xs border-teal text-teal btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                                                    <i class="icon-menu9"></i>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                                                <li>
+                                                                                    <button class="btn btn-default" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio">
+                                                                                    <i class="icon-eye position-left"></i> Ver</button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button class="btn btn-default" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear nuevo sitio">
+                                                                                    <i class="glyphicon glyphicon-edit position-left"></i> Editar</button>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td>0007</td>
+                                                                <td>Cédula ciudadanía</td>
+                                                                <td>89.568.221</td>
+                                                                <td>Carmenza Stella</td>
+                                                                <td>Bohorquez Zanabria</td>
+                                                                <td>18-05-1975</td>
+                                                                <td>Blanco</td>
+                                                                <td>Femenino</td>
+                                                                <td><i class="icon-checkmark"></i></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                    <div class="row space">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-3">Tipo registro:</label>
+                                                                <div class="col-lg-9">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="gender2" class="styled" checked="checked">
+                                                                        Víctima
+                                                                    </label>
+
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="gender2" class="styled">
+                                                                        Víctima secundaria
+                                                                    </label>
+
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="gender2" class="styled">
+                                                                        Reportante
+                                                                    </label>
+
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="gender2" class="styled">
+                                                                        Agresor
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+
+                                                            <div class="col-md-4 form-compact">
+                                                            <label class="col-xs-5 col-md-4">Usuario:</label>
+                                                            <span class="col-xs-7 col-md-8 label label-default">Intendente Ruíz</span>
+                                                        </div>
+                                                        </div>
+
+                                                        <div class="row">                                                          
+                                                            <div class="col-md-8">
+                                                                <div class="form-compact">
+                                                                    <label class="col-lg-3">Reportante:</label>
+                                                                    <div class="col-lg-9">
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="report2" class="styled" checked="checked">
+                                                                            Víctima
+                                                                        </label>
+
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="report2" class="styled">
+                                                                            Víctima secundaria
+                                                                        </label>
+
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="report2" class="styled">
+                                                                            Familiar
+                                                                        </label>
+
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="report2" class="styled">
+                                                                            Conocido
+                                                                        </label>
+
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="report2" class="styled">
+                                                                            Desconocido
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>             
+
+                                                            <div class="col-md-4 form-compact">
+                                                            <label class="col-xs-5 col-md-4">Fecha transacción:</label>
+                                                            <span class="col-xs-7 col-md-8 label label-default">15-12-2016 20:30</span>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+										</div>
+                                       
+                                        <div class="col-md-12">
+										    <fieldset>
+											    <legend class="text-semibold">
+                                                    <i class="icon-vcard position-left"></i>
+                                                    Más información
+                                                    <a class="control-arrow" data-toggle="collapse" data-target="#demo2">
+                                                        <i class="icon-circle-down2"></i>
+                                                    </a>
+                                                </legend>
+
+                                                <div class="collapse in" id="demo2">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-xs-12 col-lg-4">Medio conoc:</label>
+                                                                        <div class="col-xs-12 col-lg-8">
+                                                                            <select data-placeholder="Seleccione" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-xs-12 col-lg-3">No ficha:</label>
+                                                                        <div class="col-xs-12 col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo números" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-4">LGBTI:</label>
+                                                                        <div class="col-lg-8">
+                                                                            <label class="radio">
+                                                                                <input type="radio" name="gender1" class="styled">
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Edad:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo números" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                              
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-4">Discapacidad:</label>
+                                                                        <div class="col-lg-8">
+                                                                            <label class="radio">
+                                                                                <input type="radio" name="gender1" class="styled">
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <div class="col-lg-12">
+                                                                            <select data-placeholder="Seleccione" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                              
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-4">Desplazado:</label>
+                                                                        <div class="col-lg-8">
+                                                                            <label class="radio">
+                                                                                <input type="radio" name="gender1" class="styled">
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <div class="col-lg-12">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                              
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-12">Nivel educativo:</label>
+                                                                        <div class="col-lg-12">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-12">Act. económica:</label>
+                                                                        <div class="col-lg-12">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                              
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-4">Organizaciones:</label>
+                                                                        <div class="col-lg-8">
+                                                                            <label class="radio">
+                                                                                <input type="radio" name="gender1" class="styled">
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <div class="col-lg-12">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                              
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-12">Régimen salud:</label>
+                                                                        <div class="col-lg-12">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-12">Ips:</label>
+                                                                        <div class="col-lg-12">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                              
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Munic. reside:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                  
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Comuna:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                  
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Barrio:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                  
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Dirección:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                  
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-4">Telefono 1:</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                  
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-4">Telefono 2:</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                  
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Relación con agresor:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <label class="radio-inline">
+                                                                                <input type="radio" name="report3" class="styled" checked="checked">
+                                                                                Familiar
+                                                                            </label>
+
+                                                                            <label class="radio-inline">
+                                                                                <input type="radio" name="report3" class="styled">
+                                                                                Particular
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Familiar:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Particular:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Grupo agresor:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Desc. grupo:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                            </div>
+                                                            
+                                                            <div class="row space_down">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Mec / arma:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>    
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class="col-md-7">
+                                                            <div class="row">
+                                                                <div class="col-md-8">
+                                                                    <div class="row space_down">
+                                                                        <div class="col-md-6">
+                                                                    <div class="form-compact">
+                                                                        <label class="col-lg-3">Motivo:</label>
+                                                                        <div class="col-lg-9">
+                                                                            <select data-placeholder="Select your country" class="select">
+                                                                                <option value="...">...</option> 
+                                                                                <option value="opcion1">opcion1</option> 
+                                                                                <option value="opcion2">opcion2</option> 
+                                                                                <option value="opcion3">opcion3</option> 
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> 
+                                                                  
+                                                                        <div class="col-md-6 text-center">
+                                                                    <div class="form-compact">
+                                                                        <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para traer datos del evento">
+                                                                        <b><i class=" icon-pencil3 position-left"></i></b>Datos de los hechos
+                                                                        </button>
+                                                                    </div>
+                                                                </div> 
+                                                                    </div>
+                                                                    
+                                                                    <div class="row space_down">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-compact">
+                                                                                <label class="col-lg-3">Munic. hechos:</label>
+                                                                                <div class="col-lg-9">
+                                                                                    <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                    
+                                                                    <div class="row space_down">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-compact">
+                                                                                <label class="col-lg-3">Barrio:</label>
+                                                                                <div class="col-lg-9">
+                                                                                    <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-compact">
+                                                                                <label class="col-lg-3">Comuna:</label>
+                                                                                <div class="col-lg-9">
+                                                                                    <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>        
+                                                                    </div>
+                                                                    
+                                                                    <div class="row space_down">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-compact">
+                                                                                <label class="col-lg-3">Dirección:</label>
+                                                                                <div class="col-lg-9">
+                                                                                    <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>       
+                                                                    </div>
+                                                                    
+                                                                    <div class="row space_down">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-compact">
+                                                                                <label class="col-xs-12 col-lg-3">Clase sitio:</label>
+                                                                                <div class="col-xs-12 col-lg-9">
+                                                                                    <select data-placeholder="Seleccione" class="select">
+                                                                                        <option value="...">...</option> 
+                                                                                        <option value="opcion1">opcion1</option> 
+                                                                                        <option value="opcion2">opcion2</option> 
+                                                                                        <option value="opcion3">opcion3</option> 
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="row space_down">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-compact">
+                                                                                <label class="col-lg-3">Nombre:</label>
+                                                                                <div class="col-lg-9">
+                                                                                    <input type="text" placeholder="Escriba solo textos" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>       
+                                                                    </div>
+                                                                </div> 
+                                                                  
+                                                                <div class="col-md-4"> 
+                                                                    <div class="form-compact">
+                                                                        <label>Observaciones</label>
+                                                                        <div>
+                                                                            <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                                        </div>
+                                                                    </div>       
+                                                                </div>                                         
+                                                            </div>
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <fieldset>
+                                                                    <legend>Recursos de atención entregados</legend>
+                                                                    <table class="table table-hover table-bordered table-xxs datatable-basic">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Cons.</th>
+                                                                                <th>Recurso</th>
+                                                                                <th></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>4875</td>
+                                                                                <td>ASVE</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3558</td>
+                                                                                <td>DERCO</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>6895</td>
+                                                                                <td>FREDA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1045</td>
+                                                                                <td>ARCA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1045</td>
+                                                                                <td>ARCA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>                                                   
+                                                                    
+                                                                    <div class="form-compact">
+                                                                        <label>Observaciones</label>
+                                                                        <div>
+                                                                            <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                                        </div>
+                                                                    </div>                    
+                                                                    <fieldset>
+                                                                </div>
+                                                                
+                                                                <div class="col-md-4">
+                                                                    <fieldset>
+                                                                    <legend>Gestiones adelantadas</legend>
+                                                                    <table class="table table-hover table-bordered table-xxs datatable-basic">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Cons.</th>
+                                                                                <th>Atención</th>
+                                                                                <th></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>4875</td>
+                                                                                <td>ASVE</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3558</td>
+                                                                                <td>DERCO</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>6895</td>
+                                                                                <td>FREDA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1045</td>
+                                                                                <td>ARCA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1045</td>
+                                                                                <td>ARCA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>                                                   
+                                                                    
+                                                                    <div class="form-compact">
+                                                                        <label>Observaciones</label>
+                                                                        <div>
+                                                                            <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                                        </div>
+                                                                    </div> 
+                                                                    </fieldset>   
+                                                                </div>
+                                                                
+                                                                <div class="col-md-4">
+                                                                    <fieldset>
+                                                                    <legend>Ofertas institucionales</legend>
+                                                                    <table class="table table-hover table-bordered table-xxs datatable-basic">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Cons.</th>
+                                                                                <th>Oferta</th>
+                                                                                <th></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>4875</td>
+                                                                                <td>ASVE</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3558</td>
+                                                                                <td>DERCO</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>6895</td>
+                                                                                <td>FREDA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1045</td>
+                                                                                <td>ARCA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1045</td>
+                                                                                <td>ARCA</td>
+                                                                                <td>
+                                                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                                                    data-placement="bottom" data-original-title="Clic para ver">
+                                                                                    <i class="icon-arrow-down132"></i></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>                                                   
+                                                                    
+                                                                    <div class="form-compact">
+                                                                        <label>Observaciones</label>
+                                                                        <div>
+                                                                            <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                                        </div>
+                                                                    </div> 
+                                                                    </fieldset>   
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+										    </fieldset>
+                                        </div>
+									</div>
+								</div>
+							    </form>
+                            </div>   
+                        </div>		       
+
+					</div>
+
+
+					<!-- Horizontal form modal -->
+					<div id="modal_form_horizontal" class="modal fade">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title">Horizontal form</h5>
+								</div>
+
+								<form action="#" class="form-horizontal">
+									<div class="modal-body">
+										<div class="form-group">
+											<label class="col-sm-3">First name</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="Eugene" class="form-control">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">Last name</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="Kopyov" class="form-control">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">Email</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="eugene@kopyov.com" class="form-control">
+												<span class="help-block">name@domain.com</span>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">Phone #</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="+99-99-9999-9999" data-mask="+99-99-9999-9999" class="form-control">
+												<span class="help-block">+99-99-9999-9999</span>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">Address line 1</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="Ring street 12, building D, flat #67" class="form-control">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">City</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="Munich" class="form-control">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">State/Province</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="Bayern" class="form-control">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3">ZIP code</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="1031" class="form-control">
+											</div>
+										</div>
+									</div>
+
+									<div class="modal-footer">
+										<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-primary">Submit form</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /horizontal form modal -->
+
+				</div>
+			<!-- /área de contenido -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+
+
+	<!-- Footer -->
+	<div class="footer-Secad text-center color_secad">
+		<div class="row">
+			<div class="col-md-1">
+				<!--<img src="images/estrella_policia.png" alt="nuevo país">-->
+			</div>
+            <div class="col-md-5">
+                <p b-cvth4c8jlk>
+                    <strong b-cvth4c8jlk>© 2024 </strong>
+                    "Sistema de Información para el Registro de Llamadas de Emergencia - SECAD"
+                    <br>
+            </div>
+			<div class="col-md-7">
+				<!--<img src="images/ofite.png" alt="nuevo país">-->
+			</div>
+
+		</div>
+
+	</div>
+	<!-- /footer -->
+	
+<!--
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".datatable-basic").dataTable({
+                aaSorting: [[2, 'asc']];
+            }); 
+        });
+    </script>
+-->
+	
+
+	<script type="text/javascript" src="js/custom_datatable.js"></script>
+
+</body>
+</html>

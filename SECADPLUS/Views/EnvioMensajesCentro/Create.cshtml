@@ -1,0 +1,117 @@
+﻿@model SECADEntities.SECAD.CADMENSAJE
+
+@{
+    ViewBag.Title = "Crear Centro de Mensaje";
+}
+
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Centro de Mensaje:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "EnvioMensajesCentro", FormMethod.Post, new { @class = "form_secad" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.Hidden("CONSECUTIVO")
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Sitio de Grabación:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.DropDownList("SITIO_GRABA", null, string.Empty, htmlAttributes: new { @class = "select-clear" })
+                                            @Html.ValidationMessageFor(model => model.SITIO_GRABA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Consecutivo:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Fecha:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.Editor("FECHA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.FECHA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group">
+                                <label>Usuario Graba:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.Editor("CADUSUA_INICIA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.CADUSUA_INICIA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group">
+                                <label>Estado:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.Editor("ESTADO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.ESTADO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 text-left">
+                            <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                    data-original-title="Clic para regresar a la tabla"
+                                    onclick="window.location.href ='@Url.Action("Index", "EnvioMensajes")'">
+                                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                    value="Create">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+
+

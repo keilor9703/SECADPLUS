@@ -1,0 +1,283 @@
+﻿@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+
+
+}
+
+
+<!-- modalUnidades modal -->
+@*<div id="ModalAnotacionesEventos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Anotaciones</h5>
+            </div>*@
+@Html.Partial("_Mensajes")
+<div class="panel-body">
+
+    <div class="row">
+        @Html.Hidden("CadEvenNumeroEvento")
+        @Html.Hidden("SitioGraba")
+        @Html.Hidden("NumeroEvento")
+
+
+
+
+
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title"></h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+
+                                <button class="btn btn-xs bg-teal" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para Guardar" onclick="GuardarAnotacionEvento()">
+                                    <i class="glyphicon glyphicon-floppy-disk position-left"></i> Guardar
+                                </button>
+                                @*<button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear anotación"
+                                        onclick="AbrirModalAnotaciones()">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear anotación
+                                </button>*@
+                            </li>
+                            <li>
+                                 @*<button class="btn btn-success btn-xs" type="button" data-popup="tooltip" title=""
+                                        onclick="window.close();" data-placement="bottom" data-original-title="Salir de anotaciones">
+                                    <i id="info" class="icon-reply-all icon_size-xs"></i>
+                                </button>*@                               
+                            </li>
+
+
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-compact">
+                                <label class="col-xs-12 col-lg-3 obligatorio">Siguiente Anotación :</label>
+                           
+
+                                    <textarea id="txtAnotacion" placeholder="" class="form-control"  style="resize:none;height:160px" autofocus></textarea>
+
+                                    <br />
+
+                               
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 form-group">
+                            @*<button class="btn btn-xs bg-teal" type="button" data-popup="tooltip" title=""
+                                    data-placement="bottom" data-original-title="Clic para Guardar" onclick="GuardarAnotacionEvento()">
+                                <i class="glyphicon glyphicon-floppy-disk position-left"></i> Guardar
+                            </button>*@
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-lg-12">
+                            <table class="table table-hover table-xxs datatable-basic" id="tablaAnotacionesEvento">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Anotación</th>
+                                        <th>Número</th>
+                                        <th>Usuario que graba</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend class="text-semibold">
+                            <i class="icon-database2 position-left"></i>
+                            Conexiones de bases SECAD+
+                            <a class="control-arrow" data-toggle="collapse" data-target="#collapse1">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+
+                        <div class="collapse in" id="collapse1">
+                            <div class="row space_down">
+                                @Html.Hidden("SITIOGRABA_REMOTOS_CON1")
+                                @Html.Hidden("DBLINK_REMOTOS_CON1")
+                                @Html.Hidden("FUERZA_REMOTOS_CON1")
+                                @Html.Hidden("CANAL_REMOTOS_CON1")
+
+
+                                <div class="col-sm-3">                                  
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="form-compact">
+                                       
+                                        <div class="col-xs-12 col-lg-9">
+                                            <input type="text" id="txtConexion1" placeholder="" class="form-control" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-xs bg-teal"  id="btn_1" type="button" data-popup="tooltip" title="" 
+                                           onclick="EnviarCasoRemoto(this)" data-placement="bottom" data-original-title="Clic para enviar el caso a remoto">
+                                        <i class="icon-shutter position-left"></i> Enviar el caso a remoto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row space_down">
+                                @Html.Hidden("SITIOGRABA_REMOTOS_CON2")
+                                @Html.Hidden("DBLINK_REMOTOS_CON2")
+                                @Html.Hidden("FUERZA_REMOTOS_CON2")
+                                @Html.Hidden("CANAL_REMOTOS_CON2")
+                                <div class="col-sm-3">
+                                    <button class="btn btn-xs bg-teal" type="button" data-popup="tooltip" title="" data-placement="bottom" 
+                                           onclick="CargarConexionesRemotas()" data-original-title="Clic para activar accesos remotos">
+                                        <i class="icon-database-insert position-left"></i> Activar accesos remotos
+                                    </button>
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="form-compact">
+                                        <label class="col-xs-12 col-lg-9"></label>
+                                        <div class="col-xs-12 col-lg-9">
+                                            <input type="text" id="txtConexion2" placeholder="" class="form-control" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-xs bg-teal"  id="btn_2" type="button" data-popup="tooltip" title="" 
+                                             onclick="EnviarCasoRemoto(this)" data-placement="bottom" data-original-title="Clic para enviar el caso a remoto">
+                                        <i class="icon-shutter position-left"></i> Enviar el caso a remoto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row space_down">
+                                @Html.Hidden("SITIOGRABA_REMOTOS_CON3")
+                                @Html.Hidden("DBLINK_REMOTOS_CON3")
+                                @Html.Hidden("FUERZA_REMOTOS_CON3")
+                                @Html.Hidden("CANAL_REMOTOS_CON3")
+                                <div class="col-sm-3">
+                                  
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="form-compact">
+                                        <label class="col-xs-12 col-lg-9"></label>
+                                        <div class="col-xs-12 col-lg-9">
+                                            <input type="text" id="txtConexion3" placeholder="" class="form-control" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-xs bg-teal"  id="btn_3" type="button" data-popup="tooltip" title=""
+                                             onclick="EnviarCasoRemoto(this)" data-placement="bottom" data-original-title="Clic para enviar el caso a remoto">
+                                        <i class="icon-shutter position-left"></i> Enviar el caso a remoto
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="row space_down">
+                                @Html.Hidden("SITIOGRABA_REMOTOS_CON4")
+                                @Html.Hidden("DBLINK_REMOTOS_CON4")
+                                @Html.Hidden("FUERZA_REMOTOS_CON4")
+                                @Html.Hidden("CANAL_REMOTOS_CON4")
+                                <div class="col-sm-3">                                  
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="form-compact">
+                                        <label class="col-xs-12 col-lg-9"></label>
+                                        <div class="col-xs-12 col-lg-9">
+                                            <input type="text" id="txtConexion4" placeholder="" class="form-control" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-xs bg-teal" id="btn_4" type="button" data-popup="tooltip" title=""
+                                             onclick="EnviarCasoRemoto(this)" data-placement="bottom" data-original-title="Clic para enviar el caso a remoto">
+                                        <i class="icon-shutter position-left"></i> Enviar el caso a remoto
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@*</div>
+        </div>
+    </div>*@
+<!-- /modalUnidades modal -->
+
+
+
+
+<div id="ModalAnotacionesEventos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Anotaciones</h5>
+            </div>
+            <div class="panel-body">
+
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-compact">
+                            <label class="col-xs-12 col-lg-3 obligatorio">Siguiente Anotación :</label>
+                            <div class="col-xs-12 col-lg-7">
+
+                                <textarea id="txtAnotacion" placeholder="" class="form-control" style="height:60px"></textarea>
+
+                                <br />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <button class="btn btn-xs bg-teal" type="button" data-popup="tooltip" title=""
+                                data-placement="bottom" data-original-title="Clic para Guardar" onclick="GuardarAnotacionEvento()">
+                            <i class="glyphicon glyphicon-floppy-disk position-left"></i> Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var urlTabla = '@Url.Action("ObtenerAnotacionesEventos", "AnotacionesEventos")';
+    var urlDatos = '@Url.Action("GuardarAnotacionesEventos", "AnotacionesEventos")';
+    var urlConexionRemota = '@Url.Action("ObtenerConexionesRemotas", "AnotacionesEventos")';
+    var urlRemoto = '@Url.Action("EnviarCasoRemoto", "AnotacionesEventos")';
+
+
+</script>
+@Scripts.Render("~/bundle/AnotacionesEventosJs")

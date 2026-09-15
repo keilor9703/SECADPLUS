@@ -1,0 +1,77 @@
+﻿@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Vehículos Relacionados</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear Vehículo Relacionado"
+                                        onclick="window.location.href ='@Url.Action("Create")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear Vehículo Relacionado  
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-success btn-xs" type="button" data-popup="tooltip" title=""
+                                        onclick="window.close();" data-placement="bottom" data-original-title="Salir de Vehículo Relacionados">
+                                    <i id="info" class="icon-reply-all icon_size-xs"></i>
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            
+
+                <!-- /inicio de tabla -->
+                <table id="_tblBienesRelacionados" class="table table-hover table-xxs datatable-basic">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Consecutivo</th>
+                            <th>Usuario</th>
+                            <th>Fecha Transacción </th>
+                            <th>Placa </th>
+                            <th>Chasis</th>
+                            <th>Motor</th>
+                            <th>Serie</th>
+                            <th>Tipo Bien</th>
+                            <th>Clase</th>
+                            <th>Color</th>
+                            <th>Marca</th>
+                            <th>Linea</th>
+                            <th>Observaciones</th>
+
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        var urlTabla = "@Url.Action("ObtenerBienesRelacionados", "BienesRelacionadosEvento")";
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+
+@Scripts.Render("~/bundle/ModalsJs")
+@Scripts.Render("~/bundle/BienesRelacionadosEventoJs")
+
+

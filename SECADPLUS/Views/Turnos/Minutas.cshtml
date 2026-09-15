@@ -1,0 +1,494 @@
+﻿@{
+    ViewBag.Title = "Minutas";
+}
+<link href="~/Content/Cargando.css" rel="stylesheet" />
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/TablasJs")
+
+    <script>
+        AplicarChosen();
+
+        $("#ddlUnidad").change(function () {
+            var valor = document.getElementById("ddlUnidad").value;
+            CargarMinutaGv("tblMinutaSivicc",valor);
+        })
+
+        function AplicarChosen() {
+            $(".chosen-select").chosen({ allow_single_deselect: false, width: "100%" });
+            $("#ddlUnidad").click(
+                function (e) {
+                    e.preventDefault();
+                    return;
+                }
+            );
+        }
+
+        $(document).ajaxStart(function () {
+            $("#Process").show();
+        });
+        $(document).ajaxStop(function () {
+            $("#Process").hide();
+        });
+
+        function CargarMinutaGv(tablaId, UnidadId) {
+
+            var datos = { "UnidadId": UnidadId };
+            var UrlConsultarMinuta = "@Url.Action("F_GetMinuta", "Sivicc")";
+
+            if ($.fn.dataTable.isDataTable("#" + tablaId)) {
+                $("#" + tablaId).DataTable().destroy();
+            }
+            $("#" + tablaId).DataTable({
+                "ajax": {
+                    url: UrlConsultarMinuta,
+                    type: "POST",
+                    datatype: "json",
+                    data: { 'UnidadId': UnidadId }
+                },
+                "columns": [
+                    { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) { return ''; } },
+                    { "data": "Funcionario", "name": "Funcionario", className: "celdaJust" },
+                    { "data": "Turno", "name": "Turno", className: "celdaCenter" },
+                    { "data": "Unidad", "name": "Unidad", className: "celdaCenter" },
+                    { "data": "TipoMinuta", "name": "TipoMinuta", className: "celdaJust" },
+                    { "data": "Inicio", "name": "Inicio", className: "celdaCenter" },
+                    { "data": "Fin", "name": "Fin", className: "celdaJust" },
+                    { "data": "Cuadrante", "name": "Cuadrante", className: "celdaCenter" },
+
+                    { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) {   return ''; } },
+                        { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) { return ''; } },
+                        { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) { return ''; } }
+                ],
+                "rowCallback": function (row, data, index) {
+
+                    if (data.Arma == 0) {
+                        $(row).find('td:eq(8)').addClass('iconArmano');
+                        //$(row).find('td:eq(8)').attr('onclick', 'AbrirModalArma(' + "'" + data.MinutaEmplId + "'" + ')');
+                        //$(row).find('td:eq(8)').attr('onclick', 'AbrirModalArma(' + data.MinutaEmplId + ')');
+                    }
+                    else {
+                        $(row).find('td:eq(8)').addClass('iconArma');
+                        //$(row).find('td:eq(8)').attr('onclick', 'AbrirModalArma(' + "'" + data.MinutaEmplId + "'" + ')');
+                        $(row).find('td:eq(8)').attr('onclick', 'AbrirModalArma(' + data.MinutaEmplId + ')');
+                    }
+
+                    if (data.Veh == 0) {
+                        $(row).find('td:eq(9)').addClass('ValidaAsignacion icon icon-truck');
+                        $(row).find('td:eq(9)').attr('onclick', 'AbrirModalVehiculo(' + data.MinutaEmplId + ')');                        
+                    }
+                    else {
+                        $(row).find('td:eq(9)').addClass('icon icon-truck');//AbrirModalVehiculo
+                    }
+
+                    if (data.Comunica == 0) {
+                        $(row).find('td:eq(10)').addClass('iconComunicano');
+                    }
+                    else {
+                        $(row).find('td:eq(10)').addClass('iconComuni');//AbrirModalComunicaciones
+                        $(row).find('td:eq(10)').attr('onclick', 'AbrirModalComunicaciones(' + data.MinutaEmplId + ')');
+                    }
+
+                },
+
+                    responsive: true,
+                    rowReorder: true,
+                    autoWidth: false,
+                    dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+                    language: glOpcionesIdioma,
+                });
+                $('.dataTables_filter input[type=search]').attr('placeholder', 'Buscar...');
+                $('.dataTables_length select').select2({
+                    minimumResultsForSearch: Infinity,
+                    width: 'auto'
+                });
+        }
+
+        function AbrirModalArma(armaId) {
+            //$("#datoCuadrante").html("<span>" + armaId +"</span>");
+            //$("#abrirModalArma").modal("show");
+            var valor = armaId;
+            CargarArmasEmplGv("tblArmasSivicc", valor);
+            $("#abrirModalArma").modal("show");
+        };
+
+        function CargarArmasEmplGv(tablaId, P_MinEmplId) {
+
+            var datos = { "P_MinEmplId": P_MinEmplId };
+            var UrlConsultarMinuta = "@Url.Action("F_GetArmasEmpl", "Sivicc")";
+
+            if ($.fn.dataTable.isDataTable("#" + tablaId)) {
+                $("#" + tablaId).DataTable().destroy();
+            }
+            $("#" + tablaId).DataTable({
+                "ajax": {
+                    url: UrlConsultarMinuta,
+                    type: "POST",
+                    datatype: "json",
+                    data: { 'P_MinEmplId': P_MinEmplId }
+                },
+                "columns": [
+                    { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) { return ''; } },
+                    { "data": "IdArmamento", "name": "IdArmamento", className: "celdaJust" },
+                    { "data": "TipoElemento", "name": "TipoElemento", className: "celdaCenter" },
+                    { "data": "Marca", "name": "Marca", className: "celdaCenter" },
+                    { "data": "Calibre", "name": "Calibre", className: "celdaJust" },
+                    { "data": "Serie", "name": "Serie", className: "celdaCenter" },
+                    { "data": "Estado", "name": "Estado", className: "celdaJust" },
+                    { "data": "IdInventario", "name": "IdInventario", className: "celdaCenter" }
+                ],
+                "rowCallback": function (row, data, index) {
+                },
+                    responsive: true,
+                    rowReorder: true,
+                    autoWidth: false,
+                    dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+                    language: glOpcionesIdioma,
+                });
+                $('.dataTables_filter input[type=search]').attr('placeholder', 'Buscar...');
+                $('.dataTables_length select').select2({
+                    minimumResultsForSearch: Infinity,
+                    width: 'auto'
+                });
+        }
+
+        function AbrirModalVehiculo(armaId) {
+            var valor = armaId;
+            CargarVehiculoEmplGv("tblVehiculoSivicc", valor);
+            $("#abrirModalVehiculo").modal("show");
+        };
+
+        function CargarVehiculoEmplGv(tablaId, P_MinEmplId) {
+
+            var datos = { "P_MinEmplId": P_MinEmplId };
+            var UrlConsultarMinuta = "@Url.Action("F_GetVehiEmpl", "Sivicc")";
+
+            if ($.fn.dataTable.isDataTable("#" + tablaId)) {
+                $("#" + tablaId).DataTable().destroy();
+            }
+            $("#" + tablaId).DataTable({
+                "ajax": {
+                    url: UrlConsultarMinuta,
+                    type: "POST",
+                    datatype: "json",
+                    data: { 'P_MinEmplId': P_MinEmplId }
+                },
+                "columns": [
+                    { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) { return ''; } },
+                    { "data": "TipoElemento", "name": "TipoElemento", className: "celdaJust" },
+                    { "data": "Marca", "name": "Marca", className: "celdaCenter" },
+                    { "data": "Modelo", "name": "Modelo", className: "celdaCenter" },
+                    { "data": "Sigla", "name": "Sigla", className: "celdaJust" },
+                    { "data": "Placa", "name": "Placa", className: "celdaCenter" },
+                    { "data": "Estado", "name": "Estado", className: "celdaJust" },
+                    { "data": "IdInventario", "name": "IdInventario", className: "celdaCenter" }
+                ],
+                "rowCallback": function (row, data, index) {
+                },
+                    responsive: true,
+                    rowReorder: true,
+                    autoWidth: false,
+                    dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+                    language: glOpcionesIdioma,
+                });
+                $('.dataTables_filter input[type=search]').attr('placeholder', 'Buscar...');
+                $('.dataTables_length select').select2({
+                    minimumResultsForSearch: Infinity,
+                    width: 'auto'
+                });
+        }
+
+        function AbrirModalComunicaciones(armaId) {
+            var valor = armaId;
+            CargarComunicacionesEmplGv("tblComunicacionesSivicc", valor);
+            $("#abrirModalComunicaciones").modal("show");
+        };
+
+        function CargarComunicacionesEmplGv(tablaId, P_MinEmplId) {
+
+            var datos = { "P_MinEmplId": P_MinEmplId };
+            var UrlConsultarMinuta = "@Url.Action("F_GetComunicaEmpl", "Sivicc")";
+
+            if ($.fn.dataTable.isDataTable("#" + tablaId)) {
+                $("#" + tablaId).DataTable().destroy();
+            }
+            $("#" + tablaId).DataTable({
+                "ajax": {
+                    url: UrlConsultarMinuta,
+                    type: "POST",
+                    datatype: "json",
+                    data: { 'P_MinEmplId': P_MinEmplId }
+                },
+                "columns": [
+                    { "data": null, className: "celdaCenter", "width": "1%", "render": function (data, type, row) { return ''; } },
+                    { "data": "TipoElemento", "name": "TipoElemento", className: "celdaJust" },
+                    { "data": "Marca", "name": "Marca", className: "celdaCenter" },
+                    { "data": "Modelo", "name": "Modelo", className: "celdaCenter" },
+                    { "data": "Serie", "name": "Serie", className: "celdaJust" },
+                    { "data": "Estado", "name": "Estado", className: "celdaCenter" },
+                    { "data": "IdInventario", "name": "IdInventario", className: "celdaJust" }
+                ],
+                "rowCallback": function (row, data, index) {
+                },
+                    responsive: true,
+                    rowReorder: true,
+                    autoWidth: false,
+                    dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+                    language: glOpcionesIdioma,
+                });
+                $('.dataTables_filter input[type=search]').attr('placeholder', 'Buscar...');
+                $('.dataTables_length select').select2({
+                    minimumResultsForSearch: Infinity,
+                    width: 'auto'
+                });
+        }
+
+    </script>
+
+}
+<div class="content">
+
+
+    <div class="panel panel-flat" style="border-radius: 17px 17px 0px 0px !important;">
+        <div class="panel-heading" style="background-image: url(../img/FondoVerdeT.png); border-radius: 17px 17px 0px 0px !important;">
+            <h5 class="panel-title" style="color:white">Seleccione Unidad</h5>
+            <div class="heading-elements" style="color:white">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-12">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-2 label_gecop">Estación de Policía:</label>
+                        <div class="col-md-4">
+                            @Html.DropDownList("ddlUnidad", null, htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @id = "ddlUnidad", @tabindex = 3 })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-flat" style="border-radius: 17px 17px 0px 0px !important;">
+        <div class="panel-heading" style="background-image: url(../img/FondoVerdeT.png); border-radius: 17px 17px 0px 0px !important;">
+            <h5 class="panel-title" style="color:white">Minuta SIVICC</h5>
+            <div class="heading-elements" style="color:white">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-12">
+                <table class="table table-hover table-xxs datatable-basic" id="tblMinutaSivicc">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Funcionario</th>
+                            <th>Turno</th>
+                            <th>Unidad</th>
+                            <th>Tipo Minuta</th>
+                            <th>Inicio</th>
+                            <th>Fin</th>
+                            <th>Cuadrante</th>
+                            <th>AR</th>
+                            <th>VEH</th>
+                            <th>COM</th>
+
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="Process">
+    <div class="loader_sis">
+        <div class="loader_dialoge">
+            <div class="loader_containere text-center">
+                <div class="loadere"></div>
+                <h4 class="text-white">Ejeutando consulta, espere...</h4>
+            </div>
+        </div>
+    </div>
+    <div class="loader_backe"></div>
+</div>
+
+<!--MODAL ARMA-->
+<div class="modal fade" id="abrirModalArma" style="border-radius: 17px 17px 0px 0px !important;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- cabecera del diálogo -->
+            <div class="modal-header">
+                <h4 class="modal-title">Armamento</h4>
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+
+            <!-- cuerpo del diálogo -->
+            <div class="modal-body">
+                @*<div id="datoCuadrante"></div>*@
+                @*Contenido del diálogo.*@
+                <div class="panel panel-flat" style="border-radius: 17px 17px 0px 0px !important;">
+                    <div class="panel-heading" style="background-image: url(../img/FondoVerdeT.png); border-radius: 17px 17px 0px 0px !important;">
+                        <h5 class="panel-title" style="color:white">Detalle</h5>
+                        <div class="heading-elements" style="color:white">
+                            <ul class="icons-list">
+                                <li><a data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        @Html.AntiForgeryToken()
+                        <div class="col-md-12">
+                            <table class="table table-hover table-xxs datatable-basic" id="tblArmasSivicc">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Id Armamento</th>
+                                        <th>Tipo Elemento</th>
+                                        <th>Marca</th>
+                                        <th>Calibre</th>
+                                        <th>Serie</th>
+                                        <th>Estado</th>
+                                        <th>Id Inventario</th>
+
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pie del diálogo -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--MODAL VEHICULO-->
+<div class="modal fade" id="abrirModalVehiculo" style="border-radius: 17px 17px 0px 0px !important;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- cabecera del diálogo -->
+            <div class="modal-header">
+                <h4 class="modal-title">Vehiculo</h4>
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+
+            <!-- cuerpo del diálogo -->
+            <div class="modal-body">
+                @*<div id="datoCuadrante"></div>*@
+                @*Contenido del diálogo.*@
+                <div class="panel panel-flat" style="border-radius: 17px 17px 0px 0px !important;">
+                    <div class="panel-heading" style="background-image: url(../img/FondoVerdeT.png); border-radius: 17px 17px 0px 0px !important;">
+                        <h5 class="panel-title" style="color:white">Detalle</h5>
+                        <div class="heading-elements" style="color:white">
+                            <ul class="icons-list">
+                                <li><a data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        @Html.AntiForgeryToken()
+                        <div class="col-md-12">
+                            <table class="table table-hover table-xxs datatable-basic" id="tblVehiculoSivicc">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Tipo Elemento</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>Sigla</th>
+                                        <th>Placa</th>
+                                        <th>Estado</th>
+                                        <th>Id Inventario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pie del diálogo -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--MODAL COMUNICACIONES-->
+<div class="modal fade" id="abrirModalComunicaciones" style="border-radius: 17px 17px 0px 0px !important;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- cabecera del diálogo -->
+            <div class="modal-header">
+                <h4 class="modal-title">Comunicaciones</h4>
+                <button type="button" class="close" data-dismiss="modal">X</button>
+            </div>
+
+            <!-- cuerpo del diálogo -->
+            <div class="modal-body">
+                @*<div id="datoCuadrante"></div>*@
+                @*Contenido del diálogo.*@
+                <div class="panel panel-flat" style="border-radius: 17px 17px 0px 0px !important;">
+                    <div class="panel-heading" style="background-image: url(../img/FondoVerdeT.png); border-radius: 17px 17px 0px 0px !important;">
+                        <h5 class="panel-title" style="color:white">Detalle</h5>
+                        <div class="heading-elements" style="color:white">
+                            <ul class="icons-list">
+                                <li><a data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        @Html.AntiForgeryToken()
+                        <div class="col-md-12">
+                            <table class="table table-hover table-xxs datatable-basic" id="tblComunicacionesSivicc">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Tipo Elemento</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>Serie</th>
+                                        <th>Estado</th>
+                                        <th>Id Inventario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pie del diálogo -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Elementos" targetNamespace="http://tempuri.org/Elementos.xsd" xmlns:mstns="http://tempuri.org/Elementos.xsd" xmlns="http://tempuri.org/Elementos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Elementos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Elementos" msprop:Generator_UserDSName="Elementos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Elementos" msprop:Generator_TableClassName="ElementosDataTable" msprop:Generator_TableVarName="tableElementos" msprop:Generator_TablePropName="_Elementos" msprop:Generator_RowDeletingName="ElementosRowDeleting" msprop:Generator_RowChangingName="ElementosRowChanging" msprop:Generator_RowEvHandlerName="ElementosRowChangeEventHandler" msprop:Generator_RowDeletedName="ElementosRowDeleted" msprop:Generator_UserTableName="Elementos" msprop:Generator_RowChangedName="ElementosRowChanged" msprop:Generator_RowEvArgName="ElementosRowChangeEvent" msprop:Generator_RowClassName="ElementosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CADELEMENTO_ID" msprop:Generator_ColumnVarNameInTable="columnCADELEMENTO_ID" msprop:Generator_ColumnPropNameInRow="CADELEMENTO_ID" msprop:Generator_ColumnPropNameInTable="CADELEMENTO_IDColumn" msprop:Generator_UserColumnName="CADELEMENTO_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="ELEMENTO_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnELEMENTO_NOMBRE" msprop:Generator_ColumnPropNameInRow="ELEMENTO_NOMBRE" msprop:Generator_ColumnPropNameInTable="ELEMENTO_NOMBREColumn" msprop:Generator_UserColumnName="ELEMENTO_NOMBRE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

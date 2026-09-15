@@ -1,0 +1,227 @@
+﻿@model SECADEntities.SECAD.CADBIENES_IMPLICADOS
+
+@{
+    ViewBag.Title = "Crear Caso Relacionado";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Caso Relacionado:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "VehiculosImplicadosCasos", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("CADBIEN_SITIOGRABA")
+                            @Html.Hidden("CADBIEN_CONSECUTIVO")
+                            @Html.Hidden("CONSECUTIVO")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Caso Código:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("CASO_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessageFor(model => model.CASO_CODIGO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Fecha Novedad:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.EditorFor(model => model.FECHA_NOVEDAD, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escoja una Fecha" } })
+                                                    @Html.ValidationMessageFor(model => model.FECHA_NOVEDAD, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-8">
+                                    <div class="form-group">
+                                        <label>Dirección:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DIRECCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba dirección" } })
+                                                @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Municipio:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("LUGE_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.LUGE_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group">
+                                        <label>Barrio:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("LUGE_BARRIO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.LUGE_BARRIO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-1">
+                                    <div class="form-group">
+                                        <label>Vigente:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @*@Html.CheckBox("ESTADO_NOVEDAD", new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @Html.CheckBox("ESTADO_NOVEDAD", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_size = "mini", data_on_text = "SI", data_off_text = "NO", @checked = "checked" })
+                                                @Html.ValidationMessageFor(model => model.ESTADO_NOVEDAD, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha Termino:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.EditorFor(model => model.FECHA_TERMINO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escoja una Fecha" } })
+                                                    @Html.ValidationMessageFor(model => model.FECHA_TERMINO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label>Observaciones:</label>
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-12">
+                                                @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba observaciones" })
+                                                @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label>Patrulla:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.PATRULLA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba patrulla" } })
+                                                @Html.ValidationMessageFor(model => model.PATRULLA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Usuario:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("USUA_TRANSACCION", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.USUA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.FECHA_TRANSACCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.FECHA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Maquina:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("MAQUINA_TRANSACCION", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.MAQUINA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", "VehiculosImplicados")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/DatePickerJs")
+@Scripts.Render("~/bundle/CheckSwitchJs");
+@Scripts.Render("~/bundle/ChosenJs")
+@Scripts.Render("~/bundle/VehiculosImplicadosJs")
+
+<script>
+    $(".chosen-select").chosen();
+    AplicarControlFecha("#FECHA_NOVEDAD", null);
+    AplicarControlFecha("#FECHA_TERMINO", null);
+
+    var urlBarrios = '@Url.Action("GetBarriosByMunicipio", "VehiculosImplicadosCasos")';
+</script>

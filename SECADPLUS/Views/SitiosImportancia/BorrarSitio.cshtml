@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADSITIO
+
+@{
+    ViewBag.Title = "Borrar Parqueadero";
+}
+
+@Html.Partial("_Mensajes")
+
+<h4>¿Está seguro que desea borrar este elemento?</h4>
+
+<h5>
+        Nombre Sitio de Importancia:
+        @Html.DisplayFor(model => model.DESCRIPCION)    
+</h5>
+
+@using (Html.BeginForm("BorrarSitio", "SitiosImportancia", new { id = Model.CONSECUTIVO, idSitioGrabacion = Model.SITIO_GRABA }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+{
+    @Html.AntiForgeryToken()
+}

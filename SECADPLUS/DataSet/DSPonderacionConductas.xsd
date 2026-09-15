@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSPonderacionConductas" targetNamespace="http://tempuri.org/DSPonderacionConductas.xsd" xmlns:mstns="http://tempuri.org/DSPonderacionConductas.xsd" xmlns="http://tempuri.org/DSPonderacionConductas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSPonderacionConductas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSPonderacionConductas" msprop:Generator_UserDSName="DSPonderacionConductas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTPonderacionConductas" msprop:Generator_TableClassName="DTPonderacionConductasDataTable" msprop:Generator_TableVarName="tableDTPonderacionConductas" msprop:Generator_RowChangedName="DTPonderacionConductasRowChanged" msprop:Generator_TablePropName="DTPonderacionConductas" msprop:Generator_RowDeletingName="DTPonderacionConductasRowDeleting" msprop:Generator_RowChangingName="DTPonderacionConductasRowChanging" msprop:Generator_RowEvHandlerName="DTPonderacionConductasRowChangeEventHandler" msprop:Generator_RowDeletedName="DTPonderacionConductasRowDeleted" msprop:Generator_RowClassName="DTPonderacionConductasRow" msprop:Generator_UserTableName="DTPonderacionConductas" msprop:Generator_RowEvArgName="DTPonderacionConductasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_CONDUCTA" msprop:Generator_ColumnVarNameInTable="columnDESC_CONDUCTA" msprop:Generator_ColumnPropNameInRow="DESC_CONDUCTA" msprop:Generator_ColumnPropNameInTable="DESC_CONDUCTAColumn" msprop:Generator_UserColumnName="DESC_CONDUCTA" type="xs:string" minOccurs="0" />
+              <xs:element name="ABREVIATURA" msprop:Generator_ColumnVarNameInTable="columnABREVIATURA" msprop:Generator_ColumnPropNameInRow="ABREVIATURA" msprop:Generator_ColumnPropNameInTable="ABREVIATURAColumn" msprop:Generator_UserColumnName="ABREVIATURA" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" type="xs:string" minOccurs="0" />
+              <xs:element name="CLBI_TIBI_CODIGO" msprop:Generator_ColumnVarNameInTable="columnCLBI_TIBI_CODIGO" msprop:Generator_ColumnPropNameInRow="CLBI_TIBI_CODIGO" msprop:Generator_ColumnPropNameInTable="CLBI_TIBI_CODIGOColumn" msprop:Generator_UserColumnName="CLBI_TIBI_CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="CLBI_CODIGO" msprop:Generator_ColumnVarNameInTable="columnCLBI_CODIGO" msprop:Generator_ColumnPropNameInRow="CLBI_CODIGO" msprop:Generator_ColumnPropNameInTable="CLBI_CODIGOColumn" msprop:Generator_UserColumnName="CLBI_CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="CONSECUTIVO" msprop:Generator_ColumnVarNameInTable="columnCONSECUTIVO" msprop:Generator_ColumnPropNameInRow="CONSECUTIVO" msprop:Generator_ColumnPropNameInTable="CONSECUTIVOColumn" msprop:Generator_UserColumnName="CONSECUTIVO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_TIPO" msprop:Generator_ColumnVarNameInTable="columnDESC_TIPO" msprop:Generator_ColumnPropNameInRow="DESC_TIPO" msprop:Generator_ColumnPropNameInTable="DESC_TIPOColumn" msprop:Generator_UserColumnName="DESC_TIPO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_CLASE" msprop:Generator_ColumnVarNameInTable="columnDESC_CLASE" msprop:Generator_ColumnPropNameInRow="DESC_CLASE" msprop:Generator_ColumnPropNameInTable="DESC_CLASEColumn" msprop:Generator_UserColumnName="DESC_CLASE" type="xs:string" minOccurs="0" />
+              <xs:element name="CADCONDBICONS" msprop:Generator_ColumnVarNameInTable="columnCADCONDBICONS" msprop:Generator_ColumnPropNameInRow="CADCONDBICONS" msprop:Generator_ColumnPropNameInTable="CADCONDBICONSColumn" msprop:Generator_UserColumnName="CADCONDBICONS" type="xs:string" minOccurs="0" />
+              <xs:element name="CLASE_PONDERADO" msprop:Generator_ColumnVarNameInTable="columnCLASE_PONDERADO" msprop:Generator_ColumnPropNameInRow="CLASE_PONDERADO" msprop:Generator_ColumnPropNameInTable="CLASE_PONDERADOColumn" msprop:Generator_UserColumnName="CLASE_PONDERADO" type="xs:string" minOccurs="0" />
+              <xs:element name="VLR_MINIMO" msprop:Generator_ColumnVarNameInTable="columnVLR_MINIMO" msprop:Generator_ColumnPropNameInRow="VLR_MINIMO" msprop:Generator_ColumnPropNameInTable="VLR_MINIMOColumn" msprop:Generator_UserColumnName="VLR_MINIMO" type="xs:string" minOccurs="0" />
+              <xs:element name="VLR_UNIDAD" msprop:Generator_ColumnVarNameInTable="columnVLR_UNIDAD" msprop:Generator_ColumnPropNameInRow="VLR_UNIDAD" msprop:Generator_ColumnPropNameInTable="VLR_UNIDADColumn" msprop:Generator_UserColumnName="VLR_UNIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="VLR_MAXIMO" msprop:Generator_ColumnVarNameInTable="columnVLR_MAXIMO" msprop:Generator_ColumnPropNameInRow="VLR_MAXIMO" msprop:Generator_ColumnPropNameInTable="VLR_MAXIMOColumn" msprop:Generator_UserColumnName="VLR_MAXIMO" type="xs:string" minOccurs="0" />
+              <xs:element name="VLR_PONDERADO" msprop:Generator_ColumnVarNameInTable="columnVLR_PONDERADO" msprop:Generator_ColumnPropNameInRow="VLR_PONDERADO" msprop:Generator_ColumnPropNameInTable="VLR_PONDERADOColumn" msprop:Generator_UserColumnName="VLR_PONDERADO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_MODO" msprop:Generator_ColumnVarNameInTable="columnDESC_MODO" msprop:Generator_ColumnPropNameInRow="DESC_MODO" msprop:Generator_ColumnPropNameInTable="DESC_MODOColumn" msprop:Generator_UserColumnName="DESC_MODO" type="xs:string" minOccurs="0" />
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Fuerza" msprop:Generator_ColumnVarNameInTable="columnFuerza" msprop:Generator_ColumnPropNameInRow="Fuerza" msprop:Generator_ColumnPropNameInTable="FuerzaColumn" msprop:Generator_UserColumnName="Fuerza" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHADB" msprop:Generator_ColumnVarNameInTable="columnFECHADB" msprop:Generator_ColumnPropNameInRow="FECHADB" msprop:Generator_ColumnPropNameInTable="FECHADBColumn" msprop:Generator_UserColumnName="FECHADB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

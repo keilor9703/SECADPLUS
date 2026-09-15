@@ -1,0 +1,235 @@
+20200730 10:05:49 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3ORA-06550: línea 1, columna 40:
+PLS-00225: la referencia al subprograma o cursor 'P_INTEGRACIONSIVICCSECAD' está fuera del ámbito
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 40:
+PLS-00225: la referencia al subprograma o cursor 'P_INTEGRACIONSIVICCSECAD' está fuera del ámbito
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Patrullas.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\Patrullas\DbPatrulla.cs:línea 36
+20200730 10:37:40 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3ORA-06550: línea 1, columna 40:
+PLS-00225: la referencia al subprograma o cursor 'P_INTEGRACIONSIVICCSECAD' está fuera del ámbito
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 40:
+PLS-00225: la referencia al subprograma o cursor 'P_INTEGRACIONSIVICCSECAD' está fuera del ámbito
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Patrullas.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\Patrullas\DbPatrulla.cs:línea 36
+20200730 10:43:59 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.Patrullas.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\Patrullas\DbPatrulla.cs:línea 260
+20200730 10:47:35 [M_ERROR] - Error al Eliminar : UpdateCuadrante 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.Patrullas.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\Patrullas\DbPatrulla.cs:línea 271
+20200730 10:52:27 [M_ERROR] - Error al Eliminar : UpdateCuadrante 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.Patrullas.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\Patrullas\DbPatrulla.cs:línea 271
+20200730 10:59:03 [M_ERROR] - Error Ejecutando P_UBICACIONCUADRANTE:
+	#2	#3ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCoordenada(Int32 PSitioGraba, Int64 PMedioConsecutivo) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 430
+20200730 10:59:04 [M_ERROR] - Error Ejecutando P_UBICACIONCUADRANTE:
+	#2	#3ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCoordenada(Int32 PSitioGraba, Int64 PMedioConsecutivo) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 430
+20200730 11:05:57 [M_ERROR] - Error Ejecutando P_UBICACIONCUADRANTE:
+	#2	#3ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCoordenada(Int32 PSitioGraba, Int64 PMedioConsecutivo) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 430
+20200730 11:05:58 [M_ERROR] - Error Ejecutando P_UBICACIONCUADRANTE:
+	#2	#3ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: view "USR_CAD.V_UBICACION_ACTUAL_CUADRANTE" tiene errores
+ORA-02063: line precediendo a DBL_SECAD1
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 451
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCoordenada(Int32 PSitioGraba, Int64 PMedioConsecutivo) en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 430
+20200730 12:40:17 [M_ERROR] - Error Ejecutando F_GetMinuta:
+	#2	#3ORA-06550: línea 1, columna 32:
+PLS-00302: el componente 'F_GETUNIDADES' se debe declarar
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 32:
+PLS-00302: el componente 'F_GETUNIDADES' se debe declarar
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 17:39:43 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 17:48:03 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 18:00:00 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 18:22:49 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 18:28:19 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 18:28:58 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159
+20200730 18:30:09 [M_ERROR] - Error Ejecutando F_GetUnidadesNew:
+	#2	#3ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 15:
+PLS-00306: número o tipos de argumentos erróneos al llamar a 'F_GETUNIDADESNEW'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetUnidades() en D:\Repos\HUAWEI_Ok - 5.8 - Final - Full\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 159

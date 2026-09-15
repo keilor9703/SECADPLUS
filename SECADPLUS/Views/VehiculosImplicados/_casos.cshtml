@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADBIENES_IMPLICADOS>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        @*<td>
+            <ul class="icons-list">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-xs border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <i class="icon-menu9"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para editar"
+                                    onclick="window.location.href ='@Url.Action("Edit", new { id=item.CODIGO, idTip=item.CADNOVBIN, nomTip=item.CADTIPOSNOVEDADE1.DESCRIPCION })'">
+                                <i class="glyphicon glyphicon-edit"></i> Editar
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                    onclick="window.location.href ='@Url.Action("Delete", new { id=item.CODIGO, idTip=item.CADNOVBIN, nomTip=item.CADTIPOSNOVEDADE1.DESCRIPCION })'">
+                                <i class="icon-trash"></i> Eliminar
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>*@
+        <td>@Html.DisplayFor(modelItem => item.CADCASO.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CONSECUTIVO)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_NOVEDAD)</td>
+        <td>@Html.DisplayFor(modelItem => item.DIRECCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADLUGARES_GEOGRAFICOS.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADBARRIO.DESCRIPCION)</td>
+        @*<td>@Html.DisplayFor(modelItem => item.ESTADO_NOVEDAD)</td>*@
+        <td>
+            @if (item.ESTADO_NOVEDAD == "S")
+            {
+                <span class="label label-success">SI</span>
+            }
+            else
+            {
+                <span class="label label-danger">NO</span>
+            }
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_TERMINO)</td>
+        <td>@Html.DisplayFor(modelItem => item.OBSERVACIONES)</td>
+        <td>@Html.DisplayFor(modelItem => item.PATRULLA)</td>
+        <td>@Html.DisplayFor(modelItem => item.USUA_TRANSACCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_TRANSACCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.MAQUINA_TRANSACCION)</td>
+    </tr>
+}

@@ -1,0 +1,26 @@
+﻿<div class="row form-group">
+    <div class="form-group">
+        <div class="col-md-6">
+            <label for="listCondicion">Condicion</label>
+            @Html.DropDownList("CONDICION", null, string.Empty, new { @class = "select-clear", @id = "listCondicion"  })
+        </div>
+
+        <div class="col-md-6">
+            <label for="listSitio">Sitio</label>
+            @Html.DropDownList("SITIOS", null, string.Empty, new { @class = "select-clear", @id = "listSitio", onChange = "ObtenerEntidades()" })
+        </div>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="form-group">
+        <div class="col-md-6">
+            <label for="listEntidad">Entidad</label>
+            <select id="listEntidad" class="select-clear" onchange="ObtenerCanales()"><option></option></select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="listCanal">Canal</label>
+            <select id="listCanal" class="select-clear"><option></option></select>
+        </div>
+    </div>  
+</div>

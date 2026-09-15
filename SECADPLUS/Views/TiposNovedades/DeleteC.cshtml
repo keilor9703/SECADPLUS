@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADTIPOSNOVEDADE
+
+@{
+    ViewBag.Title = "Eliminar Tipo de Novedad";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CODIGO)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("DeleteC", "TiposNovedades", new { id = Model.CODIGO, idTip = Model.CADNOVBIN, nomTip = Model.CADTIPOSNOVEDADE1.DESCRIPCION }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

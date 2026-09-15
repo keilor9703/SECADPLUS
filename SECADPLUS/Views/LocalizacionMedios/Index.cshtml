@@ -1,0 +1,217 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Ubicación de los Medios Disponibles</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <!-- Formulario -->
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.Hidden("CADMEDISP_CONSECUTIVO")
+
+
+                    <fieldset class="content-group">
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txt_Medios">Medios</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <div class="col-md-10">
+                                                    <input type="text" id="txt_desPatrulla" name="txt_desPatrulla" class="form-control"  />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" id="_btnMedios" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargaMedios()">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Ciudad Municipio:</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <div class="col-md-10">
+                                                    <input type="text" id="DESCR_LUGE" name="DESCR_LUGE" class="form-control" />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" id="_btnCiudadNovedad" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargaCiudades()">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div>
+                    <!-- Botones de regresar y guardar -->
+                    <div class="row">
+
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button type="button" value="Buscar" class="btn bg-teal" data-popup="tooltip" onclick="BuscarLocalizacionMedios()"
+                                    title="" data-placement="bottom" data-original-title="Clic para Buscar">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Buscar
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /botones de regresar y guardar -->
+                </div>
+                <!-- /inicio de tabla -->
+                <table id="_tblLocalizacionMedios" class="table table-hover table-xxs datatable-basic">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Medio</th>
+                            <th>Fecha/Hora</th>
+                            <th>Dirección </th>
+                            <th>Municipio </th>
+                            <th>X Coord Ubica </th>
+                            <th>Y Coord Ubica</th>
+                            <th>Vigente</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Medios -->
+
+
+
+
+
+<div id="ModalMedios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Medios</h5>
+            </div>
+            <div class="modal-body form-compact table-responsive">
+
+                <table id="_tblMedios" class="table table-hover table-xxs datatable-basic table-responsive">
+                    <thead class="table-responsive">
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Descripción Patrulla </th>
+                            <th>Sitio Graba</th>
+                            <th>Consecutivo</th>
+                            <th>Estado Patrulla</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Cuenta</th>
+                        </tr>
+                    </thead>
+                </table>
+
+
+
+
+            </div>
+
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Medios -->
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+<script>
+    var urlTabla = "@Url.Action("ObtenerLocalizacionMedios", "LocalizacionMedios")";
+    var urlCiudades = "@Url.Action("CargaCiudades", "LocalizacionMedios")";
+    var urlMedios = "@Url.Action("ObtenerMedios", "LocalizacionMedios")";
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+
+</script>
+
+@Scripts.Render("~/bundle/ModalsJs")
+@Scripts.Render("~/bundle/LocalizacionMediosJs")
+
+

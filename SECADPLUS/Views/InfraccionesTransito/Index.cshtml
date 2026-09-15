@@ -1,0 +1,173 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADINFRACCIONES_TRANSITO>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADINFRACCIONES_TRANSITO>, List<CADINFRACCIONES_TRANSITO>>
+
+@{
+    ViewBag.Title = "Tabla de Infracciones de Transito Capitulos";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    @Html.Partial("_NavegacionAdmonGeneral")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Tabla de Infracciones de Transito Capitulos:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo capitulo"
+                                        onclick="window.location.href ='@Url.Action("Create")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo capitulo
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaCapitulos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Fecha Desde</th>
+                            <th>Fecha Hasta</th>
+                            <th>Vigente</th>
+                            <th>Nro. Salarios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Item1)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para editar"
+                                                            onclick="window.location.href ='@Url.Action("Edit", new { id=item.CODIGO })'">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                                            onclick="EliminarRegistroGeneral('@Url.Action("Eliminar", "InfraccionesTransito", new { id = item.CODIGO })')"> @*onclick="window.location.href ='@Url.Action("Delete", new { id=item.CODIGO })'">*@
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para ver títulos"
+                                                            onclick="VerTitulos('@item.CODIGO', '@item.DESCRIPCION')">
+                                                        <i class="icon-eye"></i> Ver titulos
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.FECHA_DESDE)</td>
+                                <td>@Html.DisplayFor(modelItem => item.FECHA_HASTA)</td>
+                                @*<td>@Html.CheckBox("VIGENTE", item.VIGENTE == "S" ? true : false, new { @onchange = "ActualizarVigente('" + @item.CODIGO + "',this)", @disabled = "disabled" })</td>*@
+                                <td>
+                                    @if (item.VIGENTE == "S")
+                                    {
+                                        <span class="label label-success">SI</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-danger">NO</span>
+                                    }
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.NRO_SALARIOS)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Titulos -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Títulos</h5>
+                    <div class="computo_input">
+                        @Html.Hidden("COD_CAPITULO")
+                        @Html.Editor("NOM_CAPITULO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear Titulos"
+                                        onclick="IrCrearTitulos(_idCap, _nomCap)">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear títulos
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaTitulos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Fecha Desde</th>
+                            <th>Fecha Hasta</th>
+                            <th>Vigente</th>
+                            <th>Inmovilización</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_titulos", Model.Item2);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /Titulos -->
+    </div>
+</div>
+<!-- Área de contenido -->
+
+<script type="text/javascript">
+    var _idCap = '@ViewBag.COD_CAPITULO';
+    var _nomCap = '@ViewBag.NOM_CAPITULO';
+
+    var urlCrear = '@Url.Action("CreateT", "InfraccionesTransito")';
+    var urlTitulos = '@Url.Action("GetTitulos", "InfraccionesTransito")';
+
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+
+</script>
+@Scripts.Render("~/bundle/InfraccionesTransitoJs")

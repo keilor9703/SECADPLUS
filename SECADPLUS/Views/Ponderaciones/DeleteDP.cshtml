@@ -1,0 +1,18 @@
+﻿@model SECADEntities.SECAD.CADCONDCLBIPONDERADO
+
+@{
+    ViewBag.Title = "Eliminar Detalle de Ponderaciones";
+}
+
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CONSECUTIVO)
+
+    @using (Html.BeginForm("DeleteDP", "Ponderaciones", new { id = Model.CONSECUTIVO, idTipo = @ViewBag.idTipo, nomTipo = @ViewBag.nomTipo, idTitu = @ViewBag.idTitu, nomTitu = @ViewBag.nomTitu, idCond = @ViewBag.idCond, nomCond = @ViewBag.nomCond, idPond = @ViewBag.idPond }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

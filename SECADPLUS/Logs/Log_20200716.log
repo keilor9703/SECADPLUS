@@ -1,0 +1,28 @@
+20200716 12:06:46 [M_ERROR] - Error Ejecutando F_GetUbicacionPda:
+	#2	#3ORA-12570: Sesión de Red: error de lectura de paquete inesperado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12570: Sesión de Red: error de lectura de paquete inesperado ---> OracleInternal.Network.NetworkException (0x80004005): ORA-12570: Sesión de Red: error de lectura de paquete inesperado ---> System.Net.Sockets.SocketException (0x80004005): Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+   en OracleInternal.Network.ReaderStream.Read(OraBuf OB)
+   en OracleInternal.Network.ReaderStream.Read(OraBuf OB)
+   en OracleInternal.TTC.OraBufReader.GetDataFromNetwork()
+   en OracleInternal.TTC.OraBufReader.Read(Boolean bIgnoreData)
+   en OracleInternal.TTC.TTCExecuteSql.ReceiveExecuteResponse(Accessor[]& defineAccessors, Accessor[] bindAccessors, Boolean bHasReturningParams, SQLMetaData& sqlMetaData, SqlStatementType statementType, Int64 noOfRowsFetchedLastTime, Int32 noOfRowsToFetch, Int32& noOfRowsFetched, Int64& queryId, Int32 longFetchSize, Int64 initialLOBFetchSize, Int64[] scnFromExecution, Boolean bAllInputBinds, Int32 arrayBindCount, DataUnmarshaller& dataUnmarshaller, MarshalBindParameterValueHelper& marshalBindParamsHelper, Int64[]& rowsAffectedByArrayBind, Boolean bDefineDone, Boolean& bMoreThanOneRowAffectedByDmlWithRetClause, List`1& implicitRSList, Boolean bLOBArrayFetchRequired)
+   en Oracle.ManagedDataAccess.Client.OracleException.HandleError(OracleTraceLevel level, OracleTraceTag tag, OracleTraceClassName className, OracleTraceFuncName funcName, Exception ex, OracleLogicalTransaction oracleLogicalTransaction)
+   en OracleInternal.TTC.TTCExecuteSql.ReceiveExecuteResponse(Accessor[]& defineAccessors, Accessor[] bindAccessors, Boolean bHasReturningParams, SQLMetaData& sqlMetaData, SqlStatementType statementType, Int64 noOfRowsFetchedLastTime, Int32 noOfRowsToFetch, Int32& noOfRowsFetched, Int64& queryId, Int32 longFetchSize, Int64 initialLOBFetchSize, Int64[] scnFromExecution, Boolean bAllInputBinds, Int32 arrayBindCount, DataUnmarshaller& dataUnmarshaller, MarshalBindParameterValueHelper& marshalBindParamsHelper, Int64[]& rowsAffectedByArrayBind, Boolean bDefineDone, Boolean& bMoreThanOneRowAffectedByDmlWithRetClause, List`1& implicitRSList, Boolean bLOBArrayFetchRequired)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Context.DbSivicc.F_GetUbicacionPda() en D:\Repos\HUAWEI_Ok - Model - Copy 5.8\SecadDatos\Context\DbSivicc.cs:línea 505
+20200716 12:06:46 [M_ERROR] - Error Ejecutando Conectar: Data Source=scan-cludboper2.policia.gov.co:1538/SIVICC;Persist Security Info=True;User Id=USR4DBLSECADPLUS2CUADRANTES;Password=USR4DBLSECADPLUS2CUADRANTES
+	#2	#3ORA-12545: Transporte de Red: no se ha podido resolver el nombre de host de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12545: Transporte de Red: no se ha podido resolver el nombre de host de conexión ---> OracleInternal.Network.NetworkException (0x80004005): ORA-12545: Transporte de Red: no se ha podido resolver el nombre de host de conexión ---> System.Net.Sockets.SocketException (0x80004005): Host desconocido
+   en System.Net.Dns.GetAddrInfo(String name)
+   en System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   en System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   en OracleInternal.Network.TcpTransportAdapter.Connect(ConnectionOption conOption)
+   en OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en D:\Repos\HUAWEI_Ok - Model - Copy 5.8\SecadDatos\Context\ConDBOracle.cs:línea 126

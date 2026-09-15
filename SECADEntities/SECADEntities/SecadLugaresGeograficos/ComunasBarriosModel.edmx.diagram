@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b58dcc0a3d84a74ae78bb37aadf35f9" Name="Diagram1">
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADBARRIO" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADCOMUNA" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADLUGARES_GEOGRAFICOS" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="ModelComunasBarrios.CADBARR_COZO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelComunasBarrios.CADBARR_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelComunasBarrios.CADCOMU_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelComunasBarrios.CADLUGE_LUGE_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADPOLICIA" Width="1.5" PointX="7.375" PointY="1" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADPOLICIAS_FOTOS" Width="3" PointX="9.625" PointY="2.375" />
+        <AssociationConnector Association="ModelComunasBarrios.CADPOLIFOTOS_POLIC_FK" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADFUERZA" Width="1.5" PointX="5.125" PointY="13.125" />
+        <AssociationConnector Association="ModelComunasBarrios.CADPOLIC_FUERZ_FK" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.V_PERSONAS" Width="3.75" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADBANNERIMAGENE" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.V_EMPLEADOS" Width="1.5" PointX="7.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.V_PARQUEADEROS" Width="1.5" PointX="9.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.CADGRADO" Width="1.5" PointX="5.5" PointY="18.25" />
+        <EntityTypeShape EntityType="ModelComunasBarrios.V_SITIOS_IMPORTANTES" Width="1.5" PointX="0.75" PointY="10.75" />
+        <AssociationConnector Association="ModelComunasBarrios.CADPOLIC_GRADO_FK" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

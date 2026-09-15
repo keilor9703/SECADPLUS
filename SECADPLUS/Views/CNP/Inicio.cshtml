@@ -1,0 +1,453 @@
+﻿@model SECADEntities.SecadEntities.CADEVENTOS_CNP_COMP
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-body">
+                    <div id="exTab3">
+                        <ul class="nav nav-tabs nav-tabs-highlight">
+                            <li class="active" id="tabCNP"><a href="#cnp" data-toggle="tab">CNSCC</a></li>
+                            <li><a href="#anteriores" data-toggle="tab" id="tabcomparendos"> Comparendos Anteriores</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active col-lg-12 col-md-12 row" id="cnp">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <div class="panel panel-flat">
+                                    <div class="panel-body">
+                                        <!-- /contenido panel -->
+                                        @using (Html.BeginForm("Crear", "CNP", FormMethod.Post, new { @class = "form-compact", id = "formCNP" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            @Html.HiddenFor(model => model.CADEVEN_SITIOGRABA, new { @class = "form-control", Value = ViewBag.Sitio })
+                                            @Html.HiddenFor(model => model.TIPO_IDPERSONA, new { @class = "form-control", id = "hdTipoPersona" })
+                                            <fieldset class="content-group">
+                                                <div class="row">
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                                        @Html.LabelFor(model => model.CADEVEN_NUMEEVENTO, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+                                                            <input type="text" readonly class="form-control" value="@ViewBag.Evento" />
+                                                            @Html.HiddenFor(model => model.CADEVEN_NUMEEVENTO, new { @class = "form-control", Value = ViewBag.Evento })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        <div class="col-md-12 ">
+                                                            <br />
+                                                            <button type="button" class="btn bg-teal btn-xs" id="btnValidarComparendo"> Validar Comparendo</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.CADPOLI_CEDULA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+                                                            @Html.EditorFor(model => model.CADPOLI_CEDULA, new { htmlAttributes = new { @class = "form-control", id = "txtCedula", type = "number", placeholder = "Cédula" } })
+                                                            @Html.ValidationMessageFor(model => model.CADPOLI_CEDULA, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group ">
+                                                        <label class="control-label">Nombre Policía:</label>
+                                                        <div class="col-md-12 ">
+                                                            <input type="text" id="txtNombre" class="form-control readonly-recepcion-grey " readonly tabindex="-1"
+                                                                   placeholder="Nombre del Policía" aria-required="true">
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group ">
+                                                        @Html.LabelFor(model => model.CNP_ORDEN_COMPARENDO, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+                                                            @Html.EditorFor(model => model.CNP_ORDEN_COMPARENDO, new { htmlAttributes = new { @class = "form-control", id = "txtComparendo", placeholder = "Número Comparendo" } })
+                                                            @Html.ValidationMessageFor(model => model.CNP_ORDEN_COMPARENDO, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group ">
+                                                        @Html.LabelFor(model => model.VALIDADO_CNP, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <label class="checkbox-inline col-md-1 ">
+                                                            <input type="checkbox" id="checkCNP" class="" disabled>
+                                                        </label>
+                                                        <div class="col-md-10">
+                                                            @Html.HiddenFor(model => model.VALIDADO_CNP, new { @class = "form-control", id = "hdValidadoCNP" })
+                                                            <input type="text" id="txtValidadoCNP" class="form-control readonly-recepcion-grey " tabindex="-1"
+                                                                   placeholder="Validado CNSCC" aria-required="true">
+                                                            @Html.ValidationMessageFor(model => model.VALIDADO_CNP, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+
+
+                                                    <legend class="text-semibold">
+                                                        Datos de la conducta
+
+                                                    </legend>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="Labels">Artículo del Comportamiento:</label>
+                                                            @*@Html.DropDownList("ArticuloId", new List<SelectListItem> { new SelectListItem { Value = "" } }, String.Format("Seleccione una opción"), htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", @id = "ArticuloId", @Required = true, @placeholder = "Seleccione una opción" })*@
+                                                            @Html.DropDownList("ArticuloId", null, String.Format("Seleccione un Artículo"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 80%;", id = "ArticuloId", @Required = true, @placeholder = "Seleccione una opción" })
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="Labels">Numeral:</label>
+                                                            @Html.DropDownList("NumeralId", new List<SelectListItem> { new SelectListItem { Value = "" } }, String.Format("Seleccione una opción"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @id = "NumeralId", @Required = true, @placeholder = "Seleccione una opción" })
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="Labels">Literal:</label>
+                                                            @Html.DropDownList("LiteralId", new List<SelectListItem> { new SelectListItem { Value = "" } }, String.Format("Seleccione una opción"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @id = "LiteralId", @Required = true, @placeholder = "Seleccione una opción" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <br />
+
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        <div class="col-md-12 ">
+                                                            <label class="control-label">Tipo documento:</label>
+                                                            <select id="slTipoDoc" class="form-control chosen-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option value="CC">CEDULA</option>
+                                                                <option value="PA">PASAPORTE</option>
+                                                                <option value="CE">CEDULA EXTRANJERIA</option>
+                                                                <option value="TI">TARJETA IDENTIDAD</option>
+                                                                <option value="NI">NUI</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.IDPERSONA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+                                                            @Html.EditorFor(model => model.IDPERSONA, new { htmlAttributes = new { @class = "form-control", type = "number", placeholder = "Documento" } })
+                                                            @Html.ValidationMessageFor(model => model.IDPERSONA, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-2 col-md-2 col-lg-2 text-left form-group">
+                                                        <div class="col-md-12 ">
+                                                            <br />
+                                                            <button type="button" class="btn bg-teal btn-xs" id="btnRegistraduria"> Traer Dato Registraduría</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 col-md-4 col-lg-4 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.PERSONA_REGISTRADURIA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-12 ">
+                                                            <input type="text" id="PERSONA_REGISTRADURIA" name="PERSONA_REGISTRADURIA" class="form-control readonly-recepcion-grey " readonly tabindex="-1"
+                                                                   placeholder="Nombre Persona" aria-required="true">
+                                                            <span class="label bg-primary-300 table-xs" id="mensajePersona"></span>
+                                                            @Html.ValidationMessageFor(model => model.PERSONA_REGISTRADURIA, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+
+
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group ">
+                                                        @Html.LabelFor(model => model.NOMBRE_PERSONA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-12 ">
+                                                            @Html.EditorFor(model => model.NOMBRE_PERSONA, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombres" } })
+
+                                                            @Html.ValidationMessageFor(model => model.NOMBRE_PERSONA, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.APELLIDOS_PERSONA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="col-md-12 ">
+                                                            @Html.EditorFor(model => model.APELLIDOS_PERSONA, new { htmlAttributes = new { @class = "form-control", placeholder = "Apellidos" } })
+                                                            @Html.ValidationMessageFor(model => model.APELLIDOS_PERSONA, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        <div class="col-md-12 ">
+                                                            <label class="control-label">Nro Comparendos:</label>
+                                                            <input type="text" id="txtCantidadComp" class="form-control readonly-recepcion-grey " readonly tabindex="-1"
+                                                                   placeholder="0" aria-required="true">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        <div class="col-md-12 ">
+                                                            <br />
+                                                            <button type="button" class="btn bg-teal btn-xs" id="btnConsultarComparendos"> Ver Comparendos Anteriores</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.USUA_GRABA, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+
+                                                            <input type="text" id="USUA_GRABA" name="USUA_GRABA" class="form-control readonly-recepcion-grey " readonly tabindex="-1"
+                                                                   placeholder="0" aria-required="true" value="@ViewBag.USUARIO">
+                                                            @Html.ValidationMessageFor(model => model.USUA_GRABA, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.FECHA_GRABACION, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+                                                            <input type="text" id="FECHA_GRABACION" name="FECHA_GRABACION" class="form-control readonly-recepcion-grey " readonly tabindex="-1"
+                                                                   placeholder="DD/MM/AAAA" aria-required="true">
+                                                            @Html.ValidationMessageFor(model => model.FECHA_GRABACION, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                                        @Html.LabelFor(model => model.MAQUINA_GRABACION, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                        <div class="col-md-12 ">
+                                                            <input type="text" id="MAQUINA_GRABACION" name="MAQUINA_GRABACION" class="form-control readonly-recepcion-grey " readonly tabindex="-1"
+                                                                   placeholder="0" aria-required="true" value="@ViewBag.MAQUINA">
+                                                            @Html.ValidationMessageFor(model => model.MAQUINA_GRABACION, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-10 form-group">
+                                                        <button type="button" class="btn bg-teal btn-sm" data-popup="tooltip" data-placement="bottom"
+                                                                title="" data-original-title="Clic para agregar preguntas"
+                                                                id="btnGuardar">
+                                                            <b><i class="esri-icon-plus position-lef"></i></b> Crear
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-sm" data-popup="tooltip" data-placement="bottom"
+                                                                title="" data-original-title="Clic para agregar preguntas"
+                                                                id="btnLimpiar">
+                                                            <b><i class="esri-icon-erase position-lef"></i></b> Limpiar
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        }
+                                        <div class="row">
+                                            <fieldset>
+                                                <div class="col-md-12">
+                                                    <table class="table table-hover table-xxs datatable-basic form-compact" id="tblComparendos">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>Acciones</th>
+                                                                <th>Cedula</th>
+                                                                <th>Policía</th>
+                                                                <th>CNSCC No. Comparendo</th>
+                                                                <th>Fecha Grabación</th>
+                                                                <th>Validado CNSCC</th>
+                                                                <th>Nro Evento</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="anteriores">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <div class="row">
+                                    <fieldset>
+                                        <div class="col-md-12">
+                                            <table class="table table-hover table-xxs datatable-basic form-compact" id="tblAsociados">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>CNSCC No. Comparendo</th>
+                                                        <th>Id</th>
+                                                        <th>Comportamiento</th>
+                                                        <th>Fecha Grabación</th>
+                                                        <th>Apellidos Persona</th>
+                                                        <th>Nombres Persona</th>
+
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+
+
+                                    </fieldset>
+                                </div>
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Comportamientos -->
+<div id="ModalComportamientos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comportamientos</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="form-group">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table table-hover table-xxs datatable-basic form-compact" id="tblComportamientos">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Id</th>
+                                    <th>Dominio</th>
+                                    <th>Descripcion</th>
+                                    <th>Ip Papa</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        @*<button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Comportamientos -->
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CheckBoxJs")
+    @Scripts.Render("~/bundle/ModalsAlertJs")
+    @Scripts.Render("~/bundle/CNPJs")
+    <script>
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////VARIABLES NECESARIAS PARA EL FUNCIONAMIENTO DEl CNP////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        var urlConsultarPersona = "@Url.Action("ConsultarPersona", "CNP")";
+        var urlValidarComparendo = "@Url.Action("ValidarComparendo", "CNP")";
+        var urlCommportamientos = "@Url.Action("ConsultarComportamientos", "CNP")";
+        var urlConsultarRegistraduria = "@Url.Action("ConsultarRegistraduria", "CNP")";
+        var urlConsultarCantComparendos = "@Url.Action("ConsultarCantComparendos", "CNP")";
+        var urlConsultarComparendos = "@Url.Action("ConsultarComparendos", "CNP")";
+        var urlConsultarAsociados = "@Url.Action("ConsultarAsociados", "CNP")";
+        var dcNumEvento = @ViewBag.Evento;
+        var urlGetNumeral = "@Url.Action("TraerNumerales", "CNP")";
+        var urlGetLiteral = "@Url.Action("TraerLiterales", "CNP", new { Area = "" })";
+
+        window.addEventListener('load', ChosenArticulo, false);
+        window.addEventListener('load', ChosenNumeral, false);
+        window.addEventListener('load', ChosenLiteral, false);
+
+        function ChosenArticulo() {
+            AplicarChosen();
+        }
+
+        function AplicarChosen() {
+            $(".chosen-select").chosen({ allow_single_deselect: false, width: "100%" });
+            $("#ArticuloId").click(
+                function (e) {
+                    e.preventDefault();
+                    return;
+                }
+            );
+        }
+
+    function ChosenNumeral() {
+        AplicarChosenNume();
+    }
+
+    function AplicarChosenNume() {
+        $(".chosen-select").chosen({ allow_single_deselect: false, width: "100%" });
+        $("#NumeralId").click(
+            function (e) {
+                e.preventDefault();
+                return;
+            }
+        );
+    }
+
+    function ChosenLiteral() {
+        AplicarChosenLite();
+    }
+
+    function AplicarChosenLite() {
+        $(".chosen-select").chosen({ allow_single_deselect: false, width: "100%" });
+        $("#LiteralId").click(
+            function (e) {
+                e.preventDefault();
+                return;
+            }
+        );
+    }
+        //Consultar los Artículos seleccionados
+        $("#ArticuloId").change(function () {
+            //var valor = document.getElementById("ArticuloId").value;
+
+            //Limpiar la dependencia
+            $("#NumeralId").empty();
+
+            $.ajax({
+                type: 'POST',
+                url: urlGetNumeral,
+                dataType: 'json',
+                data: { V_Articulo: $("#ArticuloId").val() },
+
+                success: function (numerales) {
+                    $.each(numerales, function (i, numeral) {
+                        $("#NumeralId").append('<option value="' + numeral.Value + '">' + numeral.Text + '</option>');
+                    });
+                    $("#NumeralId").trigger("chosen:updated");
+                },
+                error: function (ex) {
+                    alert('Seleccione un numeral de la lista !!!');
+
+                }
+            })
+        })
+
+        //Consultar los Numerales seleccionados
+        $("#NumeralId").change(function () {
+            //var valor = document.getElementById("ArticuloId").value;
+
+            //Limpiar los Literales
+            $("#LiteralId").empty();
+
+            $.ajax({
+                type: 'POST',
+                url: urlGetLiteral,
+                dataType: 'json',
+                data: { V_Numeral: $("#NumeralId").val() },
+
+                success: function (literales) {
+                    $.each(literales, function (i, literal) {
+                        $("#LiteralId").append('<option value="' + literal.Value + '">' + literal.Text + '</option>');
+                    });
+                    $("#LiteralId").trigger("chosen:updated");
+                },
+                error: function (ex) {
+                    alert('Seleccione un numeral de la lista !!!');
+
+                }
+            })
+        })
+
+    </script>
+}

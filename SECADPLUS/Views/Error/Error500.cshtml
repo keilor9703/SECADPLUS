@@ -1,0 +1,49 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+
+<div class="content">
+    <!-- Error title -->
+    <div class="text-center content-group text-danger">
+        <h1 class="error-title">500</h1>
+        <h5>Oops!, Se ha generado un error inesperado en la aplicación.
+        Por favor comunique lo ocurrido a un administrador.</h5>
+        <h5>
+            Hora del evento local: @DateTime.Now
+        </h5>
+        <h5>
+            @ViewBag.ERROR_MENSAJE
+        </h5>
+
+    </div>
+    <!-- /error title -->
+    <!-- Error content -->
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+            <form action="#" class="main-search">
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-offset-3">
+                        <a href="@Url.Action("Index","Home")" class="btn btn-primary btn-block content-group"><i class="icon-home"></i> Inicio</a>
+                    </div>
+
+                </div>
+            </form>
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    <div class="row">
+                        <div class="col-sm-6 col-md-offset-5">
+                            @Html.AntiForgeryToken()
+                            <a href="javascript:document.getElementById('logoutForm').submit()"><i class="icon-switch2"></i>Cerrar Sesi&oacute;n</a>
+                        </div>
+
+                    </div>
+                   
+                }
+            
+        </div>
+    </div>
+    <!-- /error wrapper -->
+    <!-- Footer -->
+  
+    <!-- /footer -->
+</div>

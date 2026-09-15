@@ -1,0 +1,75 @@
+﻿@model SECADEntities.SecadEntities.CADNETPERFIL
+
+@{
+    ViewBag.Title = "Edit";
+}
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Editar perfíl</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list decad">
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Edit", "Perfil", FormMethod.Post, new { @class = "form_secad" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <fieldset class="content-group">
+                        @Html.HiddenFor(model => model.PERFIL_ID)
+                        @Html.HiddenFor(model => model.PERFIL_FECHA_CREACION)
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6text-left form-group">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="col-md-12 obligatorio">
+                                    @Html.LabelFor(model => model.PERFIL_NOMBRE, htmlAttributes: new { @class = "control-label " })
+                                    @Html.EditorFor(model => model.PERFIL_NOMBRE, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.PERFIL_NOMBRE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-left form-group">
+                                <div class="col-md-12">
+                                    @Html.LabelFor(model => model.PERFIL_ESTADO, htmlAttributes: new { @class = "control-label " })
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(model => model.PERFIL_ESTADO, htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_size = "mini", data_on_color = "success", data_off_color = "danger", data_on_text = "ACTIVO", data_off_text = "INACTIVO", @checked = "checked" })
+                                        @Html.ValidationMessageFor(model => model.PERFIL_ESTADO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla" onclick="location.href='@Url.Action("Index")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+        <!-- /formulario -->
+    </div>
+</div>
+<!-- /área de contenido -->
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/CheckSwitchJs");
+}
+        

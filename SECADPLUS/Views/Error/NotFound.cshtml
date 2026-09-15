@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "NotFound";
+}
+
+
+
+<div class="content">
+    <!-- Error title -->
+    <div class="text-center content-group">
+        <h1 class="error-title">404</h1>
+        <h5>Oops, parece que la página que intentas acceder no existe</h5>
+    </div>
+    <!-- /error title -->
+    <!-- Error content -->
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+            <form action="#" class="main-search">
+                
+                <div class="row">
+                    <div class="col-sm-6 col-md-offset-3">
+                        <a href="@Url.Action("Index","Home")" class="btn btn-primary btn-block content-group"><i class="icon-home"></i> Inicio</a>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /error wrapper -->
+</div>

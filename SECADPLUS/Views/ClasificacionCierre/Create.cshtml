@@ -1,0 +1,81 @@
+﻿@model SECADEntities.SECAD.CADCLASIFICACION_CIERRE
+
+@{
+    ViewBag.Title = "Crea Clasificación Cierre";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CalendarioJs")
+    @Scripts.Render("~/bundle/EntidadesControllerJs")
+}
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel -->
+    <div class="panel panel-flat form-compact">
+        <div class="panel-heading">
+            <h5 class="panel-title">Crea Clasificación Cierre para: @ViewBag.nombreEntidad</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+        <div class="panel-body">           
+                @Html.AntiForgeryToken()
+                <fieldset class="content-group">
+                    <div class="row">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="col-md-12 col-lg-4 obligatorio">
+                            <label class="control-label"> Entidad</label>
+                            <div class="form-group">
+                                @Html.DropDownList("ID_FUERZA", null, htmlAttributes: new { @class = "chosen-select col-md-12" })
+                                @Html.ValidationMessageFor(model => model.ID_FUERZA, "", new { @class = "text-danger" })
+                                @Html.Hidden("idSitio", (int)ViewBag.idSitio)
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 obligatorio">
+                            @Html.LabelFor(model => model.CODIGO, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.CODIGO, new { htmlAttributes = new { @class = "form-control", @maxlength = 2 } })
+                                @Html.ValidationMessageFor(model => model.CODIGO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 obligatorio">
+                            @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+
+            <!-- /formulario -->
+        </div>
+        <div class="panel-footer">
+            <!-- Botones de regresar y guardar -->
+            <div class="row">
+                <div class="col-xs-6 col-md-6text-left">
+                    <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                            data-original-title="Clic para regresar a la tabla" onclick="location.href=('@Url.Action("Index", "ClasificacionCierre", new { idSitio = ViewBag.idSitio, idEntidad = ViewBag.idEntidad, nombreEntidad = ViewBag.nombreEntidad })')">
+                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                    </button>
+                </div>
+                <div class="col-xs-6 col-md-6 text-right">
+                    <button type="submit" value="Create" class="btn bg-teal" data-popup="tooltip"
+                            title="" data-placement="bottom" data-original-title="Clic para crear">
+                        <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                    </button>
+                </div>
+            </div>
+            <!-- /botones de regresar y guardar -->
+        </div>
+            }
+    </div>
+    <!-- /panel  -->
+</div>

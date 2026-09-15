@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADCONDUCTA>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        <td>
+            <ul class="icons-list">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <i class="icon-menu9"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        @*<li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para editar"
+                                    onclick="window.location.href ='@Url.Action("EditP", new { id = item.CODIGO, idTipo = item.TIPO, nomTipo = @ViewBag.nomTipo, idTitu = item.COND_CODIGO, nomTitu = @ViewBag.nomTitu })'">
+                                <i class="glyphicon glyphicon-edit"></i> Editar
+                            </button>
+                        </li>*@
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para ver ponderar"
+                                    onclick="VerPonderar(@item.CODIGO, '@item.DESCRIPCION')">
+                                <i class="icon-eye"></i> Ver ponderar
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+        <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.ABREVIATURA)</td>
+        <td>@Html.DisplayFor(modelItem => item.NIVEL)</td>
+        @*<td>@Html.DisplayFor(modelItem => item.VIGENTE)</td>*@
+        <td>
+            @if (item.VIGENTE == "S")
+            {
+                <span class="label label-success">SI</span>
+            }
+            else
+            {
+                <span class="label label-danger">NO</span>
+            }
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.LICO_VIGENCIA)</td>
+        <td>@Html.DisplayFor(modelItem => item.LICO_CODIGO)</td>
+    </tr>
+}

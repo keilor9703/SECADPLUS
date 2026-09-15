@@ -1,0 +1,45 @@
+﻿@*@using SECADEntities.SECAD;
+    @model Tuple<List<CADEQUIPOS>, List<CADCONEXION>>*@
+@model IEnumerable<SECADEntities.SECAD.CADCONEXION>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        @*<td>
+                <ul class="icons-list">
+                    <li class="dropdown">
+                        <button type="button" class="btn btn-xs border-success text-success-600 btn-flat
+                                            dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <i class="icon-menu9"></i>
+                        </button>
+                        <ul class="dropdown-menu secad dropdown-menu-left">
+                            <li>
+                                <button class="btn btn-xs btn-default btn-float" type="button" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para editar"
+                                        onclick="window.location.href ='@Url.Action("Edit")'">
+                                    <i class="glyphicon glyphicon-edit"></i> Editar
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-xs btn-default btn-float" type="button" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                        onclick="window.location.href ='@Url.Action("Delete")'">
+                                    <i class="icon-trash"></i> Eliminar
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>*@
+        <td>@Html.DisplayFor(modelItem => item.CADSITIOS_GRABACION.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CONSECUTIVO)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADUSUA_USUARIO)</td>
+        <td>@Html.DisplayFor(modelItem => item.SESION_ID)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_HASTA)</td>
+        @*<td>@Html.DisplayFor(modelItem => item.VIGENTE)</td>*@
+        <td>@Html.CheckBox("VIGENTE", item.VIGENTE == "S" ? true : false, new { @onchange = "ActualizarVigente("+@item.SITIO_GRABA+", "+@item.CONSECUTIVO+", this)" } )</td>
+        @*<td>@Html.CheckBox("VIGENTE", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_on_text = "SI", data_off_text = "NO" })</td>*@
+</tr>
+}

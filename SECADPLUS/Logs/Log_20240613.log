@@ -1,0 +1,56 @@
+20240613 07:55:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=scan-cludboper2.policia.gov.co:1538/SIVICC;Persist Security Info=True;User Id=USR4DBLSECADPLUS2CUADRANTES;Password=USR4DBLSECADPLUS2CUADRANTES
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240613 07:56:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=scan-cludboper2.policia.gov.co:1538/SIVICC;Persist Security Info=True;User Id=USR4DBLSECADPLUS2CUADRANTES;Password=USR4DBLSECADPLUS2CUADRANTES
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240613 07:56:18 [M_ERROR] - Error Ejecutando Conectar: Data Source=scan-cludboper2.policia.gov.co:1538/SIVICC;Persist Security Info=True;User Id=USR4DBLSECADPLUS2CUADRANTES;Password=USR4DBLSECADPLUS2CUADRANTES
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240613 07:56:33 [M_ERROR] - Error Ejecutando Conectar: Data Source=scan-cludboper2.policia.gov.co:1538/SIVICC;Persist Security Info=True;User Id=USR4DBLSECADPLUS2CUADRANTES;Password=USR4DBLSECADPLUS2CUADRANTES
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240613 07:56:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240613 07:57:22 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240613 07:57:43 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126

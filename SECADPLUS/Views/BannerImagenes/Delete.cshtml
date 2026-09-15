@@ -1,0 +1,10 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADBANNERIMAGENE
+<h4>¿Está seguro que desea borrar este elemento?</h4>
+<h5>
+    Nombre Banner:
+    @Html.DisplayFor(model => model.NOMBREARCHIVO)
+</h5>
+@using (Html.BeginForm("DeleteConfirmed", "BannerImagenes", new { id = Model.IDBANNER }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+{
+    @Html.AntiForgeryToken()
+}

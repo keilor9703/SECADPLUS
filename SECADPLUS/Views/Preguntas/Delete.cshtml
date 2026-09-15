@@ -1,0 +1,20 @@
+﻿@model SECADEntities.SECAD.CADPREGUNTA
+
+@{
+    ViewBag.Title = "Eliminar Pregunta";
+}
+
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CODIGO)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("Delete", "Preguntas", new { id = Model.CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

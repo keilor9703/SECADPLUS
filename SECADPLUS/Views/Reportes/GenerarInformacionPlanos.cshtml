@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Generar Información en Planos";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+    @Scripts.Render("~/bundle/GenerarInformacionPlanosController")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Archivos Planos</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div id="mostrando"> </div>
+                        <div class="col-md-7">
+                            <h4 class="panel-title">Parámetros</h4>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6 col-lg-6 text-left form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Fecha de Inicio:", htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.Editor("FechaInicio", new { htmlAttributes = new { @class = "form-control FechaHora", @placeholder = "Escoja Fecha" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 col-lg-6 text-left form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Fecha Final:", htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.Editor("FechaFinal", new { htmlAttributes = new { @class = "form-control FechaHoraF", @placeholder = "Escoja Fecha" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6 col-lg-6 text-left form-group">
+                                    <div class="col-lg-12 col-md-12">
+                                        <label for="TipoPedido">Tipo Pedido:</label>
+                                        <div class="input-group col-md-12">
+                                            @Html.DropDownList("TipoPedido", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-6 col-lg-6 text-left form-group">
+                                    <div class="col-lg-12 col-md-12">
+                                        <label for="Responsable">Filtrar Resumen de Llamadas por: </label>
+                                        <div class="input-group col-md-12">
+                                            @Html.DropDownList("FiltrarCodiPedido", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-5" id="_botones">
+                            <h4 class="panel-title">Planos...</h4>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <label for="Plano">Tipo de Planilla: </label>
+                                    <div class="input-group col-md-10">
+                                        @Html.DropDownList("Plano", null, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Seleccione..." })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip" id="btnGenerar" type="button" onclick="GeneraPlano();"
+                                    title="" data-placement="bottom" data-original-title="Clic para generar el reporte">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Generar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="plano">
+    @*<textarea name="textarea" rows="250" cols="140"></textarea>*@
+</div>
+<!-- /área de contenido -->
+@section PostScripts{
+    <script>
+        $(".chosen-select").chosen();
+        AplicarDateTimePlugin();
+        urlCargarDataPlanos = '@Url.Action("CargaDatosPlanos", "Reportes")';
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        function AplicarDateTimePlugin() {
+            miFechaIni = new Date(new Date().getFullYear(), new Date().getMonth(), 1, 0, 0, 0, 0);
+            miFechaFin = new Date();
+            $(".FechaHora").datetimepicker({
+                format: 'DD/MM/YYYY HH:mm:ss',
+                defaultDate: miFechaIni,
+                showClear: true
+            });
+            $(".FechaHoraF").datetimepicker({
+                format: 'DD/MM/YYYY HH:mm:ss',
+                defaultDate: miFechaFin,
+                showClear: true
+            });
+        }
+    </script>
+}
+

@@ -1,0 +1,352 @@
+/* -- CSS made by ITO website -- */
+/* -- Graphic Design *Jeisson Sierra  -- */
+/*--G E N E R A L S--*/
+a {
+  cursor: pointer; }
+
+button, button:focus, button:active, input, textarea {
+  outline: 0; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+ul li {
+  list-style: none; }
+
+p {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  font-family: "Verdana", Arial, Tahoma; }
+
+a {
+  color: #44963d; }
+  a:hover {
+    color: #77933C; }
+  a:visited {
+    color: #77933C; }
+
+.divider_secad {
+  background: #44963d;
+  width: 100%;
+  float: left;
+  height: 2px;
+  margin: 10px 0; }
+
+.form-control:focus {
+  border-color: #44963d; }
+
+.green-text {
+  color: #44963d; }
+
+.v_padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.h_padding {
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.btn {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0; }
+
+.btn-default {
+  color: #fff;
+  background-color: #44963d; }
+  .btn-default:hover, .btn-default:focus, .btn-default:active {
+    color: #fff;
+    background-color: #77933C; }
+
+.super-container {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative; }
+
+.super-container_login {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  background: url(../images/back_login_proof.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+  padding-top: 60px; }
+
+.container-universal-content {
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 80px;
+  float: left;
+  width: 100%; }
+
+.float-header {
+  position: absolute;
+  width: 100%;
+  background: rgba(68, 150, 61, 0.85);
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  z-index: 3; }
+  .float-header .left-side {
+    -webkit-flex-basis: 250px;
+    -moz-flex-basis: 250px;
+    -ms-flex-preferred-size: 250px;
+    flex-basis: 250px; }
+  .float-header .right-side {
+    width: 100%; }
+    .float-header .right-side a {
+      color: #fff;
+      margin-left: 5px; }
+      .float-header .right-side a:focus, .float-header .right-side a:hover {
+        text-decoration: none;
+        color: #003a24; }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .float-header {
+      position: relative;
+      background: #44963d;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .float-header .left-side {
+        -webkit-flex-basis: auto;
+        -moz-flex-basis: auto;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        width: 100%; }
+      .float-header .right-side {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px; } }
+
+.brand-secad {
+  font-size: 14px; }
+  .brand-secad i {
+    font-weight: bold; }
+  .brand-secad small {
+    font-size: 10px; }
+
+.nav-section .navbar {
+  margin: 0; }
+  .nav-section .navbar > .navbar-collapse {
+    padding: 0; }
+    .nav-section .navbar > .navbar-collapse > ul {
+      margin: 0; }
+
+.date_server {
+  padding: 14px 10px; }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .date_server {
+      padding: 10px; } }
+
+.login-secad {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  margin: auto;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px; 
+}
+
+.escudo_login {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  .escudo_login img {
+    width: 100%;
+    max-width: 150px; }
+    @media screen and (min-width: 1px) and (max-width: 767px) {
+      .escudo_login img {
+        max-width: 100px; } }
+
+.dropdown-submenu {
+  position: relative; }
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px; }
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block; }
+
+.dropdown-submenu > a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+  margin-top: 5px;
+  margin-right: -10px; }
+
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff; }
+
+.dropdown-submenu.pull-left {
+  float: none; }
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px; }
+
+.breadcrumb-container > .breadcrumb {
+  padding: 5px 15px;
+  margin: 0;
+  background: #cccccc;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0; }
+  .breadcrumb-container > .breadcrumb > li > a {
+    font-size: 12px;
+    color: #fff; }
+    .breadcrumb-container > .breadcrumb > li > a:hover {
+      color: #44963d; }
+  .breadcrumb-container > .breadcrumb > li.active {
+    color: #44963d; }
+  .breadcrumb-container > .breadcrumb > li + li:before {
+    color: #fff; }
+
+.footer-secad {
+  width: 10%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 100px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+  z-index: 2;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: strech;
+  -moz-align-content: strech;
+  -ms-flex-line-pack: strech;
+  align-content: strech; }
+  .footer-secad:before {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 100%;
+    /*background: url(../images/under_line_policia.png);*/
+    background-position: left;
+    background-repeat: repeat-x;
+    background-size: auto; }
+
+.footer-secad_left {
+  width: 100%; }
+
+.footer-secad_right {
+  -webkit-flex-basis: 150px;
+  -moz-flex-basis: 150px;
+  -ms-flex-preferred-size: 150px;
+  flex-basis: 150px;
+  padding: 2px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  .footer-secad_right img {
+    width: 80%; }
+
+.navtabs-secad > .tab-content {
+  float: left;
+  width: 100%;
+  padding: 20px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  .navtabs-secad > .tab-content .col-md-12 {
+    padding: 0;
+    margin: 0; }
+
+.select_2_secad > .chosen-container {
+  width: 100% !important; }
+
+.data-table-secad {
+  padding: 20px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=main.css.map */

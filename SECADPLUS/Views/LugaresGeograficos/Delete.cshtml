@@ -1,0 +1,46 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADLUGARES_GEOGRAFICOS
+
+@{
+    ViewBag.Title = "Borrar Lugar Geográfico";
+}
+<div class="content">
+    @Html.Partial("_Mensajes")
+        <div class="row">
+            <!-- Formulario -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Borra Lugar Geográfico</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <h4>¿Está seguro que desea borrar este elemento?</h4>
+                        <hr />
+                        <div class="form-group col-md-12">
+
+                            <div class="form-control col-md-12">
+                                Descripción:
+                                @Html.DisplayFor(model => model.DESCRIPCION)
+                            </div>
+                            <div class="form-control col-md-12">
+                                Código:
+                                @Html.DisplayFor(model => model.CODIGO)
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /formulario -->
+        </div>
+        @using (Html.BeginForm("DeleteConfirmed", "LugaresGeograficos", new { id = Model.CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+        {
+            @Html.AntiForgeryToken()
+        }
+    
+</div>

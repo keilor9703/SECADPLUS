@@ -1,0 +1,10 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+@Html.Partial("_Mensajes")
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+    @Model.Name
+    @using (Html.BeginForm("Delete", "Rol", new { roleName = Model.Name }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>

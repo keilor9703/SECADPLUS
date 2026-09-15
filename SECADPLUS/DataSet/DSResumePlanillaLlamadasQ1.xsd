@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSResumePlanillaLlamadasQ1" targetNamespace="http://tempuri.org/DSResumePlanillaLlamadasQ1.xsd" xmlns:mstns="http://tempuri.org/DSResumePlanillaLlamadasQ1.xsd" xmlns="http://tempuri.org/DSResumePlanillaLlamadasQ1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSResumePlanillaLlamadasQ1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSResumePlanillaLlamadasQ1" msprop:Generator_UserDSName="DSResumePlanillaLlamadasQ1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTResumenPlanillaLlamadas" msprop:Generator_TableClassName="DTResumenPlanillaLlamadasDataTable" msprop:Generator_TableVarName="tableDTResumenPlanillaLlamadas" msprop:Generator_RowChangedName="DTResumenPlanillaLlamadasRowChanged" msprop:Generator_TablePropName="DTResumenPlanillaLlamadas" msprop:Generator_RowDeletingName="DTResumenPlanillaLlamadasRowDeleting" msprop:Generator_RowChangingName="DTResumenPlanillaLlamadasRowChanging" msprop:Generator_RowEvHandlerName="DTResumenPlanillaLlamadasRowChangeEventHandler" msprop:Generator_RowDeletedName="DTResumenPlanillaLlamadasRowDeleted" msprop:Generator_RowClassName="DTResumenPlanillaLlamadasRow" msprop:Generator_UserTableName="DTResumenPlanillaLlamadas" msprop:Generator_RowEvArgName="DTResumenPlanillaLlamadasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CP1_SITIO_GRABA" msprop:Generator_ColumnVarNameInTable="columnCP1_SITIO_GRABA" msprop:Generator_ColumnPropNameInRow="CP1_SITIO_GRABA" msprop:Generator_ColumnPropNameInTable="CP1_SITIO_GRABAColumn" msprop:Generator_UserColumnName="CP1_SITIO_GRABA" type="xs:string" minOccurs="0" />
+              <xs:element name="CP1_NUME_LLAMADA" msprop:Generator_ColumnVarNameInTable="columnCP1_NUME_LLAMADA" msprop:Generator_ColumnPropNameInRow="CP1_NUME_LLAMADA" msprop:Generator_ColumnPropNameInTable="CP1_NUME_LLAMADAColumn" msprop:Generator_UserColumnName="CP1_NUME_LLAMADA" type="xs:string" minOccurs="0" />
+              <xs:element name="CP1_CALIDAD" msprop:Generator_ColumnVarNameInTable="columnCP1_CALIDAD" msprop:Generator_ColumnPropNameInRow="CP1_CALIDAD" msprop:Generator_ColumnPropNameInTable="CP1_CALIDADColumn" msprop:Generator_UserColumnName="CP1_CALIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="CF_DESC_CALIDAD1" msprop:Generator_ColumnVarNameInTable="columnCF_DESC_CALIDAD1" msprop:Generator_ColumnPropNameInRow="CF_DESC_CALIDAD1" msprop:Generator_ColumnPropNameInTable="CF_DESC_CALIDAD1Column" msprop:Generator_UserColumnName="CF_DESC_CALIDAD1" type="xs:string" minOccurs="0" />
+              <xs:element name="Fuerza_Usuario" msprop:Generator_ColumnVarNameInTable="columnFuerza_Usuario" msprop:Generator_ColumnPropNameInRow="Fuerza_Usuario" msprop:Generator_ColumnPropNameInTable="Fuerza_UsuarioColumn" msprop:Generator_UserColumnName="Fuerza_Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre_Usuario" msprop:Generator_ColumnVarNameInTable="columnNombre_Usuario" msprop:Generator_ColumnPropNameInRow="Nombre_Usuario" msprop:Generator_ColumnPropNameInTable="Nombre_UsuarioColumn" msprop:Generator_UserColumnName="Nombre_Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:string" minOccurs="0" />
+              <xs:element name="Responsable" msprop:Generator_ColumnVarNameInTable="columnResponsable" msprop:Generator_ColumnPropNameInRow="Responsable" msprop:Generator_ColumnPropNameInTable="ResponsableColumn" msprop:Generator_UserColumnName="Responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="Cargo_Responsable" msprop:Generator_ColumnVarNameInTable="columnCargo_Responsable" msprop:Generator_ColumnPropNameInRow="Cargo_Responsable" msprop:Generator_ColumnPropNameInTable="Cargo_ResponsableColumn" msprop:Generator_UserColumnName="Cargo_Responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="Elaboro" msprop:Generator_ColumnVarNameInTable="columnElaboro" msprop:Generator_ColumnPropNameInRow="Elaboro" msprop:Generator_ColumnPropNameInTable="ElaboroColumn" msprop:Generator_UserColumnName="Elaboro" type="xs:string" minOccurs="0" />
+              <xs:element name="Cargo_Elaboro" msprop:Generator_ColumnVarNameInTable="columnCargo_Elaboro" msprop:Generator_ColumnPropNameInRow="Cargo_Elaboro" msprop:Generator_ColumnPropNameInTable="Cargo_ElaboroColumn" msprop:Generator_UserColumnName="Cargo_Elaboro" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHADB" msprop:Generator_ColumnVarNameInTable="columnFECHADB" msprop:Generator_ColumnPropNameInRow="FECHADB" msprop:Generator_ColumnPropNameInTable="FECHADBColumn" msprop:Generator_UserColumnName="FECHADB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

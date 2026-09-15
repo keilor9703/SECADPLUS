@@ -1,0 +1,116 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADREFERENCIA>
+
+@{
+    ViewBag.Title = "Referencias del Sitio de Grabación";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Referencias del Sitio de Grabación:</h5>
+                    <div class="computo_input">
+                        @Html.Editor("DESCRIPCION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nueva referencia"
+                                        onclick="window.location.href ='@Url.Action("Create", new { id = @ViewBag.idSitio, nom = @ViewBag.DESCRIPCION})'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nueva referencia
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaReferencias">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Nombre</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Abreviatura</th>
+                        </tr>
+                    </thead>
+                    @*<tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu two_btn">
+                                                <li>
+                                                        <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para ver">
+                                                            <i class="icon-eye"></i> Ver
+                                                        </button>
+                                                    </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para editar"
+                                                            onclick="window.location.href ='@Url.Action("Edit", new { codSitio = item.SITIO_GRABA, nomSitio = @ViewBag.DESCRIPCION, nom = item.NOMBRE, cod = item.CODIGO })'">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                                            onclick="EliminarRegistroGeneral('@Url.Action("Eliminar", new { codSitio = item.SITIO_GRABA, nomSitio = @ViewBag.DESCRIPCION, nom = item.NOMBRE, cod = item.CODIGO })')">
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.NOMBRE)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ABREVIATURA)</td>
+                            </tr>
+                        }
+                    </tbody>*@
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6 text-left">
+            <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                    data-original-title="Clic para regresar a la tabla"
+                    onclick="window.location.href ='@Url.Action("Index","SitiosGrabacion")'">
+                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+            </button>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@Scripts.Render("~/bundle/ReferenciasSitioGrabaJs");
+
+<script type="text/javascript">
+   // AplicarPluginTabla("tabla");
+    var SitioGrabaGlobal = @ViewBag.idSitio;
+    var urlObtenerReferencias= '@Url.Action("ObteneReferencias", "ReferenciasSitioGrabacion")';
+    var descripcionSitio = '@ViewBag.DESCRIPCION';
+
+</script>

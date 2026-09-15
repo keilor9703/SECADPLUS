@@ -1,0 +1,21 @@
+﻿@model SECADEntities.SecadEntities.CADPERSATEND_REMEVENMUJ
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.PERSATEN_CONSECUTIVO)
+    <br />
+    Nombres : @Html.DisplayFor(model => model.NOMBRES)
+    <br />
+    Apellidos : @Html.DisplayFor(model => model.APELLIDOS)
+
+    @using (Html.BeginForm("Delete", "DespachosMujer", new { strPasatenSitioGraba = Model.PERSATEN_SITIOGRABACION, strPasatenConsecutivo = Model.PERSATEN_CONSECUTIVO, strEventoSitioGraba = Model.EVEN_SITIOGRABACION, strEvento = Model.EVEN_NUMEEVENTO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

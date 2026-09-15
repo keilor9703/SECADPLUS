@@ -1,0 +1,739 @@
+20200706 07:18:43 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 09:38:31 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 09:39:20 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 09:55:37 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 09:56:42 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 10:00:16 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 10:20:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=SRVSECADPMEPER:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2018
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en D:\Repos\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200706 10:29:17 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 10:30:32 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 10:31:15 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:34:11 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:34:39 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:36:15 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 10:36:23 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:37:38 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:37:55 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:39:08 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:43:04 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:43:09 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:44:00 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:44:04 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:44:09 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:47:31 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 10:48:20 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 10:48:25 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:49:32 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 10:49:44 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:50:26 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:50:42 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 10:50:49 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 10:52:38 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:20:26 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:20:42 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:25:01 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:25:09 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:25:10 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:25:10 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:27:09 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:27:15 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:08 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:19 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:21 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:22 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:22 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:22 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:28:23 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:36:19 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:36:32 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3Uno de los elementos identificados tiene un formato no válido.
+	#2	#3System.FormatException: Uno de los elementos identificados tiene un formato no válido.
+   en Oracle.ManagedDataAccess.Types.DateTimeStringUtilities.FromString(String stringRep, Int32& year, Int32& month, Int32& day, Int32& hours, Int32& minutes, Int32& seconds, Int32& nanos, String& region, Boolean expectNoRegion, Boolean expectNoNanos)
+   en Oracle.ManagedDataAccess.Types.OracleDate.FromString(String datStr)
+   en Oracle.ManagedDataAccess.Types.OracleDate..ctor(String datStr)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue, Byte[]& dateByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetDateInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Date()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:42:23 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 11:55:23 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 11:55:40 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:55:53 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:56:47 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:56:53 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:57:32 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:57:37 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:57:48 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 11:59:26 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 12:11:14 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 12:17:14 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 12:17:42 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 12:19:00 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 12:22:42 [M_ERROR] - Error al Eliminar : BloquearUser 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'UPDATECUADRANTE'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SECADPLUS.Models.DbPatrulla.UpdateCuadrante(MdCadPatrulla ObjP) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 175
+20200706 12:36:04 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 12:43:04 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 12:55:31 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 12:55:38 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 44
+20200706 12:55:44 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 12:55:48 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 109
+20200706 13:00:00 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:00:40 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:03:43 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 60
+20200706 13:03:44 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:04:08 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:05:04 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:09:52 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 60
+20200706 13:13:13 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:13:36 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:13:40 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:13:59 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 62
+20200706 13:15:26 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:16:50 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:17:03 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114
+20200706 13:17:27 [M_ERROR] - Error Ejecutando F_GetCuadranteId:
+	#2	#3No se puede reconocer la cadena como valor DateTime válido.
+	#2	#3System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   en System.Convert.ToDateTime(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetCuadranteId(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo, Int32 V_IntCodigo) en D:\Repos\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 114

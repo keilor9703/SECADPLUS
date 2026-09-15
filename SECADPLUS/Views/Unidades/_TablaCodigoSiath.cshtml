@@ -1,0 +1,19 @@
+﻿@using SECADPLUS.Models
+
+
+@foreach (Tuple<string, string,string> dato in Model.CodigosSIATH)
+{
+    <tr>
+        <td></td>
+        <td>
+            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                    onclick="cargarValor(@dato.Item1.ToString(), 'SIATH')"
+                    title="" data-placement="bottom" data-original-title="Clic para seleccionar">
+                <i class="icon-select2"></i> Seleccionar
+            </button>
+        </td>
+        <td>@dato.Item1.ToString()</td>
+        <td>@dato.Item2.ToString()</td>
+        <td>@dato.Item3.ToString()</td>
+    </tr>
+}

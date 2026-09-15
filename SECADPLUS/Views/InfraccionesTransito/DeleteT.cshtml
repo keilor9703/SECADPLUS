@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADINFRACCIONES_TRANSITO
+
+@{
+    ViewBag.Title = "Eliminar Título Infracción de Transito";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CODIGO)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("DeleteT", "InfraccionesTransito", new { id = Model.CODIGO, idCap = Model.CADINFRACC_CODIGO, nomCap = Model.CADINFRACCIONES_TRANSITO2.DESCRIPCION }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADTIPOSNOVEDADE>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        <td>
+            <ul class="icons-list">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <i class="icon-menu9"></i>
+                    </button>
+                    <ul class="dropdown-menu  dropdown-menu-left">
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para editar"
+                                    onclick="window.location.href ='@Url.Action("EditC", new { id=item.CODIGO, idTip=item.CADNOVBIN, nomTip=item.CADTIPOSNOVEDADE1.DESCRIPCION })'">
+                                <i class="glyphicon glyphicon-edit"></i> Editar
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                    onclick="EliminarRegistroGeneral('@Url.Action("EliminarC", "TiposNovedades", new { id=item.CODIGO, idTip=item.CADNOVBIN, nomTip=item.CADTIPOSNOVEDADE1.DESCRIPCION })')"> @*onclick="window.location.href ='@Url.Action("DeleteC", new { id=item.CODIGO, idTip=item.CADNOVBIN, nomTip=item.CADTIPOSNOVEDADE1.DESCRIPCION })'">*@
+                                <i class="icon-trash"></i> Eliminar
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+        <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.NIVEL)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADNOVBIN)</td>
+    </tr>
+}

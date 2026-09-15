@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BaseDats_Usuario" xml:space="preserve">
+    <value>USR_CAD</value>
+    <comment>Nombre del esquema de acceso a base datos.</comment>
+  </data>
+  <data name="ConfirmaBorrado" xml:space="preserve">
+    <value>¿Esta seguro que desea borrar el registro?</value>
+  </data>
+  <data name="EX_CadenaConexion" xml:space="preserve">
+    <value>La cadena de conexión a la base de datos tiene inconsistencias.</value>
+    <comment>Mensaje de error cuando una cadena de conexión a Base de datos no cuenta con los parámetros completos.</comment>
+  </data>
+  <data name="EX_Integrador_EntityString" xml:space="preserve">
+    <value>No se proporcionón un nombre o NameSpace del modelo de EntityFramework.</value>
+    <comment>Mensaje de error cuando no se asigna valores a los paramámetros opcionales del método "ObtenerConexionActiva" en la clase Integrador</comment>
+  </data>
+  <data name="EX_MENSAJE" xml:space="preserve">
+    <value>Comunique el siguente codigo a un Administrador para realizar seguimiento del caso (Código Generado: ERROR_CODE)</value>
+    <comment>Mensaje dirijido al usuario cuando se presenta una excepción</comment>
+  </data>
+  <data name="GestorAuditoria_ALTERNO" xml:space="preserve">
+    <value>ALTERNO</value>
+    <comment>Nombre del esquema de autenticación asignado al sistema interno de la aplicación. Sólo se debe cambiar si el nombre en la base de datos también cambia</comment>
+  </data>
+  <data name="GestorAuditoria_ESQUEMAOID" xml:space="preserve">
+    <value>OID</value>
+    <comment>Nombre del esquema de autenticación asignado al sistema OID. Sólo se debe cambiar si el nombre en la base de datos también cambia</comment>
+  </data>
+  <data name="GestorSeguridad_Permiso" xml:space="preserve">
+    <value>USAR</value>
+    <comment>Nombre del permiso para acceder a cada elemento del sistema.</comment>
+  </data>
+  <data name="Guardo" xml:space="preserve">
+    <value>El registro fue guardado</value>
+    <comment>Cuando guarda en insert o edit</comment>
+  </data>
+  <data name="Integrador_Host" xml:space="preserve">
+    <value>HOST</value>
+    <comment>Nombre identificador de la dirección ip del servidor de base de datos asociado en cada "ConnectionString" del web.config</comment>
+  </data>
+  <data name="Integrador_Opcion_ListarConexiones" xml:space="preserve">
+    <value>LISTARCONEXIONES</value>
+    <comment>Opción que sirve como parametro para la ejecución de funciones en la clase Integrador</comment>
+  </data>
+  <data name="Integrador_Password" xml:space="preserve">
+    <value>PASSWORD</value>
+    <comment>Nombre identificador de la contraseña del usuario de accesos al servidor de base de datos asociado en cada "ConnectionString" del web.config</comment>
+  </data>
+  <data name="Integrador_Port" xml:space="preserve">
+    <value>PORT</value>
+    <comment>Nombre identificador del puerto del servidor de base de datos asociado en cada "ConnectionString" del web.config</comment>
+  </data>
+  <data name="Integrador_Service_Name" xml:space="preserve">
+    <value>SERVICE_NAME</value>
+    <comment>Nombre identificador del servicio del servidor de base de datos asociado en cada "ConnectionString" del web.config</comment>
+  </data>
+  <data name="Integrador_User" xml:space="preserve">
+    <value>USER</value>
+    <comment>Nombre identificador del usuario de conexion al servidor de base de datos asociado en cada "ConnectionString" del web.config</comment>
+  </data>
+  <data name="MSN_TIPO_INFO" xml:space="preserve">
+    <value>info</value>
+    <comment>Clase CSS12 que se aplica al mensaje de respuesta al</comment>
+  </data>
+  <data name="MSG_DatosUsuarioIncorrectos" xml:space="preserve">
+    <value>Usuario o clave incorrectos.</value>
+    <comment>Mensaje de error cuando los datos de usuario y clave no coinciden con los de OID</comment>
+  </data>
+  <data name="MSG_LISTAVACIA" xml:space="preserve">
+    <value>No existen conexiones a bases de datos configuradas en el sistema.</value>
+    <comment>Mensaje que se presenta cuando la lista de conexiones no existen cadenas de conexion en el web.config</comment>
+  </data>
+  <data name="MSN_EX_DBUPDATE" xml:space="preserve">
+    <value>No se puede completar la acción sobre el registro (REG) debido a problemas de integridad referencial.</value>
+    <comment>Mensaje de información cuando un registro no puede ser actualizado o eliminado.</comment>
+  </data>
+  <data name="MSN_REGISTRO_CREACION" xml:space="preserve">
+    <value>Registro (NUMERO) creado de manera exitosa.</value>
+    <comment>Mensaje de información cuando un registro es creado de manera exitosa.</comment>
+  </data>
+  <data name="MSN_REGISTRO_MODIFICADO" xml:space="preserve">
+    <value>El registro (NUMERO) ha sido modificado de manera exitosa</value>
+    <comment>Mensaje de información cuando un registro es modificado de manera exitosa.</comment>
+  </data>
+  <data name="MSN_TIPO_SUCCES" xml:space="preserve">
+    <value>success</value>
+    <comment>Clase CSS12 que se aplica al mensaje de respuesta al usuario</comment>
+  </data>
+  <data name="MSN_TIPO_WARNING" xml:space="preserve">
+    <value>warning</value>
+    <comment>Clase CSS12 que se aplica al mensaje de respuesta al</comment>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>nombres Propio</value>
+  </data>
+  <data name="No_guardo" xml:space="preserve">
+    <value>Problemas guardando el registro</value>
+    <comment>Cuando no puede guardar en insert o edit</comment>
+  </data>
+  <data name="OIDServer" xml:space="preserve">
+    <value>lbroid.policia.gov.co:1289</value>
+    <comment>Dirección del servidor de OID de la Policía Nacional</comment>
+  </data>
+  <data name="RutaBannerImagenes" xml:space="preserve">
+    <value>/Images/Banner/</value>
+    <comment>Ruta de las imágenes para los banner</comment>
+  </data>
+  <data name="RutaPersonasImagenes" xml:space="preserve">
+    <value>/Images/Personas/</value>
+    <comment>Ruta de las fotografías de personas</comment>
+  </data>
+  <data name="TBL_Acciones" xml:space="preserve">
+    <value>Acciones</value>
+    <comment>Texto utilizable en las vistas del sistema</comment>
+  </data>
+  <data name="TBL_Elemento" xml:space="preserve">
+    <value>Elemento</value>
+    <comment>Texto utilizable en las vistas del sistema</comment>
+  </data>
+  <data name="TBL_Estado" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Texto utilizable en las vistas del sistema</comment>
+  </data>
+  <data name="TBL_Fecha_Crecion" xml:space="preserve">
+    <value>Fecha de Creación</value>
+    <comment>Texto utilizable en las vistas del sistema</comment>
+  </data>
+  <data name="TBL_Perfil" xml:space="preserve">
+    <value>Perfil</value>
+    <comment>Texto utilizable en las vistas del sistema</comment>
+  </data>
+  <data name="TBL_Permiso" xml:space="preserve">
+    <value>Permiso</value>
+    <comment>Texto utilizable en las vistas del sistema</comment>
+  </data>
+  <data name="UserOidCadenaString" xml:space="preserve">
+    <value>cn=USERNAME ,cn=users,dc=policia,dc=gov,dc=co</value>
+    <comment>Cadena string utilizada durante la autenticación contra el OID de la Policía Nacional</comment>
+  </data>
+  <data name="MSN_ALERTA_USUARIO_SIN_EMPLEADO" xml:space="preserve">
+    <value>Revise los datos del usuario y de la persona que esta ingresando..</value>
+    <comment>Mensaje que se presenta cuando un usuario ingresa a la funcionalidad de cambio de canal sin tener asociado un empleado o policía.</comment>
+  </data>
+  <data name="MSN_REGISTRO_ELIMINADO" xml:space="preserve">
+    <value>El registro seleccionado ha sido eliminado de manera exitosa.</value>
+    <comment>Mensaje luego de que un registro se eliminade manera correcta.</comment>
+  </data>
+  <data name="MSN_USUARIO_NO_ENCONTRADO" xml:space="preserve">
+    <value>Parece que el usuario de SECAD no ha sido cargado. Por favor cargue la página de inicio Si el problema persiste verifique que su cuenta tenga un usuario de SECAD asociado.</value>
+    <comment>Mensaje de advertencia cuando la variable de sesión para el usuario de SECAD no se encuentra generada.</comment>
+  </data>
+  <data name="MSN_NO_DATOS" xml:space="preserve">
+    <value>No se han encontrado datos para la consulta generada</value>
+    <comment>Mensaje de información cuando no se encuentran resultados.</comment>
+  </data>
+  <data name="MSN_REGISTRO_DUPLICADO" xml:space="preserve">
+    <value>Ya existe otro registro con la información que ha sido ingresada.</value>
+    <comment>Mensaje de advertencia cuando se intenta ingresar un registro duplicado.</comment>
+  </data>
+  <data name="MSN_NOMBRE_EQUIPO_FALLIDO" xml:space="preserve">
+    <value>"Al parecer no hemos podido identificar el nombre del equipo, por favor informe de este problema a un Administrador."</value>
+    <comment>Mensaje de Advertencia si no es posible identificarla por restricciones de RED</comment>
+  </data>
+  <data name="PERMISO_DENEGADO" xml:space="preserve">
+    <value>Apreciado usuario usted no cuenta con los permisos necesarios para acceder a la funcionalidad solicitada.</value>
+    <comment>Mensaje de advertencia cuando un usuario no tiene permisos sobre una funcionalidad.</comment>
+  </data>
+  <data name="MSN_REGISTRO_NO_EXISTE" xml:space="preserve">
+    <value>El registro consultado no ha podido ser encontrado.</value>
+    <comment>Mensaje de advertencia cuando un registro no ha podido ser cargado</comment>
+  </data>
+  <data name="MSN_CANAL_FALLIDO" xml:space="preserve">
+    <value>"Al parecer no hemos podido identificar el canal de despacho asignado al usuario, por favor informe de este problema a un Administrador."</value>
+    <comment>Mensaje de Advertencia si no es posible que el usuario no tiene un canal de despacho definido</comment>
+  </data>
+  <data name="MSN_MINUTA_CREAR_TURNO" xml:space="preserve">
+    <value>Ud. no puede crear turnos.. solo adicionar medios de atencion a un turno ya existente..</value>
+    <comment>Mensaje que aparece cuando el usuario autenticado no cuenta con los requisitos para crear un turno</comment>
+  </data>
+  <data name="MSN_TURNO_CON_RESTRICCION" xml:space="preserve">
+    <value>El turno (TURNO) Tiene: (CANTIDAD) Eventos asociados y no debe ser modificado ..</value>
+    <comment>Mensaje de advertencia cuando se intenta modificar un turno con eventos asociados</comment>
+  </data>
+  <data name="MSN_NO_DATOS_REPORTE" xml:space="preserve">
+    <value>No se encontró información para el reporte.</value>
+    <comment>Mensaje cuando un reporte no tiene datos.</comment>
+  </data>
+  <data name="MSN_NO_EXISTE_POLICIA" xml:space="preserve">
+    <value>La identificacion no esta registrada.. Revise..</value>
+    <comment>Mensaje de advertencia cuando un número de cédula no se encuentra en la tabla de policias de SECAD</comment>
+  </data>
+  <data name="MSN_PERSONA_EQUIPO_ASOCIADO" xml:space="preserve">
+    <value>No puede borrar registro maestro cuando existen registros detalle coincidentes.</value>
+    <comment>Mensaje de advertencia cuando se intenta eliminar una persona con equipo asociado</comment>
+  </data>
+  <data name="MSN_TURNO_APOYO_NO_EXISTE" xml:space="preserve">
+    <value>Debe Crear primero el turno de Apoyo del dia..</value>
+    <comment>Mensaje de advertencia cuando no se ha podido encontrar un turno de apoyo creado.</comment>
+  </data>
+  <data name="MSN_USUARIO_EXISTENTE" xml:space="preserve">
+    <value>Ya existe un registro con el mismo nombre de usuario.</value>
+    <comment>Mensaje que se presenta cuando ya existe un usuario con el mismo nombre de usuario ingresado.</comment>
+  </data>
+  <data name="MSN_USU_EMP_NO_ENCONTRADO" xml:space="preserve">
+    <value>No se ha podido encontrar un usuario institucional asociado al número de cédula ingresado</value>
+    <comment>Mensaje de advertencia cuando no existe un usuario empresarial registrado para un numero de cédula</comment>
+  </data>
+  <data name="DEFAULT_PASSWORD" xml:space="preserve">
+    <value>SECAD123</value>
+    <comment>Contraseña asignada por defecto a los nuevos usuarios a los que no se les especifique una contraseña.</comment>
+  </data>
+  <data name="MSN_ROL_ASOCIADO" xml:space="preserve">
+    <value>El rol seleccionado ha sido asociado de manera exitosa.</value>
+    <comment>Mensaje cuando se asocia de manera correcta un rol a un usuario OID.</comment>
+  </data>
+  <data name="MSN_ROL_DESASOCIADO" xml:space="preserve">
+    <value>El rol seleccionado ha sido removido del usuario seleccionado de manera exitosa.</value>
+    <comment>Mensaje cuando se desasocia de manera correcta un rol a un usuario OID.</comment>
+  </data>
+  <data name="AUDITORIA_CREAR" xml:space="preserve">
+    <value>CREAR</value>
+    <comment>Dato para el tipo de evento de creación cuando una transacción es almacenada en el registro de auditoría</comment>
+  </data>
+  <data name="AUDITORIA_ELIMINAR" xml:space="preserve">
+    <value>ELIMINA</value>
+    <comment>Dato para el tipo de evento de eliminacióncuando una transacción es almacenada en el registro de auditoría</comment>
+  </data>
+  <data name="AUDITORIA_MODIFICAR" xml:space="preserve">
+    <value>MODIFICA</value>
+    <comment>Dato para el tipo de evento de actualización cuando una transacción es almacenada en el registro de auditoría</comment>
+  </data>
+  <data name="MSN_MINUTA_NO_ELIMINAR" xml:space="preserve">
+    <value>Ud no puede borrar registros aqui..</value>
+    <comment>Mensaje que aparece cuando el usuario autenticado no tiene permisos para eliminar registros de la minuta.</comment>
+  </data>
+  <data name="MSN_EQUIPO_NO_REGISTRADO" xml:space="preserve">
+    <value>Este equipo..NOMBRE..No esta Registrado.. Contactese con su Admon.</value>
+    <comment>Mensaje Cuando el equipo no se encuentra regisrado.</comment>
+  </data>
+  <data name="MSN_RECEPCION_ACD" xml:space="preserve">
+    <value>Revise los datos del usuario y del equipo que esta ingresando..</value>
+    <comment>Mensaje cuando no se puede encontar un ACD asignado</comment>
+  </data>
+  <data name="MSN_RECEPCION_CONEXION_DIJIN" xml:space="preserve">
+    <value>Contáctese con el Admon para que revise el parámetro CONEXION_DIJIN en CADREFERENCIAS</value>
+    <comment>Mensaje cuando no existe configurada en la base de datos un valor para la referencia CONEXION_DIJIN</comment>
+  </data>
+  <data name="MSN_RECEPCION_CONEXION_TELEPOL" xml:space="preserve">
+    <value>Contáctese con el Admon para que revise el parámetro CONEXION_TELEPOL en CADREFERENCIAS del sitio de grabacion</value>
+    <comment>Mensaje cuando no existe configurada en la base de datos un valor para la referencia CONEXION_TELEPOL</comment>
+  </data>
+  <data name="MSN_RECEPCION_NUMERACION" xml:space="preserve">
+    <value>Debe revisar en Maestras - Referencias - NUMERACION_CELULAR, e incluir los datos</value>
+    <comment>Mensaje que aparece cuando los numeros celulares almacenados en la base de datos son menor a 6</comment>
+  </data>
+  <data name="Imagen" xml:space="preserve">
+    <value>D:\POLICIA NACIONA\SECADPLUS\POLICIA_SECAD\SECADPLUS\SECADPLUS\Images\LogoReportes2.jpg</value>
+  </data>
+  <data name="RutaLogoReporte" xml:space="preserve">
+    <value>~/Images/LogoReporte.jpg</value>
+    <comment>Url de la ruta del reporte</comment>
+  </data>
+  <data name="EX_MSN_CONSECUTIVO_DOCUMENTO" xml:space="preserve">
+    <value>No se ha podido generar el consecutivo para este documento.</value>
+    <comment>Mensaje cuando falla el metodo ObtenerDocumentoConsecutivo de gestorBase</comment>
+  </data>
+  <data name="MSN_EQUIPO_NO_EXISTE" xml:space="preserve">
+    <value>El equipo consultado no existe.</value>
+    <comment>Mensaje cuando el sistema identifica un nombre de maquina que no existe como equipo de computo.</comment>
+  </data>
+  <data name="MSN_USUARIO_SIN_CIUDAD" xml:space="preserve">
+    <value>El usuario actual no tiene definida una ciudad en sus datos maestos.</value>
+    <comment>Mensaje cuando un usuario intenta acceder a recepción sin tener asignada una ciudad.</comment>
+  </data>
+  <data name="CNP_CEDULA_NO_ENCONTRADA" xml:space="preserve">
+    <value>Cedula no encontrada en la bd del sitio.. Contáctese con el admnistrador de SECAD para que actualice datos de policiales de la Unidad Policial</value>
+    <comment>Mensaje cuando no existe un dato de policia registrado en la base de datos local para un número de cedula especifíca</comment>
+  </data>
+  <data name="MSN_USUARIO_SIN_ENTIDAD" xml:space="preserve">
+    <value>El Usuario no tiene una Entidad asignada.</value>
+    <comment>Mensaje cuando un operador entra a recepción de pedidos y no tiene asignada una entidad</comment>
+  </data>
+</root>

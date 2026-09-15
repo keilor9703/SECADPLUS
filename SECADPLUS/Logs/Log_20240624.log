@@ -1,0 +1,106 @@
+20240624 08:34:10 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20240624 08:35:30 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20240624 08:36:14 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20240624 10:24:50 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20240624 10:32:50 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20240624 10:34:38 [M_ERROR] - Error Ejecutando pk_cadxcrime.f_getdatosxcrime_cr
+	#2	#3ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CADXCRIME.PK_CADXCRIME" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CADXCRIME.PK_CADXCRIME"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.Recepcion.DbRecepcion.F_GetDatosXCrimeCr(String V_Abonado, String V_Fecha, Int64 V_NumeroSecad) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\Recepcion\DbRecepcion.cs:línea 39
+20240624 17:05:54 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3Valor demasiado grande o demasiado pequeño para Int32.
+	#2	#3System.OverflowException: Valor demasiado grande o demasiado pequeño para Int32.
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int64 IdLlamada, Double V_Latitud, Double V_Longitud, String V_Modalidad, String V_Conducta, String V_TipoArma, String V_TipoMoviliza) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 790
+20240624 17:11:07 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3Valor demasiado grande o demasiado pequeño para Int32.
+	#2	#3System.OverflowException: Valor demasiado grande o demasiado pequeño para Int32.
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int64 IdLlamada, Double V_Latitud, Double V_Longitud, String V_Modalidad, String V_Conducta, String V_TipoArma, String V_TipoMoviliza) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 790
+20240624 17:15:27 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3ORA-06502: PL/SQL: error : precisión de número demasiado grande numérico o de valor
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 967
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06502: PL/SQL: error : precisión de número demasiado grande numérico o de valor
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 967
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.update_evento(Int32 P_SITIO_GRABA, Int32 P_EVENTO, String P_CADCODI_FINAL, String P_CADCLCI_CODIGO) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 838
+20240624 17:18:42 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3ORA-06502: PL/SQL: error : precisión de número demasiado grande numérico o de valor
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 967
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06502: PL/SQL: error : precisión de número demasiado grande numérico o de valor
+ORA-06512: en "USR_CAD.PK_CADINTEGMINUTASECADSIVICC", línea 967
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.update_evento(Int32 P_SITIO_GRABA, Int32 P_EVENTO, String P_CADCODI_FINAL, String P_CADCLCI_CODIGO) en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 838

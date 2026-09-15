@@ -1,0 +1,189 @@
+﻿@model IEnumerable<SecadModelos.Areas.Patrullas.MdCadPatrulla>
+@using System.Linq
+@section scripts{
+    <script> var urlGetPatrullaId = "@Url.Action("Udp_Patrullas", "Patrullas", new { Area = "" })"; </script>
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    @Html.Partial("_NavegacionUnidades")
+    @Html.Partial("_Detalle_Unidad")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Lista de Indicativos</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("Crear", "Patrullas", new { IntUnidadFuerza = ViewBag.UnidadFuerza, IntUnidadCodigo = ViewBag.UnidadCodigo })'"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo Elemento">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo Indicativo
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("Crear", "Patrullas", new { IntUnidadFuerza = ViewBag.UnidadFuerza, IntUnidadCodigo = ViewBag.UnidadCodigo })'"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo Elemento">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Traer Indicativo SIVICC
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <table class="table table-hover table-xxs datatable-basic table-condensed" id="tablaIndicativos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>
+                                Descripción Patrulla
+                            </th>
+                            <th>
+                                Id Radio
+                            </th>
+                            <th>
+                                Clase Turno
+                            </th>
+                            <th>
+                                Vigente
+                            </th>
+                            <th>
+                                Fecha Desde
+                            </th>
+                            <th>
+                                Fecha Hasta
+                            </th>
+                            <th>
+                                Observación
+                            </th>
+                            <th>
+                                Usuario Transacción
+                            </th>
+                            <th>
+                                Cuadrante Id
+                            </th>
+                            <th>
+                                Cuadrante
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list decad_menu">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat dropdown-toggle"
+                                                    data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu secad two_btn dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-default " type="button"
+                                                            data-popup="tooltip" onclick="location.href='@Url.Action("Editar", new { IntUnidadFuerza = item.CadUniFuerza, IntUnidadCodigo = item.CadUniCodigo, intCodigo = item.Codigo })'"
+                                                            data-placement="bottom" data-original-title="Clic para editar">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default " type="button" data-popup="tooltip" onclick="EliminarRegistroGeneral('@Url.Action("Eliminar", new { IntUnidadFuerza = item.CadUniFuerza, IntUnidadCodigo = item.CadUniCodigo, intCodigo = item.Codigo })')"
+                                                            data-placement="bottom" data-original-title="Clic para eliminar">
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    @item.DescPatrulla
+
+                                </td>
+                                <td>
+                                    @item.IdRadio
+                                </td>
+                                <td>
+                                    @item.ClaseTurno
+                                </td>
+                                <td>
+                                    @if (item.Vigente.ToString().Equals("S"))
+                                    {
+                                        <span class="label label-success">SI</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-danger">NO</span>
+                                    }
+                                </td>
+                                <td>
+                                    @item.FechaDesde
+
+                                </td>
+                                <td>
+                                    @item.FechaHasta
+
+                                </td>
+                                <td>
+                                    @item.Observacion
+                                </td>
+                                <td>
+                                    @item.UsuaTransaccion
+                                </td>
+                                <td>
+                                    @item.CuadranteId
+                                </td>
+                                <td>
+                                    @item.Cuadrante
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/ModalsJs")
+
+    <script>
+        AplicarPluginTabla("tablaIndicativos");
+
+        //function EditPatrulla(intUnidadFuerza, intUnidadCodigo, intCodigo) {
+        //    var datos = { "p_intUnidadFuerza": intUnidadFuerza, "p_intUnidadCodigo": intUnidadCodigo, "p_intCodigo": intCodigo };
+        //    $.ajax({
+        //        type: "POST",
+        //        url: urlGetPatrullaId,
+        //        data: datos,
+        //        dataType: 'json',
+        //        cache: false,
+        //        success: function (respuesta) {
+        //            if (respuesta.success) {
+        //                $("#Codigo").val(respuesta.Dato[0].Codigo);
+        //                $("#DesPatrulla").val(respuesta.Dato[0].DesPatrulla);
+        //                $("#IdRadio").val(respuesta.Dato[0].IdRadio);
+        //                $("#ClaseTurno").val(respuesta.Dato[0].ClaseTurno);
+        //                $("#Cuadrante").val(respuesta.Dato[0].Cuadrante);
+        //                $("#FechaDesde").val(respuesta.Dato[0].FechaDesde);
+        //                $("#FechaHasta").val(respuesta.Dato[0].FechaHasta);
+        //                $("#Vigente").val(respuesta.Dato[0].Vigente);
+
+        //            } else {
+        //                ModalError("Señor(a) Funcionario(a:)", "No existe el grupo, revise");
+        //                $("#txtDescripcion").val("");
+        //            }
+        //        },
+        //        error: function () {
+        //            $("#txtDescripcion").val("");
+        //            ModalError("Señor(a) Funcionario(a:)", "No existe el grupo, revise");
+        //        }
+        //    });
+        //}
+
+    </script>
+}

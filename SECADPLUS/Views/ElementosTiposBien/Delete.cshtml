@@ -1,0 +1,17 @@
+﻿@model SECADEntities.SECAD.CADTIPOS_BIEN
+
+@{
+    ViewBag.Title = "Eliminar Tipo de Bien";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("Delete", "ElementosTiposBien", new { id = Model.CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

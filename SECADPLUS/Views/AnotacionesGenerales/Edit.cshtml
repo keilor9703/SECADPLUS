@@ -1,0 +1,140 @@
+﻿@model SECADEntities.SECAD.CADANOTAGRAL
+
+@{
+    ViewBag.Title = "Anotaciones Generales";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+}
+
+
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Editar Anotaciones Generales:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+
+                @using (Html.BeginForm("Edit", "AnotacionesGenerales", FormMethod.Post, new { @class = "form-compact" }))
+                {
+                    <div class="panel-body">
+
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.SITIO_GRABA, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.SITIO_GRABA, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CONSECUTIVO, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.CONSECUTIVO, new { htmlAttributes = new { @class = "form-control",  @readonly = "readonly" } })
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.USUARIO, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.USUARIO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.FECHA_GRABACION, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.FECHA_GRABACION, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+
+                                    <div class="form-group">
+                                        <div class="col-md-10 col-lg-12 obligatorio">
+
+                                            @Html.LabelFor(model => model.ANOTACION, htmlAttributes: new { @class = "control-label" })
+
+                                            @Html.TextAreaFor(model => model.ANOTACION, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba la anotación" })
+                                            @Html.ValidationMessageFor(model => model.ANOTACION, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.MAQUINA, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.MAQUINA, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </fieldset>
+
+
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6 text-left">
+                                    <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para regresar a la tabla"
+                                            onclick="window.location.href ='@Url.Action("Index")'">
+                                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                    </button>
+                                </div>
+                                <div class="col-xs-6 col-md-6 text-right">
+                                    <button class="btn bg-teal" data-popup="tooltip"
+                                            title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                            value="Create">
+                                        <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

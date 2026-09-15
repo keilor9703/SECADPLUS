@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Excepciones" targetNamespace="http://tempuri.org/Excepciones.xsd" xmlns:mstns="http://tempuri.org/Excepciones.xsd" xmlns="http://tempuri.org/Excepciones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Excepciones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Excepciones" msprop:Generator_UserDSName="Excepciones">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Excepciones" msprop:Generator_TableClassName="ExcepcionesDataTable" msprop:Generator_TableVarName="tableExcepciones" msprop:Generator_TablePropName="_Excepciones" msprop:Generator_RowDeletingName="ExcepcionesRowDeleting" msprop:Generator_RowChangingName="ExcepcionesRowChanging" msprop:Generator_RowEvHandlerName="ExcepcionesRowChangeEventHandler" msprop:Generator_RowDeletedName="ExcepcionesRowDeleted" msprop:Generator_UserTableName="Excepciones" msprop:Generator_RowChangedName="ExcepcionesRowChanged" msprop:Generator_RowEvArgName="ExcepcionesRowChangeEvent" msprop:Generator_RowClassName="ExcepcionesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EX_ID" msprop:Generator_ColumnVarNameInTable="columnEX_ID" msprop:Generator_ColumnPropNameInRow="EX_ID" msprop:Generator_ColumnPropNameInTable="EX_IDColumn" msprop:Generator_UserColumnName="EX_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_USER_ID" msprop:Generator_ColumnVarNameInTable="columnEX_USER_ID" msprop:Generator_ColumnPropNameInRow="EX_USER_ID" msprop:Generator_ColumnPropNameInTable="EX_USER_IDColumn" msprop:Generator_UserColumnName="EX_USER_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_ORIGEN" msprop:Generator_ColumnVarNameInTable="columnEX_ORIGEN" msprop:Generator_ColumnPropNameInRow="EX_ORIGEN" msprop:Generator_ColumnPropNameInTable="EX_ORIGENColumn" msprop:Generator_UserColumnName="EX_ORIGEN" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_MENSAJE" msprop:Generator_ColumnVarNameInTable="columnEX_MENSAJE" msprop:Generator_ColumnPropNameInRow="EX_MENSAJE" msprop:Generator_ColumnPropNameInTable="EX_MENSAJEColumn" msprop:Generator_UserColumnName="EX_MENSAJE" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_FECHA" msprop:Generator_ColumnVarNameInTable="columnEX_FECHA" msprop:Generator_ColumnPropNameInRow="EX_FECHA" msprop:Generator_ColumnPropNameInTable="EX_FECHAColumn" msprop:Generator_UserColumnName="EX_FECHA" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_CLASE" msprop:Generator_ColumnVarNameInTable="columnEX_CLASE" msprop:Generator_ColumnPropNameInRow="EX_CLASE" msprop:Generator_ColumnPropNameInTable="EX_CLASEColumn" msprop:Generator_UserColumnName="EX_CLASE" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_SITIO_GRABACION" msprop:Generator_ColumnVarNameInTable="columnEX_SITIO_GRABACION" msprop:Generator_ColumnPropNameInRow="EX_SITIO_GRABACION" msprop:Generator_ColumnPropNameInTable="EX_SITIO_GRABACIONColumn" msprop:Generator_UserColumnName="EX_SITIO_GRABACION" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_IPEQUIPO" msprop:Generator_ColumnVarNameInTable="columnEX_IPEQUIPO" msprop:Generator_ColumnPropNameInRow="EX_IPEQUIPO" msprop:Generator_ColumnPropNameInTable="EX_IPEQUIPOColumn" msprop:Generator_UserColumnName="EX_IPEQUIPO" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_FUNCION" msprop:Generator_ColumnVarNameInTable="columnEX_FUNCION" msprop:Generator_ColumnPropNameInRow="EX_FUNCION" msprop:Generator_ColumnPropNameInTable="EX_FUNCIONColumn" msprop:Generator_UserColumnName="EX_FUNCION" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_TRAZA" msprop:Generator_ColumnVarNameInTable="columnEX_TRAZA" msprop:Generator_ColumnPropNameInRow="EX_TRAZA" msprop:Generator_ColumnPropNameInTable="EX_TRAZAColumn" msprop:Generator_UserColumnName="EX_TRAZA" type="xs:string" minOccurs="0" />
+              <xs:element name="EX_EXINTERNA" msprop:Generator_ColumnVarNameInTable="columnEX_EXINTERNA" msprop:Generator_ColumnPropNameInRow="EX_EXINTERNA" msprop:Generator_ColumnPropNameInTable="EX_EXINTERNAColumn" msprop:Generator_UserColumnName="EX_EXINTERNA" type="xs:string" minOccurs="0" />
+              <xs:element name="USUARIO" msprop:Generator_ColumnVarNameInTable="columnUSUARIO" msprop:Generator_ColumnPropNameInRow="USUARIO" msprop:Generator_ColumnPropNameInTable="USUARIOColumn" msprop:Generator_UserColumnName="USUARIO" type="xs:string" minOccurs="0" />
+              <xs:element name="SITIO" msprop:Generator_ColumnVarNameInTable="columnSITIO" msprop:Generator_ColumnPropNameInRow="SITIO" msprop:Generator_ColumnPropNameInTable="SITIOColumn" msprop:Generator_UserColumnName="SITIO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

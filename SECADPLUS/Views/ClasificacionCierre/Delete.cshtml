@@ -1,0 +1,17 @@
+﻿@model SECADEntities.SECAD.CADCLASIFICACION_CIERRE
+
+@{
+    ViewBag.Title = "Borrar Clasificación Cierre";
+}
+
+<h4>¿Está seguro que desea borrar este elemento?</h4>
+<hr />
+<h5>
+    Nombre Clasificación de Cierre:
+    @Html.DisplayFor(model => model.DESCRIPCION)
+</h5>
+
+@using (Html.BeginForm("DeleteConfirmed", "ClasificacionCierre", new { id = Model.CODIGO, idSitio = Model.CADFUERZA.SITIO_GRABA, idEntidad = Model.ID_FUERZA, nombreEntidad = Model.CADFUERZA.DESCRIPCION }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+{
+    @Html.AntiForgeryToken()
+}

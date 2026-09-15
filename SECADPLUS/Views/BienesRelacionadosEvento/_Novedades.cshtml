@@ -1,0 +1,510 @@
+﻿@model SECADEntities.SECAD.CADBIENES_NOVEDADES
+
+@using (Html.BeginForm("CreateN", "BienesRelacionadosEvento", FormMethod.Post, new { @class = "form-compact" }))
+{
+    <div class="col-md-12">
+        <!-- Panel con Tablas -->
+        <div class="panel panel-flat">
+            @*<div class="panel-heading">
+                <h5 class="panel-title">Novedades:</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list">
+                        <li>
+                        </li>
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>*@
+
+            <div class="panel-body">
+               
+
+                    <!-- Panel Entidades -->
+                    <div class="col-md-12">
+                        <legend class="text-semibold">
+                            Novedades
+                            <a class="control-arrow" data-toggle="collapse" data-target="#panelBien1">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+                        <div class="collapse in panel-body" id="panelBien1">
+                            <!-- /inicio de tabla -->
+                            <div > 
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.Hidden("CONSECUTIVO")
+                                @Html.Hidden("CADBIEN_SITIOGRABA")
+                                @Html.Hidden("CADBIEN_CONSECUTIVO")
+                                @Html.Hidden("LUGE_CODIGO")
+                                @Html.Hidden("LUGE_BARRIO")
+                                @Html.Hidden("CODI_BARRIO")
+                                @Html.Hidden("CADUNITUR_UNDEFUERZA")
+                                @Html.Hidden("CADUNITUR_UNDECODIGO")
+                                @Html.Hidden("PEDI_NUMELLAMADA")
+                                @Html.Hidden("MEDISP_SITIOGRABA")
+                                @Html.Hidden("MEDISP_CONSECUTIVO")
+                                @Html.Hidden("PARQ_SITIOGRABA")
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Consecutivo:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    @Html.Editor("CONSECUTIVO2", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group obligatorio">
+                                            <label class="control-label">Tipo Inf. :</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        @Html.DropDownList("TIIN_CODIGO", null, "", htmlAttributes: new { @class = "chosen-select" })
+                                                        @Html.ValidationMessageFor(model => model.TIIN_CODIGO, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group obligatorio">
+                                            <label class="control-label">Clase Inf. :</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        @Html.DropDownList("CLIN_CODIGO", null, "", htmlAttributes: new { @class = "chosen-select" })
+                                                        @Html.ValidationMessageFor(model => model.CLIN_CODIGO, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Modalidad:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        @Html.DropDownList("MODA_CODIGO", null, "", htmlAttributes: new { @class = "chosen-select" })
+                                                        @Html.ValidationMessageFor(model => model.MODA_CODIGO, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group obligatorio">
+                                            <label class="control-label">Fecha:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                                        @*<input type="text" class="form-control daterange-basic FechaHora" id="FECHA_NOVEDAD" name="FECHA_NOVEDAD">*@
+
+                                                        @Html.EditorFor(model => model.FECHA_NOVEDAD, new { htmlAttributes = new { @class = "form-control daterange-basic FechaHora" } })
+                                                        @Html.ValidationMessageFor(model => model.FECHA_NOVEDAD, "", new { @class = "text-danger" })
+
+
+
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Estado Novedad:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <select id="ESTADO_NOVEDAD" name="ESTADO_NOVEDAD" class="chosen-select">
+                                                            <option value="" selected="selected"> </option>
+                                                            <option value="S">VIGENTE</option>
+                                                            <option value="N">NO VIGENTE</option>
+                                                        </select>
+                                                    </div>
+                                                    @Html.ValidationMessageFor(model => model.ESTADO_NOVEDAD, "", new { @class = "text-danger" })
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Fecha Termino:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                                        <input type="text" class="form-control daterange-basic FechaHora" id="FECHA_TERMINO" name="FECHA_TERMINO">
+                                                    </div>
+
+                                                    @Html.ValidationMessageFor(model => model.FECHA_TERMINO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label>Observaciones:</label>
+                                            <div class="row">
+                                                <div class="col-md-10 col-lg-12">
+                                                    @*   @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba observaciones" })*@
+                                                    <input type="text" class="form-control" value="@(Model.OBSERVACIONES == null ? "" : Model.OBSERVACIONES  )" placeholder="Escriba observaciones" name="OBSERVACIONES" />
+                                                    @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Ciudad Municipio:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <div class="col-md-8">
+                                                            <input type="text" id="DESCR_LUGE" name="DESCR_LUGE" class="form-control" readonly="readonly" />
+                                                            @Html.ValidationMessageFor(model => model.LUGE_CODIGO, "", new { @class = "text-danger" })
+
+
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" id="_btnCiudadNovedad" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargaCiudades()">
+                                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Barrio:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="DESCR_BARRIO" name="DESCR_BARRIO" class="form-control" readonly="readonly" />
+                                                            @Html.ValidationMessageFor(model => model.CODI_BARRIO, "", new { @class = "text-danger" })
+
+
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" id="_btnCiudadNovedad" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="MostaraBarrio()">
+                                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-2">
+                                        <div class="form-group">
+                                            <label class="control-label">Dirección:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.DIRECCION, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+
+                    <!-- Panel con Tablas -->
+
+                <!-- Panel Entidades -->
+                <div class="col-md-12">
+                    <legend class="text-semibold">
+                        Datos de Inmovilizaciones:
+                        <a class="control-arrow" data-toggle="collapse" data-target="#panelInmovilizaciones">
+                            <i class="icon-circle-down2"></i>
+                        </a>
+                    </legend>
+                    <div class="collapse in" id="panelInmovilizaciones">
+                        <!-- /inicio de tabla -->
+                        <div class="panel-body">
+                            <fieldset class="content-group">
+
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Infr Codigo:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+                                                        <div class="col-md-1">
+                                                            <input type="text" id="INFR_CODIGO" name="INFR_CODIGO" class="form-control" readonly="readonly" />
+                                                            @Html.ValidationMessageFor(model => model.INFR_CODIGO, "", new { @class = "text-danger" })
+
+
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" id="INFR_DESCRIPCION" name="INFR_DESCRIPCION" class="form-control" readonly="readonly" />
+
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" id="_btnParqueadero" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargarInfracciones()">
+                                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Parqueadero:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+                                                        <div class="col-md-1">
+                                                            <input type="text" id="PARQ_CODIGO" name="PARQ_CODIGO" class="form-control" readonly="readonly" />
+                                                            @Html.ValidationMessageFor(model => model.PARQ_CODIGO, "", new { @class = "text-danger" })
+
+
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" id="DESCR_PARQUEADERO" name="DESCR_PARQUEADERO" class="form-control" readonly="readonly" />
+
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" id="_btnParqueadero" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargarParqueaderos()">
+                                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Unidad:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" id="DESCR_UNIDAD" name="DESCR_UNIDAD" class="form-control" readonly="readonly" />
+
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" id="_btnUnidad" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargarUnidades()">
+                                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Medios:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" id="DESCR_PATRULLA" name="DESCR_PATRULLA" class="form-control" readonly="readonly" />
+                                                            @Html.ValidationMessageFor(model => model.MEDISP_CONSECUTIVO, "", new { @class = "text-danger" })
+
+
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" id="_btnUnidad" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                                        title="" data-placement="bottom" data-original-title="Clic para buscar" onclick="CargarMedios()">
+                                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Vehi Sigla:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    @* @Html.EditorFor(model => model.VEHI_SIGLA, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                    @Html.DropDownList("VEHI_SIGLA", null, "", htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessageFor(model => model.VEHI_SIGLA, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+
+
+                        <!-- /inicio de tabla -->
+                    </div>
+                </div>
+                <!-- Panel Entidades -->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <!-- Panel con Tablas -->
+        <div class="panel panel-flat">
+
+
+            <div class="panel-body">
+                <fieldset class="content-group">
+
+                    <div>
+                        <div class="row">
+
+
+                            <div class="col-md-12 col-lg-3">
+                                <div class="form-group ">
+                                    <label class="control-label">Sitio Graba:</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                         @*   @Html.Editor("", new { htmlAttributes = new { @class = "form-control", @placeholder = "", @maxlength = "100", @readonly = "readonly" } })*@
+                                            <input type="text" class="form-control readonly" placeholder=""  readonly="readonly"/>
+
+                                            @Html.ValidationMessageFor(model => model.PEDI_SITIOGRABA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-3">
+                                <div class="form-group ">
+                                    <label class="control-label">Numero llamada:</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                          @*  @Html.Editor("", new { htmlAttributes = new { @class = "form-control", @placeholder = "", @maxlength = "30", @readonly = "readonly" } })*@
+                                            <input type="text" class="form-control readonly" placeholder=""  readonly="readonly"/>
+                                            @Html.ValidationMessageFor(model => model.PEDI_NUMELLAMADA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-3">
+                                <div class="form-group ">
+                                    <label class="control-label">Usuario:</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                         @*   @Html.Editor("", new { htmlAttributes = new { @class = "form-control", @placeholder = "", @maxlength = "100", @readonly = "readonly" } })*@
+                                            <input type="text" class="form-control readonly" placeholder=""  readonly="readonly"/>
+                                            @Html.ValidationMessageFor(model => model.USUA_TRANSACCION, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-3">
+                                <div class="form-group">
+                                    <label>Fecha Transacción:</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                         @*   @Html.Editor("", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })*@
+                                            <input type="text" class="form-control readonly" placeholder=""  readonly="readonly"/>
+                                            @Html.ValidationMessageFor(model => model.FECHA_TRANSACCION, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <br />
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", "BienesRelacionadosEvento")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Listar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+
+}
+
+
+
+
+

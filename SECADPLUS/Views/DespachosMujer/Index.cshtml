@@ -1,0 +1,1024 @@
+﻿@{
+    ViewBag.Title = "Mujer";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+
+
+}
+
+
+
+<!-- /contenedor Breadcrumb -->
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+
+
+    <div class="row">
+
+
+        <div class="col-md-12">
+            <form class="form-horizontal" action="#">
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Relación de personas atendidas</h5>
+                        <div class="heading-elements">
+                            <ul class="icons-list decad">
+                                <li>
+                                    <div class="form-compact">
+                                        <input id="REGITRADURIA" type="text" class="form-control" style="width:700PX" placeholder="" readonly="readonly" />
+
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <button type="button" class="btn bg-teal btn-xs" onclick="GuardarPersonaRelacionadaMujer()"
+                                            data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para Guardar Cambios">
+                                        <b><i class="icon-floppy-disks"></i></b>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="LimpiarCampos()"
+                                            data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para limpiar">
+                                        <b><i class="icon-folder-download position-left"></i></b>Limpiar
+                                    </button>
+                                </li>
+                                <li><a data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        @Html.Hidden("COZO_LUGECODIGO_RESIDENCIA")
+                        @Html.Hidden("COZO_CODIGO_RESIDENCIA")
+                        @Html.Hidden("BARRIO_CODIGO_RESIDENCIA")
+                        @Html.Hidden("BARRIO_LUGECODIGO_RESIDENCIA")
+
+
+                        @Html.Hidden("COZO_LUGECODIGO_HECHOS")
+                        @Html.Hidden("COZO_CODIGO_HECHOS")
+                        @Html.Hidden("BARRIO_CODIGO_HECHOS")
+                        @Html.Hidden("BARRIO_LUGECODIGO_HECHOS")
+
+
+
+                        @Html.Hidden("PERSATEN_SITIOGRABACION")
+                        @Html.Hidden("EVEN_SITIOGRABACION")
+                        @Html.Hidden("EVEN_NUMEEVENTO")
+
+
+                        <div class="col-md-12">
+                            <fieldset>
+                                <legend class="text-semibold">
+                                    <i class="icon-man-woman position-left"></i>
+                                    Personas relacionadas
+                                    <a class="control-arrow" data-toggle="collapse" data-target="#demo1">
+                                        <i class="icon-circle-down2"></i>
+                                    </a>
+                                </legend>
+                                <div class="collapse in" id="demo1">
+
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-compact">
+
+                                                <div class="col-lg-1">
+                                                    <label class="control-label col-md-12">Consecutivo:</label>
+                                                    <input type="text" id="PERSATEN_CONSECUTIVO" class="form-control" readonly="readonly" placeholder="Autogenerado" />
+
+                                                </div>
+
+                                                <div class="col-lg-2 obligatorio">
+                                                    <label class="control-label col-md-12">Tipo identificación:</label>
+                                                    @Html.DropDownList("TIPO_IDENTIFICACION", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                </div>
+
+                                                <div class="col-lg-1 obligatorio">
+                                                    <label class="control-label col-md-12">Identificación:</label>
+                                                    <input id="IDENTIFICACION" type="text" class="form-control" placeholder="Ingrese Identificación " />
+                                                </div>
+
+                                                <div class="col-lg-2 obligatorio">
+                                                    <label class="control-label col-md-12">Nombres:</label>
+                                                    <input id="NOMBRES" type="text" class="form-control" placeholder="Ingrese Nombres" />
+                                                </div>
+
+                                                <div class="col-lg-2 obligatorio">
+                                                    <label class="control-label col-md-12">Apellidos:</label>
+                                                    <input id="APELLIDOS" type="text" class="form-control" placeholder="Ingrese Apellidos" />
+                                                </div>
+
+                                                <div class="col-lg-2">
+                                                    <label class="control-label col-md-12">Fecha Nacimiento:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                                        <input type="text" class="form-control daterange-basic FechaHora" id="FECHA_NACE" name="FECHA_NACE">
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-lg-1">
+                                                    <label class="control-label col-md-12">Sexo:</label>
+                                                    @Html.DropDownList("CODI_GENERO", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <label class="control-label col-md-12">Raza:</label>
+                                                    @Html.DropDownList("CODI_RAZA", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <table id="tablaPerRelacionadas" class="table table-hover table-bordered table-xxs table-condensed datatable-basic">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Acciones</th>
+                                                <th>Consecutivo</th>
+                                                <th>Tipo identificación</th>
+                                                <th>Identificación</th>
+                                                <th>Nombres</th>
+                                                <th>Apellidos</th>
+                                                <th>Fecha Nacimiento</th>
+                                                <th>Sexo</th>
+                                                <th>Raza</th>
+
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+
+                                    <div class="row space">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-compact">
+                                                    <label class="col-lg-3">Tipo registro:</label>
+                                                    <div class="col-lg-9">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckVictima" value="VP" name="gender2" class="styled" checked="checked">
+                                                            Víctima
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckVictimaSegunda" value="VS" name="gender2" class="styled">
+                                                            Víctima secundaria
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckReporte" value="RP" name="gender2" class="styled">
+                                                            Reportante
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckAgresor" value="AG" name="gender2" class="styled">
+                                                            Agresor
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 form-compact">
+                                                <label class="col-xs-5 col-md-4">Usuario:</label>
+                                                <span class="col-xs-7 col-md-8 label label-default" id="spanUsuario">  </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-compact">
+                                                    <label class="col-lg-3">Reportante:</label>
+                                                    <div class="col-lg-9">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckReportanteVP" value="VP" name="report2" class="styled" checked="checked">
+                                                            Víctima
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckReportanteVS" value="VS" name="report2" class="styled">
+                                                            Víctima secundaria
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckReportanteFM" value="FM" name="report2" class="styled">
+                                                            Familiar
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckReportanteCN" value="CN" name="report2" class="styled">
+                                                            Conocido
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="ckReportanteDC" value="DC" name="report2" class="styled">
+                                                            Desconocido
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 form-compact">
+                                                <label class="col-xs-5 col-md-4">Fecha transacción:</label>
+                                                <span class="col-xs-7 col-md-8 label label-default" id="spanFechaTransacion">   </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-12">
+                            <fieldset>
+                                <legend class="text-semibold">
+                                    <i class="icon-vcard position-left"></i>
+                                    Más información
+                                    <a class="control-arrow" data-toggle="collapse" data-target="#demo2">
+                                        <i class="icon-circle-down2"></i>
+                                    </a>
+                                </legend>
+                                <div class="collapse in" id="demo2">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-xs-12 col-lg-4">Medio conoc:</label>
+                                                        <div class="col-xs-12 col-lg-8">
+                                                            @Html.DropDownList("MEDIO_CONOCIMIENTO", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-xs-12 col-lg-3">No ficha:</label>
+                                                        <div class="col-xs-12 col-lg-9">
+                                                            <input type="number" id="NRO_FICHA" placeholder="Escriba solo números" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-4">LGBTI:</label>
+                                                        <div class="col-lg-8">
+                                                            <label>
+                                                                <input type="checkbox" id="COND_LGTBI" name="COND_LGTBI">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Edad:</label>
+                                                        <div class="col-lg-9">
+                                                            <input type="number" id="EDAD_PERSONA" placeholder="Escriba solo números" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-4">Discapacidad:</label>
+                                                        <div class="col-lg-8">
+                                                            <label>
+                                                                <input type="checkbox" id="COND_DISCAPACIDAD" name="COND_DISCAPACIDAD">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <div class="col-lg-12">
+                                                            @Html.DropDownList("TIPO_DISCAPACIDAD", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-4">Desplazado:</label>
+                                                        <div class="col-lg-8">
+                                                            <label>
+                                                                <input type="checkbox" id="COND_DESPLAZADO" name="COND_DESPLAZADO">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <div class="col-lg-12">
+                                                            @Html.DropDownList("TIPO_VICT_CONFLICTO", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-12">Nivel educativo:</label>
+                                                        <div class="col-lg-12">
+                                                            @Html.DropDownList("NIVEL_EDUCATIVO", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-12">Act. económica:</label>
+                                                        <div class="col-lg-12">
+                                                            @Html.DropDownList("ACTIVIDAD_ECONOMICA", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-4">Organizaciones:</label>
+                                                        <div class="col-lg-8">
+                                                            <label>
+                                                                <input type="checkbox" id="PARTICIP_ORGANIZACION" name="PARTICIP_ORGANIZACION">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <div class="col-lg-12">
+                                                            <input type="text" id="NOMBRE_ORGANIZACION" placeholder="Escriba solo textos" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-12">Régimen salud:</label>
+                                                        <div class="col-lg-12">
+                                                            @Html.DropDownList("REGIMEN_SALUD", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-12">Ips:</label>
+                                                        <div class="col-lg-12">
+                                                            <input type="text" id="NOMBRE_IPS" placeholder="Escriba solo textos" class="form-control">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Munic. reside:</label>
+                                                        <div class="col-lg-2">
+                                                            <input type="number" id="MPIO_RESIDENCIA" placeholder="" class="form-control">
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" id="DSP_CIUDAD_RESIDENCIA" placeholder="" class="form-control" readonly="readonly">
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button type="button" onclick="CargaCiudades();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                <b><i class="icon-select2 position-left"></i></b>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-2">Comuna:</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" id="dsp_comuna_RESIDENCIA" placeholder="" class="form-control">
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button type="button" onclick="CargaComunasResidencia();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                <b><i class="icon-select2 position-left"></i></b>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-2">Barrio:</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" id="dsp_barrio_RESIDENCIA" placeholder="" class="form-control" >
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button type="button" onclick="CargaBarriosComunasResidencia()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                <b><i class="icon-select2 position-left"></i></b>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Dirección:</label>
+                                                        <div class="col-lg-9">
+                                                            <input type="text" id="DIRECCION_RESIDENCIA" placeholder="Escriba solo textos" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-4">Telefono 1:</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" id="TELEFONO1" placeholder="Escriba solo textos" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-4">Telefono 2:</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" id="TELEFONO2" placeholder="Escriba solo textos" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Relación con agresor:</label>
+                                                        <div class="col-lg-9">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" id="ckAgresorFamilia" value="FM" name="report3" class="styled">
+                                                                Familiar
+                                                            </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" id="ckAgresorParticulas" value="PA" name="report3" class="styled" checked="checked">
+                                                                Particular
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Familiar:</label>
+                                                        <div class="col-lg-9">
+                                                            @Html.DropDownList("RELACION_FAMILIAR_AGRESOR", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Particular:</label>
+                                                        <div class="col-lg-9">
+                                                            @Html.DropDownList("RELACION_PARTICULAR_AGRESOR", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Grupo agresor:</label>
+                                                        <div class="col-lg-9">
+                                                            @Html.DropDownList("GRUPO_AGRESOR", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Desc. grupo:</label>
+                                                        <div class="col-lg-9">
+                                                            <input type="text" id="DESCRIPCION_GRUPO" placeholder="Escriba solo textos" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row space_down">
+                                                <div class="col-md-12">
+                                                    <div class="form-compact">
+                                                        <label class="col-lg-3">Mec / arma:</label>
+                                                        <div class="col-lg-9">
+                                                            @Html.DropDownList("MECANISMO_ARMA", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-7">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="row space_down">
+                                                        <div class="col-md-6">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-3">Motivo:</label>
+                                                                <div class="col-lg-9">
+                                                                    @Html.DropDownList("TIPO_ESPECTATIVA", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 text-center">
+                                                            <div class="form-compact">
+                                                                <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" title="" onclick="CargarHechosMj()"
+                                                                        data-placement="bottom" data-original-title="Clic para traer datos del evento">
+                                                                    <b><i class=" icon-pencil3 position-left"></i></b>Datos de los hechos
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row space_down">
+                                                        <div class="col-md-12">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-2">Munic. hechos:</label>
+                                                                <div class="col-lg-3">
+                                                                    <input type="number" id="MPIO_HECHOS" placeholder="" class="form-control">
+
+                                                                </div>
+
+
+                                                                <div class="col-lg-5">
+                                                                    <input type="text" id="DSP_MPIOHECOS" placeholder="" class="form-control" readonly="readonly">
+
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <button type="button" onclick="CargarCiudadesHechos();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                        <b><i class="icon-select2 position-left"></i></b>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row space_down">
+                                                        <div class="col-md-6">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-2">Comuna:</label>
+                                                                <div class="col-lg-8">
+                                                                    <input type="text" id="DSP_COMUNAHECHOS" placeholder="" class="form-control" >
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <button type="button" onclick="CargaComunasHechos();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                        <b><i class="icon-select2 position-left"></i></b>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-2">Barrio:</label>
+                                                                <div class="col-lg-8">
+                                                                    <input type="text" id="DSP_BARRIOHECHOS" placeholder="" class="form-control" >
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <button type="button" onclick="CargaBarriosComunasHechos();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                        <b><i class="icon-select2 position-left"></i></b>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="row space_down">
+                                                        <div class="col-md-12">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-3">Dirección:</label>
+                                                                <div class="col-lg-9">
+                                                                    <input type="text" id="DIRECCION_HECHOS" placeholder="Escriba solo textos" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row space_down">
+                                                        <div class="col-md-12">
+                                                            <div class="form-compact">
+                                                                <label class="col-xs-12 col-lg-3">Clase sitio:</label>
+                                                                <div class="col-xs-12 col-lg-9">
+                                                                    @Html.DropDownList("LUGAR_OCURRENCIA", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row space_down">
+                                                        <div class="col-md-12">
+                                                            <div class="form-compact">
+                                                                <label class="col-lg-3">Nombre:</label>
+                                                                <div class="col-lg-9">
+                                                                    <input type="text" id="NOMBRE_SITIO" placeholder="Escriba solo textos" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-compact">
+                                                        <label>Observaciones</label>
+                                                        <div>
+
+                                                            <textarea rows="8" id="OBSERVACIONES_MJ" cols="5" style="height:120px;resize:none;" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <fieldset>
+                                                        <legend>Recursos de atención entregados</legend>
+
+                                                        <div class="row space_down">
+                                                            <div class="col-md-12">
+                                                                <div class="form-compact">
+                                                                    <label class="col-xs-12 col-lg-4">Consecutivo:</label>
+                                                                    <div class="col-xs-12 col-lg-8">
+                                                                        <input type="text" id="CONSECUTIVO_RAE" placeholder="Autogenerado" class="form-control" readonly="readonly">
+                                                                        <br />
+                                                                    </div>
+
+
+
+                                                                    <label class="col-xs-12 col-lg-3">Recurso:</label>
+                                                                    <div class="col-xs-12 col-lg-8">
+                                                                        @Html.DropDownList("TIPO_SERV_RAE", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                                                    </div>
+                                                                    <div class="col-xs-12 col-lg-1">
+                                                                        <button type="button" class="btn bg-teal btn-xs" onclick="CrearRAEMujer()"
+                                                                                data-popup="tooltip" title="" data-placement="bottom"
+                                                                                data-original-title="Clic para Guardar">
+                                                                            <b><i class="icon-floppy-disks"></i></b>
+                                                                        </button>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br />
+
+
+                                                        <table class="table table-hover table-bordered table-xxs datatable-basic" id="tablaRAE">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Acciones</th>
+                                                                    <th>Cons.</th>
+                                                                    <th>Recurso</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+
+                                                        <div class="form-compact">
+                                                            <label>Observaciones</label>
+                                                            <div>
+                                                                <textarea id="OBSERVACION_RAE" rows="8" cols="5" style="height:120px;resize:none;" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <fieldset>
+                                                        <legend>Gestiones adelantadas</legend>
+
+                                                        <div class="row space_down">
+                                                            <div class="col-md-12">
+                                                                <div class="form-compact">
+                                                                    <label class="col-xs-12 col-lg-4">Consecutivo:</label>
+                                                                    <div class="col-xs-12 col-lg-8">
+                                                                        <input type="text" id="CONSECUTIVO_RM" placeholder="Autogenerado" class="form-control" readonly="readonly">
+                                                                        <br />
+                                                                    </div>
+
+
+
+                                                                    <label class="col-xs-12 col-lg-3">Tipo Atención:</label>
+                                                                    <div class="col-xs-12 col-lg-8">
+                                                                        @Html.DropDownList("TIPO_SERV_RM", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                                                    </div>
+                                                                    <div class="col-xs-12 col-lg-1">
+                                                                        <button type="button" class="btn bg-teal btn-xs" onclick="CrearRMMujer()"
+                                                                                data-popup="tooltip" title="" data-placement="bottom"
+                                                                                data-original-title="Clic para Guardar">
+                                                                            <b><i class="icon-floppy-disks"></i></b>
+                                                                        </button>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br />
+
+
+                                                        <table class="table table-hover table-bordered table-xxs datatable-basic" id="tablaRM">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Acciones</th>
+                                                                    <th>Cons.</th>
+                                                                    <th>Atención</th>
+
+                                                                </tr>
+                                                            </thead>
+
+                                                        </table>
+
+                                                        <div class="form-compact">
+                                                            <label>Observaciones</label>
+                                                            <div>
+                                                                <textarea rows="8" cols="5" id="OBSERVACION_RM" style="height:120px;resize:none;" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <fieldset>
+                                                        <legend>Ofertas institucionales</legend>
+
+                                                        <div class="row space_down">
+                                                            <div class="col-md-12">
+                                                                <div class="form-compact">
+                                                                    <label class="col-xs-12 col-lg-2">Consecutivo:</label>
+                                                                    <div class="col-xs-12 col-lg-3">
+                                                                        <input type="text" id="CONSECUTIVO_ROI" placeholder="Autogenerado" class="form-control" readonly="readonly">
+                                                                        <br />
+                                                                    </div>
+
+
+
+                                                                    <label class="col-xs-12 col-lg-2">Oferta:</label>
+                                                                    <div class="col-xs-12 col-lg-4">
+                                                                        @Html.DropDownList("TIPO_SERV_ROI", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                                                    </div>
+                                                                    <div class="col-xs-12 col-lg-1">
+                                                                        <button type="button" class="btn bg-teal btn-xs" onclick="CrearROIMujer()"
+                                                                                data-popup="tooltip" title="" data-placement="bottom"
+                                                                                data-original-title="Clic para Guardar">
+                                                                            <b><i class="icon-floppy-disks"></i></b>
+                                                                        </button>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br />
+
+                                                        <table class="table table-hover table-bordered table-xxs datatable-basic" id="tablaROI">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Acciones</th>
+                                                                    <th>Cons.</th>
+                                                                    <th>Oferta</th>
+
+                                                                </tr>
+                                                            </thead>
+
+                                                        </table>
+
+                                                        <div class="form-compact">
+                                                            <label>Observaciones</label>
+                                                            <div>
+                                                                <textarea rows="8" cols="5" id="OBSERVACION_ROI" style="height:120px;resize:none;" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+<!-- Modal Comunas -->
+<div id="ModalComunas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comunas</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaComunas" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Comunas -->
+<!-- Modal Barrios -->
+<div id="ModalBarriosComunas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Barrios</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaBarriosComunas" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Barrios -->
+
+
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/DespachosMujerJs");
+
+    <script>
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+
+
+        var urlPerRelacionadasMj = '@Url.Action("ObtenerPerRelacionadasMujer", "DespachosMujer")';
+        var urlRAEMujer = '@Url.Action("ObtenerRAEMujer", "DespachosMujer")';
+        var urlRMMujer = '@Url.Action("ObtenerRMMujer", "DespachosMujer")';
+        var urlROIMujer = '@Url.Action("ObtenerROIMujer", "DespachosMujer")';
+        var urlDatosHechos = '@Url.Action("ObtenerDatosHechos", "DespachosMujer")';
+        var urlCrearRAE = '@Url.Action("CrearRAEMujer", "DespachosMujer")';
+        var urlCrearRM = '@Url.Action("CrearRMMujer", "DespachosMujer")';
+        var urlCrearROI = '@Url.Action("CrearROIMujer", "DespachosMujer")';
+        var urlEliminarRAE = '@Url.Action("DeleteRAE", "DespachosMujer")';
+        var urlEliminarRM = '@Url.Action("DeleteRM", "DespachosMujer")';
+        var urlEliminarROI = '@Url.Action("DeleteROI", "DespachosMujer")';
+
+        var urlCargarCiudades = '@Url.Action("CargaCiudades", "DespachosMujer")';
+        var urlCargaComunas = '@Url.Action("CargaComunas", "DespachosMujer")';
+        var urlCargaBarriosComunas = '@Url.Action("CargaComunasBarrios", "DespachosMujer")';
+
+        var urlCrearPersonaRelacionada = '@Url.Action("CrearPersonaRelacionada", "DespachosMujer")';
+
+
+        var urlDatosRegistraduria= '@Url.Action("DatosRegistraduriaMj", "DespachosMujer")';
+
+        var urlDatosRegis = '@Url.Action("DatosRegisAtendidosMj", "DespachosMujer")';
+
+        var urlCiudadEnter ='@Url.Action("DatosCiudadEnter", "DespachosMujer")';
+        var urlComunaEnter ='@Url.Action("DatosComunasEnter", "DespachosMujer")';
+        var urlBarriosEnter ='@Url.Action("DatosBarriosEnter", "DespachosMujer")';
+
+
+
+        var SitioGrabaEventoGlobal = @ViewBag.SitioGrabaEventoGlobal;
+        var EventoGlobal = @ViewBag.EventoGlobal;
+
+        $(".chosen-select").chosen();
+        InicializarElementos("CREAR");
+
+    </script>
+
+}

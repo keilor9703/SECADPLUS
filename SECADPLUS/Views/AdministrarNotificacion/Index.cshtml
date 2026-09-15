@@ -1,0 +1,93 @@
+﻿@model SECADPLUS.Models.NotificacionesViewModel
+@{
+    ViewBag.Title = "Administrar Notificaciones";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Administrar Notificaciones</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                @using (Html.BeginForm("Index", "AdministrarNotificacion", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        @Html.AntiForgeryToken()
+                        <fieldset class="content-group ">
+                            <div class="row">
+
+                                <div class="form-group col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NotificacionEmergente, "Globo", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-12">
+                                            @Html.CheckBoxFor(model => model.NotificacionNoEmergente, htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_size = "mini", data_on_color = "success", data_off_color = "danger", data_on_text = "SI", data_off_text = "NO", @checked = "checked" })
+                                            @Html.ValidationMessageFor(model => model.NotificacionNoEmergente, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NotificacionEmergente, "Emergente", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-12">
+                                            @Html.CheckBoxFor(model => model.NotificacionEmergente, htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_size = "mini", data_on_color = "success", data_off_color = "danger", data_on_text = "SI", data_off_text = "NO", @checked = "checked" })
+                                            @Html.ValidationMessageFor(model => model.NotificacionNoEmergente, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="form-group col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+
+</div>
+<!-- Área de contenido -->
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/Select2Js")
+    @Scripts.Render("~/bundle/CheckSwitchJs");
+    <script>
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+}

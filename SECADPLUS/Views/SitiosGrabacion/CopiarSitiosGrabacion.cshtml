@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Copiar Sitios de Grabacion";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Copiar Sitios de Grabacion:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-compact" }))
+                {
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("idDestino")
+                            @Html.Hidden("descCiudad")
+                            @Html.Hidden("idCiudad")
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <label>Sitio Origen:</label>
+                                    <div class="form-group">
+                                        
+                                       
+                                          
+                                                @Html.DropDownList("SITIOORIGEN", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select" })
+                                                @Html.ValidationMessage("", new { @class = "text-danger" })
+                                           
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label>Sitio Destino:</label>
+
+
+                                        <div class="form-group">
+                                            @Html.Editor("SITIODESTINO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            @Html.ValidationMessage("", new { @class = "text-danger" })
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" id="Copiar"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+<script>
+    var urlCopiar = '@Url.Action("CopiarReferencias", "SitiosGrabacion")';
+</script>
+
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+<script>
+    $(document).ready(function () {
+        $("#Copiar").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("CopiarReferencias")',
+                data: { idDestino: $("#idDestino").val(), idOrigen: $("#SITIOORIGEN").val(), descCiudad: $("#descCiudad").val(), idCiudad: $("#idCiudad").val() },
+                success: function (result) {
+                    //$("#sharelink").html(result);
+                    GestionarAlerta("success","Referencias copiadas.")
+                }
+            });
+        });
+    });
+</script>

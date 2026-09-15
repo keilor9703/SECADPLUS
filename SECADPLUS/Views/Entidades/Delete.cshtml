@@ -1,0 +1,16 @@
+﻿@model SECADEntities.SECAD.CADFUERZA
+
+@{
+    ViewBag.Title = "Borrar Entidad";
+}
+
+<h4>¿Está seguro que desea borrar este elemento?</h4>
+<hr />
+<h5>
+        Entidad:
+        @Html.DisplayFor(model => model.DESCRIPCION)
+</h5>
+@using (Html.BeginForm("DeleteConfirmed", "Entidades", new { id = Model.ID, idSitioGrabacion = Model.SITIO_GRABA }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+{
+    @Html.AntiForgeryToken()
+}

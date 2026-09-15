@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Control de Recepción Usuarios Operadores";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Control de Recepción Usuarios Operadores</h5>
+
+                    <div class="computo_input text-right">
+                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                data-placement="bottom" data-original-title="Clic deterner timer"
+                                onclick="DeternerTimer()" id="btnDetener">
+                            <i id="iTimer" class="icon-watch2 icon_size-md"></i>
+                        </button>
+                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                data-placement="bottom" data-original-title="Clic refrescar pantalla"
+                                onclick="CargaControlDespacho()">
+                            <i class="icon-rotate-cw3 icon_size-md"></i>
+                        </button>
+                    </div>
+
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                <form class="form-compact" action="#">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-2 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="control-label">Sitio de Grabación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.TextBox("SITIO_GRABA", null, htmlAttributes: new { @class = "form-control ", @readonly = true })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+                <!-- /formulario -->
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Usuario</th>
+                            <th>Login</th>
+                            <th>Equipo</th>
+                            <th>Ubicación</th>
+                            <th>Rec/Turno</th>
+                            <th>Efec/Turno</th>
+                            <th>Ultima Fecha</th>
+                            <th>Sin Enviar</th>
+                            <th>Nombre</th>
+                            <th>Turno</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+<script type="text/javascript">
+    //AplicarPluginTabla("tabla");
+    var _tiempoRefresco = @ViewBag.tiempoRefresco;
+    var urlTabla = '@Url.Action("VerControlRecepcion", "ControlRecepcion")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+@Scripts.Render("~/bundle/ControlRecepcionJs")

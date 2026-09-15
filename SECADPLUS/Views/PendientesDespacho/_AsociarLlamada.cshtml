@@ -1,0 +1,24 @@
+﻿@model IEnumerable<SECADPLUS.Models._AsociarLlamadaModel>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        <td>
+            <button class='btn btn-xs btn-default' type='button' data-popup='tooltip'
+                    onclick="cargarLlamada(@item.NUME_LLAMADA)" title='' data-placement='bottom' data-original-title='Clic para seleccionar'>
+                Seleccionar
+            </button>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.NUME_LLAMADA)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_CASO)</td>
+        <td>@Html.DisplayFor(modelItem => item.NUME_TELEFONO)</td>
+        <td>@Html.DisplayFor(modelItem => item.CALI_PEDIDO)</td>
+        <td>@Html.DisplayFor(modelItem => item.CIUDAD)</td>
+        <td>@Html.DisplayFor(modelItem => item.NOMB_LLAMANTE)</td>
+        <td>@Html.DisplayFor(modelItem => item.DIRE_CASO)</td>
+        <td>@Html.DisplayFor(modelItem => item.CODI_PEDIDO)</td>
+        <td>@Html.DisplayFor(modelItem => item.ESTADO)</td>
+        <td>@Html.DisplayFor(modelItem => item.SITIO_GRABA)</td>
+    </tr>
+}

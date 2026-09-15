@@ -1,0 +1,127 @@
+﻿@model IEnumerable<SECADEntities.SECAD.V_BARRIOS_CANALES>
+
+@{
+    ViewBag.Title = "Barrios Atendidos por el Canal";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Barrios Atendidos por el Canal: @ViewBag.CANAL</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-6">
+                    <div class="form-group">
+                        <h6>Seleccione los barrios que serán atendidos por mi canal</h6>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <div class="col-md-12 col-sm-6">
+                    <div class="form-group">
+                        @Html.Label("Ciudad", htmlAttributes: new { @class = "control-label col-md-12" })
+                        @Html.Hidden("CODIGOCANAL")
+                        @Html.Hidden("CODIGOFUERZA")
+                        @Html.Hidden("BARR_LUGE_CODIGO")
+                        @Html.TextBox("_CIUDAD", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione la unidad", @readonly = true, id = "_CIUDAD" })
+                        <span class="input-group-btn">
+                            <button type="button" onclick="CargaCiudades();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                            </button>
+                        </span>
+                    </div>
+                </div>
+               
+                <table class="table table-hover table-xxs datatable-basic" id="_tblBarrios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Ciudad</th>
+                            <th>Barrio</th>
+                            <th>Asignar</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+            <!-- /panel con Tablas -->
+        </div>
+
+
+        <!-- Botones de regresar y guardar -->
+        <div class="row">
+            <div class="col-xs-6 col-md-6text-left">
+                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                        data-original-title="Clic para regresar a la tabla" onclick="location.href=('@Url.Action("index", "Canales",new { fuerzaId = @Request["fuerzaId"] })')">
+                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                </button>
+            </div>
+
+            <div class="col-xs-6 col-md-6 text-right">
+                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para guardar" onclick="EnviaEstados();">
+                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /botones de regresar y guardar -->
+</div>
+<!-- /área de contenido -->
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+
+@section PostScripts{
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")    
+    @Scripts.Render("~/bundle/EntidadesControllerJs")
+    @Scripts.Render("~/bundle/CanalesBarriosControllerJs")
+    <script>
+        urlActionCargaCiudades = "@(Url.Action("CargaCiudades", "Canales"))";
+        urlsCargaBarrios = "@(Url.Action("CargarTodosLosBarrios", "Canales"))";
+        urlsEnviaBarrios = "@(Url.Action("GetBarriosCanales", "Canales"))";
+    </script>
+}

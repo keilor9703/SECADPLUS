@@ -1,0 +1,129 @@
+﻿@model SECADEntities.SECAD.CADREFERENCIA
+
+@{
+    ViewBag.Title = "Nueva Referencia Sitio de Grabación";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Referencia de Sitio de Grabación:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                                @*<button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para copiar referencias locales">
+                                <b><i class="icon-copy3 position-left"></i></b>Copiar Referencias Locales
+                            </button>*@
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "ReferenciasSitioGrabacion", FormMethod.Post, new { @class = "form-compact" }))
+                {
+                    <div class="panel-body">
+
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("id")
+                            @Html.Hidden("nom")
+                            @Html.Hidden("SITIO_GRABA")
+                            @*<form class="form_sitios_grabacion" action="#">*@
+                            <div class="row">
+                                <div class="col-md-12 col-lg-5">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Sitio de Grabación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @*@Html.DropDownList("SITIO_GRABA", null, htmlAttributes: new { @class = "select-search select2-hidden-accessible" })*@
+                                                    @Html.Editor("NOM_GRABA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.SITIO_GRABA, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-5">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Nombre:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba nombre" } })
+                                                @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Código:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba código" } })
+                                                @Html.ValidationMessageFor(model => model.CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-8">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Descripción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba descripción" } })
+                                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Abreviatura:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.ABREVIATURA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba abreviatura" } })
+                                                @Html.ValidationMessageFor(model => model.ABREVIATURA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <!-- Botones de regresar y guardar -->
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", new { id = @ViewBag.id, nom = @ViewBag.nom})'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")

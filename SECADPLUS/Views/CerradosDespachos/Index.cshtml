@@ -1,0 +1,1058 @@
+﻿@{
+    ViewBag.Title = "Cerrados Despacho";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-body">
+                    <div id="exTab3">
+                        <ul class="nav nav-tabs nav-tabs-highlight">
+                            <li class="active" id="llamadas"><a href="#llamadasCerradas" data-toggle="tab">Llamadas Cerradas</a></li>
+                            <li><a href="#procesoEventos" data-toggle="tab" id="eventos">Eventos</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <!--------------------------------------TAB LLAMADAS CERRADAS------------------------------------->
+                            <div class="tab-pane active" id="llamadasCerradas">
+                                <fieldset>
+                                    <!-- Panel Entidades -->
+                                    <div class="col-md-12">
+                                        <legend class="text-semibold">
+                                            Entidades
+                                            <a class="control-arrow" data-toggle="collapse" data-target="#panel1Llamadas">
+                                                <i class="icon-circle-down2"></i>
+                                            </a>
+                                        </legend>
+                                        <div class="collapse in" id="panel1Llamadas">
+                                            <div class="col-xs-12 col-md-6 col-lg-5 space_down">
+                                                <div class="form-compact">
+                                                    <label>Entidades</label>
+                                                    @Html.Editor("FUERZA_DESCRIPCION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6 col-lg-2 space_down">
+                                                <div class="form-compact">
+                                                    <label>&nbsp;</label>
+                                                    @Html.Editor("FUERZA_ABREVIATURA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6 col-lg-4 space_down">
+                                                <div class="form-compact">
+                                                    <label>Jurisdicciones / Canales</label>
+                                                    @Html.Editor("CANAL_DESCRIPCION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Panel Entidades -->
+                                    <!-- Panel Llamadas Recibidas por Jurisdicción-->
+                                    <div class="col-md-12">
+                                        <legend class="text-semibold">
+                                            Llamadas recibidas por jurisdicciones
+                                            <a class="control-arrow" data-toggle="collapse" data-target="#panel2Llamadas">
+                                                <i class="icon-circle-down2"></i>
+                                            </a>
+                                        </legend>
+
+                                        <div class="collapse in" id="panel2Llamadas">
+                                            <table class="table table-hover table-bordered table-xxs datatable-basic" id="tablaCerradas">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Cod SECAD</th>
+                                                        <th></th>
+                                                        <th>Hora</th>
+                                                        <th>No telefónico</th>
+                                                        <th>Estado</th>
+                                                        <th>Recurso</th>
+                                                        <th>Evento</th>
+                                                        <th>Rec.</th>
+                                                        <th>Código1</th>
+                                                        <th>Municipio</th>
+                                                        <th>Dir. caso</th>
+                                                        <th>Barrio</th>
+                                                        <th>Prioridad</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6 col-md-8 space">
+                                                    <div>
+                                                        <label class="col-xs-12 col-md-3">Comentario incicial del caso</label>
+                                                        <div class="col-xs-12 col-md-9">
+                                                            <div class="row">
+                                                                <textarea rows="2" class="form-control" id="textComentario" readonly="readonly"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                                    <label class="col-xs-5 col-md-4">Receptor:</label>
+                                                    <span class="col-xs-7 col-md-8 label label-default" id="textReceptor">Receptor</span>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6 col-md-4 form-group text-center">
+                                                    <button class="btn bg-teal bg-danger btn-xs" type="button" data-popup="tooltip" title=""
+                                                            data-placement="bottom" data-original-title="Clic deterner timer"
+                                                            onclick="DeternerTimer()" id="btnDetener">
+                                                        <i id="iTimer" class="icon-watch2 icon_size-md"></i>
+                                                    </button>
+                                                    <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                                            data-placement="bottom" data-original-title="Clic refrescar pantalla"
+                                                            onclick="RefrescarPanatalla()">
+                                                        <i class="icon-rotate-cw3 icon_size-md"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Panel Llamadas Recibidas por Jurisdicción-->
+                                </fieldset>
+                            </div>
+                            <!--------------------------------------TAB LLAMADAS CERRADAS------------------------------------->
+                            <!--------------------------------------TAB EVENTOS           ------------------------------------->
+                            <div class="tab-pane" id="procesoEventos">
+                                <fieldset>
+                                    <!-- Panel form 1 -->
+                                    <div class="col-md-12">
+                                        <legend class="text-semibold">
+                                            Evento generado
+                                            <a class="control-arrow" data-toggle="collapse" data-target="#panel1Eventos">
+                                                <i class="icon-circle-down2"></i>
+                                            </a>
+                                        </legend>
+
+                                        <div class="collapse in" id="panel1Eventos">
+                                            <div class="col-xs-12 col-lg-3">
+                                                <div class="row">
+                                                    <div class="col-xs-6 col-lg-6 text-left">
+                                                        <div class="form-compact">
+                                                            <label class="col-md-12">Evento generado</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-12 text-left">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-md-12 space">
+                                                                <div class="form-compact">
+                                                                    <span class="col-xs-12 col-md-12 label bg-teal-300" id="textTurno">TURNO NO DISPONIBLE</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <table class="table table-hover table-xxs datatable-basic" id="tablaEventos">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Acciones</th>
+                                                                            <th>No. Evento</th>
+                                                                            <th>Estado</th>
+                                                                            <th>Fecha</th>
+                                                                            <th>Usuario</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-lg-9">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-compact">
+                                                                    <label class="col-md-12">Datos iniciales de la llamada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Fecha y hora:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textHoraCaso">Fecha y hora</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Llamada:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textLlamada">Llamada</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Abonado:</label>
+                                                                <span class="col-xs-7 col-md-4 label label-default" id="textAbonado">Abonado</span>
+                                                                <span class="col-xs-7 col-md-4 label label-default" id="textDispositivo">Dispositivo</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Nombre:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textPropNombre">Nombre</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Dirección:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textPropDireccion">Dirección</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Ciudad:</label>
+                                                                <span class="col-xs-7 col-md-4 label label-default" id="textCiudadTelefono">Ciudad</span>
+                                                                <span class="col-xs-7 col-md-4 label label-default" id="textBarrioTelefono">Barrio</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Llamante:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textLlamante">Llamante</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Dirección:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textDireccionLlamante">Dirección</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-4">Asociar Llamada:</label>
+                                                                <span class="col-xs-7 col-md-8 label label-default" id="textAsociarLlamada">Llamada</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-md-5">
+                                                                <label class="col-xs-5 col-md-5">Usuario:</label>
+                                                                <span class="col-xs-7 col-md-7 label label-default" id="textUsuario">Usuario</span>
+                                                            </div>
+                                                            <div class="col-xs-12 col-md-4 show_grid-xs text-right">
+                                                                <button type="button" class="btn bg-teal btn-xs" data-toggle="modal"
+                                                                        data-target="#ModalComentariosAdicionales" data-popup="tooltip" title=""
+                                                                        data-placement="bottom" data-original-title="Clic para crear comentarios adicionales">
+                                                                    Comentarios Adicionales
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 space">
+                                                                <label class="col-xs-12 col-md-3">Descripción hechos</label>
+                                                                <div class="col-xs-12 col-md-9">
+                                                                    <div class="row">
+                                                                        <textarea rows="8" class="form-control"
+                                                                                  readonly="readonly" id="textComentarios"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-3">Caso:</label>
+                                                                <span class="col-xs-7 col-md-2 label label-default" id="textCaso1">Código</span>
+                                                                <span class="col-xs-7 col-md-7 label label-default" id="textDescCaso1">Nombre Caso</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-3">Caso:</label>
+                                                                <span class="col-xs-7 col-md-2 label label-default" id="textCaso2">Código</span>
+                                                                <span class="col-xs-7 col-md-7 label label-default" id="textDescCaso2">Nombre Caso</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-3">Dirección:</label>
+                                                                <span class="col-xs-7 col-md-9 label label-default" id="textDireccion">Dirección</span>
+                                                                @*<div class="col-xs-12 col-md-2 text-center show_grid-xs">
+                                                                    <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" title=""
+                                                                            data-placement="bottom" data-original-title="Clic para actualizar dirección"
+                                                                            onclick="CargarBarriosComunas()">
+                                                                        Actualizar
+                                                                    </button>
+                                                                </div>*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-3">Barrio:</label>
+                                                                <span class="col-xs-7 col-md-5 label label-default" id="textBarrio">Barrio</span>
+                                                                <span class="col-xs-7 col-md-4 label label-default" id="textCiudad">Ciudad</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 form-compact">
+                                                                <label class="col-xs-5 col-md-3">Caso Real:</label>
+                                                                <span class="col-xs-7 col-md-2 label label-default" id="textCasoReal">Código</span>
+                                                                <span class="col-xs-7 col-md-7 label label-default" id="textDescCasoReal">Nombre Caso</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /panel form 1 -->
+                                    <!-- Panel form 2 -->
+                                    <div class="col-md-12">
+                                        <legend class="text-semibold">
+                                            
+                                            <a class="control-arrow" data-toggle="collapse" data-target="#panel2Eventos">
+                                                <i class="icon-circle-down2"></i>
+                                            </a>
+                                        </legend>
+                                        <div class="collapse in" id="panel2Eventos">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-lg-3 text-center">
+                                                    <div class="col-xs-12 col-md-12 col-lg-12 text-center space_down">
+                                                        <div class="form-compact">
+                                                            <button type="button" class="col-md-12 btn bg-teal btn-xs" data-toggle="modal"
+                                                                    data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para ver todos los eventos"
+                                                                    onclick="CargaListadoEventos(true)">
+                                                                Eventos anteriores
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 text-center">
+                                                            <!--														<div class="form-group">-->
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Ver Anotaciones de Entidades"
+                                                                    onclick="cargarAnotaciones(true)">
+                                                                Atención general
+                                                            </button>
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Asociar Fotografias"
+                                                                    onclick="AbrirFotos()">
+                                                                Ingresar fotos
+                                                            </button>
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Registra Vehiculos Relacionados en el Evento"
+                                                                    onclick="AbrirVehiculos()">
+                                                                Vehiculos Involuc.
+                                                            </button>
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Caso en Seguimiento"
+                                                                    onclick="ProcesarCasoSeguimiento()">
+                                                                Seguimiento
+                                                            </button>
+                                                            <!--														</div>-->
+                                                        </div>
+                                                        <div class="col-lg-6 text-center">
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Ingresar Resumen Conductas"
+                                                                    onclick="AbrirTurnosEvento()">
+                                                                Resumen conductas
+                                                            </button>
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Insertar Rutas Adicionales"
+                                                                    onclick="AbrirRutas()">
+                                                                Rutas adicionales
+                                                            </button>
+                                                            <button class="btn_fwidth btn_enlaces btn-md bg-teal-400" data-popup="tooltip" title=""
+                                                                    data-placement="bottom" data-original-title="Cerrar Evento"
+                                                                    onclick="ProcesarCerrarEvento()">
+                                                                Cerrar evento
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row space">
+                                                        <div class="col-xs-2 col-xs-offset-1 col-lg-2 col-lg-offset-1">
+                                                            <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Salvar Cambios"
+                                                                    onclick="SalvarCambios()">
+                                                                <i class="icon-floppy-disk"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-xs-2 col-lg-2">
+                                                            <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Haga clic para Ingreso Datos de la LLamada"
+                                                                    onclick="AbrirDatosLlamadasEvento()">
+                                                                <i class="icon-phone"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-xs-2 col-lg-2">
+                                                            <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Haga clic para Ingresar Registro Visor Geografico"
+                                                                    onclick="AbrirVisorGeografico()">
+                                                                <i class="icon-earth"></i>
+                                                            </button>
+                                                        </div>
+                                                        @*<div class="col-xs-2 col-lg-2">
+                    <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title=""
+                            data-placement="bottom" data-original-title="Haga clic para ir a...">
+                        <i class="icon-sphere"></i>
+                    </button>
+                </div>*@
+                                                        <div class="col-xs-2 col-lg-2">
+                                                            <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Haga clic para Imprimir Datos del Evento"
+                                                                    onclick="AbriReposteSeguimientoEvento()">
+                                                                <i class=" icon-printer2"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--RMR 06-10-2020 adicion campos informacion adicional MEVIL-->
+                                                <div class="col-xs-12 col-lg-9">
+                                                    <div class="col-lg-12">
+                                                        <table class="table table-hover table-bordered table-xxs datatable-basic" id="tablaInformacionAdicional">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Coor. (X) Latitud</th>
+                                                                    <th>Coor. (Y) Longitud</th>                                                                    
+                                                                </tr>
+                                                            </thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>@Html.Editor("Latitud", new { htmlAttributes = new { @class = "form-control", @placeholder = "Coordenada X", @readonly = "readonly", @size = "4" } })</th>
+                                                                <th>@Html.Editor("Longitud", new { htmlAttributes = new { @class = "form-control", @placeholder = "Coordenada Y", @readonly = "readonly", @size = "4" } })</th>                                                                                                                                
+                                                            </tr>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Modalidad Caso</th>
+                                                                    <th>Conducta Especial</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>
+                                                                    @Html.DropDownList("ModalidadId", null, String.Format("Seleccione una Modalidad"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @Required = true, @id = "ModalidadId", @placeholder = "Seleccione una opción" })
+                                                                </th>
+                                                                <th>
+                                                                    @Html.DropDownList("ConductaId", null, String.Format("Seleccione una Conducta"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @Required = true, @id = "ConductaId", @placeholder = "Seleccione una opción" })
+                                                                </th>
+                                                            </tr>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Arma Medio</th>
+                                                                    <th>Tipo Moviliza Agresor</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>
+                                                                    @Html.DropDownList("TipoArmId", null, String.Format("Seleccione un Tipo de Arma"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @Required = true, @id = "TipoArmId", @placeholder = "Seleccione una opción" })
+                                                                </th>
+                                                                <th>
+                                                                    @Html.DropDownList("TipoMovilizaId", null, String.Format("Seleccione un Tipo de Movilidad"), htmlAttributes: new { @class = "form-control chosen-select althei", style = "width: 100%;", @Required = true, @id = "TipoMovilizaId", @placeholder = "Seleccione una opción" })
+                                                                </th>
+                                                            </tr>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <!--FIN rmr 06-10-2020-->
+                                                <div class="col-xs-12 col-lg-9">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <table class="table table-hover table-bordered table-xxs datatable-basic" id="tablaEventoMedios">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>Acciones</th>
+                                                                        <th>Unidades asignadas</th>
+                                                                        <th>Medios enviados</th>
+                                                                        <th>Tipo resp.</th>
+                                                                        <th>H/asig.</th>
+                                                                        <th>H/ruta.</th>
+                                                                        <th>H/llega.</th>
+                                                                        <th>H/term.</th>
+                                                                        <th>Novedad</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-1">
+                                                            <div class="form-compact">
+                                                                <label>Caso</label>
+                                                                @Html.TextBox("CADCODI_FINAL", null, htmlAttributes: new { @class = "form-control ", @readonly = true })
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-compact">
+                                                                <label>Caso Atención</label>
+                                                                <div class="input-group">
+                                                                    @Html.TextBox("DSP_CODIFINAL", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione caso", @readonly = true })
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" onclick="cargarCasos()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-compact">
+                                                                <label>Clasificación</label>
+                                                                @Html.DropDownList("CADCLCI_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <table id="tablaAnotaciones" class="table table-hover table-xxs datatable-basic modal_table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Anotación</th>
+                                                                        <th>Número</th>
+                                                                        <th>Usuario que graba</th>
+                                                                        <th>Fecha</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /panel form 2 -->
+                                </fieldset>
+                            </div>
+                            <!--------------------------------------TAB EVENTOS           ------------------------------------->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Comentarios Adicionales -->
+<div id="ModalComentariosAdicionales" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comentarios Adicionales</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaComentariosAdicionales" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th>Anotación</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Comentarios Adicionales -->
+<!-- Modal Actualizar Dirección y Barrio -->
+<div id="ModalActualizarDireccionBarrio" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Cambio de datos dirección y barrio</h5>
+            </div>
+            <div class="modal-body form-compact">
+
+                <div class="row">
+                    @Html.Hidden("SITIO_GRABA")
+                    @Html.Hidden("NUME_LLAMADA")
+                    @Html.Hidden("CODI_BARRIO")
+                    @Html.Hidden("LUGE_BARRIO")
+
+                    @Html.Hidden("LUGE_CODIGO")
+                    <div class="col-md-12 col-lg-5">
+                        <div class="form-group">
+                            <label>Dirección Corregida:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("DIRE_CASO", new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba dirección" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-5">
+                        <div class="form-group">
+                            <label>Barrio:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("BARRIO", new { htmlAttributes = new { @class = "form-control", @placeholder = "Seleccione barrio del listado", @readonly = "readonly" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" data-placement="bottom"
+                                    title="" data-original-title="Clic para actualizar"
+                                    onclick="ActualizarDirBarrio()">
+                                <b><i class="icon-download7 position-lef"></i></b>Actualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <table id="tablaBarrios" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Ciudad</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Actualizar Dirección y Barrio -->
+<!-- Modal Actualizar Eventos Medios-->
+<div id="ModalActualizarEventosMedios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Cambio de datos</h5>
+            </div>
+            <div class="modal-body form-compact">
+
+                <div class="row">
+                    @Html.Hidden("CADMEDISP_CONSECUTIVO")
+                    <div class="col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>Unidades Asignadas:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @*@Html.DropDownList("DSP_DESC_UNIDAD", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })*@
+                                    @Html.Editor("DSP_DESC_UNIDAD", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = true } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>Medios Enviados:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @*@Html.DropDownList("DSP_MEDIODISPO", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })*@
+                                    @Html.Editor("DSP_MEDIODISPO", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = true } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>Tipo resp:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @*@Html.DropDownList("TIPO_RESPONSABLE", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })*@
+                                    @Html.Editor("TIPO_RESPONSABLE", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = true } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-2">
+                        <div class="form-group">
+                            <label>H/Asig:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("HORA_ASIGNA", new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual", @readonly = true } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-2">
+                        <div class="form-group">
+                            <label>H/Ruta:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("HORA_RUTA", new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-2">
+                        <div class="form-group">
+                            <label>H/Llega:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("HORA_LLEGA", new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-2">
+                        <div class="form-group">
+                            <label>H/Term:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("HORA_TERMINA", new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>Novedad:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.DropDownList("NOVEDAD", null, string.Empty, htmlAttributes: new { @class = "chosen-fixed" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 text-right">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" data-placement="bottom"
+                                    title="" data-original-title="Clic para actualizar"
+                                    onclick="ActualizarEventoMedio()">
+                                <b><i class="icon-download7 position-lef"></i></b>Actualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                @*<hr />
+
+                    <table id="tablaBarrios" class="table table-hover table-xxs datatable-basic modal_table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Código</th>
+                                <th>Descripción</th>
+                                <th>Ciudad</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>*@
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Actualizar Eventos Medios-->
+<!-- Modal Casos -->
+<div id="ModalCasos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Casos</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCasosDH" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Caso -->
+<!-- Modal Botón Anotaciones Generales -->
+<div id="ModalBtnAnotacionesGenerales" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Anotaciones de la llamada</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaAnotacionesGenerales" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th>Anotación</th>
+                            <th>Fuerza</th>
+                            <th>Canal</th>
+                            <th>Usuario</th>
+                            <th>Fecha Grabación</th>
+                            <th>Consecutivo</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 text-right">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" data-placement="bottom"
+                                    title="" data-original-title="Clic para ver anotaciones nuevas"
+                                    onclick="cargarAnotaciones(false)">
+                                <b><i class="icon-download7 position-lef"></i></b>Actualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Botón Anotaciones Generales -->
+<!-- Modal Actualizar Eventos Medios Control-->
+<div id="ModalActualizarEventosMediosControl" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Cambio de datos</h5>
+            </div>
+            <div class="modal-body form-compact">
+
+                <div class="row">
+                    @Html.Hidden("CADMEDISP_CONSECUTIVO_CONTROL")
+                    @Html.Hidden("EVENTO_NUMEEVENTO_CONTROL")
+                    @Html.Hidden("HORA_ASIGNA_CONTROL")
+                    <div class="col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>H/Ruta:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("HORA_RUTA_CONTROL", new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>H/Llega:</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.Editor("HORA_LLEGA_CONTROL", new { htmlAttributes = new { @class = "form-control", @placeholder = "Doble click hora actual" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Actualizar Eventos Medios Control-->
+
+
+<!-- Modal Fotos -->
+<div id="ModalFotos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Fotos</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                    @*<label class="text-danger">Mapa</label>*@
+                    <iframe src="" class="embed-responsive-item" id="frameFotos">
+                        <p>Tu navegador no soporta Iframes.</p>
+                    </iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Fotos -->
+<!-- Modal Anotaciones -->
+<div id="ModalAnotaciones" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Anotaciones</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                    @*<label class="text-danger">Mapa</label>*@
+                    <iframe src="" class="embed-responsive-item" id="frameAnotaciones">
+                        <p>Tu navegador no soporta Iframes.</p>
+                    </iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Anotaciones -->
+
+
+
+
+
+
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/CerradosDespachoJs")
+
+    <script>
+        var globalSitio = @ViewBag.globalSitio;
+        var globalIdentificacion = '@ViewBag.globalIdentificacion';
+        var globalFuerza = @ViewBag.globalFuerza;
+        var globalCanal = @ViewBag.globalCanal;
+        var globalClaseTurno = '@ViewBag.globalClaseTurno';
+        var globalCondicion = '@ViewBag.globalCondicion';
+        var globalUsuario = '@ViewBag.globalUsuario';
+
+        var _idFuerza = @ViewBag.idFuerza;
+        var _idCanal = @ViewBag.idCanal;
+
+        var _tiempoRefresco = @ViewBag.tiempoRefresco;
+        var _tiempoLlega = @ViewBag.tiempoLlega;
+
+        var globalNumeEvento = @ViewBag.globalnumeEvento;
+
+        var urlTablaCerradas = '@Url.Action("VerCerradas", "CerradosDespachos")';
+
+        var urlProcesarEvento = '@Url.Action("ProcesarEvento", "CerradosDespachos")';
+
+
+        var urlTurno = '@Url.Action("ConsultarTurno", "PendientesDespacho")';
+        var urlHora = '@Url.Action("AsignarHoraServidor", "PendientesDespacho")';
+        var urlTablaEventos = '@Url.Action("VerEventos", "PendientesDespacho")';
+        var urlPedidoEvento = '@Url.Action("VerPedidoEvento", "PendientesDespacho")';
+
+        var urlTablaComentariosAdicionales = '@Url.Action("VerComentariosAdicionales", "CerradosDespachos")';
+        var urlIngresarComentariosAdicionales = '@Url.Action("CreacionComentariosAdicionales", "PendientesDespacho")';
+        var urlPreguntasAdicionales = '@Url.Action("CargarPreguntasAdicionales", "PendientesDespacho")';
+        var urlBarriosComunas = '@Url.Action("VerBarriosComunas", "PendientesDespacho")';
+        var urlProcesarBarriosComunas = '@Url.Action("ProcesarDireccionBarrio", "PendientesDespacho")';
+
+        var urlTablaMediosDisponibles = '@Url.Action("VerMediosDisponibles", "PendientesDespacho")';
+        var urlProcesarIdUbicacion = '@Url.Action("ProcesarIdUbicacion", "PendientesDespacho")';
+        var urlProcesarMedioCaso = '@Url.Action("ProcesarMedioCaso", "PendientesDespacho")';
+
+        var urlTablaEventoMedios = '@Url.Action("VerEventoMedios", "PendientesDespacho")';
+        var urlProcesarHorasEventoMedios = '@Url.Action("ProcesarHorasEventoMedios", "PendientesDespacho")';
+        var urlActualizarNovedad = '@Url.Action("ProcesarNovedad", "PendientesDespacho")';
+        var urlValidarEventosMediosRuta = '@Url.Action("ValidarEventosMediosRuta", "PendientesDespacho")';
+        var urlEliminarEventosMedios = '@Url.Action("EliminarEventosMedios", "PendientesDespacho")';
+
+        var urlTablaCasos = '@Url.Action("VerCasos", "PendientesDespacho")';
+
+        var urlTablaAnotaciones = '@Url.Action("VerAnotaciones", "PendientesDespacho")';
+
+
+        var urlAnotacionesEvento = '@Url.Action("AnotacionesEvnetos", "AnotacionesEventos")';
+        var urlRevistas = '@Url.Action("Create", "Revistas")';
+
+        var urlNovedad = '@Url.Action("Index", "NovedadesPatrullasEventos")';
+        var urlRutas = '@Url.Action("Index", "EventoMediosRuta")';
+        var urlLocalizaciones = '@Url.Action("Index", "LocalizacionMedios")';
+
+        var urlActualizarSeguimiento = '@Url.Action("ProcesarSeguimiento", "PendientesDespacho")';
+
+        var urlProcesarCerrarEvento = '@Url.Action("ProcesarCerrarEvento", "PendientesDespacho")';
+
+
+
+        var urlFotos = '@Url.Action("FotosEventos", "FotosEventos")';
+        var urlAnotacionesGenerales = '@Url.Action("Index", "AnotacionesGenerales")';
+        var urlVehiculos = '@Url.Action("Create", "BienesRelacionadosEvento")';
+
+        var urlMensajero = '@Url.Action("Create", "EnvioMensajes")';
+
+        var urlTablaMediosControl = '@Url.Action("VerEventosMedioControl", "PendientesDespacho")';
+
+
+
+        //cambios daniel
+        var globalDesFuerza = '@ViewBag.DescFuerza';
+        var globalDesSitioGraba = '@ViewBag.DescSitioGraba';
+        var globalDesCanal = '@ViewBag.DescCanal';
+        var urlTurnosEvento = '@Url.Action("Turnos", "Turnos")';
+        var urlReposteSeguimientoEvento = '@Url.Action("ReporteSeguimientoCasos", "Reportes")';
+        var urlVisorGeografico = '@Url.Action("Index", "IngresarMapa")';
+
+        var urlResibirLlamadaEvento = '@Url.Action("Recepcion", "Recepcion")';
+        var urlDatosLlamadaEvento = '@Url.Action("Consulta", "Recepcion")';
+
+
+
+        $(".chosen-fixed").chosen({ width: "100%" });
+    </script>
+}

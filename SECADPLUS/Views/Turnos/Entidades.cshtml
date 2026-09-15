@@ -1,0 +1,117 @@
+﻿@model IEnumerable<SECADEntities.SECAD.V_FUERZAS>
+
+@{
+    ViewBag.Title = "Entidades que Interactuan en CAD 123";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")    
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Entidades Disponibles SECAD 123:  @ViewBag.NombreSitio</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">                           
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="_tblEntidades">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Abreviatura</th>
+                            <th>Descripción</th>
+                            <th>Fuerza Asociada</th>
+                            <th>Unidad Principal</th>
+                            <th>Unidad Secundaria</th>
+                            <th>Desde</th>
+                            <th>Hasta</th>
+                            <th>Máximo Horas Turno</th>
+                            <th>Vigente</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu secad dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para editar"
+                                                            onclick="window.location.href ='@Url.Action("Turnos","Turnos",new { intSitioGrabacion = item.SITIO_GRABA, strNombre = ViewBag.NombreSitio, intEntidad = item.ID, strEntidad= item.DESCRIPCION, strConsulta= ViewBag.Consulta })'">
+                                                        <i class="glyphicon glyphicon-edit"></i> Consultar Turnos
+                                                    </button>
+                                                </li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ABREVIATURA)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.TIPOFUERZA)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCIONUNIDADPRINCIPAL)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCIONUNIDAD)</td>
+                                <td>@Html.ValueFor(modelItem => item.DESDE, "{0:dd/MMM/yyyy}")</td>
+                                <td>@Html.ValueFor(modelItem => item.HASTA, "{0:dd/MMM/yyyy}")</td>
+                                <td>@Html.DisplayFor(modelItem => item.HORAS_TURNO)</td>
+                                <td>
+                                    @if (item.VIGENTE == "S")
+                                    {
+                                        <span class="label label-success">Sí</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-danger">No</span>
+                                    }
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.OBSERVACION)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6 text-left">
+                    <button type="button" class="btn bg-teal " data-popup="tooltip" title="" data-placement="bottom"
+                            data-original-title="Clic para regresar a los sitios de grabación" onclick="location.href=('@Url.Action("Inicio", "Turnos")')">
+                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar a Sitios de Grabación
+                    </button>
+                </div>
+            </div>
+            <!-- /panel con Tablas -->
+        </div>
+    </div>
+    
+</div>
+
+<!-- /área de contenido -->
+@section PostScripts{
+    <script> AplicarPluginTabla("_tblEntidades");
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+}

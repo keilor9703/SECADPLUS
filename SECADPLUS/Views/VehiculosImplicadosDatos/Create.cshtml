@@ -1,0 +1,207 @@
+﻿@model SECADEntities.SECAD.CADBIENE
+
+@{
+    ViewBag.Title = "Crear Datos del Vehículo";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Datos del Vehículo:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "VehiculosImplicadosDatos", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("SITIO_GRABA")
+                            @Html.Hidden("CONSECUTIVO")
+                            @Html.Hidden("CADCLBI_TIBI_CODIGO")
+                            @Html.Hidden("USUA_TRANSACCION")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Clase Bien:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("CADCLBI_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessageFor(model => model.CADCLBI_CODIGO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Marca:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("MARCA_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.MARCA_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Línea:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("LINEA_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.LINEA_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Color:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("COLO_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.COLO_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Placa:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.PLACA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba placa", @maxlength = "15" } })
+                                                @Html.ValidationMessageFor(model => model.PLACA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Chasis:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CHASIS, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba chasis", @maxlength = "25" } })
+                                                @Html.ValidationMessageFor(model => model.CHASIS, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Motor:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.MOTOR, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba motor", @maxlength = "25" } })
+                                                @Html.ValidationMessageFor(model => model.MOTOR, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3">
+                                    <div class="form-group">
+                                        <label>Serie:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.SERIE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba serie", @maxlength = "25" } })
+                                                @Html.ValidationMessageFor(model => model.SERIE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label>Observaciones:</label>
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-12">
+                                                @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba observaciones" })
+                                                @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Usuario Transacción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("USUA_TRANSACCION", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.USUA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha Transacción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.FECHA_TRANSACCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.FECHA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", "VehiculosImplicados", new { idCons = @ViewBag.CADBIEN_CONSECUTIVO })'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+@Scripts.Render("~/bundle/VehiculosImplicadosJs")
+
+<script>
+    $(".chosen-select").chosen();
+    var urlLineas = '@Url.Action("GetLineasByMarca", "VehiculosImplicadosDatos")';
+
+</script>

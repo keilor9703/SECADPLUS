@@ -1,0 +1,1278 @@
+﻿@model SECADPLUS.Models.RecepcionModel
+
+@section styles{
+    <link rel="stylesheet" href="https://js.arcgis.com/3.23/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.23/esri/css/esri.css">
+    <link href="~/Content/Mapas/visor.css" rel="stylesheet" />
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+
+    <script src="https://js.arcgis.com/3.36/"></script>
+
+
+    @*<script src="@Url.Content("~/Scripts/JsMapa.js")"></script>*@
+    <script src="@Url.Content("~/Areas/VisorGeografico/Scripts/VisorMapa.js")"></script>
+
+
+
+    <script>
+       var codigoDaneInicial = "@Model.CodDane";
+
+        //$(document).ready(function () {
+        //    console.log("codigo dane " + codigoDaneInicial);
+        //    iniciarMapa();
+        //});
+
+
+    </script>
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="mnsCanales"> </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-body">
+
+                    <div id="exTab3">
+                        <ul class="nav nav-tabs nav-tabs-highlight">
+                            <li class="active" id="tabIngreso"><a href="#ingreso" data-toggle="tab" id="tabPrincipal">Ingreso Llamadas</a></li>
+                            <li id="asociadas"><a href="#asociadas" data-toggle="tab"> Asociadas</a></li>
+                            <li id="tabMensajes"><a href="#mensajes" data-toggle="tab">Mensajes</a></li>
+                            <li id="usu24"><a href="#usu24h" data-toggle="tab">Llamada Usuario 24h</a></li>
+                            <li id="tabgral"><p>Llamada Gral Sala</p></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active col-lg-12 col-md-12 row" id="ingreso">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <div class="panel panel-flat">
+
+                                    <div class="panel-body">
+                                        <form action="#" method="post" id="formPedido">
+                                            <!-- Contenido panel -->
+                                            <div class="col-md-12 space_down">
+                                                <fieldset>
+                                                    <legend class="text-semibold">
+                                                        Llamada
+                                                        <a class="control-arrow" data-toggle="collapse" data-target="#panel1">
+                                                            <i class="icon-circle-down2"></i>
+                                                        </a>
+                                                    </legend>
+
+                                                    <div class="collapse in" id="panel1">
+                                                        <div class="row">
+
+                                                            <!--Campos ocultos para complementar la creación del pedido-->
+
+                                                            @Html.HiddenFor(model => model.LUGE_TELEFONO, new { Value = 0 })
+                                                            @Html.HiddenFor(model => model.SITIO_GRABA, new { })
+                                                            @Html.HiddenFor(model => model.LUGE_CODIGO, new { Value = 0 })
+                                                            @Html.HiddenFor(model => model.CODI_PEDIDO_REAL, new { })
+                                                            @Html.HiddenFor(model => model.IMPORTANCIA, new { Value = "01" })
+                                                            @Html.HiddenFor(model => model.PRIORIDAD, new { Value = "01" })
+                                                            @Html.HiddenFor(model => model.TOTAL_CANALES, new { Value = "N" })
+                                                            @Html.HiddenFor(model => model.TIPO_GENERO, new { Value = "CG" })
+                                                            @Html.HiddenFor(model => model.CADUSUA_USUARIO, new { Value = Model.Usuario })
+                                                            @Html.HiddenFor(model => model.CADPOLI_CEDU_EMPLEADO, new { Value = Model.Identificacion })
+                                                            @Html.HiddenFor(model => model.CADPEDI_SITIO_GRABA)
+
+                                                            @Html.HiddenFor(model => model.FECHA_GRABACION, new { })
+                                                            @Html.HiddenFor(model => model.FECH_CASO, new { })
+                                                            @Html.HiddenFor(model => model.ENVIAR, new { Value = "N" })
+
+                                                            <input type="hidden" id="CADPEDI_SITIOGRABA" name="CADPEDI_SITIOGRABA" />
+                                                            <input type="hidden" id="CADPEDI_NUMELLAMADA" name="CADPEDI_NUMELLAMADA" />
+                                                            <input type="hidden" id="CADCANA_FUERZ_ID" name="CADCANA_FUERZ_ID" value="0" />
+                                                            <input type="hidden" id="CADCANA_CODIGO" name="CADCANA_CODIGO" value="0" />
+                                                            <input type="hidden" id="CADEVEN_SITIO_GRABA" name="CADEVEN_SITIO_GRABA" />
+                                                            <input type="hidden" id="CADEVEN_NUME_EVENTO" name="CADEVEN_NUME_EVENTO" />
+                                                            <input type="hidden" id="USUA_MODIFICA" name="USUA_MODIFICA" value="@Model.Usuario" />
+                                                            <input type="hidden" id="FECHA_MODIFICACION" name="FECHA_MODIFICACION" value="@Model.FechaHora" />
+                                                            <input type="text" id="txtDescriHides" placeholder="Doc" class="hidden" />
+
+                                                            <div class="col-md-12 col-lg-6">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-md-5">Fecha y Hora:</label>
+                                                                            <div class="input-group col-md-7">
+                                                                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                                                <input type="text" name="HORA_CASO" id="FechaCaso" class="form-control pickadate-accessibility"
+                                                                                       placeholder="Escoja una fecha" data-popup="tooltip" title="" readonly
+                                                                                       data-placement="top" data-original-title="Escoja una fecha">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact form-group">
+                                                                            <label class="col-md-5">No de llamada:</label>
+                                                                            @Html.EditorFor(model => model.NUME_LLAMADA, new { htmlAttributes = new { @class = "col-md-7 bg-teal-300", Value = Model.Consecutivo, @Readonly = true } })
+                                                                            @Html.ValidationMessageFor(model => model.NUME_LLAMADA, "", new { @class = "text-danger" })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-md-5">Responsable:</label>
+                                                                            @Html.EditorFor(model => model.CADUSUA_USUARIO, new { htmlAttributes = new { @class = "col-md-7 bg-teal-300  ", Value = Model.Usuario, @Readonly = true } })
+                                                                            @Html.ValidationMessageFor(model => model.CADUSUA_USUARIO, "", new { @class = "text-danger" })
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-md-5">Modo actual:</label>
+                                                                            <span class="col-md-7 label bg-teal-300 label-left" id="mensajeModo">Esperando llamada...</span>
+                                                                            <span class="col-md-12 label bg-teal-300 label-left" id="mensajeConexiones">@Model.Conexiones</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 col-lg-6">
+                                                                <div class="row space_down">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-lg-4">Prioridad: rmr</label>
+
+
+
+
+
+                                                                            <div class="col-lg-8" id="RadioButton">
+                                                                                <label class="radio-inline text-orange-300">
+
+                                                                                    <input type="radio" name="prioridad" id="prioridad1" value="01">
+                                                                                    Rutina
+                                                                                </label>
+                                                                                <label class="radio-inline text-success">
+                                                                                    <input type="radio" name="prioridad" id="prioridad2" value="03">
+                                                                                    Inmd.
+                                                                                </label>
+                                                                                <label class="radio-inline text-danger">
+                                                                                    <input type="radio" name="prioridad" id="prioridad3" value="04">
+                                                                                    Flash
+                                                                                </label>
+                                                                            </div>
+
+
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+
+                                                                            <label class="col-lg-4">Importancia :</label>
+                                                                            <div class="col-lg-8">
+
+                                                                                <label class="radio-inline">
+                                                                                    <input type="radio" name="importancia" class="styled" id="personal" checked="checked" value="01">
+                                                                                    1
+                                                                                </label>
+                                                                                <label class="radio-inline">
+                                                                                    <input type="radio" name="importancia" class="styled" value="02">
+                                                                                    2
+                                                                                </label>
+                                                                                <label class="radio-inline">
+                                                                                    <input type="radio" name="importancia" class="styled" value="03">
+                                                                                    3
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-compact col-xs-12 col-md-12 bg-teal-100 text-center">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-4">
+                                                                            <label class="checkbox-inline">
+                                                                                <input type="checkbox" name="todosCanales" class="styled">
+                                                                                Enviar a todos los canales
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-4">
+                                                                            <label class="checkbox-inline">
+                                                                                <input type="checkbox" name="mujeres" class="styled">
+                                                                                Hay afectación de mujeres
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-0">
+                                                                            <span class="label bg-danger">V60 pais abonado</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <fieldset>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <legend class="text-semibold">
+                                                                Datos
+                                                                <a class="control-arrow" data-toggle="collapse" data-target="#panel2">
+                                                                    <i class="icon-circle-down2"></i>
+                                                                </a>
+                                                            </legend>
+                                                            <div class="collapse in" id="panel2">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact" id="contenedorAbonado">
+                                                                            <label class="text-danger">Abonado *</label>
+                                                                            <input type="number" name="NUME_TELEFONO" id="NUME_TELEFONO" class="form-control abonado" required="required" max="9999999999" min="0"
+                                                                                   placeholder="Escriba el número tel/cel" aria-required="true" title="Número telefónico del llamante" data-toggle="tooltip" data-placement="top">
+                                                                            <span class="label bg-primary-300 table-xs" id="mensajeAbonado"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label>Medio Com.</label>
+                                                                            @Html.DropDownList("DISP_TELEFONICO", Model.Medios, string.Empty, htmlAttributes: new { @class = "form-control ", tabindex = "-1", id = "ddlMedios" })
+                                                                            @Html.ValidationMessageFor(model => model.DISP_TELEFONICO, "", new { @class = "text-danger" })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-compact">
+                                                                    <div class="col-md-6">
+                                                                        <label>Nombre:</label>
+
+                                                                        <input type="text" name="PROP_TELEFONO" id="PROP_TELEFONO" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Nombre Propietario" aria-required="true">
+                                                                    </div>
+
+                                                                    <div class="col-md-3">
+                                                                        <label>Ciudad:</label>
+                                                                        <input type="text" name="spBarrio" id="spCiudad" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Ciudad" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label>Barrio:</label>
+                                                                        <input type="text" name="BARR_TELEFONO" id="BARR_TELEFONO" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Barrio" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-3 hide">
+                                                                        <label>Celda:</label>
+                                                                        <input type="text" name="CELDA_MARCACION" id="CELDA_MARCACION" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Celda" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-12 ">
+                                                                        <label class="">Dirección :</label>
+                                                                        <input type="text" name="DIRE_TELEFONO" id="DIRE_TELEFONO" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Dirección" aria-required="true">
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Botón -->
+                                                                <div class="row form-compact space">
+                                                                    <div class="col-md-7 col-lg-5 text-left">
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Solicitando Info" onclick="CerrarPedido('INFORMACION')">
+                                                                            <img src="@Url.Content("~/Images/info_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Persona molestando" onclick="CerrarPedido('PERSONAMOLESTANDO')">
+                                                                            <img src="@Url.Content("~/Images/molestando_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Niño molestando" onclick="CerrarPedido('NINOMOLESTADO')">
+                                                                            <img src="@Url.Content("~/Images/nino_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Llamada insultando" onclick="CerrarPedido('LLAMADAINSULTANTE')">
+                                                                            <img src="@Url.Content("~/Images/insultar_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="No hablan" onclick="CerrarPedido('COLGARON')">
+                                                                            <img src="@Url.Content("~/Images/consultar_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Colgaron" onclick="CerrarPedido('COLGARON')">
+                                                                            <img src="@Url.Content("~/Images/colgaron_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Mapa" onclick="AbrirMapa()">
+                                                                            <img src="@Url.Content("~/Images/ubicacion_ico.png")" class="img-responsive" alt="">
+                                                                        </button>
+
+
+                                                                    </div>
+
+                                                                    <div class="col-md-2 col-lg-2 text-center space_up">
+                                                                        <button type="button" class="btn bg-warning btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Clic para limpiar el formulario" onclick="Limpiar()">
+                                                                            <b><i class="icon icon-eraser"></i></b>Cancelar
+                                                                        </button>
+
+                                                                    </div>
+                                                                    <div class="col-md-2 col-lg-2 text-center space_up">
+                                                                        <button type="button" class="btn bg-teal btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Clic para pasar la dirección encontrada" onclick="PasarDireccion()">
+                                                                            <b><i class="icon icon-box-add"></i></b> Pasar dirección fija
+                                                                        </button>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="text-danger col-md-12">Caso reportado *</label>
+                                                                            <div class="col-xs-4 col-md-4 text-left ">
+                                                                                @Html.EditorFor(model => model.CODI_PEDIDO, new { htmlAttributes = new { @class = "form-control", id = "txtCasoId", placeholder = "Código", title = "Código principal asociado al caso. Doble click para acceder a la lista", data_toggle = "tooltip", data_placement = "top" } })
+
+                                                                                @Html.ValidationMessageFor(model => model.CODI_PEDIDO, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div class="col-xs-8 col-md-8 text-left form-group">
+                                                                                <input type="text" id="txtCaso" name="txtCaso" class="form-control" readonly placeholder="Descripción" tabindex="-1" />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeCaso"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="text-danger col-md-12">Caso reportado</label>
+                                                                            <div class="col-xs-4 col-md-4 text-left ">
+                                                                                @Html.EditorFor(model => model.CODI_PEDIDO2, new { htmlAttributes = new { @class = "form-control", id = "txtCasoId2", placeholder = "Código", title = "Código secundario asociado al caso. Doble click para acceder a la lista", data_toggle = "tooltip", data_placement = "top" } })
+                                                                                @Html.ValidationMessageFor(model => model.CODI_PEDIDO2, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div class="col-xs-8 col-md-8 text-left form-group">
+                                                                                <input type="text" id="txtCaso2" name="txtCaso2" class="form-control" readonly placeholder="Descripción" tabindex="-1" />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeCaso2"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="text-danger col-md-12">Ciudad caso *</label>
+
+                                                                            @Html.EditorFor(model => model.LUGE_BARRIO, new { htmlAttributes = new { @class = "form-control hide", id = "txtCiudadId", @readonly = true, placeholder = "Código", @Value = Model.lgCiudaCodigo } })
+                                                                            @Html.ValidationMessageFor(model => model.LUGE_BARRIO, "", new { @class = "text-danger" })
+
+                                                                            <div class="col-xs-12 col-md-12 text-left form-group">
+                                                                                <input type="text" id="txtCiudad" name="txtCiudad" class="form-control" placeholder="Ciudad" value="@Model.Ciudad" title="Doble Click para acceder a la lista" data-toggle="tooltip" data-placement="top" />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeCiudad"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label>P. card</label>
+                                                                            @Html.DropDownList("PUCA_CODIGO", Model.Coordenadas, string.Empty, htmlAttributes: new { @class = "form-control chosen-select", id = "ddlCoord" })
+                                                                            @Html.ValidationMessageFor(model => model.PUCA_CODIGO, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-10">
+                                                                        <div class="form-compact">
+                                                                            <label>Dirección del Caso:</label>
+                                                                            <input type="text" class="form-control" id="DIRE_CASO" name="DIRE_CASO" placeholder="Escriba dirección" maxlength="80" title="Doble Click para acceder a la lista" data-toggle="tooltip" data-placement="top">
+                                                                            <span class="label bg-primary-300 table-xs" id="mensajeDirecta"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="col-md-12">Barrio</label>
+                                                                            <div class="col-xs-4 col-md-4 text-left ">
+                                                                                @Html.EditorFor(model => model.CODI_BARRIO, new { htmlAttributes = new { @class = "form-control", id = "txtBarrioId", @readonly = true, placeholder = "Código" } })
+                                                                                @Html.ValidationMessageFor(model => model.CODI_BARRIO, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div class="col-xs-8 col-md-8 text-left form-group">
+                                                                                <input type="text" id="txtBarrio" name="txtBarrio" class="form-control" placeholder="Barrio" title="Doble Click para acceder a la lista" data-toggle="tooltip" data-placement="top" />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeBarrio"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label>Comuna</label>
+                                                                            <input type="text" id="txtComuna" class="form-control" placeholder="Escriba comuna" readonly>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="col-md-2">
+                                                                        <label></label>
+                                                                        <div class="form-compact">
+                                                                            <button type="button" class="btn btn-success btn-labeled btn-xs col-md-12" id="btnGeoDirecta"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para consultar la georeferencia Directa"
+                                                                                    onclick="ConsultarGeoDirecta()">
+                                                                                <i class="icon icon-location4"></i>Geo. Directa
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row form-compact">
+                                                                    <div class="col-md-5">
+                                                                        <label>Latitud:</label>
+                                                                        <input type="text" name="LATITUD_CASO" id="LATITUD_CASO" class="form-control readonly-recepcion-grey" placeholder="Latitud"
+                                                                               aria-required="true">
+                                                                        <span class="label bg-primary-300 table-xs" id="mensajeInversa"></span>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <label>Longitud:</label>
+                                                                        <input type="text" name="LONGITUD_CASO" id="LONGITUD_CASO" class="form-control readonly-recepcion-grey" readonly
+                                                                               placeholder="Longitud" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <label></label>
+                                                                        <div class="form-compact">
+                                                                            <button type="button" class="btn btn-success btn-labeled btn-xs col-md-12" id="btnGeoInversa"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para consultar la georeferencia Inversa"
+                                                                                    onclick="ConsultarGeoInversa()">
+                                                                                <i class="icon icon-location4"></i>Geo. Inversa
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label class="text-danger">Llamante *</label>
+                                                                            <input type="text" class="form-control" placeholder="Nombre del llamante" id="NOMB_LLAMANTE" name="NOMB_LLAMANTE" title="Doble Click para tomar el nombre del propietario del abonado" data-toggle="tooltip" data-placement="top">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 obligatorio">
+                                                                        <div class="form-compact ">
+                                                                            <label class="control-label">Dirección</label>
+                                                                            <input type="text" class="form-control" placeholder="Dirección" id="DIRE_LLAMANTE" name="DIRE_LLAMANTE" maxlength="59" title="Doble Click para seleccionar la dirección del caso" data-toggle="tooltip" data-placement="top">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-lg-12 hide">
+                                                                        <div class="form-compact ">
+                                                                            <label class="text-danger">Tipo Información *</label>
+                                                                            <select class="chosen-select form-control" tabindex="-1" aria-hidden="true" id="TIPO_INFORMACION" name="TIPO_INFORMACION">
+                                                                                <option value="SC">Seg. Ciudadana</option>
+                                                                                <option value="SD">Seg. Democratica</option>
+                                                                                <option value="NA">Otros</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12 hide">
+                                                                        <div class="form-compact">
+                                                                            <label>Código Coop</label>
+                                                                            <input type="text" class="form-control" placeholder="Código" id="CODIGO_COOPERANTE" name="CODIGO_COOPERANTE">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12 col-lg-4">
+                                                                        <div class="form-compact">
+                                                                            <label>Asociar llamada</label>
+                                                                            @Html.EditorFor(model => model.CADPEDI_NUME_LLAMADA, new { htmlAttributes = new { @class = "form-control", placeholder = "Llamada", title = "Doble Click para acceder a la lista", data_toggle = "tooltip", data_placement = "top" } })
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-compact">
+                                                                            <label>Tipo</label>
+                                                                            @Html.DropDownList("TIPO_PEDIDO", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select", id = "TIPO_PEDIDO", name = "TIPO_PEDIDO", title = "Tipo asociado a la llamada", data_toggle = "tooltip", data_placement = "top" })
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-compact">
+                                                                            <label>Calidad</label>
+                                                                            @Html.DropDownList("CALI_PEDIDO", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select", id = "CALI_PEDIDO", name = "CALI_PEDIDO", title = "Calidad asociada a la llamada", data_toggle = "tooltip", data_placement = "top" })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Caja de texto -->
+                                                                <div class="row">
+                                                                    <div class="col-md-12 ">
+                                                                        <label class="text-danger">Descripción hechos *</label>
+                                                                        <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos" id="taPreguntas" name="COMENTARIO" title="Ingrese aquí la descripción del caso" data-toggle="tooltip" data-placement="top"></textarea>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <legend class="text-semibold">
+                                                                Canales
+                                                                <a class="control-arrow" data-toggle="collapse" data-target="#panel3">
+                                                                    <i class="icon-circle-down2"></i>
+                                                                </a>
+                                                            </legend>
+                                                            <div class="collapse in" id="panel3">
+                                                                <div id="exTab3">
+                                                                    <ul class="nav nav-tabs nav-tabs-highlight">
+                                                                        <li class="active" id="tabIngreso"><a href="#canalesAtencion" data-toggle="tab">Canales de Atención</a></li>
+                                                                        <li id="asociadas"><a href="#mapaRecepcion" data-toggle="tab">Mapa</a></li>
+                                                                        <li id="xcrime"><a href="#XCrime" data-toggle="tab">X-Crime</a></li>
+                                                                        <li id="xgeoinv"><a href="#XGeoinv" data-toggle="tab">Mapa GeoInversa</a> </li>
+                                                                    </ul>
+                                                                    <div class="tab-content">
+                                                                        <div class="tab-pane active col-lg-12 col-md-12 row" id="canalesAtencion">
+                                                                            <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                                                            <div class="panel panel-flat">
+
+                                                                                <div class="panel-body">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-3 col-lg-3 text-center space_up">
+                                                                                            <button type="button" class="btn bg-warning-400 btn-xs" data-toggle="modal"
+                                                                                                    data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                                    data-original-title="Clic para pasar cargar los canales" onclick="IniciarPedido()">
+                                                                                                <b><i class="icon icon-eye-plus"></i></b> Validar y Guardar
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div class="col-md-12">
+                                                                                            <table class="table table-hover table-bordered table-xxs datatable-basic" id="tblCanalesAsignados">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th>Canales de atención asignados</th>
+                                                                                                        <th>Acción</th>
+                                                                                                        <th>Canal despacho</th>
+                                                                                                        <th>Est.</th>
+                                                                                                        <th>Evento</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <table class="table table-bordered table-hover table-xxs datatable-basic" id="tblCanalesPonal">
+                                                                                                <thead>
+                                                                                                    <tr>
+
+                                                                                                        <th>Entidad</th>
+                                                                                                        <th>Canales de atención</th>
+                                                                                                        <th>Acción</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+
+                                                                                            </table>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <table class="table table-hover table-bordered table-xxs datatable-basic" id="tblCanales">
+                                                                                                <thead>
+                                                                                                    <tr>
+
+                                                                                                        <th>Entidad</th>
+                                                                                                        <th>Canales de atención</th>
+                                                                                                        <th>Acción</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tab-pane col-lg-12 col-md-12 row" id="mapaRecepcion">
+                                                                            <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                                                            <div class="panel panel-flat">
+
+                                                                                <div class="panel-body">
+
+                                                                                    <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                                                                                        <label class="text-danger">Mapa</label>
+                                                                                        <iframe src="" class="embed-responsive-item" id="frameMapa">
+                                                                                            <p>Your browser does not support iframes.</p>
+                                                                                        </iframe>
+                                                                                    </div>
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tab-pane col-lg-12 col-md-12 row" id="XCrime">
+                                                                            <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                                                            <div class="panel panel-flat">
+
+                                                                                <div class="panel-body">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Id Registro X-Crime</label>
+                                                                                                <input type="text" name="P_IDREGXCRIME" id="P_IDREGXCRIME" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                                                       placeholder="IdRegXCrime" readonly aria-required="true">
+                                                                                                <span class="label bg-primary-300 table-xs" id="mensajeAbonado1"></span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Fecha LLamada</label>
+                                                                                                <input type="text" name="P_FECHALLAMADA" id="P_FECHALLAMADA" class="form-control pickadate-accessibility"
+                                                                                                       placeholder="Fecha LLamada" data-popup="tooltip" title="" readonly
+                                                                                                       data-placement="top" data-original-title="Fecha LLamada">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Tipo Registro</label>
+                                                                                                <input type="text" name="txtTipoRegi" id="txtTipoRegi" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                                                       placeholder="TipoRegistro" aria-required="true">
+                                                                                                <span class="label bg-primary-300 table-xs" id="mensajeAbonado12"></span>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Prioridad</label>
+                                                                                                <input type="text" name="txtPrioridad" id="txtPrioridad" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                                                       placeholder="Prioridad" aria-required="true">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Categoria </label>
+                                                                                                <input type="text" name="txtCategoria" id="txtCategoria" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                                                       placeholder="Categoria" aria-required="true">
+                                                                                                <span class="label bg-primary-300 table-xs" id="mensajeAbonado12"></span>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Tipo </label>
+                                                                                                <input type="text" name="P_TIPOXCRIME" id="P_TIPOXCRIME" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                                                       placeholder="Tipo x Crime" aria-required="true">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Observación </label>
+                                                                                                <input type="text" name="txtObservacion" id="txtObservacion" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                                                       placeholder="Descripcion Cod. Calidad" aria-required="true">
+                                                                                                <span class="label bg-primary-300 table-xs" id="mensajeAbonado12"></span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <label class="text-danger">Transcripción</label>
+                                                                                            <textarea rows="8" cols="5" class="form-control readonly-recepcion-grey" class="form-control readonly-recepcion-grey" readonly placeholder="Escriba transcricion de los hechos" id="txtTranscripcion" name="txtTranscripcion" title="Ingrese aquí la transcripcion hechos del caso" data-toggle="tooltip" data-placement="top"></textarea>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label class="text-danger">Codificación</label>
+                                                                                            <table class="table table-hover table-bordered table-xxs datatable-basic" id="tblCodigoXCrime" width="100%">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th>Código </th>
+                                                                                                        <th>Descripción </th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+                                                                                                <label class="text-danger">Fecha ingreso SECAD</label>
+                                                                                                <input type="text" name="txtFechaIngBD" id="txtFechaIngBD" class="form-control pickadate-accessibility"
+                                                                                                       placeholder="Fecha Ing. LLamada SECAD" data-popup="tooltip" title="" readonly
+                                                                                                       data-placement="top" data-original-title="Fecha Ing. LLamada SECAD">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-compact">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="tab-pane col-lg-12 col-md-12 row" id="XGeoinv">
+
+                                                                            <button id="recargar" type="button" class="btn bg-warning-400 btn-xs" style="margin-top: 10px;" onclick="iniciarMapa()">Refrescar mapa</button>
+
+                                                                            <div class="panel panel-flat">
+                                                                                <div class="panel-body">
+                                                                                    <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                                                                                        <label class="text-danger">Mapa</label>
+                                                                                        <div class="claro vistadocumento" id="MainContent_framemanual" style="width: 100%;min-height: 400px;height: 300px;margin-bottom: -28px;">
+                                                                                            <div id="search"></div>
+                                                                                            <div id="LocateButton"></div>
+                                                                                            <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:true" style="width:100% !important;height:500px;margin:0;">
+                                                                                                <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="width:100% !important;height:500px;margin:0;">
+                                                                                                    <span id="spnCoordinates"></span>
+                                                                                                    <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+                                                                                                        <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Cambiar mapa base', open:false" style="padding-bottom: 1px;">
+                                                                                                            <div data-dojo-type="dijit/layout/ContentPane" style="width:280px; height:280px; overflow:auto;">
+                                                                                                                <div id="basemapGallery"></div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Capas', open:false" style="padding-bottom: 1px;">
+                                                                                                            <div data-dojo-type="dijit/layout/ContentPane" style="width:280px; height:280px; overflow:auto;">
+                                                                                                                <div id="layerList"></div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+
+
+
+                                                                        @*var codMun = '@Model.CodDane';
+                                                                            var codigo = '@Model.SITIO_GRABA';
+                                                                            var nombre = 'TUNJA - BOYACA';
+                                                                            var opcion = 'CIUDAD';
+
+
+                                                                            SeleccionarLugar(codigo, nombre, opcion, codMun);
+
+                                                                            var codMun = '@Model.CodDane'; // Obtén el código del municipio desde el modelo
+                                                                            var newSrc = "https://sig.policia.gov.co/SECAD/?redirect=&cod_mun=" + codMun;
+                                                                            document.getElementById("frameMapa").src = newSrc; // Cambia el src del iframe*@
+
+
+
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-lg-4 col-xs-12 text-left">
+                                                                            <button type="button" class="btn inner-panel bg-warning  btn-sm" data-toggle="modal"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom"
+                                                                                    onclick="EnviarPedido()"
+                                                                                    data-original-title="Enviar Pedido">
+                                                                                <i class="icon icon-mailbox "></i>
+                                                                            </button>
+
+                                                                            <button type="button" class="btn inner-panel bg-success-300  btn-sm" data-toggle="modal"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom" onclick="ActualizarPedido()"
+                                                                                    data-original-title="Guardar Pedido">
+                                                                                <i class="icon icon-drive "></i>
+                                                                            </button>
+
+                                                                            <button type="button" class="btn inner-panel bg-success-300  btn-sm" data-toggle="modal"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom" onclick="AbrirDocumentos()"
+                                                                                    data-original-title="Datos Redes ">
+                                                                                <i class="icon icon-shield-check "></i>
+                                                                            </button>
+                                                                            <button type="button" class="btn inner-panel bg-success-300  btn-sm" data-toggle="modal"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom" onclick="location.href='@Url.Action("ConsultaPedidos", "Recepcion")'"
+                                                                                    data-original-title="Realizar Consultas Generales">
+                                                                                <i class="icon icon-search4"></i>
+                                                                            </button>
+                                                                            <button type="button" class="btn inner-panel bg-success-300  btn-sm" data-toggle="modal"
+                                                                                    data-popup="tooltip" title="" data-placement="bottom" onclick="AbriReporteSeguimientoEvento()"
+                                                                                    data-original-title="Imprimir Pedido">
+                                                                                <i class="icon icon-printer"></i>
+                                                                            </button>
+
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-md-2 col-lg-2 text-center space">
+                                                                            <button type="button" class="btn bg-teal btn-xs" id="btnComentarios" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para asociar comentarios al caso" onclick="AbrirModalComentarios()">
+                                                                                <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Adicionar comentarios
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                            <div class="form-compact ">
+                                                                                <label class="col-md-4 text-danger control-label text-right">Estado *</label>
+                                                                                <div class="col-md-8">
+                                                                                    <select class="form-control fondo-amarillo" tabindex="-1" aria-hidden="true" id="ESTADO" name="ESTADO">
+                                                                                        <option value="C">CERRADO</option>
+                                                                                        <option value="S">SIN ENVIAR</option>
+                                                                                        <option value="P">PTE. DESPACHO</option>
+                                                                                        <option value="E">EN DESPACHO</option>
+                                                                                        <option value="R">REVISION SUPERVISOR</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-compact">
+                                                                                <div class="row">
+                                                                                    <label class="col-xs-5 col-md-4">Cl. superv:</label>
+                                                                                    <span class="col-xs-7 col-md-8 label label-recepcion"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="cold-md-12" id="ContenedorMapa"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </fieldset>
+                                            </div>
+                                        </form>
+                                        <!-- /contenido panel -->
+                                    </div>
+
+                                </div>
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="asociadas">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="mensajes">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="usu24h">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!-- Área de contenido -->
+                                <div class="col-md-12 form-compact">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title">Llamadas Recibidas:</h5>
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="collapse"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Inicio de tabla -->
+                                        <table class="table table-hover table-xxs datatable-basic" id="tablaUsu">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Nume Llamada</th>
+                                                    <th>Hora Caso</th>
+                                                    <th>Nume Teléfono</th>
+                                                    <th>Tipo Pedido</th>
+                                                    <th>Nomb Llamante</th>
+                                                    <th>Luge Código</th>
+                                                    <th>Dire Caso</th>
+                                                    <th>Comentario</th>
+                                                    <th>Codi Ped.</th>
+                                                    <th>Est.</th>
+                                                    <th>Usuario</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <!-- /inicio de tabla -->
+                                    </div>
+                                </div>
+
+                                <!-- /área de contenido -->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="gral">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!-- Área de contenido -->
+                                <!-- /área de contenido -->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<!-- ModalCiudades modal Ciudades-->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="md-col-12">
+                        <table id="tblCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                    <th>Tipo</th>
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalCiudades modal -->
+<!-- ModalCasos modal Casos-->
+<div id="ModalCasos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Casos</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaCaso"></div>
+                <div class="row form-compact">
+                    <div class="md-col-12">
+                        <table id="tblCasos" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalCasos modal -->
+<!-- Modal Barrios -->
+<div id="ModalBarrios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Barrios</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table class="table table-hover table-xxs datatable-basic fuente-size16" id="_tblBarrios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Codigo</th>
+                            <th>Descripción</th>
+                            <th>Comuna</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Barrios -->
+<!-- Modal Comentarios -->
+<div id="ModalComentarios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comentarios Adicionales</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <form id="formComentarios" action="" method="post">
+                    <input type="hidden" id="CADPEDI_SITIOGRABA" name="CADPEDI_SITIOGRABA" value="@Model.SITIO_GRABA" />
+                    <input type="hidden" id="NumeLlamada" name="CADPEDI_NUMELLAMADA" value="@Model.Consecutivo" />
+                    <input type="hidden" id="CONSECUTIVO" name="CONSECUTIVO" value="0" />
+                    <input type="hidden" id="CODI_PREGUNTA" name="CODI_PREGUNTA" />
+                    <input type="hidden" id="RTA_PREGUNTA" name="RTA_PREGUNTA" />
+                    <input type="hidden" id="USUA_USUARIO" name="USUA_USUARIO" value="@Model.Usuario" />
+                    <input type="hidden" id="FECHA_GRABACION" name="FECHA_GRABACION" value="@Model.FechaHora" />
+
+                    <div class="form-group">
+
+                        <div class="col-md-12 obligatorio">
+                            <label class="">Comentario:</label>
+                            <textarea rows="4" cols="5" class="form-control" placeholder="Escriba descripción de los hechos" id="ANOTACION" name="ANOTACION" maxlength="3000"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" id="btnGuardarComentario"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                    value="Create">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 ">
+                            <table class="table table-hover table-xxs datatable-basic form-compact" id="tblComentarios">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Comentario</th>
+                                        <th>Usuario</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Comentarios -->
+<!-- Modal Asociadas -->
+<div id="ModalAsociadas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comentarios Adicionales</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="form-group">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table table-hover table-xxs datatable-basic form-compact" id="tblAsociadas">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Num. Llamada</th>
+                                    <th>Hora Caso</th>
+                                    <th>Num. Telefono</th>
+                                    <th>Cod. Caso</th>
+                                    <th>Luge Código</th>
+                                    <th>Nomb Llamante</th>
+                                    <th>Dire Caso</th>
+                                    <th>Estado</th>
+                                    <th>Sitio</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        @*<button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Asociadas -->
+<!-- Modal Archivos -->
+<div id="ModalArchivos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Archivos</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                    <label class="text-danger">Cargando el formulario...</label>
+                    <iframe src="" class="embed-responsive-item" id="frameArchivos">
+                        <p>Tu navegador no soporta Iframes.</p>
+                    </iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Archivos -->
+<!-- Modal ModalSitios -->
+<div id="ModalSitios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Sitios</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="form-group">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table table-hover table-xxs datatable-basic form-compact" id="tblSitios">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Sitio</th>
+                                    <th>Dirección</th>
+                                    <th>Barrio</th>
+                                    <th>Barrio Codigo</th>
+                                    <th>Luge Código</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal ModalSitios -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/PedidosJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CheckBoxJs")
+    @Scripts.Render("~/bundle/ModalsAlertJs")
+
+
+    @*<script src="~/Scripts/JsMapa.js"></script>*@
+
+
+
+    <script>
+        /////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////URLS EXLUSIVAS DE RECEPCIÓN////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        var urlConsultaDatosLlamada = "@Url.Action("ConsultarDatosLlamada", "Recepcion")";
+        //rmr 20-11-2020
+        var urlConsultaDatosXcrime = "@Url.Action("F_GetDatosXCrimeCr", "Recepcion")";
+        var urlConsultaDatosXcrimeDatos = "@Url.Action("F_GetDatosXCrimeCrDatos", "Recepcion")";
+
+
+        //fin rmr 20-11-2020
+        var urlConsultarMedioCom = "@Url.Action("ConsultarMedioCom", "Recepcion")";
+        var urlConsultarCiudades = "@Url.Action("ConsultarCiudades", "Recepcion")";
+        var urlConsultarBarrios = "@Url.Action("CargarTodosLosBarrios", "Recepcion")";
+        var urlConsultarCasos = "@Url.Action("ConsultarCasos", "Recepcion")";
+        var urlConsultarPreguntas = "@Url.Action("ConsultarPreguntas", "Recepcion")";
+        var urlConsultarCanales = "@Url.Action("ConsultarCanales", "Recepcion")";
+        var urlCrearPedido = "@Url.Action("CrearPedido", "Recepcion")";
+        var urlActualizarPedido = "@Url.Action("ActualizarPedido", "Recepcion")";
+        var urlCrearCanal = "@Url.Action("AsignarCanal", "Recepcion")";
+        var urlRemoverCanal = "@Url.Action("RemoverCanal", "Recepcion")";
+        var urlEnviarPedido = "@Url.Action("EnviarPedido", "Recepcion")";
+        var urlEnviarRecepcion = "@Url.Action("Recepcion", "Recepcion")";
+        var urlValidarRepetido = "@Url.Action("ValidarPedidoExistente", "Recepcion")";
+        var urlConsultarLlamada = "@Url.Action("ConsultarLlamada", "Recepcion")";
+        var urlObtenerUbicacionCelular = "@Url.Action("ObtenerUbicacionCelular", "Recepcion")";
+        var urlTabla = '@Url.Action("VerPedidos", "LlamadaUsuario24h")';
+        var urlConsultarNumeLlamada = "@Url.Action("ObtenerNumeroConsecutivo", "Recepcion")";
+
+        var urlEnvioMensajes = "@Url.Action("Index", "EnvioMensajes")";
+        var urlConsultarComentarios = "@Url.Action("ConsultarComentarios", "Recepcion")";
+        var urlGuardarComentarios = "@Url.Action("GuardarComentario", "Recepcion")";
+        var urlLimpiar = "@Url.Action("Recepcion", "Recepcion")";
+        var urlAsociadas = "@Url.Action("ConsultarAsociadas", "Recepcion")";
+        var urlConsultarAsociada = "@Url.Action("ConsultaAsociada", "Recepcion")";
+        var urlUbicacion = "@Url.Action("ConsultarUbicacion", "Recepcion")";
+        var urlConsultaSitios = "@Url.Action("ConsultarSitios", "Recepcion")";
+        var urlConsultaBarrioNombre = "@Url.Action("ConsultarBarrioNombre", "Recepcion")";
+        /////////////////////////////////////////////////////////////////////////////////////
+        var glLugeCad = @Model.LugeCad;
+        var glNumeracion = "@Model.Numeracion";
+        var glConexionDijin = "@Model.ConexionDijin";
+        var glConexionMapa = "@Model.ConexionMapa";
+        var glConexionTelepol = "@Model.ConexionTelepol";
+        var glLugarDpto = @Model.LugeDpto;
+        var glFuerza = @Model.Fuerza;
+        var glACD ="@Model.ACD";
+        var globalUsuario = '@Model.Usuario';
+        var globalSitio = @Model.SITIO_GRABA;
+        ////////URL PARA EL MAPA
+        var urlMapa = "@Url.Action("MapaRecepcion", "IngresarMapa")";
+        var urlMapaGeneral = "@Url.Action("Index", "IngresarMapa")";
+        var urlCrearDocumentos = "@Url.Action("CrearDocumento", "Recepcion")";
+        var glModo="";
+        var urlLlamadasGral ="@Url.Action("Index","LlamadasGralSala")";
+        AplicarChosen();
+        IniciarTimer();
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        AplicarPluginTabla("tblCanalesAsignados");
+        ////////////URL REPORTE DE SEGUIMIENTO DE CASOS//////////////////////
+        var urlReporteSeguimientoEvento = "@Url.Action("ReporteSeguimientoCasos", "Reportes")";
+        /////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////URLS ARGIS//////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
+        var urlGeoInversa = "https://gis.policia.gov.co:6443/arcgis/rest/services/STREETMAP/Geocode_Ponal/GeocodeServer/reverseGeocode?location=";
+        var urlGeoDirecta = "https://gis.policia.gov.co:6443/arcgis/rest/services/STREETMAP/Geocode_Ponal/GeocodeServer/findAddressCandidates";
+
+
+
+    </script>
+
+
+}
+

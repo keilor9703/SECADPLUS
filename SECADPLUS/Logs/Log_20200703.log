@@ -1,0 +1,246 @@
+20200703 09:35:21 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 09:35:30 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 09:38:35 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 09:39:16 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 09:42:19 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 09:43:00 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:04:54 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:05:18 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:13:54 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:14:22 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:24:38 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:24:57 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:27:18 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:27:24 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:30:09 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:30:13 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:33:56 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:33:58 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:35:42 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:35:42 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:36:35 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:36:35 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:38:01 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:38:01 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:38:32 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:38:32 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:46:42 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:46:42 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:50:21 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:50:21 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:52:42 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:52:42 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:58:30 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 14:58:30 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:01:18 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:01:18 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:04:11 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:04:11 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok - Copy\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:36:55 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:36:55 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494
+20200703 15:51:27 [M_ERROR] - Error Ejecutando F_GetCuadrantes:
+	#2	#3La columna 'CuadranteId' no pertenece a la tabla .
+	#2	#3System.ArgumentException: La columna 'CuadranteId' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetCuadrantes() en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 494

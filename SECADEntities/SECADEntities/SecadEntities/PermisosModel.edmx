@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PermisosModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CADACCESORESTRINGIDO">
+          <Key>
+            <PropertyRef Name="CADACCRES_ID" />
+          </Key>
+          <Property Name="CADACCRES_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CADACCRES_FECHAREGISTRO" Type="date" />
+          <Property Name="CADACCRES_OID_ID" Type="nvarchar2" MaxLength="128" />
+          <Property Name="CADACCRES_CADELE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CADACCRES_IP" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CADNETELEMENTO">
+          <Key>
+            <PropertyRef Name="CADELEMENTO_ID" />
+          </Key>
+          <Property Name="CADELEMENTO_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ELEMENTO_TIPO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ELEMENTO_NOMBRE" Type="nvarchar2" MaxLength="100" Nullable="false" />
+          <Property Name="ELEMENTO_RUTA" Type="nvarchar2" MaxLength="1000" />
+          <Property Name="ELEMENTO_ESTADO" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="ELEMENTO_POSICION" Type="number" Precision="3" Scale="0" />
+          <Property Name="ELEMENTO_PADRE_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ELEMENTO_FECHA_CREACION" Type="date" />
+          <Property Name="ELEMENTO_ICONO" Type="nvarchar2" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="CADNETMAQUINAS">
+          <Key>
+            <PropertyRef Name="CAD_ID" />
+          </Key>
+          <Property Name="CAD_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EQUIPO_IP" Type="nvarchar2" MaxLength="20" />
+          <Property Name="EQUIPO_NOMBRE" Type="nvarchar2" MaxLength="1000" />
+          <Property Name="FECHA_REGISTRO" Type="date" />
+        </EntityType>
+        <EntityType Name="CADNETOID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar2" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="number" Precision="1" Scale="0" />
+          <Property Name="PasswordHash" Type="nvarchar2" MaxLength="256" />
+          <Property Name="SecurityStamp" Type="nvarchar2" MaxLength="256" />
+          <Property Name="PhoneNumber" Type="nvarchar2" MaxLength="256" />
+          <Property Name="PhoneNumberConfirmed" Type="number" Precision="1" Scale="0" />
+          <Property Name="TwoFactorEnabled" Type="number" Precision="1" Scale="0" />
+          <Property Name="LockoutEndDateUtc" Type="nvarchar2" MaxLength="7" />
+          <Property Name="LockoutEnabled" Type="number" Precision="1" Scale="0" />
+          <Property Name="AccessFailedCount" Type="number" Precision="10" Scale="0" />
+          <Property Name="UserName" Type="nvarchar2" MaxLength="256" />
+          <Property Name="fecha_creacion" Type="date" />
+          <Property Name="estado" Type="number" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="CADNETOIDROLES">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" />
+        </EntityType>
+        <EntityType Name="CADNETPERFIL">
+          <Key>
+            <PropertyRef Name="PERFIL_ID" />
+          </Key>
+          <Property Name="PERFIL_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERFIL_NOMBRE" Type="nvarchar2" MaxLength="256" />
+          <Property Name="PERFIL_FECHA_CREACION" Type="date" />
+          <Property Name="PERFIL_ESTADO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CADNETPERFIL_ELE_PERMISO">
+          <Key>
+            <PropertyRef Name="PEP_PERFIL_ID" />
+            <PropertyRef Name="PEP_PERMISO_ID" />
+            <PropertyRef Name="PEP_ELEMENTO_ID" />
+          </Key>
+          <Property Name="PEP_PERFIL_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEP_PERMISO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEP_ELEMENTO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEP_FECHA_CREACION" Type="date" />
+          <Property Name="PEP_ESTADO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CADNETPERMISO">
+          <Key>
+            <PropertyRef Name="PERMISO_ID" />
+          </Key>
+          <Property Name="PERMISO_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERMISO_NOMBRE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PERMISO_DESCRIPCION" Type="nvarchar2" MaxLength="256" />
+          <Property Name="PERMISO_ESTADO" Type="number" Precision="1" Scale="0" />
+          <Property Name="PERMISO_FECHA_CREACION" Type="date" />
+        </EntityType>
+        <EntityType Name="CADNETROLES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" />
+        </EntityType>
+        <EntityType Name="CADNETROLPERFIL">
+          <Key>
+            <PropertyRef Name="PERFIL_ID" />
+            <PropertyRef Name="ROL_ID" />
+          </Key>
+          <Property Name="PERFIL_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROL_ID" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" />
+          <Property Name="ESTADO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CADNETTIPO_ELEMENTO">
+          <Key>
+            <PropertyRef Name="CADTIPOELE_ID" />
+          </Key>
+          <Property Name="CADTIPOELE_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPOELE_NOMBRE" Type="nvarchar2" MaxLength="100" Nullable="false" />
+          <Property Name="TIPOELE_DESCRIPCION" Type="nvarchar2" MaxLength="256" />
+          <Property Name="TIPOELE_FECHA_CREACION" Type="date" />
+        </EntityType>
+        <EntityType Name="CADUSUARIOS">
+          <Key>
+            <PropertyRef Name="USUARIO" />
+          </Key>
+          <Property Name="USUARIO" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="IDENTIFICACION" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="LUGE_CODIGO_DPTO" Type="number" Precision="6" Scale="0" />
+          <Property Name="CADUNDE_FUERZA" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="CADUNDE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="FECHA_DESDE" Type="date" />
+          <Property Name="FECHA_HASTA" Type="date" />
+          <Property Name="CONDICION" Type="varchar2" MaxLength="1" />
+          <Property Name="LUGE_CODIGO_CAD" Type="number" Precision="6" Scale="0" />
+          <Property Name="CADCANA_FUERZA_ID" Type="number" Precision="9" Scale="0" />
+          <Property Name="CADCANA_CODIGO" Type="number" Precision="6" Scale="0" />
+          <Property Name="SITIO_GRABACION" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="USUARIO_OID_ID" Type="nvarchar2" MaxLength="128" />
+          <Property Name="VIGENTE" Type="number" Precision="1" Scale="0" />
+          <Property Name="AUTENTICA_OID" Type="number" Precision="1" Scale="0" />
+          <Property Name="USUARIO_OID" Type="nvarchar2" MaxLength="255" />
+        </EntityType>
+        <Association Name="CADUSUA_OID_ID">
+          <End Role="CADNETOID" Type="Self.CADNETOID" Multiplicity="0..1" />
+          <End Role="CADUSUARIOS" Type="Self.CADUSUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETOID">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADUSUARIOS">
+              <PropertyRef Name="USUARIO_OID_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CADACCRES_ELE_ID">
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="1" />
+          <End Role="CADACCESORESTRINGIDO" Type="Self.CADACCESORESTRINGIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETELEMENTO">
+              <PropertyRef Name="CADELEMENTO_ID" />
+            </Principal>
+            <Dependent Role="CADACCESORESTRINGIDO">
+              <PropertyRef Name="CADACCRES_CADELE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CADACCRES_OID_ID">
+          <End Role="CADNETOID" Type="Self.CADNETOID" Multiplicity="0..1" />
+          <End Role="CADACCESORESTRINGIDO" Type="Self.CADACCESORESTRINGIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETOID">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADACCESORESTRINGIDO">
+              <PropertyRef Name="CADACCRES_OID_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CADELEMENTO_PADRE">
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="0..1" />
+          <End Role="CADNETELEMENTO1" Type="Self.CADNETELEMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETELEMENTO">
+              <PropertyRef Name="CADELEMENTO_ID" />
+            </Principal>
+            <Dependent Role="CADNETELEMENTO1">
+              <PropertyRef Name="ELEMENTO_PADRE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CADELEMENTO_TIPO">
+          <End Role="CADNETTIPO_ELEMENTO" Type="Self.CADNETTIPO_ELEMENTO" Multiplicity="1" />
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETTIPO_ELEMENTO">
+              <PropertyRef Name="CADTIPOELE_ID" />
+            </Principal>
+            <Dependent Role="CADNETELEMENTO">
+              <PropertyRef Name="ELEMENTO_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OIDRoles_Roles">
+          <End Role="CADNETROLES" Type="Self.CADNETROLES" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CADNETOIDROLES" Type="Self.CADNETOIDROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETROLES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADNETOIDROLES">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEP_ELEMENTO">
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="1" />
+          <End Role="CADNETPERFIL_ELE_PERMISO" Type="Self.CADNETPERFIL_ELE_PERMISO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETELEMENTO">
+              <PropertyRef Name="CADELEMENTO_ID" />
+            </Principal>
+            <Dependent Role="CADNETPERFIL_ELE_PERMISO">
+              <PropertyRef Name="PEP_ELEMENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEP_PERFIL">
+          <End Role="CADNETPERFIL" Type="Self.CADNETPERFIL" Multiplicity="1" />
+          <End Role="CADNETPERFIL_ELE_PERMISO" Type="Self.CADNETPERFIL_ELE_PERMISO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETPERFIL">
+              <PropertyRef Name="PERFIL_ID" />
+            </Principal>
+            <Dependent Role="CADNETPERFIL_ELE_PERMISO">
+              <PropertyRef Name="PEP_PERFIL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEP_PERMISO">
+          <End Role="CADNETPERMISO" Type="Self.CADNETPERMISO" Multiplicity="1" />
+          <End Role="CADNETPERFIL_ELE_PERMISO" Type="Self.CADNETPERFIL_ELE_PERMISO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETPERMISO">
+              <PropertyRef Name="PERMISO_ID" />
+            </Principal>
+            <Dependent Role="CADNETPERFIL_ELE_PERMISO">
+              <PropertyRef Name="PEP_PERMISO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLPERFIL_PERFIL">
+          <End Role="CADNETPERFIL" Type="Self.CADNETPERFIL" Multiplicity="1" />
+          <End Role="CADNETROLPERFIL" Type="Self.CADNETROLPERFIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETPERFIL">
+              <PropertyRef Name="PERFIL_ID" />
+            </Principal>
+            <Dependent Role="CADNETROLPERFIL">
+              <PropertyRef Name="PERFIL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLPERFIL_ROL">
+          <End Role="CADNETROLES" Type="Self.CADNETROLES" Multiplicity="1" />
+          <End Role="CADNETROLPERFIL" Type="Self.CADNETROLPERFIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETROLES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADNETROLPERFIL">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Users">
+          <End Role="CADNETOID" Type="Self.CADNETOID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CADNETOIDROLES" Type="Self.CADNETOIDROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETOID">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADNETOIDROLES">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PermisosModelStoreContainer">
+          <EntitySet Name="CADACCESORESTRINGIDO" EntityType="Self.CADACCESORESTRINGIDO" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETELEMENTO" EntityType="Self.CADNETELEMENTO" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETMAQUINAS" EntityType="Self.CADNETMAQUINAS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETOID" EntityType="Self.CADNETOID" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETOIDROLES" EntityType="Self.CADNETOIDROLES" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETPERFIL" EntityType="Self.CADNETPERFIL" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETPERFIL_ELE_PERMISO" EntityType="Self.CADNETPERFIL_ELE_PERMISO" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETPERMISO" EntityType="Self.CADNETPERMISO" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETROLES" EntityType="Self.CADNETROLES" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETROLPERFIL" EntityType="Self.CADNETROLPERFIL" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADNETTIPO_ELEMENTO" EntityType="Self.CADNETTIPO_ELEMENTO" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADUSUARIOS" EntityType="Self.CADUSUARIOS" Schema="USR_CAD" store:Type="Tables" />
+          <AssociationSet Name="CADUSUA_OID_ID" Association="Self.CADUSUA_OID_ID">
+            <End Role="CADNETOID" EntitySet="CADNETOID" />
+            <End Role="CADUSUARIOS" EntitySet="CADUSUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CADACCRES_ELE_ID" Association="Self.FK_CADACCRES_ELE_ID">
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTO" />
+            <End Role="CADACCESORESTRINGIDO" EntitySet="CADACCESORESTRINGIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CADACCRES_OID_ID" Association="Self.FK_CADACCRES_OID_ID">
+            <End Role="CADNETOID" EntitySet="CADNETOID" />
+            <End Role="CADACCESORESTRINGIDO" EntitySet="CADACCESORESTRINGIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CADELEMENTO_PADRE" Association="Self.FK_CADELEMENTO_PADRE">
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTO" />
+            <End Role="CADNETELEMENTO1" EntitySet="CADNETELEMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CADELEMENTO_TIPO" Association="Self.FK_CADELEMENTO_TIPO">
+            <End Role="CADNETTIPO_ELEMENTO" EntitySet="CADNETTIPO_ELEMENTO" />
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OIDRoles_Roles" Association="Self.FK_OIDRoles_Roles">
+            <End Role="CADNETROLES" EntitySet="CADNETROLES" />
+            <End Role="CADNETOIDROLES" EntitySet="CADNETOIDROLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEP_ELEMENTO" Association="Self.FK_PEP_ELEMENTO">
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTO" />
+            <End Role="CADNETPERFIL_ELE_PERMISO" EntitySet="CADNETPERFIL_ELE_PERMISO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEP_PERFIL" Association="Self.FK_PEP_PERFIL">
+            <End Role="CADNETPERFIL" EntitySet="CADNETPERFIL" />
+            <End Role="CADNETPERFIL_ELE_PERMISO" EntitySet="CADNETPERFIL_ELE_PERMISO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEP_PERMISO" Association="Self.FK_PEP_PERMISO">
+            <End Role="CADNETPERMISO" EntitySet="CADNETPERMISO" />
+            <End Role="CADNETPERFIL_ELE_PERMISO" EntitySet="CADNETPERFIL_ELE_PERMISO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLPERFIL_PERFIL" Association="Self.FK_ROLPERFIL_PERFIL">
+            <End Role="CADNETPERFIL" EntitySet="CADNETPERFIL" />
+            <End Role="CADNETROLPERFIL" EntitySet="CADNETROLPERFIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLPERFIL_ROL" Association="Self.FK_ROLPERFIL_ROL">
+            <End Role="CADNETROLES" EntitySet="CADNETROLES" />
+            <End Role="CADNETROLPERFIL" EntitySet="CADNETROLPERFIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Users" Association="Self.FK_UserRoles_Users">
+            <End Role="CADNETOID" EntitySet="CADNETOID" />
+            <End Role="CADNETOIDROLES" EntitySet="CADNETOIDROLES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PermisosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CADNETELEMENTO">
+          <Key>
+            <PropertyRef Name="CADELEMENTO_ID" />
+          </Key>
+          <Property Name="CADELEMENTO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ELEMENTO_TIPO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ELEMENTO_NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ELEMENTO_RUTA" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ELEMENTO_ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="ELEMENTO_POSICION" Type="Byte" />
+          <Property Name="ELEMENTO_PADRE_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ELEMENTO_FECHA_CREACION" Type="DateTime" />
+          <Property Name="ELEMENTO_ICONO" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CADNETELEMENTO1" Relationship="Self.FK_CADELEMENTO_PADRE" FromRole="CADNETELEMENTO" ToRole="CADNETELEMENTO1" />
+          <NavigationProperty Name="CADNETELEMENTO2" Relationship="Self.FK_CADELEMENTO_PADRE" FromRole="CADNETELEMENTO1" ToRole="CADNETELEMENTO" />
+          <NavigationProperty Name="CADNETTIPO_ELEMENTO" Relationship="Self.FK_CADELEMENTO_TIPO" FromRole="CADNETELEMENTO" ToRole="CADNETTIPO_ELEMENTO" />
+          <NavigationProperty Name="CADNETPERFIL_ELE_PERMISO" Relationship="Self.FK_PEP_ELEMENTO" FromRole="CADNETELEMENTO" ToRole="CADNETPERFIL_ELE_PERMISO" />
+          <NavigationProperty Name="CADACCESORESTRINGIDOes" Relationship="PermisosModel.FK_CADACCRES_ELE_ID" FromRole="CADNETELEMENTO" ToRole="CADACCESORESTRINGIDO" />
+        </EntityType>
+        <EntityType Name="CADNETPERFIL">
+          <Key>
+            <PropertyRef Name="PERFIL_ID" />
+          </Key>
+          <Property Name="PERFIL_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERFIL_NOMBRE" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PERFIL_FECHA_CREACION" Type="DateTime" />
+          <Property Name="PERFIL_ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CADNETPERFIL_ELE_PERMISO" Relationship="Self.FK_PEP_PERFIL" FromRole="CADNETPERFIL" ToRole="CADNETPERFIL_ELE_PERMISO" />
+          <NavigationProperty Name="CADNETROLPERFILs" Relationship="PermisosModel.FK_ROLPERFIL_PERFIL" FromRole="CADNETPERFIL" ToRole="CADNETROLPERFIL" />
+        </EntityType>
+        <EntityType Name="CADNETPERFIL_ELE_PERMISO">
+          <Key>
+            <PropertyRef Name="PEP_PERFIL_ID" />
+            <PropertyRef Name="PEP_PERMISO_ID" />
+            <PropertyRef Name="PEP_ELEMENTO_ID" />
+          </Key>
+          <Property Name="PEP_PERFIL_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEP_PERMISO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEP_ELEMENTO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEP_FECHA_CREACION" Type="DateTime" />
+          <Property Name="PEP_ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CADNETELEMENTO" Relationship="Self.FK_PEP_ELEMENTO" FromRole="CADNETPERFIL_ELE_PERMISO" ToRole="CADNETELEMENTO" />
+          <NavigationProperty Name="CADNETPERFIL" Relationship="Self.FK_PEP_PERFIL" FromRole="CADNETPERFIL_ELE_PERMISO" ToRole="CADNETPERFIL" />
+          <NavigationProperty Name="CADNETPERMISO" Relationship="Self.FK_PEP_PERMISO" FromRole="CADNETPERFIL_ELE_PERMISO" ToRole="CADNETPERMISO" />
+        </EntityType>
+        <EntityType Name="CADNETPERMISO">
+          <Key>
+            <PropertyRef Name="PERMISO_ID" />
+          </Key>
+          <Property Name="PERMISO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERMISO_NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PERMISO_DESCRIPCION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PERMISO_ESTADO" Type="Boolean" />
+          <Property Name="PERMISO_FECHA_CREACION" Type="DateTime" />
+          <NavigationProperty Name="CADNETPERFIL_ELE_PERMISO" Relationship="Self.FK_PEP_PERMISO" FromRole="CADNETPERMISO" ToRole="CADNETPERFIL_ELE_PERMISO" />
+        </EntityType>
+        <EntityType Name="CADNETTIPO_ELEMENTO">
+          <Key>
+            <PropertyRef Name="CADTIPOELE_ID" />
+          </Key>
+          <Property Name="CADTIPOELE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPOELE_NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TIPOELE_DESCRIPCION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="TIPOELE_FECHA_CREACION" Type="DateTime" />
+          <NavigationProperty Name="CADNETELEMENTOes" Relationship="Self.FK_CADELEMENTO_TIPO" FromRole="CADNETTIPO_ELEMENTO" ToRole="CADNETELEMENTO" />
+        </EntityType>
+        <Association Name="FK_CADELEMENTO_PADRE">
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="0..1" />
+          <End Role="CADNETELEMENTO1" Type="Self.CADNETELEMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETELEMENTO">
+              <PropertyRef Name="CADELEMENTO_ID" />
+            </Principal>
+            <Dependent Role="CADNETELEMENTO1">
+              <PropertyRef Name="ELEMENTO_PADRE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CADELEMENTO_TIPO">
+          <End Role="CADNETTIPO_ELEMENTO" Type="Self.CADNETTIPO_ELEMENTO" Multiplicity="1" />
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETTIPO_ELEMENTO">
+              <PropertyRef Name="CADTIPOELE_ID" />
+            </Principal>
+            <Dependent Role="CADNETELEMENTO">
+              <PropertyRef Name="ELEMENTO_TIPO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEP_ELEMENTO">
+          <End Role="CADNETELEMENTO" Type="Self.CADNETELEMENTO" Multiplicity="1" />
+          <End Role="CADNETPERFIL_ELE_PERMISO" Type="Self.CADNETPERFIL_ELE_PERMISO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETELEMENTO">
+              <PropertyRef Name="CADELEMENTO_ID" />
+            </Principal>
+            <Dependent Role="CADNETPERFIL_ELE_PERMISO">
+              <PropertyRef Name="PEP_ELEMENTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEP_PERFIL">
+          <End Role="CADNETPERFIL" Type="Self.CADNETPERFIL" Multiplicity="1" />
+          <End Role="CADNETPERFIL_ELE_PERMISO" Type="Self.CADNETPERFIL_ELE_PERMISO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETPERFIL">
+              <PropertyRef Name="PERFIL_ID" />
+            </Principal>
+            <Dependent Role="CADNETPERFIL_ELE_PERMISO">
+              <PropertyRef Name="PEP_PERFIL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEP_PERMISO">
+          <End Role="CADNETPERMISO" Type="Self.CADNETPERMISO" Multiplicity="1" />
+          <End Role="CADNETPERFIL_ELE_PERMISO" Type="Self.CADNETPERFIL_ELE_PERMISO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETPERMISO">
+              <PropertyRef Name="PERMISO_ID" />
+            </Principal>
+            <Dependent Role="CADNETPERFIL_ELE_PERMISO">
+              <PropertyRef Name="PEP_PERMISO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PermisosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CADNETELEMENTOes" EntityType="Self.CADNETELEMENTO" />
+          <EntitySet Name="CADNETPERFILs" EntityType="Self.CADNETPERFIL" />
+          <EntitySet Name="CADNETPERFIL_ELE_PERMISO" EntityType="Self.CADNETPERFIL_ELE_PERMISO" />
+          <EntitySet Name="CADNETPERMISOes" EntityType="Self.CADNETPERMISO" />
+          <EntitySet Name="CADNETTIPO_ELEMENTO" EntityType="Self.CADNETTIPO_ELEMENTO" />
+          <AssociationSet Name="FK_CADELEMENTO_PADRE" Association="Self.FK_CADELEMENTO_PADRE">
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTOes" />
+            <End Role="CADNETELEMENTO1" EntitySet="CADNETELEMENTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CADELEMENTO_TIPO" Association="Self.FK_CADELEMENTO_TIPO">
+            <End Role="CADNETTIPO_ELEMENTO" EntitySet="CADNETTIPO_ELEMENTO" />
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEP_ELEMENTO" Association="Self.FK_PEP_ELEMENTO">
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTOes" />
+            <End Role="CADNETPERFIL_ELE_PERMISO" EntitySet="CADNETPERFIL_ELE_PERMISO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEP_PERFIL" Association="Self.FK_PEP_PERFIL">
+            <End Role="CADNETPERFIL" EntitySet="CADNETPERFILs" />
+            <End Role="CADNETPERFIL_ELE_PERMISO" EntitySet="CADNETPERFIL_ELE_PERMISO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEP_PERMISO" Association="Self.FK_PEP_PERMISO">
+            <End Role="CADNETPERMISO" EntitySet="CADNETPERMISOes" />
+            <End Role="CADNETPERFIL_ELE_PERMISO" EntitySet="CADNETPERFIL_ELE_PERMISO" />
+          </AssociationSet>
+          <EntitySet Name="CADNETOIDs" EntityType="PermisosModel.CADNETOID" />
+          <EntitySet Name="CADNETOIDROLES" EntityType="PermisosModel.CADNETOIDROLE" />
+          <EntitySet Name="CADNETROLES" EntityType="PermisosModel.CADNETROLE" />
+          <EntitySet Name="CADNETROLPERFILs" EntityType="PermisosModel.CADNETROLPERFIL" />
+          <AssociationSet Name="FK_UserRoles_Users" Association="PermisosModel.FK_UserRoles_Users">
+            <End Role="CADNETOID" EntitySet="CADNETOIDs" />
+            <End Role="CADNETOIDROLE" EntitySet="CADNETOIDROLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OIDRoles_Roles" Association="PermisosModel.FK_OIDRoles_Roles">
+            <End Role="CADNETROLE" EntitySet="CADNETROLES" />
+            <End Role="CADNETOIDROLE" EntitySet="CADNETOIDROLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLPERFIL_PERFIL" Association="PermisosModel.FK_ROLPERFIL_PERFIL">
+            <End Role="CADNETPERFIL" EntitySet="CADNETPERFILs" />
+            <End Role="CADNETROLPERFIL" EntitySet="CADNETROLPERFILs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLPERFIL_ROL" Association="PermisosModel.FK_ROLPERFIL_ROL">
+            <End Role="CADNETROLE" EntitySet="CADNETROLES" />
+            <End Role="CADNETROLPERFIL" EntitySet="CADNETROLPERFILs" />
+          </AssociationSet>
+          <EntitySet Name="CADUSUARIOS" EntityType="PermisosModel.CADUSUARIO" />
+          <AssociationSet Name="CADUSUA_OID_ID" Association="PermisosModel.CADUSUA_OID_ID">
+            <End Role="CADNETOID" EntitySet="CADNETOIDs" />
+            <End Role="CADUSUARIO" EntitySet="CADUSUARIOS" />
+          </AssociationSet>
+          <EntitySet Name="CADACCESORESTRINGIDOes" EntityType="PermisosModel.CADACCESORESTRINGIDO" />
+          <AssociationSet Name="FK_CADACCRES_ELE_ID" Association="PermisosModel.FK_CADACCRES_ELE_ID">
+            <End Role="CADNETELEMENTO" EntitySet="CADNETELEMENTOes" />
+            <End Role="CADACCESORESTRINGIDO" EntitySet="CADACCESORESTRINGIDOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CADACCRES_OID_ID" Association="PermisosModel.FK_CADACCRES_OID_ID">
+            <End Role="CADNETOID" EntitySet="CADNETOIDs" />
+            <End Role="CADACCESORESTRINGIDO" EntitySet="CADACCESORESTRINGIDOes" />
+          </AssociationSet>
+          <EntitySet Name="CADNETMAQUINAS" EntityType="PermisosModel.CADNETMAQUINA" />
+        </EntityContainer>
+        <EntityType Name="CADNETOID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_creacion" Type="DateTime" />
+          <Property Name="estado" Type="Boolean" />
+          <NavigationProperty Name="CADNETOIDROLES" Relationship="PermisosModel.FK_UserRoles_Users" FromRole="CADNETOID" ToRole="CADNETOIDROLE" />
+          <NavigationProperty Name="CADUSUARIOS" Relationship="PermisosModel.CADUSUA_OID_ID" FromRole="CADNETOID" ToRole="CADUSUARIO" />
+          <NavigationProperty Name="CADACCESORESTRINGIDOes" Relationship="PermisosModel.FK_CADACCRES_OID_ID" FromRole="CADNETOID" ToRole="CADACCESORESTRINGIDO" />
+        </EntityType>
+        <EntityType Name="CADNETOIDROLE">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA_CREACION" Type="DateTime" />
+          <NavigationProperty Name="CADNETOID" Relationship="PermisosModel.FK_UserRoles_Users" FromRole="CADNETOIDROLE" ToRole="CADNETOID" />
+          <NavigationProperty Name="CADNETROLE" Relationship="PermisosModel.FK_OIDRoles_Roles" FromRole="CADNETOIDROLE" ToRole="CADNETROLE" />
+        </EntityType>
+        <EntityType Name="CADNETROLE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA_CREACION" Type="DateTime" />
+          <NavigationProperty Name="CADNETOIDROLES" Relationship="PermisosModel.FK_OIDRoles_Roles" FromRole="CADNETROLE" ToRole="CADNETOIDROLE" />
+          <NavigationProperty Name="CADNETROLPERFILs" Relationship="PermisosModel.FK_ROLPERFIL_ROL" FromRole="CADNETROLE" ToRole="CADNETROLPERFIL" />
+        </EntityType>
+        <EntityType Name="CADNETROLPERFIL">
+          <Key>
+            <PropertyRef Name="PERFIL_ID" />
+            <PropertyRef Name="ROL_ID" />
+          </Key>
+          <Property Name="PERFIL_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ROL_ID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA_CREACION" Type="DateTime" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CADNETPERFIL" Relationship="PermisosModel.FK_ROLPERFIL_PERFIL" FromRole="CADNETROLPERFIL" ToRole="CADNETPERFIL" />
+          <NavigationProperty Name="CADNETROLE" Relationship="PermisosModel.FK_ROLPERFIL_ROL" FromRole="CADNETROLPERFIL" ToRole="CADNETROLE" />
+        </EntityType>
+        <Association Name="FK_UserRoles_Users">
+          <End Type="PermisosModel.CADNETOID" Role="CADNETOID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PermisosModel.CADNETOIDROLE" Role="CADNETOIDROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETOID">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADNETOIDROLE">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OIDRoles_Roles">
+          <End Type="PermisosModel.CADNETROLE" Role="CADNETROLE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PermisosModel.CADNETOIDROLE" Role="CADNETOIDROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETROLE">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADNETOIDROLE">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLPERFIL_PERFIL">
+          <End Type="PermisosModel.CADNETPERFIL" Role="CADNETPERFIL" Multiplicity="1" />
+          <End Type="PermisosModel.CADNETROLPERFIL" Role="CADNETROLPERFIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETPERFIL">
+              <PropertyRef Name="PERFIL_ID" />
+            </Principal>
+            <Dependent Role="CADNETROLPERFIL">
+              <PropertyRef Name="PERFIL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLPERFIL_ROL">
+          <End Type="PermisosModel.CADNETROLE" Role="CADNETROLE" Multiplicity="1" />
+          <End Type="PermisosModel.CADNETROLPERFIL" Role="CADNETROLPERFIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETROLE">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADNETROLPERFIL">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CADUSUARIO">
+          <Key>
+            <PropertyRef Name="USUARIO" />
+          </Key>
+          <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IDENTIFICACION" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="LUGE_CODIGO_DPTO" Type="Int32" />
+          <Property Name="CADUNDE_FUERZA" Type="Byte" Nullable="false" />
+          <Property Name="CADUNDE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_DESDE" Type="DateTime" />
+          <Property Name="FECHA_HASTA" Type="DateTime" />
+          <Property Name="CONDICION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LUGE_CODIGO_CAD" Type="Int32" />
+          <Property Name="CADCANA_FUERZA_ID" Type="Int32" />
+          <Property Name="CADCANA_CODIGO" Type="Int32" />
+          <Property Name="SITIO_GRABACION" Type="Int32" Nullable="false" />
+          <Property Name="USUARIO_OID_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="VIGENTE" Type="Boolean" />
+          <Property Name="AUTENTICA_OID" Type="Boolean" />
+          <NavigationProperty Name="CADNETOID" Relationship="PermisosModel.CADUSUA_OID_ID" FromRole="CADUSUARIO" ToRole="CADNETOID" />
+          <Property Name="USUARIO_OID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="CADUSUA_OID_ID">
+          <End Type="PermisosModel.CADNETOID" Role="CADNETOID" Multiplicity="0..1" />
+          <End Type="PermisosModel.CADUSUARIO" Role="CADUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETOID">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADUSUARIO">
+              <PropertyRef Name="USUARIO_OID_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CADACCESORESTRINGIDO">
+          <Key>
+            <PropertyRef Name="CADACCRES_ID" />
+          </Key>
+          <Property Name="CADACCRES_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CADACCRES_FECHAREGISTRO" Type="DateTime" />
+          <Property Name="CADACCRES_OID_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CADACCRES_CADELE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CADACCRES_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CADNETELEMENTO" Relationship="PermisosModel.FK_CADACCRES_ELE_ID" FromRole="CADACCESORESTRINGIDO" ToRole="CADNETELEMENTO" />
+          <NavigationProperty Name="CADNETOID" Relationship="PermisosModel.FK_CADACCRES_OID_ID" FromRole="CADACCESORESTRINGIDO" ToRole="CADNETOID" />
+        </EntityType>
+        <Association Name="FK_CADACCRES_ELE_ID">
+          <End Type="PermisosModel.CADNETELEMENTO" Role="CADNETELEMENTO" Multiplicity="1" />
+          <End Type="PermisosModel.CADACCESORESTRINGIDO" Role="CADACCESORESTRINGIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETELEMENTO">
+              <PropertyRef Name="CADELEMENTO_ID" />
+            </Principal>
+            <Dependent Role="CADACCESORESTRINGIDO">
+              <PropertyRef Name="CADACCRES_CADELE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CADACCRES_OID_ID">
+          <End Type="PermisosModel.CADNETOID" Role="CADNETOID" Multiplicity="0..1" />
+          <End Type="PermisosModel.CADACCESORESTRINGIDO" Role="CADACCESORESTRINGIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADNETOID">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CADACCESORESTRINGIDO">
+              <PropertyRef Name="CADACCRES_OID_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CADNETMAQUINA">
+          <Key>
+            <PropertyRef Name="CAD_ID" />
+          </Key>
+          <Property Name="CAD_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="EQUIPO_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EQUIPO_NOMBRE" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA_REGISTRO" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PermisosModelStoreContainer" CdmEntityContainer="PermisosEntities">
+          <EntitySetMapping Name="CADNETELEMENTOes">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETELEMENTO">
+              <MappingFragment StoreEntitySet="CADNETELEMENTO">
+                <ScalarProperty Name="CADELEMENTO_ID" ColumnName="CADELEMENTO_ID" />
+                <ScalarProperty Name="ELEMENTO_TIPO_ID" ColumnName="ELEMENTO_TIPO_ID" />
+                <ScalarProperty Name="ELEMENTO_NOMBRE" ColumnName="ELEMENTO_NOMBRE" />
+                <ScalarProperty Name="ELEMENTO_RUTA" ColumnName="ELEMENTO_RUTA" />
+                <ScalarProperty Name="ELEMENTO_ESTADO" ColumnName="ELEMENTO_ESTADO" />
+                <ScalarProperty Name="ELEMENTO_POSICION" ColumnName="ELEMENTO_POSICION" />
+                <ScalarProperty Name="ELEMENTO_PADRE_ID" ColumnName="ELEMENTO_PADRE_ID" />
+                <ScalarProperty Name="ELEMENTO_FECHA_CREACION" ColumnName="ELEMENTO_FECHA_CREACION" />
+                <ScalarProperty Name="ELEMENTO_ICONO" ColumnName="ELEMENTO_ICONO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETPERFILs">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETPERFIL">
+              <MappingFragment StoreEntitySet="CADNETPERFIL">
+                <ScalarProperty Name="PERFIL_ID" ColumnName="PERFIL_ID" />
+                <ScalarProperty Name="PERFIL_NOMBRE" ColumnName="PERFIL_NOMBRE" />
+                <ScalarProperty Name="PERFIL_FECHA_CREACION" ColumnName="PERFIL_FECHA_CREACION" />
+                <ScalarProperty Name="PERFIL_ESTADO" ColumnName="PERFIL_ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETPERFIL_ELE_PERMISO">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETPERFIL_ELE_PERMISO">
+              <MappingFragment StoreEntitySet="CADNETPERFIL_ELE_PERMISO">
+                <ScalarProperty Name="PEP_PERFIL_ID" ColumnName="PEP_PERFIL_ID" />
+                <ScalarProperty Name="PEP_PERMISO_ID" ColumnName="PEP_PERMISO_ID" />
+                <ScalarProperty Name="PEP_ELEMENTO_ID" ColumnName="PEP_ELEMENTO_ID" />
+                <ScalarProperty Name="PEP_FECHA_CREACION" ColumnName="PEP_FECHA_CREACION" />
+                <ScalarProperty Name="PEP_ESTADO" ColumnName="PEP_ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETPERMISOes">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETPERMISO">
+              <MappingFragment StoreEntitySet="CADNETPERMISO">
+                <ScalarProperty Name="PERMISO_ID" ColumnName="PERMISO_ID" />
+                <ScalarProperty Name="PERMISO_NOMBRE" ColumnName="PERMISO_NOMBRE" />
+                <ScalarProperty Name="PERMISO_DESCRIPCION" ColumnName="PERMISO_DESCRIPCION" />
+                <ScalarProperty Name="PERMISO_ESTADO" ColumnName="PERMISO_ESTADO" />
+                <ScalarProperty Name="PERMISO_FECHA_CREACION" ColumnName="PERMISO_FECHA_CREACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETTIPO_ELEMENTO">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETTIPO_ELEMENTO">
+              <MappingFragment StoreEntitySet="CADNETTIPO_ELEMENTO">
+                <ScalarProperty Name="CADTIPOELE_ID" ColumnName="CADTIPOELE_ID" />
+                <ScalarProperty Name="TIPOELE_NOMBRE" ColumnName="TIPOELE_NOMBRE" />
+                <ScalarProperty Name="TIPOELE_DESCRIPCION" ColumnName="TIPOELE_DESCRIPCION" />
+                <ScalarProperty Name="TIPOELE_FECHA_CREACION" ColumnName="TIPOELE_FECHA_CREACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETOIDs">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETOID">
+              <MappingFragment StoreEntitySet="CADNETOID">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETOIDROLES">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETOIDROLE">
+              <MappingFragment StoreEntitySet="CADNETOIDROLES">
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETROLES">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETROLE">
+              <MappingFragment StoreEntitySet="CADNETROLES">
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETROLPERFILs">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETROLPERFIL">
+              <MappingFragment StoreEntitySet="CADNETROLPERFIL">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="ROL_ID" ColumnName="ROL_ID" />
+                <ScalarProperty Name="PERFIL_ID" ColumnName="PERFIL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADUSUARIOS">
+            <EntityTypeMapping TypeName="PermisosModel.CADUSUARIO">
+              <MappingFragment StoreEntitySet="CADUSUARIOS">
+                <ScalarProperty Name="USUARIO_OID" ColumnName="USUARIO_OID" />
+                <ScalarProperty Name="AUTENTICA_OID" ColumnName="AUTENTICA_OID" />
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="USUARIO_OID_ID" ColumnName="USUARIO_OID_ID" />
+                <ScalarProperty Name="SITIO_GRABACION" ColumnName="SITIO_GRABACION" />
+                <ScalarProperty Name="CADCANA_CODIGO" ColumnName="CADCANA_CODIGO" />
+                <ScalarProperty Name="CADCANA_FUERZA_ID" ColumnName="CADCANA_FUERZA_ID" />
+                <ScalarProperty Name="LUGE_CODIGO_CAD" ColumnName="LUGE_CODIGO_CAD" />
+                <ScalarProperty Name="CONDICION" ColumnName="CONDICION" />
+                <ScalarProperty Name="FECHA_HASTA" ColumnName="FECHA_HASTA" />
+                <ScalarProperty Name="FECHA_DESDE" ColumnName="FECHA_DESDE" />
+                <ScalarProperty Name="CADUNDE_CODIGO" ColumnName="CADUNDE_CODIGO" />
+                <ScalarProperty Name="CADUNDE_FUERZA" ColumnName="CADUNDE_FUERZA" />
+                <ScalarProperty Name="LUGE_CODIGO_DPTO" ColumnName="LUGE_CODIGO_DPTO" />
+                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADACCESORESTRINGIDOes">
+            <EntityTypeMapping TypeName="PermisosModel.CADACCESORESTRINGIDO">
+              <MappingFragment StoreEntitySet="CADACCESORESTRINGIDO">
+                <ScalarProperty Name="CADACCRES_IP" ColumnName="CADACCRES_IP" />
+                <ScalarProperty Name="CADACCRES_CADELE_ID" ColumnName="CADACCRES_CADELE_ID" />
+                <ScalarProperty Name="CADACCRES_OID_ID" ColumnName="CADACCRES_OID_ID" />
+                <ScalarProperty Name="CADACCRES_FECHAREGISTRO" ColumnName="CADACCRES_FECHAREGISTRO" />
+                <ScalarProperty Name="CADACCRES_ID" ColumnName="CADACCRES_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADNETMAQUINAS">
+            <EntityTypeMapping TypeName="PermisosModel.CADNETMAQUINA">
+              <MappingFragment StoreEntitySet="CADNETMAQUINAS">
+                <ScalarProperty Name="FECHA_REGISTRO" ColumnName="FECHA_REGISTRO" />
+                <ScalarProperty Name="EQUIPO_NOMBRE" ColumnName="EQUIPO_NOMBRE" />
+                <ScalarProperty Name="EQUIPO_IP" ColumnName="EQUIPO_IP" />
+                <ScalarProperty Name="CAD_ID" ColumnName="CAD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

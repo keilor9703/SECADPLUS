@@ -1,0 +1,263 @@
+﻿@model SECADEntities.SECAD.CADUNIDADE
+@section scripts{
+
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+    @Scripts.Render("~/bundle/SpinnerJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="resultadoAjax"></div>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Creación Unidad</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list ">
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>
+@using (Html.BeginForm("Create", "Unidades", FormMethod.Post, new { @class = "form-compact" }))
+{
+            <div class="panel-body">
+
+                    @Html.AntiForgeryToken()
+                    <fieldset class="content-group">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.FUERZA,  new {  @id = "fuerza_id" } )
+                        @Html.HiddenFor(model => model.OPERATIVA,  new { @class = "form-control", @id = "hdOperativa" } )
+                        @Html.HiddenFor(model => model.VIGENTE,  new { @class = "form-control", @id = "hdVigente" } )
+
+                        @Html.HiddenFor(model => model.CADUNDE_CODIGO, new { @class = "form-control", @Value = ViewBag.CODIGOPADRE })
+                        <div class="row">
+                            <div class="form-group col-md-4 text-left  obligatorio">
+                                @Html.Label("fuerza_lista", "FUERZA", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.DropDownList("CADUNDE_FUERZA", null,  htmlAttributes: new { @class = "form-control chosen", @id = "fuerza_lista" })
+                                    @Html.ValidationMessageFor(model => model.CADUNDE_FUERZA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.SIGLA, htmlAttributes: new { @class = "control-label col-md-2 " })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.SIGLA, new { htmlAttributes = new { @class = "form-control" , placeholder = "Sigla" , maxlength = 15 } })
+                                    @Html.ValidationMessageFor(model => model.SIGLA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", placeholder = "Descripción", maxlength = 80} })
+                                    @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                         </div>
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 text-left form-group obligatorio">
+                                @Html.Label("txtLugar", "LUGAR", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    <div class="input-group">
+                                        @Html.TextBoxFor(model => model.LUGE_CODIGO, htmlAttributes: new { @type = "number", @class = "form-control ", @id = "txtLugar" , placeholder="Lugar Geográfico", @readonly=true})
+                                        <span class="input-group-btn">
+                                            <button type="button" onclick="cargarLugaresAjax()" class="btn btn-mixed btn-success"  data-popup="tooltip"
+                                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                            </button>
+                                        </span>
+
+                                        @*<select id="listaLugares" class="chosen-select "></select>*@
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LUGE_CODIGO, "", new { @class = "text-danger" })
+                                    </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.Label("cbxOperativa","OPERATIVA", htmlAttributes: new { @class = "control-label col-md-2 obligatorio" })
+                                <div class="col-md-12 ">
+                                    <input type="checkbox" id="cbxOperativa" name="cbxOperativa" checked="checked" class="switch checkbox checkbox-switch" data-size="mini" data-on-color="success" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.Label("cbxVigente","VIGENTE", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    <input type="checkbox" id="cbxVigente" name="cbxVigente" checked="checked" class="switch checkbox checkbox-switch" data-on-color="success" data-size="mini" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.NIVEL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.TextBoxFor(model => model.NIVEL,  new { @class = "form-control" , @Value=ViewBag.NIVEL, @type = "number", placeholder = "Numero del nivel", maxlength=2 })
+                                    @Html.ValidationMessageFor(model => model.NIVEL, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.CONS_SIEDCO, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.CONS_SIEDCO, new { htmlAttributes = new { @class = "form-control", @type = "number" , placeholder = "Código SIEDCO" } })
+                                    @Html.ValidationMessageFor(model => model.CONS_SIEDCO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.LabelFor(model => model.CONS_SIATH,  new { @class = "control-label col-md-6" })
+                                <div class="col-md-12 ">
+                                    <div class="input-group">
+                                        @Html.TextBoxFor(model => model.CONS_SIATH, null, new { @type = "number", @class = "form-control", @id = "hdSIATH", placeholder = "Código SIATH", @readonly = true })
+                                        @Html.ValidationMessageFor(model => model.CONS_SIATH, "", new { @class = "text-danger" })
+                                        <span class="input-group-btn">
+                                            <button type="button" id="_btnsiath" class="btn btn-success btn-mixed"  data-popup="tooltip"
+                                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.Label("padre_lista","UNIDAD PADRE", htmlAttributes: new { @class = "control-label col-md-6" })
+                                <div class="col-md-12 ">
+                                    @Html.DropDownList("UNIDADPADRE",null,  htmlAttributes: new { @class = "form-control ", @id = "padre_lista" , @name = "padre_lista" })
+
+                                    @Html.ValidationMessageFor(model => model.CADUNDE_CODIGO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.LabelFor(model => model.ORDENAMIENTO, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.ORDENAMIENTO, new { htmlAttributes = new { @class = "form-control", placeholder = "Ordenamiento" } })
+                                    @Html.ValidationMessageFor(model => model.ORDENAMIENTO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-left form-group ">
+                                @Html.LabelFor(model => model.ABREVIATURA_UNIDAD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12 ">
+                                    @Html.EditorFor(model => model.ABREVIATURA_UNIDAD, new { htmlAttributes = new { @class = "form-control" , placeholder = "Abreviatura", maxlength=15 } })
+                                    @Html.ValidationMessageFor(model => model.ABREVIATURA_UNIDAD, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6text-left">
+                        <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                data-original-title="Clic para finalizar" onclick="window.close();">
+                            <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Terminar
+                        </button>
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                        <button class="btn bg-teal" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <!-- /formulario -->
+    </div>
+</div>
+
+<!-- ModalLugares modal -->
+<div id="ModalLugaresAjax" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Lugares Geográficos</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaAjax" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalLugares modal -->
+<!-- ModalLugares modal -->
+<div id="ModalSiath" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Códigos SIATH</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="_TablaSIATH" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
+                            <th>
+                                Código
+                            </th>
+                            <th>
+                                Descripción
+                            </th>
+                            <th>
+                                Estado
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalLugares modal -->
+<!-- /área de contenido -->
+<div id="contenedorTabla">
+</div>
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/Select2Js")
+
+    <script>
+
+        var urlTablaLista = '@Url.Action("ObtenerLugaresLista", "Unidades")';
+        var urlTablaSiath = '@Url.Action("ObtenerCodigosSIATH", "Unidades")';
+        var urlTablaAjaxPro = '@Url.Action("ObtenerLugaresAjaxPro", "Unidades")';
+    </script>
+    @Scripts.Render("~/bundle/LugaresControllerJs")
+    <script>
+        IniciarElementos();
+    </script>
+
+}

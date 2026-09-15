@@ -1,0 +1,100 @@
+20200626 10:44:42 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.String.System.IConvertible.ToInt64(IFormatProvider provider)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue, Byte[]& int32ByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Int32()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 681
+20200626 10:50:13 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.String.System.IConvertible.ToInt64(IFormatProvider provider)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue, Byte[]& int32ByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Int32()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 681
+20200626 10:51:44 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.String.System.IConvertible.ToInt64(IFormatProvider provider)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue, Byte[]& int32ByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Int32()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 681
+20200626 11:03:21 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.String.System.IConvertible.ToInt64(IFormatProvider provider)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue, Byte[]& int32ByteArray)
+   en OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue)
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Int32()
+   en Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 681
+20200626 11:09:21 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 670
+20200626 11:11:20 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 670
+20200626 11:12:31 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, String V_Latitud, String V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 670
+20200626 11:20:30 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, Decimal V_Latitud, Decimal V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 682
+20200626 11:54:44 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'INS_COORDENADAS'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: línea 1, columna 7:
+PLS-00306: wrong number or types of arguments in call to 'INS_COORDENADAS'
+ORA-06550: línea 1, columna 7:
+PL/SQL: Statement ignored
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, Double V_Latitud, Double V_Longitud) en D:\Repos\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 681

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://policia.gov.co/webservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://policia.gov.co/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://policia.gov.co/webservice">
+      <s:element name="M1DatosLlamadaICP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosIN" type="tns:ClDatosICP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClDatosICP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="pSitioGraba" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pNumeroSecad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pAcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pTaskId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pCaller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pRecordId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pCalled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pCallId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pEquipo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="M1DatosLlamadaICPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="M1DatosLlamadaICPResult" type="tns:ClRetorno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClRetorno">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codSalida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desSalida" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="M1DatosLlamadaICP2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pSitioGraba" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumellamada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTaskId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCaller" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRecordId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCalled" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCallId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pequipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="M1DatosLlamadaICP2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="M1DatosLlamadaICP2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="M2pPersMediosDispRadios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pSitio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pconsMedio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="M2pPersMediosDispRadiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="M2pPersMediosDispRadiosResult" type="tns:ClPersMediosDispRadiosOut" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClPersMediosDispRadiosOut">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="datosSecad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codSalida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descSalida" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="M3DatosGrabaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pSitio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pLlamada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFechaInic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFechaFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAcd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="M3DatosGrabacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="M3DatosGrabacionesResult" type="tns:ClDatosGrabacionOut" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClDatosGrabacionOut">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="datosSecad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codSalida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descSalida" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="M1DatosLlamadaICPSoapIn">
+    <wsdl:part name="parameters" element="tns:M1DatosLlamadaICP" />
+  </wsdl:message>
+  <wsdl:message name="M1DatosLlamadaICPSoapOut">
+    <wsdl:part name="parameters" element="tns:M1DatosLlamadaICPResponse" />
+  </wsdl:message>
+  <wsdl:message name="M1DatosLlamadaICP2SoapIn">
+    <wsdl:part name="parameters" element="tns:M1DatosLlamadaICP2" />
+  </wsdl:message>
+  <wsdl:message name="M1DatosLlamadaICP2SoapOut">
+    <wsdl:part name="parameters" element="tns:M1DatosLlamadaICP2Response" />
+  </wsdl:message>
+  <wsdl:message name="M2pPersMediosDispRadiosSoapIn">
+    <wsdl:part name="parameters" element="tns:M2pPersMediosDispRadios" />
+  </wsdl:message>
+  <wsdl:message name="M2pPersMediosDispRadiosSoapOut">
+    <wsdl:part name="parameters" element="tns:M2pPersMediosDispRadiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="M3DatosGrabacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:M3DatosGrabaciones" />
+  </wsdl:message>
+  <wsdl:message name="M3DatosGrabacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:M3DatosGrabacionesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServSecadSoap">
+    <wsdl:operation name="M1DatosLlamadaICP">
+      <wsdl:input message="tns:M1DatosLlamadaICPSoapIn" />
+      <wsdl:output message="tns:M1DatosLlamadaICPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="M1DatosLlamadaICP2">
+      <wsdl:input message="tns:M1DatosLlamadaICP2SoapIn" />
+      <wsdl:output message="tns:M1DatosLlamadaICP2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="M2pPersMediosDispRadios">
+      <wsdl:input message="tns:M2pPersMediosDispRadiosSoapIn" />
+      <wsdl:output message="tns:M2pPersMediosDispRadiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="M3DatosGrabaciones">
+      <wsdl:input message="tns:M3DatosGrabacionesSoapIn" />
+      <wsdl:output message="tns:M3DatosGrabacionesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServSecadSoap" type="tns:ServSecadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="M1DatosLlamadaICP">
+      <soap:operation soapAction="http://policia.gov.co/webservice/M1DatosLlamadaICP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M1DatosLlamadaICP2">
+      <soap:operation soapAction="http://policia.gov.co/webservice/M1DatosLlamadaICP2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M2pPersMediosDispRadios">
+      <soap:operation soapAction="http://policia.gov.co/webservice/M2pPersMediosDispRadios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M3DatosGrabaciones">
+      <soap:operation soapAction="http://policia.gov.co/webservice/M3DatosGrabaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServSecadSoap12" type="tns:ServSecadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="M1DatosLlamadaICP">
+      <soap12:operation soapAction="http://policia.gov.co/webservice/M1DatosLlamadaICP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M1DatosLlamadaICP2">
+      <soap12:operation soapAction="http://policia.gov.co/webservice/M1DatosLlamadaICP2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M2pPersMediosDispRadios">
+      <soap12:operation soapAction="http://policia.gov.co/webservice/M2pPersMediosDispRadios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M3DatosGrabaciones">
+      <soap12:operation soapAction="http://policia.gov.co/webservice/M3DatosGrabaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServSecad">
+    <wsdl:port name="ServSecadSoap" binding="tns:ServSecadSoap">
+      <soap:address location="http://172.19.53.26:8235/ServSecad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServSecadSoap12" binding="tns:ServSecadSoap12">
+      <soap12:address location="http://172.19.53.26:8235/ServSecad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

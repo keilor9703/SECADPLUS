@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADCONDCLASESBIEN>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        <td>
+            <ul class="icons-list">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <i class="icon-menu9"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para editar"
+                                    onclick="window.location.href ='@Url.Action("EditP", new { id = item.CONSECUTIVO, idTipo = @ViewBag.idTipo, nomTipo = @ViewBag.nomTipo, idTitu = @ViewBag.idTitu, nomTitu = @ViewBag.nomTitu, idCond = @ViewBag.idCond, nomCond = @ViewBag.nomCond })'">
+                                <i class="glyphicon glyphicon-edit"></i> Editar
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                    onclick="EliminarRegistroGeneral('@Url.Action("EliminarP", "Ponderaciones", new { id=item.CONSECUTIVO, idTipo = @ViewBag.idTipo, nomTipo = @ViewBag.nomTipo, idTitu = @ViewBag.idTitu, nomTitu = @ViewBag.nomTitu, idCond = @ViewBag.idCond, nomCond = @ViewBag.nomCond })')">
+                                @*onclick="window.location.href ='@Url.Action("DeleteP", new { id=item.CONSECUTIVO, idTipo = @ViewBag.idTipo, nomTipo = @ViewBag.nomTipo, idTitu = @ViewBag.idTitu, nomTitu = @ViewBag.nomTitu, idCond = @ViewBag.idCond, nomCond = @ViewBag.nomCond })'">*@
+                                <i class="icon-trash"></i> Eliminar
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para ver detalle"
+                                    onclick="VerDetallePonderar('@item.CONSECUTIVO')">
+                                <i class="icon-eye"></i> Ver detalle
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.CADCLASES_BIEN.CADTIPOS_BIEN.CODIGO)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADCLASES_BIEN.CADTIPOS_BIEN.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADCLASES_BIEN.CODIGO)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADCLASES_BIEN.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CONSECUTIVO)</td>
+    </tr>
+}

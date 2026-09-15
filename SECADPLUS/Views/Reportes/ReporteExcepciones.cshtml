@@ -1,0 +1,125 @@
+﻿@section scripts{
+        @Scripts.Render("~/bundle/TablasJs")
+
+        @Scripts.Render("~/bundle/CheckSwitchJs")
+        @Scripts.Render("~/bundle/DateRangePickerJs")
+    }
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Parámetros deconsulta</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                            <div class="form-group col-lg-12 ">
+                                <label for="fecha_desde"> Rango de Fechas</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                    <input type="text" class="form-control daterange-basic" id="RangoFecha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                            <div class="form-group col-lg-12 obligatorio">
+                                <label for="txt_Ip"> Id</label>
+                                <div class="input-group col-md-12">
+                                    <input type="number" id="txt_Id" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                            <div class="col-lg-12 col-md-12">
+                                <label for="txt_Usuario"> Usuario</label>
+                                <div class="input-group col-md-12">
+                                    <input type="text" id="txt_Usuario" class="form-control" readonly />
+                                    <input type="hidden" id="hdIdOid" />
+                                    <span class="input-group-btn">
+                                        <button type="button" onclick="LimpiarUsuario()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para limpiar">
+                                            <b><i class="icon-cross position-left"></i></b>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                            <div class="form-group col-lg-12 obligatorio">
+                                <label for="txt_Ip"> Dirección Ip</label>
+                                <div class="input-group col-md-12">
+                                    <input type="text" id="txt_Ip" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip" id="btnGenerar" type="button"
+                                    title="" data-placement="bottom" data-original-title="Clic para generar el reporte">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Generar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Usuarios OID</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-xxs datatable-basic" id="tablaUsuarios">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Acciones</th>
+                                <th>
+                                    Usuario OID
+                                </th>
+                                <th>
+                                    Usuario
+                                </th>
+                                <th>
+                                    Vigente
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/ReporteExcepcionesJs")
+    <script>
+        var urlObtenerUsuarios = "@Url.Action("ConsultarUsuariosOid", "Reportes")";
+        CargarTablaUsuarios();
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+}
+<!-- /área de contenido -->

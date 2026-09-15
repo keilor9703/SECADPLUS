@@ -1,0 +1,22 @@
+﻿@model SECADEntities.SecadEntities.CADNETPERFIL_ELE_PERMISO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+    
+    Perfil: @Html.DisplayFor(model => model.CADNETPERFIL.PERFIL_NOMBRE)
+    <br />
+    Elemento: @Html.DisplayFor(model => model.CADNETELEMENTO.ELEMENTO_NOMBRE)
+    
+    
+
+    @using (Html.BeginForm("Delete", "PerfilPermiso", new { perfil_id = Model.PEP_PERFIL_ID, permiso_id = Model.PEP_PERMISO_ID, elemento_id=Model.PEP_ELEMENTO_ID }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+      
+    }
+</div>

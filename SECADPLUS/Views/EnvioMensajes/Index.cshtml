@@ -1,0 +1,154 @@
+﻿@using SECADPLUS.Models.Extendidas;
+@using SECADEntities.SECAD;
+@model Tuple<List<CADMENSAJE>, List<CADMENSAJES_TEXTO>, List<ExtMensajesTextoUsuarios>>
+
+@{
+    ViewBag.Title = "Centro de Mensajes";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <!-- Centro de Mensajes -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Centro de Mensajes:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo"
+                                        onclick="window.location.href ='@Url.Action("Create", "EnvioMensajes" )'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaCentro">
+                    <thead>
+                        <tr>
+                        
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Sitio Grabación</th>
+                            <th>Consecutivo</th>
+                            <th>Fecha</th>
+                            <th>Usuario Graba</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Centro de Mensajes -->
+        <!-- Texto Mensajes -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Texto Mensaje</h5>
+                    <div class="computo_input">
+                        @Html.Editor("CADMENS_CONSECUTIVO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaTexto">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Consecutivo</th>
+                            <th>Texto</th>
+                            <th>Usuario Graba</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_textoMensajes", Model.Item2);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Texto Mensajes -->
+        <!-- Enviar Mensajes A-->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Enviar Mensajes A</h5>
+                    <div class="computo_input">
+                        @Html.Editor("CONSECUTIVO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaEnviarA">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            @*<th>Acciones</th>*@
+                            <th>Entidad</th>
+                            <th>Canal</th>
+                            <th>Usuario Destino</th>
+                            <th>Estado</th>
+                            <th>Fecha Notificación</th>
+                            <th>Fecha Grabación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_EnviarMensajeA", Model.Item3);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Enviar Mensajes A-->
+    </div>
+</div>
+<!-- Área de contenido -->
+@Scripts.Render("~/bundle/EnvioMensajesJs")
+@Scripts.Render("~/bundle/IniciarEnvioMensajesJs")
+
+<script type="text/javascript">
+    var _idSitio = '@ViewBag.CADMENS_SITIOGRABA';
+    var _idCons = '@ViewBag.CADMENS_CONSECUTIVO';
+    var _idText = '@ViewBag.CONSECUTIVO';
+
+    var urlEnviar = '@Url.Action("EnviarMensaje", "EnvioMensajes")';
+    var urlMesajesEnviados = '@Url.Action("ObteneEnvioMensajes", "EnvioMensajes")';
+
+
+    var urlTextoMensajes = '@Url.Action("GetTextoMensajes", "EnvioMensajes")';
+    var urlMensajesA = '@Url.Action("GetEnviarMensajesA", "EnvioMensajes")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+   // AplicarPluginTabla("tablaCentro");
+    AplicarPluginTabla("tablaTexto");
+    AplicarPluginTabla("tablaEnviarA");
+
+</script>

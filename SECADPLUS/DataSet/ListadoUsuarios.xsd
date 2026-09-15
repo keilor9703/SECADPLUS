@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ListadoUsuarios" targetNamespace="http://tempuri.org/ListadoUsuarios.xsd" xmlns:mstns="http://tempuri.org/ListadoUsuarios.xsd" xmlns="http://tempuri.org/ListadoUsuarios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ListadoUsuarios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ListadoUsuarios" msprop:Generator_UserDSName="ListadoUsuarios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListadoUsuarios" msprop:Generator_TableClassName="ListadoUsuariosDataTable" msprop:Generator_TableVarName="tableListadoUsuarios" msprop:Generator_RowChangedName="ListadoUsuariosRowChanged" msprop:Generator_TablePropName="_ListadoUsuarios" msprop:Generator_RowDeletingName="ListadoUsuariosRowDeleting" msprop:Generator_RowChangingName="ListadoUsuariosRowChanging" msprop:Generator_RowEvHandlerName="ListadoUsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoUsuariosRowDeleted" msprop:Generator_RowClassName="ListadoUsuariosRow" msprop:Generator_UserTableName="ListadoUsuarios" msprop:Generator_RowEvArgName="ListadoUsuariosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CONS_SITIOGR" msprop:Generator_ColumnVarNameInTable="columnCONS_SITIOGR" msprop:Generator_ColumnPropNameInRow="CONS_SITIOGR" msprop:Generator_ColumnPropNameInTable="CONS_SITIOGRColumn" msprop:Generator_UserColumnName="CONS_SITIOGR" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_SITIOGR" msprop:Generator_ColumnVarNameInTable="columnDESC_SITIOGR" msprop:Generator_ColumnPropNameInRow="DESC_SITIOGR" msprop:Generator_ColumnPropNameInTable="DESC_SITIOGRColumn" msprop:Generator_UserColumnName="DESC_SITIOGR" type="xs:string" minOccurs="0" />
+              <xs:element name="USUARIO" msprop:Generator_ColumnVarNameInTable="columnUSUARIO" msprop:Generator_ColumnPropNameInRow="USUARIO" msprop:Generator_ColumnPropNameInTable="USUARIOColumn" msprop:Generator_UserColumnName="USUARIO" type="xs:string" minOccurs="0" />
+              <xs:element name="IDENTIFICACION" msprop:Generator_ColumnVarNameInTable="columnIDENTIFICACION" msprop:Generator_ColumnPropNameInRow="IDENTIFICACION" msprop:Generator_ColumnPropNameInTable="IDENTIFICACIONColumn" msprop:Generator_UserColumnName="IDENTIFICACION" type="xs:string" minOccurs="0" />
+              <xs:element name="GRAD_ALFABETICO" msprop:Generator_ColumnVarNameInTable="columnGRAD_ALFABETICO" msprop:Generator_ColumnPropNameInRow="GRAD_ALFABETICO" msprop:Generator_ColumnPropNameInTable="GRAD_ALFABETICOColumn" msprop:Generator_UserColumnName="GRAD_ALFABETICO" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMB_EMPLEADO" msprop:Generator_ColumnVarNameInTable="columnNOMB_EMPLEADO" msprop:Generator_ColumnPropNameInRow="NOMB_EMPLEADO" msprop:Generator_ColumnPropNameInTable="NOMB_EMPLEADOColumn" msprop:Generator_UserColumnName="NOMB_EMPLEADO" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDICION" msprop:Generator_ColumnVarNameInTable="columnCONDICION" msprop:Generator_ColumnPropNameInRow="CONDICION" msprop:Generator_ColumnPropNameInTable="CONDICIONColumn" msprop:Generator_UserColumnName="CONDICION" type="xs:string" minOccurs="0" />
+              <xs:element name="CADCANA_FUERZA_ID" msprop:Generator_ColumnVarNameInTable="columnCADCANA_FUERZA_ID" msprop:Generator_ColumnPropNameInRow="CADCANA_FUERZA_ID" msprop:Generator_ColumnPropNameInTable="CADCANA_FUERZA_IDColumn" msprop:Generator_UserColumnName="CADCANA_FUERZA_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="CADCANA_CODIGO" msprop:Generator_ColumnVarNameInTable="columnCADCANA_CODIGO" msprop:Generator_ColumnPropNameInRow="CADCANA_CODIGO" msprop:Generator_ColumnPropNameInTable="CADCANA_CODIGOColumn" msprop:Generator_UserColumnName="CADCANA_CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_FUERZA" msprop:Generator_ColumnVarNameInTable="columnDESC_FUERZA" msprop:Generator_ColumnPropNameInRow="DESC_FUERZA" msprop:Generator_ColumnPropNameInTable="DESC_FUERZAColumn" msprop:Generator_UserColumnName="DESC_FUERZA" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC_CONDICION" msprop:Generator_ColumnVarNameInTable="columnDESC_CONDICION" msprop:Generator_ColumnPropNameInRow="DESC_CONDICION" msprop:Generator_ColumnPropNameInTable="DESC_CONDICIONColumn" msprop:Generator_UserColumnName="DESC_CONDICION" type="xs:string" minOccurs="0" />
+              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreUsuario" msprop:Generator_ColumnVarNameInTable="columnNombreUsuario" msprop:Generator_ColumnPropNameInRow="NombreUsuario" msprop:Generator_ColumnPropNameInTable="NombreUsuarioColumn" msprop:Generator_UserColumnName="NombreUsuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Responsable" msprop:Generator_ColumnVarNameInTable="columnResponsable" msprop:Generator_ColumnPropNameInRow="Responsable" msprop:Generator_ColumnPropNameInTable="ResponsableColumn" msprop:Generator_UserColumnName="Responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="CargoResponsable" msprop:Generator_ColumnVarNameInTable="columnCargoResponsable" msprop:Generator_ColumnPropNameInRow="CargoResponsable" msprop:Generator_ColumnPropNameInTable="CargoResponsableColumn" msprop:Generator_UserColumnName="CargoResponsable" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHADB" msprop:Generator_ColumnVarNameInTable="columnFECHADB" msprop:Generator_ColumnPropNameInRow="FECHADB" msprop:Generator_ColumnPropNameInTable="FECHADBColumn" msprop:Generator_UserColumnName="FECHADB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

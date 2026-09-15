@@ -1,0 +1,87 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+    @Scripts.Render("~/bundle/ChosenJs")
+   
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Seleccione el sitio de grabación para las entidades SECAD 123:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button id="btnNuevo" onclick="location.href='@Url.Action("Index", "Personas")'" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para nueva persona">
+                                    Recargar<b><i class="glyphicon glyphicon-refresh position-left"></i></b>
+
+                                </button>
+                            </li>
+                            <li>
+                                <button id="btnNuevo" onclick="location.href='@Url.Action("Create", "Personas")'" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para nueva persona">
+                                    Nuevo<b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>
+
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                @*<div class="col-md-3">
+                </div>*@
+                <div class="col-md-6">
+                    <div>
+                        <div class="col-md-4">
+                            <label>Filtro por Grado:</label>
+                            @Html.DropDownList("GRAD_ALFABETICO", null, string.Empty, htmlAttributes: new { @class = "chosen-select dataTables_filter" })
+                        </div>
+                    </div>
+                </div>
+                <table id="_tblPersonas" class="table table-hover table-xxs datatable-basic">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Cédula</th>
+                            <th>Nombre</th>
+                            <th>Placa</th>
+                            <th>Dirección Residencia</th>
+                            <th>Teléfono Residencia</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Sexo</th>
+                            <th>Grupo Sanguineo</th>
+                            <th>Estado Civil</th>
+                            <th>Especialidad</th>
+                            <th>Estado Laboral</th>
+                            <th>Sección</th>
+                            <th>Fuerza</th>
+                            <th>Unidad</th>
+                            <th>Grado</th>
+                            <th>Entidad de Atención</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+<script>
+    var urlBuscarPersonas = "@Url.Action("ConsultarPersonas", "Personas")";
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+    @Scripts.Render("~/bundle/PersonasControllerJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    
+}

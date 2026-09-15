@@ -1,0 +1,130 @@
+﻿@model SECADPLUS.Models.CADCANALE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADCANALE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ABREVIATURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ABREVIATURA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIGENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIGENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HASTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HASTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBSERVACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DISPONIBLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DISPONIBLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_CANAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_CANAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLASE_TURNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLASE_TURNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECH_TRANSACCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECH_TRANSACCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_ATENCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_ATENCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AUTORIZACION_MEDIOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUTORIZACION_MEDIOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AUTORIZACION_ANOTACIONES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUTORIZACION_ANOTACIONES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADFUERZA.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADFUERZA.DESCRIPCION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

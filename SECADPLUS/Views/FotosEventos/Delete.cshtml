@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SecadEntities.CADEVENTOS_FOTOS
+
+@{
+    ViewBag.Title = "Eliminar Evento Foto";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.CONSECUTIVO)
+    <br />
+    Observación : @Html.DisplayFor(model => model.OBSERVACION)
+
+    @using (Html.BeginForm("Delete", "FotosEventos", new { sitioGraba = Model.CADEVEN_SITIOGRABA, numeroEvento = Model.CADEVEN_NUMEEVENTO, consecutivo = Model.CONSECUTIVO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

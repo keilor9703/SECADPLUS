@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Control de Usuarios Despacho";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Control de Usuarios Despacho</h5>
+
+                    <div class="computo_input text-right">
+                        <button class="btn bg-teal bg-danger btn-xs" type="button" data-popup="tooltip" title=""
+                                data-placement="bottom" data-original-title="Clic deterner timer"
+                                onclick="DeternerTimer()" id="btnDetener">
+                            <i id="iTimer" class="icon-watch2 icon_size-md"></i>
+                        </button>
+                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                data-placement="bottom" data-original-title="Clic refrescar pantalla"
+                                onclick="CargaControlDespacho()">
+                            <i class="icon-rotate-cw3 icon_size-md"></i>
+                        </button>
+                    </div>
+
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                <form class="form-compact" action="#">
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-2 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="control-label">Sitio de Grabación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.TextBox("SITIO_GRABA", null, htmlAttributes: new { @class = "form-control ", @readonly = true })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6 col-md-offset-2">
+                                    <div class="form-group">
+                                        <label class="control-label">Revisar:</label>
+                                        <div class="row">
+                                            <div class="input-group">
+                                                @Html.TextBox("MIN_PEDIDO_PEND", null, htmlAttributes: new { @class = "form-control ", @readonly = true })
+                                                <span class="input-group-btn">
+                                                    <button type="button" onclick="IrAPedidos()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para ir a la llamada">
+                                                        <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+                <!-- /formulario -->
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Usuario</th>
+                            <th>Nombre</th>
+                            <th>Login</th>
+                            <th>Equipo</th>
+                            <th>Ubicación</th>
+                            <th>Turno</th>
+                            <th>Clase</th>
+                            <th>Ev. G/turno</th>
+                            <th>Pend. Canal</th>
+                            <th>T/Medios</th>
+                            <th>Fuerza</th>
+                            <th>Canal</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+<script type="text/javascript">
+    //AplicarPluginTabla("tabla");
+    var _tiempoRefresco = @ViewBag.tiempoRefresco;
+    var urlTabla = '@Url.Action("VerControlDespacho", "ControlDespacho")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+@Scripts.Render("~/bundle/ControlDespachoJs")

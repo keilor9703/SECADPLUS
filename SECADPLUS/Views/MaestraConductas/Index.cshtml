@@ -1,0 +1,138 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADCONDUCTA>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADCONDUCTA>, List<CADCONDUCTA>>
+
+@{
+    ViewBag.Title = "Maestra de Conductas";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Tipo de Conductas:</h5>
+                    <div class="computo_input">
+                        @Html.DropDownList("TIPO", null, htmlAttributes: new { @class = "chosen-select" })
+                    </div>
+
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo título"
+                                        onclick="IrCrearTitulos(_idTipo, _nomTipo)">
+                                    @*onclick="window.location.href ='@Url.Action("Create")'">*@
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo título
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaTitulos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Abreviatura</th>
+                            <th>Tipo</th>
+                            <th>Nivel</th>
+                            <th>Cond Código</th>
+                            <th>Vigente</th>
+                            <th>Lico Vigencia</th>
+                            <th>Lico Código</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_titulos", Model.Item1);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Conductas -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Conducta</h5>
+                    <div class="computo_input">
+                        @Html.Hidden("COD_CONDUCTA")
+                        @Html.Editor("NOM_CONDUCTA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nueva conducta"
+                                        onclick="IrCrearConducta(_idTipo, _nomTipo, _idTitu, _nomTitu)">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nueva conducta
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaConductas">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Abreviatura</th>
+                            <th>Nivel</th>
+                            <th>Vigente</th>
+                            <th>Lico Vigencia</th>
+                            <th>Lico Código</th>
+                            <th>Personas Relacionadas</th>
+                            <th>Bienes Relacionados</th>
+                            <th>Relacionar Comparendos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_conductas", Model.Item2);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /Conductas -->
+    </div>
+</div>
+<!-- Área de contenido -->
+
+<script type="text/javascript">
+    var _idTitu = @ViewBag.idTitu;
+    var _nomTitu = '@ViewBag.nomTitu';
+
+    var urlCrearTitulo = '@Url.Action("Create", "MaestraConductas")';
+    var urlCrearConducta = '@Url.Action("CreateC", "MaestraConductas")';
+
+    var urlTitulos = '@Url.Action("GetTitulos", "MaestraConductas")';
+    var urlConductas = '@Url.Action("GetConductas", "MaestraConductas")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+
+</script>
+ @Scripts.Render("~/bundle/MaestraConductasJs")

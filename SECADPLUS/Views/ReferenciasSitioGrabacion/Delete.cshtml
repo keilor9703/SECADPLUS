@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADREFERENCIA
+
+@{
+    ViewBag.Title = "Eliminar Referencia";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Nombre: @Html.DisplayFor(model => model.NOMBRE)
+    <br />
+    Código: @Html.DisplayFor(model => model.CODIGO)
+
+    @using (Html.BeginForm("Delete", "ReferenciasSitioGrabacion", new { codSitio = Model.SITIO_GRABA, nomSitio = @ViewBag.nomSitio, nom = Model.NOMBRE, cod = Model.CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

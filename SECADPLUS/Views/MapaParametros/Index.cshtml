@@ -1,0 +1,103 @@
+﻿@model IEnumerable<SECADEntities.SecadEntities.CADVISORPARAMETRO>
+
+@{
+    ViewBag.Title = "Parametrización Visor Mapa";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Parametrización Visor Mapa:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo parametro"
+                                        onclick="window.location.href ='@Url.Action("Create", new { strUsuario = @ViewBag.USUARIO, strCondicion = @ViewBag.CONDICION })'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo parametro
+                                </button>
+                            </li>
+                            @*<li>
+                                    <button class="btn btn-success btn-xs" type="button" data-popup="tooltip" title=""
+                                            onclick="window.close();" data-placement="bottom" data-original-title="Salir">
+                                        <i id="info" class="icon-reply-all icon_size-xs"></i>
+                                    </button>
+                                </li>*@
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Usuario</th>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Parametro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu two_btn">
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para editar"
+                                                            onclick="window.location.href ='@Url.Action("Edit", new { id = item.CODIGO, strUsuario = @ViewBag.USUARIO, strCondicion = @ViewBag.CONDICION })'">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                                            onclick="EliminarRegistroGeneral('@Url.Action("Eliminar", new { id = item.CODIGO })')">
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.USUARIO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.TIPO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.NOMBRE)</td>
+                                <td>@Html.DisplayFor(modelItem => item.PARAMETRO)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+<script type="text/javascript">
+    AplicarPluginTabla("tabla");
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>

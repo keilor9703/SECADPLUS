@@ -1,0 +1,74 @@
+﻿@model SECADEntities.SecadEntities.CADNETELEMENTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADNETELEMENTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ELEMENTO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELEMENTO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ELEMENTO_RUTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELEMENTO_RUTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ELEMENTO_ESTADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELEMENTO_ESTADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ELEMENTO_POSICION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELEMENTO_POSICION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ELEMENTO_FECHA_CREACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELEMENTO_FECHA_CREACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADNETELEMENTO2.ELEMENTO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADNETELEMENTO2.ELEMENTO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADNETTIPO_ELEMENTO.TIPOELE_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADNETTIPO_ELEMENTO.TIPOELE_NOMBRE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CADELEMENTO_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

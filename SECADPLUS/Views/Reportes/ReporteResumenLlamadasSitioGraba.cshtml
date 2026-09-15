@@ -1,0 +1,140 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+   @Scripts.Render("~/bundle/DateTimePickerJs")
+
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Parámetros de consulta</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                @using (Html.BeginForm("GeneraResumenLlamadasSitioGraba", "Reportes", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+
+                        <div class="row">
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12 obligatorio">
+                                    <label for="txt_Ip">Sitio Grabación </label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("SITIO_GRABA", null, htmlAttributes: new { @class = "chosen-select form-control", @id = "sitioGraba",@name = "sitioGraba" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12 obligatorio">
+                                    <label for="txt_Ip">Entidad Fuerza </label>
+                                    <div class="input-group">
+                                        @Html.DropDownList("ENTIDAD_FUERZA", null, "0 - TODAS LAS ENTIDADES", htmlAttributes: new { @class = "chosen-select form-control", @id = "entidadFuerza" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                @*<div class="form-group col-lg-12 ">
+                                    <label for="fecha_desde"> Rango de Fechas</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                        <input type="text" class="form-control daterange-basic" id="RangoFecha" name="RangoFecha">
+                                    </div>
+                                </div>*@
+
+
+
+
+                                <div class="input-group col-md-12">
+                                    <label for="fecha_desde">Fechas Inicio</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        <input type="text" class="form-control daterange-basic FechaHora" id="txtFechaInicial" name="txtFechaInicial">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+
+                                <div class="input-group col-md-12">
+                                    <label for="fecha_desde">Fechas Final</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        <input type="text" class="form-control daterange-basic FechaHora" id="txtFechaFinal" name="txtFechaFinal">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_Ip">Firma </label>
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("FIRMA", null, htmlAttributes: new { @class = "chosen-select form-control", @id = "firma" , @name = "firma" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_Ip"> Cargo Firma</label>
+                                    <div class="input-group col-md-12">
+                                        <input type="text" id="txt_cargoFirma" name="txt_cargoFirma" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip" id="btnGenerar" type="submit"
+                                        title="" data-placement="bottom" data-original-title="Clic para generar el reporte">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Generar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+
+
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/ReporteResumenSitioGrabaJs")
+    <script>
+        $(".chosen-select").chosen();
+        InicializarElementos("CREAR");
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+}
+<!-- /área de contenido -->

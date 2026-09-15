@@ -1,0 +1,263 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADPOLICIA
+
+@{
+    ViewBag.Title = "Crea Persona";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CalendarioJs")
+    @Scripts.Render("~/bundle/PersonasControllerJS")
+}
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">Crea Personal por Entidades de Atención SECAD 123: </h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        @using (Html.BeginForm("Create", "Personas", FormMethod.Post, new { @class = "form-compact", enctype = "multipart/form-data" }))
+        {
+            <div class="panel-body">
+                <!-- Formulario -->
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <fieldset class="content-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="col-md-12">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CEDU_EMPLEADO, "Cédula Empleado", htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.CEDU_EMPLEADO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba la cédula", type = "number", min = "1000", max = "999999999999", maxlength = "15" } })
+                                        @Html.ValidationMessageFor(model => model.CEDU_EMPLEADO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.NUME_PLACA, "Numero de Placa", htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.NUME_PLACA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el número de placa" }, maxlength = "8", min = "0", max = "99999999" })
+                                            @Html.ValidationMessageFor(model => model.NUME_PLACA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NOMB_EMPLEADO, "Nombre Empleado", htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.NOMB_EMPLEADO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el nombre", maxlength = "100" } })
+                                        @Html.ValidationMessageFor(model => model.NOMB_EMPLEADO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.DIRE_RESIDENCIA, "Dirección Residencia", htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.DIRE_RESIDENCIA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba la dirección", maxlength = "150" } })
+                                        @Html.ValidationMessageFor(model => model.DIRE_RESIDENCIA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.TELE_RESIDENCIA, "Teléfono Residencia", htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.TELE_RESIDENCIA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el teléfono" } })
+                                        @Html.ValidationMessageFor(model => model.TELE_RESIDENCIA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.FECH_NACIMIENTO, "Fecha de Nacimiento", htmlAttributes: new { @class = "control-label" })
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.EditorFor(model => model.FECH_NACIMIENTO, new { htmlAttributes = new { @class = "form-control pickadate-accessibility", @placeholder = "Escoja Fecha" } })
+                                            @Html.ValidationMessageFor(model => model.FECH_NACIMIENTO, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.TIPO_SEXO, "Tipo Sexo", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("TIPO_SEXO", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Escriba el sexo" })
+                                        @Html.ValidationMessageFor(model => model.TIPO_SEXO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GRUP_SANGUINEO, "Grupo Sanguineo", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("GRUP_SANGUINEO", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Escriba el grupo sanguineo" })
+                                        @Html.ValidationMessageFor(model => model.GRUP_SANGUINEO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ESTA_CIVIL, "Estado Civil", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("ESTA_CIVIL", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "Escriba el estado civil" })
+                                        @Html.ValidationMessageFor(model => model.ESTA_CIVIL, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CODI_ESPECIALIDAD, "Código Especialidad", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("CODI_ESPECIALIDAD", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione la especialidad" })
+                                        @Html.ValidationMessageFor(model => model.CODI_ESPECIALIDAD, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ESTA_LABORAL, "Estado Laboral", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("ESTA_LABORAL", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione el estado laboral" })
+                                        @Html.ValidationMessageFor(model => model.ESTA_LABORAL, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NUME_SECCION, "Número de Sección", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("NUME_SECCION", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione el número de sección" })
+                                        @Html.ValidationMessageFor(model => model.NUME_SECCION, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4 obligatorio">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CADUNID_FUERZA, "Fuerza Unidad", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("CADUNID_FUERZA", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione la fuerza" })
+                                        @Html.ValidationMessageFor(model => model.CADUNID_FUERZA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 obligatorio">
+                                    <div class="form-group">
+                                        <label class="control-label">Unidad:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.Hidden("CADUNID_CODIGO")
+                                                    @Html.TextBox("_UNIDAD", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione la unidad", @readonly = true, id = "_UNIDAD" })
+                                                    <span class="input-group-btn">
+                                                        <button type="button" onclick="cargarUnidades()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                            <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.CADUNID_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GRAD_ALFABETICO, "Grado Alfabético", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("GRAD_ALFABETICO", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione el grado" })
+                                        @Html.ValidationMessageFor(model => model.GRAD_ALFABETICO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CADFUERZ_ID, "Entidad de Atención", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownList("CADFUERZ_ID", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione la entidad" })
+                                        @Html.ValidationMessageFor(model => model.CADFUERZ_ID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <div class="row">
+                                    <figure class="text-center col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                        <img class="img2-thumbnail img-responsive" src="~/images/Avatar.png" id="thumbnil" style="width:100%" />
+                                    </figure>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                        <input type="file" class="file-styled-secad btn-success btn-xs" id="uploader" name="uploader" accept="image/gif, image/jpeg, image/tiff, image/bmp" onchange="MuestraImagen(this)" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 p-10">
+                                        <button type="button" class="btn file-styled-secad btn-success btn-xs" id="btnDatosPonal" onclick="CargaDatosPonal();">Traer datos PONAL</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- /formulario -->
+            </div>
+            <div class="panel-footer">
+                <!-- Botones de regresar y guardar -->
+                <div class="row">
+                    <div class="col-xs-6 col-md-6text-left">
+                        <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                data-original-title="Clic para regresar a la tabla" onclick="location.href=('@Url.Action("index", "Personas")');">
+                            <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                        </button>
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                        <button type="submit" value="Create" class="btn bg-teal" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para crear">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                        </button>
+                    </div>
+                </div>
+                <!-- /botones de regresar y guardar -->
+            </div>
+        }
+    </div>
+    <!-- /panel  -->
+</div>
+<!-- /área de contenido -->
+<!-- Modal Unidades -->
+<div id="ModalUnidades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Unidades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaUnidades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Unidades -->
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@section PostScripts{
+    <script>
+        var urlBuscarPersonas = "@Url.Action("ConsultarPersonas", "Personas")";
+        fechaActual = new Date();
+        fechaHasta = new Date(fechaActual.getFullYear() - 10, fechaActual.getMonth(), fechaActual.getDate());
+        AplicarControlFechaLimiteMax("#FECH_NACIMIENTO", fechaHasta);
+        buscaUnidadesPorFuerza = "@Url.Action("BuscaUnidadesPorFuerza", "Personas")";
+        var urlUnidad = '@Url.Action("GetUnidadesByFuerza", "Personas")';
+        var urlTablaUnidades = '@Url.Action("GetUnidades", "Personas")';
+        var urlCargaDatos = '@Url.Action("TraeDatosPonal", "Personas")';
+    </script>
+}

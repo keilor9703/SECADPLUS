@@ -1,0 +1,222 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Parámetros de consulta</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                @using (Html.BeginForm("GeneraReporteAntecedentesUsuario", "Reportes", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        @Html.Hidden("hf_CodigoPadre", new { @id = "hf_CodigoPadre" })
+                        <div class="row">
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                @*<div class="form-group col-lg-12 ">
+                                        <label for="fecha_desde"> Rango de Fechas</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            <input type="text" class="form-control daterange-basic" id="RangoFecha" name="RangoFecha">
+                                        </div>
+                                    </div>*@
+                                <div class="input-group col-md-12">
+                                    <label for="fecha_desde">Fechas Inicio</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        <input type="text" class="form-control daterange-basic FechaHora" id="txtFechaInicial" name="txtFechaInicial">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+
+                                <div class="input-group col-md-12">
+                                    <label for="fecha_desde">Fechas Final</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                        <input type="text" class="form-control daterange-basic FechaHora" id="txtFechaFinal" name="txtFechaFinal">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12 obligatorio">
+                                    <label for="txt_patrullas">Patrullas</label>
+                                    <div class="input-group col-md-12">
+                                        @Html.DropDownList("PATRULLAS", null, " 0 - TODAS ", htmlAttributes: new { @class = "chosen-select form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12">
+                                    <label for="txt_usuario"> Usuario</label>
+                                    <div class="input-group col-md-12">
+                                        <input type="text" id="txt_usuario" name="txt_usuario" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                <div class="form-group col-lg-12 obligatorio">
+                                    <label for="txt_tipoBusqueda">Tipo Busqueda </label>
+                                    <div class="input-group col-md-12">
+                                        <select id="selTipoReporte" name="selTipoReporte" class="chosen-select">
+                                            <option value="1" selected="selected">POR PERSONAS</option>
+                                            <option value="0">POR VEHICULOS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*<div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                    <div class="form-group col-lg-12">
+                                        <label for="txt_Ip">Firma </label>
+                                        <div class="col-md-12">
+                                            @Html.DropDownList("FIRMA", null, htmlAttributes: new { @class = "chosen-select form-control", @id = "firma", @name = "firma" })
+                                        </div>
+                                    </div>
+                                </div>*@
+                            @*<div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                    <div class="form-group col-lg-12">
+                                        <label for="txt_Unidades">Unidades </label>
+                                        <div class="input-group">
+                                            <div class="col-md-8">
+                                                <input type="text" id="txt_Unidad" name="txt_Unidad" class="form-control" readonly="readonly" />
+
+                                             </div>
+                                              <div class="col-md-4">
+                                                  <span class="input-group-btn">
+                                                      <button type="button" id="_btnunidad" class="btn btn-success btn-mixed" data-popup="tooltip"
+                                                              title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                          <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                      </button>
+                                                  </span>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+
+
+                        </div>
+                        <div class="row">
+                            @*<div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                    <div class="form-group col-lg-12">
+                                        <label for="txt_Turnos">Turnos </label>
+                                        <div class="col-md-12">
+                                            @Html.DropDownList("TURNOS", null, "0 - TODOS LOS TURNOS", htmlAttributes: new { @class = "chosen-select form-control" })
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            @*<div class="col-xs-3 col-md-3 col-lg-3 text-left form-group">
+                                    <div class="form-group col-lg-12">
+                                        <label for="txt_Ip"> Cargo Firma</label>
+                                        <div class="input-group col-md-12">
+                                            <input type="text" id="txt_cargoFirma" name="txt_cargoFirma" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>*@
+
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip" id="btnGenerar" type="submit"
+                                        title="" data-placement="bottom" data-original-title="Clic para generar el reporte">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Generar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- modalUnidades modal -->
+<div id="ModalUnidades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Unidades</h5>
+            </div>
+            <div class="modal-body form-compact overflow-visible overflow-auto col-lg-12">
+                <table id="_TablaUnidades" class="table table-hover table-xxs datatable-basic table-condensed ">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>U. Padre</th>
+                            <th>Sigla</th>
+                            <th>Operativa</th>
+                            <th>Vigente</th>
+                            <th>Lugar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /modalUnidades modal -->
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+
+
+@section PostScripts{
+    <script>
+        var urlTablaUnidades = '@Url.Action("ObtenerUnidadesAjax", "Reportes")';
+    </script>
+
+    @Scripts.Render("~/bundle/ReporteAntecedentesUsuarioJs")
+    <script>
+        $(".chosen-select").chosen();
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        InicializarElementos("CREAR");
+
+    </script>
+}
+<!-- /área de contenido -->

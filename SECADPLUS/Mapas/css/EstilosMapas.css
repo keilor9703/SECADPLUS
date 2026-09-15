@@ -1,0 +1,275 @@
+﻿html, body, #map, .map.container {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    margin-top: -6px;
+}
+
+#legendDiv {
+    background-color: #fff;
+    position: absolute !important;
+    z-index: 99;
+    top: 10px;
+    right: 20px;
+}
+
+.boton-filtros {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 1000000;
+    background: #097C43;
+    color:#fff ;
+    border: solid 1px #888;
+    padding: 10px;
+    border-radius: 15px 0 0 15px;
+}
+
+.panel-filtros {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 1000001;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 0 0 15px 0;
+    padding-bottom: 10px;
+}
+
+.boton-direccion {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: 1000000;
+    background: #097C43;
+    color: #fff;
+    border: solid 1px #888;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+}
+.buscarDireccion {
+    width:180px;
+}
+
+.panel-direccion {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: 1000001;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 0 0 15px 0;
+    padding-bottom: 10px;
+}
+.boton-tabla {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    z-index: 1000000;
+    background: #097C43;
+    color: #fff;
+    border: solid 1px #888;
+    padding: 10px;
+    border-radius: 15px 0 0 15px;
+}
+
+.panel-tabla {
+    font-size: 10px;
+    padding: 0px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    z-index: 1000001;
+    background: #fff;
+    border: solid 1px #ccc;
+    max-height: 98%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0 0 0 15px;
+    padding-bottom: 10px;
+}
+
+.contentPane hr{
+    margin: 0;
+}
+.ibox{
+    padding: 0;
+}
+.ibox-title {
+    background: #097C43;
+    color: #fff;
+}
+
+.fa-close{
+    font-size: 20px;
+    color: #fff;
+    margin-top: -15px;
+}
+.boton-volver-mapas {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 1000000;
+    background: #097C43;
+    color: #fff;
+    border: solid 1px #888;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+}
+.boton-capas {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1000000;
+    background: #097C43;
+    color: #fff;
+    border: solid 1px #888;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+}
+
+.panel-capas {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1000001;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 0 0 15px 0;
+    padding-bottom: 10px;
+}
+.ibox {
+    margin-bottom: 4px; 
+}
+.ibox-title {
+    min-height: 12px; 
+}
+.form-group {
+    margin-bottom: 1px;
+}
+
+/*.esriPopup {
+    width: 360px;
+    height: 380px;
+    z-index: 1000040 !important;
+}*/
+/*.esriPopup .contentPane {
+    width: 360px;
+    height: 350px;
+    max-height: 350px;
+}*/
+/*.esriPopup.light .contentPane, .esriPopup.dark .contentPane {
+    padding: 10px;
+    border: 1px solid #d4d4d4;
+}*/
+.esriPopup .titlePane {
+    background-color: #444444;
+    color: #FFFFFF;
+    line-height: 20px;
+    padding-left: 6px;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    cursor: default;
+}
+
+.esriPopup .sizer{
+    position:relative;
+    width:338px;
+    z-index:1;
+}
+
+.esriPopup {
+    position: absolute;
+    z-index: 40;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.esriPopup.light .titlePane,
+.esriPopup.dark .titlePane {
+    font-size: 12px;
+    line-height: 16px;
+    height: 39px;
+    background-color:#449342;
+    padding: 10px;
+    border: 0;
+    color:white;
+    border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+}
+
+.close{
+    opacity:3.3; 
+}
+.esriPopup.light .actionsPane .action, .esriPopup.light .esriViewPopup .gallery .mediaIcon, .esriPopup.light .esriViewPopup .gallery .mediaHandle, .esriPopup.light .titleButton{
+color:black;
+}
+
+. /*esriPopup .actionsPane {
+    display: none;
+}*/
+/*.esriPopup .sizer {
+    position: relative;
+    width: 270px;
+    height: 1px;
+    z-index: 1;
+}*/
+.circulo-resaltado {
+    fill: orangered;
+}
+.marcador-mapa {
+    position: absolute;
+    z-index: 9000000;
+    background: rgba(0, 0, 0, 0.00);
+    color: orangered;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    max-height: 25px;
+    max-width: 10px;
+}
+
+.marcador-mapa-seleccionado {
+    position: absolute;
+    z-index: 9000000;
+    background: rgba(0, 0, 0, 0.00);
+    color: lawngreen;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    max-height: 25px;
+    max-width: 10px;
+}
+
+.esriSimpleSlider {
+    top: unset !important;
+    bottom: 50px !important;
+}
+.puntoTablaSeleccionado {
+    color: white;
+    background: greenyellow;
+    font-weight: bolder;
+}
+
+.form-group{
+    text-align: right !important;
+}
+
+#Unidad_Descripcion{
+    font-size: 10px;
+}
+
+.modal-content {
+    margin-left: -150px;
+    margin-right: 50px;
+}
+#FiltrarRecientes {
+    -ms-transform: scale(0.5); /* IE */
+    -moz-transform: scale(0.5); /* FF */
+    -webkit-transform: scale(0.5); /* Safari and Chrome */
+    -o-transform: scale(0.5); /* Opera */
+    padding: 0;
+}

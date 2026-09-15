@@ -1,0 +1,261 @@
+﻿@using SECADPLUS.Models;
+@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SECAD PLUS</title>
+    <link rel="icon" href="@Url.Content("~/Images/LogoSECAD.png")" type="image/x-icon">
+    <style>
+    </style>
+    @Styles.Render("~/bundle/PrincipalCss")
+    @Styles.Render("~/bundle/MapaArcGISCss")
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script>
+        var menuUrl = "@Url.Action("Menu", "Home")";
+        var alertaJs = "<div class='alert alert-CUSTOM alert-styled-left alert-arrow-left alert-bordered'><button type='button' class='close' data-dismiss='alert'><span>×</span><span class='sr-only'>Close</span></button><span class='text-semibold' >MENSAJE</span> </div>";
+        var menuUrlAjax = "@Url.Action("ObtenerMenu", "Home")";
+        var dtNotificacionUrl = "@Url.Action("ObtenerDatosNotificacion", "Home")";
+        var actualizarNotificacionUrl = "@Url.Action("ActualizarNotificaciones", "Home")";
+        //var varTiempoRespuesta = @System.Configuration.ConfigurationManager.AppSettings["RespuestaNotificaciones"];
+        var urlTiempoServidor = "@Url.Action("ObtenerHoraServidorBD", "Home")";
+        var urlInicialBreadCrumb = "@Url.Action("Index","Home")";
+        var UrlComplementoRuta = "", UrlNombreUbicacion="";
+        ////////////////////////////////////VARIABLES GLOBALES PARA LAS NOTIFICACIONES///////////////////////////////////////////
+        var glUsuarioIdHub = "";
+        var glUrlContestarMensaje = "@Url.Action("Create", "EnvioMensajes")";
+        var uri_icono_policia="@Url.Content("~/Images/LogoSECAD.png")";
+        var glUrlHost="@Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery,string.Empty)";
+        //////////////////////////////////// FIN VARIABLES GLOBALES PARA LAS NOTIFICACIONES//////////////////////////////////////
+
+    </script>
+    @Scripts.Render("~/bundle/PrincipalJs")
+    <!-- /theme JS files -->
+    @RenderSection("scripts", required: false)
+    <script src="~/signalr/hubs"></script>
+    @*<script src="@Url.Content("~/signalr/hubs")"></script>*@
+
+</head>
+<body>
+    <!-- Loader DECAD -->
+    <!--[if IE 9]>
+    <div class="loader_decad hidden">
+        <div class="loader_dialog">
+            <div class="loader_container2 text-center">
+                <img src="@Url.Content("~/Images/loader_DECAD.gif")" />
+                <h4 class="text-white" id="mensajeLoader">Cargando...</h4>
+            </div>
+        </div>
+    </div>
+        <div class="loader_back hidden"></div>
+    <![endif]-->
+    <!--[if !(IE 9)]>-->
+    <div class="loader_decad hidden">
+        <div class="loader_dialog">
+            <div class="loader_container text-center">
+                <div class="loader"></div>
+                <h4 class="text-white" id="mensajeLoader">Cargando...</h4>
+            </div>
+        </div>
+    </div>
+    <div class="loader_back hidden"></div>
+    <!--<![endif]-->
+    <!-- /loader DECAD -->
+    <!-- Header navbar -->
+    <div class="navbar navbar-inverse color_secad">
+        <div class="navbar-header">
+            <!-- Logo policia -->
+            <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/LogoSECAD.png")" alt=""></a>
+            <p class="titulo">
+                <br>
+                Policia Nacional
+                <br>
+                <br>
+                <strong>Modulo SECAD</strong>
+            </p>
+
+            <!-- Icono del menu -->
+            <ul class="nav navbar-nav visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-chevron-down"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <!-- Título central -->
+            <!--<div class="brand-secad">-->
+                @*<img src="@Url.Content("~/Images/secad_w.png")" alt="logo">*@
+                @*<p>SECAD <i>PLUS</i> <small>versión 0.1</small></p>*@
+            <!--</div>-->
+            <!-- /Título central -->
+            <!-- Sección derecha header -->
+            <div class="navbar-right">
+                <ul  class="nav navbar-nav">
+                    <!-- Botón  de notificaciones -->
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-bubbles4"></i>
+                            <span class="visible-xs-inline-block position-right">Messages</span>
+                            <span class="badge bg-warning-400" id="contador"> 0 </span>
+                        </a>*@
+                        <input type="hidden" id="codigosNotificaciones"/>
+                        <!-- Desplegable notificaciones -->
+                        <div class="dropdown-menu dropdown-content width-350">
+                            <div class="dropdown-content-heading">
+                                Mensajes                       
+                            </div>
+                            <ul class="media-list dropdown-content-body customSizeNotyPad" id="contenedor">
+                               
+                            </ul>
+                            <div class="dropdown-content-footer">
+                               
+                            </div>
+                        </div>
+                        <!-- /botón de notificaciones -->
+                    </li>
+                    <!-- /desplegable notificaciones -->
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /header navbar -->
+    <!-- Contenedor de página -->
+    <div class="page-container">
+        <!-- Contenido de página -->
+        <div class="page-content">
+            <!-- Barra izquierda -->
+            <div class="sidebar sidebar-main color_secad">
+                <div class="sidebar-content" id="contenidoMenu">
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion" id="menuOpciones">
+                                <li class="navigation-header">
+                                    <div class="secad navbar-collapse collapse" id="navbar-mobile">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <a class="sidebar-control sidebar-main-toggle hidden-xs collapse_menu_secad" id="botonMenu" data-action="collapse">
+                                                    <i class="icon-circle-left2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /barra izquierda -->
+            <!-- Contenido principal -->
+            <div class="content-wrapper color_secad">
+                <!-- Contenedor Breadcrumb -->
+                <div class="page-header page-header-default">
+                    <!-- Enlaces Breadcrumb -->
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb" name="contenedorBreadCrumb">
+                            <!-- item de Breadcrumb -->
+                        </ul>
+                        <!-- Hora del servidor -->
+                        <ul class="breadcrumb-elements servertime">
+                            <li>
+                                <span id="principalReloj"></span>
+                            </li>
+                            <li>
+                                <span class="breadcrumb" name="contenedorTutoriales"></span>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                </div>
+                <!-- /contenedor Breadcrumb -->
+                <div id="contenedorPrincipal">
+                    <div  name="notificacionesEmergentes" class="drag_notification ui-widget-content ui-draggable ui-draggable-handle hidden" style="left: 444px; top: 155px;">
+                        <section class="head_notify">
+                            <h6>
+                                <i class="icon-checkmark4 position-left"></i>
+                                Mensaje:
+                            </h6>
+                            <a class="alert-close" name="nEmergentesCerrar"><i class="icon-close2"></i></a>
+                        </section>
+                        <div class="media-list content_notify" name="DragConetendorEmer">
+
+
+                        </div>
+                   </div>                    
+                    @RenderBody()
+                    @RenderSection("PostScripts", required: false)
+                    @Scripts.Render("~/bundle/HubsControllerJs")
+                    
+                </div>
+                <audio id="SonidoAlerta" src='~/Sounds/SonidoAlerta.mp3' style="width:2%;height:2%;visibility:hidden; " preload='auto' controls></audio>
+                
+            </div>
+            <!-- /contenido principal -->
+        </div>
+        <!-- /contenido de página -->
+    </div>
+    <!-- /contenedor de página -->
+    <!-- Botón de volver arriba	-->
+    @*<button id="back-to-top" class="bg-green-800 btn-lg back-to-top" type="button" data-popup="tooltip"
+            title="" data-placement="top" data-original-title="Clic para ir arriba">
+        <i class="icon-arrow-up16"></i>
+    </button>*@
+    <!-- Footer -->
+    <div class="footer-Secad text-center color_secad">
+       
+
+        <div class="row">
+            <div class="col-md-1">
+                @*<img src="@Url.Content("~/Images/estrella_policia.png")" alt="nuevo país">*@
+            </div>
+            <div class="col-md-5">
+                <p b-cvth4c8jlk>
+                    <strong b-cvth4c8jlk>© 2024 </strong>
+                    "Sistema de Información para el Registro de Llamadas de Emergencia - SECAD"
+                    <br>
+
+                </p>
+            </div>
+            <div class="col-md-7">
+                @*<img src="@Url.Content("~/Images/ofite.png")" alt="nuevo país">*@
+            </div>
+        </div>
+    </div>
+    <!-- /footer --> 
+    
+</body>
+</html>
+
+<script>
+    var urlCargarVideos = '@Url.Action("Index", "Tutoriales")';
+    var urlComprobarVideos = '@Url.Action("ComprobarVideo", "Home")';
+    
+    $(function() {
+        GenerarBreadCrumb();
+        GenerarTutorial();
+        //Reemplaza comportamiento enter por tab
+        $('body').on('keydown', 'input, select, textarea, chosen', function (e) {
+            var self = $(this)
+              , form = self.parents('form:eq(0)')
+              , focusable
+              , next
+            ;
+            if (e.keyCode == 13) {
+                focusable = form.find('input,a,select,button,textarea').filter(':visible');
+                next = focusable.eq(focusable.index(this) + 1);
+                if (next.length) {
+                    next.focus();
+                } else {
+                    form.submit();
+                }
+                return false;
+            }
+        });
+        $( ".drag_notification" ).draggable();
+        
+        ConsultarHoraServidor();
+        });        
+</script>

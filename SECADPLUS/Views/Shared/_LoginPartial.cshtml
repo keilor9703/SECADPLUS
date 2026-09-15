@@ -1,0 +1,84 @@
+﻿<head>
+    <script src="~/Scripts/Huawei/IntegracionHuawei.js"></script>
+</head>
+@using Microsoft.AspNet.Identity
+@using SECADEntities.SecadEntities
+@if (Request.IsAuthenticated)
+{
+    <script>glUsuarioIdHub="@User.Identity.GetUserId()";</script>
+    <!-- Botón perfil -->
+    <li class="nav-link dropdown-toggle waves-effect waves-dark show">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            Bienvenido <font size="2">@Session["NOMBRE_USUARIO"].ToString().ToUpper()</font>
+            @*Bienvenido <font size="2">USUARIO</font>*@
+
+            @if (Session["UrlFotoUsuario"] != null)
+            {
+                <img src="@Session["UrlFotoUsuario"].ToString()" alt="" />
+            }
+            else
+            {
+                
+                <img src="@Url.Content("~/images/Avatar.png")" alt="">
+            }
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right, dropdown-menu dropdown-menu-end user-dd animated flipInY">
+            <div class="dropdown-list">
+                @if (Session["UrlFotoUsuario"] != null)
+                {
+                    <img src="@Session["UrlFotoUsuario"].ToString()" alt="" />
+                }
+                else
+                {
+                    <img src="@Url.Content("~/images/Avatar.png")" alt="">
+                }
+                @if (Session["USUARIO_SECAD"] != null && Session["NOMBRE_USUARIO"] != null)
+                {
+                    <font size="2">@Session["NOMBRE_USUARIO"].ToString()</font>
+                }
+                else
+                {
+                    @*<font size="2">usuario</font>*@
+                    <font size="2">@Session["NOMBRE_USUARIO"].ToString().ToUpper()</font>
+                }
+            </div>
+            @if (Session["USUARIO_SECAD"] != null)
+            {
+                <li><a href="@Url.Action("EditarUsuario", "Account", new { strUsuario = ((CADUSUARIO)Session["USUARIO_SECAD"]).USUARIO, strOpcion = "CAMBIAR" })"><i class="icon-user-plus"></i> Mi perfil</a></li>
+            }
+            else
+            {
+                <li><a href="#"><i class="icon-user-plus"></i> Mi perfil</a></li>
+            }
+            <div class="dropdown-divider"></div>
+            <li>
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a onclick="LimpiarSesionesFuertes()"><i class="icon-switch2"></i>Cerrar Sesi&oacute;n</a>
+                }
+            </li>
+            <div class="dropdown-divider"></div>
+        </ul>
+    </li>
+    <!-- /botón perfil -->
+}
+
+
+<script>
+    var UsaICP = '';
+    $(document).ready(function () {
+        UsaICP = '@ViewBag.UsaICP';
+    });
+
+    function LimpiarSesionesFuertes()
+    {
+        sessionStorage.clear();
+        console.log("---------------Limpio Sesiones");
+
+        if (UsaICP == 'true') {
+            FinalizarSesionICP();
+        }
+        document.getElementById('logoutForm').submit();
+    }
+</script>

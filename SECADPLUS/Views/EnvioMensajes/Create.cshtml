@@ -1,0 +1,387 @@
+﻿@using SECADPLUS.Models.Extendidas;
+@using SECADEntities.SECAD;
+@model Tuple<CADMENSAJE, CADMENSAJES_TEXTO, CADMENSAJES_TEXTO_USUARIOS, List<ExtMensajesTextoUsuarios>>
+
+@{
+    ViewBag.Title = "Envio de Mensajes";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Centro Mensajes -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Centro de Mensaje:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "EnvioMensajes", FormMethod.Post, new { @class = "form-compact", @id = "CentroMensajes" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("CONSECUTIVO")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Sitio de Grabación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("SITIO_GRABA", null, string.Empty, htmlAttributes: new { @class = "chosen-select", id = "listaSitios" })
+                                                    @Html.ValidationMessageFor(model => model.Item1.SITIO_GRABA, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Fecha:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.Editor("FECHA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Item1.FECHA, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Usuario Graba:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CADUSUA_INICIA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.Item1.CADUSUA_INICIA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Estado:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("ESTADO1", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.Item1.ESTADO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 text-left">
+                            @*<button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", "EnvioMensajes")'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>*@
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-right">
+                            @*<button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>*@
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+    <!-- Centro Mensajes -->
+    <!-- Texto Mensaje -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Texto Mensaje:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "EnvioMensajesTexto", FormMethod.Post, new { @class = "form-compact", @id = "CentroTexto" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("CADMENS_SITIOGRABA")
+                            @Html.Hidden("CADMENS_CONSECUTIVO")
+                            @Html.Hidden("CONSECUTIVO")
+                            @Html.Hidden("idSitio")
+                            @Html.Hidden("idCons")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @*@Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })*@
+                                                @Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba consecutivo", maxlength = "12" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-10">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Texto:</label>
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-12">
+                                                @Html.TextArea("TEXTO", htmlAttributes: new { @class = "form-control", @placeholder = "Escriba mensaje", @rows = "5" })
+                                                @Html.ValidationMessageFor(model => model.Item2.TEXTO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Usuario Graba:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("CADUSUA_GRABA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.Item2.CADUSUA_GRABA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+    <!-- Texto Mensaje -->
+    <!-- Enviar Mensaje A -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Enviar Mensaje A:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "EnvioMensajesTextoUsuarios", FormMethod.Post, new { @class = "form-compact", @id = "CentroUsuarios" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("CADMENTEX_MENS_SITIOGRABA")
+                            @Html.Hidden("CADMENTEX_MENS_CONSECUTIVO")
+                            @Html.Hidden("CADMENTEX_CONSECUTIVO")
+                            @Html.Hidden("idSitio")
+                            @Html.Hidden("idCons")
+                            @Html.Hidden("idText")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Entidad:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("CADFUER_DESTINO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.Item3.CADFUER_DESTINO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Canal:</label>
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-12">
+                                                @Html.DropDownList("CADCANA_DESTINO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.Item3.CADCANA_DESTINO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Usuario Destino:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("CADUSUA_DESTINO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.Item3.CADUSUA_DESTINO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Estado:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("ESTADO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.Item3.ESTADO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha Notificación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.Editor("FECHA_NOTIFICACION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Item3.FECHA_NOTIFICACION, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Fecha Grabación:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.Editor("FECHA_GRABACION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Item3.FECHA_GRABACION, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                }
+                <!-- /formulario -->
+                <div class="row">
+                    <div class="col-xs-6 col-md-6 text-left">
+                        @*<button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                    data-original-title="Clic para regresar a la tabla"
+                                    onclick="window.location.href ='@Url.Action("Index", "EnvioMensajes", new { idSitio = @ViewBag.idSitio, idCons = @ViewBag.idCons, idText = @ViewBag.idText })'">
+                                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                            </button>*@
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                        <button class="btn bg-teal" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para agregar usuario"
+                                onclick="agregarUsuario()">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+                <!-- Inicio de tabla -->
+                @*<button type="button" id="btnGuardar" onclick="recorrerTablaUsuarios()">Recorrer</button>*@
+                @*<button type="button" id="btnGuardar" onclick="limpiarFormularios()">Limpiar</button>*@
+                <table class="table table-hover table-xxs datatable-basic  form-compact" id="tablaEnviarA">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Entidad</th>
+                            <th></th>
+                            <th>Canal</th>
+                            <th></th>
+                            <th>Usuario Destino</th>
+                            <th></th>
+                            <th>Estado</th>
+                            <th></th>
+                            <th>Fecha Notificación</th>
+                            <th>Fecha Grabación</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+    <!-- Enviar Mensaje A -->
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-xs-6 col-md-6 text-left">
+                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                        data-original-title="Clic para regresar a la tabla"
+                        onclick="window.location.href ='@Url.Action("Index", "EnvioMensajes")'">
+                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                </button>
+            </div>
+            @*<div class="col-xs-6 col-md-1 text-right">
+                    <button type="button" id="btnGuardar" onclick="limpiarFormularios()">prueba</button>
+                </div>*@
+            <div class="col-xs-6 col-md-6 text-right">
+                <button class="btn bg-teal" data-popup="tooltip"
+                        title="" data-placement="bottom" data-original-title="Clic para guardar y enviar"
+                        onclick="guardarMensajes()">
+                    @*value="Create">*@
+                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar y Enviar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@Scripts.Render("~/bundle/ModalsJs")
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+@Scripts.Render("~/bundle/EnvioMensajesJs")
+<script>
+    $(".chosen-select").chosen();
+    AplicarPluginTabla("tablaEnviarA");
+
+    var rutaCentro = '@Url.Action("CreacionMensajesCentro", "EnvioMensajes")';
+    var rutaTexto = '@Url.Action("CreacionMensajesTexto", "EnvioMensajes")';
+    var rutaUsuario = '@Url.Action("CreacionMensajesTextoUsuario", "EnvioMensajes")';
+
+    var urlCanales = '@Url.Action("GetCanalesByEntidad", "EnvioMensajes")';
+    var urlUsuarios = '@Url.Action("GetUsuariosByEntidadCanal", "EnvioMensajes")';
+    var urlEnviar = '@Url.Action("EnviarMensaje", "EnvioMensajes")';
+</script>

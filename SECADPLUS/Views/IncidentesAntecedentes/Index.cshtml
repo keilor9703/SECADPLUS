@@ -1,0 +1,59 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <!-- Incidentes Antecedentes -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Incidentes Antecedentes:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo"
+                                        onclick="window.location.href ='@Url.Action("Create")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaIncidentes">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tipo de Consulta</th>
+                            <th>Consulta Personas</th>
+                            <th>Consulta Vehículos</th>
+                            <th>Patrulla Solicitante</th>
+                            <th>Integrantes Patrulla</th>
+                            <th>Motivo</th>
+                            <th>Comentario</th>
+                            <th>Fecha Grabación</th>
+                            <th>Usua Graba</th>
+                        </tr>
+                    </thead>                   
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Incidentes Antecedentes -->
+    </div>
+</div>
+<!-- Área de contenido -->
+@section PostScripts{
+    <script type="text/javascript">
+        var glSitio = @ViewBag.sitio;
+        var urlConsultarIncidentes = "@Url.Action("ConsultarIncidentes", "IncidentesAntecedentes")";
+    </script>
+    @Scripts.Render("~/bundle/IncidentesControllerJs")
+
+ }

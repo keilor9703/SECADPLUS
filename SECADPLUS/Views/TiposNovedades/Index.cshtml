@@ -1,0 +1,158 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADTIPOSNOVEDADE>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADTIPOSNOVEDADE>, List<CADTIPOSNOVEDADE>>
+
+@{
+    ViewBag.Title = "Novedades";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    @Html.Partial("_NavegacionAdmonGeneral")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Tipos de Novedades:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo tipo"
+                                        onclick="window.location.href ='@Url.Action("Create")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo tipo
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaTipos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Nivel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Item1)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat
+                                                                dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para editar"
+                                                            onclick="window.location.href ='@Url.Action("Edit", new { id=item.CODIGO })'">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                                            onclick="EliminarRegistroGeneral('@Url.Action("Eliminar", "TiposNovedades", new { id = item.CODIGO })')">
+                                                        @*onclick="window.location.href ='@Url.Action("Delete", new { id=item.CODIGO })'">*@
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para ver clases"
+                                                            onclick="VerClases('@item.CODIGO', '@item.DESCRIPCION')">
+                                                        <i class="icon-eye"></i> Ver clases
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.NIVEL)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Clases -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Clases de Novedades</h5>
+                    <div class="computo_input">
+                        @*@Html.Hidden("COD_TIPO")*@
+                        @Html.Editor("NOM_TIPO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear clase"
+                                        onclick="IrCrearClase(_idTip, _nomTip)">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear clase
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaClases">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Nivel</th>
+                            <th>Cadnovbin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_clases", Model.Item2);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /Clases -->
+    </div>
+</div>
+<!-- Área de contenido -->
+
+<script type="text/javascript">
+    var _idTip = '@ViewBag.COD_TIPO';
+    var _nomTip = '@ViewBag.NOM_TIPO';
+
+    var urlCrear = '@Url.Action("CreateC", "TiposNovedades")';
+    var urlClases = '@Url.Action("GetClases", "TiposNovedades")';
+
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+
+
+</script>
+@Scripts.Render("~/bundle/TiposNovedadesJs")

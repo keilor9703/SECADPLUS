@@ -1,0 +1,13 @@
+﻿@model SECADEntities.SecadEntities.CADUSUARIO
+
+
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+    <h4>@Html.DisplayFor(model => model.USUARIO)</h4>
+
+
+    @using (Html.BeginForm("Delete", "Account", new { strUsuario = Model.USUARIO}, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>

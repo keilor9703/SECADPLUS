@@ -1,0 +1,183 @@
+﻿@model SECADEntities.SecadEntities.CADEVENTOS_FOTOS
+
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CalendarioJs")
+
+
+
+
+
+
+
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title"></h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                @*<button id="btnNuevo" type="button" onclick="CargarCrear()" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para nueva foto">
+                                        Nuevo<b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>
+
+                                    </button>*@
+                            </li>
+                            <li>
+                                @*<button class="btn btn-success btn-xs" type="button" data-popup="tooltip" title=""
+                                            onclick="window.close();" data-placement="bottom" data-original-title="Salir de Fotos Evento">
+                                        <i id="info" class="icon-reply-all icon_size-xs"></i>
+                                    </button>*@
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                @using (Html.BeginForm("Crear", "FotosEventos", FormMethod.Post, new { @class = "form-compact", enctype = "multipart/form-data", id = "frm_Fotos" }))
+                {
+
+                    <div class="panel-body">
+                        <!-- Formulario -->
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(m => m.CADEVEN_SITIOGRABA)
+
+                        @Html.HiddenFor(m => m.USUA_GRABA)
+                        @Html.HiddenFor(m => m.FOTO)
+                        @*@Html.HiddenFor(m => m.CADEVEN_NUMEEVENTO)
+                            @Html.HiddenFor(m => m.CONSECUTIVO)
+                            @Html.HiddenFor(m => m.OBSERVACION)*@
+
+
+                        <fieldset class="content-group">
+                            <div class="col-md-12">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+
+                                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+                                                @Html.Label("Numero Evento", htmlAttributes: new { @class = "control-label" })
+                                                <input id="CADEVEN_NUMEEVENTO" name="CADEVEN_NUMEEVENTO" placeholder="" class="form-control" value="@Model.CADEVEN_NUMEEVENTO" readonly="readonly" />
+
+
+
+                                            </div>
+                                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+                                                @Html.Label("Consecutivo", htmlAttributes: new { @class = "control-label" })
+
+
+                                                <input id="CONSECUTIVO" name="CONSECUTIVO" placeholder="" class="form-control" value="@Model.CONSECUTIVO" readonly="readonly" />
+
+                                            </div>
+
+
+                                            <div class="col-md-5 col-xs-5">
+                                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12">
+                                                    <div class="form-group">
+                                                        @Html.Label("Foto", htmlAttributes: new { @class = "control-label" })
+                                                        <div class="row">
+                                                            <figure class="text-center col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                                                <img class="img-thumbnail img-responsive" src="~/images/placeholder.jpg" id="thumbnil" style="width:100%" />
+                                                            </figure>
+                                                            <div class="col-xs-5 col-sm-8 col-md-5 col-lg-8">
+                                                                <input type="file" class="file-styled-secad btn-success btn-xs" id="uploader" name="uploader" accept="image/gif, image/jpeg, image/tiff, image/bmp" onchange="MuestraImagen(this)" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 obligatorio">
+                                                <br />
+                                                @Html.Label("Observaciones", htmlAttributes: new { @class = "control-label" })
+                                                <textarea id="OBSERVACION" style="resize:none;height:60px;width:800px;" maxlength="100" name="OBSERVACION" placeholder="" class="form-control"></textarea>
+                                                @Html.ValidationMessageFor(m => m.OBSERVACION, "", new { @class = "text-danger" })
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- /formulario -->
+                    </div>
+                    <div class="panel-footer">
+                        <!-- Botones de regresar y guardar -->
+                        <div class="row">
+                            @*<div class="col-xs-6 col-md-6text-left">
+                                    <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para regresar a la tabla" onclick="location.href=('@Url.Action("FotosEventos", "FotosEventos")');">
+                                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                    </button>
+                                </div>*@
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button type="button" value="Crear" id="btnGuardar" class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /botones de regresar y guardar -->
+                    </div>
+                }
+
+
+
+                @Html.Hidden("NUMERO_EVENTO")
+                @Html.Hidden("SitioGraba")
+                @Html.Hidden("NumeroEvento")
+
+                <!-- /inicio de tabla -->
+                <table id="_tblFotosEvento" class="table table-hover table-xxs datatable-basic">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Numero Evento</th>
+                            <th>Consecutivo</th>
+                            <th>Observación </th>
+                            <th>foto</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        var urlTabla = "@Url.Action("ObtenerEventoFotos", "FotosEventos")";
+        var urlCreate = "@Url.Action("Create", "FotosEventos")";
+        var urlEditFoto = "@Url.Action("ConsultarFotoEditar", "FotosEventos")";
+        var urlEliminarFoto = "@Url.Action("EliminarFotoEvento", "FotosEventos")";
+
+
+
+</script>
+@Scripts.Render("~/bundle/FotosEventosJs")
+@Scripts.Render("~/bundle/ModalsJs")
+
+
+

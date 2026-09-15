@@ -1,0 +1,14 @@
+﻿@model IEnumerable<SECADPLUS.Models._EventosMediosModel>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.DSP_DESC_UNIDAD)</td>
+        <td>@Html.DisplayFor(modelItem => item.DSP_MEDIODISPO)</td>
+        <td>@Html.DisplayFor(modelItem => item.TIPO_RESPONSABLE)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_ASIGNA)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_LLEGA)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_TERMINA)</td>
+        <td>@Html.DisplayFor(modelItem => item.NOVEDAD)</td>
+    </tr>
+}

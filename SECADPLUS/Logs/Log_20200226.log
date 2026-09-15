@@ -1,0 +1,122 @@
+20200226 11:33:38 [M_ERROR] - Error Ejecutando Conectar: HOST=172.19.140.23;PORT=1521;SERVICE_NAME=SECAD123;USER=USR_CAD;PASSWORD=SECAD2018
+	#2	#3'HOST' es un atributo de cadena de conexión no válido
+	#2	#3System.ArgumentException: 'HOST' es un atributo de cadena de conexión no válido
+   en OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd)
+   en OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   en OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential)
+   en OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, Boolean bCreateIfNotinCache)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 125
+20200226 11:37:12 [M_ERROR] - Error Ejecutando Conectar: HOST=172.19.140.23;PORT=1521;SERVICE_NAME=SECAD123;USER=USR_CAD;PASSWORD=SECAD2018
+	#2	#3'HOST' es un atributo de cadena de conexión no válido
+	#2	#3System.ArgumentException: 'HOST' es un atributo de cadena de conexión no válido
+   en OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd)
+   en OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   en OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential)
+   en OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, Boolean bCreateIfNotinCache)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 125
+20200226 11:40:11 [M_ERROR] - Error Ejecutando Conectar: HOST=172.19.140.23;PORT=1521;SERVICE_NAME=SECAD123;USER=USR_CAD;PASSWORD=SECAD2018
+	#2	#3'HOST' es un atributo de cadena de conexión no válido
+	#2	#3System.ArgumentException: 'HOST' es un atributo de cadena de conexión no válido
+   en OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd)
+   en OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   en OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential)
+   en OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, Boolean bCreateIfNotinCache)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 125
+20200226 11:52:49 [M_ERROR] - Error Ejecutando Conectar: HOST=172.19.140.23;PORT=1521;SERVICE_NAME=SECAD123;USER=USR_CAD;PASSWORD=SECAD2018
+	#2	#3'HOST' es un atributo de cadena de conexión no válido
+	#2	#3System.ArgumentException: 'HOST' es un atributo de cadena de conexión no válido
+   en OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd)
+   en OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   en OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential)
+   en OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, Boolean bCreateIfNotinCache)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 125
+20200226 12:01:31 [M_ERROR] - Error Ejecutando Conectar: HOST=172.19.140.23;PORT=1521;SERVICE_NAME=SECAD123;USER=USR_CAD;PASSWORD=SECAD2018
+	#2	#3'HOST' es un atributo de cadena de conexión no válido
+	#2	#3System.ArgumentException: 'HOST' es un atributo de cadena de conexión no válido
+   en OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd)
+   en OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   en OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential)
+   en OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, Boolean bCreateIfNotinCache)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 125
+20200226 15:41:25 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 15:49:11 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 16:07:34 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 16:08:04 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 16:08:07 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 16:42:00 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 16:46:12 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 17:29:44 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 17:30:51 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 18:02:31 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43
+20200226 18:08:11 [M_ERROR] - Error Ejecutando F_GetConsCuadrante:
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en SECADPLUS.Models.DbPatrulla.F_GetConsCuadrante(Int32 V_IntUnidadFuerza, Int32 V_IntUnidadCodigo) en C:\HUAWEI_Ok\SECADPLUS\Models\DbPatrulla.cs:línea 43

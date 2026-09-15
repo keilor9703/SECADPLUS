@@ -1,0 +1,130 @@
+﻿@model SECADEntities.SECAD.CADPARQUEADERO
+
+@{
+    ViewBag.Title = "Creación de Parqueaderos";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+
+    @Scripts.Render("~/bundle/SitiosImportantesControllerJs")
+}
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel -->
+    <div class="panel panel-flat form-compact">
+        <div class="panel-heading">
+            <h5 class="panel-title">Crear Parqueadero</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+@using (Html.BeginForm())
+{
+        <div class="panel-body">
+            <!-- Formulario -->            
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<form action="#">*@
+                <fieldset class="content-group">
+                    <div class="row">
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group obligatorio">
+                                @Html.LabelFor(model => model.SITIO_GRABA, "Sitio de Grabación:", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("SITIO_GRABA", null, htmlAttributes: new { @class = "form-control", @placeholder = "seleccione el sitio de grabación" })
+                                @Html.ValidationMessageFor(model => model.SITIO_GRABA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 obligatorio">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CODIGO, "NIT/Código:", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "escriba el código", required = "reauired" } })
+                                @Html.ValidationMessageFor(model => model.CODIGO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group obligatorio">
+                                @Html.LabelFor(model => model.DESCRIPCION, "Descripción:", htmlAttributes: new { @class = "control-label" })
+
+                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "escriba la descripción" } })
+                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group obligatorio">
+                                @Html.LabelFor(model => model.LUGE_CODIGO, "Ciudad/Mpio:", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("LUGE_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione la ciudad o municipio" })
+                                @Html.ValidationMessageFor(model => model.LUGE_CODIGO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CODI_BARRIO, "Barrio:", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("CODI_BARRIO", null, string.Empty, htmlAttributes: new { @class = "chosen-select col-md-12", @placeholder = "seleccione el barrio" })
+                                @Html.ValidationMessageFor(model => model.SITIO_GRABA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group obligatorio">
+                                @Html.LabelFor(model => model.DIRECCION, "Dirección:", htmlAttributes: new { @class = "control-label " })
+                                @Html.EditorFor(model => model.DIRECCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "seleccione la dirección" } })
+                                @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Teléfono:</label>
+
+                                @Html.EditorFor(model => model.TELEFONO, "Teléfono:", new { htmlAttributes = new { @class = "form-control", @placeholder = "escriba el teléfono" } })
+                                @Html.ValidationMessageFor(model => model.TELEFONO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Horario:</label>
+
+                                @Html.EditorFor(model => model.HORARIO, "Horario:", new { htmlAttributes = new { @class = "form-control", @placeholder = "escriba el horario" } })
+                                @Html.ValidationMessageFor(model => model.HORARIO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>                    
+                </fieldset>
+                @*</form>*@
+            
+            <!-- /formulario -->
+        </div>
+        <div class="panel-footer">
+            <!-- Botones de regresar y guardar -->
+            <div class="row">
+                <div class="col-xs-6 col-md-6text-left">
+                    <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                            data-original-title="Clic para regresar a la tabla" onclick="location.href='@Url.Action("Index", "SitiosImportancia")'">
+                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                    </button>
+                </div>
+                <div class="col-xs-6 col-md-6 text-right">
+                    <button type="submit" value="Create" class="btn bg-teal" data-popup="tooltip"
+                            title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                        <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                    </button>
+                </div>
+            </div>
+            <!-- /botones de regresar y guardar -->
+        </div>
+}
+    </div>
+    <!-- /panel  -->
+
+</div>
+<!-- /content area -->
+@section PostScripts{
+    <script>
+        urlActionBuscaBarrios = "@(Url.Action("BuscaBarrios", "SitiosImportancia"))";
+
+    </script>
+}

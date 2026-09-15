@@ -1,0 +1,576 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADUNIDADE>
+
+@{
+    ViewBag.Title = "MANTENIMIENTO DE UNIDADES";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <input type="hidden" id="hdFuerza" value="0"/>
+    <input type="hidden" id="hdCodigo" value="0"/>
+    <div class="row text-center" id="ALERTA">
+    </div>
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-3">
+            <div class="form-group">
+                <label>Seleccione una fuerza</label>
+                <select class="select-search" id="MTDOFUERZA">
+                    <option value="FUERZA"></option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-7">
+            <div class="col-xs-12 col-md-7 col-lg-7 form-group">
+                <label>Nivel 1</label>
+                <select class="select-search " id="NIVELUNO">
+                    <option value="CODIGO"></option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5 nvlone_button text-center">
+                <div class="col-xs-2 col-md-2 col-lg-2">
+                    <button type="button" class="btn border-success btn-xs text-success-600 btn-flat dropdown-toggle"
+                            data-toggle="dropdown" aria-expanded="true">
+                        <i class="icon-menu9"></i>
+                    </button>
+                    <ul class="dropdown-menu three_btn dropdown-menu-left">
+
+                        <li id="contenedorEditar1">
+                            <button class="btn btn-default " type="button"
+                                    data-popup="tooltip" title=""
+                                    data-placement="bottom" data-original-title="Clic para editar" onclick="">
+                                <i class="glyphicon glyphicon-edit"></i> Editar
+                            </button>
+                        </li>
+                        <li id="contenedorBorrar1">
+                            <button class="btn btn-default " type="button" data-popup="tooltip" title=""
+                                    data-placement="bottom" data-original-title="Clic para borrar" onclick="">
+                                <i class="glyphicon glyphicon-trash"></i> Borrar
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="contenedorNivel1" class="col-xs-5 col-md-5 col-lg-5">
+                </div>
+                <div id="contenedorImprimir1" class="col-xs-5 col-md-5 col-lg-5">
+                    <button type="button" class="btn bg-slate btn-sm" data-popup="tooltip" title=""
+                            data-placement="bottom" data-original-title="Clic para imprimir documento">
+                        <b><i class="glyphicon glyphicon-print"></i></b> Imprimir
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-2 print_button text-center">
+        </div>
+    </div>
+    <div class="row form-compact">
+        <div class="tabbable">
+            <ul class="nav nav-tabs nav-tabs-highlight">
+                <li class="active" id="niv23"><a href="#nivel23" data-toggle="tab">Niveles 2-3</a></li>
+                <li ><a href="#nivel45" data-toggle="tab" id="niv45"> Niveles 4-5</a></li>
+                <li ><a href="#nivel67" data-toggle="tab" id="niv67">Niveles 6-7</a></li>
+                <li ><a href="#nivel8910" data-toggle="tab" id="niv89">Niveles 8-9-10</a></li>                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active col-lg-12 col-md-12 row" id="nivel23">
+                    <!--------------------------------------CONTENIDO TAB------------------------------------->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6 ">
+                        <div class="panel panel-flat" id="panelContenedor2">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 2 </span><span id="spannivel2" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel2" ata-popup="tooltip"
+                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                        </li>
+                                        <li id="contenedorNivel2">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic " id="TBLNIVEL2">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>                                       
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6 ">
+                        <div class="panel panel-flat" id="panelContenedor3">
+                            <div class="panel-heading">
+                                
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 3 </span><span id="spannivel3" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel3">
+                                        </li>
+                                        <li id="contenedorNivel3">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL3">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                </div>
+                <div class="tab-pane  col-lg-12 col-md-12" id="nivel45">
+                    <!--------------------------------------CONTENIDO TAB------------------------------------->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor4">
+                            <div class="panel-heading">
+                                
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 4 </span><span id="spannivel4" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel4">
+                                        </li>
+                                        <li id="contenedorNivel4">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL4">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor5">
+                            <div class="panel-heading">
+                                
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 5 </span><span id="spannivel5" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel5">
+                                        </li>
+                                        <li id="contenedorNivel5">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL5">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                </div>
+                <div class="tab-pane col-lg-12 col-md-12" id="nivel67">
+                    <!--------------------------------------CONTENIDO TAB------------------------------------->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor6">
+                            <div class="panel-heading">
+                                
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 6 </span><span id="spannivel6" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel6">
+                                        </li>
+                                        <li id="contenedorNivel6">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL6">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor7">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 7 </span><span id="spannivel7" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel7">
+                                        </li>
+                                        <li id="contenedorNivel7">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL7">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                </div>
+                <div class="tab-pane col-lg-12 col-md-12" id="nivel8910">
+                    <!--------------------------------------CONTENIDO TAB------------------------------------->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor8">
+                            <div class="panel-heading">
+                                
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 8 </span><span id="spannivel8" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel8">
+                                        </li>
+                                        <li id="contenedorNivel8">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL8">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor9">
+                            <div class="panel-heading">
+                                
+                                <h6 class="panel-title"><span class="col-md-12">Nivel 9 </span><span id="spannivel9" class="col-md-12"></span></h6>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel9">
+                                        </li>
+                                        <li id="contenedorNivel9">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL9">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th> 
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat" id="panelContenedor10">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Nivel 10 <span id="spannivel10"></span></h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="contenedorCargarNivel10">
+                                        </li>
+                                        <li id="contenedorNivel10">
+                                        </li>
+                                        <li><a data-action="collapse"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="TBLNIVEL10">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        
+                                        <th>Sigla</th>
+                                        <th>Descripción</th>
+                                        <th>Op</th>
+                                        <th>Vig.</th>
+                                        <th>Código</th>
+                                        <th>Lugar</th>
+                                        <th>Nivel</th>
+                                        <th>Cons Siedco</th>
+                                        <th>Cons Siath</th>
+                                        <th>U. padre</th>
+                                        <th>Orden</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Horizontal form modal -->
+    <div id="param_medios" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title">Parámetros del reporte.</h5>
+                </div>
+                <form action="#" class="form-horizontal">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-md-12 col-lg-3">
+                                <label>Seleccione una fuerza</label>
+                                <select class="select-search" id="fuerzaImprimir">
+                                    <option value="FUERZA"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Descripción</label>
+                            <div class="col-sm-9">
+
+                                <label>Seleccione una fuerza</label>
+                                <select class="select-search" id="listaOpcion">
+                                    <option value="0">TODOS</option>
+                                    <option value="1">MEDIOS DE ATENCIÓN</option>
+                                    <option value="2">ARMAMENTO</option>
+                                    <option value="3">VEHÍCULOS</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Unidad</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="txtUnidad" placeholder="0001" class="form-control">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Vigente</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="cbxVigente" name="cbxVigente" checked="checked" class="switch checkbox checkbox-switch" data-on-color="success" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Operativa</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="cbxOperativa" name="cbxOperativa" checked="checked" class="switch checkbox checkbox-switch" data-on-color="success" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="ImprimirMedio()">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/Select2Js");
+    @Scripts.Render("~/bundle/ModalsAlertJs");
+    <script>
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+
+
+
+        var controlUnidades = true;
+        urlCreacion = '@Url.Action("Create", "Unidades")';
+        urlEditar = '@Url.Action("Edit","Unidades")'
+        var urlEliminar = '@Url.Action("Eliminar", "Unidades")'
+        urlFuerzas = "@(Url.Action("GetFuerza", "Unidades"))";
+        urlAction1 = "@(Url.Action("GetNivelUno", "Unidades"))";
+        urlNivelUnoActivos = "@(Url.Action("GetNivelUnoActivos", "Unidades"))";
+        urlUnidades = "@(Url.Action("ObtenerNiveles", "Unidades"))";
+        urlUnidadesActivos = "@(Url.Action("ObtenerNivelActivos", "Unidades"))";
+        urlAction3 = "@(Url.Action("insNivelX", "Unidades"))";
+        urlAction4 = "@(Url.Action("GetSiath", "Unidades"))";
+        urlAction5 = "@(Url.Action("GetLugar", "Unidades"))";
+        urlAction6 = "@(Url.Action("delNivelX", "Unidades"))";
+        urlAction7 = "@(Url.Action("updNivelX", "Unidades"))";
+        urlVerPatrullas = "@Url.Action("Index", "Patrullas")";
+        var urlVerCuadrantes = "@Url.Action("VerCuadrantes", "Unidades")";
+    </script>
+    @Scripts.Render("~/bundle/NivelesJs");
+    @if (string.IsNullOrEmpty(ViewBag.UNIDADES))
+    {
+        <script>
+        
+            ActivarModoConsulta();
+        </script>        
+    }
+}

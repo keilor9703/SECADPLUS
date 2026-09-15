@@ -1,0 +1,18 @@
+﻿@model SECADEntities.SECAD.CADCARACTERISTICA
+
+@{
+    ViewBag.Title = "Eliminar Caracteristicas";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("Delete", "ElementosCaracteristicas", new { id = Model.CODIGO, nom = Model.CADTIPOS_BIEN.DESCRIPCION }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>
+

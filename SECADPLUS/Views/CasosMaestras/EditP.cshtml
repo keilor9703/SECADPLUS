@@ -1,0 +1,115 @@
+﻿@model SECADEntities.SECAD.CADPREGUNTASCASO
+
+@{
+    ViewBag.Title = "Editar Procedimientos y Preguntas";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/CalendarioJs")
+    @Scripts.Render("~/bundle/CheckSwitchJs");
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Editar Procedimientos y Preguntas:</h5>
+                    <div class="computo_input">
+                        @Html.Editor("NOM_CASO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("EditP", "CasosMaestras", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("CADCASO_CODIGO")
+                            @*@Html.Hidden("CADPREG_CODIGO")*@
+                            @Html.Hidden("idCaso")
+                            @Html.Hidden("nomCaso")
+                            @Html.Hidden("antiguoCodigo")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-7">
+                                    <div class="form-group">
+                                        <label>Descripción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("CADPREG_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessageFor(model => model.CADPREG_CODIGO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Orden:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.ORDEN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Digite Orden" } })
+                                                    @Html.ValidationMessageFor(model => model.ORDEN, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Vigente:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @*@Html.CheckBox("VIGENTE", Model.VIGENTE == "S" ? true : false, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @Html.CheckBox("VIGENTE", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_size = "mini", data_on_text = "SI", data_off_text = "NO" })
+                                                @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", new { id = @ViewBag.idCaso, nom = @ViewBag.nomCaso })'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="EditP">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+<script>$(".chosen-select").chosen();</script>

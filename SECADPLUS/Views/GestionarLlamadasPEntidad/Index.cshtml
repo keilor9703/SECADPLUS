@@ -1,0 +1,207 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+
+
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-flat form-compact">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Llamadas Pendientes Entidades</h5>
+                        <div class="heading-elements">
+                            <ul class="icons-list decad">
+                                <li>
+
+                                </li>
+                                <li>
+
+                                </li>
+                                <li><a data-action="collapse"></a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <fieldset class="content-group">
+
+                        <!-- Panel Entidades -->
+                        <div class="col-md-12">
+                            <legend class="text-semibold">
+                                Entidades
+                                <a class="control-arrow" data-toggle="collapse" data-target="#panelEntidades">
+                                    <i class="icon-circle-down2"></i>
+                                </a>
+                            </legend>
+                            <div class="collapse in" id="panelEntidades">
+                                <!-- /inicio de tabla -->
+                                <table id="_tblEntidades" class="table table-hover table-xxs datatable-basic">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Descripción </th>
+                                            <th>Abreviatura</th>
+                                            <th>Escudo</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!-- /inicio de tabla -->
+                            </div>
+                        </div>
+                        <!-- Panel Entidades -->
+                        <!-- Panel canales -->
+                        <div class="col-md-12">
+                            <legend class="text-semibold">
+                                Jurisdicciones / Canales 
+                                <a class="control-arrow" data-toggle="collapse" data-target="#panelCanales">
+                                    <i class="icon-circle-down2"></i>
+                                </a>
+                            </legend>
+                            <div class="collapse in" id="panelCanales">
+                                <!-- /inicio de tabla -->
+                                <table id="_tblCanales" class="table table-hover table-xxs datatable-basic">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Acciones</th>
+                                            <th>Descripción </th>
+                                            <th>Diponible</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!-- /inicio de tabla -->
+                            </div>
+                        </div>
+                        <!-- Panel canales -->
+                        <!-- Panel pedidos -->
+                        <div class="col-md-12">
+                            <legend class="text-semibold">
+                                Llamadas Recibidas por Jurisdicciones
+                                <a class="control-arrow" data-toggle="collapse" data-target="#panelLLamadas">
+                                    <i class="icon-circle-down2"></i>
+                                </a>
+                            </legend>
+                            <div class="collapse in" id="panelLLamadas">
+                                <!-- /inicio de tabla -->
+                                <table id="_tblPedidos" class="table table-hover table-xxs datatable-basic">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Numero Llamada </th>
+                                            <th>Hora</th>
+                                            <th>Numero de Telefono</th>
+                                            <th>Estado Llamada</th>
+                                            <th>Mpio</th>
+                                            <th>Dire Caso</th>
+                                            <th>Barrio</th>
+                                            <th>Codigo1</th>
+                                            <th>Prioridad</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+
+
+
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!-- /inicio de tabla -->
+                            </div>
+                        </div>
+                        <!-- Panel pedidos -->
+                        <!-- Panel comentarios -->
+                        <div class="col-md-12">
+                            <legend class="text-semibold">                               
+                                <a class="control-arrow" data-toggle="collapse" data-target="#panelComentarios">
+                                    <i class="icon-circle-down2"></i>
+                                </a>
+                            </legend>
+                            <div class="collapse in" id="panelComentarios">
+                                <div class="col-md-12">
+                                    <br />
+                                    <div class="col-md-12 col-lg-9">
+                                        <div class="form-group">
+                                            <label class="control-label">Comentario inicial caso:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+                                                        <div class="col-md-12">
+                                                            @*<input type="text" id="COMENTARIO" name="COMENTARIO" class="form-control readonly" readonly="readonly" />*@
+                                                            <textarea  id="COMENTARIO" name="COMENTARIO" class="form-control readonly"  style="height:49px;resize:none;" readonly="readonly"> </textarea>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Receptor:</label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+
+                                                        <div class="col-md-12">
+                                                            <input type="text" id="RECEPTOR" name="RECEPTOR" class="form-control readonly" readonly="readonly" />
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                   
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Panel comentarios -->                      
+
+                    </fieldset>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var urlTablaEntidad = "@Url.Action("ObtenerEntidades", "GestionarLlamadasPEntidad")";
+    var urlTablaCanales = "@Url.Action("ObtenerCanales", "GestionarLlamadasPEntidad")";
+    var urlTablaPedidos = "@Url.Action("ObtenerPedidosEfectivos", "GestionarLlamadasPEntidad")";
+    var urlMinutos = "@Url.Action("CalcularMinutosPedido", "GestionarLlamadasPEntidad")";
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+@Scripts.Render("~/bundle/GestionarLlamadasPEntidadJs")
+@Scripts.Render("~/bundle/ModalsJs")
+
+
+

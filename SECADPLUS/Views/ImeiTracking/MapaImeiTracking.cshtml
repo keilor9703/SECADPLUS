@@ -1,0 +1,176 @@
+﻿@using SecadModelos.Visor
+@{
+    Layout = "~/Areas/VisorGeografico/Views/Shared/_LayoutMapas.cshtml";
+
+}
+@Html.Hidden("geoJsonUrl", "/SECADPLUS/VisorGeografico/ImeiTracking/ObtenerImeiTracking/");
+<div id="legendDiv"></div>
+
+
+<div id="indicadorMapa" class="marcador-mapa" style="display:none;">
+    <label class="fa fa-2x fa-map-marker"></label>
+</div>
+<div id="indicadorMapaSeleccionado" class="marcador-mapa-seleccionado" style="display:none;">
+    <label class="fa fa-2x fa-map-marker"></label>
+</div>
+<div id="botonFiltros" class="boton-filtros">
+    <i class="fa fa-2x fa-search"></i>
+</div>
+<div id="panelFiltros" class="col-lg-3 panel-filtros">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Filtros de Consulta</h5>
+            <div class="ibox-tools">
+                <a class="hide-link">
+                    <i class="fa fa-close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content" style="display: block;">
+            <form class="form-horizontal">
+                <p>Seleccione los filtros de consulta.</p>
+                <div class="form-group">
+                    <label class="col-sm-12 control-label">Región</label>
+                    <div class="col-sm-12">
+                        @Html.DropDownList("ddlRegion", null, string.Format("Seleccione una opción"), htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", @id = "ddlRegion", @Descripcion = "Descripcion", @Required = true, @placeholder = "Seleccione una opción", @tabindex = 1 })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-12 control-label">Unidad</label>
+                    <div class="col-sm-12">
+                        @Html.DropDownList("ddlUnidad", new List<SelectListItem> { new SelectListItem { Text = "Unidad no seleccionada", Value = "0" } }, htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", @id = "ddlUnidad", @Required = true, @placeholder = "Unidad no seleccionada", @tabindex = 2 })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-12 control-label">Estación</label>
+                    <div class="col-sm-12">
+                        @Html.DropDownList("ddlDependencia", new List<SelectListItem> { new SelectListItem { Text = "Unidad no seleccionada", Value = "0" } }, htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", @id = "ddlDependencia", @Required = true, @placeholder = "Unidad no seleccionada", @tabindex = 3 })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-12 control-label">Cuadrante</label>
+                    <div class="col-sm-12">
+                        @Html.DropDownList("ddlCuadrante", new List<SelectListItem> { new SelectListItem { Text = "Cuadrante no seleccionado", Value = "0" } }, htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", @id = "ddlCuadrante", @Required = true, @placeholder = "Cuadrante no seleccionado", @tabindex = 4 })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-12 control-label">Ciudadano (Cédula)</label>
+                    <div class="col-sm-12">
+                        <input id="Identificacion" type="text" placeholder="Cédula" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="form-group">
+        <br />
+        <div class="col-sm-offset-2 col-sm-6">
+            <a id="btnBuscar" class="btn btn-sm btn-white">Buscar</a>
+        </div>
+    </div>
+</div>
+
+<div id="botonVolver" class="boton-volver-mapas">
+    <i class="fa fa-2x fa-arrow-left"></i>
+</div>
+<div id="botonCapas" class="boton-capas">
+    <i class="fa fa-2x fa-th-list"></i>
+</div>
+<div id="panelCapas" class="col-lg-3 panel-capas" style="display:none;">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Habilitar/Deshabilitar Capas</h5>
+            <div class="ibox-tools">
+                <a class="hide-capas-link">
+                    <i class="fa fa-close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content" style="display: block;">
+            <form class="form-horizontal">
+                <p>Seleccione las capas que desea visualizar.</p>
+                @foreach (var capa in (List<MdCapas>)ViewBag.ListaCapas)
+                {
+                    <br /><label title="@capa.Descripcion"><input type="checkbox" class="selector-capa" data-url="@capa.Url" />@capa.Nombre</label>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+<div id="botonDireccion" class="boton-direccion">
+    <i class="fa fa-2x fa-map-marker"></i>
+</div>
+<div id="panelDireccion" class="col-lg-3 panel-direccion" style="display:none;">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Ubicación</h5>
+            <div class="ibox-tools">
+                <a class="hide-direccion-link">
+                    <i class="fa fa-close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content" style="display: block;">
+            <p>Ingrese el nombre del sitio o dirección que desea ubicar</p>
+            <div class="form-group pull-left">
+                <label>Ciudad:</label>
+                <input type="text" class="buscarCiudad" id="buscarCiudad" width="30" />
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <label>Dirección:</label>
+                <input type="text" class="buscarDireccion" id="buscarDireccion" width="30" />
+                <a href="javascript:CentrarDireccion()" class="btn btn-sm"><i class="fa fa-search"></i></a>
+            </div>
+            <label id="lbBusquedaDireccion"></label>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal inmodal in modal-oculto" id="div_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInUp">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="cerrarModal()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <div class="modal-header-container">
+                    <i class="fa modal-icon fa-cog fa-spin"></i>
+                    <h4 class="modal-title">Cargando...</h4>
+                    <small class="font-bold">Se está cargando el formulario, espere por favor.</small>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="alerta-modal"></div>
+                <iframe id="iframe_modal" class="iframe_modal"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal in modal-oculto" id="div_modal_alerta" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-pequeno">
+        <div class="modal-content animated bounceInUp">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="cerrarModal()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <div class="modal-header-container">
+                    <i class="fa modal-icon fa-warning"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h4><div class="model-body-alerta"></div></h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="cerrarModal()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop in modal-oculto"></div>
+
+@section Scripts{
+    <script src="@Url.Content("~/Areas/VisorGeografico/Scripts/ImeiTracking/MapaImeiTracking.js")"></script>
+    <script src="~/Scripts/RpcUniadesDependencia.js"></script>
+    <script>
+        var urlDatosUnidad = "@Url.Action("GetUnidad", "UnidadesDependencia", new { Area = "VisorGeografico" })";
+        var urlDatosDependencia = "@Url.Action("GetDependencia", "UnidadesDependencia", new { Area = "VisorGeografico" })";
+        var urlDatosCuadrante = "@Url.Action("GetCuadrante", "UnidadesDependencia", new { Area = "VisorGeografico" })";
+    </script>
+

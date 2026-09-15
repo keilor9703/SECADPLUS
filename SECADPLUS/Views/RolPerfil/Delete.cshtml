@@ -1,0 +1,16 @@
+﻿@model SECADEntities.SecadEntities.CADNETROLPERFIL
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>¿Esta seguro de eliminar este registro?</h3>
+<div>
+    <h4>Rol: @Html.DisplayNameFor(model => model.CADNETROLE.Name)</h4>
+    <h4>Perfil: @Html.DisplayFor(model => model.CADNETPERFIL.PERFIL_NOMBRE)</h4>    
+
+    @using (Html.BeginForm("Delete", "RolPerfil", new { rol_id = Model.ROL_ID, perfil_id = Model.PERFIL_ID}, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    { 
+            @Html.AntiForgeryToken()
+    }
+</div>

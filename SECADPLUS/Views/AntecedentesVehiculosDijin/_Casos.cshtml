@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADBIENES_IMPLICADOS>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+
+        <td>@Html.DisplayFor(modelItem => item.CADCASO.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CONSECUTIVO)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_NOVEDAD)</td>
+        <td>@Html.DisplayFor(modelItem => item.DIRECCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADLUGARES_GEOGRAFICOS.DESCRIPCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.CADBARRIO.DESCRIPCION)</td>
+        @*<td>@Html.DisplayFor(modelItem => item.ESTADO_NOVEDAD)</td>*@
+        <td>
+            @if (item.ESTADO_NOVEDAD == "S")
+            {
+                <span class="label label-success">SI</span>
+            }
+            else
+            {
+                <span class="label label-danger">NO</span>
+            }
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_TERMINO)</td>
+        <td>@Html.DisplayFor(modelItem => item.OBSERVACIONES)</td>
+        <td>@Html.DisplayFor(modelItem => item.PATRULLA)</td>
+        <td>@Html.DisplayFor(modelItem => item.USUA_TRANSACCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.FECHA_TRANSACCION)</td>
+        <td>@Html.DisplayFor(modelItem => item.MAQUINA_TRANSACCION)</td>
+    </tr>
+}

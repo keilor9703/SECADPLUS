@@ -1,0 +1,142 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADBIENE>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADBIENE>, List<CADBIENES_IMPLICADOS>>
+
+@{
+    ViewBag.Title = "Vehículos Implicados";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <!-- Datos Vehículos -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Datos del Vehículo:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo dato"
+                                        onclick="window.location.href ='@Url.Action("Create", "VehiculosImplicadosDatos")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo dato
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaDatos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Clase de Bien</th>
+                            <th>Consecutivo</th>
+                            <th>Marca</th>
+                            <th>Línea</th>
+                            <th>Color</th>
+                            <th>Placa</th>
+                            <th>Chasis</th>
+                            <th>Motor</th>
+                            <th>Serie</th>
+                            <th>Observaciones</th>
+                            <th>Usuario Transacción</th>
+                            <th>Fecha Transacción</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Datos Vehículos -->
+        <!-- Casos Relacionados -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Casos Relacionados</h5>
+                    <div class="computo_input">
+                        @Html.Hidden("CADBIEN_SITIOGRABA")
+                        @Html.Editor("CADBIEN_CONSECUTIVO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear caso"
+                                        onclick="IrCrearCaso(_idSitio, _idBien)">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear caso
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaCasos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            @*<th>Acciones</th>*@
+                            <th>Caso Código</th>
+                            <th>Consecutivo</th>
+                            <th>Fecha Novedad</th>
+                            <th>Dirección</th>
+                            <th>Municipio</th>
+                            <th>Barrio</th>
+                            <th>Vigente</th>
+                            <th>Fecha Termino</th>
+                            <th>Observaciones</th>
+                            <th>Patrulla</th>
+                            <th>Usuario</th>
+                            <th>Fecha</th>
+                            <th>Maquina</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_casos", Model.Item2);
+                        }
+                    </tbody>
+
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Casos Relacionados -->
+
+    </div>
+</div>
+<!-- Área de contenido -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/VehiculosImplicadosJs")
+<script type="text/javascript">
+    var _idSitio = '@ViewBag.CADBIEN_SITIOGRABA';
+    var _idBien = '@ViewBag.CADBIEN_CONSECUTIVO';
+
+    AplicarPluginTabla("tablaDatos");
+    AplicarPluginTabla("tablaCasos");
+
+    var urlCasos = '@Url.Action("GetCasos", "VehiculosImplicados")';
+    var urlLineas = '@Url.Action("GetLineasByMarca", "VehiculosImplicadosDatos")';
+    var urlBarrios = '@Url.Action("GetBarriosByMunicipio", "VehiculosImplicadosCasos")';
+
+    var urlCrearCasos = '@Url.Action("Create", "VehiculosImplicadosCasos")';
+    var urlConsultarVehiculos = '@Url.Action("ConsultarVehiculos", "VehiculosImplicados")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+    ConsultarVehiculos(@ViewBag.SitioID);
+</script>
+
+}

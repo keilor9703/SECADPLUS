@@ -1,0 +1,268 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Turnos de servicio</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                           
+                            <li>
+                                <button type="button" id="crearTurno" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("Crear", "Turnos", new {intSitio=ViewBag.SitioId, intEntidad=ViewBag.EntidadId, strSitio=ViewBag.strNombre, strEntidad=ViewBag.strEntidad })'"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo Turno">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo Turno
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row form-group">
+                        <div class="col-md-2">
+                            <h5>Turnos de servicio de: </h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" readonly value="@ViewBag.Sitio" class="form-control col-md-12" />
+                            <input type="text" readonly value="@ViewBag.Entidad" class="form-control col-md-12" />
+                        </div>
+                    </div>
+                    <div class="row form-group col-md-12">
+                        <table class="table table-hover table-xxs datatable-basic" id="tablaTurnos">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>
+                                        Cons. Turno
+                                    </th>
+                                    <th>
+                                        Clase
+                                    </th>
+                                    <th>
+                                        Tipo
+                                    </th>
+
+                                    <th>
+                                        Fecha Hora Inicial
+                                    </th>
+
+                                    <th>
+                                        Fecha Hora Final
+                                    </th>
+                                    <th>
+                                        Día Inicia
+                                    </th>
+
+                                    <th>
+                                        Día Termina
+                                    </th>
+                                    <th>
+                                        Consignas
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-md-12" id="contenedorConductas">
+                        <legend class="text-semibold">
+                            Conductas Presentadas
+                            <a class="control-arrow" data-toggle="collapse" data-target="#panel1">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+                        <div class="collapse in" id="panel1">
+                            <button type="button" class="btn btn-success btn-xs" onclick="MostrarModalConductas()" id="btnAgregarConducta" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para crear una Conducta Asociada a un turno">
+                                Agregar
+                            </button>
+                            <div class="col-md-8">
+                                <table class="table table-hover table-xxs datatable-basic" id="tablaConductas">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Acciones</th>
+                                            <th>
+                                                Tipo
+                                            </th>
+                                            <th>
+                                                Código
+                                            </th>
+                                            <th>
+                                                Descripción
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6 text-left">
+
+            <button type="button" class="btn bg-teal " data-popup="tooltip" title="" data-placement="bottom"
+                    data-original-title="Clic para regresar a las entidades" onclick="location.href=('@Url.Action("Entidades","Turnos",new { intSitioGrabacion= ViewBag.SitioId, strNombre = ViewBag.Sitio, strConsulta=@ViewBag.Consulta })')">
+                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar a Entidades
+            </button>
+        </div>
+    </div>
+
+    <!-- ModalConductas modal Conducta-->
+    <div id="ModalConductas" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title" id="tituloRadios">Creación</h5>
+                </div>
+                <div class="modal-body ">
+                    <div id="modalAlertaConducta"></div>
+                    <div class="row">
+                        <div class="col-md-12 form-compact">
+                            <label class="form-label" for="Tipos">Tipo</label>
+                            <select id="Tipos" class="chosen-select col-md-12" onchange="ConsultarConductasDisp(this)">
+                                <option value=""></option>
+                                <option value="CO">CONTRAVENCIÓN</option>
+                                <option value="DE">DELITO</option>
+                                <option value="SP">SERVICIO POLICIAL</option>
+                                <option value="OT">OTRAS CONDUCTAS</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 obligatorio form-compact">
+                            <label for="txtCodigo">Código</label>
+                            <input type="text" id="txtCodigo" readonly class="form-control" />
+                        </div>
+                        <div class="col-md-6 obligatorio form-compact">
+                            <label for="txtConducta">Descripción</label>
+                            <input type="text" id="txtConducta" readonly class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-compact">
+                        <div class="md-col-12">
+                            <table id="tblConductasDisp" class="table table-hover table-xxs datatable-basic modal_table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row form-compact">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-success btn-xs" onclick="GuardarConducta()">Aceptar</button>
+                            <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ModalConductas modal -->
+</div>
+<!-- ModalCopiar modal Conducta-->
+<div id="ModalCopiar" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title" id="tituloRadios">Copiar Turno</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaCopiar"></div>
+                <div class="row">
+                    <input type="hidden" id="hdHorasTurno" value="@ViewBag.HorasFuerza" />
+                    <div class="col-md-12 form-compact">
+                        <label class="form-label" for="Tipos">Tipo</label>
+                        @Html.DropDownList("TIPO_TURNO", null, string.Empty, new { @class = "chosen-select", id = "ddlTipoTurno" })
+                    </div>
+                    <div class="col-md-6 obligatorio form-compact">
+
+                        @Html.Label("HORA_INICIA", htmlAttributes: new { @class = "control-label" })
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                            @Html.Editor("HORA_INICIA", new { htmlAttributes = new { @class = "form-control FechaHora", id = "fecha_inicia" } })
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 form-compact">
+                        @Html.Label("HORA_TERMINA", htmlAttributes: new { @class = "control-label" })
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                            @Html.Editor("HORA_TERMINA", new { htmlAttributes = new { @class = "form-control FechaHora", id = "fecha_termina" } })
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-success btn-xs" onclick="Copiar()">Copiar</button>
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalCopiar modal -->
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/DatePickerJs")
+    @Scripts.Render("~/bundle/TurnosJs")
+    <script>
+
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+
+
+
+        var urlObtenerSiguienteFecha = "@Url.Action("ObtenerSiguienteFecha", "Turnos")";
+        var urlObtenerTurnos = "@Url.Action("ObtenerTurnos", "Turnos", new { dcSitio= ViewBag.SitioId , dcfuerza=ViewBag.EntidadId, strNombre= ViewBag.Sitio, strEntidad= ViewBag.Entidad })";
+        var urlObtenerConductas = "@Url.Action("ObtenerConductasAsociadas", "Turnos")";
+        var urlObtenerConductasDisp = "@Url.Action("ObtenerConductas", "Turnos")";
+        var urlGuardarConducta = "@Url.Action("GuardarConductaTurno", "Turnos")";
+        var urlVerificarTruncado = "@Url.Action("VerificarTurnoTruncado", "Turnos")";
+        var glConductas = "@ViewBag.Consulta";
+        var glParametros = ["@ViewBag.SitioId"];
+        var glEntidadId = @ViewBag.EntidadId;
+        var glSitio = "@ViewBag.Sitio";
+        var glEntidad = "@ViewBag.Entidad";
+        var glTurnoEvento = @ViewBag.TurnoEvento;
+        var glSitiograbaTurnoEvento = @ViewBag.SitioGrabaTurno;
+        var glConsulta = "@ViewBag.Consulta";
+        var urlEliminarConducta = "@Url.Action("EliminarConductaAsociada", "Turnos")";
+        var urlCopiarTurno = "@Url.Action("CopiarTurno", "Turnos")";
+        var glSitioCopiar=@ViewBag.SitioId;
+        var urlTurnos = "@Url.Action("Turnos", "Turnos", new { intSitioGrabacion =@ViewBag.SitioId,  strNombre= @ViewBag.Sitio,  intEntidad= @ViewBag.EntidadId,  strEntidad= @ViewBag.Entidad })";
+        var glEvento = @ViewBag.Evento;
+        var glEventoMedio = @ViewBag.EventoMedio;
+        ActivarConductas();
+        CargarTablaTurnos();
+        AplicarChosen();
+        AplicarDateTimePlugin();
+    </script>
+}
+<!-- /área de contenido -->

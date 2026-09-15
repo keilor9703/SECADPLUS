@@ -1,0 +1,25 @@
+﻿
+@using SECADPLUS.Models
+
+
+@foreach (ExtUnidad dato in Model.Unidades)
+{
+    <tr>
+        <td></td>
+        <td>
+            <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                    onclick="cargarUnidad(@dato.CODIGO.ToString(), '@dato.DESCRIPCION')"
+                    title="" data-placement="bottom" data-original-title="Clic para seleccionar">
+                <i class="icon-select2"></i> Seleccionar
+            </button>
+        </td>
+        <td>@dato.CODIGO</td>
+        <td>@dato.DESCRIPCION</td>
+        <td>@dato.ExtNombrePadre</td>
+        <td>@dato.SIGLA</td>
+        <td>@dato.OPERATIVA</td>
+        <td>@dato.VIGENTE</td>
+        <td>@dato.ExtLugar</td>
+        
+    </tr>
+}

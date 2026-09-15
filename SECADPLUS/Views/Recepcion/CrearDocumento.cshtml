@@ -1,0 +1,135 @@
+﻿@model SECADEntities.SecadEntities.CADPEDIDOS_DOCUMENTOS
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="resultadoAjax"></div>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+           
+            @using (Html.BeginForm("CrearDocumento", "Recepcion", FormMethod.Post, new { @class = "form-compact", enctype = "multipart/form-data", id="frm_documentos" }))
+            {
+                <div class="panel-body">
+
+                    <fieldset class="content-group">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.CONSECUTIVO, new { Value = 0 })
+                        @Html.HiddenFor(model => model.DOCUMENTO)
+                        @Html.HiddenFor(model => model.CADPEDI_NUMELLAMADA, new { Value = ViewBag.Llamada })
+                        @Html.HiddenFor(model => model.CADPEDI_SITIOGRABA, new { Value = ViewBag.Sitio })
+                        @Html.HiddenFor(model => model.ARCHIVO)
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                               
+                                <div class="col-xs-6 col-md-3 col-lg-3 text-left form-group ">
+                                    @Html.LabelFor(model => model.FECHA_GRABACION, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12 ">
+                                        @Html.EditorFor(model => model.FECHA_GRABACION, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.FechaHora, @Readonly = true } })
+                                        @Html.ValidationMessageFor(model => model.FECHA_GRABACION, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                    @Html.LabelFor(model => model.FECHA_MODIFICACION, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12 ">
+                                        @Html.EditorFor(model => model.FECHA_MODIFICACION, new { htmlAttributes = new { @class = "form-control", @Readonly = true } })
+                                        @Html.ValidationMessageFor(model => model.FECHA_MODIFICACION, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                    @Html.LabelFor(model => model.USUA_MODIFICA, htmlAttributes: new { @class = "control-label col-md-2", @Value="Usuario" })
+                                    <div class="col-md-12 ">
+                                        @Html.EditorFor(model => model.USUA_MODIFICA, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.Usuario, @Readonly = true } })
+                                        @Html.ValidationMessageFor(model => model.USUA_MODIFICA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-3 col-lg-3 text-left form-group">
+                                    @Html.LabelFor(model => model.RUTA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12 ">
+                                        @Html.EditorFor(model => model.RUTA, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.RUTA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-3 col-lg-3 text-left form-group obligatorio">
+                                    @Html.LabelFor(model => model.NOMBRE_ARCHIVO, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12 ">
+                                        @Html.EditorFor(model => model.NOMBRE_ARCHIVO, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NOMBRE_ARCHIVO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        @Html.Label("Foto", htmlAttributes: new { @class = "control-label" })
+                                        <div class="row">
+                                            <figure class="text-center col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                                <img class="img-thumbnail img-responsive" src="~/images/Avatar.png" id="imagen" style="width:100%" />
+                                            </figure>
+                                            <div class="col-xs-5 col-sm-8 col-md-5 col-lg-8">
+                                                <input type="file" class="file-styled-secad btn-success btn-xs" id="uploader" name="uploader" accept="image/gif, image/jpeg, image/tiff, image/bmp" onchange="MuestraImagen(this)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+
+                            
+                            <hr />
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                                
+                                <h5>Documentos</h5>
+                                <div class="col-md-12 ">
+                                    <table class="table table-hover table-xxs datatable-basic " id="tblDocumentos">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Acciones</th>
+                                                <th>Consecutivo</th>
+                                                <th>Fecha Creación</th>
+                                                <th>Fecha Modificación</th>
+                                                <th>Usuario</th>
+                                                <th>Ruta</th>
+                                                <th>Nombre Archico</th>
+                                                <th>Imagen</th>                                                
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">                        
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip" type="button"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios" id="btnGuardar">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /formulario -->
+    </div>
+</div>
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/PedidosDocsJs")
+    <script>
+
+        var urlConsultarDocumentos = "@Url.Action("ObtenerDocumentos", "Recepcion")";
+        var urlConsultarDocumento = "@Url.Action("ConsultarDocumento", "Recepcion")";
+        var glSitio = @ViewBag.Sitio;
+        var glNumeroLlamada = @ViewBag.Llamada;
+        CargarTablaPedidos();
+    </script>
+}

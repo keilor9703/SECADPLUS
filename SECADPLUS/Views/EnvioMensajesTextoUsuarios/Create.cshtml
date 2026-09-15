@@ -1,0 +1,178 @@
+﻿@model SECADEntities.SECAD.CADMENSAJES_TEXTO_USUARIOS
+
+@{
+    ViewBag.Title = "Crear Enviar Mensaje A";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Enviar Mensaje A:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "EnvioMensajesTextoUsuarios", FormMethod.Post, new { @class = "form_secad" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.Hidden("CADMENTEX_MENS_SITIOGRABA")
+                    @Html.Hidden("CADMENTEX_MENS_CONSECUTIVO")
+                    @Html.Hidden("CADMENTEX_CONSECUTIVO")
+                    @Html.Hidden("idSitio")
+                    @Html.Hidden("idCons")
+                    @Html.Hidden("idText")
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label>Entidad:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("CADFUER_DESTINO", null, string.Empty, htmlAttributes: new { @class = "select-clear" })
+                                        @Html.ValidationMessageFor(model => model.CADFUER_DESTINO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label>Canal:</label>
+                                <div class="row">
+                                    <div class="col-md-10 col-lg-12">
+                                        @Html.DropDownList("CADCANA_DESTINO", null, string.Empty, htmlAttributes: new { @class = "select-clear" })
+                                        @Html.ValidationMessageFor(model => model.CADCANA_DESTINO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Usuario Destino:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("CADUSUA_DESTINO", null, string.Empty, htmlAttributes: new { @class = "select-clear" })
+                                        @Html.ValidationMessageFor(model => model.CADUSUA_DESTINO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Estado:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("ESTADO", null, string.Empty, htmlAttributes: new { @class = "select-clear" })
+                                        @Html.ValidationMessageFor(model => model.ESTADO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group">
+                                <label>Fecha Notificación:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.Editor("FECHA_NOTIFICACION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.FECHA_NOTIFICACION, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Fecha Grabación:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.Editor("FECHA_GRABACION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.FECHA_GRABACION, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 text-left">
+                            <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                    data-original-title="Clic para regresar a la tabla"
+                                    onclick="window.location.href ='@Url.Action("Index", "EnvioMensajes", new { idSitio = @ViewBag.idSitio, idCons = @ViewBag.idCons, idText = @ViewBag.idText })'">
+                                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                    value="Create">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#CADFUER_DESTINO").change(function () {
+            $("#CADCANA_DESTINO").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetCanalesByEntidad")',
+                dataType: 'json',
+                data: { id: $("#CADFUER_DESTINO").val() },
+                success: function (canales) {
+                    $.each(canales, function (i, canal) {
+                        $("#CADCANA_DESTINO").append($('<option></option>').val(canal.CODIGO).html(canal.DESCRIPCION));
+                    });
+                },
+                error: function (ex) {
+                    alert('Fallo Canales.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+
+    $(document).ready(function () {
+        $("#CADCANA_DESTINO").change(function () {
+            $("#CADUSUA_DESTINO").empty();
+            console.log($("#CADFUER_DESTINO").val() + " - " + $("#CADCANA_DESTINO").val());
+            //debugger
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetUsuariosByEntidadCanal")',
+                dataType: 'json',
+                data: { idFuerza: $("#CADFUER_DESTINO").val(), idCanal: $("#CADCANA_DESTINO").val() },
+                success: function (usuarios) {
+                    $.each(usuarios, function (i, usuario) {
+                        $("#CADUSUA_DESTINO").append($('<option></option>').val(usuario.CODIGO).html(usuario.DESCRIPCION));
+                    });
+                },
+                error: function (ex) {
+                    alert('Fallo Usuarios.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+</script>

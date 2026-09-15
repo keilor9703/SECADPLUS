@@ -1,0 +1,70 @@
+﻿@if (ViewBag.SIGLA != null)
+{
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Información de la Unidad</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list ">
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body form-compact">
+                <fieldset class="content-group ">
+                    <div class="row">
+                        <div class="col-xs-3 col-md-3 text-left form-group">                            
+                            <div class="col-md-12 ">
+                                <label>Fuerza</label>
+                                <input type="text" class="form-control" readonly="readonly" id="txtFuerza" value="@ViewBag.UnidadFuerza"/>                                
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-md-3 text-left form-group ">                            
+                            <div class="col-md-12 ">
+                                <label>Código</label>
+                                <input type="text" class="form-control" readonly="readonly" id="txtCodigo" value="@ViewBag.UnidadCodigo" />    
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-md-3 text-left form-group ">                            
+                            <div class="col-md-12 ">
+                                <label>Sigla</label>
+                                <input type="text" class="form-control" readonly="readonly" id="txtSigla" value="@ViewBag.SIGLA" />  
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-md-3 text-left form-group ">                            
+                            <div class="col-md-12 ">
+                                <label>Descripción</label>
+                                <input type="text" class="form-control" readonly="readonly" id="txtDesc" value="@ViewBag.DESCRIPCION" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 col-md-3 text-left form-group">                            
+                            <div class="col-md-12 ">
+                                <label>Fuerza Unidad</label>
+                                <input type="text" class="form-control" readonly="readonly" id="txtfUnidad" value="@ViewBag.UnidadFuerza" />
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-md-3 text-left form-group ">                            
+                            <div class="col-md-12 ">
+                                <label>Unidad Padre</label>
+                                <input type="text" class="form-control" readonly="readonly" id="txtCodigo" value="@ViewBag.CODPADRE" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-left form-group ">
+                            <div class="col-md-12 ">
+                                <label>Descripción</label>
+                                <textarea id="txtArea" class="form-control" readonly="readonly" rows="15">
+                                    @ViewBag.Padres
+                                </textarea>
+                            </div>
+                        </div>
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+        <!-- /formulario -->
+    </div>
+
+}

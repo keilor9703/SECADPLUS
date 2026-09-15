@@ -1,0 +1,237 @@
+﻿
+
+@{
+    ViewBag.Title = "Ver conexiones";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Tabla de Conexiones:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                @*<button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                            title="" data-placement="bottom" data-original-title="Clic para imprimir conexiones"
+                                            onclick="window.location.href ='@Url.Action("Imprimir")'">
+                                        <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Imprimir Conexiones
+                                    </button>*@
+
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    @Html.AntiForgeryToken()
+                    <fieldset class="content-group ">
+                        <div class="row">
+
+                            @Html.Hidden("CODIGOCANAL")
+                            @Html.Hidden("CODIGOFUERZA")
+                            @Html.Hidden("BARR_LUGE_CODIGO")
+                            <div class="form-group col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    @Html.Label("Tipo de Conexión", htmlAttributes: new { @class = "control-label col-md-9" })
+                                    <div class="col-md-12">
+                                        <select id="selTipoConexion" class="chosen-select">
+                                            <option selected="selected" value="S">CONEXION VIGENTE</option>
+                                            <option value="N">CONEXION HISTORICA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    @Html.Label("Condición", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("CONDICION", null, string.Empty, htmlAttributes: new { @class = "chosen-select", @id = "listCondicion" })
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-4 form-group text-center">
+                                <button class="btn bg-teal bg-danger btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic ver información"
+                                        onclick="RefrescarConexiones()" id="btnInfo">
+                                    <i id="info" class="icon-file-text3 icon_size-md"></i>
+                                </button>
+                                <button class="btn bg-teal bg-danger btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic deterner timer"
+                                        onclick="DeternerTimer()" id="btnDetener">
+                                    <i id="iTimer" class="icon-watch2 icon_size-md"></i>
+                                </button>
+                                <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic refrescar pantalla"
+                                        onclick="RefrescarConexiones()">
+                                    <i class="icon-rotate-cw3 icon_size-md"></i>
+                                </button>
+                                <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para cerrar sesiones no vigentes"
+                                        onclick="CerrarSesiones()">
+                                    <i class="icon-switch icon_size-md"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaConexiones">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Condición</th>
+                            <th>Grado</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Fecha hasta</th>
+                            <th>Sesión id</th>
+                            <th>Maquina</th>
+                            <th>Usuario</th>
+                            <th></th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+                <br />
+                <div class="panel-body">
+                    <fieldset class="content-group ">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="col-md-12">
+                                    <div class="col-xs-12 col-sm-2 col-md-1 col-lg-2 ">
+                                        <div class="form-group">
+                                            @Html.Label("Fuerza", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-2 ">
+                                        <div class="form-group">
+                                            <input id="idFuerza" type="text" class="form-control"  readonly="readonly" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-4 ">
+                                        <div class="form-group">
+                                            <input id="fuerza" type="text" class="form-control"  readonly="readonly" class="col-md-12" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="col-md-12">
+                                    <div class="col-xs-12 col-sm-2 col-md-1 col-lg-2 ">
+                                        <div class="form-group">
+                                            @Html.Label("Canal", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-2 ">
+                                        <div class="form-group">
+                                            <input id="idCanal" type="text" class="form-control" readonly="readonly" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-4 ">
+                                        <div class="form-group">
+                                            <input id="canal" type="text" class="form-control"  readonly="readonly" class="col-md-12" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            @*<div class="form-group col-md-2 col-lg-3">
+                                <div class="form-group">
+
+
+
+                                    @Html.Label("Fuerza", htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-2">
+                                        <input id="idFuerza" type="text" readonly="readonly" />
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-2 col-lg-9">
+                                <div class="form-group">
+
+                                    <div class="col-md-3">
+                                        <input id="fuerza" type="text" readonly="readonly" class="col-md-12" />
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-2 col-lg-3">
+                                <div class="form-group">
+                                    @Html.Label("Canal", htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-2">
+                                        <input id="idCanal" type="text" readonly="readonly" />
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-2 col-lg-9">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <input id="canal" type="text" readonly="readonly" class="col-md-12" />
+
+                                    </div>
+                                </div>
+
+                            </div>*@
+
+                        </div>
+
+                    </fieldset>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+</div>
+<!-- Área de contenido -->
+
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+
+<script type="text/javascript">
+    $(".chosen-select").chosen();
+    var _tiempoRefresco = @ViewBag.tiempoRefresco;
+    var urlTabla = '@Url.Action("ObtenerConexiones", "VerConexiones")';
+    var urlDatos = '@Url.Action("ObtenerDatosFuerzaCanal", "VerConexiones")';
+    var urlCerrar = '@Url.Action("CerrarSesiones", "VerConexiones")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+
+@Scripts.Render("~/bundle/VerConexionesJs")

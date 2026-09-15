@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="553c7e165dea45ada793cf94f5556e35" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="SECAD.CADANOTAGRAL" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADARMA" Width="1.5" PointX="14.25" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADBARRIO" Width="1.5" PointX="14.25" PointY="45.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADBIENE" Width="1.5" PointX="8.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADBIENES_IMPLICADOS" Width="1.5" PointX="16.5" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADBIENES_NOVEDADES" Width="1.5" PointX="19.5" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCANALE" Width="1.5" PointX="13.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCARACTERISTICA" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCASO" Width="1.5" PointX="14.25" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCLASES_BIEN" Width="1.5" PointX="6" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCLASES_SITIO" Width="1.5" PointX="9" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCLASIFICACION_CIERRE" Width="1.5" PointX="13.5" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCOLORE" Width="1.5" PointX="6" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCONDCLASESBIEN" Width="1.5" PointX="8.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCONDCLBIPONDERADO" Width="1.5" PointX="10.5" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCONDUCTA" Width="1.5" PointX="6" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADCONEXION" Width="1.5" PointX="8.5" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADEQUIPOS" Width="1.5" PointX="5.25" PointY="42.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADFUERZA" Width="1.5" PointX="11.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADINCIDENTES_ANTECEDENTE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADINFRACCIONES_TRANSITO" Width="1.5" PointX="17.25" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADLINEAS_MARCA" Width="1.5" PointX="6" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADLUGARES_GEOGRAFICOS" Width="1.5" PointX="0.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADMARCA" Width="1.5" PointX="3.75" PointY="48.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADMENSAJE" Width="1.5" PointX="5.25" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADMENSAJES_TEXTO" Width="1.5" PointX="7.5" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADMENSAJES_TEXTO_USUARIOS" Width="1.5" PointX="9.75" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADPARQUEADERO" Width="1.5" PointX="8.25" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADPATRULLA" Width="1.5" PointX="11.25" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADPREGUNTA" Width="1.5" PointX="14.25" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADPREGUNTASCASO" Width="1.5" PointX="16.5" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADRADIO" Width="1.5" PointX="14.25" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADREFERENCIA" Width="1.5" PointX="5.25" PointY="66.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADREFERENCIASSECAD" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADREGIONALE" Width="1.5" PointX="0.75" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADSITIO" Width="1.5" PointX="11.25" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADSITIOS_GRABACION" Width="1.5" PointX="3" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADTIPOS_BIEN" Width="1.5" PointX="3.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADTIPOSNOVEDADE" Width="1.5" PointX="17.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADUNIDADE" Width="1.5" PointX="6" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADUNIDADES_MEDIDA" Width="1.5" PointX="3.75" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.CADVEHICULO" Width="1.5" PointX="14.25" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.V_BARRIOS_CANALES" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.V_FORM_SITIOS_GRABACION" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SECAD.V_FUERZAS" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="SECAD.CADANOTAGRAL_CADSITIOS_GRAB_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADARMA_UNID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADARMAS_CLBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADARMAS_MARC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBARR_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBIIMPL_BARR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITIOS_BARR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBIENES_CLBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBIENES_COLO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBIENES_LIMA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBIENES_SITIGR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINIMPL_BIEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_BIEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBIIMPL_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINIMPL_CASOS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_CLINNOVBIEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_INFRTRAN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_PARQ_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_TIPONOVBIEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADBINOV_VEHIC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCANAL_FUERZA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCARA_TIB_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADPREGCASO_CASO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCLBI_TIBI_CODIGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCLBI_UNME_CODIGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCONDCLASESBIEN_CLBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADRAD_CLBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADVEHI_CLBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITIO_CLSI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCLASCIERR_FUERZA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCONCLBIPOND_CONDCLBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCONDCLASESBIEN_COND_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCONEX_CADSITIOGRABA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADCONEXI_EQUIPO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADEQUIP_CADSITIOGRABA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADFUERZ_CADSITIOGRABA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADFUERZ_UNDEPPAL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADFUERZAS_CADUNDE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADINFRACTRA_INFRACC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADLIMA_MARC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADLUGE_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADPARQUEADEROS_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITGRABA_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITIO_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADUNDE_LUGE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADMARC_TIBI_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADRADI_MARC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADVEHI_MARC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADMENSA_SITIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADMENSATEXTO_MENS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADMENSATEXTOUSUA_TEXT_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADPARQUEADEROS_SITIOGR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADPATR_SITIGR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADPATR_UNDE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADPREGCASO_PREG_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADRADI_UNDE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADREFE_CADSITIOGRABA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITIGRAB_CONSREG_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADUNRE_REGIONA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITIO_SITIOGRABA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADSITGRABA_UNDE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADTIPOSNOVEDADES_TINO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADUNDE_CADUNDE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SECAD.CADVEHI_UNDE_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

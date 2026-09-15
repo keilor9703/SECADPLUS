@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IngresoSistemaModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CADESQUEMA_AUTENTICACION">
+          <Key>
+            <PropertyRef Name="CADESQAUT_ID" />
+          </Key>
+          <Property Name="CADESQAUT_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBREESQUEMA" Type="nvarchar2" MaxLength="255" />
+          <Property Name="FECHA_CREACION" Type="date" />
+          <Property Name="ESTADO" Type="number" Precision="1" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CADINGRESOSISTEMA_AUD">
+          <Key>
+            <PropertyRef Name="CADINGRESO_ID" />
+            <PropertyRef Name="CADSITIO_GRABACION" />
+          </Key>
+          <Property Name="CADINGRESO_ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CADNETUSER_ID" Type="nvarchar2" MaxLength="128" />
+          <Property Name="CADSITIO_GRABACION" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="IP_EQUIPO" Type="nvarchar2" MaxLength="20" />
+          <Property Name="ESQUEMA_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RESULTADO" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="OBSERVACION" Type="nvarchar2" MaxLength="256" />
+        </EntityType>
+        <Association Name="FK_CADESQUEMAAUTE">
+          <End Role="CADESQUEMA_AUTENTICACION" Type="Self.CADESQUEMA_AUTENTICACION" Multiplicity="1" />
+          <End Role="CADINGRESOSISTEMA_AUD" Type="Self.CADINGRESOSISTEMA_AUD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADESQUEMA_AUTENTICACION">
+              <PropertyRef Name="CADESQAUT_ID" />
+            </Principal>
+            <Dependent Role="CADINGRESOSISTEMA_AUD">
+              <PropertyRef Name="ESQUEMA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IngresoSistemaModelStoreContainer">
+          <EntitySet Name="CADESQUEMA_AUTENTICACION" EntityType="Self.CADESQUEMA_AUTENTICACION" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADINGRESOSISTEMA_AUD" EntityType="Self.CADINGRESOSISTEMA_AUD" Schema="USR_CAD" store:Type="Tables" />
+          <AssociationSet Name="FK_CADESQUEMAAUTE" Association="Self.FK_CADESQUEMAAUTE">
+            <End Role="CADESQUEMA_AUTENTICACION" EntitySet="CADESQUEMA_AUTENTICACION" />
+            <End Role="CADINGRESOSISTEMA_AUD" EntitySet="CADINGRESOSISTEMA_AUD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IngresoSistemaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CADESQUEMA_AUTENTICACION">
+          <Key>
+            <PropertyRef Name="CADESQAUT_ID" />
+          </Key>
+          <Property Name="CADESQAUT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBREESQUEMA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA_CREACION" Type="DateTime" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CADINGRESOSISTEMA_AUD" Relationship="Self.FK_CADESQUEMAAUTE" FromRole="CADESQUEMA_AUTENTICACION" ToRole="CADINGRESOSISTEMA_AUD" />
+        </EntityType>
+        <EntityType Name="CADINGRESOSISTEMA_AUD">
+          <Key>
+            <PropertyRef Name="CADINGRESO_ID" />
+            <PropertyRef Name="CADSITIO_GRABACION" />
+          </Key>
+          <Property Name="CADINGRESO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CADNETUSER_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CADSITIO_GRABACION" Type="Int32" Nullable="false" />
+          <Property Name="IP_EQUIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ESQUEMA_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RESULTADO" Type="Boolean" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" />
+          <NavigationProperty Name="CADESQUEMA_AUTENTICACION" Relationship="Self.FK_CADESQUEMAAUTE" FromRole="CADINGRESOSISTEMA_AUD" ToRole="CADESQUEMA_AUTENTICACION" />
+          <Property Name="OBSERVACION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_CADESQUEMAAUTE">
+          <End Role="CADESQUEMA_AUTENTICACION" Type="Self.CADESQUEMA_AUTENTICACION" Multiplicity="1" />
+          <End Role="CADINGRESOSISTEMA_AUD" Type="Self.CADINGRESOSISTEMA_AUD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADESQUEMA_AUTENTICACION">
+              <PropertyRef Name="CADESQAUT_ID" />
+            </Principal>
+            <Dependent Role="CADINGRESOSISTEMA_AUD">
+              <PropertyRef Name="ESQUEMA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IngresoSistemaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CADESQUEMA_AUTENTICACION" EntityType="Self.CADESQUEMA_AUTENTICACION" />
+          <EntitySet Name="CADINGRESOSISTEMA_AUD" EntityType="Self.CADINGRESOSISTEMA_AUD" />
+          <AssociationSet Name="FK_CADESQUEMAAUTE" Association="Self.FK_CADESQUEMAAUTE">
+            <End Role="CADESQUEMA_AUTENTICACION" EntitySet="CADESQUEMA_AUTENTICACION" />
+            <End Role="CADINGRESOSISTEMA_AUD" EntitySet="CADINGRESOSISTEMA_AUD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IngresoSistemaModelStoreContainer" CdmEntityContainer="IngresoSistemaEntities">
+          <EntitySetMapping Name="CADESQUEMA_AUTENTICACION">
+            <EntityTypeMapping TypeName="IngresoSistemaModel.CADESQUEMA_AUTENTICACION">
+              <MappingFragment StoreEntitySet="CADESQUEMA_AUTENTICACION">
+                <ScalarProperty Name="CADESQAUT_ID" ColumnName="CADESQAUT_ID" />
+                <ScalarProperty Name="NOMBREESQUEMA" ColumnName="NOMBREESQUEMA" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADINGRESOSISTEMA_AUD">
+            <EntityTypeMapping TypeName="IngresoSistemaModel.CADINGRESOSISTEMA_AUD">
+              <MappingFragment StoreEntitySet="CADINGRESOSISTEMA_AUD">
+                <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+                <ScalarProperty Name="CADINGRESO_ID" ColumnName="CADINGRESO_ID" />
+                <ScalarProperty Name="CADNETUSER_ID" ColumnName="CADNETUSER_ID" />
+                <ScalarProperty Name="CADSITIO_GRABACION" ColumnName="CADSITIO_GRABACION" />
+                <ScalarProperty Name="IP_EQUIPO" ColumnName="IP_EQUIPO" />
+                <ScalarProperty Name="ESQUEMA_ID" ColumnName="ESQUEMA_ID" />
+                <ScalarProperty Name="RESULTADO" ColumnName="RESULTADO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

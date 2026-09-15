@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Consulta de pedidos</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                           
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-1">
+                                <label class="" >Código caso</label>
+                                <input class="form-control" type="text" name="filtroConsulta" id="txtCodigoCaso" />
+                            </div>
+                            <div class="col-md-2">
+                                <label class="">Abonado</label>
+                                <input class="form-control" type="number" name="filtroConsulta" id="txtAbonado" />
+                            </div>
+                            <div class="col-md-2">
+                                
+                                    <div class="form-group col-lg-12 form-compact">
+                                        <label class="">Fecha</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                            <input class="form-control FechaHora" type="text" name="filtroConsulta" id="txtFecha" />
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                
+                                
+                                
+                            </div>
+                            <div class="col-md-3">
+                                <label class="">Descripción</label>
+                                <input class="form-control" type="text" name="filtroConsulta" id="txtDescripcion" />
+                            </div>
+                            
+                            <div class="col-md-1">
+                                <label>Acción</label>
+                                <button type="button" class="btn btn-danger btn-xs" id="btnLimpiarFiltro">Limpiar filtros</button>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row form-group col-md-12">
+                        <table class="table table-hover table-xxs datatable-basic" id="tblPedidos">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>
+                                        Numero Llamada
+                                    </th>
+                                    <th>
+                                        Teléfono
+                                    </th>
+                                    <th>Código Caso</th>
+                                    <th>Llamada Asociada</th>
+                                    <th>
+                                        Sitio
+                                    </th>
+                                    <th>
+                                        Propietario
+                                    </th>
+                                    <th>
+                                        Hora Caso
+                                    </th>
+                                    <th>
+                                        Responsable
+                                    </th>
+                                    <th>
+                                        Comentario
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6 text-left">
+            
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    
+    @Scripts.Render("~/bundle/PedidosJs")
+    <script>
+        var glModo = "@ViewBag.Servicios";
+        
+        var glUsuario = "@ViewBag.Usuario";
+        var glSitio = "@ViewBag.Sitio";        
+        var urlConsultaPedido = "@Url.Action("ConsultarPedidos", "Recepcion")";
+        CargarTablaPedidos();
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        AplicarPluginFiltroFecha();
+        //////////////////////////////////////////////////////////////////
+    </script>
+}
+<!-- /área de contenido -->

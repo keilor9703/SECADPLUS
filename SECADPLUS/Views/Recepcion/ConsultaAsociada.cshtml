@@ -1,0 +1,708 @@
+﻿@model SECADPLUS.Models.RecepcionModel
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-body">
+                    <div id="exTab3">
+                        <ul class="nav nav-tabs nav-tabs-highlight" id="contenedor">
+                            <li  id="tabIngreso"><a href="@Url.Action("Consulta","Recepcion", new { intSitio=Model.SitioOriginal, lgLlamada=Model.LlamadaOriginal})" >Ingreso Llamadas</a></li>
+                            <li class="active" id="asociadas"><a href="#asociadas"  data-toggle="tab" > Asociadas</a></li>
+                            <li id="tabMensajes"><a href="#mensajes" data-toggle="tab" >Mensajes</a></li>
+                            <li id="usu24"><a href="#usu24h" data-toggle="tab" >Llamada Usuario 24h</a></li>
+                            <li id="tabgral"><a href="#gral" data-toggle="tab" >Llamada Gral Sala</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active col-lg-12 col-md-12 row" id="ingreso">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <div class="panel panel-flat">
+                                    <div class="panel-body">
+                                        <form action="#" method="post" id="formPedido">
+                                            <!-- Contenido panel -->
+                                            <div class="col-md-12 space_down">
+                                                <fieldset>
+                                                    <legend class="text-semibold">
+                                                        Llamada
+                                                        <a class="control-arrow" data-toggle="collapse" data-target="#panel1">
+                                                            <i class="icon-circle-down2"></i>
+                                                        </a>
+                                                    </legend>
+                                                    <div class="collapse in" id="panel1">
+                                                        <div class="row">
+                                                            <!--Campos ocultos para complementar la creación del pedido-->
+                                                            @Html.HiddenFor(model => model.LUGE_TELEFONO, new { Value = 0 })
+                                                            @Html.HiddenFor(model => model.SITIO_GRABA, new { })
+                                                            @Html.HiddenFor(model => model.LUGE_CODIGO, new { Value = 0 })
+                                                            @Html.HiddenFor(model => model.CODI_PEDIDO_REAL, new { })
+                                                            @Html.HiddenFor(model => model.IMPORTANCIA, new { Value = "01" })
+                                                            @Html.HiddenFor(model => model.PRIORIDAD, new { Value = "01" })
+                                                            @Html.HiddenFor(model => model.TOTAL_CANALES, new { Value = "N" })
+                                                            @Html.HiddenFor(model => model.TIPO_GENERO, new { Value = "CG" })
+                                                            @Html.HiddenFor(model => model.CADUSUA_USUARIO, new { Value = Model.Usuario })
+                                                            @Html.HiddenFor(model => model.CADPOLI_CEDU_EMPLEADO, new { Value = Model.Identificacion })
+                                                            @Html.HiddenFor(model => model.CADPEDI_SITIO_GRABA, new { Value = Model.CADPEDI_SITIO_GRABA })
+                                                            @Html.HiddenFor(model => model.FECHA_GRABACION, new { })
+                                                            @Html.HiddenFor(model => model.FECH_CASO, new { })
+                                                            @Html.HiddenFor(model => model.ENVIAR, new { Value = "N" })
+                                                            <input type="hidden" id="CADPEDI_SITIOGRABA" name="CADPEDI_SITIOGRABA" />
+                                                            <input type="hidden" id="CADPEDI_NUMELLAMADA" name="CADPEDI_NUMELLAMADA" />
+                                                            <input type="hidden" id="CADCANA_FUERZ_ID" name="CADCANA_FUERZ_ID" value="0" />
+                                                            <input type="hidden" id="CADCANA_CODIGO" name="CADCANA_CODIGO" value="0" />
+                                                            <input type="hidden" id="CADEVEN_SITIO_GRABA" name="CADEVEN_SITIO_GRABA" />
+                                                            <input type="hidden" id="CADEVEN_NUME_EVENTO" name="CADEVEN_NUME_EVENTO" />
+                                                            <input type="hidden" id="USUA_MODIFICA" name="USUA_MODIFICA" value="@Model.Usuario" />
+                                                            <input type="hidden" id="FECHA_MODIFICACION" name="FECHA_MODIFICACION" value="@Model.FechaHora" />
+                                                            <div class="col-md-12 col-lg-6">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-md-5">Fecha y Hora:</label>
+                                                                            <div class="input-group col-md-7">
+                                                                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                                                <input type="text" name="HORA_CASO" id="FechaCaso" class="form-control pickadate-accessibility"
+                                                                                       placeholder="Escoja una fecha" data-popup="tooltip" title=""
+                                                                                       data-placement="top" data-original-title="Escoja una fecha" value="@Model.FechaHora" readonly>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact form-group">
+                                                                            <label class="col-md-5">No de llamada:</label>
+                                                                            @Html.EditorFor(model => model.NUME_LLAMADA, new { htmlAttributes = new { @class = "col-md-7 bg-teal-300", @Readonly = true } })
+                                                                            @Html.ValidationMessageFor(model => model.NUME_LLAMADA, "", new { @class = "text-danger" })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6 space_down">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-md-5">Responsable:</label>
+                                                                            @Html.EditorFor(model => model.CADUSUA_USUARIO, new { htmlAttributes = new { @class = "col-md-7 bg-teal-300  ", Value = Model.Usuario, @Readonly = true } })
+                                                                            @Html.ValidationMessageFor(model => model.CADUSUA_USUARIO, "", new { @class = "text-danger" })
+                                                                        </div>
+                                                                    </div>
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 col-lg-6">
+                                                                <div class="row space_down">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label class="col-lg-4">Prioridad:</label>
+                                                                            <div class="col-lg-8">
+                                                                                <label class="radio-inline text-orange-300">
+                                                                                    <input type="radio" name="prioridad" class="styled" id="rutina" value="01">
+                                                                                    Rutina
+                                                                                </label>
+                                                                                <label class="radio-inline text-success">
+                                                                                    <input type="radio" name="prioridad" id="inmd" class="styled" value="03">
+                                                                                    Inmd.
+                                                                                </label>
+                                                                                <label class="radio-inline text-danger">
+                                                                                    <input type="radio" name="prioridad" id="flash" class="styled" value="04">
+                                                                                    Flash
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+
+                                                                            <label class="col-lg-4">Importancia :</label>
+                                                                            <div class="col-lg-8">
+
+                                                                                <label class="radio-inline">
+                                                                                    <input type="radio" name="importancia" class="styled" id="baja" value="01">
+                                                                                    1
+                                                                                </label>
+                                                                                <label class="radio-inline">
+                                                                                    <input type="radio" name="importancia" id="media" class="styled" value="02">
+                                                                                    2
+                                                                                </label>
+                                                                                <label class="radio-inline">
+                                                                                    <input type="radio" name="importancia" id="alta" class="styled" value="03">
+                                                                                    3
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-compact col-xs-12 col-md-12 bg-teal-100 text-center hide">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-4">
+                                                                            <label class="checkbox-inline">
+                                                                                <input type="checkbox" name="todosCanales" id="todosCanales" class="styled">
+                                                                                Enviar a todos los canales
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-4">
+                                                                            <label class="checkbox-inline">
+                                                                                <input type="checkbox" name="mujeres" id="mujeres" class="styled">
+                                                                                Hay afectación de mujeres
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-0">
+                                                                            <span class="label bg-danger">V60 pais abonado</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <fieldset>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <legend class="text-semibold">
+                                                                Datos
+                                                                <a class="control-arrow" data-toggle="collapse" data-target="#panel2">
+                                                                    <i class="icon-circle-down2"></i>
+                                                                </a>
+                                                            </legend>
+                                                            <div class="collapse in" id="panel2">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact" id="contenedorAbonado">
+                                                                            <label class="text-danger">Abonado * </label>
+                                                                            <input type="number" id="telefono" class="form-control abonado" readonly
+                                                                                   placeholder="Escriba el número tel/cel" aria-required="true" value="@Model.NUME_TELEFONO">
+                                                                            <span class="label bg-primary-300 table-xs" id="mensajeAbonado"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label>Medio Com.</label>
+                                                                            @Html.DropDownList("DISP_TELEFONICO", Model.Medios, string.Empty, htmlAttributes: new { @class = "form-control chosen-select lectura ", tabindex = "-1", id = "ddlMedios" })
+                                                                            @Html.ValidationMessageFor(model => model.DISP_TELEFONICO, "", new { @class = "text-danger" })
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-compact">
+                                                                    <div class="col-md-6">
+                                                                        <label>Nombre:</label>
+
+                                                                        <input type="text" name="PROP_TELEFONO" id="PROP_TELEFONO" class="form-control readonly-recepcion-grey" readonly tabindex="-1" value="@Model.PROP_TELEFONO"
+                                                                               placeholder="Nombre Propietario" aria-required="true">
+                                                                    </div>
+
+                                                                    <div class="col-md-3">
+                                                                        <label>Ciudad:</label>
+                                                                        <input type="text" name="spBarrio" id="spCiudad" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Ciudad" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label>Barrio:</label>
+                                                                        <input type="text" name="BARR_TELEFONO" id="BARR_TELEFONO" class="form-control readonly-recepcion-grey" readonly tabindex="-1" value="@Model.BARR_TELEFONO"
+                                                                               placeholder="Barrio" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-3 hide">
+                                                                        <label>Celda:</label>
+                                                                        <input type="text" name="CELDA_MARCACION" id="CELDA_MARCACION" class="form-control readonly-recepcion-grey" readonly tabindex="-1"
+                                                                               placeholder="Celda" aria-required="true">
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <label>Dirección:</label>
+                                                                        <input type="text" name="DIRE_TELEFONO" id="DIRE_TELEFONO" class="form-control readonly-recepcion-grey" readonly tabindex="-1" value="@Model.DIRE_TELEFONO"
+                                                                               placeholder="Dirección" aria-required="true">
+                                                                    </div>
+                                                                </div>
+                                                              
+                                                                <!-- Caja de texto -->
+                                                                <div class="row">
+                                                                    <div class="col-md-12 ">
+                                                                        <label class="text-danger">Descripción hechos *</label>
+                                                                        <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos" id="taPreguntas" name="COMENTARIO" readonly>@Model.COMENTARIO</textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="text-danger col-md-12">Ciudad caso *</label>
+
+                                                                            @Html.EditorFor(model => model.LUGE_BARRIO, new { htmlAttributes = new { @class = "form-control hide", id = "txtCiudadId", @readonly = true, placeholder = "Código", @Value = Model.lgCiudaCodigo } })
+                                                                            @Html.ValidationMessageFor(model => model.LUGE_BARRIO, "", new { @class = "text-danger" })
+
+                                                                            <div class="col-xs-12 col-md-12 text-left form-group">
+                                                                                <input type="text" id="txtCiudadConsulta" class="form-control" placeholder="Ciudad" value="@Model.Ciudad" readonly />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeCiudad"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-compact">
+                                                                            <label>Dirección del Caso:</label>
+                                                                            <input type="text" class="form-control" id="DIRE_CASO" name="DIRE_CASO" placeholder="Escriba dirección" value="@Model.DIRE_CASO" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="col-md-12">Barrio </label>
+                                                                            <div class="col-xs-4 col-md-4 text-left ">
+                                                                                @Html.EditorFor(model => model.CODI_BARRIO, new { htmlAttributes = new { @class = "form-control", @readonly = true, placeholder = "Código", @Value = Model.CODI_BARRIO } })
+                                                                                @Html.ValidationMessageFor(model => model.CODI_BARRIO, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div class="col-xs-8 col-md-8 text-left form-group">
+                                                                                <input type="text" id="tmpBarrio" class="form-control" placeholder="Barrio" value="@Model.Barrio" readonly />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact">
+                                                                            <label>P. card</label>
+                                                                            @Html.DropDownList("PUCA_CODIGO", Model.Coordenadas, string.Empty, htmlAttributes: new { @class = "form-control chosen-select", id = "ddlCoord" })
+                                                                            @Html.ValidationMessageFor(model => model.PUCA_CODIGO, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                   
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-compact">
+                                                                            <label>Comuna</label>
+                                                                            <input type="text" id="txtComuna" class="form-control" placeholder="Escriba comuna" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-compact">
+                                                                    <div class="col-md-6">
+                                                                        <label>Latitud:</label>
+                                                                        <input type="text" name="LATITUD_CASO" id="LATITUD_CASO" class="form-control readonly-recepcion-grey" readonly
+                                                                               placeholder="Latitud" aria-required="true" value="@Model.LATITUD_CASO">
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <label>Longitud:</label>
+                                                                        <input type="text" name="LONGITUD_CASO" id="LONGITUD_CASO" class="form-control readonly-recepcion-grey" readonly
+                                                                               placeholder="Longitud" aria-required="true" value="@Model.LONGITUD_CASO">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-compact">
+                                                                            <label class="text-danger">Llamante * </label>
+                                                                            <input type="text" class="form-control" placeholder="Nombre del llamante" id="NOMB_LLAMANTE" name="NOMB_LLAMANTE" value="@Model.NOMB_LLAMANTE" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-compact">
+                                                                            <label>Dirección </label>
+                                                                            <input type="text" class="form-control" placeholder="Dirección" id="DIRE_LLAMANTE" name="DIRE_LLAMANTE" readonly value="@Model.DIRE_LLAMANTE">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-lg-12 hide">
+                                                                        <div class="form-compact ">
+                                                                            <label class="text-danger">Tipo Información *</label>
+                                                                            <select class="chosen-select form-control" tabindex="-1" aria-hidden="true" id="TIPO_INFORMACION" name="TIPO_INFORMACION">
+                                                                                <option value="SC">Seg. Ciudadana</option>
+                                                                                <option value="SD">Seg. Democratica</option>
+                                                                                <option value="NA">Otros</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12 hide">
+                                                                        <div class="form-compact">
+                                                                            <label>Código Coop</label>
+                                                                            <input type="text" class="form-control" placeholder="Código" id="CODIGO_COOPERANTE" name="CODIGO_COOPERANTE">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <legend class="text-semibold">
+                                                                Canales
+                                                                <a class="control-arrow" data-toggle="collapse" data-target="#panel3">
+                                                                    <i class="icon-circle-down2"></i>
+                                                                </a>
+                                                            </legend>
+                                                            <div class="collapse in" id="panel3">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-12 col-lg-4">
+                                                                        <div class="form-compact">
+                                                                            <label>Asociar llamada</label>
+                                                                            @Html.EditorFor(model => model.CADPEDI_NUME_LLAMADA, new { htmlAttributes = new { @class = "form-control", placeholder = "Llamada", @Value = Model.CADPEDI_NUME_LLAMADA, @Readonly = true } })
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-compact">
+                                                                            <label>Tipo</label>
+                                                                            @Html.DropDownList("TIPO_PEDIDO", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select", id = "TIPO_PEDIDO", name = "TIPO_PEDIDO" })
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-compact">
+                                                                            <label>Calidad</label>
+                                                                            @Html.DropDownList("CALI_PEDIDO", null, string.Empty, htmlAttributes: new { @class = "form-control chosen-select", id = "CALI_PEDIDO", name = "CALI_PEDIDO" })
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="text-danger col-md-12">Caso reportado *</label>
+                                                                            <div class="col-xs-4 col-md-4 text-left ">
+                                                                                @Html.EditorFor(model => model.CODI_PEDIDO, new { htmlAttributes = new { @class = "form-control", placeholder = "Código", @Readonly = true } })
+
+                                                                                @Html.ValidationMessageFor(model => model.CODI_PEDIDO, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div class="col-xs-8 col-md-8 text-left form-group">
+                                                                                <input type="text" id="txtCaso" name="txtCaso" class="form-control" readonly placeholder="Descripción" tabindex="-1" value="@Model.CasoDesc" />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeCaso"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-compact row">
+                                                                            <label class="text-danger col-md-12">Caso reportado</label>
+                                                                            <div class="col-xs-4 col-md-4 text-left ">
+                                                                                @Html.EditorFor(model => model.CODI_PEDIDO2, new { htmlAttributes = new { @class = "form-control", placeholder = "Código", @ReadOnly = true } })
+                                                                                @Html.ValidationMessageFor(model => model.CODI_PEDIDO2, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div class="col-xs-8 col-md-8 text-left form-group">
+                                                                                <input type="text" id="txtCaso2" name="txtCaso2" class="form-control" readonly placeholder="Descripción" tabindex="-1" value="@Model.Caso2Desc" />
+                                                                                <span class="label bg-primary-300 table-xs" id="mensajeCaso2"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <hr />
+                                                                    
+                                                                </div>
+                                                                <div class="row hide">
+                                                                    <div class="col-md-6">
+                                                                        <table class="table table-bordered table-hover table-xxs datatable-basic" id="tblCanalesPonal">
+                                                                            <thead>
+                                                                                <tr>
+
+                                                                                    <th>Entidad</th>
+                                                                                    <th>Canales de atención</th>
+                                                                                    <th>Acción</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <table class="table table-hover table-bordered table-xxs datatable-basic" id="tblCanales">
+                                                                            <thead>
+                                                                                <tr>
+
+                                                                                    <th>Entidad</th>
+                                                                                    <th>Canales de atención</th>
+                                                                                    <th>Acción</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row ">
+                                                                    
+                                                                    <div class="col-md-4 col-lg-4 text-center space ">
+                                                                        <button type="button" class="btn inner-panel bg-success-300  btn-sm" data-toggle="modal"
+                                                                                data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom" onclick="location.href='@Url.Action("ConsultaPedidos", "Recepcion")'"
+                                                                                data-original-title="Realizar Consultas Generales">
+                                                                            <i class="icon icon-search4"></i>
+                                                                        </button>
+                                                                       
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-6">
+                                                                        <div class="form-compact ">
+                                                                            <label class="col-md-4 text-danger control-label text-right">Estado *</label>
+                                                                            <div class="col-md-8">
+                                                                                <select class="chosen-select form-control lectura " tabindex="-1" aria-hidden="true" id="ESTADO" name="ESTADO">
+                                                                                    <option value="C">CERRADO</option>
+                                                                                    <option value="S">SIN ENVIAR</option>
+                                                                                    <option value="P">PTE. DESPACHO</option>
+                                                                                    <option value="E">EN DESPACHO</option>
+                                                                                    <option value="R">REVISION SUPERVISOR</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-compact">
+                                                                            <div class="row">
+                                                                                <label class="col-xs-4 col-md-4">Cl. superv:</label>
+                                                                                <span class="col-xs-2 col-md-2 label label-recepcion">@Model.CODI_PEDIDO_REAL</span>
+                                                                                <span class="col-xs-6 col-md-6 label label-recepcion">@Model.CasoRealDesc </span>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </form>
+                                        <!-- /contenido panel -->
+                                    </div>
+
+                                </div>
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="asociadas">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="mensajes">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="usu24h">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!-- Área de contenido -->
+                                <div class="col-md-12 form-compact">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title">Llamadas Recibidas:</h5>
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="collapse"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Inicio de tabla -->
+                                        <table class="table table-hover table-xxs datatable-basic" id="tablaUsu">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Nume Llamada</th>
+                                                    <th>Hora Caso</th>
+                                                    <th>Nume Teléfono</th>
+                                                    <th>Tipo Pedido</th>
+                                                    <th>Nomb Llamante</th>
+                                                    <th>Luge Código</th>
+                                                    <th>Dire Caso</th>
+                                                    <th>Comentario</th>
+                                                    <th>Codi Ped.</th>
+                                                    <th>Est.</th>
+                                                    <th>Usuario</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <!-- /inicio de tabla -->
+                                    </div>
+                                </div>
+
+                                <!-- /área de contenido -->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                            <div class="tab-pane col-lg-12 col-md-12" id="gral">
+                                <!--------------------------------------CONTENIDO TAB------------------------------------->
+                                <!-- Área de contenido -->
+
+                                <div class="col-md-12 form-compact">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title">Llamadas Recepcionadas:</h5>
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="collapse"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="table table-responsive">
+                                            <!-- Inicio de tabla -->
+                                            <table class="table table-hover table-xxs datatable-basic" id="tablaGral">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Nume Llamada</th>
+                                                        <th>Nume Teléfono</th>
+                                                        <th>Hora</th>
+                                                        <th>Código1</th>
+                                                        <th>Mpio</th>
+                                                        <th>Dire Caso</th>
+                                                        <th>Barrio</th>
+                                                        <th>Comentario</th>
+                                                        <th>Tipo Pedido</th>
+                                                        <th>Cali Pedido</th>
+                                                        <th>Estado Llamada</th>
+                                                        <th>Tipo Genero</th>
+                                                        <th>Receptor</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <!-- /inicio de tabla -->
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- /área de contenido -->
+                                <!----------------------------------FIN CONTENIDO TAB------------------------------------->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal Comentarios -->
+<div id="ModalComentarios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comentarios Adicionales</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <form id="formComentarios" action="" method="post">
+                    <input type="hidden" id="CADPEDI_SITIOGRABA" name="CADPEDI_SITIOGRABA" value="@Model.SITIO_GRABA" />
+                    <input type="hidden" id="NumeLlamada" name="CADPEDI_NUMELLAMADA" value="@Model.NUME_LLAMADA" />
+                    <input type="hidden" id="CONSECUTIVO" name="CONSECUTIVO" value="0" />
+                    <input type="hidden" id="CODI_PREGUNTA" name="CODI_PREGUNTA" />
+                    <input type="hidden" id="RTA_PREGUNTA" name="RTA_PREGUNTA" />
+                    <input type="hidden" id="USUA_USUARIO" name="USUA_USUARIO" value="@Model.Usuario" />
+                    <input type="hidden" id="FECHA_GRABACION" name="FECHA_GRABACION" value="@Model.FechaHora" />
+                    <div class="form-group">
+
+                        <div class="col-md-12 obligatorio">
+                            <label class="">Comentario:</label>
+                            <textarea rows="4" cols="5" class="form-control" placeholder="Escriba descripción de los hechos" id="ANOTACION" name="ANOTACION" maxlength="3000"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" class="btn bg-teal btn-xs" data-popup="tooltip" id="btnGuardarComentario"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                    value="Create">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 ">
+                            <table class="table table-hover table-xxs datatable-basic form-compact " id="tblComentarios">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Comentario</th>
+                                        <th>Usuario</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Comentarios -->
+<!-- Modal Asociadas -->
+<div id="ModalAsociadas" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Comentarios Adicionales</h5>
+            </div>
+            <div id="alertasComentarios"></div>
+            <div class="modal-body ">
+                <div class="form-group">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table table-hover table-xxs datatable-basic form-compact" id="tblAsociadas">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Num. Llamada</th>
+                                    <th>Hora Caso</th>
+                                    <th>Num. Telefono</th>
+                                    <th>Calidad</th>
+                                    <th>Luge Código</th>
+                                    <th>Nomb Llamante</th>
+                                    <th>Dire Caso</th>
+                                    <th>Estado</th>
+                                    <th>Sitio</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Asociadas -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/PedidosJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CheckBoxJs");
+    @Scripts.Render("~/bundle/ModalsAlertJs");
+
+    <script>
+        ////////////////URLS para la funcionalidad//////////////////////////////////////////
+        var urlConsultaDatosLlamada = "@Url.Action("ConsultarDatosLlamada", "Recepcion")";
+        var urlConsultarCanales = "@Url.Action("ConsultarCanales", "Recepcion")";
+        var urlConsultarComentarios = "@Url.Action("ConsultarComentarios", "Recepcion")";
+        var urlGuardarComentarios = "@Url.Action("GuardarComentario", "Recepcion")";
+        var urlLimpiar = "@Url.Action("Recepcion", "Recepcion")";
+        var urlAsociadas = "@Url.Action("ConsultarAsociadas", "Recepcion")";
+        var urlConsultarAsociada = "@Url.Action("ConsultaAsociada", "Recepcion")";
+        var urlTablaGralSala = '@Url.Action("VerPedidosEfectivosRecibidos", "LlamadasGralSala")';
+        var urlEnvioMensajes = "@Url.Action("Index", "EnvioMensajes")";
+        /////////////////////////////////////////////////////////////////////////////////////
+        var glLugeCad = @Model.LugeCad;
+        var glNumeracion = "@Model.Numeracion";
+        var glConexionDijin = "@Model.ConexionDijin";
+        var glLugarDpto = @Model.LugeDpto;
+        var glFuerza = @Model.Fuerza;
+        var glACD = @Model.ACD;
+        var globalUsuario = '@Model.Usuario';
+        var globalSitio = @Model.SITIO_GRABA;
+
+        AplicarChosen();
+      //  ActivarModoAsociada();
+        AplicarPluginTabla("tblCanalesAsignados");
+        
+        MarcarImportantia("@Model.IMPORTANCIA");
+        MarcarPrioridad("@Model.PRIORIDAD");
+        MarcarCanales("@Model.TOTAL_CANALES");
+        MarcarMujer("@Model.TIPO_GENERO");
+    </script>
+}

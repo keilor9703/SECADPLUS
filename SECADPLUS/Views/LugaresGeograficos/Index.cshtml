@@ -1,0 +1,387 @@
+﻿@model IEnumerable<SECADEntities.SecadLugaresGeograficos.CADLUGARES_GEOGRAFICOS>
+
+@{
+    ViewBag.Title = "Lugares Geográficos";
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_NavegacionAdmonGeneral")
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    <div class="tabbable">
+        <ul class="nav nav-tabs nav-tabs-highlight">
+            <li class="active"><a href="#nivel1" data-toggle="tab" id="n1">Continentes</a></li>
+            <li><a href="#nivel2" data-toggle="tab" id="n2">Países y Departamentos</a></li>
+            <li><a href="#nivel3" data-toggle="tab" id="n3">Cabeceras y Veredas</a></li>
+            <li><a href="#nivel4" data-toggle="tab" id="n4">Comunas y Barrios</a></li>
+        </ul>
+        <div class="tab-content form-compact">
+            <div class="tab-pane active col-lg-12 col-md-12 row" id="nivel1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Continentes:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonContinentes">
+                                            <button id="btnContinentes" onclick="window.location.reload();" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon glyphicon-refresh position-left"></i></b>
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_continentes"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="continentes">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Tipo</th>
+                                        <th>Cód. Luge</th>
+                                        <th>Cód. Registraduria</th>
+                                        <th>Cód. Dane</th>
+                                        <th>Depto</th>
+                                        <th>Nivel</th>
+                                        <th>Cód. Siath</th>
+                                        <th>Cód. Siedco</th>
+                                        <th>Vigente</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <ul class="icons-list">
+                                                <li class="dropdown">
+                                                    <button type="button" class="btn btn-xs border-success btn-tabla text-success-600 btn-flat dropdown-toggle"
+                                                            data-toggle="dropdown" aria-expanded="true">
+                                                        <i class="icon-menu9"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu secad dropdown-menu-left">
+                                                        <li>
+                                                            <button class="btn btn-default btn-tabla" type="button" onclick="BuscaPorPadre(@item.CODIGO,@item.NIVEL,'_botonPaises','@item.DESCRIPCION')">
+                                                                <i class="icon-eye"></i> Ver
+                                                            </button>
+                                                        </li>
+                                                        <li>
+                                                        <li>
+                                                            <button class="btn btn-default btn-tabla" onclick="AbreEnNuevaVentana('@Url.Action("Edit", "LugaresGeograficos",new { id = item.CODIGO })', @item.CODIGO,@item.NIVEL)">
+                                                                <i class="glyphicon glyphicon-edit"></i>Editar
+                                                            </button>
+                                                        </li>
+                                                        <li>
+                                                            <button class="btn btn-default btn-tabla" onclick="AbreEnNuevaVentana('@Url.Action("CreateByFather", "LugaresGeograficos",new { idFather = item.CODIGO, level = item.NIVEL })', @item.CODIGO,@item.NIVEL)">
+
+                                                                <i class="icon-new"></i>Crear País
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>@Html.DisplayFor(modelItem => item.CODIGO)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.TIPO)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.LUGE_CODIGO)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CODIGO_REGISTRADURIA)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CODIGO_DANE)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.DPTO)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.NIVEL)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CODIGO_SIATH)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CODIGO_SIEDCO)</td>
+                                        <td>
+                                            @if (item.VIGENTE == "S")
+                                                {
+                                                <span class="label label-success">Sí</span>
+                                                }
+                                                else
+                                                {
+                                                <span class="label label-danger">No</span>
+                                                }
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /panel inicial con inputs -->
+            </div>
+            <div class="tab-pane  col-lg-12 col-md-12" id="nivel2">
+                <div class="row">
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title" id="_titlePaises">Países:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonPaises">
+                                            <button id="btnPaises" onclick="BuscaPorPadre(_FATHER, _LEVEL);" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon glyphicon-refresh position-left"></i></b>
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_paises"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="Paises">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Tipo</th>
+                                        <th>Cód. Luge</th>
+                                        <th>Cód. Registraduria</th>
+                                        <th>Cód. Dane</th>
+                                        <th>Depto</th>
+                                        <th>Nivel</th>
+                                        <th>Cód. Siath</th>
+                                        <th>Cód. Siedco</th>
+                                        <th>Vigente</th>
+                                    </tr>
+                                </thead>                                
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title" id="_titleDepartamentos">Departamentos:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonDepartamentos">
+                                            <button id="btnDepartamentos" onclick="BuscaPorPadre(_FATHER, _LEVEL);" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon  glyphicon-refresh position-left"></i></b>
+                                                @*@Html.ActionLink("Crear País", "Create", new { iLevel = 2 }, new { target = "_blank", @class = "btn-success" })*@
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_departamentos"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="Departamentos">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Tipo</th>
+                                        <th>Cód. Luge</th>
+                                        <th>Cód. Registraduria</th>
+                                        <th>Cód. Dane</th>
+                                        <th>Depto</th>
+                                        <th>Nivel</th>
+                                        <th>Cód. Siath</th>
+                                        <th>Cód. Siedco</th>
+                                        <th>Vigente</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                </div>
+            </div>
+            <div class="tab-pane  col-lg-12 col-md-12" id="nivel3">
+                <div class="row">
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title" id="_titleCabeceras">Cabeceras:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonCabeceras">
+                                            <button id="btnCabeceras" onclick="BuscaPorPadre(_FATHER, _LEVEL);" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon  glyphicon-refresh position-left"></i></b>
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_cabeceras"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="Cabeceras">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Tipo</th>
+                                        <th>Cód. Luge</th>
+                                        <th>Cód. Registraduria</th>
+                                        <th>Cód. Dane</th>
+                                        <th>Depto</th>
+                                        <th>Nivel</th>
+                                        <th>Cód. Siath</th>
+                                        <th>Cód. Siedco</th>
+                                        <th>Vigente</th>
+                                    </tr>
+                                </thead>
+                               
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title" id="_titleVeredas">Veredas:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonVeredas">
+                                            <button id="btnVeredas" onclick="BuscaPorPadre(_FATHER, _LEVEL);" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon glyphicon-refresh position-left"></i></b>
+                                                @*@Html.ActionLink("Crear País", "Create", new { iLevel = 2 }, new { target = "_blank", @class = "btn-success" })*@
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_veredas"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="Veredas">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Tipo</th>
+                                        <th>Cód. Luge</th>
+                                        <th>Cód. Registraduria</th>
+                                        <th>Cód. Dane</th>
+                                        <th>Depto</th>
+                                        <th>Nivel</th>
+                                        <th>Cód. Siath</th>
+                                        <th>Cód. Siedco</th>
+                                        <th>Vigente</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane  col-lg-12 col-md-12" id="nivel4">
+                <div class="row">
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title" id="_titleComunas">Comunas de:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonComunas">
+                                            <button id="btnComunas" onclick="BuscaComunas(_FATHER, _LEVEL);" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon glyphicon-refresh position-left"></i></b>
+
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_comunas"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="Comunas">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Vigente</th>
+                                        <th>Orden</th>
+                                    </tr>
+                                </thead>                                
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                    <!-- Panel con Tablas -->
+                    <div class="col-md-6">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h5 class="panel-title" id="_titleBarrios">Barrios por Comunas:</h5>
+                                <div class="heading-elements">
+                                    <ul class="icons-list decad">
+                                        <li id="_botonBarrios">
+                                            <button id="btnBarrios" onclick="BuscaBarrios(_FATHER, _LEVEL, '_CONTENEDOR', 'DESCRIPCION');" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para Recargar el Nivel">
+                                                Recargar<b><i class="glyphicon glyphicon-refresh position-left"></i></b>
+                                                @*@Html.ActionLink("Crear País", "Create", new { iLevel = 2 }, new { target = "_blank", @class = "btn-success" })*@
+                                            </button>
+                                        </li>
+                                        <li><a data-action="collapse" id="collapse_barrios"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Inicio de tabla -->
+                            <table class="table table-hover table-xxs datatable-basic" id="Barrios">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        @*<th>Tipo</th>*@
+                                        <th>Cód. Luge</th>
+                                        <th>Cód. Cozo</th>
+                                        <th>Cód. Cozo Luge</th>
+
+                                    </tr>
+                                </thead>
+                                
+                            </table>
+                            <!-- /inicio de tabla -->
+                        </div>
+                    </div>
+                    <!-- /panel con Tablas -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/LugaresGeograficosControllerJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    <script>
+        urlAction1 = "@Url.Action("FindByFather", "LugaresGeograficos")";
+        urlAction2 = "@Url.Action("FindComunas", "LugaresGeograficos")";
+        urlAction3 = "@Url.Action("FindBarrios", "LugaresGeograficos")";
+        urlActionEdita = "@Url.Action("Edit", "LugaresGeograficos")";
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+
+    </script>
+}

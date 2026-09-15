@@ -1,0 +1,288 @@
+20200218 15:07:26 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:07:26 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:07:26 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:07:26 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:07:58 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:07:58 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:07:58 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:07:58 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:09:07 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:09:07 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:09:07 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:09:07 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:12:18 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:12:18 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:12:18 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:12:18 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:20:16 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:20:16 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:20:16 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:20:16 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:24:59 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:25:00 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:25:00 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:25:00 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:26:56 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:26:56 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:26:56 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:26:56 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:31:37 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:31:37 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:31:37 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:31:37 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:38:20 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:38:20 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:38:21 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:38:21 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:44:55 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:44:55 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:44:55 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:44:55 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:46:17 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:46:17 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:46:17 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:46:17 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:46:29 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:46:29 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:46:29 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:46:29 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:47:10 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:47:10 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:47:10 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:47:10 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:48:07 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:48:07 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:49:29 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:49:29 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:49:30 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:49:30 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 15:50:17 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 15:50:17 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 16:23:21 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 16:23:21 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126
+20200218 16:23:21 [M_ERROR] - Error Ejecutando strConexion:
+	#2	#3Referencia a objeto no establecida como instancia de un objeto.
+	#2	#3System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en SecadDatos.Context.ConDBOracle.strConexion(String nameCnn) en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 23
+20200218 16:23:21 [M_ERROR] - Error Ejecutando Conectar: 
+	#2	#3OracleConnection.ConnectionString no es válido
+	#2	#3System.InvalidOperationException: OracleConnection.ConnectionString no es válido
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\HUAWEI_Ok\SecadDatos\Context\ConDBOracle.cs:línea 126

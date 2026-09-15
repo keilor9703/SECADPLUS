@@ -1,0 +1,12 @@
+20200613 18:03:04 [M_ERROR] - Error Ejecutando F_GetMinutaNew:
+	#2	#3ORA-06503: PL/SQL: La función no ha devuelto ningún valor
+ORA-06512: en "USR_CAD.PK_SECAD_MINUTAS", línea 82
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06503: PL/SQL: La función no ha devuelto ningún valor
+ORA-06512: en "USR_CAD.PK_SECAD_MINUTAS", línea 82
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetMinutaNew(Int32 V_UnidadID, String vFechaInicial, String vfechaFinal) en C:\HUAWEI_OkMELOTIRE13062020\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 99

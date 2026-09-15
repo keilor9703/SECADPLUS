@@ -1,0 +1,1446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelComunasBarrios.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CADBANNERIMAGENES">
+          <Key>
+            <PropertyRef Name="IDBANNER" />
+          </Key>
+          <Property Name="IDBANNER" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBREARCHIVO" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ACTIVO" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="ORDEN" Type="number" Precision="10" Scale="0" />
+          <Property Name="FECHACREACION" Type="date" />
+        </EntityType>
+        <EntityType Name="CADBARRIOS">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="LUGE_CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="COZO_CODIGO" Type="number" Precision="6" Scale="0" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="COZO_LUGE_CODIGO" Type="number" Precision="7" Scale="0" />
+          <Property Name="CODIGO_MPIO" Type="varchar2" MaxLength="20" />
+          <Property Name="TIPO_REGISTRO" Type="varchar2" MaxLength="2" />
+          <Property Name="AREAM2" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CADCOMUNAS">
+          <Key>
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="VIGENTE" Type="char" MaxLength="1" />
+          <Property Name="ORDEN" Type="number" Precision="38" Scale="0" />
+          <Property Name="IDENTIFICACION" Type="varchar2" MaxLength="80" />
+          <Property Name="AREAM2" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CADFUERZAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="ABREVIATURA" Type="varchar2" MaxLength="10" />
+          <Property Name="CADUNDE_FUERZA" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="CADUNDE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="VIGENTE" Type="varchar2" MaxLength="1" />
+          <Property Name="DESDE" Type="date" Nullable="false" />
+          <Property Name="HASTA" Type="date" />
+          <Property Name="OBSERVACION" Type="varchar2" MaxLength="200" />
+          <Property Name="HORAS_TURNO" Type="number" Precision="3" Scale="0" />
+          <Property Name="CADUNDE_FUERZA_PPAL" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="CADUNDE_CODIGO_PPAL" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="SITIO_GRABA" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="ESCUDO" Type="long raw" />
+          <Property Name="FECH_TRANSACCION" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CADGRADOS">
+          <Key>
+            <PropertyRef Name="ALFABETICO" />
+          </Key>
+          <Property Name="ALFABETICO" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="NUMERICO" Type="number" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CATE_CODIGO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="VIGENTE" Type="varchar2" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="CADLUGARES_GEOGRAFICOS">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="3" Nullable="false" />
+          <Property Name="CODIGO_DANE" Type="varchar2" MaxLength="8" />
+          <Property Name="CODIGO_REGISTRADURIA" Type="varchar2" MaxLength="9" />
+          <Property Name="LUGE_CODIGO" Type="number" Precision="6" Scale="0" />
+          <Property Name="NIVEL" Type="number" Precision="2" Scale="0" />
+          <Property Name="DPTO" Type="varchar2" MaxLength="2" />
+          <Property Name="VIGENTE" Type="varchar2" MaxLength="1" />
+          <Property Name="CODIGO_SIEDCO" Type="number" Precision="9" Scale="0" />
+          <Property Name="CODIGO_SIATH" Type="number" Precision="9" Scale="0" />
+          <Property Name="NIVEL_1" Type="number" Precision="7" Scale="0" />
+          <Property Name="NIVEL_2" Type="number" Precision="7" Scale="0" />
+          <Property Name="NIVEL_3" Type="number" Precision="7" Scale="0" />
+          <Property Name="NIVEL_4" Type="number" Precision="7" Scale="0" />
+          <Property Name="NIVEL_5" Type="number" Precision="7" Scale="0" />
+          <Property Name="NIVEL_6" Type="number" Precision="7" Scale="0" />
+        </EntityType>
+        <EntityType Name="CADPOLICIAS">
+          <Key>
+            <PropertyRef Name="CEDU_EMPLEADO" />
+          </Key>
+          <Property Name="CEDU_EMPLEADO" Type="varchar2" MaxLength="13" Nullable="false" />
+          <Property Name="NOMB_EMPLEADO" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="NUME_PLACA" Type="number" Precision="7" Scale="0" />
+          <Property Name="DIRE_RESIDENCIA" Type="varchar2" MaxLength="80" />
+          <Property Name="TELE_RESIDENCIA" Type="varchar2" MaxLength="25" />
+          <Property Name="FECH_NACIMIENTO" Type="date" />
+          <Property Name="TIPO_SEXO" Type="varchar2" MaxLength="2" />
+          <Property Name="GRUP_SANGUINEO" Type="varchar2" MaxLength="6" />
+          <Property Name="ESTA_CIVIL" Type="varchar2" MaxLength="2" />
+          <Property Name="CODI_ESPECIALIDAD" Type="varchar2" MaxLength="2" />
+          <Property Name="ESTA_LABORAL" Type="varchar2" MaxLength="2" />
+          <Property Name="NUME_SECCION" Type="varchar2" MaxLength="1" />
+          <Property Name="CADUNID_FUERZA" Type="number" Precision="2" Scale="0" />
+          <Property Name="CADUNID_CODIGO" Type="number" Precision="7" Scale="0" />
+          <Property Name="GRAD_ALFABETICO" Type="varchar2" MaxLength="6" />
+          <Property Name="CADFUERZ_ID" Type="number" Precision="9" Scale="0" />
+        </EntityType>
+        <EntityType Name="CADPOLICIAS_FOTOS">
+          <Key>
+            <PropertyRef Name="CEDU_EMPLEADO" />
+          </Key>
+          <Property Name="CEDU_EMPLEADO" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FOTO" Type="long raw" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_CAD.V_EMPLEADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_EMPLEADOS">
+          <Key>
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="UNDE_FUERZA" />
+            <PropertyRef Name="UNDE_CONSECUTIVO" />
+            <PropertyRef Name="TIPO_IDENTIFICACION" />
+            <PropertyRef Name="IDENTIFICACION" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="APELLIDOS" />
+            <PropertyRef Name="FECHA_NACIMIENTO" />
+            <PropertyRef Name="GRUPO_SANGUINEO" />
+            <PropertyRef Name="FACTOR_RH" />
+            <PropertyRef Name="ESTADO_CIVIL" />
+            <PropertyRef Name="SEXO" />
+            <PropertyRef Name="DIRECCION" />
+            <PropertyRef Name="TIPO_EMPLEADO" />
+            <PropertyRef Name="ESTADO_EMPLEADO" />
+            <PropertyRef Name="ACTIVO" />
+            <PropertyRef Name="DIAS_VACACIONES" />
+            <PropertyRef Name="ENCARGO" />
+            <PropertyRef Name="CARRERA_ADTVA" />
+            <PropertyRef Name="LEY_100" />
+            <PropertyRef Name="JUSTICIA_PENAL" />
+            <PropertyRef Name="RESERVA" />
+            <PropertyRef Name="CONDICION_SANIDAD" />
+            <PropertyRef Name="GRAD_ALFABETICO" />
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="LUGE_CODIGO_EXPEDIDA" />
+            <PropertyRef Name="LUBA_BARRI_CODIGO" />
+            <PropertyRef Name="LUBA_LUGE_CODIGO" />
+            <PropertyRef Name="CARG_CARGO" />
+            <PropertyRef Name="CARG_FUERZA" />
+            <PropertyRef Name="UNDE_CONSECUTIVO_NOMINADO" />
+            <PropertyRef Name="UNDE_FUERZA_LABORANDO" />
+            <PropertyRef Name="UNDE_CONSECUTIVO_LABORANDO" />
+            <PropertyRef Name="ESPE_FUERZA" />
+            <PropertyRef Name="ESPE_ID_ESPECIALIDAD" />
+            <PropertyRef Name="CREADO_POR" />
+            <PropertyRef Name="FECHA_CREACION" />
+            <PropertyRef Name="MAQUINA_CREACION" />
+            <PropertyRef Name="SILA_ID_SITUAC_LABOR" />
+            <PropertyRef Name="CENTRO_SOCIAL" />
+            <PropertyRef Name="CENTRO_VACACIONAL" />
+          </Key>
+          <Property Name="CONSECUTIVO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="UNDE_FUERZA" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="UNDE_CONSECUTIVO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO_IDENTIFICACION" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="IDENTIFICACION" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="CODIGO_MILITAR" Type="varchar2" MaxLength="36" />
+          <Property Name="NOMBRES" Type="varchar2" MaxLength="90" Nullable="false" />
+          <Property Name="APELLIDOS" Type="varchar2" MaxLength="90" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" Nullable="false" />
+          <Property Name="GRUPO_SANGUINEO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="FACTOR_RH" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ESTADO_CIVIL" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="SEXO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="270" Nullable="false" />
+          <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" />
+          <Property Name="CLASE_LIBRETA" Type="char" MaxLength="6" />
+          <Property Name="TIPO_EMPLEADO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ESTADO_EMPLEADO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ACTIVO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="DIAS_VACACIONES" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="FECHA_VACACIONES" Type="date" />
+          <Property Name="PLACA" Type="number" Precision="6" Scale="0" />
+          <Property Name="HOJA_VIDA" Type="varchar2" MaxLength="24" />
+          <Property Name="NUMERO_CARNE" Type="number" Precision="38" Scale="0" />
+          <Property Name="HORAS_LABORADAS" Type="number" Precision="38" Scale="0" />
+          <Property Name="NUMERO_CURSO" Type="number" Precision="3" Scale="0" />
+          <Property Name="UBICACION_ESCALAFON" Type="number" Precision="38" Scale="0" />
+          <Property Name="ENCARGO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CARRERA_ADTVA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="LEY_100" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="JUSTICIA_PENAL" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="RESERVA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CONDICION_SANIDAD" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CLASE_NOMINA" Type="char" MaxLength="6" />
+          <Property Name="FECHA_DEFUNCION" Type="date" />
+          <Property Name="VALIDA_ARCO" Type="varchar2" MaxLength="6" />
+          <Property Name="GRAD_ALFABETICO" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="LUGE_CODIGO_EXPEDIDA" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="LUBA_BARRI_CODIGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="LUBA_LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="CARG_CARGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CARG_FUERZA" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="EMPR_UNDE_FUERZA" Type="number" Precision="1" Scale="0" />
+          <Property Name="EMPR_UNDE_CONSECUTIVO" Type="number" Precision="38" Scale="0" />
+          <Property Name="EMPR_IDENTIFICACION" Type="number" Precision="12" Scale="0" />
+          <Property Name="EMPR_TIPO_IDENTIFICACION" Type="varchar2" MaxLength="6" />
+          <Property Name="UNDE_FUERZA_ATENDIDO" Type="number" Precision="1" Scale="0" />
+          <Property Name="UNDE_CONSECUTIVO_ATENDIDO" Type="number" Precision="38" Scale="0" />
+          <Property Name="UNDE_CONSECUTIVO_NOMINADO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="UNDE_FUERZA_LABORANDO" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="UNDE_CONSECUTIVO_LABORANDO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ARCU_FUERZA" Type="number" Precision="1" Scale="0" />
+          <Property Name="ARCU_ID_ARMA_CUERPO" Type="number" Precision="3" Scale="0" />
+          <Property Name="ESPE_FUERZA" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="ESPE_ID_ESPECIALIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CARR_FUERZA" Type="number" Precision="1" Scale="0" />
+          <Property Name="CARRE_ID_CARRERA" Type="number" Precision="10" Scale="0" />
+          <Property Name="CREADO_POR" Type="varchar2" MaxLength="90" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
+          <Property Name="MAQUINA_CREACION" Type="varchar2" MaxLength="360" Nullable="false" />
+          <Property Name="ACTUALIZADO_POR" Type="varchar2" MaxLength="90" />
+          <Property Name="FECHA_ACTUALIZA" Type="date" />
+          <Property Name="MAQUINA_ACTUALIZA" Type="varchar2" MaxLength="360" />
+          <Property Name="SILA_ID_SITUAC_LABOR" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CENTRO_SOCIAL" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CENTRO_VACACIONAL" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="EDIFICIO" Type="char" MaxLength="6" />
+          <Property Name="SIGLA_LABORANDO" Type="varchar2" MaxLength="30" />
+          <Property Name="CONDICION_OFITE" Type="char" MaxLength="6" />
+          <Property Name="LIBRETA_MILITAR" Type="varchar2" MaxLength="36" />
+          <Property Name="DRAGONEANTE" Type="char" MaxLength="6" />
+          <Property Name="DESIGNADO" Type="char" MaxLength="6" />
+          <Property Name="REGISTRO_DUPLICADO" Type="char" MaxLength="6" />
+          <Property Name="MIGRADO_ORDEN" Type="char" MaxLength="6" />
+          <Property Name="ID_FUENTE" Type="varchar2" MaxLength="27" />
+          <Property Name="ID_NOMINA" Type="varchar2" MaxLength="27" />
+          <Property Name="CON_NIVEL" Type="number" Precision="9" Scale="0" />
+          <Property Name="USUARIO_EMPRESARIAL" Type="varchar2" MaxLength="90" />
+          <Property Name="FECHA_EXPEDICION_LIBRETA" Type="date" />
+          <Property Name="UNRE_CONSECUTIVO" Type="number" Precision="38" Scale="0" />
+          <Property Name="REGISTRO_DEFUNCION" Type="number" Precision="38" Scale="0" />
+          <Property Name="FECHA_PRESUNCION" Type="date" />
+          <Property Name="CLASE_PRESUNCION" Type="char" MaxLength="6" />
+          <Property Name="AUDIOCONSULTA_PIN" Type="varchar2" MaxLength="150" />
+          <Property Name="CHEQUEO_PIN" Type="number" Precision="1" Scale="0" />
+          <Property Name="RESPUESTA_PIN" Type="number" Precision="1" Scale="0" />
+          <Property Name="CORREO_ELECTRONICO" Type="varchar2" MaxLength="720" />
+          <Property Name="PLACA_CHIP" Type="number" Precision="38" Scale="0" />
+          <Property Name="MOTIVO_OPERACION" Type="varchar2" MaxLength="720" />
+          <Property Name="NUMERO_CELULAR" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_CAD.V_PARQUEADEROS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_PARQUEADEROS">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="DIRECCION" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CODIGO" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="CODI_BARRIO" Type="number" Precision="6" Scale="0" />
+          <Property Name="LUGE_BARRIO" Type="number" Precision="6" Scale="0" />
+          <Property Name="TELEFONO" Type="varchar2" MaxLength="80" />
+          <Property Name="HORARIO" Type="varchar2" MaxLength="80" />
+          <Property Name="USUA_TRANSACCION" Type="varchar2" MaxLength="20" />
+          <Property Name="FECHA_TRANSACCION" Type="date" />
+          <Property Name="NOMBREBARRIO" Type="varchar2" MaxLength="80" />
+          <Property Name="NOMBRECIUDAD" Type="varchar2" MaxLength="50" />
+          <Property Name="NOMBRESITIOGRABACION" Type="varchar2" MaxLength="80" />
+          <Property Name="IDSITIOGRABACION" Type="number" Precision="9" Scale="0" />
+          <Property Name="PADRE_CODIGO" Type="number" Precision="6" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_CAD.V_PERSONAS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_PERSONAS">
+          <Key>
+            <PropertyRef Name="CEDU_EMPLEADO" />
+            <PropertyRef Name="NOMB_EMPLEADO" />
+          </Key>
+          <Property Name="CEDU_EMPLEADO" Type="varchar2" MaxLength="13" Nullable="false" />
+          <Property Name="NOMB_EMPLEADO" Type="varchar2" MaxLength="80" Nullable="false" />
+          <Property Name="NUME_PLACA" Type="number" Precision="7" Scale="0" />
+          <Property Name="DIRE_RESIDENCIA" Type="varchar2" MaxLength="80" />
+          <Property Name="TELE_RESIDENCIA" Type="varchar2" MaxLength="25" />
+          <Property Name="FECH_NACIMIENTO" Type="date" />
+          <Property Name="TIPO_SEXO" Type="varchar2" MaxLength="2" />
+          <Property Name="GRUP_SANGUINEO" Type="varchar2" MaxLength="6" />
+          <Property Name="ESTA_CIVIL" Type="varchar2" MaxLength="2" />
+          <Property Name="CODI_ESPECIALIDAD" Type="varchar2" MaxLength="2" />
+          <Property Name="ESTA_LABORAL" Type="varchar2" MaxLength="2" />
+          <Property Name="NUME_SECCION" Type="varchar2" MaxLength="1" />
+          <Property Name="CADUNID_FUERZA" Type="number" Precision="2" Scale="0" />
+          <Property Name="CADUNID_CODIGO" Type="number" Precision="7" Scale="0" />
+          <Property Name="GRAD_ALFABETICO" Type="varchar2" MaxLength="6" />
+          <Property Name="CADFUERZ_ID" Type="number" Precision="9" Scale="0" />
+          <Property Name="DESCRIPCIONTIPOFUERZA" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONUNIDADES" Type="varchar2" MaxLength="80" />
+          <Property Name="DESCRIPCIONGRADO" Type="varchar2" MaxLength="40" />
+          <Property Name="DESCRIPCIONFUERZA" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONSEXO" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONGRUPOSANGUINEO" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONESTADOCIVIL" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONESPECIALIDAD" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONTIPOLABORAL" Type="varchar2" MaxLength="60" />
+          <Property Name="DESCRIPCIONSECCION" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_CAD.V_SITIOS_IMPORTANTES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_SITIOS_IMPORTANTES">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="CLSI_CODIGO" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="DIRECCION" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CONSECUTIVO" Type="number" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="CLSI_CODIGO" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar2" MaxLength="12" />
+          <Property Name="BARR_CODIGO" Type="number" Precision="6" Scale="0" />
+          <Property Name="BARR_LUGE_CODIGO" Type="number" Precision="6" Scale="0" />
+          <Property Name="LATITUD" Type="varchar2" MaxLength="6" />
+          <Property Name="LONGITUD" Type="varchar2" MaxLength="6" />
+          <Property Name="COMENTARIO" Type="varchar2" MaxLength="500" />
+          <Property Name="LUGE_CODIGO" Type="number" Precision="8" Scale="0" />
+          <Property Name="NOMBREBARRIO" Type="varchar2" MaxLength="80" />
+          <Property Name="NOMBRECIUDAD" Type="varchar2" MaxLength="50" />
+          <Property Name="CLASESITIODESCRIPCION" Type="varchar2" MaxLength="40" />
+          <Property Name="PADRE_CODIGO" Type="number" Precision="6" Scale="0" />
+        </EntityType>
+        <Association Name="CADBARR_COZO_FK">
+          <End Role="CADCOMUNAS" Type="Self.CADCOMUNAS" Multiplicity="0..1" />
+          <End Role="CADBARRIOS" Type="Self.CADBARRIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADCOMUNAS">
+              <PropertyRef Name="CODIGO" />
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Principal>
+            <Dependent Role="CADBARRIOS">
+              <PropertyRef Name="COZO_CODIGO" />
+              <PropertyRef Name="COZO_LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADBARR_LUGE_FK">
+          <End Role="CADLUGARES_GEOGRAFICOS" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="1" />
+          <End Role="CADBARRIOS" Type="Self.CADBARRIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADLUGARES_GEOGRAFICOS">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CADBARRIOS">
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADCOMU_LUGE_FK">
+          <End Role="CADLUGARES_GEOGRAFICOS" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="1" />
+          <End Role="CADCOMUNAS" Type="Self.CADCOMUNAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADLUGARES_GEOGRAFICOS">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CADCOMUNAS">
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADLUGE_LUGE_FK">
+          <End Role="CADLUGARES_GEOGRAFICOS" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="0..1" />
+          <End Role="CADLUGARES_GEOGRAFICOS1" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADLUGARES_GEOGRAFICOS">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CADLUGARES_GEOGRAFICOS1">
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADPOLIC_FUERZ_FK">
+          <End Role="CADFUERZAS" Type="Self.CADFUERZAS" Multiplicity="0..1" />
+          <End Role="CADPOLICIAS" Type="Self.CADPOLICIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADFUERZAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CADPOLICIAS">
+              <PropertyRef Name="CADFUERZ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADPOLIC_GRADO_FK">
+          <End Role="CADGRADOS" Type="Self.CADGRADOS" Multiplicity="0..1" />
+          <End Role="CADPOLICIAS" Type="Self.CADPOLICIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADGRADOS">
+              <PropertyRef Name="ALFABETICO" />
+            </Principal>
+            <Dependent Role="CADPOLICIAS">
+              <PropertyRef Name="GRAD_ALFABETICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADPOLIFOTOS_POLIC_FK">
+          <End Role="CADPOLICIAS" Type="Self.CADPOLICIAS" Multiplicity="1" />
+          <End Role="CADPOLICIAS_FOTOS" Type="Self.CADPOLICIAS_FOTOS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CADPOLICIAS">
+              <PropertyRef Name="CEDU_EMPLEADO" />
+            </Principal>
+            <Dependent Role="CADPOLICIAS_FOTOS">
+              <PropertyRef Name="CEDU_EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelComunasBarriosStoreContainer">
+          <EntitySet Name="CADBANNERIMAGENES" EntityType="Self.CADBANNERIMAGENES" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADBARRIOS" EntityType="Self.CADBARRIOS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADCOMUNAS" EntityType="Self.CADCOMUNAS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADFUERZAS" EntityType="Self.CADFUERZAS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADGRADOS" EntityType="Self.CADGRADOS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADLUGARES_GEOGRAFICOS" EntityType="Self.CADLUGARES_GEOGRAFICOS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADPOLICIAS" EntityType="Self.CADPOLICIAS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="CADPOLICIAS_FOTOS" EntityType="Self.CADPOLICIAS_FOTOS" Schema="USR_CAD" store:Type="Tables" />
+          <EntitySet Name="V_EMPLEADOS" EntityType="Self.V_EMPLEADOS" store:Type="Views" store:Schema="USR_CAD">
+            <DefiningQuery>SELECT 
+"V_EMPLEADOS"."CONSECUTIVO" AS "CONSECUTIVO", 
+"V_EMPLEADOS"."UNDE_FUERZA" AS "UNDE_FUERZA", 
+"V_EMPLEADOS"."UNDE_CONSECUTIVO" AS "UNDE_CONSECUTIVO", 
+"V_EMPLEADOS"."TIPO_IDENTIFICACION" AS "TIPO_IDENTIFICACION", 
+"V_EMPLEADOS"."IDENTIFICACION" AS "IDENTIFICACION", 
+"V_EMPLEADOS"."CODIGO_MILITAR" AS "CODIGO_MILITAR", 
+"V_EMPLEADOS"."NOMBRES" AS "NOMBRES", 
+"V_EMPLEADOS"."APELLIDOS" AS "APELLIDOS", 
+"V_EMPLEADOS"."FECHA_NACIMIENTO" AS "FECHA_NACIMIENTO", 
+"V_EMPLEADOS"."GRUPO_SANGUINEO" AS "GRUPO_SANGUINEO", 
+"V_EMPLEADOS"."FACTOR_RH" AS "FACTOR_RH", 
+"V_EMPLEADOS"."ESTADO_CIVIL" AS "ESTADO_CIVIL", 
+"V_EMPLEADOS"."SEXO" AS "SEXO", 
+"V_EMPLEADOS"."DIRECCION" AS "DIRECCION", 
+"V_EMPLEADOS"."TELEFONO" AS "TELEFONO", 
+"V_EMPLEADOS"."CLASE_LIBRETA" AS "CLASE_LIBRETA", 
+"V_EMPLEADOS"."TIPO_EMPLEADO" AS "TIPO_EMPLEADO", 
+"V_EMPLEADOS"."ESTADO_EMPLEADO" AS "ESTADO_EMPLEADO", 
+"V_EMPLEADOS"."ACTIVO" AS "ACTIVO", 
+"V_EMPLEADOS"."DIAS_VACACIONES" AS "DIAS_VACACIONES", 
+"V_EMPLEADOS"."FECHA_VACACIONES" AS "FECHA_VACACIONES", 
+"V_EMPLEADOS"."PLACA" AS "PLACA", 
+"V_EMPLEADOS"."HOJA_VIDA" AS "HOJA_VIDA", 
+"V_EMPLEADOS"."NUMERO_CARNE" AS "NUMERO_CARNE", 
+"V_EMPLEADOS"."HORAS_LABORADAS" AS "HORAS_LABORADAS", 
+"V_EMPLEADOS"."NUMERO_CURSO" AS "NUMERO_CURSO", 
+"V_EMPLEADOS"."UBICACION_ESCALAFON" AS "UBICACION_ESCALAFON", 
+"V_EMPLEADOS"."ENCARGO" AS "ENCARGO", 
+"V_EMPLEADOS"."CARRERA_ADTVA" AS "CARRERA_ADTVA", 
+"V_EMPLEADOS"."LEY_100" AS "LEY_100", 
+"V_EMPLEADOS"."JUSTICIA_PENAL" AS "JUSTICIA_PENAL", 
+"V_EMPLEADOS"."RESERVA" AS "RESERVA", 
+"V_EMPLEADOS"."CONDICION_SANIDAD" AS "CONDICION_SANIDAD", 
+"V_EMPLEADOS"."CLASE_NOMINA" AS "CLASE_NOMINA", 
+"V_EMPLEADOS"."FECHA_DEFUNCION" AS "FECHA_DEFUNCION", 
+"V_EMPLEADOS"."VALIDA_ARCO" AS "VALIDA_ARCO", 
+"V_EMPLEADOS"."GRAD_ALFABETICO" AS "GRAD_ALFABETICO", 
+"V_EMPLEADOS"."LUGE_CODIGO" AS "LUGE_CODIGO", 
+"V_EMPLEADOS"."LUGE_CODIGO_EXPEDIDA" AS "LUGE_CODIGO_EXPEDIDA", 
+"V_EMPLEADOS"."LUBA_BARRI_CODIGO" AS "LUBA_BARRI_CODIGO", 
+"V_EMPLEADOS"."LUBA_LUGE_CODIGO" AS "LUBA_LUGE_CODIGO", 
+"V_EMPLEADOS"."CARG_CARGO" AS "CARG_CARGO", 
+"V_EMPLEADOS"."CARG_FUERZA" AS "CARG_FUERZA", 
+"V_EMPLEADOS"."EMPR_UNDE_FUERZA" AS "EMPR_UNDE_FUERZA", 
+"V_EMPLEADOS"."EMPR_UNDE_CONSECUTIVO" AS "EMPR_UNDE_CONSECUTIVO", 
+"V_EMPLEADOS"."EMPR_IDENTIFICACION" AS "EMPR_IDENTIFICACION", 
+"V_EMPLEADOS"."EMPR_TIPO_IDENTIFICACION" AS "EMPR_TIPO_IDENTIFICACION", 
+"V_EMPLEADOS"."UNDE_FUERZA_ATENDIDO" AS "UNDE_FUERZA_ATENDIDO", 
+"V_EMPLEADOS"."UNDE_CONSECUTIVO_ATENDIDO" AS "UNDE_CONSECUTIVO_ATENDIDO", 
+"V_EMPLEADOS"."UNDE_CONSECUTIVO_NOMINADO" AS "UNDE_CONSECUTIVO_NOMINADO", 
+"V_EMPLEADOS"."UNDE_FUERZA_LABORANDO" AS "UNDE_FUERZA_LABORANDO", 
+"V_EMPLEADOS"."UNDE_CONSECUTIVO_LABORANDO" AS "UNDE_CONSECUTIVO_LABORANDO", 
+"V_EMPLEADOS"."ARCU_FUERZA" AS "ARCU_FUERZA", 
+"V_EMPLEADOS"."ARCU_ID_ARMA_CUERPO" AS "ARCU_ID_ARMA_CUERPO", 
+"V_EMPLEADOS"."ESPE_FUERZA" AS "ESPE_FUERZA", 
+"V_EMPLEADOS"."ESPE_ID_ESPECIALIDAD" AS "ESPE_ID_ESPECIALIDAD", 
+"V_EMPLEADOS"."CARR_FUERZA" AS "CARR_FUERZA", 
+"V_EMPLEADOS"."CARRE_ID_CARRERA" AS "CARRE_ID_CARRERA", 
+"V_EMPLEADOS"."CREADO_POR" AS "CREADO_POR", 
+"V_EMPLEADOS"."FECHA_CREACION" AS "FECHA_CREACION", 
+"V_EMPLEADOS"."MAQUINA_CREACION" AS "MAQUINA_CREACION", 
+"V_EMPLEADOS"."ACTUALIZADO_POR" AS "ACTUALIZADO_POR", 
+"V_EMPLEADOS"."FECHA_ACTUALIZA" AS "FECHA_ACTUALIZA", 
+"V_EMPLEADOS"."MAQUINA_ACTUALIZA" AS "MAQUINA_ACTUALIZA", 
+"V_EMPLEADOS"."SILA_ID_SITUAC_LABOR" AS "SILA_ID_SITUAC_LABOR", 
+"V_EMPLEADOS"."CENTRO_SOCIAL" AS "CENTRO_SOCIAL", 
+"V_EMPLEADOS"."CENTRO_VACACIONAL" AS "CENTRO_VACACIONAL", 
+"V_EMPLEADOS"."EDIFICIO" AS "EDIFICIO", 
+"V_EMPLEADOS"."SIGLA_LABORANDO" AS "SIGLA_LABORANDO", 
+"V_EMPLEADOS"."CONDICION_OFITE" AS "CONDICION_OFITE", 
+"V_EMPLEADOS"."LIBRETA_MILITAR" AS "LIBRETA_MILITAR", 
+"V_EMPLEADOS"."DRAGONEANTE" AS "DRAGONEANTE", 
+"V_EMPLEADOS"."DESIGNADO" AS "DESIGNADO", 
+"V_EMPLEADOS"."REGISTRO_DUPLICADO" AS "REGISTRO_DUPLICADO", 
+"V_EMPLEADOS"."MIGRADO_ORDEN" AS "MIGRADO_ORDEN", 
+"V_EMPLEADOS"."ID_FUENTE" AS "ID_FUENTE", 
+"V_EMPLEADOS"."ID_NOMINA" AS "ID_NOMINA", 
+"V_EMPLEADOS"."CON_NIVEL" AS "CON_NIVEL", 
+"V_EMPLEADOS"."USUARIO_EMPRESARIAL" AS "USUARIO_EMPRESARIAL", 
+"V_EMPLEADOS"."FECHA_EXPEDICION_LIBRETA" AS "FECHA_EXPEDICION_LIBRETA", 
+"V_EMPLEADOS"."UNRE_CONSECUTIVO" AS "UNRE_CONSECUTIVO", 
+"V_EMPLEADOS"."REGISTRO_DEFUNCION" AS "REGISTRO_DEFUNCION", 
+"V_EMPLEADOS"."FECHA_PRESUNCION" AS "FECHA_PRESUNCION", 
+"V_EMPLEADOS"."CLASE_PRESUNCION" AS "CLASE_PRESUNCION", 
+"V_EMPLEADOS"."AUDIOCONSULTA_PIN" AS "AUDIOCONSULTA_PIN", 
+"V_EMPLEADOS"."CHEQUEO_PIN" AS "CHEQUEO_PIN", 
+"V_EMPLEADOS"."RESPUESTA_PIN" AS "RESPUESTA_PIN", 
+"V_EMPLEADOS"."CORREO_ELECTRONICO" AS "CORREO_ELECTRONICO", 
+"V_EMPLEADOS"."PLACA_CHIP" AS "PLACA_CHIP", 
+"V_EMPLEADOS"."MOTIVO_OPERACION" AS "MOTIVO_OPERACION", 
+"V_EMPLEADOS"."NUMERO_CELULAR" AS "NUMERO_CELULAR"
+FROM "USR_CAD"."V_EMPLEADOS" "V_EMPLEADOS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PARQUEADEROS" EntityType="Self.V_PARQUEADEROS" store:Type="Views" store:Schema="USR_CAD">
+            <DefiningQuery>SELECT 
+"V_PARQUEADEROS"."SITIO_GRABA" AS "SITIO_GRABA", 
+"V_PARQUEADEROS"."CODIGO" AS "CODIGO", 
+"V_PARQUEADEROS"."DESCRIPCION" AS "DESCRIPCION", 
+"V_PARQUEADEROS"."LUGE_CODIGO" AS "LUGE_CODIGO", 
+"V_PARQUEADEROS"."DIRECCION" AS "DIRECCION", 
+"V_PARQUEADEROS"."CODI_BARRIO" AS "CODI_BARRIO", 
+"V_PARQUEADEROS"."LUGE_BARRIO" AS "LUGE_BARRIO", 
+"V_PARQUEADEROS"."TELEFONO" AS "TELEFONO", 
+"V_PARQUEADEROS"."HORARIO" AS "HORARIO", 
+"V_PARQUEADEROS"."USUA_TRANSACCION" AS "USUA_TRANSACCION", 
+"V_PARQUEADEROS"."FECHA_TRANSACCION" AS "FECHA_TRANSACCION", 
+"V_PARQUEADEROS"."NOMBREBARRIO" AS "NOMBREBARRIO", 
+"V_PARQUEADEROS"."NOMBRECIUDAD" AS "NOMBRECIUDAD", 
+"V_PARQUEADEROS"."NOMBRESITIOGRABACION" AS "NOMBRESITIOGRABACION", 
+"V_PARQUEADEROS"."IDSITIOGRABACION" AS "IDSITIOGRABACION", 
+"V_PARQUEADEROS"."PADRE_CODIGO" AS "PADRE_CODIGO"
+FROM "USR_CAD"."V_PARQUEADEROS" "V_PARQUEADEROS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PERSONAS" EntityType="Self.V_PERSONAS" store:Type="Views" store:Schema="USR_CAD">
+            <DefiningQuery>SELECT 
+"V_PERSONAS"."CEDU_EMPLEADO" AS "CEDU_EMPLEADO", 
+"V_PERSONAS"."NOMB_EMPLEADO" AS "NOMB_EMPLEADO", 
+"V_PERSONAS"."NUME_PLACA" AS "NUME_PLACA", 
+"V_PERSONAS"."DIRE_RESIDENCIA" AS "DIRE_RESIDENCIA", 
+"V_PERSONAS"."TELE_RESIDENCIA" AS "TELE_RESIDENCIA", 
+"V_PERSONAS"."FECH_NACIMIENTO" AS "FECH_NACIMIENTO", 
+"V_PERSONAS"."TIPO_SEXO" AS "TIPO_SEXO", 
+"V_PERSONAS"."GRUP_SANGUINEO" AS "GRUP_SANGUINEO", 
+"V_PERSONAS"."ESTA_CIVIL" AS "ESTA_CIVIL", 
+"V_PERSONAS"."CODI_ESPECIALIDAD" AS "CODI_ESPECIALIDAD", 
+"V_PERSONAS"."ESTA_LABORAL" AS "ESTA_LABORAL", 
+"V_PERSONAS"."NUME_SECCION" AS "NUME_SECCION", 
+"V_PERSONAS"."CADUNID_FUERZA" AS "CADUNID_FUERZA", 
+"V_PERSONAS"."CADUNID_CODIGO" AS "CADUNID_CODIGO", 
+"V_PERSONAS"."GRAD_ALFABETICO" AS "GRAD_ALFABETICO", 
+"V_PERSONAS"."CADFUERZ_ID" AS "CADFUERZ_ID", 
+"V_PERSONAS"."DESCRIPCIONTIPOFUERZA" AS "DESCRIPCIONTIPOFUERZA", 
+"V_PERSONAS"."DESCRIPCIONUNIDADES" AS "DESCRIPCIONUNIDADES", 
+"V_PERSONAS"."DESCRIPCIONGRADO" AS "DESCRIPCIONGRADO", 
+"V_PERSONAS"."DESCRIPCIONFUERZA" AS "DESCRIPCIONFUERZA", 
+"V_PERSONAS"."DESCRIPCIONSEXO" AS "DESCRIPCIONSEXO", 
+"V_PERSONAS"."DESCRIPCIONGRUPOSANGUINEO" AS "DESCRIPCIONGRUPOSANGUINEO", 
+"V_PERSONAS"."DESCRIPCIONESTADOCIVIL" AS "DESCRIPCIONESTADOCIVIL", 
+"V_PERSONAS"."DESCRIPCIONESPECIALIDAD" AS "DESCRIPCIONESPECIALIDAD", 
+"V_PERSONAS"."DESCRIPCIONTIPOLABORAL" AS "DESCRIPCIONTIPOLABORAL", 
+"V_PERSONAS"."DESCRIPCIONSECCION" AS "DESCRIPCIONSECCION"
+FROM "USR_CAD"."V_PERSONAS" "V_PERSONAS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_SITIOS_IMPORTANTES" EntityType="Self.V_SITIOS_IMPORTANTES" store:Type="Views" store:Schema="USR_CAD">
+            <DefiningQuery>SELECT 
+"V_SITIOS_IMPORTANTES"."SITIO_GRABA" AS "SITIO_GRABA", 
+"V_SITIOS_IMPORTANTES"."CONSECUTIVO" AS "CONSECUTIVO", 
+"V_SITIOS_IMPORTANTES"."CLSI_CODIGO" AS "CLSI_CODIGO", 
+"V_SITIOS_IMPORTANTES"."DESCRIPCION" AS "DESCRIPCION", 
+"V_SITIOS_IMPORTANTES"."DIRECCION" AS "DIRECCION", 
+"V_SITIOS_IMPORTANTES"."TELEFONO" AS "TELEFONO", 
+"V_SITIOS_IMPORTANTES"."BARR_CODIGO" AS "BARR_CODIGO", 
+"V_SITIOS_IMPORTANTES"."BARR_LUGE_CODIGO" AS "BARR_LUGE_CODIGO", 
+"V_SITIOS_IMPORTANTES"."LATITUD" AS "LATITUD", 
+"V_SITIOS_IMPORTANTES"."LONGITUD" AS "LONGITUD", 
+"V_SITIOS_IMPORTANTES"."COMENTARIO" AS "COMENTARIO", 
+"V_SITIOS_IMPORTANTES"."LUGE_CODIGO" AS "LUGE_CODIGO", 
+"V_SITIOS_IMPORTANTES"."NOMBREBARRIO" AS "NOMBREBARRIO", 
+"V_SITIOS_IMPORTANTES"."NOMBRECIUDAD" AS "NOMBRECIUDAD", 
+"V_SITIOS_IMPORTANTES"."CLASESITIODESCRIPCION" AS "CLASESITIODESCRIPCION", 
+"V_SITIOS_IMPORTANTES"."PADRE_CODIGO" AS "PADRE_CODIGO"
+FROM "USR_CAD"."V_SITIOS_IMPORTANTES" "V_SITIOS_IMPORTANTES"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="CADBARR_COZO_FK" Association="Self.CADBARR_COZO_FK">
+            <End Role="CADCOMUNAS" EntitySet="CADCOMUNAS" />
+            <End Role="CADBARRIOS" EntitySet="CADBARRIOS" />
+          </AssociationSet>
+          <AssociationSet Name="CADBARR_LUGE_FK" Association="Self.CADBARR_LUGE_FK">
+            <End Role="CADLUGARES_GEOGRAFICOS" EntitySet="CADLUGARES_GEOGRAFICOS" />
+            <End Role="CADBARRIOS" EntitySet="CADBARRIOS" />
+          </AssociationSet>
+          <AssociationSet Name="CADCOMU_LUGE_FK" Association="Self.CADCOMU_LUGE_FK">
+            <End Role="CADLUGARES_GEOGRAFICOS" EntitySet="CADLUGARES_GEOGRAFICOS" />
+            <End Role="CADCOMUNAS" EntitySet="CADCOMUNAS" />
+          </AssociationSet>
+          <AssociationSet Name="CADLUGE_LUGE_FK" Association="Self.CADLUGE_LUGE_FK">
+            <End Role="CADLUGARES_GEOGRAFICOS" EntitySet="CADLUGARES_GEOGRAFICOS" />
+            <End Role="CADLUGARES_GEOGRAFICOS1" EntitySet="CADLUGARES_GEOGRAFICOS" />
+          </AssociationSet>
+          <AssociationSet Name="CADPOLIC_FUERZ_FK" Association="Self.CADPOLIC_FUERZ_FK">
+            <End Role="CADFUERZAS" EntitySet="CADFUERZAS" />
+            <End Role="CADPOLICIAS" EntitySet="CADPOLICIAS" />
+          </AssociationSet>
+          <AssociationSet Name="CADPOLIC_GRADO_FK" Association="Self.CADPOLIC_GRADO_FK">
+            <End Role="CADGRADOS" EntitySet="CADGRADOS" />
+            <End Role="CADPOLICIAS" EntitySet="CADPOLICIAS" />
+          </AssociationSet>
+          <AssociationSet Name="CADPOLIFOTOS_POLIC_FK" Association="Self.CADPOLIFOTOS_POLIC_FK">
+            <End Role="CADPOLICIAS" EntitySet="CADPOLICIAS" />
+            <End Role="CADPOLICIAS_FOTOS" EntitySet="CADPOLICIAS_FOTOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelComunasBarrios" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CADBARRIO">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="LUGE_CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="COZO_CODIGO" Type="Int32" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="COZO_LUGE_CODIGO" Type="Int32" />
+          <Property Name="CODIGO_MPIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_REGISTRO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AREAM2" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CADCOMUNA" Relationship="Self.CADBARR_COZO_FK" FromRole="CADBARRIOS" ToRole="CADCOMUNAS" />
+          <NavigationProperty Name="CADLUGARES_GEOGRAFICOS" Relationship="Self.CADBARR_LUGE_FK" FromRole="CADBARRIOS" ToRole="CADLUGARES_GEOGRAFICOS" />
+        </EntityType>
+        <EntityType Name="CADCOMUNA">
+          <Key>
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ORDEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IDENTIFICACION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="AREAM2" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CADBARRIOS" Relationship="Self.CADBARR_COZO_FK" FromRole="CADCOMUNAS" ToRole="CADBARRIOS" />
+          <NavigationProperty Name="CADLUGARES_GEOGRAFICOS" Relationship="Self.CADCOMU_LUGE_FK" FromRole="CADCOMUNAS" ToRole="CADLUGARES_GEOGRAFICOS" />
+        </EntityType>
+        <EntityType Name="CADLUGARES_GEOGRAFICOS">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODIGO_DANE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_REGISTRADURIA" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LUGE_CODIGO" Type="Int32" />
+          <Property Name="NIVEL" Type="Byte" />
+          <Property Name="DPTO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_SIEDCO" Type="Int32" />
+          <Property Name="CODIGO_SIATH" Type="Int32" />
+          <Property Name="NIVEL_1" Type="Int32" />
+          <Property Name="NIVEL_2" Type="Int32" />
+          <Property Name="NIVEL_3" Type="Int32" />
+          <Property Name="NIVEL_4" Type="Int32" />
+          <Property Name="NIVEL_5" Type="Int32" />
+          <Property Name="NIVEL_6" Type="Int32" />
+          <NavigationProperty Name="CADBARRIOS" Relationship="Self.CADBARR_LUGE_FK" FromRole="CADLUGARES_GEOGRAFICOS" ToRole="CADBARRIOS" />
+          <NavigationProperty Name="CADCOMUNAS" Relationship="Self.CADCOMU_LUGE_FK" FromRole="CADLUGARES_GEOGRAFICOS" ToRole="CADCOMUNAS" />
+          <NavigationProperty Name="CADLUGARES_GEOGRAFICOS1" Relationship="Self.CADLUGE_LUGE_FK" FromRole="CADLUGARES_GEOGRAFICOS" ToRole="CADLUGARES_GEOGRAFICOS1" />
+          <NavigationProperty Name="CADLUGARES_GEOGRAFICOS2" Relationship="Self.CADLUGE_LUGE_FK" FromRole="CADLUGARES_GEOGRAFICOS1" ToRole="CADLUGARES_GEOGRAFICOS" />
+        </EntityType>
+        <Association Name="CADBARR_COZO_FK">
+          <End Role="CADCOMUNAS" Type="Self.CADCOMUNA" Multiplicity="0..1" />
+          <End Role="CADBARRIOS" Type="Self.CADBARRIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADCOMUNAS">
+              <PropertyRef Name="CODIGO" />
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Principal>
+            <Dependent Role="CADBARRIOS">
+              <PropertyRef Name="COZO_CODIGO" />
+              <PropertyRef Name="COZO_LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADBARR_LUGE_FK">
+          <End Role="CADLUGARES_GEOGRAFICOS" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="1" />
+          <End Role="CADBARRIOS" Type="Self.CADBARRIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADLUGARES_GEOGRAFICOS">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CADBARRIOS">
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADCOMU_LUGE_FK">
+          <End Role="CADLUGARES_GEOGRAFICOS" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="1" />
+          <End Role="CADCOMUNAS" Type="Self.CADCOMUNA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADLUGARES_GEOGRAFICOS">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CADCOMUNAS">
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CADLUGE_LUGE_FK">
+          <End Role="CADLUGARES_GEOGRAFICOS" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="0..1" />
+          <End Role="CADLUGARES_GEOGRAFICOS1" Type="Self.CADLUGARES_GEOGRAFICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADLUGARES_GEOGRAFICOS">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CADLUGARES_GEOGRAFICOS1">
+              <PropertyRef Name="LUGE_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntitiesComunasBarrios" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CADBARRIOS" EntityType="Self.CADBARRIO" />
+          <EntitySet Name="CADCOMUNAS" EntityType="Self.CADCOMUNA" />
+          <EntitySet Name="CADLUGARES_GEOGRAFICOS" EntityType="Self.CADLUGARES_GEOGRAFICOS" />
+          <AssociationSet Name="CADBARR_COZO_FK" Association="Self.CADBARR_COZO_FK">
+            <End Role="CADCOMUNAS" EntitySet="CADCOMUNAS" />
+            <End Role="CADBARRIOS" EntitySet="CADBARRIOS" />
+          </AssociationSet>
+          <AssociationSet Name="CADBARR_LUGE_FK" Association="Self.CADBARR_LUGE_FK">
+            <End Role="CADLUGARES_GEOGRAFICOS" EntitySet="CADLUGARES_GEOGRAFICOS" />
+            <End Role="CADBARRIOS" EntitySet="CADBARRIOS" />
+          </AssociationSet>
+          <AssociationSet Name="CADCOMU_LUGE_FK" Association="Self.CADCOMU_LUGE_FK">
+            <End Role="CADLUGARES_GEOGRAFICOS" EntitySet="CADLUGARES_GEOGRAFICOS" />
+            <End Role="CADCOMUNAS" EntitySet="CADCOMUNAS" />
+          </AssociationSet>
+          <AssociationSet Name="CADLUGE_LUGE_FK" Association="Self.CADLUGE_LUGE_FK">
+            <End Role="CADLUGARES_GEOGRAFICOS" EntitySet="CADLUGARES_GEOGRAFICOS" />
+            <End Role="CADLUGARES_GEOGRAFICOS1" EntitySet="CADLUGARES_GEOGRAFICOS" />
+          </AssociationSet>
+          <EntitySet Name="CADPOLICIAS" EntityType="ModelComunasBarrios.CADPOLICIA" />
+          <EntitySet Name="CADPOLICIAS_FOTOS" EntityType="ModelComunasBarrios.CADPOLICIAS_FOTOS" />
+          <AssociationSet Name="CADPOLIFOTOS_POLIC_FK" Association="ModelComunasBarrios.CADPOLIFOTOS_POLIC_FK">
+            <End Role="CADPOLICIA" EntitySet="CADPOLICIAS" />
+            <End Role="CADPOLICIAS_FOTOS" EntitySet="CADPOLICIAS_FOTOS" />
+          </AssociationSet>
+          <EntitySet Name="CADFUERZAS" EntityType="ModelComunasBarrios.CADFUERZA" />
+          <AssociationSet Name="CADPOLIC_FUERZ_FK" Association="ModelComunasBarrios.CADPOLIC_FUERZ_FK">
+            <End Role="CADFUERZA" EntitySet="CADFUERZAS" />
+            <End Role="CADPOLICIA" EntitySet="CADPOLICIAS" />
+          </AssociationSet>
+          <EntitySet Name="V_PERSONAS" EntityType="ModelComunasBarrios.V_PERSONAS" />
+          <EntitySet Name="CADBANNERIMAGENES" EntityType="ModelComunasBarrios.CADBANNERIMAGENE" />
+          <EntitySet Name="V_EMPLEADOS" EntityType="ModelComunasBarrios.V_EMPLEADOS" />
+          <EntitySet Name="V_PARQUEADEROS" EntityType="ModelComunasBarrios.V_PARQUEADEROS" />
+          <EntitySet Name="CADGRADOS" EntityType="ModelComunasBarrios.CADGRADO" />
+          <EntitySet Name="V_SITIOS_IMPORTANTES" EntityType="ModelComunasBarrios.V_SITIOS_IMPORTANTES" />
+          <AssociationSet Name="CADPOLIC_GRADO_FK" Association="ModelComunasBarrios.CADPOLIC_GRADO_FK">
+            <End Role="CADGRADO" EntitySet="CADGRADOS" />
+            <End Role="CADPOLICIA" EntitySet="CADPOLICIAS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CADPOLICIA">
+          <Key>
+            <PropertyRef Name="CEDU_EMPLEADO" />
+          </Key>
+          <Property Name="CEDU_EMPLEADO" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="NOMB_EMPLEADO" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="NUME_PLACA" Type="Int32" />
+          <Property Name="DIRE_RESIDENCIA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="TELE_RESIDENCIA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FECH_NACIMIENTO" Type="DateTime" />
+          <Property Name="TIPO_SEXO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GRUP_SANGUINEO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="ESTA_CIVIL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CODI_ESPECIALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ESTA_LABORAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NUME_SECCION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CADUNID_FUERZA" Type="Byte" />
+          <Property Name="CADUNID_CODIGO" Type="Int32" />
+          <Property Name="GRAD_ALFABETICO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="CADFUERZ_ID" Type="Int32" />
+          <NavigationProperty Name="CADPOLICIAS_FOTOS" Relationship="ModelComunasBarrios.CADPOLIFOTOS_POLIC_FK" FromRole="CADPOLICIA" ToRole="CADPOLICIAS_FOTOS" />
+          <NavigationProperty Name="CADFUERZA" Relationship="ModelComunasBarrios.CADPOLIC_FUERZ_FK" FromRole="CADPOLICIA" ToRole="CADFUERZA" />
+          <NavigationProperty Name="CADGRADO" Relationship="ModelComunasBarrios.CADPOLIC_GRADO_FK" FromRole="CADPOLICIA" ToRole="CADGRADO" />
+        </EntityType>
+        <EntityType Name="CADPOLICIAS_FOTOS">
+          <Key>
+            <PropertyRef Name="CEDU_EMPLEADO" />
+          </Key>
+          <Property Name="CEDU_EMPLEADO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <NavigationProperty Name="CADPOLICIA" Relationship="ModelComunasBarrios.CADPOLIFOTOS_POLIC_FK" FromRole="CADPOLICIAS_FOTOS" ToRole="CADPOLICIA" />
+        </EntityType>
+        <Association Name="CADPOLIFOTOS_POLIC_FK">
+          <End Type="ModelComunasBarrios.CADPOLICIA" Role="CADPOLICIA" Multiplicity="1" />
+          <End Type="ModelComunasBarrios.CADPOLICIAS_FOTOS" Role="CADPOLICIAS_FOTOS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CADPOLICIA">
+              <PropertyRef Name="CEDU_EMPLEADO" />
+            </Principal>
+            <Dependent Role="CADPOLICIAS_FOTOS">
+              <PropertyRef Name="CEDU_EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CADFUERZA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ABREVIATURA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CADUNDE_FUERZA" Type="Int32" Nullable="false" />
+          <Property Name="CADUNDE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DESDE" Type="DateTime" Nullable="false" />
+          <Property Name="HASTA" Type="DateTime" />
+          <Property Name="OBSERVACION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="HORAS_TURNO" Type="Byte" />
+          <Property Name="CADUNDE_FUERZA_PPAL" Type="Byte" Nullable="false" />
+          <Property Name="CADUNDE_CODIGO_PPAL" Type="Int32" Nullable="false" />
+          <Property Name="SITIO_GRABA" Type="Int32" Nullable="false" />
+          <Property Name="ESCUDO" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <Property Name="FECH_TRANSACCION" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CADPOLICIAS" Relationship="ModelComunasBarrios.CADPOLIC_FUERZ_FK" FromRole="CADFUERZA" ToRole="CADPOLICIA" />
+        </EntityType>
+        <Association Name="CADPOLIC_FUERZ_FK">
+          <End Type="ModelComunasBarrios.CADFUERZA" Role="CADFUERZA" Multiplicity="0..1" />
+          <End Type="ModelComunasBarrios.CADPOLICIA" Role="CADPOLICIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADFUERZA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CADPOLICIA">
+              <PropertyRef Name="CADFUERZ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="V_PERSONAS">
+          <Key>
+            <PropertyRef Name="CEDU_EMPLEADO" />
+            <PropertyRef Name="NOMB_EMPLEADO" />
+          </Key>
+          <Property Name="CEDU_EMPLEADO" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="NOMB_EMPLEADO" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="NUME_PLACA" Type="Int32" />
+          <Property Name="DIRE_RESIDENCIA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="TELE_RESIDENCIA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FECH_NACIMIENTO" Type="DateTime" />
+          <Property Name="TIPO_SEXO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="GRUP_SANGUINEO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="ESTA_CIVIL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CODI_ESPECIALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ESTA_LABORAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NUME_SECCION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CADUNID_FUERZA" Type="Byte" />
+          <Property Name="CADUNID_CODIGO" Type="Int32" />
+          <Property Name="GRAD_ALFABETICO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="CADFUERZ_ID" Type="Int32" />
+          <Property Name="DESCRIPCIONUNIDADES" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONTIPOFUERZA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONGRADO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONFUERZA" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONSEXO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONGRUPOSANGUINEO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONESTADOCIVIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONESPECIALIDAD" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONTIPOLABORAL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCIONSECCION" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CADBANNERIMAGENE">
+          <Key>
+            <PropertyRef Name="IDBANNER" />
+          </Key>
+          <Property Name="IDBANNER" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBREARCHIVO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVO" Type="Boolean" Nullable="false" />
+          <Property Name="ORDEN" Type="Int32" />
+          <Property Name="FECHACREACION" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="V_EMPLEADOS">
+          <Key>
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="UNDE_FUERZA" />
+            <PropertyRef Name="UNDE_CONSECUTIVO" />
+            <PropertyRef Name="TIPO_IDENTIFICACION" />
+            <PropertyRef Name="IDENTIFICACION" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="APELLIDOS" />
+            <PropertyRef Name="FECHA_NACIMIENTO" />
+            <PropertyRef Name="GRUPO_SANGUINEO" />
+            <PropertyRef Name="FACTOR_RH" />
+            <PropertyRef Name="ESTADO_CIVIL" />
+            <PropertyRef Name="SEXO" />
+            <PropertyRef Name="DIRECCION" />
+            <PropertyRef Name="TIPO_EMPLEADO" />
+            <PropertyRef Name="ESTADO_EMPLEADO" />
+            <PropertyRef Name="ACTIVO" />
+            <PropertyRef Name="DIAS_VACACIONES" />
+            <PropertyRef Name="ENCARGO" />
+            <PropertyRef Name="CARRERA_ADTVA" />
+            <PropertyRef Name="LEY_100" />
+            <PropertyRef Name="JUSTICIA_PENAL" />
+            <PropertyRef Name="RESERVA" />
+            <PropertyRef Name="CONDICION_SANIDAD" />
+            <PropertyRef Name="GRAD_ALFABETICO" />
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="LUGE_CODIGO_EXPEDIDA" />
+            <PropertyRef Name="LUBA_BARRI_CODIGO" />
+            <PropertyRef Name="LUBA_LUGE_CODIGO" />
+            <PropertyRef Name="CARG_CARGO" />
+            <PropertyRef Name="CARG_FUERZA" />
+            <PropertyRef Name="UNDE_CONSECUTIVO_NOMINADO" />
+            <PropertyRef Name="UNDE_FUERZA_LABORANDO" />
+            <PropertyRef Name="UNDE_CONSECUTIVO_LABORANDO" />
+            <PropertyRef Name="ESPE_FUERZA" />
+            <PropertyRef Name="ESPE_ID_ESPECIALIDAD" />
+            <PropertyRef Name="CREADO_POR" />
+            <PropertyRef Name="FECHA_CREACION" />
+            <PropertyRef Name="MAQUINA_CREACION" />
+            <PropertyRef Name="SILA_ID_SITUAC_LABOR" />
+            <PropertyRef Name="CENTRO_SOCIAL" />
+            <PropertyRef Name="CENTRO_VACACIONAL" />
+          </Key>
+          <Property Name="CONSECUTIVO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="UNDE_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="UNDE_CONSECUTIVO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIPO_IDENTIFICACION" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="IDENTIFICACION" Type="Int64" Nullable="false" />
+          <Property Name="CODIGO_MILITAR" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRES" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDOS" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
+          <Property Name="GRUPO_SANGUINEO" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="FACTOR_RH" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="ESTADO_CIVIL" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="SEXO" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="270" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CLASE_LIBRETA" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_EMPLEADO" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="ESTADO_EMPLEADO" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="ACTIVO" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="DIAS_VACACIONES" Type="Byte" Nullable="false" />
+          <Property Name="FECHA_VACACIONES" Type="DateTime" />
+          <Property Name="PLACA" Type="Int32" />
+          <Property Name="HOJA_VIDA" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_CARNE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="HORAS_LABORADAS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NUMERO_CURSO" Type="Byte" />
+          <Property Name="UBICACION_ESCALAFON" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ENCARGO" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CARRERA_ADTVA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="LEY_100" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="JUSTICIA_PENAL" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="RESERVA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CONDICION_SANIDAD" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CLASE_NOMINA" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="FECHA_DEFUNCION" Type="DateTime" />
+          <Property Name="VALIDA_ARCO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="GRAD_ALFABETICO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="LUGE_CODIGO_EXPEDIDA" Type="Int32" Nullable="false" />
+          <Property Name="LUBA_BARRI_CODIGO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="LUBA_LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="CARG_CARGO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CARG_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="EMPR_UNDE_FUERZA" Type="Boolean" />
+          <Property Name="EMPR_UNDE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="EMPR_IDENTIFICACION" Type="Int64" />
+          <Property Name="EMPR_TIPO_IDENTIFICACION" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="UNDE_FUERZA_ATENDIDO" Type="Boolean" />
+          <Property Name="UNDE_CONSECUTIVO_ATENDIDO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UNDE_CONSECUTIVO_NOMINADO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="UNDE_FUERZA_LABORANDO" Type="Boolean" Nullable="false" />
+          <Property Name="UNDE_CONSECUTIVO_LABORANDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ARCU_FUERZA" Type="Boolean" />
+          <Property Name="ARCU_ID_ARMA_CUERPO" Type="Byte" />
+          <Property Name="ESPE_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="ESPE_ID_ESPECIALIDAD" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CARR_FUERZA" Type="Boolean" />
+          <Property Name="CARRE_ID_CARRERA" Type="Int32" />
+          <Property Name="CREADO_POR" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+          <Property Name="MAQUINA_CREACION" Type="String" Nullable="false" MaxLength="360" FixedLength="false" Unicode="false" />
+          <Property Name="ACTUALIZADO_POR" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_ACTUALIZA" Type="DateTime" />
+          <Property Name="MAQUINA_ACTUALIZA" Type="String" MaxLength="360" FixedLength="false" Unicode="false" />
+          <Property Name="SILA_ID_SITUAC_LABOR" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CENTRO_SOCIAL" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CENTRO_VACACIONAL" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="EDIFICIO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="SIGLA_LABORANDO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CONDICION_OFITE" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="LIBRETA_MILITAR" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="DRAGONEANTE" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="DESIGNADO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="REGISTRO_DUPLICADO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MIGRADO_ORDEN" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="ID_FUENTE" Type="String" MaxLength="27" FixedLength="false" Unicode="false" />
+          <Property Name="ID_NOMINA" Type="String" MaxLength="27" FixedLength="false" Unicode="false" />
+          <Property Name="CON_NIVEL" Type="Int32" />
+          <Property Name="USUARIO_EMPRESARIAL" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_EXPEDICION_LIBRETA" Type="DateTime" />
+          <Property Name="UNRE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="REGISTRO_DEFUNCION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FECHA_PRESUNCION" Type="DateTime" />
+          <Property Name="CLASE_PRESUNCION" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="AUDIOCONSULTA_PIN" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CHEQUEO_PIN" Type="Boolean" />
+          <Property Name="RESPUESTA_PIN" Type="Boolean" />
+          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="720" FixedLength="false" Unicode="false" />
+          <Property Name="PLACA_CHIP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MOTIVO_OPERACION" Type="String" MaxLength="720" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_CELULAR" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="V_PARQUEADEROS">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="DIRECCION" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="CODI_BARRIO" Type="Int32" />
+          <Property Name="LUGE_BARRIO" Type="Int32" />
+          <Property Name="TELEFONO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="HORARIO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="USUA_TRANSACCION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_TRANSACCION" Type="DateTime" />
+          <Property Name="NOMBREBARRIO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRECIUDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRESITIOGRABACION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="IDSITIOGRABACION" Type="Int32" />
+          <Property Name="PADRE_CODIGO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CADGRADO">
+          <Key>
+            <PropertyRef Name="ALFABETICO" />
+          </Key>
+          <Property Name="ALFABETICO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERICO" Type="Int32" Nullable="false" />
+          <Property Name="CATE_CODIGO" Type="Byte" Nullable="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CADPOLICIAS" Relationship="ModelComunasBarrios.CADPOLIC_GRADO_FK" FromRole="CADGRADO" ToRole="CADPOLICIA" />
+        </EntityType>
+        <EntityType Name="V_SITIOS_IMPORTANTES">
+          <Key>
+            <PropertyRef Name="SITIO_GRABA" />
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="CLSI_CODIGO" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="DIRECCION" />
+          </Key>
+          <Property Name="SITIO_GRABA" Type="Int32" Nullable="false" />
+          <Property Name="CONSECUTIVO" Type="Int32" Nullable="false" />
+          <Property Name="CLSI_CODIGO" Type="Int16" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="BARR_CODIGO" Type="Int32" />
+          <Property Name="BARR_LUGE_CODIGO" Type="Int32" />
+          <Property Name="LATITUD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="COMENTARIO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="LUGE_CODIGO" Type="Int32" />
+          <Property Name="NOMBREBARRIO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRECIUDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CLASESITIODESCRIPCION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PADRE_CODIGO" Type="Int32" />
+        </EntityType>
+        <Association Name="CADPOLIC_GRADO_FK">
+          <End Type="ModelComunasBarrios.CADGRADO" Role="CADGRADO" Multiplicity="0..1" />
+          <End Type="ModelComunasBarrios.CADPOLICIA" Role="CADPOLICIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CADGRADO">
+              <PropertyRef Name="ALFABETICO" />
+            </Principal>
+            <Dependent Role="CADPOLICIA">
+              <PropertyRef Name="GRAD_ALFABETICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelComunasBarriosStoreContainer" CdmEntityContainer="EntitiesComunasBarrios">
+          <EntitySetMapping Name="CADBARRIOS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADBARRIO">
+              <MappingFragment StoreEntitySet="CADBARRIOS">
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="COZO_CODIGO" ColumnName="COZO_CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="COZO_LUGE_CODIGO" ColumnName="COZO_LUGE_CODIGO" />
+                <ScalarProperty Name="CODIGO_MPIO" ColumnName="CODIGO_MPIO" />
+                <ScalarProperty Name="TIPO_REGISTRO" ColumnName="TIPO_REGISTRO" />
+                <ScalarProperty Name="AREAM2" ColumnName="AREAM2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADCOMUNAS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADCOMUNA">
+              <MappingFragment StoreEntitySet="CADCOMUNAS">
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+                <ScalarProperty Name="AREAM2" ColumnName="AREAM2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADLUGARES_GEOGRAFICOS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADLUGARES_GEOGRAFICOS">
+              <MappingFragment StoreEntitySet="CADLUGARES_GEOGRAFICOS">
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="CODIGO_DANE" ColumnName="CODIGO_DANE" />
+                <ScalarProperty Name="CODIGO_REGISTRADURIA" ColumnName="CODIGO_REGISTRADURIA" />
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+                <ScalarProperty Name="DPTO" ColumnName="DPTO" />
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="CODIGO_SIEDCO" ColumnName="CODIGO_SIEDCO" />
+                <ScalarProperty Name="CODIGO_SIATH" ColumnName="CODIGO_SIATH" />
+                <ScalarProperty Name="NIVEL_1" ColumnName="NIVEL_1" />
+                <ScalarProperty Name="NIVEL_2" ColumnName="NIVEL_2" />
+                <ScalarProperty Name="NIVEL_3" ColumnName="NIVEL_3" />
+                <ScalarProperty Name="NIVEL_4" ColumnName="NIVEL_4" />
+                <ScalarProperty Name="NIVEL_5" ColumnName="NIVEL_5" />
+                <ScalarProperty Name="NIVEL_6" ColumnName="NIVEL_6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADPOLICIAS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADPOLICIA">
+              <MappingFragment StoreEntitySet="CADPOLICIAS">
+                <ScalarProperty Name="CADFUERZ_ID" ColumnName="CADFUERZ_ID" />
+                <ScalarProperty Name="GRAD_ALFABETICO" ColumnName="GRAD_ALFABETICO" />
+                <ScalarProperty Name="CADUNID_CODIGO" ColumnName="CADUNID_CODIGO" />
+                <ScalarProperty Name="CADUNID_FUERZA" ColumnName="CADUNID_FUERZA" />
+                <ScalarProperty Name="NUME_SECCION" ColumnName="NUME_SECCION" />
+                <ScalarProperty Name="ESTA_LABORAL" ColumnName="ESTA_LABORAL" />
+                <ScalarProperty Name="CODI_ESPECIALIDAD" ColumnName="CODI_ESPECIALIDAD" />
+                <ScalarProperty Name="ESTA_CIVIL" ColumnName="ESTA_CIVIL" />
+                <ScalarProperty Name="GRUP_SANGUINEO" ColumnName="GRUP_SANGUINEO" />
+                <ScalarProperty Name="TIPO_SEXO" ColumnName="TIPO_SEXO" />
+                <ScalarProperty Name="FECH_NACIMIENTO" ColumnName="FECH_NACIMIENTO" />
+                <ScalarProperty Name="TELE_RESIDENCIA" ColumnName="TELE_RESIDENCIA" />
+                <ScalarProperty Name="DIRE_RESIDENCIA" ColumnName="DIRE_RESIDENCIA" />
+                <ScalarProperty Name="NUME_PLACA" ColumnName="NUME_PLACA" />
+                <ScalarProperty Name="NOMB_EMPLEADO" ColumnName="NOMB_EMPLEADO" />
+                <ScalarProperty Name="CEDU_EMPLEADO" ColumnName="CEDU_EMPLEADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADPOLICIAS_FOTOS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADPOLICIAS_FOTOS">
+              <MappingFragment StoreEntitySet="CADPOLICIAS_FOTOS">
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="CEDU_EMPLEADO" ColumnName="CEDU_EMPLEADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADFUERZAS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADFUERZA">
+              <MappingFragment StoreEntitySet="CADFUERZAS">
+                <ScalarProperty Name="FECH_TRANSACCION" ColumnName="FECH_TRANSACCION" />
+                <ScalarProperty Name="ESCUDO" ColumnName="ESCUDO" />
+                <ScalarProperty Name="SITIO_GRABA" ColumnName="SITIO_GRABA" />
+                <ScalarProperty Name="CADUNDE_CODIGO_PPAL" ColumnName="CADUNDE_CODIGO_PPAL" />
+                <ScalarProperty Name="CADUNDE_FUERZA_PPAL" ColumnName="CADUNDE_FUERZA_PPAL" />
+                <ScalarProperty Name="HORAS_TURNO" ColumnName="HORAS_TURNO" />
+                <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+                <ScalarProperty Name="HASTA" ColumnName="HASTA" />
+                <ScalarProperty Name="DESDE" ColumnName="DESDE" />
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="CADUNDE_CODIGO" ColumnName="CADUNDE_CODIGO" />
+                <ScalarProperty Name="CADUNDE_FUERZA" ColumnName="CADUNDE_FUERZA" />
+                <ScalarProperty Name="ABREVIATURA" ColumnName="ABREVIATURA" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PERSONAS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.V_PERSONAS">
+              <MappingFragment StoreEntitySet="V_PERSONAS">
+                <ScalarProperty Name="DESCRIPCIONSECCION" ColumnName="DESCRIPCIONSECCION" />
+                <ScalarProperty Name="DESCRIPCIONTIPOLABORAL" ColumnName="DESCRIPCIONTIPOLABORAL" />
+                <ScalarProperty Name="DESCRIPCIONESPECIALIDAD" ColumnName="DESCRIPCIONESPECIALIDAD" />
+                <ScalarProperty Name="DESCRIPCIONESTADOCIVIL" ColumnName="DESCRIPCIONESTADOCIVIL" />
+                <ScalarProperty Name="DESCRIPCIONGRUPOSANGUINEO" ColumnName="DESCRIPCIONGRUPOSANGUINEO" />
+                <ScalarProperty Name="DESCRIPCIONSEXO" ColumnName="DESCRIPCIONSEXO" />
+                <ScalarProperty Name="DESCRIPCIONFUERZA" ColumnName="DESCRIPCIONFUERZA" />
+                <ScalarProperty Name="DESCRIPCIONGRADO" ColumnName="DESCRIPCIONGRADO" />
+                <ScalarProperty Name="DESCRIPCIONTIPOFUERZA" ColumnName="DESCRIPCIONTIPOFUERZA" />
+                <ScalarProperty Name="DESCRIPCIONUNIDADES" ColumnName="DESCRIPCIONUNIDADES" />
+                <ScalarProperty Name="CADFUERZ_ID" ColumnName="CADFUERZ_ID" />
+                <ScalarProperty Name="GRAD_ALFABETICO" ColumnName="GRAD_ALFABETICO" />
+                <ScalarProperty Name="CADUNID_CODIGO" ColumnName="CADUNID_CODIGO" />
+                <ScalarProperty Name="CADUNID_FUERZA" ColumnName="CADUNID_FUERZA" />
+                <ScalarProperty Name="NUME_SECCION" ColumnName="NUME_SECCION" />
+                <ScalarProperty Name="ESTA_LABORAL" ColumnName="ESTA_LABORAL" />
+                <ScalarProperty Name="CODI_ESPECIALIDAD" ColumnName="CODI_ESPECIALIDAD" />
+                <ScalarProperty Name="ESTA_CIVIL" ColumnName="ESTA_CIVIL" />
+                <ScalarProperty Name="GRUP_SANGUINEO" ColumnName="GRUP_SANGUINEO" />
+                <ScalarProperty Name="TIPO_SEXO" ColumnName="TIPO_SEXO" />
+                <ScalarProperty Name="FECH_NACIMIENTO" ColumnName="FECH_NACIMIENTO" />
+                <ScalarProperty Name="TELE_RESIDENCIA" ColumnName="TELE_RESIDENCIA" />
+                <ScalarProperty Name="DIRE_RESIDENCIA" ColumnName="DIRE_RESIDENCIA" />
+                <ScalarProperty Name="NUME_PLACA" ColumnName="NUME_PLACA" />
+                <ScalarProperty Name="NOMB_EMPLEADO" ColumnName="NOMB_EMPLEADO" />
+                <ScalarProperty Name="CEDU_EMPLEADO" ColumnName="CEDU_EMPLEADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADBANNERIMAGENES">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADBANNERIMAGENE">
+              <MappingFragment StoreEntitySet="CADBANNERIMAGENES">
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="NOMBREARCHIVO" ColumnName="NOMBREARCHIVO" />
+                <ScalarProperty Name="IDBANNER" ColumnName="IDBANNER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_EMPLEADOS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.V_EMPLEADOS">
+              <MappingFragment StoreEntitySet="V_EMPLEADOS">
+                <ScalarProperty Name="NUMERO_CELULAR" ColumnName="NUMERO_CELULAR" />
+                <ScalarProperty Name="MOTIVO_OPERACION" ColumnName="MOTIVO_OPERACION" />
+                <ScalarProperty Name="PLACA_CHIP" ColumnName="PLACA_CHIP" />
+                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+                <ScalarProperty Name="RESPUESTA_PIN" ColumnName="RESPUESTA_PIN" />
+                <ScalarProperty Name="CHEQUEO_PIN" ColumnName="CHEQUEO_PIN" />
+                <ScalarProperty Name="AUDIOCONSULTA_PIN" ColumnName="AUDIOCONSULTA_PIN" />
+                <ScalarProperty Name="CLASE_PRESUNCION" ColumnName="CLASE_PRESUNCION" />
+                <ScalarProperty Name="FECHA_PRESUNCION" ColumnName="FECHA_PRESUNCION" />
+                <ScalarProperty Name="REGISTRO_DEFUNCION" ColumnName="REGISTRO_DEFUNCION" />
+                <ScalarProperty Name="UNRE_CONSECUTIVO" ColumnName="UNRE_CONSECUTIVO" />
+                <ScalarProperty Name="FECHA_EXPEDICION_LIBRETA" ColumnName="FECHA_EXPEDICION_LIBRETA" />
+                <ScalarProperty Name="USUARIO_EMPRESARIAL" ColumnName="USUARIO_EMPRESARIAL" />
+                <ScalarProperty Name="CON_NIVEL" ColumnName="CON_NIVEL" />
+                <ScalarProperty Name="ID_NOMINA" ColumnName="ID_NOMINA" />
+                <ScalarProperty Name="ID_FUENTE" ColumnName="ID_FUENTE" />
+                <ScalarProperty Name="MIGRADO_ORDEN" ColumnName="MIGRADO_ORDEN" />
+                <ScalarProperty Name="REGISTRO_DUPLICADO" ColumnName="REGISTRO_DUPLICADO" />
+                <ScalarProperty Name="DESIGNADO" ColumnName="DESIGNADO" />
+                <ScalarProperty Name="DRAGONEANTE" ColumnName="DRAGONEANTE" />
+                <ScalarProperty Name="LIBRETA_MILITAR" ColumnName="LIBRETA_MILITAR" />
+                <ScalarProperty Name="CONDICION_OFITE" ColumnName="CONDICION_OFITE" />
+                <ScalarProperty Name="SIGLA_LABORANDO" ColumnName="SIGLA_LABORANDO" />
+                <ScalarProperty Name="EDIFICIO" ColumnName="EDIFICIO" />
+                <ScalarProperty Name="CENTRO_VACACIONAL" ColumnName="CENTRO_VACACIONAL" />
+                <ScalarProperty Name="CENTRO_SOCIAL" ColumnName="CENTRO_SOCIAL" />
+                <ScalarProperty Name="SILA_ID_SITUAC_LABOR" ColumnName="SILA_ID_SITUAC_LABOR" />
+                <ScalarProperty Name="MAQUINA_ACTUALIZA" ColumnName="MAQUINA_ACTUALIZA" />
+                <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+                <ScalarProperty Name="ACTUALIZADO_POR" ColumnName="ACTUALIZADO_POR" />
+                <ScalarProperty Name="MAQUINA_CREACION" ColumnName="MAQUINA_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="CREADO_POR" ColumnName="CREADO_POR" />
+                <ScalarProperty Name="CARRE_ID_CARRERA" ColumnName="CARRE_ID_CARRERA" />
+                <ScalarProperty Name="CARR_FUERZA" ColumnName="CARR_FUERZA" />
+                <ScalarProperty Name="ESPE_ID_ESPECIALIDAD" ColumnName="ESPE_ID_ESPECIALIDAD" />
+                <ScalarProperty Name="ESPE_FUERZA" ColumnName="ESPE_FUERZA" />
+                <ScalarProperty Name="ARCU_ID_ARMA_CUERPO" ColumnName="ARCU_ID_ARMA_CUERPO" />
+                <ScalarProperty Name="ARCU_FUERZA" ColumnName="ARCU_FUERZA" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO_LABORANDO" ColumnName="UNDE_CONSECUTIVO_LABORANDO" />
+                <ScalarProperty Name="UNDE_FUERZA_LABORANDO" ColumnName="UNDE_FUERZA_LABORANDO" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO_NOMINADO" ColumnName="UNDE_CONSECUTIVO_NOMINADO" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO_ATENDIDO" ColumnName="UNDE_CONSECUTIVO_ATENDIDO" />
+                <ScalarProperty Name="UNDE_FUERZA_ATENDIDO" ColumnName="UNDE_FUERZA_ATENDIDO" />
+                <ScalarProperty Name="EMPR_TIPO_IDENTIFICACION" ColumnName="EMPR_TIPO_IDENTIFICACION" />
+                <ScalarProperty Name="EMPR_IDENTIFICACION" ColumnName="EMPR_IDENTIFICACION" />
+                <ScalarProperty Name="EMPR_UNDE_CONSECUTIVO" ColumnName="EMPR_UNDE_CONSECUTIVO" />
+                <ScalarProperty Name="EMPR_UNDE_FUERZA" ColumnName="EMPR_UNDE_FUERZA" />
+                <ScalarProperty Name="CARG_FUERZA" ColumnName="CARG_FUERZA" />
+                <ScalarProperty Name="CARG_CARGO" ColumnName="CARG_CARGO" />
+                <ScalarProperty Name="LUBA_LUGE_CODIGO" ColumnName="LUBA_LUGE_CODIGO" />
+                <ScalarProperty Name="LUBA_BARRI_CODIGO" ColumnName="LUBA_BARRI_CODIGO" />
+                <ScalarProperty Name="LUGE_CODIGO_EXPEDIDA" ColumnName="LUGE_CODIGO_EXPEDIDA" />
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="GRAD_ALFABETICO" ColumnName="GRAD_ALFABETICO" />
+                <ScalarProperty Name="VALIDA_ARCO" ColumnName="VALIDA_ARCO" />
+                <ScalarProperty Name="FECHA_DEFUNCION" ColumnName="FECHA_DEFUNCION" />
+                <ScalarProperty Name="CLASE_NOMINA" ColumnName="CLASE_NOMINA" />
+                <ScalarProperty Name="CONDICION_SANIDAD" ColumnName="CONDICION_SANIDAD" />
+                <ScalarProperty Name="RESERVA" ColumnName="RESERVA" />
+                <ScalarProperty Name="JUSTICIA_PENAL" ColumnName="JUSTICIA_PENAL" />
+                <ScalarProperty Name="LEY_100" ColumnName="LEY_100" />
+                <ScalarProperty Name="CARRERA_ADTVA" ColumnName="CARRERA_ADTVA" />
+                <ScalarProperty Name="ENCARGO" ColumnName="ENCARGO" />
+                <ScalarProperty Name="UBICACION_ESCALAFON" ColumnName="UBICACION_ESCALAFON" />
+                <ScalarProperty Name="NUMERO_CURSO" ColumnName="NUMERO_CURSO" />
+                <ScalarProperty Name="HORAS_LABORADAS" ColumnName="HORAS_LABORADAS" />
+                <ScalarProperty Name="NUMERO_CARNE" ColumnName="NUMERO_CARNE" />
+                <ScalarProperty Name="HOJA_VIDA" ColumnName="HOJA_VIDA" />
+                <ScalarProperty Name="PLACA" ColumnName="PLACA" />
+                <ScalarProperty Name="FECHA_VACACIONES" ColumnName="FECHA_VACACIONES" />
+                <ScalarProperty Name="DIAS_VACACIONES" ColumnName="DIAS_VACACIONES" />
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="ESTADO_EMPLEADO" ColumnName="ESTADO_EMPLEADO" />
+                <ScalarProperty Name="TIPO_EMPLEADO" ColumnName="TIPO_EMPLEADO" />
+                <ScalarProperty Name="CLASE_LIBRETA" ColumnName="CLASE_LIBRETA" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="ESTADO_CIVIL" ColumnName="ESTADO_CIVIL" />
+                <ScalarProperty Name="FACTOR_RH" ColumnName="FACTOR_RH" />
+                <ScalarProperty Name="GRUPO_SANGUINEO" ColumnName="GRUPO_SANGUINEO" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="CODIGO_MILITAR" ColumnName="CODIGO_MILITAR" />
+                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+                <ScalarProperty Name="TIPO_IDENTIFICACION" ColumnName="TIPO_IDENTIFICACION" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO" ColumnName="UNDE_CONSECUTIVO" />
+                <ScalarProperty Name="UNDE_FUERZA" ColumnName="UNDE_FUERZA" />
+                <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PARQUEADEROS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.V_PARQUEADEROS">
+              <MappingFragment StoreEntitySet="V_PARQUEADEROS">
+                <ScalarProperty Name="PADRE_CODIGO" ColumnName="PADRE_CODIGO" />
+                <ScalarProperty Name="IDSITIOGRABACION" ColumnName="IDSITIOGRABACION" />
+                <ScalarProperty Name="NOMBRESITIOGRABACION" ColumnName="NOMBRESITIOGRABACION" />
+                <ScalarProperty Name="NOMBRECIUDAD" ColumnName="NOMBRECIUDAD" />
+                <ScalarProperty Name="NOMBREBARRIO" ColumnName="NOMBREBARRIO" />
+                <ScalarProperty Name="FECHA_TRANSACCION" ColumnName="FECHA_TRANSACCION" />
+                <ScalarProperty Name="USUA_TRANSACCION" ColumnName="USUA_TRANSACCION" />
+                <ScalarProperty Name="HORARIO" ColumnName="HORARIO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="LUGE_BARRIO" ColumnName="LUGE_BARRIO" />
+                <ScalarProperty Name="CODI_BARRIO" ColumnName="CODI_BARRIO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="SITIO_GRABA" ColumnName="SITIO_GRABA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CADGRADOS">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.CADGRADO">
+              <MappingFragment StoreEntitySet="CADGRADOS">
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="CATE_CODIGO" ColumnName="CATE_CODIGO" />
+                <ScalarProperty Name="NUMERICO" ColumnName="NUMERICO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ALFABETICO" ColumnName="ALFABETICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SITIOS_IMPORTANTES">
+            <EntityTypeMapping TypeName="ModelComunasBarrios.V_SITIOS_IMPORTANTES">
+              <MappingFragment StoreEntitySet="V_SITIOS_IMPORTANTES">
+                <ScalarProperty Name="PADRE_CODIGO" ColumnName="PADRE_CODIGO" />
+                <ScalarProperty Name="CLASESITIODESCRIPCION" ColumnName="CLASESITIODESCRIPCION" />
+                <ScalarProperty Name="NOMBRECIUDAD" ColumnName="NOMBRECIUDAD" />
+                <ScalarProperty Name="NOMBREBARRIO" ColumnName="NOMBREBARRIO" />
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+                <ScalarProperty Name="LONGITUD" ColumnName="LONGITUD" />
+                <ScalarProperty Name="LATITUD" ColumnName="LATITUD" />
+                <ScalarProperty Name="BARR_LUGE_CODIGO" ColumnName="BARR_LUGE_CODIGO" />
+                <ScalarProperty Name="BARR_CODIGO" ColumnName="BARR_CODIGO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CLSI_CODIGO" ColumnName="CLSI_CODIGO" />
+                <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+                <ScalarProperty Name="SITIO_GRABA" ColumnName="SITIO_GRABA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,1200 @@
+20240614 08:37:23 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 09:18:22 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 09:19:08 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 10:34:41 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 10:38:41 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:22:57 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:23:12 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:23:27 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:23:43 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:23:58 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:24:13 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:24:28 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:24:43 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:25:01 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:25:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:25:31 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:25:46 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:26:01 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:26:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:26:31 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:26:46 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:34:07 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:34:22 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:34:37 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:34:52 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:35:07 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:35:22 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:35:37 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:35:52 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:40:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:40:15 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:40:30 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:41:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:41:15 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:41:30 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 11:41:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:24:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:24:20 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:24:40 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:25:01 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:25:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:25:31 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:25:46 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:26:01 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:31:15 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:31:30 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:31:46 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:32:01 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:32:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:32:31 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:32:46 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:33:01 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:35:11 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:35:26 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:35:41 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:35:56 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:36:11 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:36:26 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:36:41 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 14:36:57 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:24:14 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:24:50 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:25:05 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:25:20 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:25:35 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:25:50 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:26:05 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 15:26:20 [M_ERROR] - Error Ejecutando Conectar: Data Source=172.26.46.50:1521/SECAD123;Persist Security Info=True;User Id=USR_CAD;Password=SECAD2021
+	#2	#3Timeout de solicitud de conexión
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SECADPLUSMEGA-METUN-31-01-2024-CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:16:48 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:23:06 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:36:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:36:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:39:04 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:39:04 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:39:51 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:39:51 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:40:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:42:59 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:42:59 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:43:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:43:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:43:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:43:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:43:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:43:00 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:13 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:44:21 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:27 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:52 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:52 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:53 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:53 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:53 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:53 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240614 16:55:53 [M_ERROR] - Error Ejecutando Conectar: Data Source=cludbope3.policia.gov.co:1538/SECAD;Persist Security Info=True;User Id=USR_CAD;Password=Sarrmcrp68
+	#2	#3ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado ---> OracleInternal.Network.NetworkException (0x00002F7A): ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+   en OracleInternal.Network.AddressResolution..ctor(String TNSAlias, SqlNetOraConfig SNOConfig, Hashtable ObTnsHT, String instanceName, ConnectionOption CO)
+   en OracleInternal.Network.OracleCommunication.Resolve(String tnsAlias, ConnectionOption& CO)
+   en OracleInternal.ConnectionPool.PoolManager`3.ResolveTnsAlias(ConnectionString cs, Object OC)
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, OracleConnection connRefForCriteria, String instanceName)
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en C:\Users\ke.martinez\Documents\SECAD CENTRALIZADO\SecadDatos\Context\ConDBOracle.cs:línea 126

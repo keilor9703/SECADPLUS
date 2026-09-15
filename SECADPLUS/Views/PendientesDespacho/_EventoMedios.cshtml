@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SECADPLUS.Models._Eventos_EventosMediosModel>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td></td>
+        <td>
+            <ul class="icons-list">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-xs border-teal text-teal btn-flat dropdown-toggle"
+                            data-toggle="dropdown" aria-expanded="true">
+                        <i class="icon-menu9"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li>
+                            <a class="btn btn-xs btn-default" data-popup="tooltip"
+                               title="" data-placement="right" data-original-title="Clic para actualizar"
+                               onclick="Hola(CADMEDISP_CONSECUTIVO ,this)">
+                                <i class="glyphicon glyphicon-edit position-left"></i> Actualizar
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-xs btn-default" data-popup="tooltip"
+                               title="" data-placement="right" data-original-title="Clic para eliminar"
+                               onclick="Hola1(CADMEDISP_CONSECUTIVO ,this)">
+                                <i class="icon-trash position-left"></i> Eliminar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.DSP_DESC_UNIDAD)</td>
+        <td>@Html.DisplayFor(modelItem => item.DSP_MEDIODISPO)</td>
+        <td>@Html.DisplayFor(modelItem => item.TIPO_RESPONSABLE)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_ASIGNA)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_RUTA)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_LLEGA)</td>
+        <td>@Html.DisplayFor(modelItem => item.HORA_TERMINA)</td>
+        <td>@Html.DisplayFor(modelItem => item.NOVEDAD)</td>
+    </tr>
+}

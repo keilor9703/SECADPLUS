@@ -1,0 +1,43 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+<div class="content">
+    <!-- Error title -->
+    <div class="text-center content-group text-warning">
+        
+        <h5>
+            Parece que un componente del sistema ha presentado inconvenientes.
+            Por favor comunique lo ocurrido a un administrador.
+        </h5>
+        <h5>
+            Hora del evento local: @DateTime.Now
+        </h5>
+        @if (Model != null)
+        {
+            <h3>@Model.Exception.GetType().Name</h3>
+            <pre>
+                @Model.Exception.ToString()
+            </pre>
+            <p>
+                thrown in @Model.ControllerName @Model.ActionName
+            </p>
+        }
+
+    </div>
+    <!-- /error title -->
+    <!-- Error content -->
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+            <form action="#" class="main-search">
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-offset-3">
+                        <a href="@Url.Action("Index","Home")" class="btn btn-primary btn-block content-group"><i class="icon-home"></i> Inicio</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /error wrapper -->
+    <!-- Footer -->
+    <!-- /footer -->
+</div>

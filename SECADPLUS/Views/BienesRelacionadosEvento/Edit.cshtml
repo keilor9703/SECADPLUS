@@ -1,0 +1,498 @@
+﻿@model SECADEntities.SECAD.CADBIENE
+
+@{
+    ViewBag.Title = "Editar Datos del Vehículo";
+}
+
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/ChosenJs")
+@Scripts.Render("~/bundle/TablasJs")
+@Scripts.Render("~/bundle/ModalsJs")
+@Scripts.Render("~/bundle/DateTimePickerJs")
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Editar Datos del Vehículo:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Edit", "BienesRelacionadosEvento", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("SITIO_GRABA")
+                            @Html.Hidden("CONSECUTIVO")
+                            @Html.Hidden("CADCLBI_TIBI_CODIGO")
+                            @Html.Hidden("USUA_TRANSACCION")
+
+
+
+                            <div class="row">
+
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Consecutivo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @if (ViewBag.CONSECUTIVO != 0)
+                                                {
+                                                    @Html.Editor("CONSECUTIVO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                                                }
+                                                else
+                                                {
+                                                    @Html.Editor("CONSECUTIVO1", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Usuario Transacción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.Editor("USUA_TRANSACCION", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.USUA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Fecha Transacción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.FECHA_TRANSACCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                                @Html.ValidationMessageFor(model => model.FECHA_TRANSACCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Placa:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.PLACA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba placa", @maxlength = "15" } })
+                                                @Html.ValidationMessageFor(model => model.PLACA, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Chasis:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CHASIS, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba chasis", @maxlength = "25" } })
+                                                @Html.ValidationMessageFor(model => model.CHASIS, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Motor:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.MOTOR, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba motor", @maxlength = "25" } })
+                                                @Html.ValidationMessageFor(model => model.MOTOR, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                
+                                
+                                
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Serie:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.SERIE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba serie", @maxlength = "25" } })
+                                                @Html.ValidationMessageFor(model => model.SERIE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Tipo Bien:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("TIPO_VEHICULO", null, htmlAttributes: new { @class = "chosen-select" })
+                                                    @* @Html.ValidationMessageFor(model => model.CADCLBI_CODIGO, "", new { @class = "text-danger" })*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Clase:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.DropDownList("CADCLBI_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                    @Html.ValidationMessageFor(model => model.CADCLBI_CODIGO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Color:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("COLO_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.COLO_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Marca:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("MARCA_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.MARCA_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group obligatorio">
+                                        <label class="control-label">Línea:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.DropDownList("LINEA_CODIGO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                                                @Html.ValidationMessageFor(model => model.LINEA_CODIGO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label>Observaciones:</label>
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-12">
+
+                                                <input type="text" class="form-control" value="@(Model == null ? "" : Model.OBSERVACIONES  )" placeholder="Escriba observaciones" name="OBSERVACIONES" />
+
+                                                @*  @Html.TextAreaFor(model => model.OBSERVACIONES, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba observaciones" })*@
+                                                @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="Create">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <!-- Formulario -->
+        @{
+
+            if (ViewBag.CONSECUTIVO != 0)
+            {
+
+                if (Model.CADBIENES_NOVEDADES.Count > 0)
+                {
+
+                    Html.RenderPartial("EditN", Model.CADBIENES_NOVEDADES.FirstOrDefault());
+
+                }
+                else
+                {
+                    SECADEntities.SECAD.CADBIENES_NOVEDADES bnNovedades = new SECADEntities.SECAD.CADBIENES_NOVEDADES();
+                    bnNovedades.CADBIEN_SITIOGRABA = Model.SITIO_GRABA;
+                    bnNovedades.CADBIEN_CONSECUTIVO = Model.CONSECUTIVO;
+                    bnNovedades.FECHA_NOVEDAD = DateTime.Now;
+
+
+                    Html.RenderPartial("EditN", bnNovedades);
+
+                }
+
+
+            }
+
+        }
+
+        <!-- Formulario -->
+
+    </div>
+
+</div>
+
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+<!-- Modal Barrios -->
+<div id="ModalBarrios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Barrios</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table class="table table-hover table-xxs datatable-basic" id="_tblBarrios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Codigo</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Barrios -->
+<!-- Modal Infracciones -->
+<div id="ModalInfracciones" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Infracciones</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table class="table table-hover table-xxs datatable-basic" id="_tblInfracciones">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Codigo</th>
+                            <th>Descripción</th>
+                            <th>Inmovilización</th>
+                            <th>Nro. Salarios</th>
+                            <th>Vigente</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Infracciones -->
+<!-- Modal Infracciones -->
+<div id="ModalParqueaderos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Parqueaderos</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table class="table table-hover table-xxs datatable-basic" id="_tblParqueaderos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Codigo</th>
+                            <th>Descripción</th>
+                            <th>Sitio Graba</th>
+                            <th>Ciudad</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Infracciones -->
+<!-- Modal Unidades -->
+<div id="ModalUnidades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Unidades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table class="table table-hover table-xxs datatable-basic" id="_tblUnidades">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Codigo</th>
+                            <th>Descripción</th>
+                            <th>Fuerza</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Unidades -->
+<!-- Modal Medios -->
+<div id="ModalMedios" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Medios</h5>
+            </div>
+            <div class="modal-body form-compact table-responsive">
+                <table class="table table-hover table-xxs datatable-basic" id="_tblMedios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            @*<th>Sitio Graba</th>
+                                <th>Consecutivo</th>
+                                <th>CadUnitur_UndeFuerza</th>
+                                <th>CadUniTur_UndeCodigo</th>
+                                <th>Codigo Patrulla</th>*@
+                            <th>Estado</th>
+                            <th>Tipo</th>
+                            <th>Desc_Patrulla</th>
+                            <th>Estado Patrulla</th>
+                            <th>Cuenta</th>
+                            <th>personal</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Medios -->
+<!-- /área de contenido -->
+
+@Scripts.Render("~/bundle/BienesRelacionadosCreateJs")
+
+<script>
+    $(".chosen-select").chosen();
+    InicializarElementos("CREAR");
+    var urlLineas = '@Url.Action("GetLineasByMarca", "BienesRelacionadosEvento")';
+    var urlClaseNovedad = '@Url.Action("GetClaseNovedad", "BienesRelacionadosEvento")';
+    var urlActionCargaCiudades = "@(Url.Action("CargaCiudades", "BienesRelacionadosEvento"))";
+    var urlsCargaBarrios = "@(Url.Action("CargarTodosLosBarrios", "BienesRelacionadosEvento"))";
+    var urlsInfracciones = "@(Url.Action("CargaInfracciones", "BienesRelacionadosEvento"))";
+    var urlsParqueaderos = "@(Url.Action("VerParqueaderos", "BienesRelacionadosEvento"))";
+    var urlsUnidades = "@(Url.Action("ObtenerUnidades", "BienesRelacionadosEvento"))";
+    var urlsMedios = "@(Url.Action("ObtenerMedios", "BienesRelacionadosEvento"))";
+
+
+
+
+
+</script>

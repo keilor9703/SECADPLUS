@@ -1,0 +1,58 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADCOMUNA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADCOMUNA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIGENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIGENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDENTIFICACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDENTIFICACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AREAM2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AREAM2)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Consultar";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Consulta de Patrullas Sigla Unidad Rastreo</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list ">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body ">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <label class="display-block text-semibold">Seleccione una opcion</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" class="styled" checked="checked" id="patrulla" name="stacked-radio-left">
+                                    Indicativos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" class="styled" id="vehiculo" name="stacked-radio-left">
+                                    Sigla Vehículo-Moto
+                                </label>
+                            </div>
+                            <div class="radio ">
+                                <label>
+                                    <input type="radio" class="styled" id="unidad" name="stacked-radio-left">
+                                    Id Unidad Rastreo
+                                </label>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-3 ">
+                            <div class="input-group input-group-xs">
+                                <input type="text" class="form-control" id="txtIngreso" maxlength="20" placeholder="Ingrese su consulta" />
+                                <span class="input-group-btn input-group-xs">
+                                    <button type="button" id="consultar" class="btn btn-success btn-xs" data-popup="tooltip"
+                                            title="" data-placement="bottom" data-original-title="Clic para buscar" >
+                                        <b><i class="icon-search4 position-left"></i></b>Consultar
+                                    </button>
+                                </span>
+                            </div></div>
+                            <div class="col-md-1 input-group input-group-xs">
+                                <button id="btnLimpiar" type="button" class="btn btn-primary btn-sm"><b><i class="icon-eraser position-left"></i></b>Limpiar</button>
+
+                            </div>
+                        </div>
+
+                    <div class="form-group col-md-12">
+                        
+                        <textarea class="form-control" id="resultado" rows="15" readonly></textarea>
+                    </div>
+                    
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    </div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/CheckBoxJs");
+
+    <script>
+        var urlConsultarPatrulla = '@Url.Action("ConsultarPatrulla","PatrullaSiglaUnidad")';
+        var urlConsultarVehiculo = '@Url.Action("ConsultarVehiculo", "PatrullaSiglaUnidad")';
+        var urlConsultarRastreo = '@Url.Action("ConsultarUnidadRastreo", "PatrullaSiglaUnidad")';
+        var urlConsultarPrueba = '@Url.Action("ConsultaPrueba", "Account")';
+        var urlActualizarUsuarios = "@Url.Action("ActualizarUsuarios", "Account")";
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+    @Scripts.Render("~/bundle/ConsultarControllerJs");
+    }

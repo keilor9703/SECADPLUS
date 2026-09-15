@@ -1,0 +1,286 @@
+﻿
+
+@model SECADPLUS.Models.InicioModel
+
+@using SECADPLUS.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+@section scripts{
+    @Styles.Render("~/bundle/CarouselCss")
+
+}
+
+@{
+//// Definir la ruta a la carpeta de imágenes
+//var imageFolder = Url.Content("~/Images/carrusel/");
+//var imageFiles = System.IO.Directory.GetFiles(Server.MapPath(imageFolder));
+}
+
+@{
+    var sliders = ViewBag.SlidersView as List<DtoSlider>;
+}
+
+
+@*nuevok.........................................................................................................................................................*@
+
+
+<div class="content">
+    <div class="row">
+        @Html.Partial("_Mensajes")
+
+        <div id="SliderSuperior" class="row" style="margin-top: 10px;">
+            <div class="col-md-7">
+                <div class="image-slider">
+
+                    @*Si quisiera recorrer las imagenes de la carpeta se utiliza este foreach*@
+                    @*@foreach (var filePath in imageFiles)
+                    {
+                        var fileName = System.IO.Path.GetFileName(filePath);
+                        <img src="@Url.Content("~/Images/Carrusel/" + fileName)" alt="slider image" class="@(fileName == imageFiles.First() ? "active" : "")" />
+                    }*@
+
+                    @if (sliders != null && sliders.Any())
+                    {
+                        foreach (var slider in sliders)
+                        {
+                            <img src="@Url.Content(slider.RUTA)" alt="slider image" class="@(slider == sliders.First() ? "active" : "")" />
+                        }
+                    }
+                    else
+                    {
+                        <p>No images available</p>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="purse">
+                    <div class="coin" style="margin-top: 3vh;">
+                        <div class="front"><img class="col-sm-offset-6" src="~/Images/LogoSECAD.png"></div>
+                        <div class="back"></div>
+                        <div class="side"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // JavaScript para cambiar las imágenes una por una
+            const images = document.querySelectorAll('.image-slider img');
+            let currentImageIndex = 0;
+
+            function nextImage() {
+                images[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                images[currentImageIndex].classList.add('active');
+            }
+
+            // Cambia la imagen cada 5 segundos
+            setInterval(nextImage, 5000);
+        </script>
+
+
+        @*Incio del las imagenes para poner animacion*@
+
+        @*<div id="SliderSuperior" class="row" style="margin-top: 10px;">
+                <div class="col-md-7">
+                    <div class="image-slider">
+                        <img src="~/Images/Entidades/20210.jpg" alt="image 1" class="active" />
+                        <img src="~/Images/Entidades/20499.jpg" alt="image 2" />
+                        <img src="~/Images/Entidades/20495.jpg" alt="image 3" />
+                        <img src="~/Images/Entidades/20496.jpg" alt="image 4" />
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="purse">
+                        <div class="coin" style="margin-top: 3vh;">
+                            <div class="front"><img class="col-sm-offset-6" src="~/Images/LogoSECAD.png"></div>
+                            <div class="back"></div>
+                            <div class="side"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // JavaScript para cambiar las imágenes una por una
+                const images = document.querySelectorAll('.image-slider img');
+                let currentImageIndex = 0;
+
+                function nextImage() {
+                    images[currentImageIndex].classList.remove('active');
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    images[currentImageIndex].classList.add('active');
+                }
+
+                // Cambia la imagen cada 5 segundos
+                setInterval(nextImage, 5000);
+            </script>*@
+
+
+
+
+        @*ANIMACION SLIDER*@
+
+
+
+
+    </div>
+    <div class="row text-center">
+
+        <h2 class="text-teal">
+            <i class="icon-medal-star position-left icon_size-md"></i>
+
+            <span class="text-semibold">Sitio: @ViewBag.Sitio</span>
+        </h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-body border-left-xlg border-left-teal">
+                    <div class="media">
+                        <div class="media-left">
+                            <i class="icon-earth icon_size-sm"> </i>
+                        </div>
+                        <div class="media-body">
+                            <h6 class="media-heading">Entidad : @ViewBag.Entidad</h6>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-body border-left-xlg border-left-teal">
+                    <div class="media">
+                        <div class="media-left">
+                            <i class="icon-database icon_size-sm"> </i>
+                        </div>
+                        <div class="media-body">
+                            <h6 class="media-heading">Canal : @ViewBag.Canal </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-body border-left-xlg border-left-teal">
+                    <div class="media">
+                        <div class="media-left">
+                            <i class="icon-user icon_size-sm"> </i>
+                        </div>
+                        <div class="media-body">
+                            <h6 class="media-heading">
+                                Usuario:
+                                @if (ViewBag.USER != null)
+                                {
+                                    @ViewBag.USER.USUARIO
+                                }
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                @if (!string.IsNullOrEmpty(ViewBag.Maquinas))
+                {
+                    <form action="@Url.Action("Index","Home")" method="post">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                @Html.DropDownListFor(model => model.MaquinaSeleccionada, Model.ListaMaquinas, htmlAttributes: new { @class = "chosen-select", id = "ddlMaquina" })
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-xs bg-teal" id="btnSeleccionar"> Seleccionar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                }
+                else
+                {
+                    <div class="panel panel-body border-left-xlg border-left-teal">
+                        <div class="media">
+                            <div class="media-left">
+                                <i class="icon-user-check icon_size-sm"> </i>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="media-heading">Nombre de la máquina: @ViewBag.Maquina</h6>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-body border-left-xlg border-left-teal">
+                    <div class="media">
+                        <div class="media-left">
+                            <i class="icon-file-text icon_size-sm"> </i>
+                        </div>
+                        <div class="media-body">
+                            <h6 class="media-heading">Lectura para v:/@ViewBag.ACD .TXT</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-body border-left-xlg border-left-teal">
+                    <div class="media">
+                        <div class="media-left">
+                            <i class="icon-calendar3 icon_size-sm"> </i>
+                        </div><div class="media-body">
+                            <h6 class="media-heading">Fecha y Hora del Servidor: @ViewBag.FechaHora</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row form-compact">
+            @if (Model.ListaACD != null)
+            {
+                <div class="col-md-12 form-group">
+                    <div class="col-md-2 col-md-offset-4">
+                        @Html.DropDownListFor(model => model.ACDseleccionado, Model.ListaACD, string.Empty, htmlAttributes: new { @class = "chosen-select", id = "listaAcd" })
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-xs bg-teal" id="btnCambiarAcd"> Cambiar ACD</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+    <script>
+        var glSitio=0;
+
+        var urlCambiarAcd = "@Url.Action("CambiarAcd", "Home")";
+
+        $(document).ready(function () {
+            var UsaICP = '@ViewBag.UsaICP';
+            if (UsaICP == 'true') {
+                IniciarSesionICP();
+            }
+        });
+    </script>
+    @if (ViewBag.USER != null)
+    {
+        <script>
+        glSitio = @ViewBag.USER.SITIO_GRABACION;
+        @*glSitioHub=@ViewBag.USER.SITIO_GRABACION;
+        if(ViewBag.USER.CADCANA_CODIGO != null){
+            glCanalHub = ViewBag.USER.CADCANA_CODIGO;
+        }
+        if(ViewBag.USER.CADCANA_FUERZA_ID != null){
+            glEntidadHub = ViewBag.USER.CADCANA_FUERZA_ID;
+        }
+        glSecadHub = "@ViewBag.USER.USUARIO";*@
+
+        </script>
+
+    }
+    @Scripts.Render("~/bundle/CarouselJs")
+
+}
+

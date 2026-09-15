@@ -1,0 +1,239 @@
+﻿@model SECADEntities.SECAD.CADINCIDENTES_ANTECEDENTE
+
+@{
+    ViewBag.Title = "Crear Incidentes Antecedentes";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/CheckBoxJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Incidentes Antecedentes:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("Create", "IncidentesAntecedentes", FormMethod.Post, new { @class = "form_secad" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.Hidden("SITIO_GRABA")
+                    @Html.Hidden("CONSECUTIVO")
+                    @Html.Hidden("PERS_DESC")
+                    @Html.Hidden("VEHI_DESC")
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Tipo de Consulta:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @*@Html.DropDownList("CADCLBI_CODIGO", null, string.Empty, htmlAttributes: new { @class = "select-clear" })*@
+                                            @Html.RadioButtonFor(model => model.TIPO_ANTECEDENTE, "PE", htmlAttributes: new { @class="styled", @id= "Personas" }) Personas
+                                            @Html.RadioButtonFor(model => model.TIPO_ANTECEDENTE, "VE", htmlAttributes: new { @class = "styled", @id = "Vehiculos" }) Vehículos
+                                            @Html.ValidationMessageFor(model => model.TIPO_ANTECEDENTE, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label>Consulta Personas:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @*@Html.EditorFor(model => model.PERS_CONSECUTIVO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba aqui" } })
+                                        @Html.ValidationMessageFor(model => model.PERS_CONSECUTIVO, "", new { @class = "text-danger" })*@
+                                        @Html.DropDownList("PERS_CONSECUTIVO", null, string.Empty, htmlAttributes: new { @class = "select-clear", @disabled= true })
+                                        @Html.ValidationMessageFor(model => model.PERS_CONSECUTIVO, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label>Consulta Vehículos:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @*@Html.EditorFor(model => model.VEHI_CONSECUTIVO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba aqui" } })
+                                        @Html.ValidationMessageFor(model => model.VEHI_CONSECUTIVO, "", new { @class = "text-danger" })*@
+                                        @Html.DropDownList("VEHI_CONSECUTIVO", null, string.Empty, htmlAttributes: new { @class = "select-clear", @disabled = true })
+                                        @Html.ValidationMessageFor(model => model.VEHI_CONSECUTIVO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Patrulla Solicitante:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.PATRULLA_SOLICITA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba patrulla" } })
+                                        @Html.ValidationMessageFor(model => model.PATRULLA_SOLICITA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Integrantes Patrulla:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.INTEGRANTES_PATRULLA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba integrantes" } })
+                                        @Html.ValidationMessageFor(model => model.INTEGRANTES_PATRULLA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group obligatorio">
+                                <label class="control-label">Motivo:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.DropDownList("MOTIVO", null, string.Empty, htmlAttributes: new { @class = "select-clear" })
+                                        @Html.ValidationMessageFor(model => model.MOTIVO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label>Comentario:</label>
+                                <div class="row">
+                                    <div class="col-md-10 col-lg-12">
+                                        @Html.TextAreaFor(model => model.COMENTARIO, htmlAttributes: new { @class = "form-control", @placeholder = "Escriba comentario" })
+                                        @Html.ValidationMessageFor(model => model.COMENTARIO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="form-group">
+                                <label>Fecha de Grabación:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                            @Html.Editor("FECHA_GRABACION", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.FECHA_GRABACION, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-group">
+                                <label>Usua Graba:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.Editor("USUA_GRABA", new { htmlAttributes = new { @class = "form-control", @placeholder = "Autogenerado", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.USUA_GRABA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 text-left">
+                            <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                    data-original-title="Clic para regresar a la tabla"
+                                    onclick="window.location.href ='@Url.Action("Index", "IncidentesAntecedentes")'">
+                                <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-6 text-right">
+                            <button class="btn bg-teal" data-popup="tooltip"
+                                    title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                    value="Create">
+                                <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                            </button>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+<script>
+
+    $(".styled").uniform({
+        radioClass: 'choice'
+    });
+    
+    $(function(){
+        $("#Personas").click(
+            function () {
+                    $("#PERS_CONSECUTIVO").prop("disabled", false);
+                    $("#VEHI_CONSECUTIVO").prop("disabled", true);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("GetPersonasIncidentes")',
+                        dataType: 'json',
+                        data: { idUsuario: $("#USUA_GRABA").val() },
+                        success: function (personas) {
+                            $.each(personas, function (i, persona) {
+                                $("#PERS_CONSECUTIVO").append($('<option></option>').val(persona.CODIGO).html(persona.DESCRIPCION));
+                            });
+                        },
+                        error: function (ex) {
+                            GestionarAlerta("error", "Fallo carga de personas.");
+
+                        }
+                    });
+            }
+            );
+        $("#Vehiculos").click(
+           function () {
+               $("#PERS_CONSECUTIVO").prop("disabled", true);
+               $("#VEHI_CONSECUTIVO").prop("disabled", false);
+
+               $.ajax({
+                   type: 'POST',
+                   url: '@Url.Action("GetVehiculosIncidentes")',
+                   dataType: 'json',
+                   data: { idUsuario: $("#USUA_GRABA").val() },
+                   success: function (vehiculos) {
+                       $.each(vehiculos, function (i, vehiculo) {
+                           $("#VEHI_CONSECUTIVO").append($('<option></option>').val(vehiculo.CODIGO).html(vehiculo.DESCRIPCION));
+                       });
+                   },
+                   error: function (ex) {
+                       GestionarAlerta("error", "Fallo carga de vehiculos.");
+                   }
+               });
+
+           }
+           );
+
+        $("#PERS_CONSECUTIVO").change(function () {
+            $("#PERS_DESC").val($("#PERS_CONSECUTIVO").text());
+        });
+
+        $("#VEHI_CONSECUTIVO").change(function () {
+            $("#VEHI_DESC").val($("#VEHI_CONSECUTIVO").text());
+        });
+
+    })
+
+</script>

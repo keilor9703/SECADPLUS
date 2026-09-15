@@ -1,0 +1,17 @@
+﻿@model SECADEntities.SecadEntities.CADPOLIGRAMA
+
+@{
+    ViewBag.Title = "Eliminar Comunicado";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.CONSECUTIVO)
+
+    @using (Html.BeginForm("Delete", "Comunicados", new { idSitio = Model.SITIO_GRABA, idFuerza = Model.CADFUERZ_ID, cod = Model.CONSECUTIVO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

@@ -1,0 +1,21 @@
+﻿
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3 text-center">
+        <a class="btn_enlaces btn-sm bg-teal-400" data-popup="tooltip" title="" data-placement="bottom" href="@Url.Action("Inicio","Turnos")"
+           data-original-title="Haga clic para ir a Sitios de grabación">
+            Sitios de grabación
+        </a>
+        <a class="btn_enlaces btn-sm bg-teal-400" data-popup="tooltip" title="" data-placement="bottom" href="@Url.Action("Entidades","Turnos",new { intSitioGrabacion= ViewBag.SitioId, strNombre = ViewBag.Sitio })"
+           data-original-title="Haga clic para ir a Armas">
+            Entidades
+        </a>
+        <a class="btn_enlaces btn-sm bg-teal-400" data-popup="tooltip" title="" data-placement="bottom" href="@Url.Action("Turnos", "Turnos", new { intSitioGrabacion = ViewBag.SitioId, strNombre = ViewBag.Sitio , intEntidad = ViewBag.EntidadId,strEntidad= ViewBag.Entidad })"
+           data-original-title="Haga clic para ir a Vehículos">
+            Turnos de servicio
+        </a>
+        <a class="btn_enlaces btn-sm bg-teal-400" data-popup="tooltip" title="" data-placement="bottom" href="@Url.Action("UnidadesTurno","Turnos",new { intSitio = ViewBag.SitioId, lgTurno = ViewBag.Turno, strSitio =ViewBag.Sitio, strEntidad=ViewBag.Entidad})"
+           data-original-title="Haga clic para ir a Radios">
+            Unidades de turno
+        </a>
+    </div>
+</div>

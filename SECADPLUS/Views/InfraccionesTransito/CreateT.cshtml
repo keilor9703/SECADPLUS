@@ -1,0 +1,161 @@
+﻿@model SECADEntities.SECAD.CADINFRACCIONES_TRANSITO
+
+@{
+    ViewBag.Title = "Crear Títulos Infracciones de Transito";
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Panel con Tablas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Crear Títulos Infracciones de Transito:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                @using (Html.BeginForm("CreateT", "InfraccionesTransito", FormMethod.Post, new { @class = "form-compact" }))
+                {
+
+                    <div class="panel-body">
+                        <fieldset class="content-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.Hidden("CADINFRACC_CODIGO")
+                            @Html.Hidden("NRO_SALARIOS")
+                            @Html.Hidden("id")
+                            @Html.Hidden("nom")
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label>Capitulo:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.Editor("CAPITULO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Código:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.EditorFor(model => model.CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba código", maxlength = "10" } })
+                                                    @Html.ValidationMessageFor(model => model.CODIGO, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-10">
+                                    <div class="form-group">
+                                        <label>Descripción:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba descripción", maxlength = "80" } })
+                                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha Desde:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.EditorFor(model => model.FECHA_DESDE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escoja Fecha" } }) @*form-control pickadate-accessibility*@
+                                                    @Html.ValidationMessageFor(model => model.FECHA_DESDE, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label>Fecha Hasta:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    @Html.EditorFor(model => model.FECHA_HASTA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escoja Fecha" } }) @*form-control pickadate-accessibility*@
+                                                    @Html.ValidationMessageFor(model => model.FECHA_HASTA, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Vigente:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @*@Html.CheckBox("VIGENTE", new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @Html.CheckBox("VIGENTE", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_size = "mini", data_on_text = "SI", data_off_text = "NO", @checked = "checked" })
+                                                @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-2">
+                                    <div class="form-group">
+                                        <label>Inmovilización:</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @*@Html.CheckBox("INMOVILIZACION", new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @Html.CheckBox("INMOVILIZACION", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_off_color = "danger", data_size = "mini", data_on_text = "SI", data_off_text = "NO", @checked = "checked" })
+                                                @Html.ValidationMessageFor(model => model.INMOVILIZACION, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 text-left">
+                                <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para regresar a la tabla"
+                                        onclick="window.location.href ='@Url.Action("Index", new { id = @ViewBag.CADINFRACC_CODIGO, nom = @ViewBag.CAPITULO })'">
+                                    <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-md-6 text-right">
+                                <button class="btn bg-teal" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para guardar cambios"
+                                        value="CreateT">
+                                    <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- /formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/DatePickerJs")
+@Scripts.Render("~/bundle/CheckSwitchJs")
+
+<script>
+    AplicarControlFecha("#FECHA_DESDE", null);
+    AplicarControlFecha("#FECHA_HASTA", null);
+</script>

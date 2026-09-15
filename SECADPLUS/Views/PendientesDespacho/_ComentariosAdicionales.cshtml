@@ -1,0 +1,9 @@
+﻿@model IEnumerable<SECADEntities.SecadEntities.CADPEDIDOS_INFORMACION>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.RTA_PREGUNTA)</td>
+        <td>@Html.DisplayFor(modelItem => item.ANOTACION)</td>
+    </tr>
+}

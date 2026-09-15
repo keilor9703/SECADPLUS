@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "Ingresar Mapa";
+}
+@section scripts{
+    
+
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Detailed task -->
+    <div class="row">
+        <!--Panel mapa-->
+        <div class="col-lg-12">
+            <div class="panel panel-flat" id="mapa_policia">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        @Html.Hidden("idFinal")
+                        <div class="col-md-3">
+                            Usuario:
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("USUARIO", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })
+                        </div>
+                        <div class="col-md-3">
+                            Caso:
+                        </div>
+                        <div class="col-md-8">
+                            <span id="nombre_caso_actual" class="text-teal"></span>
+                        </div>
+                    </h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button id="casos" type="button" class="btn bg-teal btn-xs" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para eliminar">
+                                    <b><i class="icon-car2 position-left"></i></b>
+                                    Casos
+                                </button>
+                            </li>
+                            <li>
+                                <button id="capas" type="button" class="btn bg-teal btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para traer datos del evento">
+                                    <b><i class="icon-stack2 position-left"></i></b>
+                                    Capas Policía Nacional
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="map_container">
+                        <div id="viewDiv"></div>
+                    </div>
+                </div>
+                <div class="panel-footer secad-maps panel-footer-condensed">
+                    <!-- CALCULAR RUTA -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <fieldset class="content-group">
+                                <legend class="text-bold">
+                                    Calcular Ruta
+                                    <a class="control-arrow" data-toggle="collapse" data-target="#panel1">
+                                        <i class="icon-circle-down2"></i>
+                                    </a>
+                                </legend>
+                                <div class="collapse in" id="panel1">
+                                    <div class="form-compact">
+                                        <div class="form-compact">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input id="direccion_punto_origen" type="text" class="form-control input-sm" placeholder="Dirección del origen">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input id="ciudad_punto_origen" type="text" class="form-control input-sm" placeholder="Ciudad del origen">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input id="direccion_punto_destino" type="text" class="form-control input-sm" placeholder="Dirección del destino">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input id="ciudad_punto_destino" type="text" class="form-control input-sm" placeholder="Ciudad del destino">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="col-md-12 text-center">
+                                                <button type="button" class="btn btn-primary listbox-add" id="calcular_ruta_button">Calcular ruta</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/panel mapa-->
+        <!--Columna derecha-->
+        <div id="panel-casos" class="col-xs-10 col-md-4 col-lg-3 drag_panel">
+            <!-- Casos de la Policía -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-car2 position-left"></i> Casos </h6>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li><a data-action="collapse"></a></li>
+
+                            <li><a class="panel-close"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="media-list media-list-linked" id="casos_policia"></ul>
+            </div>
+        </div>
+        <div id="panel-capas" class="col-xs-10 col-md-4 col-lg-3 drag_panel">
+            <!-- Capas -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h6 class="panel-title">
+                        <i class="icon-stack2 position-left"></i>
+                        Capas Policía Nacional
+                    </h6>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li><a data-action="collapse"></a></li>
+
+                            <li><a class="panel-close"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form action="#">
+                        <div class="form-group" id="map_layer_toggles"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /detailed task -->
+</div>
+<!-- /content area -->
+
+
+@section PostScripts{
+
+    <script>
+        var globalSitio = @ViewBag.globalSitio;
+        var globalUsuario = '@ViewBag.globalUsuario';
+
+        var tiempoRecarda = @ViewBag.tiempoRecarda * 1000;
+        var tiempoBusqueda = @ViewBag.tiempoBusqueda;
+
+        var urlVerCapasMapa = '@Url.Action("ConsultarCapasMapa", "IngresarMapa")';
+        var urlVerCasosMapa = '@Url.Action("ConsultarCasosMapa", "IngresarMapa")';
+        var urlVerPedidoMapa = '@Url.Action("ConsultarPedidoMapa", "IngresarMapa")';
+        var globalFecha="";
+        var globalConsecutivo=0;
+        ////VARIABLES PARA RECEPCION
+        var glNumeLlamada = @ViewBag.Nume_Llamada;
+        var glUsuarioSeleccion = "@ViewBag.UsuarioSeleccion";
+        var glConsecutivoLlamada=0;
+        //ActivarRecepcion();
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        $(".chosen-select").chosen({ allow_single_deselect: false, width: "90%" });
+        /////CONTROL PARA CONOCER QUE MAPA DEBE CARGARSE
+        var glOrigen = "@ViewBag.ORIGEN";
+        var globalMapaBase = "@ViewBag.MapaBase";
+        var globalMapaBaseSecundario = "@ViewBag.MapaBaseSecundario";
+    </script>
+    @Scripts.Render("~/bundle/MapaArcGISJs")
+
+}

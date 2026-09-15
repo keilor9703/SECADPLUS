@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SECADEntities.SecadLugaresGeograficos.CADBANNERIMAGENE>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/BannerControllerJS")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel inicial con inputs -->
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading" id="contenedor">
+                    <h5 class="panel-title">Imágenes para el Banner</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button id="btnNuevo" onclick="location.href=('@Url.Action("Create", "BannerImagenes")')" class="btn btn-success btn-xs" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Clic para un nuevo Banner">
+                                    Nuevo<b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>
+
+                                </button>
+                            </li>
+                            <li><a data-action="collapse" ></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tblBanner">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Nombre Banner</th>
+                            <th>Activo</th>
+                            <th>Fecha Creación</th>
+                            <th>Orden de Aparición</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat dropdown-toggle"
+                                                    data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu secad dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-default " type="button" onclick="location.href=('@Url.Action("Edit", "BannerImagenes",new { id = @item.IDBANNER })')">
+                                                        <i class="icon-pencil"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default " type="button" onclick="EliminarElemento('@Url.Action("Eliminar", "BannerImagenes",new { id = @item.IDBANNER })')">
+                                                        <i class="icon-trash"></i> Borrar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.NOMBREARCHIVO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ACTIVO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.FECHACREACION)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ORDEN)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    <script>
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")    
+}

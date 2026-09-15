@@ -1,0 +1,645 @@
+﻿@{
+    ViewBag.Title = "Social";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/DateTimePickerJs")
+
+
+}
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <form id="frmSocial" action="#" method="post">
+        <div class="row">
+
+            <!-- Panel form 1 -->
+            <div class="col-md-12">
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Ficha generada</h5>
+                        <div class="heading-elements">
+                            <ul class="icons-list decad">
+                                <li>
+                                    <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="crearFichaSocial()"
+                                            data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para Guardar Cambios">
+                                        <b><i class="icon-floppy-disks"></i></b>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="LimpiarCampos()"
+                                            data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para limpiar">
+                                        <b><i class="icon-folder-download position-left"></i></b>Limpiar
+                                    </button>
+                                </li>
+
+                                <li>
+                                    <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="CargarPedido()"
+                                            data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+                                            data-original-title="Clic para traer datos del evento">
+                                        <b><i class="icon-folder-download position-left"></i></b>Traer datos del evento
+                                    </button>
+                                </li>
+                                <li><a data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+
+                        @Html.Hidden("MPIO_ATENCION")
+                        @Html.Hidden("BARRIO_CODIGO")
+                        @Html.Hidden("BARRIO_LUGECODIGO")
+                        @Html.Hidden("EVEN_SITIOGRABACION")
+                        @Html.Hidden("EVEN_NUMEEVENTO")
+
+
+                        <div class="col-md-4">
+
+                            <fieldset>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Número de ficha:</label>
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" id="NRO_FICHA" name="NRO_FICHA" class="form-control" placeholder="Autogenerado" readonly="readonly">
+                                            </div>
+                                            <label class="col-md-6 control-label text-right">
+                                                Ficha remitida:
+                                                <input type="checkbox" id="FICHA_REMITIDA" name="FICHA_REMITIDA">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Municipio:</label>
+                                    <div class="col-lg-7">
+                                        <input type="text" id="DESP_MPIO_ATENCION" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <button type="button" onclick="CargaCiudades();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                            <b><i class="icon-select2 position-left"></i></b>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Barrio:</label>
+                                    <div class="col-lg-7">
+                                        <input type="text" id="DESP_BARRIO_ATENCION" class="form-control" placeholder="">
+
+                                    </div>
+
+                                    <div class="col-lg-2">
+                                        <button type="button" onclick="CargaBarrioComuna();" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                            <b><i class="icon-select2 position-left"></i></b>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Cadusuario:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" id="CADUSUARIO" name="CADUSUARIO" placeholder="Autogenerado" class="form-control" readonly="readonly">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                            <fieldset>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Dirección:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" id="DIRECCION" name="DIRECCION" placeholder="Escriba dirección" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Teléfono:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" id="TELEFONO" name="TELEFONO" placeholder="Escriba teléfono" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Código evento:</label>
+                                    <div class="col-lg-9">
+                                        @* <input type="text" id="CODI_EVENTO" name="CODI_EVENTO" placeholder="" class="form-control">*@
+
+
+                                        <div class="col-xs-3 col-md-5 text-left ">
+                                            <input type="text" id="txtCasoId" name="CODI_EVENTO" class="form-control" placeholder="Código" />
+                                        </div>
+                                        <div class="col-xs-7 col-md-5 text-left form-group">
+                                            <input type="text" id="txtCaso" name="txtCaso" class="form-control" readonly placeholder="Descripción" tabindex="-1" />
+                                            <span class="label bg-primary-300 table-xs" id="mensajeCaso"></span>
+                                        </div>
+
+                                        <div class="col-lg-2">
+                                            <button type="button" onclick="CargarCasos()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                    title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                <b><i class="icon-select2 position-left"></i></b>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Fecha transacción:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" id="FECHA_TRANSACCION" name="FECHA_TRANSACCION" placeholder="Autogenerado" class="form-control" readonly="readonly">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                            <fieldset>
+                                <div class="row form-compact space_down">
+                                    <label class="col-lg-3 control-label">Observación:</label>
+                                    <div class="col-lg-9">
+                                        <textarea rows="5" id="OBSERVACION1" name="OBSERVACION1" cols="5" style="height:100px;resize:none;" class="form-control" placeholder="Escriba su observación"></textarea>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+                        <br />
+
+                        <table id="tablaFichaSocial" class="table table-hover table-bordered table-xxs table-condensed datatable-basic">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Nro Ficha</th>
+                                    <th>Ficha Remitida</th>
+                                    <th>Municipio</th>
+                                    <th>Barrio</th>
+                                    <th>Dirección </th>
+                                    <th>Telefono</th>
+                                    <th>Codigo Evento</th>
+                                    <th>Observaciones</th>
+                                    <th>Cadusuario</th>
+                                    <th>Fecha transacción</th>
+
+                                </tr>
+                            </thead>
+
+                        </table>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /panel form 1 -->
+        </div>
+        <div class="row">
+            <!-- Panel form 2 -->
+            <div class="col-md-12">
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Remisiones y tipos de servicio:</h5>
+                        <div class="heading-elements">
+                            <ul class="icons-list">
+                                <li><a data-action="collapse"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend class="text-semibold"></legend>
+                                <div class="form-compact space_down">
+                                    @*<label class="control-label">Tipo remisión:</label>*@
+
+                                    <label class="col-xs-12 col-lg-3"> Tipo Remisiones:</label>
+                                    <div class="col-xs-12 col-lg-8">
+                                        @Html.DropDownList("TIPO_REMISION", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-lg-1">
+                                        <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="crearFichaSocialTR()"
+                                                data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+                                                data-original-title="Clic para Guardar Cambios">
+                                            <b><i class="icon-floppy-disks"></i></b>
+                                        </button>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+
+                                    <table id="tablaRemicionesSocial" class="table table-hover table-bordered table-xxs table-condensed datatable-basic">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Tipo Remisión</th>
+
+
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+
+                                <div class="row form-compact space_down">
+                                    <div class="col-md-6">
+                                        <label>Cadusuario:</label>
+                                        <span class="col-md-12 label label-default" id="spanUsuarioTR"> </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Fecha transacción:</label>
+                                        <span class="col-md-12 label label-default" id="spanFechaTransaccionTR"> </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend class="text-semibold"></legend>
+                                <div class="form-compact space_down">
+                                    <label class="col-xs-12 col-lg-3">Tipo Servicios:</label>
+
+                                    <div class="col-xs-12 col-lg-8">
+                                        @Html.DropDownList("TIPO_SERVICIO", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-lg-1">
+                                        <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="crearFichaSocialTS()"
+                                                data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+                                                data-original-title="Clic para Guardar Cambios">
+                                            <b><i class="icon-floppy-disks"></i></b>
+                                        </button>
+                                    </div>
+
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+
+                                    <table id="tablaTipoServisioSocial" class="table table-hover table-bordered table-xxs table-condensed datatable-basic">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Tipo Servicio</th>
+
+
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+
+                                </div>
+
+                                <div class="row form-compact space_down">
+                                    <div class="col-md-6">
+                                        <label>Cadusuario:</label>
+                                        <span class="col-md-12 label label-default" id="spanUsuarioTS"> </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Fecha transacción:</label>
+                                        <span class="col-md-12 label label-default" id="spanFechaTransaccionTS"> </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend class="text-semibold">Observación 2</legend>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        <textarea rows="5" id="OBSERVACION2" name="OBSERVACION2" cols="5" style="height:120px;resize:none;" class="form-control" placeholder="Escriba su observación"></textarea>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /panel form 2 -->
+        </div>
+
+    </form>
+
+    <div class="row">
+        <!-- Panel form 2 -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Personas asociadas:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                                <div class="form-compact">
+                                    <input id="REGITRADURIA" type="text" class="form-control" style="width:700PX" placeholder="" readonly="readonly" />
+
+                                </div>
+
+                            </li>
+                            <li>
+                                <button type="button" class="btn bg-teal btn-xs" data-toggle="modal" onclick="crearPersonaSocial()"
+                                        data-target="#modal_form_horizontal" data-popup="tooltip" title="" data-placement="bottom"
+                                        data-original-title="Clic para Guardar Cambios">
+                                    <b><i class="icon-floppy-disks"></i></b>
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+
+                    <div class="row">
+                        <form id="frmPersonaSocial" action="#" method="post">
+
+
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                
+                                    @Html.Hidden("CONSECUTIVO")
+                                    @Html.Hidden("EVEN_SITIOGRABACION")
+                                    @Html.Hidden("EVEN_NUMEEVENTO")
+
+                                    <input id="NRO_FICHA_PERSONA" name="NRO_FICHA" type="hidden" class="form-control" placeholder="" />
+
+
+                                    <div class="col-lg-2 obligatorio">
+                                        <label class="control-label col-md-12">Tipo identificación:</label>
+                                        @Html.DropDownList("TIPO_IDENTIFICACION", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+
+                                    </div>
+
+                                    <div class="col-lg-1 obligatorio">
+                                        <label class="control-label col-md-12">Identificación:</label>
+                                        <input id="IDENTIFICACION" name="IDENTIFICACION" type="text" class="form-control" placeholder="Ingrese Identificación " />
+                                    </div>
+
+                                    <div class="col-lg-2 obligatorio">
+                                        <label class="control-label col-md-12">Nombres:</label>
+                                        <input id="NOMBRES" name="NOMBRES" type="text" class="form-control" placeholder="Ingrese Nombres" />
+                                    </div>
+
+                                    <div class="col-lg-2 obligatorio">
+                                        <label class="control-label col-md-12">Apellidos:</label>
+                                        <input id="APELLIDOS" name="APELLIDOS" type="text" class="form-control" placeholder="Ingrese Apellidos" />
+                                    </div>
+
+                                    <div class="col-lg-2">
+                                        <label class="control-label col-md-12">Fecha Nacimiento:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                            <input type="text" class="form-control daterange-basic FechaHora" id="FECHA_NACE" name="FECHA_NACE">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <label class="control-label col-md-12">Edad:</label>
+                                        <input id="EDAD_PERSONA" name="EDAD_PERSONA" type="text" class="form-control" placeholder="Ingrese Edad" />
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <label class="control-label col-md-12">Sexo:</label>
+                                        @Html.DropDownList("CODI_GENERO", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <label class="control-label col-md-12">Raza:</label>
+                                        @Html.DropDownList("CODI_RAZA", null, "", htmlAttributes: new { @class = "chosen-select form-control" })
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                    <br />
+
+                                    <div class="col-lg-1">
+                                        <label class="col-md-4 control-label text-left">
+                                            LGTBI
+                                            <input type="checkbox" id="COND_LGTBI" name="COND_LGTBI">
+                                        </label>
+                                        <label class="col-md-4 control-label text-center">
+                                            Discap.
+                                            <input type="checkbox" id="COND_DISCAPACIDAD" name="COND_DISCAPACIDAD">
+                                        </label>
+                                        <label class="col-md-4 control-label text-right">
+                                            Despl.
+                                            <input type="checkbox" id="COND_DESPLAZADO" name="COND_DESPLAZADO">
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-7">
+
+                                        <label>Observaciones</label>
+                                        <textarea rows="5" id="OBSERVACIONES" name="OBSERVACIONES" cols="5" style="height:80px;resize:none;" class="form-control" placeholder="Escriba su observación"></textarea>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label>Cadusuario:</label>
+                                        <input type="text" id="cadusuario_Persona" name="cadusuario_Persona" placeholder="Autogenerado" class="form-control" readonly="readonly">
+
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label>Fecha transacción:</label>
+                                        <input type="text" id="fechaTransaccion_Persona" name="fechaTransaccion_Persona" placeholder="Autogenerado" class="form-control" readonly="readonly">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+
+                    </div>
+                    <br />
+
+                    <table id="tablaPersonaSocial" class="table table-hover table-bordered table-xxs table-condensed datatable-basic">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Acciones</th>
+                                <th>Tipo identificación</th>
+                                <th>Identificación</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Fecha Nacimiento</th>
+                                <th>Edad</th>
+                                <th>Sexo</th>
+                                <th>Raza</th>
+                                <th>LGTBI</th>
+                                <th> Discap.</th>
+                                <th> Despl.</th>
+                                <th> Observaciones</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                  
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /panel form 2 -->
+</div>
+</div>
+
+
+
+<!-- Modal Ciudades -->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ciudades</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Ciudades -->
+<!-- Modal BarriosComuna -->
+<div id="ModalBarrioComuna" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Barrios</h5>
+            </div>
+            <div class="modal-body form-compact">
+                <table id="tablaBarriosComuna" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Descripción</th>
+                            <th>Lugue codigo</th>
+                            <th>Código</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal BarriosComuna -->
+<!-- ModalCasosReal modal Casos-->
+<div id="ModalCasosReal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Casos</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaCaso"></div>
+                <div class="row form-compact">
+                    <div class="md-col-12">
+                        <table id="tblCasos" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalCasos modal -->
+
+
+@section PostScripts{
+
+    @Scripts.Render("~/bundle/DespachosSocialJs")
+
+
+    <script>
+        var urlFichaSocial = '@Url.Action("ObteneFichaSocial", "DespachosSocial")';
+        var urlCrearFichaSocial = '@Url.Action("CrearFichaSocial", "DespachosSocial")';
+        var urlCiudades = '@Url.Action("CargaCiudades", "AdministrarDirectorio")';
+        var urlCiudadEnter = '@Url.Action("DatosCiudadEnter", "DespachosSocial")';
+        var urlBarrioComunaEnter = '@Url.Action("DatosBarrioComunasEnter", "DespachosSocial")';
+        var urlBarrioComuna = '@Url.Action("CargaComunasBarrios", "DespachosSocial")';
+        var urlConsultarCasos = "@Url.Action("ConsultarCasos", "PendientesDespacho")";
+        var urlCagarTipos = '@Url.Action("ObteneFichaSocialTipos", "DespachosSocial")';
+
+
+        var urlCrearFichaSocialTS = '@Url.Action("CrearFichaTS", "DespachosSocial")';
+        var urlCrearFichaSocialTR = '@Url.Action("CrearFichaTR", "DespachosSocial")';
+
+        var urlEliminarFichaSocialTS = '@Url.Action("EliminarTS", "DespachosSocial")';
+        var urlEliminarFichaSocialTR = '@Url.Action("EliminarTR", "DespachosSocial")';
+
+
+        var urlCagarPersonasSocial = '@Url.Action("ObteneFichaSocialPersonas", "DespachosSocial")';
+        var urlCrearPersonaSocial = '@Url.Action("CrearPersonaSocial", "DespachosSocial")';
+        var urlEliminarPersonaSocial = '@Url.Action("EliminarPersonaSocial", "DespachosSocial")';
+        var urlDatosPedido = '@Url.Action("ObtenerDatosPedido", "DespachosSocial")';
+
+        var urlDatosRegistraduria = '@Url.Action("DatosRegistraduria", "DespachosSocial")';
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+        var SitioGrabaEventoGlobal = '@ViewBag.EVEN_SITIOGRABACION';
+        var EventoGlobal = '@ViewBag.EVEN_NUMEEVENTO';
+
+        $(".chosen-select").chosen();
+        InicializarElementos("CREAR");
+
+    </script>
+
+
+
+}
+

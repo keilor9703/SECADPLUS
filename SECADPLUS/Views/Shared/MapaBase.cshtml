@@ -1,0 +1,114 @@
+﻿@using SECADPLUS.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SECAD PLUS</title>
+    <link rel="icon" href="@Url.Content("~/Images/LogoSECAD.png")" type="image/x-icon">
+    <style>
+    </style>
+
+    @Styles.Render("~/bundle/PrincipalCss")
+    @Styles.Render("~/bundle/MapaArcGISCss")
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->    
+    <script>
+        var menuUrl = "@Url.Action("Menu", "Home")";
+        var alertaJs = "<div class='alert alert-CUSTOM alert-styled-left alert-arrow-left alert-bordered'><button type='button' class='close' data-dismiss='alert'><span>×</span><span class='sr-only'>Close</span></button><span class='text-semibold' >MENSAJE</span> </div>";
+        var menuUrlAjax = "@Url.Action("ObtenerMenu", "Home")";
+        var dtNotificacionUrl = "@Url.Action("ObtenerDatosNotificacion", "Home")";
+        var actualizarNotificacionUrl = "@Url.Action("ActualizarNotificaciones", "Home")";
+        var varTiempoRespuesta = @System.Configuration.ConfigurationManager.AppSettings["RespuestaNotificaciones"];
+        function CambiarVisibilidadMenu() {
+            $("#botonMenu").trigger("click");
+        }
+        //Permite gestionar mensajes de alertas en toda la aplicación para peticiones desde javascript
+        function GestionarAlerta(tipo, mensaje) {
+            $("#alertaJs").empty();
+            $("#alertaJs").html(alertaJs.replace("CUSTOM", tipo).replace("MENSAJE", mensaje));
+            $("#back-to-top").trigger("click");
+        }
+        function AplicarFechaHoraPlugin(identificador) {
+            $(identificador).datetimepicker({
+                format: 'DD/MM/YYYY HH:mm:ss',
+                locale: 'es',
+                //minDate : new Date(),
+                showClear: true
+            });
+        }
+    </script>
+   
+
+    @Scripts.Render("~/bundle/MapaBaseJs")
+
+    <!-- /theme JS files -->
+    @RenderSection("scripts", required: false)
+
+
+</head>
+<body>
+    <!-- Loader DECAD -->
+    <!--[if IE 9]>
+    <div class="loader_decad hidden">
+        <div class="loader_dialog">
+            <div class="loader_container2 text-center">
+                <img src="@Url.Content("~/Images/loader_DECAD.gif")" />
+                <h4 class="text-white" id="mensajeLoader">Cargando...</h4>
+            </div>
+        </div>
+    </div>
+        <div class="loader_back hidden"></div>
+    <![endif]-->
+    <!--[if !(IE 9)]>-->
+    <div class="loader_decad hidden">
+        <div class="loader_dialog">
+            <div class="loader_container text-center">
+                <div class="loader"></div>
+                <h4 class="text-white" id="mensajeLoader">Cargando...</h4>
+            </div>
+        </div>
+    </div>
+    <div class="loader_back hidden"></div>
+    <!--<![endif]-->
+    <!-- /loader DECAD -->
+   
+
+  
+    <!-- Contenedor de página -->
+    <div class="page-container">
+
+
+
+        <!-- Contenido de página -->
+        <div class="page-content">
+           
+            <!-- Contenido principal -->
+            <div class="content-wrapper color_secad">
+                   
+             
+
+                <!-- /contenedor Breadcrumb -->
+                <div>
+                                        
+                   @RenderBody()
+                @RenderSection("PostScripts", required: false)
+                </div>
+                
+                
+            </div>
+            <!-- /contenido principal -->
+        </div>
+        <!-- /contenido de página -->
+    </div>
+    <!-- /contenedor de página -->
+    
+    <!-- Botón de volver arriba	-->
+    <!--<button id="back-to-top" class="bg-green-800 btn-lg back-to-top" type="button" data-popup="tooltip"
+            title="" data-placement="top" data-original-title="Clic para ir arriba">
+        <i class="icon-arrow-up16"></i>
+    </button>-->
+ 
+</body>
+</html>

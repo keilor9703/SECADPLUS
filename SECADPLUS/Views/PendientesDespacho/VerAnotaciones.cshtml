@@ -1,0 +1,58 @@
+﻿
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row">
+        <!-- Incidentes Antecedentes -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Anotaciones:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para recargar"
+                                        onclick="CargarTablaAnotaciones()">
+                                    <b><i class="icon icon-reload-alt"></i></b>Recargar
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table id="tablaAnotacionesGenerales" class="table table-hover table-xxs datatable-basic modal_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Anotación</th>
+                            <th>Fuerza</th>
+                            <th>Canal</th>
+                            <th>Usuario</th>
+                            <th>Fecha Grabación</th>
+                            <th>Consecutivo</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Incidentes Antecedentes -->
+    </div>
+</div>
+<!-- Área de contenido -->
+@section PostScripts{
+    <script type="text/javascript">
+        var glSitio = @ViewBag.Sitio;
+        var globalLlamada = @ViewBag.Llamada;
+        var urlTablaAnotaciones = "@Url.Action("VerAnotaciones", "PendientesDespacho")";
+    </script>
+    @Scripts.Render("~/bundle/VerAnotacionesControllerJs")
+
+}

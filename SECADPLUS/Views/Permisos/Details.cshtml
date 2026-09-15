@@ -1,0 +1,50 @@
+﻿@model SECADEntities.SecadEntities.CADNETPERMISO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADNETPERMISO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PERMISO_NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERMISO_NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERMISO_DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERMISO_DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERMISO_ESTADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERMISO_ESTADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERMISO_FECHA_CREACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERMISO_FECHA_CREACION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PERMISO_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,24 @@
+﻿@model SECADEntities.SecadEntities.CADVISORPARAMETRO
+
+@{
+    ViewBag.Title = "Eliminar Parametro Visor Mapa";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.CODIGO)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.TIPO) 
+    <br />
+    Parametro: @Html.DisplayFor(model => model.PARAMETRO)
+
+
+
+
+    @using (Html.BeginForm("Delete", "MapaParametros", new { id = Model.CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

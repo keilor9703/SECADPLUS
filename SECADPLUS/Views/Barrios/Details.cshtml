@@ -1,0 +1,58 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADBARRIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CADBARRIO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_MPIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_MPIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_REGISTRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_REGISTRO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AREAM2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AREAM2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CADCOMUNA.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CADCOMUNA.DESCRIPCION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

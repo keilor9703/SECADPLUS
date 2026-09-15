@@ -1,0 +1,11 @@
+﻿@model SECADEntities.SECAD.CADARMA
+
+@Html.Partial("_Mensajes")
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+    @Model.NUME_SERIE
+    @using (Html.BeginForm("Delete", "Armas", new { intUnidadFuerza = Model.CADUNID_FUERZA, intUnidadCodigo = Model.CADUNID_CODIGO,strSerie = Model.NUME_SERIE }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>

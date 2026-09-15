@@ -1,0 +1,247 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADTIPOS_BIEN>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADTIPOS_BIEN>, List<CADMARCA>, List<CADCLASES_BIEN>, List<CADCARACTERISTICA>>
+
+@{
+    ViewBag.Title = "Elementos";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    @Html.Partial("_NavegacionAdmonGeneral")
+    <div class="row form-compact">
+        <!-- Tabla principal -->
+        <div class="col-md-6">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Tipos de Bienes</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo tipo de bien"
+                                        onclick="window.location.href ='@Url.Action("Create", "ElementosTiposBien")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear tipo de biene
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaTipoBienes">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Tipos de Bienes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Item1)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat dropdown-toggle"
+                                                    data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                @*<li>
+                                                        <button class="btn btn-default" type="button" data-popup="tooltip" title=""
+                                                                data-placement="bottom" data-original-title="Clic para ver">
+                                                            <i class="icon-eye"></i> Ver
+                                                        </button>
+                                                    </li>*@
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para editar"
+                                                            onclick="window.location.href ='@Url.Action("Edit", "ElementosTiposBien", new { id = item.CODIGO })'">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-xs btn-default" type="button" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para eliminar"
+                                                            onclick="EliminarRegistroGeneral('@Url.Action("Eliminar", "ElementosTiposBien", new { id = item.CODIGO })')"> @*onclick="window.location.href ='@Url.Action("Delete", "ElementosTiposBien",new { id = item.CODIGO })'">*@
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default" type="button" data-popup="tooltip" title=""
+                                                            data-placement="bottom" data-original-title="Clic para asociar"
+                                                            onclick="VerMarcas(@item.CODIGO, '@item.DESCRIPCION')">
+                                                        <i class="icon-versions"></i> Asociar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.DESCRIPCION)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /tabla principal -->
+        <div class="col-md-6">
+            <div class="row">
+                <!-- Tablas marcas -->
+                <div class="col-md-12">
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Marcas disponibles</h5>
+                            <div class="computo_input">
+                                @Html.Editor("TIPO_BIEN1", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+
+                            <div class="heading-elements">
+                                <ul class="icons-list decad">
+                                    <li>
+                                        <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para crear marcas"
+                                                onclick="IrCrearMarcas(idTipoCodigo)">
+                                            <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear marcas
+                                        </button>
+                                    </li>
+                                    <li><a data-action="collapse"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Inicio de tabla -->
+                        <table class="table table-hover table-xxs datatable-basic" id="tablaMarcas">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Marcas disponibles</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    Html.RenderPartial("_marcas", Model.Item2);
+                                }
+                            </tbody>
+                        </table>
+                        <!-- /inicio de tabla -->
+                    </div>
+                </div>
+                <!-- /tablas marcas -->
+                <!-- Tablas clases -->
+                <div class="col-md-12">
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Clases de bien</h5>
+                            <div class="computo_input">
+                                @Html.Editor("TIPO_BIEN2", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="heading-elements">
+                                <ul class="icons-list decad">
+                                    <li>
+                                        <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para crear clases de bien"
+                                                onclick="IrCrearClasesBien(idTipoCodigo)">
+                                            <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear clases de bien
+                                        </button>
+                                    </li>
+                                    <li><a data-action="collapse"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Inicio de tabla -->
+                        <table class="table table-hover table-xxs datatable-basic" id="tablaClasesBienes">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Clases de bien</th>
+                                    <th>Unidad</th>
+                                    <th>Medida</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    Html.RenderPartial("_clasesBien", Model.Item3);
+                                }
+                            </tbody>
+                        </table>
+                        <!-- /inicio de tabla -->
+                    </div>
+                </div>
+                <!-- /tablas clases -->
+                <!-- Tablas caracteristicas -->
+                <div class="col-md-12">
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Características</h5>
+                            <div class="computo_input">
+                                @Html.Editor("TIPO_BIEN3", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="heading-elements">
+                                <ul class="icons-list decad">
+                                    <li>
+                                        <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                                title="" data-placement="bottom" data-original-title="Clic para crear características"
+                                                onclick="IrCrearCaracteristicas(idTipoCodigo)">
+                                            <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear características
+                                        </button>
+                                    </li>
+                                    <li><a data-action="collapse"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Inicio de tabla -->
+                        <table class="table table-hover table-xxs datatable-basic" id="tablaCaracteristicas">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Características</th>
+                                    <th>Tipo</th>
+                                    <th>Tamaño</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    Html.RenderPartial("_caracteristicas", Model.Item4);
+                                }
+                            </tbody>
+                        </table>
+                        <!-- /inicio de tabla -->
+                    </div>
+                </div>
+                <!-- /tablas caracteristicas -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /área de contenido -->
+
+<script type="text/javascript">
+    var idTipoCodigo = @ViewBag.TIBI_CODIGO;
+    var nomTipoBien = '@ViewBag.TIPO_BIEN';
+
+    var urlCrearMarcas = '@Url.Action("Create", "ElementosMarcas")';
+    var urlCrearClases = '@Url.Action("Create", "ElementosClasesBien")';
+    var urlCrearCaracteristicas = '@Url.Action("Create", "ElementosCaracteristicas")';
+
+    var urlMarcas = '@Url.Action("GetMarcas", "ElementosMaestras")';
+    var urlClases = '@Url.Action("GetClasesBien", "ElementosMaestras")';
+    var urlCaracteristicas = '@Url.Action("GetCaracteristicas", "ElementosMaestras")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+@Scripts.Render("~/bundle/ElementosMaestras")

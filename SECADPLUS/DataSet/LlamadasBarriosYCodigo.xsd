@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LlamadasBarriosYCodigo" targetNamespace="http://tempuri.org/LlamadasBarriosYCodigo.xsd" xmlns:mstns="http://tempuri.org/LlamadasBarriosYCodigo.xsd" xmlns="http://tempuri.org/LlamadasBarriosYCodigo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LlamadasBarriosYCodigo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LlamadasBarriosYCodigo" msprop:Generator_UserDSName="LlamadasBarriosYCodigo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LlamadasBarriosYCodigo" msprop:Generator_TableClassName="LlamadasBarriosYCodigoDataTable" msprop:Generator_TableVarName="tableLlamadasBarriosYCodigo" msprop:Generator_TablePropName="_LlamadasBarriosYCodigo" msprop:Generator_RowDeletingName="LlamadasBarriosYCodigoRowDeleting" msprop:Generator_RowChangingName="LlamadasBarriosYCodigoRowChanging" msprop:Generator_RowEvHandlerName="LlamadasBarriosYCodigoRowChangeEventHandler" msprop:Generator_RowDeletedName="LlamadasBarriosYCodigoRowDeleted" msprop:Generator_UserTableName="LlamadasBarriosYCodigo" msprop:Generator_RowChangedName="LlamadasBarriosYCodigoRowChanged" msprop:Generator_RowEvArgName="LlamadasBarriosYCodigoRowChangeEvent" msprop:Generator_RowClassName="LlamadasBarriosYCodigoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LUGE_CODIGO" msprop:Generator_ColumnVarNameInTable="columnLUGE_CODIGO" msprop:Generator_ColumnPropNameInRow="LUGE_CODIGO" msprop:Generator_ColumnPropNameInTable="LUGE_CODIGOColumn" msprop:Generator_UserColumnName="LUGE_CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="COZO_LUGE_CODIGO" msprop:Generator_ColumnVarNameInTable="columnCOZO_LUGE_CODIGO" msprop:Generator_ColumnPropNameInRow="COZO_LUGE_CODIGO" msprop:Generator_ColumnPropNameInTable="COZO_LUGE_CODIGOColumn" msprop:Generator_UserColumnName="COZO_LUGE_CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="COZO_CODIGO" msprop:Generator_ColumnVarNameInTable="columnCOZO_CODIGO" msprop:Generator_ColumnPropNameInRow="COZO_CODIGO" msprop:Generator_ColumnPropNameInTable="COZO_CODIGOColumn" msprop:Generator_UserColumnName="COZO_CODIGO" type="xs:string" minOccurs="0" />
+              <xs:element name="CODI_BARRIO" msprop:Generator_ColumnVarNameInTable="columnCODI_BARRIO" msprop:Generator_ColumnPropNameInRow="CODI_BARRIO" msprop:Generator_ColumnPropNameInTable="CODI_BARRIOColumn" msprop:Generator_UserColumnName="CODI_BARRIO" type="xs:string" minOccurs="0" />
+              <xs:element name="LUGE_BARRIO" msprop:Generator_ColumnVarNameInTable="columnLUGE_BARRIO" msprop:Generator_ColumnPropNameInRow="LUGE_BARRIO" msprop:Generator_ColumnPropNameInTable="LUGE_BARRIOColumn" msprop:Generator_UserColumnName="LUGE_BARRIO" type="xs:string" minOccurs="0" />
+              <xs:element name="CODI_PEDIDO" msprop:Generator_ColumnVarNameInTable="columnCODI_PEDIDO" msprop:Generator_ColumnPropNameInRow="CODI_PEDIDO" msprop:Generator_ColumnPropNameInTable="CODI_PEDIDOColumn" msprop:Generator_UserColumnName="CODI_PEDIDO" type="xs:string" minOccurs="0" />
+              <xs:element name="CUENTA" msprop:Generator_ColumnVarNameInTable="columnCUENTA" msprop:Generator_ColumnPropNameInRow="CUENTA" msprop:Generator_ColumnPropNameInTable="CUENTAColumn" msprop:Generator_UserColumnName="CUENTA" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre_Usuario" msprop:Generator_ColumnVarNameInTable="columnNombre_Usuario" msprop:Generator_ColumnPropNameInRow="Nombre_Usuario" msprop:Generator_ColumnPropNameInTable="Nombre_UsuarioColumn" msprop:Generator_UserColumnName="Nombre_Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Fuerza_Usuario" msprop:Generator_ColumnVarNameInTable="columnFuerza_Usuario" msprop:Generator_ColumnPropNameInRow="Fuerza_Usuario" msprop:Generator_ColumnPropNameInTable="Fuerza_UsuarioColumn" msprop:Generator_UserColumnName="Fuerza_Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" type="xs:string" minOccurs="0" />
+              <xs:element name="CF_DESC_CIUDAD" msprop:Generator_ColumnVarNameInTable="columnCF_DESC_CIUDAD" msprop:Generator_ColumnPropNameInRow="CF_DESC_CIUDAD" msprop:Generator_ColumnPropNameInTable="CF_DESC_CIUDADColumn" msprop:Generator_UserColumnName="CF_DESC_CIUDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="CF_DESC_COMUNA" msprop:Generator_ColumnVarNameInTable="columnCF_DESC_COMUNA" msprop:Generator_ColumnPropNameInRow="CF_DESC_COMUNA" msprop:Generator_ColumnPropNameInTable="CF_DESC_COMUNAColumn" msprop:Generator_UserColumnName="CF_DESC_COMUNA" type="xs:string" minOccurs="0" />
+              <xs:element name="CF_DESC_BARRIO" msprop:Generator_ColumnVarNameInTable="columnCF_DESC_BARRIO" msprop:Generator_ColumnPropNameInRow="CF_DESC_BARRIO" msprop:Generator_ColumnPropNameInTable="CF_DESC_BARRIOColumn" msprop:Generator_UserColumnName="CF_DESC_BARRIO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHADB" msprop:Generator_ColumnVarNameInTable="columnFECHADB" msprop:Generator_ColumnPropNameInRow="FECHADB" msprop:Generator_ColumnPropNameInTable="FECHADBColumn" msprop:Generator_UserColumnName="FECHADB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

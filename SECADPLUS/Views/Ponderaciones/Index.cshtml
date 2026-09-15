@@ -1,0 +1,222 @@
+﻿@*@model IEnumerable<SECADEntities.SECAD.CADCONDUCTA>*@
+@using SECADEntities.SECAD;
+@model Tuple<List<CADCONDUCTA>, List<CADCONDUCTA>, List<CADCONDCLASESBIEN>, List<CADCONDCLBIPONDERADO>>
+
+@{
+    ViewBag.Title = "Ponderación";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/FormularioJs")
+    @Scripts.Render("~/bundle/InputsJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <!-- Tipo de Conductas -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Tipo de Conductas:</h5>
+                    <div class="computo_input">
+                        @Html.DropDownList("TIPO", null, htmlAttributes: new { @class = "chosen-select" })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaTitulos">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_titulos", Model.Item1);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- Tipo de Conductas -->
+        <!-- Conductas -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Conductas</h5>
+                    <div class="computo_input">
+                        @*@Html.Hidden("COD_CONDUCTA")*@
+                        @Html.Editor("NOM_TITULO", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaConductas">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Abreviatura</th>
+                            <th>Nivel</th>
+                            <th>Vigente</th>
+                            <th>Lico Vigencia</th>
+                            <th>Lico Código</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_conductas", Model.Item2);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /Conductas -->
+        <!-- Ponderar -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Ponderar</h5>
+                    <div class="computo_input">
+                        @Html.Editor("NOM_CONDUCTA", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear"
+                                        onclick="IrCrearPonderar(_idTipo, _nomTipo, _idTitu, _nomTitu, _idCond, _nomCond)">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nueva
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaPonderar">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Código</th>
+                            <th>Tipo de Bien</th>
+                            <th>Código</th>
+                            <th>Clase de Bien</th>
+                            <th>Consecutivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_ponderar", Model.Item3);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /Ponderar -->
+        <!-- Detalle Ponderaciones -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Detalle de Ponderaciones</h5>
+                    <div class="computo_input">
+                        @Html.Editor("NOM_PONDERAR", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear"
+                                        onclick="IrCrearDetallePonderar(_idTipo, _nomTipo, _idTitu, _nomTitu, _idCond, _nomCond, _idPond)">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nueva
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaDetallePonderar">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Clase Ponderado</th>
+                            <th>Modoconducta</th>
+                            <th>Vlr Minimo</th>
+                            <th>Vlr Maximo</th>
+                            <th>Vlr Unidad</th>
+                            <th>Vlr Ponderado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            Html.RenderPartial("_detallePonderar", Model.Item4);
+                        }
+                    </tbody>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+        <!-- /Detalle Ponderaciones  -->
+    </div>
+</div>
+<!-- Área de contenido -->
+
+<script type="text/javascript">
+    var _idTitu = @ViewBag.idTitu;
+    var _nomTitu = '@ViewBag.nomTitu';
+
+    var _idCond = @ViewBag.idCond;
+    var _nomCond = '@ViewBag.nomCond';
+
+    var _idPond = '@ViewBag.idPond';
+
+    AplicarPluginTabla("tablaTitulos");
+    AplicarPluginTabla("tablaConductas");
+    AplicarPluginTabla("tablaPonderar");
+    AplicarPluginTabla("tablaDetallePonderar");
+
+    var urlTitulos = '@Url.Action("GetTitulos", "Ponderaciones")';
+    var urlConductas = '@Url.Action("GetConductas", "Ponderaciones")';
+    var urlPonderar = '@Url.Action("GetPonderar", "Ponderaciones")';
+    var urlDetalle = '@Url.Action("GetDetallePonderar", "Ponderaciones")';
+
+    var urlCrearPonderada = '@Url.Action("CreateP", "Ponderaciones")';
+    var urlCrearDetalle = '@Url.Action("CreateDP", "Ponderaciones")';
+    var urlTitulos = '@Url.Action("GetTitulos", "Ponderaciones")';
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+</script>
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/PonderacionesJs")
+}

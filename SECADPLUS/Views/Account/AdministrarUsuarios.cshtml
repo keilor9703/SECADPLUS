@@ -1,0 +1,131 @@
+﻿@using SECADPLUS.Models.Extendidas
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Listado de Usuarios</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("ReporteListadoUsuarios", "Reportes")'"
+                                        title="" data-placement="bottom" data-original-title="Listado de Usuarios">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Listado de Usuarios
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("ReporteActaUsuario", "Reportes")'"
+                                        title="" data-placement="bottom" data-original-title="Acta Usuario">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Acta Usuario
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("ReporteActaGeneral", "Reportes")'"
+                                        title="" data-placement="bottom" data-original-title="Acta General">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Acta General
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("CrearUsuario", "Account")'"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo Usuario">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nuevo Usuario
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="hidden" id="hdSitio" value="0" />
+                <input type="hidden" id="hdEntidad" value="0" />
+                <input type="hidden" id="hdCanal" value="0" />
+                <input type="hidden" id="hdCondicion" value="" />
+                <input type="hidden" id="hdUsuarioId" value="" />
+
+                <table class="table table-hover table-xxs datatable-basic" id="tablaUsuarios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Usuario</th>
+                            <th>Identificación</th>
+                            <th>Empleado</th>
+                            <th>Grado</th>
+                            <th>Departamento</th>
+                            <th>Ciudad</th>
+                            <th>Fecha activación</th>
+                            <th>Fecha desactivación</th>
+                            <td>CONDICIÓN</td>
+                            <th>Sitio</th>
+                            <th>Entidad</th>
+                            <th>Canal</th>
+                            <th>Usuario OID</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- ModalRoles modal Roles-->
+    <div id="ModalRoles" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-teal roles">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title" id="tituloUnidad">Gestión de Roles</h5>
+                </div>
+                <div class="modal-body ">
+                    <div id="modalAlerta"></div>
+                    <div class="row glyphs col-md-8 col-md-offset-2" id="contenedorRoles">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row form-compact">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ModalRoles modal -->
+</div>
+
+@section PostScripts{
+    @Scripts.Render("~/bundle/Select2Js")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+
+    <script>
+        var urlCambioCanal = "@Url.Action("CambioCanal","Account")";
+        var urlObtenerEntidades = "@Url.Action("ObtenerEntidades", "Account")";
+        var urlObtenerCanales = "@Url.Action("ObtenerCanales", "Account")";
+        var urlCambiarCanal= "@Url.Action("CambiarCanal", "Account")";
+        var urlActualizarUsuarios= "@Url.Action("ActualizarUsuarios", "Account")";
+        var urlConsultaUsuarios = "@Url.Action("ConsultarUsuarios", "Account")";
+        var urlConsultarRoles = "@Url.Action("ConsultarRoles", "Account")";
+        var urlAsociarRol= "@Url.Action("AsociarRol", "Account")";
+        // AplicarPluginTabla("tablaUsuarios");
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+    </script>
+    @Scripts.Render("~/bundle/UsuarioControllerJs")
+    <script>
+        InicializarElementos("ADMINISTRAR");
+    </script>
+}

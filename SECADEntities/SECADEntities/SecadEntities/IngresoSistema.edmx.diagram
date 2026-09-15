@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9ee725afab64477b9f1969d6c8159fda" Name="Diagram1">
+        <EntityTypeShape EntityType="IngresoSistemaModel.CADESQUEMA_AUTENTICACION" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IngresoSistemaModel.CADINGRESOSISTEMA_AUD" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="IngresoSistemaModel.FK_CADESQUEMAAUTE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

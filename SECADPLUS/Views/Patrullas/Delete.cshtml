@@ -1,0 +1,11 @@
+﻿@model SECADEntities.SECAD.CADPATRULLA
+
+@Html.Partial("_Mensajes")
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+@Model.DESC_PATRULLA
+    @using (Html.BeginForm("Delete", "Patrullas", new { intUnidadFuerza = Model.CADUNID_FUERZA, intUnidadCodigo = Model.CADUNID_CODIGO, intCodigo = Model.CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>

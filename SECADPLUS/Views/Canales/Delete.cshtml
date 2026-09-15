@@ -1,0 +1,19 @@
+﻿@model SECADEntities.SECAD.CADCANALE
+
+@{
+    ViewBag.Title = "Borrar Canal";
+}
+
+
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+    <h4>@Html.DisplayFor(model => model.DESCRIPCION)</h4>
+
+
+    @using (Html.BeginForm("ConfirmaBorrado", "Canales", new { codigo = Model.CODIGO, fuerzaId= Model.CADFUERZ_ID }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+        
+    }
+</div>
+

@@ -1,0 +1,18 @@
+﻿@model SECADEntities.SECAD.CADCASOS_CANAL
+
+@{
+    ViewBag.Title = "Eliminar Caso Canal";
+}
+
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CADCASO_CODIGO)
+
+    @using (Html.BeginForm("Delete", "AtencionCasos", new { id = Model.CADCASO_CODIGO, idFuerza = Model.CADCANA_FUERZ_ID, idCanal = Model.CADCANA_CODIGO }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

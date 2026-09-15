@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Novedades Reportadas";
+}
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/ModalsJs")
+}
+
+
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row form-compact">
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Novedades Presentadas:</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear novedad"
+                                        onclick="window.location.href ='@Url.Action("Create")'">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear novedad
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="btn btn-success btn-xs" type="button" data-popup="tooltip" title=""
+                                        onclick="window.close();" data-placement="bottom" data-original-title="Salir de Novedades">
+                                    <i id="info" class="icon-reply-all icon_size-xs"></i>
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Inicio de tabla -->
+                <table class="table table-hover table-xxs datatable-basic" id="tablaNovedadesPatrulla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Acciones</th>
+                            <th>Medio</th>
+                            <th>Tipo Novedad</th>
+                            <th>Hora Inicia</th>
+                            <th>Hora Termina </th>
+                            <th>Obeservaciones </th>
+
+                        </tr>
+                    </thead>
+                </table>
+                <!-- /inicio de tabla -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Área de contenido -->
+<script type="text/javascript">
+
+    /////////////////////Variables BreadCrumb/////////////////////////
+    UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+    UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+    //////////////////////////////////////////////////////////////////
+
+
+    var urlTabla = '@Url.Action("ObtenerObtenerNovedadesPatrulla", "NovedadesPatrullasEventos")';
+
+</script>
+@Scripts.Render("~/bundle/NovedadPatrullasEventoJs")

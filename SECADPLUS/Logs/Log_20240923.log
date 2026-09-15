@@ -1,0 +1,240 @@
+20240923 11:38:16 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240923 11:45:19 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240923 11:51:31 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240923 11:52:23 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetModalidad:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetModalidad() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 589
+20240923 11:52:23 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetModalidad:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetModalidad() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 589
+20240923 11:52:23 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetConductas:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetConductas() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 637
+20240923 11:52:24 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetConductas:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetConductas() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 637
+20240923 11:52:24 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoArma:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoArma() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 685
+20240923 11:52:24 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoArma:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoArma() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 685
+20240923 11:52:24 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoMoviliza:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoMoviliza() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 733
+20240923 11:52:24 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoMoviliza:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoMoviliza() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 733
+20240923 11:53:11 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetModalidad:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetModalidad() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 589
+20240923 11:53:12 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetModalidad:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetModalidad() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 589
+20240923 11:53:12 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetConductas:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetConductas() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 637
+20240923 11:53:12 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetConductas:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetConductas() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 637
+20240923 11:53:12 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoArma:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoArma() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 685
+20240923 11:53:12 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoArma:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoArma() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 685
+20240923 11:53:13 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoMoviliza:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoMoviliza() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 733
+20240923 11:53:13 [M_ERROR] - Error Ejecutando PK_CADINTEGMINUTASECADSIVICC.F_GetTipoMoviliza:
+	#2	#3ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "USR_CAD.PK_CADINTEGMINUTASECADSIVICC" tiene errores
+ORA-06508: PL/SQL: no se ha encontrado la unidad de programa llamada : "USR_CAD.PK_CADINTEGMINUTASECADSIVICC"
+ORA-06512: en línea 1
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.F_GetTipoMoviliza() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 733
+20240923 12:17:45 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240923 12:19:55 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126
+20240923 14:12:44 [M_ERROR] - Error Ejecutando Conectar: Data Source=srvsecaddevic.policia.gov.co:1521/SECAD123;Persist Security Info=True;User Id=usr_cadxcrime;Password=CADXCRIME2000
+	#2	#3ORA-01017: invalid username/password; logon denied
+	#2	#3Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01017: invalid username/password; logon denied
+   en OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   en OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   en Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   en SecadDatos.Context.ConDBOracle.Conectar() en E:\SECAD_SEPT\SECAD V5\SecadDatos\Context\ConDBOracle.cs:línea 126

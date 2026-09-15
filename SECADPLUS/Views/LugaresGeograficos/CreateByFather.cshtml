@@ -1,0 +1,151 @@
+﻿@model SECADEntities.SecadLugaresGeograficos.CADLUGARES_GEOGRAFICOS
+
+@{
+    ViewBag.Title = "Creación de Lugares Geográficos"; ;
+}
+@section scripts{
+    @Scripts.Render("~/bundle/ChosenJs")
+}
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <!-- Panel -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">Creación de Lugares Geográficos</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        @using (Html.BeginForm("CreateByFather", "LugaresGeograficos", FormMethod.Post, new { @class = "form-compact" }))
+            {
+        <div class="panel-body">
+            <!-- Formulario -->            
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<form action="#">*@
+                <fieldset class="content-group">
+                    <div class="row">
+                        <div class="col-md-2 col-lg-2 obligatorio text-left form-group">
+                            <label class="control-label">Código</label>
+                            <div class="form-group">                                
+                                @Html.EditorFor(model => model.CODIGO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el código", maxlength = 6 } })
+                                @Html.ValidationMessageFor(model => model.CODIGO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 obligatorio">
+                            <label class="control-label">Descripción</label>                            
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba la descripción", maxlength = 50 } })
+                                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 obligatorio">
+                            <label class="control-label">Tipo</label>                            
+                            <div class="form-group">
+                                @Html.DropDownList("TIPO", null, htmlAttributes: new { @class = "chosen-select col-md-12" })
+                                @Html.ValidationMessageFor(model => model.TIPO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Código Dane:</label>
+                                @Html.EditorFor(model => model.CODIGO_DANE, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el código DANE", maxlength = 8 } })
+                                @Html.ValidationMessageFor(model => model.CODIGO_DANE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Código Registraduria:</label>
+                                @Html.EditorFor(model => model.CODIGO_REGISTRADURIA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el código de registraduría", maxlength = 9 } })
+                                @Html.ValidationMessageFor(model => model.CODIGO_REGISTRADURIA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label class="obligatorio control-label" data-popup="tooltip" title="" data-placement="right"
+                                       data-original-title="Seleccione código Luge">Código Luge:</label>
+                                <div class="form-group">
+                                    @Html.DropDownList("LUGE_CODIGO", null, htmlAttributes: new { @class = "chosen-select col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.LUGE_CODIGO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Departamento:</label>
+                                @Html.EditorFor(model => model.DPTO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el departamento", maxlength = 2 } })
+                                @Html.ValidationMessageFor(model => model.DPTO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Nivel:</label>
+
+                                @Html.EditorFor(model => model.NIVEL, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el Nivel(números de 1 a 5)", maxlength = 1 } })
+                                @Html.ValidationMessageFor(model => model.NIVEL, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Código Siath:</label>
+                                @Html.EditorFor(model => model.CODIGO_SIATH, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el código SIATH", maxlength = 9 } })
+                                @Html.ValidationMessageFor(model => model.CODIGO_SIATH, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Código Siedco:</label>
+                                @Html.EditorFor(model => model.CODIGO_SIEDCO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el código SIEDCO" } })
+                                @Html.ValidationMessageFor(model => model.CODIGO_SIEDCO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>Vigente:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.CheckBox("VIGENTE", htmlAttributes: new { @class = "switch checkbox checkbox-switch", data_on_color = "success", data_size = "mini", data_off_color = "danger", data_on_text = "SÍ", data_off_text = "NO", @checked = "checked" })
+                                        @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </fieldset>            
+            <!-- /formulario -->
+        </div>
+        <div class="panel-footer">
+            <!-- Botones de regresar y guardar -->
+            <div class="row">
+                <div class="col-xs-6 col-md-6text-left">
+                    <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom"
+                            data-original-title="Clic para regresar a la tabla" onclick="javascript: window.close();">
+                        <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                    </button>
+                </div>
+                <div class="col-xs-6 col-md-6 text-right">
+                    <button type="submit" value="Create" class="btn bg-teal" data-popup="tooltip"
+                            title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                        <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                    </button>
+                </div>
+            </div>
+            <!-- /botones de regresar y guardar -->
+        </div>
+            }
+    </div>
+    <!-- /panel  -->
+
+</div>
+<!-- /content area -->
+@section PostScripts{
+<script>$(".chosen-select").chosen();</script>
+    @Scripts.Render("~/bundle/CheckSwitchJs");
+}

@@ -1,0 +1,132 @@
+﻿@using Microsoft.AspNet.Identity
+@using SECADPLUS.Models;
+
+@if (Request.IsAuthenticated)
+            {
+            <!-- Navegación Principal -->
+
+                <!-- Principal -->
+    
+    foreach (Menu seleccion in Model.MenuPrincipal)
+    {
+        if (seleccion.Nivel == 1)
+        {
+            continue;
+        }
+        if (seleccion.Tipo == "MODULO" && seleccion.Nivel == 2)
+        {
+
+            <li>
+                <a href="#"><i class="icon-@seleccion.Icono"></i> <span>@seleccion.Nombre</span></a>
+                <ul>
+                    @foreach (Menu componente in Model.MenuPrincipal)
+                    {
+
+                        if (componente.Tipo == "MENU" && componente.Padre_Id == seleccion.Id)
+                        {
+                            <li>
+                                <a href="#"><i class="icon-@componente.Icono"></i><span>@componente.Nombre</span></a>
+                                <ul>
+                                    @foreach (Menu subComponente in Model.MenuPrincipal)
+                                    {
+                                        if (subComponente.Tipo == "OPCION" && subComponente.Padre_Id == componente.Id)
+                                        {
+                                            <li><a href="@Request.Url.AbsoluteUri.ToString().Replace("/Home/Menu","")@subComponente.Ruta"><i class="icon-@subComponente.Icono"></i><span>@subComponente.Nombre</span></a></li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        if (componente.Tipo == "OPCION" && componente.Padre_Id == seleccion.Id)
+                        {
+                            //Verifica si es una dirección
+                            if (@componente.Ruta.Substring(0,4).ToUpper().Equals("HTTP"))
+                            {
+                                <li><a href="@componente.Ruta"><i class="icon-@componente.Icono"></i><span>@componente.Nombre</span></a></li>
+                            }
+                            else
+                            {
+                                <li><a href="@Request.Url.AbsoluteUri.ToString().Replace("/Home/Menu","")@componente.Ruta"><i class="icon-@componente.Icono"></i><span>@componente.Nombre</span></a></li>
+                            }
+
+                        }
+                    }
+                </ul>
+            </li>
+
+        }
+        if (seleccion.Tipo == "OPCION" && seleccion.Nivel == 2)
+        {
+            <li><a href="@Request.Url.AbsoluteUri.ToString().Replace("/Home/Menu","")@seleccion.Ruta"><i class="icon-@seleccion.Icono"></i><span>@seleccion.Nombre</span></a></li>
+        }
+    }
+
+}
+else
+{
+                    <!-- Navegación Principal -->
+
+    <ul class="navigation navigation-main navigation-accordion">
+        <!-- Principal -->
+        <li class="navigation-header"><span>Se@ntilde;or usuario usted no se encuentra autenticado;</span> <i class="icon-menu" title="Menú principal"></i></li>
+    </ul>
+}
+<script>
+
+            // ========================================
+            //
+            // Main navigation
+            //
+            // ========================================
+
+            // Main navigation
+            // -------------------------
+
+            // Add 'active' class to parent list item in all levels
+            $('.navigation').find('li.active').parents('li').addClass('active');
+
+            // Hide all nested lists
+            $('.navigation').find('li').not('.active, .category-title').has('ul').children('ul').addClass('hidden-ul');
+
+            // Highlight children links
+            $('.navigation').find('li').has('ul').children('a').addClass('has-ul');
+
+            // Add active state to all dropdown parent levels
+            $('.dropdown-menu:not(.dropdown-content), .dropdown-menu:not(.dropdown-content) .dropdown-submenu').has('li.active').addClass('active').parents('.navbar-nav .dropdown:not(.language-switch), .navbar-nav .dropup:not(.language-switch)').addClass('active');
+
+            // Main navigation tooltips positioning
+            // -------------------------
+
+            // Left sidebar
+            $('.navigation-main > .navigation-header > i').tooltip({
+                placement: 'right',
+                container: 'body'
+            });
+            // Collapsible functionality
+            // -------------------------
+            // Main navigation
+            $('.navigation-main').find('li').has('ul').children('a').on('click', function (e) {
+                e.preventDefault();
+
+                // Collapsible
+                $(this).parent('li').not('.disabled').not($('.sidebar-xs').not('.sidebar-xs-indicator').find('.navigation-main').children('li')).toggleClass('active').children('ul').slideToggle(250);
+
+                // Accordion
+                if ($('.navigation-main').hasClass('navigation-accordion')) {
+                    $(this).parent('li').not('.disabled').not($('.sidebar-xs').not('.sidebar-xs-indicator').find('.navigation-main').children('li')).siblings(':has(.has-ul)').removeClass('active').children('ul').slideUp(250);
+                }
+            });
+
+            // Alternate navigation
+            $('.navigation-alt').find('li').has('ul').children('a').on('click', function (e) {
+                e.preventDefault();
+
+                // Collapsible
+                $(this).parent('li').not('.disabled').toggleClass('active').children('ul').slideToggle(200);
+
+                // Accordion
+                if ($('.navigation-alt').hasClass('navigation-accordion')) {
+                    $(this).parent('li').not('.disabled').siblings(':has(.has-ul)').removeClass('active').children('ul').slideUp(200);
+                }
+            });
+</script>

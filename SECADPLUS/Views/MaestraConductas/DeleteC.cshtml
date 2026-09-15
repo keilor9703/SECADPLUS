@@ -1,0 +1,20 @@
+﻿@model SECADEntities.SECAD.CADCONDUCTA
+
+@{
+    ViewBag.Title = "Eliminar Conducta";
+}
+
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Código: @Html.DisplayFor(model => model.CODIGO)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("DeleteC", "MaestraConductas", new { id = Model.CODIGO, idTipo = Model.TIPO, nomTipo = @ViewBag.nomTipo, idTitu = Model.COND_CODIGO, nomTitu = @ViewBag.nomTitu }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

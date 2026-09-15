@@ -1,0 +1,621 @@
+﻿@{
+    ViewBag.Title = "Revisión de Casos";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+
+<!-- Área de contenido -->
+<div class="content">
+    <div class="row">
+        <!-- Panel form 1 -->
+        <div class="col-md-12">
+            <div class="panel panel-flat">
+                <div class="panel-body">
+                    <!-- Contenido panel -->
+                    <div class="col-md-12 col-lg-6">
+                        <div class="col-md-4">
+                            <div class="form-compact">
+                                <label>Fecha y Hora:</label>
+                                <span class="col-md-12 label bg-teal-300">Esperando llamada...</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-compact">
+                                <label>No de llamada:</label>
+                                <span class="col-md-12 label bg-teal-300">000000</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-compact">
+                                <label>Responsable:</label>
+                                <span class="col-md-12 label bg-teal-300">Auxiliar Juan Perez</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-compact">
+                                <label>Modo Actual:</label>
+                                    <span class="col-md-12 label bg-teal-300">INSERTANDO</span>
+                                    <span class="col-md-12 label bg-teal-300">CONEXIONES: DIJIN: SI. TELEPOL: SI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="form-horizontal form-compact col-xs-12 col-md-6 text-center">
+                            <label class="col-xs-12 col-md-12 text-center">Prioridad</label>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4 text-orange-300">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <strong>Rutina</strong>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 col-md-4 text-success">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                        <strong>Inmd.</strong>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 col-md-4 text-danger">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                        <strong>Flash</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal form-compact col-xs-12 col-md-6 text-center">
+                            <label class="col-xs-12 col-md-12 text-center">Importancia</label>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4">
+                                    <label>
+                                        <input type="radio" name="optionsRadios2" id="optionsRadios4" value="option3" checked>
+                                        1
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 col-md-4">
+                                    <label>
+                                        <input type="radio" name="optionsRadios2" id="optionsRadios5" value="option4">
+                                        2
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 col-md-4">
+                                    <label>
+                                        <input type="radio" name="optionsRadios2" id="optionsRadios6" value="option5">
+                                        3
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal form-compact col-xs-12 col-md-12 bg-teal-100">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-compact">
+                                        <label>Asociar llamada</label>
+                                        <select class="select-search select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option value="DB_1">DB_1</option>
+                                            <option value="DB_2">DB_2</option>
+                                            <option value="DB_3">DB_3</option>
+                                            <option value="DB_4">DB_4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /contenido panel -->
+                </div>
+            </div>
+        </div>
+        <!-- /panel form 1 -->
+    </div>
+    <div class="row">
+        <!-- Panel form 1 -->
+        <div class="col-md-6">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Datos</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- Contenido panel -->
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-compact">
+                                    <label class="text-danger">Abonado *</label>
+                                    <input type="text" name="basic" class="form-control" required="required"
+                                    placeholder="Escriba nombre de usuario" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-compact">
+                                    <label>Medio Com.</label>
+                                    <select class="select-search select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <option value="DB_1">DB_1</option>
+                                        <option value="DB_2">DB_2</option>
+                                        <option value="DB_3">DB_3</option>
+                                        <option value="DB_4">DB_4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-compact">
+                            <div class="col-md-10">
+                                <label>Nombre:</label>
+                                <span class="label label-default col-md-12">Nombre</span>
+                            </div>
+                            <div class="col-md-2">
+                                <label>ACD:</label>
+                                <span class="label label-default col-md-12">Dirección</span>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Dirección:</label>
+                                <span class="label label-default col-md-12">Dirección</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Ciudad:</label>
+                                <span class="label label-default col-md-12">Cali</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Barrio:</label>
+                                <span class="label label-default col-md-12">Cali</span>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Celda:</label>
+                                <span class="label label-default col-md-12">45878</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-compact">
+                                    <label class="text-danger">Caso</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.TextBox("CADCASO_CODIGO", null,htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione caso", @readonly = true })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-compact">
+                                    <label class="text-danger">Reportado *:</label>
+                                    <div class="row">
+                                        <div class="input-group">
+                                            @Html.TextBox("DESCRIPCION", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione caso", @readonly = true })
+                                            <span class="input-group-btn">
+                                                <button type="button" onclick="cargarCasos('nuevo')" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                        title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-compact">
+                                    <label class="text-danger">Caso</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.TextBox("CADCASO_CODIGO", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione caso", @readonly = true })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-compact">
+                                    <label class="text-danger">Reportado *:</label>
+                                    <div class="row">
+                                        <div class="input-group">
+                                            @Html.TextBox("DESCRIPCION", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione caso", @readonly = true })
+                                            <span class="input-group-btn">
+                                                <button type="button" onclick="cargarCasos('nuevo')" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                        title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                    <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                    <label class="text-danger">Cuidad caso *</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                @Html.Hidden("LUGE_CIUDAD")
+                                                @Html.TextBox("CIUDAD", null, htmlAttributes: new { @class = "form-control ", placeholder = "Seleccione ciudad/municipio", @readonly = true })
+                                                @*@Html.DropDownList("LUGE_CIUDAD", null, string.Empty, htmlAttributes: new { @class = "chosen-select" })*@
+                                                <span class="input-group-btn">
+                                                    <button type="button" onclick="cargarCiudades()" class="btn btn-mixed btn-success" data-popup="tooltip"
+                                                            title="" data-placement="bottom" data-original-title="Clic para buscar">
+                                                        <b><i class="icon-select2 position-left"></i></b>Seleccionar
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                    <label>Dirección:</label>
+                                    <input type="text" class="form-control" placeholder="Escriba dirección">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-compact">
+                                    <label>Barrio</label>
+                                    <input type="text" class="form-control" placeholder="Escriba barrio">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-compact">
+                                    <label>P. card</label>
+                                    <select class="select-search select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <option value="DB_1">DB_1</option>
+                                        <option value="DB_2">DB_2</option>
+                                        <option value="DB_3">DB_3</option>
+                                        <option value="DB_4">DB_4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                    <label>Comuna</label>
+                                    <input type="text" class="form-control" placeholder="Escriba comuna">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-compact">
+                            <div class="col-md-6">
+                                <label>Latitud:</label>
+                                <span class="label label-default col-md-12">41 24.2028</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Longitud:</label>
+                                <span class="label label-default col-md-12">2 10.4418</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                    <label class="text-danger">Llamante *</label>
+                                    <input type="text" class="form-control" placeholder="Nombre del llamante">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-compact">
+                                    <label>Dirección</label>
+                                    <input type="text" class="form-control" placeholder="Dirección">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Caja de texto -->
+                        <div class="row">
+                            <div class="col-md-12 form-compact">
+                                <label class="text-danger">Descripción hechos *</label>
+                                <textarea rows="8" cols="5" class="form-control" placeholder="Escriba descripción de los hechos"></textarea>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- /contenido panel -->
+                </div>
+            </div>
+        </div>
+        <!-- /panel form 1 -->
+        <!-- Panel form 2 -->
+        <div class="col-md-6">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Canales</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-compact">
+                                    <label>Tipo</label>
+                                    <select class="select-search select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <option value="DB_1">DB_1</option>
+                                        <option value="DB_2">DB_2</option>
+                                        <option value="DB_3">DB_3</option>
+                                        <option value="DB_4">DB_4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-compact">
+                                    <label>Calidad</label>
+                                    <select class="select-search select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <option value="DB_1">DB_1</option>
+                                        <option value="DB_2">DB_2</option>
+                                        <option value="DB_3">DB_3</option>
+                                        <option value="DB_4">DB_4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover table-bordered table-xxs datatable-basic">
+                            <thead>
+                                <tr>
+                                    <th>Canales de atención asignados</th>
+                                    <th>Acción</th>
+                                    <th>Canal despacho</th>
+                                    <th>Est.</th>
+                                    <th>Evento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>4875</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-down132"></i>
+                                        </button>
+                                    </td>
+                                    <td>ASVE</td>
+                                    <td>Asociación de Veteranos</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>3558</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-down132"></i>
+                                        </button>
+                                    </td>
+                                    <td>DERCO</td>
+                                    <td>Pensiones</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>6895</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-down132"></i>
+                                        </button>
+                                    </td>
+                                    <td>FREDA</td>
+                                    <td>Fondo Rotatorio</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>1045</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-down132"></i>
+                                        </button>
+                                    </td>
+                                    <td>ARCA</td>
+                                    <td>Inventarios</td>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <td>1045</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-down132"></i>
+                                        </button>
+                                    </td>
+                                    <td>ARCA</td>
+                                    <td>Inventarios</td>
+                                    <td>60</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-bordered table-hover table-xxs datatable-basic">
+                            <thead>
+                                <tr>
+                                    <th>Canales de atención</th>
+                                    <th>Disponibles</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1876</td>
+                                    <td>ASVE</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3558</td>
+                                    <td>DERCO</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6895</td>
+                                    <td>FREDA</td>
+                                    <td>
+                                        <button class="btn btn-default bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1045</td>
+                                    <td>ARCA</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1045</td>
+                                    <td>ARCA</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-hover table-bordered table-xxs datatable-basic">
+                            <thead>
+                                <tr>
+                                    <th>Canales de atención</th>
+                                    <th>Disponibles</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1935</td>
+                                    <td>ASVE</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3558</td>
+                                    <td>DERCO</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6895</td>
+                                    <td>FREDA</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1045</td>
+                                    <td>ARCA</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1045</td>
+                                    <td>ARCA</td>
+                                    <td>
+                                        <button class="btn bg-teal btn-xs" type="button" data-popup="tooltip" title=""
+                                        data-placement="bottom" data-original-title="Clic para ver">
+                                        <i class="icon-arrow-up13"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5 col-lg-offset-3">
+                            <div class="form-compact form-horizontal">
+                                <label class="col-md-4 text-danger control-label text-right">Estado *</label>
+                                <div class="col-md-8">
+                                    <select class="select-search select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <option value="DB_1">DB_1</option>
+                                        <option value="DB_2">DB_2</option>
+                                        <option value="DB_3">DB_3</option>
+                                        <option value="DB_4">DB_4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-compact">
+                                <label>Cl. superv:</label>
+                                <span class="label label-default col-md-12">Esperando llamada...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /panel form 2 -->
+    </div>
+</div>
+
+@Scripts.Render("~/bundle/ModalsJs")
+@Scripts.Render("~/bundle/FormularioJs")
+@Scripts.Render("~/bundle/InputsJs")
+@Scripts.Render("~/bundle/CheckBoxJs")
+
+<script>
+    //var globalSitio = @ViewBag.globalSitio;
+    //var globalIdentificacion = '@ViewBag.globalIdentificacion';
+    //var globalFuerza = @ViewBag.globalFuerza;
+    //var globalCanal = @ViewBag.globalCanal;
+    //var globalClaseTurno = '@ViewBag.globalClaseTurno';
+    //var globalUsuario = '@ViewBag.globalUsuario';
+
+    //var _idFuerza = @ViewBag.idFuerza;
+    //var _idCanal = @ViewBag.idCanal;
+
+    //var _tiempoRefresco = @ViewBag.tiempoRefresco;
+
+    //var urlTablaRecibidas = '@Url.Action("VerRecibidas", "PendientesDespacho")';
+    //var urlTablaRecepcion = '@Url.Action("VerRecepcion", "PendientesDespacho")';
+
+    //var urlProcesarEvento = '@Url.Action("ProcesarEvento", "PendientesDespacho")';
+
+    //AplicarPluginTabla("tabla1");
+    //AplicarPluginTabla("tabla2");
+</script>

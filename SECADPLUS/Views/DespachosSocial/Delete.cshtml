@@ -1,0 +1,21 @@
+﻿
+@model SECADEntities.SecadEntities.CADEVENTO_FICHASSOCIAL
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Consecutivo: @Html.DisplayFor(model => model.NRO_FICHA)
+    <br />
+   
+
+    @using (Html.BeginForm("Delete", "DespachosSocial", new { intSitioGraba = Model.EVEN_SITIOGRABACION, intNumeroEvento = Model.EVEN_NUMEEVENTO, strNroFicha = Model.NRO_FICHA}, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>
+

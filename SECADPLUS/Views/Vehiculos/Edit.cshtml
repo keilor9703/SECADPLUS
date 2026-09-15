@@ -1,0 +1,102 @@
+﻿@model SECADEntities.SECAD.CADVEHICULO
+@section scripts{
+    @Scripts.Render("~/bundle/CheckSwitchJs")
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/DatePickerJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div id="resultadoAjax"></div>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Edición Vehículo</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list ">
+                        <li><a data-action="collapse"></a></li>
+                    </ul>
+                </div>
+            </div>
+@using (Html.BeginForm("Edit", "Vehiculos", FormMethod.Post, new { @class = "form-compact" }))
+{
+            <div class="panel-body">
+                
+                    <fieldset class="content-group">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.CADUNID_FUERZA, new { @class = "form-control", Value = ViewBag.UNIDAD_FUERZA })
+                        @Html.HiddenFor(model => model.CADUNID_CODIGO, new { @class = "form-control", Value = ViewBag.UNIDAD_CODIGO })
+                        @Html.HiddenFor(model => model.CADCLBI_TIBI_CODIGO, new { @class = "form-control", id = "hdTIBI" })
+                        @Html.HiddenFor(model => model.CADCLBI_CODIGO, new { @class = "form-control", id = "hdCODIGO" })
+                        <div class="row">
+                            <div class="col-xs-2 col-md-2 col-md-offset-1 form-group obligatorio">
+                                @Html.LabelFor(model => model.NUME_SIGLA, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.NUME_SIGLA, new { htmlAttributes = new { @class = "form-control", @Readonly = true } })
+                                    @Html.ValidationMessageFor(model => model.NUME_SIGLA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                                @Html.LabelFor(model => model.NUME_PLACA, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.NUME_PLACA, new { htmlAttributes = new { @class = "form-control", @required = true } })
+                                    @Html.ValidationMessageFor(model => model.NUME_PLACA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group obligatorio ">
+                                @Html.LabelFor(model => model.CADMARC_CODIGO, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("CADMARC_CODIGO", null, string.Empty, new { @class = " chosen-select", @required = true })
+                                    @Html.ValidationMessageFor(model => model.CADMARC_CODIGO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group ">
+                                @Html.LabelFor(model => model.CADESTAD_CODIGO, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("CADESTAD_CODIGO", null, string.Empty, new { @class = "form-control chosen-limpiar" })
+                                    @Html.ValidationMessageFor(model => model.CADESTAD_CODIGO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-md-2 text-left form-group ">
+                                @Html.LabelFor(model => model.CADCLBI_TIBI_CODIGO, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("CLASES", null, string.Empty, new { @class = "form-control chosen-limpiar", id = "listaCanales" })
+                                    @Html.ValidationMessageFor(model => model.CADCLBI_TIBI_CODIGO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>                        
+                    </fieldset>
+                
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6text-left">
+
+                        <a class="btn bg-teal" data-popup="tooltip" href="@Url.Action("Index", new { intUnidadFuerza = ViewBag.UNIDAD_FUERZA, intUnidadCodigo = ViewBag.UNIDAD_CODIGO })"
+                           title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                            <b><i class="glyphicon glyphicon-backward position-left"></i></b>Regresar
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-right">
+                        <button class="btn bg-teal" data-popup="tooltip"
+                                title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+                }
+            <!-- /formulario -->
+        </div>
+    </div>
+    <div>
+    </div>
+    </div>
+    @section PostScripts{
+        @Scripts.Render("~/bundle/MediosControllerJs")
+        <script>
+            IniciarElementos();
+        </script>
+    }

@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7BC1FC8-621B-4B9E-BD7B-3316165074E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECADEntities</RootNamespace>
+    <AssemblyName>SECADEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.24160719\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\Auditoria.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auditoria.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\Auditoria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auditoria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\Auditoria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auditoria.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADACCESORESTRINGIDO.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADANOTACIONE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADANOTACIONESRECURSO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADARMDISPONIBLE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCARGO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCLASIFICACION_CIERRE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNOBIENE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNOBIENMEDISP.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNOCOMP.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNOCOMPMEDISP.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNOPER.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONDTURNOPERSMEDISP.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADCONSIGNA.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADDIRECTORIO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADESQUEMA_AUTENTICACION.cs">
+      <DependentUpon>IngresoSistema.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOACTIVO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOFICSOC_PERSONAS.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOFICSOC_TR.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOFICSOC_TS.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOMEDIO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOMEDIOS_HORASADIC.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOMEDIOS_RUTAS.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOS_CNP_COMP.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTOS_FOTOS.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEVENTO_FICHASSOCIAL.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADEXCEPCION.cs">
+      <DependentUpon>SECADExcepcion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADINGRESOSISTEMA_AUD.cs">
+      <DependentUpon>IngresoSistema.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADLOCALIZACIONMEDIO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADMEDIOSDISPONIBLE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADMODALIDADE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETAUDITORIA.cs">
+      <DependentUpon>Auditoria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETELEMENTO.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETMAQUINA.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETOID.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETOIDROLE.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETPERFIL.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETPERFIL_ELE_PERMISO.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETPERMISO.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETROLE.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETROLPERFIL.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNETTIPO_ELEMENTO.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADNOVEDADESPATRULLA.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEATREEV_DATASOCMUJ_RAE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEATREEV_DATASOCMUJ_RM.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEATREEV_DATASOCMUJ_ROI.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEDIDO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEDIDOS_CANALES.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEDIDOS_DOCUMENTOS.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPEDIDOS_INFORMACION.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPERDISPONIBLE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPERSATEND_REMEVENMUJ.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPERSONAS_ATENDIDAS.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPOLIGRAMA.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADPUNTOS_CARDINALES.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADRADIODISPONIBLE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADREMOTO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADREVISTA.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADTIPOSERVICIO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADTIPOSREMISIONE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADTURNO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADUNITURNO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADUSUARIO.cs">
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADVEHIDISPONIBLE.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CADVISORPARAMETRO.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CAD_ARCHIVOSPLANOS_SP.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CLENCUESTA_CALIDAD_LLAMADA.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\CLNOVEDADES_ENCUESTA.cs">
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\DespachosRecepcionMinuta.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DespachosRecepcionMinuta.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\DespachosRecepcionMinuta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DespachosRecepcionMinuta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\DespachosRecepcionMinuta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DespachosRecepcionMinuta.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\ExtCadCondTurnoBien.cs" />
+    <Compile Include="SecadEntities\ExtCadCondTurnoPersona.cs" />
+    <Compile Include="SecadEntities\ExtCadEventosCNP.cs" />
+    <Compile Include="SecadEntities\ExtCadEventos_Fotos.cs" />
+    <Compile Include="SecadEntities\ExtCadNetRolPerfil.cs" />
+    <Compile Include="SecadEntities\ExtCadNovedadesPatrulla.cs" />
+    <Compile Include="SecadEntities\ExtCadPoligramas.cs" />
+    <Compile Include="SecadEntities\ExtCadRevista.cs" />
+    <Compile Include="SecadEntities\ExtCadTurno.cs" />
+    <Compile Include="SecadEntities\ExtCadUsuario.cs" />
+    <Compile Include="SecadEntities\ExtCadVisorParametros.cs" />
+    <Compile Include="SecadEntities\ExtCondTurnBienMed.cs" />
+    <Compile Include="SecadEntities\ExtCondTurnComp.cs" />
+    <Compile Include="SecadEntities\ExtContextos.cs" />
+    <Compile Include="SecadEntities\ExtElemento.cs" />
+    <Compile Include="SecadEntities\ExtPerfil.cs" />
+    <Compile Include="SecadEntities\ExtPerfilEleRol.cs" />
+    <Compile Include="SecadEntities\ExtTurnCompMedio.cs" />
+    <Compile Include="SecadEntities\Ext_CadCondTurnoPersoMedisp.cs" />
+    <Compile Include="SecadEntities\IngresoSistema.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresoSistema.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\IngresoSistema.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresoSistema.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\IngresoSistema.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresoSistema.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\PermisosModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermisosModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\PermisosModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermisosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\PermisosModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermisosModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\SECADExcepcion.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECADExcepcion.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\SECADExcepcion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECADExcepcion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadEntities\SECADExcepcion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECADExcepcion.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADBANNERIMAGENE.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADBARRIO.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADCOMUNA.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADFUERZA.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADGRADO.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADLUGARES_GEOGRAFICOS.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADPOLICIA.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\CADPOLICIAS_FOTOS.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\ComunasBarriosModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComunasBarriosModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\ComunasBarriosModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\ComunasBarriosModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComunasBarriosModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\ExtCadBannerImagene.cs" />
+    <Compile Include="SecadLugaresGeograficos\ExtCadBarrio.cs" />
+    <Compile Include="SecadLugaresGeograficos\ExtCadClasificacionCierre.cs" />
+    <Compile Include="SecadLugaresGeograficos\ExtCadComuna.cs" />
+    <Compile Include="SecadLugaresGeograficos\ExtCadLugaresGeograficos.cs" />
+    <Compile Include="SecadLugaresGeograficos\ExtCadPolicia.cs" />
+    <Compile Include="SecadLugaresGeograficos\ExtContextos.cs" />
+    <Compile Include="SecadLugaresGeograficos\V_EMPLEADOS.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\V_PARQUEADEROS.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\V_PERSONAS.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecadLugaresGeograficos\V_SITIOS_IMPORTANTES.cs">
+      <DependentUpon>ComunasBarriosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADANOTAGRAL.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADARMA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADBARRIO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADBIENE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADBIENES_IMPLICADOS.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADBIENES_NOVEDADES.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCANALE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCANALES_BARRIOS.cs">
+      <DependentUpon>ModelCasos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCARACTERISTICA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCASO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCASOS_CANAL.cs">
+      <DependentUpon>ModelCasos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCLASES_BIEN.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCLASES_SITIO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCLASIFICACION_CIERRE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCOLORE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCONDCLASESBIEN.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCONDCLBIPONDERADO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCONDUCTA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADCONEXION.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADEQUIPOS.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADFUERZA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADINCIDENTES_ANTECEDENTE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADINFRACCIONES_TRANSITO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADLINEAS_MARCA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADLUGARES_GEOGRAFICOS.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADMARCA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADMENSAJE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADMENSAJES_TEXTO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADMENSAJES_TEXTO_USUARIOS.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADPARQUEADERO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADPATRULLA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADPREGUNTA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADPREGUNTASCASO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADRADIO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADREFERENCIA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADREFERENCIASSECAD.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADREGIONALE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADSITIO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADSITIOS_GRABACION.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADTIPOSNOVEDADE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADTIPOS_BIEN.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADUNIDADE.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADUNIDADES_MEDIDA.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\CADVEHICULO.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\ExCadPreguntas.cs" />
+    <Compile Include="SECAD\ExCadSitioGrabacion.cs" />
+    <Compile Include="SECAD\ExrCadClasesBien.cs" />
+    <Compile Include="SECAD\ExtCadAnotaGral.cs" />
+    <Compile Include="SECAD\ExtCadArma.cs" />
+    <Compile Include="SECAD\ExtCadBienes.cs" />
+    <Compile Include="SECAD\ExtCadBienesImplicados.cs" />
+    <Compile Include="SECAD\ExtCadBienNovedades.cs" />
+    <Compile Include="SECAD\ExtCadCanales.cs" />
+    <Compile Include="SECAD\ExtCadCaracteristicas.cs" />
+    <Compile Include="SECAD\ExtCadCasos.cs" />
+    <Compile Include="SECAD\ExtCadCasosCanal.cs" />
+    <Compile Include="SECAD\ExtCadClasificacionCierre.cs" />
+    <Compile Include="SECAD\ExtCadConCIBiponderado.cs" />
+    <Compile Include="SECAD\ExtCadConClasesBien.cs" />
+    <Compile Include="SECAD\ExtCadConductas.cs" />
+    <Compile Include="SECAD\ExtCadEquiposComputo.cs" />
+    <Compile Include="SECAD\ExtCadFuerza.cs" />
+    <Compile Include="SECAD\ExtCadIncidenteAntecedente.cs" />
+    <Compile Include="SECAD\ExtCadInfraccionesTransito.cs" />
+    <Compile Include="SECAD\ExtCadMarcas.cs" />
+    <Compile Include="SECAD\ExtCadMensajes.cs" />
+    <Compile Include="SECAD\ExtCadMensajesTexto.cs" />
+    <Compile Include="SECAD\ExtCadMensajesTextoUsuarios.cs" />
+    <Compile Include="SECAD\ExtCadParqueadero.cs" />
+    <Compile Include="SECAD\ExtCadPatrulla.cs" />
+    <Compile Include="SECAD\ExtCadPreguntasCasos.cs" />
+    <Compile Include="SECAD\ExtCadRadios.cs" />
+    <Compile Include="SECAD\ExtCadReferencia.cs" />
+    <Compile Include="SECAD\ExtCadReferenciasSECAD.cs" />
+    <Compile Include="SECAD\ExtCadTiposBien.cs" />
+    <Compile Include="SECAD\ExtCadTiposNovedades.cs" />
+    <Compile Include="SECAD\ExtCadUnidades.cs" />
+    <Compile Include="SECAD\ExtCadVehiculo.cs" />
+    <Compile Include="SECAD\ExtContextos.cs" />
+    <Compile Include="SECAD\ExtPatrulla.cs" />
+    <Compile Include="SECAD\ExtSitio.cs" />
+    <Compile Include="SECAD\ModelCasos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCasos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\ModelCasos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCasos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\ModelCasos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCasos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\SECAD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECAD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\SECAD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\SECAD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECAD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\V_BARRIOS_CANALES.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\V_FORM_SITIOS_GRABACION.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECAD\V_FUERZAS.cs">
+      <DependentUpon>SECAD.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="SecadEntities\IngresoSistema.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IngresoSistema.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="SecadEntities\DespachosRecepcionMinuta.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DespachosRecepcionMinuta.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="SecadEntities\Auditoria.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Auditoria.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SecadEntities\Auditoria.edmx.diagram">
+      <DependentUpon>Auditoria.edmx</DependentUpon>
+    </None>
+    <None Include="SecadEntities\DespachosRecepcionMinuta.edmx.diagram">
+      <DependentUpon>DespachosRecepcionMinuta.edmx</DependentUpon>
+    </None>
+    <None Include="SecadEntities\IngresoSistema.edmx.diagram">
+      <DependentUpon>IngresoSistema.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SecadEntities\PermisosModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PermisosModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SecadEntities\PermisosModel.edmx.diagram">
+      <DependentUpon>PermisosModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SecadEntities\SECADExcepcion.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECADExcepcion.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SecadEntities\SECADExcepcion.edmx.diagram">
+      <DependentUpon>SECADExcepcion.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SecadLugaresGeograficos\ComunasBarriosModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ComunasBarriosModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SecadLugaresGeograficos\ComunasBarriosModel.edmx.diagram">
+      <DependentUpon>ComunasBarriosModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SECAD\ModelCasos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCasos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECAD\ModelCasos.edmx.diagram">
+      <DependentUpon>ModelCasos.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SECAD\SECAD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECAD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECAD\SECAD.edmx.diagram">
+      <DependentUpon>SECAD.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SecadEntities\Auditoria.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Auditoria.edmx</DependentUpon>
+      <LastGenOutput>Auditoria.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\Auditoria.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Auditoria.edmx</DependentUpon>
+      <LastGenOutput>Auditoria.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\DespachosRecepcionMinuta.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DespachosRecepcionMinuta.edmx</DependentUpon>
+      <LastGenOutput>DespachosRecepcionMinuta.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\DespachosRecepcionMinuta.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DespachosRecepcionMinuta.edmx</DependentUpon>
+      <LastGenOutput>DespachosRecepcionMinuta.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\IngresoSistema.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IngresoSistema.edmx</DependentUpon>
+      <LastGenOutput>IngresoSistema.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\IngresoSistema.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IngresoSistema.edmx</DependentUpon>
+      <LastGenOutput>IngresoSistema.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\PermisosModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PermisosModel.edmx</DependentUpon>
+      <LastGenOutput>PermisosModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\PermisosModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PermisosModel.edmx</DependentUpon>
+      <LastGenOutput>PermisosModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\SECADExcepcion.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SECADExcepcion.edmx</DependentUpon>
+      <LastGenOutput>SECADExcepcion.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadEntities\SECADExcepcion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SECADExcepcion.edmx</DependentUpon>
+      <LastGenOutput>SECADExcepcion.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadLugaresGeograficos\ComunasBarriosModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComunasBarriosModel.edmx</DependentUpon>
+      <LastGenOutput>ComunasBarriosModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SecadLugaresGeograficos\ComunasBarriosModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComunasBarriosModel.edmx</DependentUpon>
+      <LastGenOutput>ComunasBarriosModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SECAD\ModelCasos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCasos.edmx</DependentUpon>
+      <LastGenOutput>ModelCasos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SECAD\ModelCasos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCasos.edmx</DependentUpon>
+      <LastGenOutput>ModelCasos.cs</LastGenOutput>
+    </Content>
+    <Content Include="SECAD\SECAD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SECAD.edmx</DependentUpon>
+      <LastGenOutput>SECAD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SECAD\SECAD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SECAD.edmx</DependentUpon>
+      <LastGenOutput>SECAD.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

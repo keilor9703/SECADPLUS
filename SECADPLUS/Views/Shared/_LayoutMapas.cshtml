@@ -1,0 +1,118 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="~/Mapas/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Mapas/css/animate.css" rel="stylesheet" />
+    <link href="~/Mapas/css/style.css" rel="stylesheet" />
+    <link href="~/Mapas/css/Sivicc2.css" rel="stylesheet" />
+    <link href="~/Mapas/css/toastr.min.css" rel="stylesheet" />
+    <link href="~/Mapas/css/cmn-toggle.css" rel="stylesheet" />
+    <link href="~/Mapas/css/datepicker3.css" rel="stylesheet">
+    <link href="~/Content/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="~/Mapas/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Mapas/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/Mapas/css/lightbox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
+    <link href="~/Mapas/css/EstilosMapas.css" rel="stylesheet" />
+</head>
+<title>Visor Geográfico SIVICC</title>
+<body class="claro">
+    @RenderBody()
+    <div id="map"></div>
+
+    <div class="modal inmodal in modal-oculto" id="div_modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated bounceInUp">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="cerrarModal()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <div class="modal-header-container">
+                        <i class="fa modal-icon fa-cog fa-spin"></i>
+                        <h4 class="modal-title">Cargando...</h4>
+                        <small class="font-bold">Se está cargando el formulario, espere por favor.</small>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="alerta-modal"></div>
+                    <iframe id="iframe_modal" class="iframe_modal"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal inmodal in modal-oculto" id="div_modal_alerta" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-pequeno">
+            <div class="modal-content animated bounceInUp">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="cerrarModal()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <div class="modal-header-container">
+                        <i class="fa modal-icon fa-warning"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h4><div class="model-body-alerta"></div></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="cerrarModal()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop in modal-oculto"></div>
+    <div class="footer">
+        <div class="pull-right">
+            SIVICC II<strong>Sistema Visor Geográfico</strong>
+        </div>
+        <div class="footer-texto">
+            <strong>República de Colombia, Ministerio de Defensa.</strong> Policía Nacional &copy; 2019
+        </div>
+    </div>
+    <script src="~/Mapas/js/jquery-3.1.1.js"></script>
+    <script src="~/Content/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="~/Mapas/js/inspinia-maps.js"></script>
+    <!-- jQuery UI -->
+    <script src="~/Mapas/js/jquery-ui.min.js"></script>
+    <!-- Plugins -->
+    <script src="~/Mapas/js/toastr.min.js"></script>
+    <script src="~/Mapas/js/spin.min.js"></script>
+    <script src="~/Mapas/js/ladda.min.js"></script>
+    <script src="~/Mapas/js/ladda.jquery.min.js"></script>
+    <script src="~/Mapas/js/bootstrap-datepicker.js"></script>
+    <script src="~/Mapas/js/bootstrap-datepicker-es.min.js"></script>
+    <script src="~/Mapas/js/moment-with-locales.js"></script>
+    <script src="~/Mapas/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Mapas/js/inputmask.js"></script>
+    <script src="~/Mapas/js/jquery.inputmask.js"></script>
+    <script src="~/Mapas/js/inputmask.extensions.js"></script>
+    <script src="~/Mapas/js/inputmask.date.extensions.js"></script>
+    <script src="~/Mapas/js/inputmask.numeric.extensions.js"></script>
+    @*<script src="~/Scripts/ListaSeleccion.js"></script>*@
+    @*<script src="~/Content/select2/dist/js/select2.full.min.js"></script>*@
+    <script src="~/Mapas/js/sweetalert.min.js"></script>
+    <script src="~/Mapas/js/context-menu.min.js"></script>
+    <script src="~/Mapas/js/waitingfor.js"></script>
+    <script src="~/Mapas/js/lightbox-2.6.min.js"></script>
+
+    <!-- ArcGIS -->
+    <script src="https://js.arcgis.com/3.20/"></script>
+    <script src="~/Mapas/js/MapaBase.js"></script>
+    <script src="~/Mapas/js/html2canvas.js"></script>
+    <script src="~/Mapas/js/terraformer.min.js"></script>
+    <script src="~/Mapas/js/terraformer-arcgis-parser.min.js"></script>
+    <!-- Newton -->
+
+    <script src="~/Mapas/js/Utilidades.js"></script>
+    <script src="~/Mapas/js/Ajax.js"></script>
+    <script src="~/Mapas/js/Mensajes.js"></script>
+    @*<script src="~/Mapas/js/Controles.js"></script>*@
+    <script src="~/Mapas/js/TablaPaginada.js"></script>
+    <script src="~/Mapas/js/Modal.js"></script>
+    <script src="~/Mapas/js/Upload.js"></script>
+
+    @RenderSection("Scripts")
+</body>
+</html>

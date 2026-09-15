@@ -1,0 +1,375 @@
+﻿@model SECADEntities.SecadEntities.CADUSUARIO
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+    @Scripts.Render("~/bundle/DatePickerJs")
+}
+<!-- Content area -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    <div class="row" id="segundoContenedor"></div>
+    <!-- Formulario 1 -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">Creación de Usuarios</h5>
+            <div class="heading-elements">
+                <ul class="icons-list ">
+                    <li><a data-action="collapse"></a></li>
+                </ul>
+            </div>
+        </div>
+        @using (Html.BeginForm("CrearUsuario", "Account", FormMethod.Post, new { @class = "form-compact form-validate-jquery", id="form_usuarios" }))
+        {
+            <div class="panel-body">
+                @Html.AntiForgeryToken()
+                <fieldset class="content-group ">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <input type="hidden" id="hdOpcion" name="hdOpcion" value="@ViewBag.OPCION">
+                    <div class="row ocultar">         
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            @Html.LabelFor(model => model.USUARIO, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.USUARIO, new { htmlAttributes = new { @class = "form-control", @Required = true, placeholder = "Usuario", id="txtUsuario",  } })
+                                @Html.ValidationMessageFor(model => model.USUARIO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>                                      
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            @Html.LabelFor(model => model.IDENTIFICACION, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.IDENTIFICACION, new { htmlAttributes = new { @class = "form-control", id = "txtCedula", type="number", @Required = true, placeholder="Identificación" } })
+                                @Html.ValidationMessageFor(model => model.IDENTIFICACION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-md-4 text-left form-group">
+                            
+                            <div class="col-md-12">
+                                <label for="txtNombre">Nombres</label>
+                                <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombres" readonly="readonly" value="@ViewBag.Nombre"/>
+                            </div>
+                        </div> 
+                        <div class="col-xs-2 col-md-2 text-left form-group">                            
+                            <div class="col-md-12">
+                                <label for="txtNombre">Grado</label>
+                                <input type="text" id="txtGrado" name="txtGrado" class="form-control" placeholder="grado" readonly="readonly" value="@ViewBag.Grado" />
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="row ocultar">
+                        <div class="col-xs-2 col-md-2 text-left form-group">                            
+                            <div class="col-md-12">
+                                <label for="txtDptoId">Código</label>
+                                @Html.EditorFor(model => model.LUGE_CODIGO_DPTO, new { htmlAttributes = new { @class = "form-control", id="txtDptoId", @readonly=true, placeholder="Código"} })
+                                @Html.ValidationMessageFor(model => model.LUGE_CODIGO_DPTO, "", new { @class = "text-danger" })
+                            </div>
+                        </div> 
+                        <div class="col-xs-2 col-md-2 text-left form-group">
+                            <div class="col-md-12">       
+                                <label for="txtDpto">Departamento</label>                         
+                                <input type="text" id="txtDpto" name="txtDpto" class="form-control" readonly placeholder="Departamento" value="@ViewBag.Dpto" />
+                            </div>
+                        </div> 
+                        <div class="col-xs-2 col-md-2 text-left form-group">                            
+                            <div class="col-md-12">
+                                <label for="txtCiudadId">Código</label>
+                                @Html.EditorFor(model => model.LUGE_CODIGO_CAD, new { htmlAttributes = new { @class = "form-control", id = "txtCiudadId", @readonly = true, placeholder="Código" } })
+                                @Html.ValidationMessageFor(model => model.LUGE_CODIGO_CAD, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group">                            
+                            <div class="col-md-12">
+                                <label for="txtCiudad" class="control-label">Ciudad</label>
+                                <input type="text" id="txtCiudad" name="txtCiudad" class="form-control" readonly placeholder="Ciudad" value="@ViewBag.Ciudad" />
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            <div class="col-md-12">
+                                <label for="txtUnidadId" class="control-label">Código</label>
+                                @Html.EditorFor(model => model.CADUNDE_CODIGO, new { htmlAttributes = new { @class = "form-control", id="txtUnidadId", @readonly=true, placeholder="Código" } })
+                                @Html.HiddenFor(model => model.CADUNDE_FUERZA, new { id = "hdFuerza" })
+                                @Html.ValidationMessageFor(model => model.CADUNDE_CODIGO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            <div class="col-md-12">
+                                <label for="txtUnidad" class="control-label">Unidad</label>
+                                <input type="text" id="txtUnidad" name="txtUnidad" class="form-control" readonly placeholder="Unidad" value="@ViewBag.Unidad"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row ocultar">
+                      
+                        <div class="col-xs-2 col-md-2 col-lg-2 text-left form-group">
+                            <div class="form-group col-lg-12">
+                                <label for="txtCiudad" class="control-label">Fecha Activación</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                    @Html.EditorFor(model => model.FECHA_DESDE, new { htmlAttributes = new { @class = "form-control", placeholder = "Fecha Desde", id = "fecha_desde" } })
+                                    @Html.ValidationMessageFor(model => model.FECHA_DESDE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 col-lg-2 text-left form-group">
+                            <div class="form-group col-lg-12">
+                                <label for="" class="control-label"><b>Fecha Desactivación</b></label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                                    @Html.EditorFor(model => model.FECHA_HASTA, new { htmlAttributes = new { @class = "form-control", placeholder = "Fecha Hasta", id = "fecha_hasta" } })
+                                    @Html.ValidationMessageFor(model => model.FECHA_HASTA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-2 col-md-2 text-left form-group">
+                            <div class="col-md-12">
+                                <label for="listCondicion">Condicion</label>
+                                @Html.DropDownList("CONDICION", null, string.Empty, new { @class = "chosen-clear form-control", @id = "listCondicion", placeholder="Condición" })
+                                @Html.ValidationMessageFor(model => model.CONDICION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            <div class="col-md-12">
+                                <label for="listSitio" class="control-label">Sitio</label>
+                                @Html.DropDownList("SITIO_GRABACION", null, string.Empty, new { @class = "chosen-clear form-control", @id = "listSitio", onChange = "ObtenerEntidades()" })
+                                @Html.ValidationMessageFor(model => model.SITIO_GRABACION, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group">
+                            <div class="col-md-12">
+                                <label for="listEntidad">Entidad</label>
+                                <select id="listEntidad" class="chosen-clear form-control" onchange="ObtenerCanales()"><option></option></select>
+                                @Html.HiddenFor(model => model.CADCANA_FUERZA_ID, new {  id = "hdEntidad" })
+                                @Html.ValidationMessageFor(model => model.CADCANA_FUERZA_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group">
+                            <div class="col-md-12">
+                                
+                                <label for="listCanal">Canal </label>
+                                <select id="listCanal" class="chosen-clear form-control" onchange="SeleccionarCanal(this)"><option></option></select>
+                                @Html.HiddenFor(model => model.CADCANA_CODIGO, new {  id = "hdCanal" } )
+                                @Html.ValidationMessageFor(model => model.CADCANA_CODIGO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">                        
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio ">
+                            <div class="col-md-12">                               
+                                <label for="usuaroiOid" class="control-label">Usuario Oid</label>
+                                <input type="text" name="usuarioOid" id="usuarioOid" class="form-control" required="required" placeholder="Usuario Empresarial" value="@ViewBag.UsuarioOid" >
+                                @Html.HiddenFor(model => model.USUARIO_OID_ID )                                
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            <div class="col-md-12">
+                                <label for="listCondicion">Contraseña</label>
+                                <input type="password" name="password" id="password" class="form-control" required="required" placeholder="Se requieren minímo 5 caracteres">
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio">
+                            <div class="col-md-12">
+                                <label for="listCondicion">Repetir Contraseña</label>
+                                <input type="password" name="repeat_password" id="repeat_password" class="form-control" required="required" placeholder="Repita la contraseña">
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio ocultar">                            
+                            <div class="col-md-12">
+                                <label for="cbxOid" class="control-label">Vigente</label>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="checkbox" id="cbxVigente" name="cbxVigente" checked="checked" class="switch checkbox checkbox-switch" data-on-color="success" data-size="mini" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                                @Html.HiddenFor(model => model.VIGENTE, new { id = "hdVigente" })
+                                @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-md-2 text-left form-group obligatorio ocultar">
+
+                            <div class="col-md-12">
+                                <label for="cbxOid" class="control-label">Autentica por Oid</label>
+                            </div>
+                            <div class="col-md-12">
+                               <input type="checkbox" id="cbxOid" name="cbxOid" checked="checked" class="switch checkbox checkbox-switch" data-on-color="success" data-size="mini" data-off-color="danger" data-on-text="SI" data-off-text="NO">
+                                @Html.HiddenFor(model => model.AUTENTICA_OID, new { id = "hdOid" })
+                                @Html.ValidationMessageFor(model => model.AUTENTICA_OID, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.USUARIO_OID, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                      
+                    </div>
+                    
+                </fieldset>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="form-group col-xs-6 col-md-6text-left">
+                        <button type="button" class="btn bg-teal" data-popup="tooltip" title="" data-placement="bottom" id="btnRegresar"
+                                data-original-title="Clic para regresar a la tabla" onclick="location.href='@Url.Action("AdministrarUsuarios")'">
+                            <b><i class="glyphicon glyphicon-arrow-left position-left"></i></b>Regresar
+                        </button>
+                    </div>
+                    <div class="form-group col-xs-6 col-md-6 text-right">
+                        <button class="btn bg-teal" data-popup="tooltip" id="btnGuardarCrear"
+                                title="" data-placement="bottom" data-original-title="Clic para guardar cambios">
+                            <b><i class="glyphicon glyphicon-save position-left"></i></b>Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- /formulario 1 -->
+</div>
+<!-- /content area -->
+<!-- ModalDeptos modal Departametos-->
+<div id="ModalDeptos" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title" >Departamentos</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>                
+                <div class="row form-compact">
+                    <div class="md-col-12">
+                        <table id="tblDeptos" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">                        
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalDeptos modal -->
+<!-- ModalCiudades modal Ciudades-->
+<div id="ModalCiudades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title" >Ciudades</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="md-col-12">
+                        <table id="tblCiudades" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                    
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalCiudades modal -->
+<!-- ModalUnidades modal Unidades-->
+<div id="ModalUnidades" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Unidades</h5>
+            </div>
+            <div class="modal-body ">
+                <div id="modalAlertaDepto"></div>
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <table id="tblUnidades" class="table table-hover table-xxs datatable-basic modal_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Acciones</th>
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                    <th>Sigla</th>
+                                    <th>Fuerza</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row form-compact">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning btn-xs" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ModalUnidades modal -->
+@section PostScripts{
+    @Scripts.Render("~/bundle/ModalsAlertJs");
+    @Scripts.Render("~/bundle/ChosenJs")
+    @Scripts.Render("~/bundle/CheckSwitchJs");   
+    <script>
+
+
+        /////////////////////Variables BreadCrumb/////////////////////////
+        UrlComplementoRuta = "@ViewBag.RutaCompGeneral";
+        UrlNombreUbicacion = "@ViewBag.NombreUbicacion";
+        //////////////////////////////////////////////////////////////////
+
+
+        var urlObtenerEntidades = "@Url.Action("ObtenerEntidades", "Account")";
+        var urlObtenerCanales = "@Url.Action("ObtenerCanales", "Account")";
+        var urlConsultarPolicia = "@Url.Action("ConsultarInfoPolicia", "Account")";
+        var urlConsultarDptos= "@Url.Action("ConsultarDeptos", "Account")";
+        var urlConsultarCiudades = "@Url.Action("ConsultarCiudades", "Account")";
+        var urlConsultarUnidades = "@Url.Action("ConsultarUnidades", "Account")";
+        var urlConsultarUsuEmpresarial = "@Url.Action("ConsultarUsuEmpresarial", "Account")";
+        var urlEditarUsuario ="@Url.Action("EditarUsuario", "Account")";
+        // AplicarPluginTabla("tablaUsuarios");
+    </script>
+    @Scripts.Render("~/bundle/UsuarioControllerJs")
+    @if (ViewBag.Editar) {
+        <script>
+            editar = true;
+        </script>
+    }
+    <script>  
+        var glCanal = 0;
+        glCanal = $("#hdCanal").val();
+        InicializarElementos("CREAR");
+        InicializarCreacion();
+        CargarDeptos();
+        CargarUnidades();
+        AplicarControlFecha("#fecha_hasta", null);
+        AplicarControlFecha("#fecha_desde", null);
+    </script>
+
+}

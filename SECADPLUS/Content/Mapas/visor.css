@@ -1,0 +1,63 @@
+ html,
+ body {
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+ }
+ #map {
+     padding: 0;
+ }
+ #spnCoordinates {
+     font-size: 13px;
+     line-height: 15px;
+     color: #323232;
+     display: block;
+     text-align: left;
+     vertical-align: bottom;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     position: absolute;
+     right: 20px;
+     top: 95%;
+     z-index: 99;
+     padding: 0 20px;
+     margin: 0 5px 0 0;
+     background: rgba(255, 255, 255, 0.7);
+ }
+ #search {
+     display: block;
+     position: absolute;
+     z-index: 2;
+     top: 20px;
+     left: 74px;
+ }
+ #LocateButton {
+     position: absolute;
+     top: 95px;
+     left: 20px;
+     z-index: 50;
+ }
+ .esriPopup .actionsPane {
+     display: block;
+ }
+ .esriPopup .hidden {
+     display: block;
+ }
+ .tablePopup {
+     border-collapse: collapse;
+     width: 100%;
+ }
+ .tablePopup th,
+ .tablePopup td {
+     text-align: left;
+     padding: 4px;
+ }
+ .tablePopup tr:nth-child(even) {
+     background-color: #f2f2f2
+ }
+ .tablePopup th {
+     background-color: #4CAF50;
+     color: white;
+ }

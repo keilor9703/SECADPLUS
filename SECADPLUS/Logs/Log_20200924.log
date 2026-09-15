@@ -1,0 +1,18 @@
+20200924 11:49:30 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, Double V_Latitud, Double V_Longitud, String V_Modalidad, String V_Conducta, String V_TipoArma, String V_TipoMoviliza) en C:\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 790
+20200924 11:49:56 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, Double V_Latitud, Double V_Longitud, String V_Modalidad, String V_Conducta, String V_TipoArma, String V_TipoMoviliza) en C:\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 790
+20200924 11:50:02 [M_ERROR] - Error al Insertar : Ins_Coordenadas 
+	#2	#3La cadena de entrada no tiene el formato correcto.
+	#2	#3System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en SecadDatos.Areas.MinutaSivicc.DbMinuta.Ins_Coordenadas(Int32 SitioGraba, Int32 IdLlamada, Double V_Latitud, Double V_Longitud, String V_Modalidad, String V_Conducta, String V_TipoArma, String V_TipoMoviliza) en C:\HUAWEI_Ok\SecadDatos\Areas\MinutaSivicc\DbMinuta.cs:línea 790

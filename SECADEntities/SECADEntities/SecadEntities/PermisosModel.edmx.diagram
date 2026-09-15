@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44599437fbf94c4fb68f16ba4a27858e" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="PermisosModel.CADNETELEMENTO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETPERFIL" Width="2.375" PointX="2.125" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETPERFIL_ELE_PERMISO" Width="2.875" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETPERMISO" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETTIPO_ELEMENTO" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="PermisosModel.FK_CADELEMENTO_PADRE" ManuallyRouted="false" />
+        <AssociationConnector Association="PermisosModel.FK_CADELEMENTO_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="PermisosModel.FK_PEP_ELEMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="PermisosModel.FK_PEP_PERFIL" ManuallyRouted="false" />
+        <AssociationConnector Association="PermisosModel.FK_PEP_PERMISO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETOID" Width="1.5" PointX="3" PointY="14.75" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETOIDROLE" Width="1.5" PointX="5.25" PointY="11.75" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETROLE" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETROLPERFIL" Width="1.5" PointX="5.25" PointY="5.625" />
+        <AssociationConnector Association="PermisosModel.FK_UserRoles_Users" />
+        <AssociationConnector Association="PermisosModel.FK_OIDRoles_Roles" />
+        <AssociationConnector Association="PermisosModel.FK_ROLPERFIL_PERFIL" />
+        <AssociationConnector Association="PermisosModel.FK_ROLPERFIL_ROL" />
+        <EntityTypeShape EntityType="PermisosModel.CADUSUARIO" Width="1.5" PointX="5.25" PointY="14.75" />
+        <AssociationConnector Association="PermisosModel.CADUSUA_OID_ID" />
+        <EntityTypeShape EntityType="PermisosModel.CADACCESORESTRINGIDO" Width="1.5" PointX="8.25" PointY="8.875" />
+        <AssociationConnector Association="PermisosModel.FK_CADACCRES_ELE_ID" />
+        <AssociationConnector Association="PermisosModel.FK_CADACCRES_OID_ID" />
+        <EntityTypeShape EntityType="PermisosModel.CADNETMAQUINA" Width="1.5" PointX="7.375" PointY="5.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

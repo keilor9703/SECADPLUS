@@ -1,0 +1,20 @@
+﻿@model SECADEntities.SECAD.CADEQUIPOS
+
+@{
+    ViewBag.Title = "Eliminar Equipo de Computo";
+}
+
+
+<h3>¿Desea eliminar el registro?</h3>
+<div>
+
+    Identificación: @Html.DisplayFor(model => model.IDENTIFICACION)
+    <br />
+    Descripción: @Html.DisplayFor(model => model.DESCRIPCION)
+
+    @using (Html.BeginForm("Delete", "EquiposSitioGrabacion", new { codSitio = Model.SITIO_GRABA, nomSitio = @ViewBag.nomSitio, nom = Model.DESCRIPCION, id = Model.IDENTIFICACION }, FormMethod.Post, new { @class = "form_secad", @id = "form_eliminar" }))
+    {
+        @Html.AntiForgeryToken()
+
+    }
+</div>

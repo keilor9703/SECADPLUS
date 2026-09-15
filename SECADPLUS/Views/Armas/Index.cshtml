@@ -1,0 +1,125 @@
+﻿@model IEnumerable<SECADEntities.SECAD.CADARMA>
+@section scripts{
+    @Scripts.Render("~/bundle/TablasJs")
+}
+<!-- Área de contenido -->
+<div class="content">
+    @Html.Partial("_Mensajes")
+    @Html.Partial("_NavegacionUnidades")
+    @Html.Partial("_Detalle_Unidad")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-flat form-compact">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Lista de Armas</h5>
+                    <div class="heading-elements">
+                        <ul class="icons-list decad">
+                            <li>
+                                <button type="button" class="btn btn-success btn-xs" data-popup="tooltip" onclick="location.href='@Url.Action("Crear", "Armas", new { intUnidadFuerza = ViewBag.UnidadFuerza, intUnidadCodigo = ViewBag.UnidadCodigo })'"
+                                        title="" data-placement="bottom" data-original-title="Clic para crear nuevo Elemento">
+                                    <b><i class="glyphicon glyphicon-plus-sign position-left"></i></b>Crear nueva Arma
+                                </button>
+                            </li>
+                            <li><a data-action="collapse"></a></li>
+                        </ul>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                          
+                <table class="table table-hover table-xxs datatable-basic table-condensed" id="tablaArmas">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                Acciones
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NUME_SERIE)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CADCLBI_TIBI_CODIGO)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.CALIBRE)
+                            </th>
+                            <th>
+                                Marca
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CADESTAD_CODIGO)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list decad_menu">
+                                        <li class="dropdown">
+                                            <button type="button" class="btn btn-tabla border-success text-success-600 btn-flat dropdown-toggle"
+                                                    data-toggle="dropdown" aria-expanded="true">
+                                                <i class="icon-menu9"></i>
+                                            </button>
+                                            <ul class="dropdown-menu secad two_btn dropdown-menu-left">
+                                                <li>
+                                                    <button class="btn btn-default " type="button"
+                                                            data-popup="tooltip" onclick="location.href='@Url.Action( "Editar", new { strSerie= item.NUME_SERIE})'"
+                                                            data-placement="bottom" data-original-title="Clic para editar">
+                                                        <i class="glyphicon glyphicon-edit"></i> Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default " type="button" data-popup="tooltip" onclick="EliminarRegistroGeneral('@Url.Action( "Eliminar", new { strSerie= item.NUME_SERIE})')"
+                                                            data-placement="bottom" data-original-title="Clic para eliminar">
+                                                        <i class="icon-trash"></i> Eliminar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NUME_SERIE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CADCLASES_BIEN.DESCRIPCION)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CALIBRE)
+                                    @foreach (var calibre in ViewBag.CALIBRES)
+                                    {
+                                        if (calibre.Value == item.CALIBRE)
+                                        {
+                                            @calibre.Text
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CADMARCA.DESCRIPCION)
+                                </td>
+                                <td>                                    
+                                    @foreach (var estado in ViewBag.ESTADOS)
+                                    {
+                                        if (estado.Value == item.CADESTAD_CODIGO)
+                                        {
+                                            @estado.Text
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section PostScripts{
+    @Scripts.Render("~/bundle/ModalsJs")
+
+    <script>
+        AplicarPluginTabla("tablaArmas");
+    </script>
+}

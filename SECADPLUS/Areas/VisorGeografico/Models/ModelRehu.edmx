@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ModelRehu.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="18.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_SICAF.VM_UNIDADES_PONAL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VM_UNIDADES_PONAL">
+          <Key>
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="SIGLA_PAPA" />
+            <PropertyRef Name="DESCRIPCION_DEPENDENCIA" />
+            <PropertyRef Name="VIGENTE" />
+            <PropertyRef Name="ORDEN_PUBLICO" />
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="TIUN_CODIGO" />
+            <PropertyRef Name="TIPO" />
+            <PropertyRef Name="SIGLA_DEPENDE" />
+          </Key>
+          <Property Name="CONSECUTIVO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SIGLA" Type="varchar2" MaxLength="10" />
+          <Property Name="AREA" Type="varchar2" MaxLength="10" />
+          <Property Name="SIGLA_PAPA" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="DESCRIPCION_DEPENDENCIA" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="UNIDAD" Type="varchar2" MaxLength="31" />
+          <Property Name="VIGENTE" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="SIGLA_FISICA" Type="varchar2" MaxLength="5" />
+          <Property Name="REGI" Type="varchar2" MaxLength="4000" />
+          <Property Name="ORDENAMIENTO" Type="number" Precision="38" Scale="0" />
+          <Property Name="UNDE_CONSECUTIVO" Type="number" Precision="38" Scale="0" />
+          <Property Name="NIVEL1" Type="varchar2" MaxLength="60" />
+          <Property Name="ORDEN_PUBLICO" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LUGE_CODIGO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="TIUN_CODIGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="200" />
+          <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" />
+          <Property Name="TELEFONO_IP" Type="varchar2" MaxLength="50" />
+          <Property Name="SIGLA_SIVICC" Type="varchar2" MaxLength="4" />
+          <Property Name="SIGLA_DEPENDE" Type="varchar2" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelRehuStoreContainer">
+          <EntitySet Name="VM_UNIDADES_PONAL" EntityType="Self.VM_UNIDADES_PONAL" store:Type="Tables" store:Schema="USR_SICAF">
+            <DefiningQuery>SELECT 
+"VM_UNIDADES_PONAL"."CONSECUTIVO" AS "CONSECUTIVO", 
+"VM_UNIDADES_PONAL"."SIGLA" AS "SIGLA", 
+"VM_UNIDADES_PONAL"."AREA" AS "AREA", 
+"VM_UNIDADES_PONAL"."SIGLA_PAPA" AS "SIGLA_PAPA", 
+"VM_UNIDADES_PONAL"."DESCRIPCION_DEPENDENCIA" AS "DESCRIPCION_DEPENDENCIA", 
+"VM_UNIDADES_PONAL"."UNIDAD" AS "UNIDAD", 
+"VM_UNIDADES_PONAL"."VIGENTE" AS "VIGENTE", 
+"VM_UNIDADES_PONAL"."SIGLA_FISICA" AS "SIGLA_FISICA", 
+"VM_UNIDADES_PONAL"."REGI" AS "REGI", 
+"VM_UNIDADES_PONAL"."ORDENAMIENTO" AS "ORDENAMIENTO", 
+"VM_UNIDADES_PONAL"."UNDE_CONSECUTIVO" AS "UNDE_CONSECUTIVO", 
+"VM_UNIDADES_PONAL"."NIVEL1" AS "NIVEL1", 
+"VM_UNIDADES_PONAL"."ORDEN_PUBLICO" AS "ORDEN_PUBLICO", 
+"VM_UNIDADES_PONAL"."LUGE_CODIGO" AS "LUGE_CODIGO", 
+"VM_UNIDADES_PONAL"."TIUN_CODIGO" AS "TIUN_CODIGO", 
+"VM_UNIDADES_PONAL"."TIPO" AS "TIPO", 
+"VM_UNIDADES_PONAL"."DIRECCION" AS "DIRECCION", 
+"VM_UNIDADES_PONAL"."TELEFONO" AS "TELEFONO", 
+"VM_UNIDADES_PONAL"."TELEFONO_IP" AS "TELEFONO_IP", 
+"VM_UNIDADES_PONAL"."SIGLA_SIVICC" AS "SIGLA_SIVICC", 
+"VM_UNIDADES_PONAL"."SIGLA_DEPENDE" AS "SIGLA_DEPENDE"
+FROM "USR_SICAF"."VM_UNIDADES_PONAL" "VM_UNIDADES_PONAL"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelRehu" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="VM_UNIDADES_PONAL">
+          <Key>
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="SIGLA_PAPA" />
+            <PropertyRef Name="DESCRIPCION_DEPENDENCIA" />
+            <PropertyRef Name="VIGENTE" />
+            <PropertyRef Name="ORDEN_PUBLICO" />
+            <PropertyRef Name="LUGE_CODIGO" />
+            <PropertyRef Name="TIUN_CODIGO" />
+            <PropertyRef Name="TIPO" />
+            <PropertyRef Name="SIGLA_DEPENDE" />
+          </Key>
+          <Property Name="CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SIGLA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AREA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SIGLA_PAPA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION_DEPENDENCIA" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UNIDAD" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SIGLA_FISICA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="REGI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ORDENAMIENTO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UNDE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NIVEL1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ORDEN_PUBLICO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LUGE_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="TIUN_CODIGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TELEFONO_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SIGLA_SIVICC" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="SIGLA_DEPENDE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ContextRehu" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VM_UNIDADES_PONAL" EntityType="Self.VM_UNIDADES_PONAL" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelRehuStoreContainer" CdmEntityContainer="ContextRehu">
+          <EntitySetMapping Name="VM_UNIDADES_PONAL">
+            <EntityTypeMapping TypeName="ModelRehu.VM_UNIDADES_PONAL">
+              <MappingFragment StoreEntitySet="VM_UNIDADES_PONAL">
+                <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+                <ScalarProperty Name="SIGLA" ColumnName="SIGLA" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="SIGLA_PAPA" ColumnName="SIGLA_PAPA" />
+                <ScalarProperty Name="DESCRIPCION_DEPENDENCIA" ColumnName="DESCRIPCION_DEPENDENCIA" />
+                <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="SIGLA_FISICA" ColumnName="SIGLA_FISICA" />
+                <ScalarProperty Name="REGI" ColumnName="REGI" />
+                <ScalarProperty Name="ORDENAMIENTO" ColumnName="ORDENAMIENTO" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO" ColumnName="UNDE_CONSECUTIVO" />
+                <ScalarProperty Name="NIVEL1" ColumnName="NIVEL1" />
+                <ScalarProperty Name="ORDEN_PUBLICO" ColumnName="ORDEN_PUBLICO" />
+                <ScalarProperty Name="LUGE_CODIGO" ColumnName="LUGE_CODIGO" />
+                <ScalarProperty Name="TIUN_CODIGO" ColumnName="TIUN_CODIGO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="TELEFONO_IP" ColumnName="TELEFONO_IP" />
+                <ScalarProperty Name="SIGLA_SIVICC" ColumnName="SIGLA_SIVICC" />
+                <ScalarProperty Name="SIGLA_DEPENDE" ColumnName="SIGLA_DEPENDE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
