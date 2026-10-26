@@ -280,6 +280,9 @@ namespace SECADPLUS
             bundles.Add(new ScriptBundle("~/bundle/PendientesDespachoJs").Include(
                 "~/Scripts/custom/PendientesDespacho.js"
                 ));
+            bundles.Add(new ScriptBundle("~/bundle/IntegracionVmsJs").Include(
+                "~/Scripts/custom/IntegracionVms.js"
+                ));
             bundles.Add(new ScriptBundle("~/bundle/CerradosDespachoJs").Include(
                 "~/Scripts/custom/CerradosDespacho.js"
                 ));

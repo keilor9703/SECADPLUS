@@ -1,0 +1,62 @@
+###############################################################################
+# Gateway de video SECAD - VMS ISS SecurOS (MediaMTX)
+#
+# Toma el RTSP en vivo de SecurOS (rtsp://<servidor>:554/live?id=<cámara>) solo
+# mientras alguien está viendo, y lo entrega al navegador de SECAD por WebRTC
+# (WHEP), sin transcodificar (el video ya viene en H.264).
+#
+# Cada solicitud de lectura se autoriza contra SECAD: solo se ve la cámara para la
+# que SECAD emitió un token vigente. Las credenciales de SecurOS no salen de aquí.
+#
+# Escrito para MediaMTX v1.9 o superior. Verificar los nombres de las claves con la
+# versión instalada (https://github.com/bluenviron/mediamtx, archivo mediamtx.yml).
+# Reemplazar todos los valores en MAYÚSCULAS.
+###############################################################################
+
+logLevel: info
+logDestinations: [stdout, file]
+logFile: mediamtx.log
+
+# Servicios que no se usan: apagados.
+api: no
+metrics: no
+pprof: no
+playback: no
+rtsp: no
+rtmp: no
+hls: no
+srt: no
+
+# Autorización delegada en SECAD (IntegracionVmsController.AutorizarStream).
+# La clave debe ser igual a VMS_Gateway_ClaveAutorizacion del Web.config de SECAD.
+authMethod: http
+authHTTPAddress: https://SERVIDOR_SECAD/IntegracionVms/AutorizarStream?clave=CLAVE_GATEWAY_LARGA_Y_ALEATORIA
+authHTTPExclude:
+  - action: api
+  - action: metrics
+  - action: pprof
+
+# WebRTC hacia los puestos de recepción y despacho.
+webrtc: yes
+webrtcAddress: :8889
+webrtcEncryption: yes
+webrtcServerKey: server.key
+webrtcServerCert: server.crt
+# Origen exacto desde el que se sirve SECAD (esquema + host + puerto).
+webrtcAllowOrigin: https://SERVIDOR_SECAD
+webrtcLocalUDPAddress: :8189
+webrtcLocalTCPAddress: :8189
+webrtcIPsFromInterfaces: no
+# IP del gateway alcanzable desde los puestos de los operadores.
+webrtcAdditionalHosts: [IP_GATEWAY_RED_OPERADORES]
+webrtcICEServers2: []
+
+paths:
+  # Una ruta por cámara: securos_<id de la cámara en SecurOS>.
+  # Debe coincidir con GestorIntegracionVms.RutaGateway().
+  "~^securos_([A-Za-z0-9_-]+)$":
+    source: rtsp://USUARIO_RTSP:CLAVE_RTSP@IP_SECUROS:554/live?id=$G1
+    sourceOnDemand: yes
+    sourceOnDemandStartTimeout: 10s
+    sourceOnDemandCloseAfter: 15s
+    rtspTransport: tcp

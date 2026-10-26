@@ -166,6 +166,9 @@ En ambos casos **el contratista solo ve el servicio de la PIP**.
 
 ### 4.2 Cámaras y video (SECAD → VMS)
 
+> **Implementado (caso de uso 1):** ver `docs/vms/INTEGRACION_VMS_SECUROS.md`. El video se entrega por
+> RTSP de SecurOS convertido a WebRTC por un gateway MediaMTX; el censo vive en `CADVMS_CAMARA`.
+
 | Pieza | Dónde |
 |---|---|
 | Driver SecurOS (cliente HTTP de la API de ISS) | Nuevo `Models/Vms/DriverSecurOS.cs` detrás de una interfaz `IVmsDriver` (catálogo, URL de video, PTZ, grabación) |

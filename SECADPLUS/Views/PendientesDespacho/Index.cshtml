@@ -757,6 +757,15 @@
                                                                             <i class="icon-earth"></i>
                                                                         </button>
                                                                     </div>
+                                                                    @if (ViewBag.globalSitio != null && SECADPLUS.Models.Vms.GestorIntegracionVms.EstaHabilitada((int)ViewBag.globalSitio))
+                                                                    {
+                                                                        <div class="col-xs-3 col-lg-6">
+                                                                            <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Haga clic para ver las cámaras cercanas al caso"
+                                                                                    onclick="IntegracionVms.abrirCamarasCercanas(globalSitio, globalLlamada)">
+                                                                                <i class="icon-camera"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    }
                                                                     <div class="col-xs-3 col-lg-6">
                                                                         <button type="button" class="btn btn-info btn-xs btn-decad" data-popup="tooltip" title="" data-placement="bottom" data-original-title="Activar Mensajero"
                                                                                 onclick="AbrirMensajero()">
@@ -1478,6 +1487,7 @@
     /
     @Scripts.Render("~/bundle/TablasJs")
     @Scripts.Render("~/bundle/PendientesDespachoJs")
+    @Scripts.Render("~/bundle/IntegracionVmsJs")
 
 <script>
         //window.addEventListener('load', ChosenModalidad, false);
@@ -1688,6 +1698,10 @@
         var urlTurnosEvento = '@Url.Action("Turnos", "Turnos")';
         var urlReposteSeguimientoEvento = '@Url.Action("ReporteSeguimientoCasos", "Reportes")';
         var urlVisorGeografico = '@Url.Action("Index", "IngresarMapa",new { strOrigen = "DESPACHOS"})';
+        ///////URL integración VMS (cámaras cercanas al caso)///////////////
+        var urlVmsCamarasCercanas = '@Url.Action("CamarasCercanas", "IntegracionVms")';
+        var urlVmsMiniatura = '@Url.Action("Miniatura", "IntegracionVms")';
+        var urlVmsAbrirVideo = '@Url.Action("AbrirVideo", "IntegracionVms")';
         var urlSocial = '@Url.Action("Index", "DespachosSocial")';
         var urlRecargaCerrar = '@Url.Action("Index", "PendientesDespacho")';
 

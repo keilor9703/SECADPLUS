@@ -324,6 +324,7 @@
     <Compile Include="Controllers\Despachos\CerradosDespachosController.cs" />
     <Compile Include="Controllers\Despachos\ComunicadosController.cs" />
     <Compile Include="Controllers\Despachos\ControlDespachoController.cs" />
+    <Compile Include="Controllers\IntegracionVms\IntegracionVmsController.cs" />
     <Compile Include="Controllers\Despachos\DespachosMujerController.cs" />
     <Compile Include="Controllers\Despachos\DespachosSocialController.cs" />
     <Compile Include="Controllers\Despachos\EventoMediosRutaController.cs" />
@@ -615,6 +616,9 @@
     <Compile Include="Models\GestorAuditoria.cs" />
     <Compile Include="Models\GestorBase.cs" />
     <Compile Include="Models\GestorDespachos.cs" />
+    <Compile Include="Models\Vms\ClienteSecurOS.cs" />
+    <Compile Include="Models\Vms\GestorIntegracionVms.cs" />
+    <Compile Include="Models\Vms\ModelosVms.cs" />
     <Compile Include="Models\GestorMinuta.cs" />
     <Compile Include="Models\GestorRecepcion.cs" />
     <Compile Include="Models\GestorSeguridad.cs" />
@@ -1670,6 +1674,7 @@
     <Content Include="Scripts\custom\PedidosController.js" />
     <Content Include="Scripts\custom\PedidosDocumentosController.js" />
     <Content Include="Scripts\custom\PendientesDespacho.js" />
+    <Content Include="Scripts\custom\IntegracionVms.js" />
     <Content Include="Scripts\custom\PerfilPermisoController.js" />
     <Content Include="Scripts\custom\PersonaDijin.js" />
     <Content Include="Scripts\custom\Preguntas.js" />
