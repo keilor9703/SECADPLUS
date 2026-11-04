@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using Newtonsoft.Json;
+using Oracle.ManagedDataAccess.Client;
 using SecadDatos.Areas.Recepcion;
 using SECADEntities.SECAD;
 using SECADEntities.SecadEntities;
@@ -1176,6 +1177,13 @@ namespace SECADPLUS.Controllers.Recepcion
                     wsld = wsdlnew(strSitio, "DBL_MEPER", strNumeroLlamada, 0, idFuerzaEntidad, 1);
                     blValorws = gestorRecepcion.InsertaHistoricoWs(strSitio, "DBL_MEPER", strNumeroLlamada, Convert.ToString(idFuerzaEntidad), wsld);
                 }
+                //Integración SECAD -> PremierOne: cuando el caso se envía al canal "PremierOne"
+                //(identificado por su código de fuerza/entidad, parametrizado en Web.config).
+                if (GestorPremierOne.Habilitado && GestorPremierOne.FuerzaId != 0 && idFuerzaEntidad == GestorPremierOne.FuerzaId)
+                {
+                    string respuestaP1 = EnviarPedidoPremierOne(strSitio, strNumeroLlamada);
+                    wsld = string.IsNullOrEmpty(wsld) ? respuestaP1 : wsld + " | " + respuestaP1;
+                }
                 if (!GestorBase.MSN_ALERTA_COMUN.Equals(""))
                 {
                     strMensaje = GestorBase.MSN_ALERTA_COMUN;
@@ -1252,6 +1260,137 @@ namespace SECADPLUS.Controllers.Recepcion
             }
 
             return " Respuesta Servicio SEM = " + ResponseString;
+        }
+
+        /// <summary>
+        /// Construye el payload SECAD -> PremierOne a partir del caso (sitio, número de llamada),
+        /// lo envía consumiendo los endpoints de PremierOne (login JWT + receive-call-json) y
+        /// registra la respuesta en el histórico de web services.
+        ///
+        /// Nota de homologación: los campos de ubicación/clasificación (LugeTelefono, LugeCodigo,
+        /// PucaCodigo, CodiBarrio, LugeBarrio, CodiPedido, CaliPedido, TipoPedido) se envían con el
+        /// código nativo de SECAD; la conversión de códigos la realiza el proceso de integración de
+        /// PremierOne según las tablas de homologación entregadas por Policía Nacional. Si en el
+        /// futuro SECAD debe homologar antes de enviar, ese mapeo se agrega en este método.
+        /// </summary>
+        private string EnviarPedidoPremierOne(string strSitio, string strNumeroLlamada)
+        {
+            string resumen = "";
+            try
+            {
+                int intSitio = Convert.ToInt32(strSitio);
+                long lgLlamada = Convert.ToInt64(strNumeroLlamada);
+
+                CADPEDIDO pedido = (from registro in contextoRecepcion.CADPEDIDOS
+                                    where registro.SITIO_GRABA == intSitio
+                                    && registro.NUME_LLAMADA == lgLlamada
+                                    select registro).FirstOrDefault();
+                if (pedido == null)
+                {
+                    resumen = "PremierOne: no se encontró el caso " + strSitio + "/" + strNumeroLlamada;
+                    gestorRecepcion.InsertaHistoricoWs(strSitio, "PREMIERONE", strNumeroLlamada,
+                        Convert.ToString(GestorPremierOne.FuerzaId), resumen);
+                    return resumen;
+                }
+
+                //Descripción del municipio del caso.
+                string descMpio = (from registro in contextoSecad.CADLUGARES_GEOGRAFICOS
+                                   where registro.CODIGO == pedido.LUGE_CODIGO
+                                   select registro.DESCRIPCION).FirstOrDefault() ?? "";
+
+                //Descripción del barrio del caso (llave compuesta barrio + municipio del barrio).
+                string descBarrio = "";
+                if (pedido.CODI_BARRIO.HasValue && pedido.LUGE_BARRIO.HasValue)
+                {
+                    descBarrio = (from registro in contextoSecad.CADBARRIOS
+                                  where registro.CODIGO == pedido.CODI_BARRIO.Value
+                                  && registro.LUGE_CODIGO == pedido.LUGE_BARRIO.Value
+                                  select registro.DESCRIPCION).FirstOrDefault() ?? "";
+                }
+
+                int recordingDbNum;
+                if (!int.TryParse(GestorPremierOne.RecordingDb, out recordingDbNum))
+                {
+                    recordingDbNum = pedido.SITIO_GRABA;
+                }
+
+                string ipMaquina = Request != null ? Request.UserHostAddress : "";
+
+                var payload = new
+                {
+                    SitioGraba = recordingDbNum,
+                    NumeLlamada = pedido.NUME_LLAMADA.ToString(),
+                    HoraCaso = pedido.HORA_CASO.ToString("dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture),
+                    CeldaMarcacion = pedido.CELDA_MARCACION ?? "",
+                    NumeTelefono = pedido.NUME_TELEFONO,
+                    PropTelefono = pedido.PROP_TELEFONO,
+                    DireTelefono = pedido.DIRE_TELEFONO,
+                    LugeTelefono = pedido.LUGE_TELEFONO,
+                    BarrTelefono = pedido.BARR_TELEFONO,
+                    TipoPedido = pedido.TIPO_PEDIDO,
+                    CaliPedido = pedido.CALI_PEDIDO,
+                    NombLlamante = pedido.NOMB_LLAMANTE,
+                    DireLlamante = pedido.DIRE_LLAMANTE,
+                    LugeCodigo = pedido.LUGE_CODIGO,
+                    DescMpio = descMpio,
+                    DireCaso = pedido.DIRE_CASO,
+                    PucaCodigo = pedido.PUCA_CODIGO,
+                    CodiBarrio = pedido.CODI_BARRIO,
+                    LugeBarrio = pedido.LUGE_BARRIO,
+                    DescBarrio = descBarrio,
+                    LatitudCaso = (pedido.LATITUD_CASO ?? "").Replace(",", "."),
+                    LongitudCaso = (pedido.LONGITUD_CASO ?? "").Replace(",", "."),
+                    Comentario = pedido.COMENTARIO,
+                    CodiPedido = pedido.CODI_PEDIDO,
+                    Estado = pedido.ESTADO,
+                    Enviar = "S",
+                    Usuario = pedido.CADUSUA_USUARIO
+                };
+
+                var sobre = new
+                {
+                    sourceid = GestorPremierOne.SourceId,
+                    sourcesystem = GestorPremierOne.SourceSystem,
+                    recordingdb = recordingDbNum,
+                    callnumber = GestorPremierOne.CallNumberPrefix + pedido.NUME_LLAMADA,
+                    payload_json = payload,
+                    FUENTE_TRANSACCION = GestorPremierOne.FuenteTransaccion,
+                    SISTEMA_INFORMACION = GestorPremierOne.SistemaInformacion,
+                    IP_MAQUINA = ipMaquina,
+                    USUARIO = pedido.CADUSUA_USUARIO
+                };
+
+                string jsonPayload = JsonConvert.SerializeObject(sobre);
+
+                GestorPremierOne clienteP1 = new GestorPremierOne();
+                string respuestaServicio;
+                bool enviado = clienteP1.EnviarCaso(jsonPayload, out respuestaServicio);
+
+                resumen = " Respuesta Servicio PremierOne = " + (enviado ? "OK" : "ERROR") + " - " + respuestaServicio;
+
+                //Registra en el histórico de web services (mismo mecanismo usado por otras integraciones).
+                gestorRecepcion.InsertaHistoricoWs(strSitio, "PREMIERONE", strNumeroLlamada,
+                    Convert.ToString(GestorPremierOne.FuerzaId), resumen);
+
+                if (!enviado)
+                {
+                    GestorBase.MSN_ALERTA_COMUN = "El caso se envió al canal PremierOne pero el servicio respondió con error. Revise el histórico de integración.";
+                }
+
+                return resumen;
+            }
+            catch (Exception ex)
+            {
+                GestorBase.GestionarExcepcion(ex, GetType().Name);
+                resumen = " Respuesta Servicio PremierOne = ERROR - " + ex.Message;
+                try
+                {
+                    gestorRecepcion.InsertaHistoricoWs(strSitio, "PREMIERONE", strNumeroLlamada,
+                        Convert.ToString(GestorPremierOne.FuerzaId), resumen);
+                }
+                catch { }
+                return resumen;
+            }
         }
 
 

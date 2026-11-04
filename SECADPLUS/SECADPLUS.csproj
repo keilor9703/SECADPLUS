@@ -616,6 +616,7 @@
     <Compile Include="Models\GestorBase.cs" />
     <Compile Include="Models\GestorDespachos.cs" />
     <Compile Include="Models\GestorMinuta.cs" />
+    <Compile Include="Models\GestorPremierOne.cs" />
     <Compile Include="Models\GestorRecepcion.cs" />
     <Compile Include="Models\GestorSeguridad.cs" />
     <Compile Include="Models\IDbAdministracion.cs" />
