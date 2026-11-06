@@ -1657,7 +1657,14 @@ function cargarAnotaciones() {
 function AbrirRapidSOS() {
     // Consumimos la variable global definida en la vista
     if (urlRapidSOS_Config) {
-        window.open(urlRapidSOS_Config, "_blank");
+        // Teléfono del ciudadano (NUME_TELEFONO) y número/ID de la llamada (NUME_LLAMADA),
+        // concatenados en la URL para abrir la videollamada asociada al caso.
+        var numeTelefono = $("#textAbonado").text() || "";
+        var numeLlamada = globalLlamada || "";
+        var url = urlRapidSOS_Config
+                + "&NUME_TELEFONO=" + encodeURIComponent(numeTelefono)
+                + "&NUME_LLAMADA=" + encodeURIComponent(numeLlamada);
+        window.open(url, "_blank");
     } else {
         console.error("La URL de RapidSOS no está configurada.");
     }
