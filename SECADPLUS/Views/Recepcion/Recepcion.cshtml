@@ -314,6 +314,11 @@
                                                                                 data-original-title="Mapa" onclick="AbrirMapa()">
                                                                             <img src="@Url.Content("~/Images/ubicacion_ico.png")" class="img-responsive" alt="">
                                                                         </button>
+                                                                        <button type="button" id="btnRapidSOS" class="btn inner-panel bg-info-300  btn-xs" data-toggle="modal"
+                                                                                data-popup="tooltip" title="" data-placement="bottom" tabindex="-1"
+                                                                                data-original-title="Videollamada RapidSOS" onclick="AbrirRapidSOS()">
+                                                                            <i class="icon icon-video-camera2"></i>
+                                                                        </button>
 
 
                                                                     </div>
@@ -1225,6 +1230,23 @@
         var urlValidarRepetido = "@Url.Action("ValidarPedidoExistente", "Recepcion")";
         var urlConsultarLlamada = "@Url.Action("ConsultarLlamada", "Recepcion")";
         var urlObtenerUbicacionCelular = "@Url.Action("ObtenerUbicacionCelular", "Recepcion")";
+        // URL base del portal RapidSOS (Web.config). Los parámetros del caso se concatenan al abrir.
+        var urlRapidSOS_Config = '@System.Configuration.ConfigurationManager.AppSettings["RapidSOS_PortalUrl"]';
+
+        // Abre el portal/videollamada de RapidSOS desde Recepción, enviando el teléfono del
+        // ciudadano (NUME_TELEFONO) y el número/ID de la llamada (NUME_LLAMADA) concatenados en la URL.
+        function AbrirRapidSOS() {
+            if (!urlRapidSOS_Config) {
+                GestionarAlerta("warning", "La URL de RapidSOS no está configurada.");
+                return;
+            }
+            var numeTelefono = $("#NUME_TELEFONO").val() || "";
+            var numeLlamada = $("#NUME_LLAMADA").val() || "";
+            var url = urlRapidSOS_Config
+                    + "&NUME_TELEFONO=" + encodeURIComponent(numeTelefono)
+                    + "&NUME_LLAMADA=" + encodeURIComponent(numeLlamada);
+            window.open(url, "_blank");
+        }
         var urlTabla = '@Url.Action("VerPedidos", "LlamadaUsuario24h")';
         var urlConsultarNumeLlamada = "@Url.Action("ObtenerNumeroConsecutivo", "Recepcion")";
 
